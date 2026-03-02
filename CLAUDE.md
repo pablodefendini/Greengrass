@@ -21,18 +21,27 @@ No code is being written yet. All work is spec and design.
 
 ```
 GreenGrass/
-├── CLAUDE.md                  # Project instructions (this file)
+├── CLAUDE.md                      # Project instructions (this file)
 ├── .claude/
-│   └── SKILLS.md              # Project-specific skills
+│   └── SKILLS.md                  # Project-specific skills
 ├── spec/
-│   ├── product.md             # High-level product description
-│   ├── users.md               # User personas and roles
-│   ├── workflows.md           # Core workflows and user journeys
-│   └── requirements.md        # Functional and non-functional requirements
+│   ├── product.md                 # High-level product description
+│   ├── users.md                   # User personas and roles
+│   ├── workflows.md               # Core workflows and user journeys
+│   ├── geography.md               # Target geography and localization
+│   ├── security.md                # Security and threat model
+│   ├── compliance.md              # Compliance and legal framework
+│   ├── fundraising.md             # Fundraising and payments
+│   ├── integrations.md            # External integrations
+│   ├── support.md                 # Tenant support and onboarding
+│   ├── gotv.md                    # GOTV and election day operations
+│   ├── messaging.md               # Internal communications and notifications
+│   └── press.md                   # Press, media, and public communications
 ├── design/
-│   ├── ux/                    # UX design artifacts
-│   └── architecture/          # System architecture and technical design
-└── decisions/                 # Architecture Decision Records (ADRs)
+│   ├── ux/                        # UX design artifacts
+│   └── architecture/
+│       └── system.md              # System architecture and data model
+└── decisions/                     # Architecture Decision Records (ADRs)
 ```
 
 ## Conventions
