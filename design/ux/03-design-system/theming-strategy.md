@@ -15,7 +15,7 @@ This document defines how GreenGrass supports per-tenant visual branding, RTL la
 | **Favicon** | Yes | Uploaded; replaces default in browser tab |
 | **Brand name** | Yes | Text in header bar, document titles, email templates |
 | **Accent color** | Optional | Secondary brand color for data visualization, charts |
-| **Font** | No | Inter is the system font. Tenants cannot change it. |
+| **Font** | No | System font stack. Tenants cannot change it. |
 | **Layout** | No | Navigation structure, spacing, grid are fixed. |
 | **Component styles** | No | Button shapes, card styles, input styles are fixed. |
 | **Icons** | No | Lucide icon set is fixed. |

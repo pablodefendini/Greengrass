@@ -230,8 +230,7 @@ Performance is a core constraint — the target user is on a low-end Android pho
 | First contentful paint | < 2s on 3G | Server-side rendering critical |
 | Time to interactive | < 4s on 3G | Hydration must be fast |
 | Per-route chunk | < 50KB gzipped | Aggressive code splitting |
-| Font (Inter subset) | < 30KB | Latin subset for initial load |
-| Font (full) | < 100KB | Lazy-loaded extended character sets |
+| Fonts | 0KB | System font stack — no network loading |
 
 ### Image Strategy
 

@@ -144,13 +144,18 @@ For users who need maximum contrast (setting in accessibility preferences):
 ### Font Stack
 
 ```css
---font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
---font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+--font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+             'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+             'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+--font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
+             'DejaVu Sans Mono', monospace;
 ```
 
-**Why Inter:** Open-source, designed for screens, excellent at small sizes on low-resolution displays, comprehensive language coverage (Latin, Cyrillic, Greek — and extended Latin for Portuguese diacritics). Free for commercial use. Self-hosted (no Google Fonts dependency).
+**Why system fonts:** Zero font loading. No network requests, no FOIT/FOUT, no layout shift. The text renders instantly with the font the device already has — critical for low-end phones on slow connections where a custom font download adds seconds to first contentful paint. System fonts also have the best native script support: San Francisco on Apple, Segoe UI on Windows, Roboto on Android, and Noto Sans as a broad Unicode fallback covering Latin, Thai, Hindi, Arabic, and Portuguese diacritics natively.
 
-**Language-specific overrides:** For Thai, Hindi, and Arabic, the font stack falls through to system fonts that handle those scripts natively. The design system doesn't prescribe a specific Thai or Hindi font — it uses what the device provides. See `theming-strategy.md` for RTL font considerations.
+**No custom fonts, no Google Fonts dependency.** This is a deliberate constraint. Every device in our target markets ships with a high-quality system sans-serif that's optimized for that device's screen. Loading a web font to override it trades performance for brand control — and there's no brand yet. If a brand typeface is adopted later, it can be added to the front of the stack without changing any component code.
+
+**Script coverage:** System font stacks handle multi-script rendering natively. `system-ui` on Android resolves to Roboto for Latin and Noto Sans Thai/Devanagari/Arabic for those scripts. On iOS, San Francisco delegates to platform-appropriate fonts per script. No language-specific font overrides are needed — the OS handles it.
 
 ### Type Scale
 
@@ -376,11 +381,9 @@ Density is not user-configurable — it's determined by the device and context:
 
 ## Open Questions
 
-1. **Custom font loading.** Inter is self-hosted. Should we subset the font for initial load (Latin only) and lazy-load extended character sets (Thai, Hindi diacritics)? This would improve first-paint time on slow connections.
+1. **Icon customization.** Should tenants be able to customize the icon set (e.g., replacing the default "person" icon with a culturally appropriate alternative)? Low priority but relevant for global south contexts.
 
-2. **Icon customization.** Should tenants be able to customize the icon set (e.g., replacing the default "person" icon with a culturally appropriate alternative)? Low priority but relevant for global south contexts.
-
-3. **Print styles.** Should the design system include print-specific tokens? Some screens may be printed (compliance reports, year-end statements, event check-in sheets). Print tokens would strip color, adjust spacing for paper, and use serif fonts for readability.
+2. **Print styles.** Should the design system include print-specific tokens? Some screens may be printed (compliance reports, year-end statements, event check-in sheets). Print tokens would strip color, adjust spacing for paper, and use serif fonts for readability.
 
 <!-- REVISIT: The color palette default values are intentionally generic (blue primary, slate neutrals). When GreenGrass establishes a brand identity, the default palette should be updated to reflect the brand. The token system ensures this change propagates without touching component code. -->
 <!-- REVISIT: The data visualization color palette (chart-1 through chart-8) needs finalization with a colorblind-safe sequential and categorical palette. Consider using established palettes like ColorBrewer or Tableau's. -->
