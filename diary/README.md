@@ -11,3 +11,5 @@ The diary captures the process, decisions, surprises, and lessons learned from d
 2. **[The Architecture Session](02-the-architecture-session.md)** — System architecture as a conversation. From product constraints to technology choices in a single session.
 
 3. **[Information Architecture](03-information-architecture.md)** — Designing the UX skeleton for 10 personas, 236 screens, and a platform that works offline on low-end phones.
+
+4. **[The Design System and Wireframes](04-design-system-and-wireframes.md)** — Building a visual language before having a brand. System fonts over custom fonts, 8px grids, theming as a cascade, and why ASCII wireframes work better than expected.

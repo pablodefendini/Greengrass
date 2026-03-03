@@ -48,16 +48,21 @@ The visual and component foundations.
 
 14. **[Responsive Strategy](03-design-system/responsive-strategy.md)** — Five breakpoints (640/768/1024/1280/1536px), mobile-first CSS, component adaptation tables, Capacitor native API usage, safe areas, performance budgets (150KB JS, 2s FCP on 3G), code splitting strategy, testing matrix.
 
-### Phase 4: Wireframes (planned)
+### Phase 4: Wireframes
 
-Visual artifacts for key screens and flows.
+Detailed screen specifications with ASCII wireframes for key screens and flows. Implementation-ready.
 
-- **Navigation Shell** — Desktop sidebar, mobile tabs, field mode chrome
-- **Dashboards** — All dashboard variants (campaign overview, field ops, fundraising, etc.)
-- **Field Mode** — Door-by-door canvassing flow, the highest-risk UX in the system
-- **Onboarding** — Tenant setup wizard, volunteer onboarding
-- **Messaging** — DM, group conversations, war room, candidate briefings
-- **Supporter Portal** — Donation history, profile management, event RSVPs
+15. **[Navigation Shell](04-wireframes/navigation-shell/navigation-shell.md)** — Desktop shell (sidebar expanded/collapsed, detail panel, notification drawer, RTL), mobile shell (per-persona tab bars, hamburger menu, "More" bottom sheet), field mode shell (walk list, door card, map, shift lifecycle), wizard shell, supporter portal shell. Responsive breakpoint transitions, interaction specs, accessibility notes.
+
+16. **[Dashboards](04-wireframes/dashboards/dashboards.md)** — Campaign Overview (Org Admin), Field Operations (Field Director), Fundraising (Finance Director), GOTV War Room (election day, auto-refresh, dark mode), Candidate Dashboard (curated/simplified), Volunteer Dashboard, Team Lead Dashboard. Empty states, loading skeletons.
+
+17. **[Field Mode](04-wireframes/field-mode/field-mode.md)** — Complete shift lifecycle: pre-shift check, walk list (list + map views), door card with script and response capture, follow-up questions, "Not Home" quick result. Phone banking variant, voter registration variant, GOTV door card, ride request flow. End shift confirmation, sync screen, debrief. Crash recovery. Touch target specifications.
+
+18. **[Onboarding](04-wireframes/onboarding/onboarding.md)** — Org Setup wizard (5 steps: auth, org profile, team invites, configuration, review & launch), Volunteer Onboarding (4 steps: account, tour, training, ready), BYOK Key Generation wizard (5 steps with Shamir's Secret Sharing). Post-wizard "Getting Started" checklist.
+
+19. **[Messaging](04-wireframes/messaging/messaging.md)** — Desktop split view (conversation list + thread), mobile full-screen flows, compose, candidate briefings (structured/formatted), approval requests (approve/reject/comment inline), War Room channel (election day, system alerts, issue reports), offline messaging, encryption indicators.
+
+20. **[Supporter Portal](04-wireframes/supporter/supporter-portal.md)** — Public donation page (pre-auth, tenant-branded), donation confirmation, portal home, donation history with recurring management, events with RSVP, communication preferences, public event page. Magic link + full account authentication tiers.
 
 ## UX Principles
 
