@@ -51,6 +51,7 @@ If you're new to the project, read the specs in this order:
 11. **[`spec/messaging.md`](spec/messaging.md)** — Internal communications, notifications, E2E encryption.
 12. **[`spec/press.md`](spec/press.md)** — Press, media, social media, public profiles, endorsements.
 13. **[`design/architecture/system.md`](design/architecture/system.md)** — System architecture, data model, infrastructure.
+14. **[`decisions/`](decisions/)** — 15 Architecture Decision Records extracting and formalizing decisions from all spec and design documents.
 
 ## Project Structure
 
@@ -76,7 +77,22 @@ GreenGrass/
 │   ├── ux/                        # UX design artifacts (next phase)
 │   └── architecture/
 │       └── system.md              # System architecture
-└── decisions/                     # Architecture Decision Records
+└── decisions/                     # Architecture Decision Records (ADRs)
+    ├── 001-platform-architecture.md
+    ├── 002-security-threat-model.md
+    ├── 003-identity-access-organization.md
+    ├── 004-data-model-integrity.md
+    ├── 005-offline-first-sync.md
+    ├── 006-field-operations-gotv.md
+    ├── 007-fundraising-payments.md
+    ├── 008-communications-messaging.md
+    ├── 009-compliance-legal.md
+    ├── 010-internationalization-localization.md
+    ├── 011-design-system-ux.md
+    ├── 012-external-integrations.md
+    ├── 013-analytics-ai.md
+    ├── 014-volunteer-onboarding.md
+    └── 015-product-scope.md
 ```
 
 ## Key Design Principles
