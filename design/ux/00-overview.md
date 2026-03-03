@@ -1,0 +1,135 @@
+# UX Design Overview
+
+## Purpose
+
+This directory contains the UX design artifacts for GreenGrass — a platform for managing grassroots political elections in the global south. The UX design phase follows the completion of 12 product specifications and a system architecture document.
+
+The core UX challenge: 10 distinct personas across radically different contexts share one application. A volunteer knocking doors on a low-end Android phone in rural India needs a completely different interface than an Org Admin configuring compliance settings on a desktop in Puerto Rico. The UX must serve both without compromise.
+
+## Reading Order
+
+### Phase 1: Information Architecture
+
+Start here. The IA documents define the global structure everything else hangs off of.
+
+1. **[Navigation Model](01-information-architecture/navigation-model.md)** — How the platform organizes its features into a navigable structure. Defines the desktop shell (hybrid top bar + sidebar), mobile layout (bottom tabs), and field mode (full-screen takeover). The most critical IA document.
+
+2. **[Screen Inventory](01-information-architecture/screen-inventory.md)** — Comprehensive catalog of every screen in the platform (~236 screens across 21 feature areas). Each entry identifies personas, offline capability, and mobile optimization. The master reference for wireframing and implementation scoping.
+
+3. **[Persona Views](01-information-architecture/persona-views.md)** — How the platform renders differently for each of the 10 personas. Defines home screens, sidebar sections, mobile tabs, and what each persona *doesn't* see. The "role-adaptive UX" specification.
+
+4. **[URL Structure](01-information-architecture/url-structure.md)** — Maps the screen inventory to SvelteKit routes. Defines six layout groups (public, auth, app, field-mode, portal, wizard), routing patterns, auth guards, and offline-capable routes.
+
+### Phase 2: Global Patterns (planned)
+
+Recurring UI patterns that apply across the entire platform.
+
+- **Pattern Catalog** — Inventory of recurring UI patterns (lists, detail views, builders, forms, etc.)
+- **Offline & Sync Patterns** — Sync status, data freshness indicators, conflict resolution, degradation behavior
+- **Notification Patterns** — Notification center, delivery channels, priority levels, grouping
+- **Search Patterns** — Global search, contextual search, filters, saved searches
+- **Settings & Help Patterns** — Settings hierarchy, contextual help, language switching, onboarding
+- **Security UX Patterns** — Duress mode sanitization rules, BYOK ceremony flow, panic button, session management
+
+### Phase 3: Design System Foundations (planned)
+
+The visual and component foundations.
+
+- **Foundations** — Spacing scale, color system, typography, grid, iconography
+- **Theming Strategy** — Per-tenant branding, RTL support, dark mode, high-contrast accessibility
+- **Component Inventory** — Component categories, naming conventions, state definitions
+- **Responsive Strategy** — Breakpoints, mobile vs. desktop behavior, Capacitor-specific considerations
+
+### Phase 4: Wireframes (planned)
+
+Visual artifacts for key screens and flows.
+
+- **Navigation Shell** — Desktop sidebar, mobile tabs, field mode chrome
+- **Dashboards** — All dashboard variants (campaign overview, field ops, fundraising, etc.)
+- **Field Mode** — Door-by-door canvassing flow, the highest-risk UX in the system
+- **Onboarding** — Tenant setup wizard, volunteer onboarding
+- **Messaging** — DM, group conversations, war room, candidate briefings
+- **Supporter Portal** — Donation history, profile management, event RSVPs
+
+## UX Principles
+
+These principles guide all design decisions for GreenGrass.
+
+### 1. The volunteer in the field comes first
+
+Every design decision is pressure-tested against the hardest user: a volunteer on a low-end Android phone with intermittent connectivity, walking door-to-door in a rural area. If a pattern doesn't work for them, it doesn't ship. Desktop admin interfaces are important but must never compromise the field experience.
+
+### 2. Invisible complexity
+
+10 personas share one application, but no user should feel the weight of the others. Features outside a user's access are absent — not greyed out, not hidden behind permission dialogs, but truly invisible. The Volunteer sees a simple, focused app. The Org Admin sees a full-featured platform. Neither knows the other's view exists.
+
+### 3. Offline is not an error state
+
+Offline mode is a first-class operating condition, not a degraded fallback. The UI should communicate connectivity status clearly but never make the user feel that they're using a broken version of the app. Field operations work fully offline. Data syncs when it can.
+
+### 4. Stability over dynamism in navigation
+
+The navigation structure stays stable regardless of connectivity, context, or time of day. Items don't appear and disappear as conditions change. Offline-unavailable features are greyed out with a badge, not removed. Users build muscle memory for where things are — that memory must be reliable.
+
+### 5. Security is invisible until it matters
+
+The security architecture (5-tier model, BYOK encryption, passkey auth, duress mode) is substantial, but users shouldn't feel its weight during normal operation. Login should be one tap (passkey). Encryption should be automatic. Security surfaces (audit trail, key management, duress mode) are available but not prominent. The exception: when security *needs* attention (compromised passkey, key rotation, active threat), the UI must be unambiguous and direct.
+
+### 6. Respect the device
+
+Mobile is not a shrunken desktop. Mobile screens are designed for mobile — large touch targets, vertical scrolling, one-handed operation. Desktop screens use the space — data tables, side-by-side panels, drag-and-drop. The same feature may have significantly different interfaces on each platform, and that's correct.
+
+### 7. RTL is structural, not decorative
+
+Right-to-left support is built into every layout decision from day one, not retrofitted. Sidebar position, tab bar order, icon direction, text alignment, breadcrumb direction — all defined in terms of logical properties (`inline-start`/`inline-end`), not physical ones (`left`/`right`).
+
+### 8. Election day is a different app
+
+When GOTV operations activate, the platform transforms. Dashboards change, notification priorities shift, new screens appear, field mode switches to GOTV-specific flows. This transformation is designed, not improvised — it's part of the navigation model and persona views.
+
+## Glossary
+
+| Term | Definition |
+|------|------------|
+| **Field mode** | Full-screen mobile takeover for active shift work (canvassing, phone banking, voter registration, GOTV). Replaces the normal navigation shell entirely. |
+| **Navigation shell** | The persistent UI frame around content: header bar, sidebar (desktop), bottom tab bar (mobile). |
+| **Role template** | A named collection of permissions and navigation items assigned to a user. Determines what the user sees. |
+| **Persona** | One of 10 archetypal users: Org Admin, Communications Director, Finance Director, Field Director, Volunteer Coordinator, Data Manager, Volunteer, Team Lead, Candidate, Supporter. |
+| **Layout group** | A SvelteKit routing concept: routes grouped under a shared layout without affecting the URL. GreenGrass uses six: `(public)`, `(auth)`, `(app)`, `(field-mode)`, `(portal)`, `(wizard)`. |
+| **Universal chrome** | UI elements present in all navigation contexts (except field mode): sync indicator, notification bell, user menu, language switcher, help access. |
+| **Detail panel** | A contextual right panel on desktop that shows additional information without navigating away (e.g., viewing a contact while browsing a list). |
+| **Duress mode** | A security feature where logging in with a special passkey shows a sanitized version of the platform with plausible but scrubbed data. |
+| **War room** | The real-time GOTV operations center active on election day. Includes turnout tracking, resource reallocation, issue escalation, and communication coordination. |
+| **Alliance** | A federation of sovereign organizations sharing resources, coordinating campaigns, and splitting fundraising through explicit sharing rules. |
+| **GOTV** | Get Out The Vote — election day operations focused on ensuring identified supporters actually vote. |
+
+## Cross-References to Specs
+
+| UX Concept | Primary Spec | Key Sections |
+|------------|-------------|--------------|
+| Personas and roles | `spec/users.md` | All 10 personas, role templates, permissions |
+| Core workflows | `spec/workflows.md` | 12 workflows: canvassing, fundraising, events, etc. |
+| Security UX | `spec/security.md` | 5-tier model, duress mode, passkey auth, BYOK |
+| Offline behavior | `design/architecture/system.md` | Sync protocol, offline DB, conflict resolution |
+| Election day ops | `spec/gotv.md` | War room, turnout tracking, GOTV canvassing |
+| Messaging | `spec/messaging.md` | DMs, groups, broadcasts, E2E encryption |
+| Fundraising UX | `spec/fundraising.md` | Donation forms, donor portal, compliance |
+| Communications | `spec/workflows.md` + `spec/press.md` | Email, SMS, social media, press |
+| Localization | `spec/geography.md` | 5 target countries, RTL, multilingual |
+| Support & help | `spec/support.md` | 8 onboarding wizards, knowledge base, concierge |
+| Compliance | `spec/compliance.md` | Campaign finance, data protection, consent |
+| System architecture | `design/architecture/system.md` | SvelteKit + Capacitor, API-first, tenant isolation |
+
+## Design Decisions
+
+UX-specific decisions are recorded in `decisions/ux-decisions.md` (to be created as decisions arise during Phases 2-4).
+
+Key decisions already made during Phase 1 IA work:
+
+| Decision | Choice | Document |
+|----------|--------|----------|
+| Desktop navigation paradigm | Hybrid: top bar (context) + sidebar (features) | navigation-model.md |
+| Role stacking in navigation | Grouped sections with collapsible headers | navigation-model.md |
+| Alliance navigation | Dedicated alliance section in sidebar | navigation-model.md |
+| Duress mode navigation | Sanitized real structure with scrubbed data | navigation-model.md |
+| Offline feature degradation | Grey out with offline badge (stable navigation) | navigation-model.md |
