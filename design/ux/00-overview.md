@@ -20,25 +20,33 @@ Start here. The IA documents define the global structure everything else hangs o
 
 4. **[URL Structure](01-information-architecture/url-structure.md)** — Maps the screen inventory to SvelteKit routes. Defines six layout groups (public, auth, app, field-mode, portal, wizard), routing patterns, auth guards, and offline-capable routes.
 
-### Phase 2: Global Patterns (planned)
+### Phase 2: Global Patterns
 
 Recurring UI patterns that apply across the entire platform.
 
-- **Pattern Catalog** — Inventory of recurring UI patterns (lists, detail views, builders, forms, etc.)
-- **Offline & Sync Patterns** — Sync status, data freshness indicators, conflict resolution, degradation behavior
-- **Notification Patterns** — Notification center, delivery channels, priority levels, grouping
-- **Search Patterns** — Global search, contextual search, filters, saved searches
-- **Settings & Help Patterns** — Settings hierarchy, contextual help, language switching, onboarding
-- **Security UX Patterns** — Duress mode sanitization rules, BYOK ceremony flow, panic button, session management
+5. **[Pattern Catalog](02-global-patterns/pattern-catalog.md)** — 20 recurring UI patterns: list views, detail views, builders, forms, wizards, dashboards, maps, check-in tools, field mode, and more. Cross-cutting concerns: empty states, loading, error states, accessibility.
 
-### Phase 3: Design System Foundations (planned)
+6. **[Offline & Sync Patterns](02-global-patterns/offline-sync-patterns.md)** — Five connectivity states, data freshness indicators, pending changes queue, conflict resolution, pre-loading strategy, battery and data usage awareness, shift sync lifecycle.
+
+7. **[Notification Patterns](02-global-patterns/notification-patterns.md)** — Notification center, four priority levels, delivery channels (in-app, push, email, SMS), per-persona defaults, email digests, election day notification behavior, Do Not Disturb.
+
+8. **[Search Patterns](02-global-patterns/search-patterns.md)** — Global search with type-ahead, contextual search per feature area, filter patterns, saved searches, encryption constraints on search (BYOK tenants).
+
+9. **[Settings & Help Patterns](02-global-patterns/settings-help-patterns.md)** — Three-tier settings hierarchy (org/feature/personal), contextual help panels, knowledge base, AI concierge, language switching, onboarding flows, keyboard shortcuts.
+
+10. **[Security UX Patterns](02-global-patterns/security-ux-patterns.md)** — Duress mode sanitization rules per feature area, BYOK key generation ceremony, panic button behavior, passkey auth flows, session management, trusted contact recovery, device authorization.
+
+### Phase 3: Design System Foundations
 
 The visual and component foundations.
 
-- **Foundations** — Spacing scale, color system, typography, grid, iconography
-- **Theming Strategy** — Per-tenant branding, RTL support, dark mode, high-contrast accessibility
-- **Component Inventory** — Component categories, naming conventions, state definitions
-- **Responsive Strategy** — Breakpoints, mobile vs. desktop behavior, Capacitor-specific considerations
+11. **[Foundations](03-design-system/foundations.md)** — 8px spacing scale, semantic color token system, Inter type scale, 4/8/12-column grid, elevation layers, border radius, Lucide iconography, motion tokens, z-index scale, density modes.
+
+12. **[Theming Strategy](03-design-system/theming-strategy.md)** — Per-tenant branding (color + logo), automatic derivative color generation, CSS custom property cascade, RTL via CSS logical properties, dark mode token mapping, high contrast mode, large text mode, reduced motion, theme composition layers.
+
+13. **[Component Inventory](03-design-system/component-inventory.md)** — ~125 components across 13 categories: primitives, typography, buttons, forms, layout, navigation, data display, feedback, overlays, messaging, field mode, dashboard, specialized. Naming conventions, state definitions, composition patterns.
+
+14. **[Responsive Strategy](03-design-system/responsive-strategy.md)** — Five breakpoints (640/768/1024/1280/1536px), mobile-first CSS, component adaptation tables, Capacitor native API usage, safe areas, performance budgets (150KB JS, 2s FCP on 3G), code splitting strategy, testing matrix.
 
 ### Phase 4: Wireframes (planned)
 
