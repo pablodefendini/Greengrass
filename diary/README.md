@@ -13,3 +13,5 @@ The diary captures the process, decisions, surprises, and lessons learned from d
 3. **[Information Architecture](03-information-architecture.md)** — Designing the UX skeleton for 10 personas, 236 screens, and a platform that works offline on low-end phones.
 
 4. **[The Design System and Wireframes](04-design-system-and-wireframes.md)** — Building a visual language before having a brand. System fonts over custom fonts, 8px grids, theming as a cascade, and why ASCII wireframes work better than expected.
+
+5. **[The Wireframe Audit](05-the-wireframe-audit.md)** — Auditing 21 wireframe documents for consistency, normalizing 9 early-batch docs to a standard structure, filling 15 missing wireframes, and making implicit conventions explicit.
