@@ -17,7 +17,7 @@ This document presents findings from a structural audit of all 21 wireframe docu
 | Truly missing screens | 15 | No wireframe content exists |
 | Structural consistency | 12 of 21 | Follow standard 8-section template |
 | Design system token references | 0 | No wireframe doc references token names |
-| Open questions across all docs | ~89 | 34 from early batch + 55 from later batch |
+| Open questions across all docs | ~89 | **All 89 resolved** in `decisions/016-cross-cutting-resolutions.md`. |
 | Design decisions documented | ~72+ | Primarily in later-batch docs |
 
 **Bottom line:** Coverage is strong at 83%. The primary issues are structural inconsistency in the 9 early-batch documents and the complete absence of design token references. Both are addressable without rewriting content.
@@ -241,159 +241,161 @@ Open questions extracted from all 21 wireframe documents, categorized by theme a
 
 ### Navigation & Layout (5)
 
-1. **Sidebar section collapse persistence** — Should collapsed/expanded state of sidebar sections persist across sessions or reset on login? *(navigation-shell.md)*
-2. **Detail panel memory** — When navigating away and back, should the detail panel remember what was open or reset to closed? *(navigation-shell.md)*
-3. **Notification drawer count cap** — Should the notification count badge cap at 99+, or show the actual number? *(navigation-shell.md)*
-4. **Dashboard personalization** — Should users be able to rearrange dashboard cards or hide sections? *(dashboards.md)*
-5. **Dashboard refresh interval** — What's the appropriate auto-refresh interval for each dashboard type? *(dashboards.md)*
+1. ~~**Sidebar section collapse persistence** — Should collapsed/expanded state of sidebar sections persist across sessions or reset on login? *(navigation-shell.md)*~~ **Resolved:** ADR-016 Nav §1 — Persist across sessions via localStorage + server sync.
+2. ~~**Detail panel memory** — When navigating away and back, should the detail panel remember what was open or reset to closed? *(navigation-shell.md)*~~ **Resolved:** ADR-016 Nav §2 — Reset on navigation, restore on browser back/forward.
+3. ~~**Notification drawer count cap** — Should the notification count badge cap at 99+, or show the actual number? *(navigation-shell.md)*~~ **Resolved:** ADR-016 Nav §3 — Cap at 99+. Exact count inside drawer.
+4. ~~**Dashboard personalization** — Should users be able to rearrange dashboard cards or hide sections? *(dashboards.md)*~~ **Resolved:** ADR-016 Nav §4 — No for v1. Fixed layout, role-filtered.
+5. ~~**Dashboard refresh interval** — What's the appropriate auto-refresh interval for each dashboard type? *(dashboards.md)*~~ **Resolved:** ADR-016 Nav §5 — Tiered intervals (30s–15min) with mandatory freshness indicator and manual refresh button.
 
 ### Field Operations (8)
 
-6. **Walk list sorting** — Should walk lists sort by geographic proximity (efficient routing) or by priority score (highest-value contacts first)? *(field-mode.md)*
-7. **Door card skip reasons** — How many "not home" attempts before the contact is deprioritized? *(field-mode.md)*
-8. **Map offline tile size** — How much map area should be pre-cached for offline use? *(field-mode.md)*
-9. **Script versioning in-field** — If a script is updated while volunteers are in the field, when do they see the new version? *(field-ops.md)*
-10. **Cross-campaign script reuse** — Should scripts be shareable across campaigns? *(field-ops.md)*
-11. **Turf auto-generation constraints** — What are the practical limits (max contacts per turf, max walk time)? *(field-ops.md)*
-12. **Walk list reassignment** — Can walk lists be reassigned mid-shift? *(field-ops.md)*
-13. **Canvassing results data retention** — How long are individual interaction records retained? *(field-ops.md)*
+6. ~~**Walk list sorting** — Should walk lists sort by geographic proximity (efficient routing) or by priority score (highest-value contacts first)? *(field-mode.md)*~~ **Resolved:** ADR-016 Field §6 — Route-optimized by default; Field Director can override to priority-sorted.
+7. ~~**Door card skip reasons** — How many "not home" attempts before the contact is deprioritized? *(field-mode.md)*~~ **Resolved:** ADR-016 Field §7 — 3× Not Home = deprioritize to phone queue. Refused = immediate stop. Come Back Later doesn't count.
+8. ~~**Map offline tile size** — How much map area should be pre-cached for offline use? *(field-mode.md)*~~ **Resolved:** ADR-016 Field §8 — Assigned turf + 500m buffer at street-level zoom.
+9. ~~**Script versioning in-field** — If a script is updated while volunteers are in the field, when do they see the new version? *(field-ops.md)*~~ **Resolved:** ADR-016 Field §9 — Active shifts version-locked; urgent updates appear on next door card.
+10. ~~**Cross-campaign script reuse** — Should scripts be shareable across campaigns? *(field-ops.md)*~~ **Resolved:** ADR-016 Field §10 — Copy-as-template (not linked). Org-wide template library.
+11. ~~**Turf auto-generation constraints** — What are the practical limits (max contacts per turf, max walk time)? *(field-ops.md)*~~ **Resolved:** ADR-016 Field §11 — Default 50 contacts / 2 hours per turf, configurable, mandatory preview.
+12. ~~**Walk list reassignment** — Can walk lists be reassigned mid-shift? *(field-ops.md)*~~ **Resolved:** ADR-016 Field §12 — Yes. Completed doors stay, new assignee picks up, conflicts flagged for review.
+13. ~~**Canvassing results data retention** — How long are individual interaction records retained? *(field-ops.md)*~~ **Resolved:** ADR-016 Field §13 / ADR-016 §4 — Operational tier, default 2 years.
 
 ### Messaging & Communications (10)
 
-14. **Message retention** — How long are messages stored? Is there a configurable retention policy? *(messaging.md)*
-15. **Message search** — Should full-text search be available for messages, and how does this interact with E2E encryption? *(messaging.md)*
-16. **Read receipts** — Should read receipts be visible to senders? Opt-in or opt-out? *(messaging.md)*
-17. **Email builder complexity** — Should the template builder support conditional content blocks in v1? *(communications.md)*
-18. **WhatsApp template approval** — Should approval status be visible in the composer? *(communications.md)*
-19. **SMS A/B testing** — Is message body A/B testing feasible given lower SMS volumes? *(communications.md)*
-20. **Drip sequence builder** — Visual flow builder or simple trigger + delay + send rules for v1? *(communications.md)*
-21. **Cross-channel orchestration** — Should the system prevent same-topic messages across channels on the same day? *(communications.md)*
-22. **Approval workflow for social posts** — All posts or only above certain sensitivity? *(social-media.md)*
-23. **Content library** — Shared asset library or file upload for v1? *(social-media.md)*
+14. ~~**Message retention** — How long are messages stored? Is there a configurable retention policy? *(messaging.md)*~~ **Resolved:** ADR-016 §4 — Tiered data retention policy. Operational tier: default 2 years, configurable 90 days–5 years.
+15. ~~**Message search** — Should full-text search be available for messages, and how does this interact with E2E encryption? *(messaging.md)*~~ **Resolved:** ADR-016 Comms §15 — Full-text search only with key escrow; metadata-only search for E2E conversations.
+16. ~~**Read receipts** — Should read receipts be visible to senders? Opt-in or opt-out? *(messaging.md)*~~ **Resolved:** ADR-016 Comms §16 — Visible by default, opt-out per user (symmetric). Disabled in duress mode.
+17. ~~**Email builder complexity** — Should the template builder support conditional content blocks in v1? *(communications.md)*~~ **Resolved:** ADR-016 Comms §17 — No. Merge fields + segment-based sends for v1.
+18. ~~**WhatsApp template approval** — Should approval status be visible in the composer? *(communications.md)*~~ **Resolved:** ADR-016 Comms §18 — Yes, inline status badge (approved/pending/rejected).
+19. ~~**SMS A/B testing** — Is message body A/B testing feasible given lower SMS volumes? *(communications.md)*~~ **Resolved:** ADR-016 Comms §19 — Defer to v2. Volumes unlikely to produce statistical significance.
+20. ~~**Drip sequence builder** — Visual flow builder or simple trigger + delay + send rules for v1? *(communications.md)*~~ **Resolved:** ADR-016 Comms §20 — Linear rules for v1. Visual flow builder is a **v2 tentpole feature**.
+21. ~~**Cross-channel orchestration** — Should the system prevent same-topic messages across channels on the same day? *(communications.md)*~~ **Resolved:** ADR-016 §2 — Two-layer orchestration: per-channel caps + cross-channel quiet window (default 24h).
+22. ~~**Approval workflow for social posts** — All posts or only above certain sensitivity? *(social-media.md)*~~ **Resolved:** ADR-016 Comms §22 — Configurable; default all posts require approval. OA can relax.
+23. ~~**Content library** — Shared asset library or file upload for v1? *(social-media.md)*~~ **Resolved:** ADR-016 Comms §23 — File upload + recent uploads panel for v1. Shared content library is a **v2 tentpole feature**.
 
 ### Social Media (2)
 
-24. **Cross-posting analytics** — Show as 1 post with 4 platform results, or 4 separate posts? *(social-media.md)*
-25. **TikTok video creation** — In-platform editing or external only? *(social-media.md)*
+24. ~~**Cross-posting analytics** — Show as 1 post with 4 platform results, or 4 separate posts? *(social-media.md)*~~ **Resolved:** ADR-016 Social §24 — 1 post with aggregate + per-platform breakdown.
+25. ~~**TikTok video creation** — In-platform editing or external only? *(social-media.md)*~~ **Resolved:** ADR-016 Social §25 — External only. Upload finished videos.
 
 ### Events (5)
 
-26. **Multi-day events** — Single event with multiple dates or linked events? *(events.md)*
-27. **Paid tickets** — Should events support ticket pricing? Overlaps with fundraising. *(events.md)*
-28. **Recurring events** — Auto-create instances or manual duplication? *(events.md)*
-29. **In-event broadcast** — Should attendee messaging be available during events? *(events.md)*
-30. **Multi-staff offline check-in** — How are conflicts resolved when multiple staff check in attendees offline? *(events.md)*
+26. ~~**Multi-day events** — Single event with multiple dates or linked events? *(events.md)*~~ **Resolved:** ADR-016 Events §26 — Single event with multiple date slots.
+27. ~~**Paid tickets** — Should events support ticket pricing? Overlaps with fundraising. *(events.md)*~~ **Resolved:** ADR-016 §3 — Yes. Ticket revenue flows through fundraising pipeline as donation + event metadata.
+28. ~~**Recurring events** — Auto-create instances or manual duplication? *(events.md)*~~ **Resolved:** ADR-016 Events §28 — Auto-create with edit/cancel-one-or-all pattern.
+29. ~~**In-event broadcast** — Should attendee messaging be available during events? *(events.md)*~~ **Resolved:** ADR-016 Events §29 — Staff via app notification; attendees via SMS to checked-in with phone numbers.
+30. ~~**Multi-staff offline check-in** — How are conflicts resolved when multiple staff check in attendees offline? *(events.md)*~~ **Resolved:** ADR-016 Events §30 — Last-write-wins, earliest timestamp, duplicate logged.
 
 ### Fundraising (6)
 
-31. **Refund time limits** — Maximum age for refundable donations? Processor policies vary. *(fundraising.md)*
-32. **Pledge reminder channels** — All channels (email, SMS, WhatsApp) or just email? *(fundraising.md)*
-33. **Cash photo requirements** — Required above certain amount? Balances audit vs. field friction. *(fundraising.md)*
-34. **A/B test variant count** — Support more than 2 variants? *(fundraising.md)*
-35. **Alliance split dispute resolution** — Formal process beyond approval flow? *(fundraising.md)*
-36. **Dashboard data freshness for fundraising** — How current should fundraising metrics be? *(dashboards.md)*
+31. ~~**Refund time limits** — Maximum age for refundable donations? Processor policies vary. *(fundraising.md)*~~ **Resolved:** ADR-016 §3 — Org-configurable maximum, default 90 days, bounded by processor policy.
+32. ~~**Pledge reminder channels** — All channels (email, SMS, WhatsApp) or just email? *(fundraising.md)*~~ **Resolved:** ADR-016 §2 — All consented channels, default email, governed by cross-channel quiet window.
+33. ~~**Cash photo requirements** — Required above certain amount? Balances audit vs. field friction. *(fundraising.md)*~~ **Resolved:** ADR-016 Fund §33 — Required above org-configurable threshold (default $100 USD equivalent).
+34. ~~**A/B test variant count** — Support more than 2 variants? *(fundraising.md)*~~ **Resolved:** ADR-016 Fund §34 — 2 variants (A/B) for v1.
+35. ~~**Alliance split dispute resolution** — Formal process beyond approval flow? *(fundraising.md)*~~ **Resolved:** ADR-016 Fund §35 — Escalation to alliance lead + 14-day timeout, then revert to default split.
+36. ~~**Dashboard data freshness for fundraising** — How current should fundraising metrics be? *(dashboards.md)*~~ **Resolved:** ADR-016 Fund §36 — Covered by Nav §5, Campaign tier (5-min refresh + freshness indicator).
 
 ### Activism (5)
 
-37. **Multi-target campaigns** — Single letter campaign with multiple targets? *(activism.md)*
-38. **AI model choice** — Speed, multilingual capability, and cost tradeoffs? *(activism.md)*
-39. **Printable letters** — Generate PDF letters in addition to email? *(activism.md)*
-40. **Comment submission verification** — How to verify regulatory body email accepts comments? *(activism.md)*
-41. **Supporter identity verification** — Constituency validation vs. friction? *(activism.md)*
+37. ~~**Multi-target campaigns** — Single letter campaign with multiple targets? *(activism.md)*~~ **Resolved:** ADR-016 Activism §37 — Yes. One campaign, multiple targets, one letter per target per supporter.
+38. ~~**AI model choice** — Speed, multilingual capability, and cost tradeoffs? *(activism.md)*~~ **Resolved:** ADR-016 Activism §38 — BYOM (Bring Your Own Model). Org-configurable AI provider with platform default fallback.
+39. ~~**Printable letters** — Generate PDF letters in addition to email? *(activism.md)*~~ **Resolved:** ADR-016 Activism §39 — Yes. "Download as PDF" option on supporter action page.
+40. ~~**Comment submission verification** — How to verify regulatory body email accepts comments? *(activism.md)*~~ **Resolved:** ADR-016 Activism §40 — Manual staff verification + delivery status tracking (Sent/Delivered/Bounced).
+41. ~~**Supporter identity verification** — Constituency validation vs. friction? *(activism.md)*~~ **Resolved:** ADR-016 Activism §41 — Optional per campaign, default off (self-reported). Adds postal code field when enabled.
 
 ### Press & Media (5)
 
-42. **Embargo enforcement** — Technical enforcement or trust-based tracking? *(press.md)*
-43. **Crisis communications mode** — Dedicated mode or urgent flag sufficient? *(press.md)*
-44. **Coverage sentiment** — Auto-suggest from headline analysis or manual only? *(press.md)*
-45. **Public endorsement display** — Where exactly do public endorsements surface? *(press.md)*
-46. **Multi-language press releases** — Simultaneous or separate releases? *(press.md)*
+42. ~~**Embargo enforcement** — Technical enforcement or trust-based tracking? *(press.md)*~~ **Resolved:** ADR-016 Press §42 — Trust-based tracking with audit trail. Flag breaches on journalist contact records.
+43. ~~**Crisis communications mode** — Dedicated mode or urgent flag sufficient? *(press.md)*~~ **Resolved:** ADR-016 Press §43 — Urgent flag with streamlined approval, not a separate mode.
+44. ~~**Coverage sentiment** — Auto-suggest from headline analysis or manual only? *(press.md)*~~ **Resolved:** ADR-016 Press §44 — Manual only for v1. Multilingual NLP too unreliable for global south media.
+45. ~~**Public endorsement display** — Where exactly do public endorsements surface? *(press.md)*~~ **Resolved:** ADR-016 Press §45 — Three locations: Kanban pipeline, candidate dashboard, public page.
+46. ~~**Multi-language press releases** — Simultaneous or separate releases? *(press.md)*~~ **Resolved:** ADR-016 Press §46 — Single release with language variant tabs. Per-variant distribution sublists.
 
 ### GOTV & Election Day (5)
 
-47. **Official election data feeds** — Can the platform integrate with electoral authority APIs? *(gotv.md)*
-48. **Alliance ride sharing** — Cross-org driver pools on election day? *(gotv.md)*
-49. **Reallocation algorithm** — Simple rule-based vs. predictive model? *(gotv.md)*
-50. **Results entry security** — Preventing fraudulent results entries? *(gotv.md)*
-51. **Post-election data retention** — How long is GOTV operational data retained? *(gotv.md)*
+47. ~~**Official election data feeds** — Can the platform integrate with electoral authority APIs? *(gotv.md)*~~ **Resolved:** ADR-016 GOTV §47 — Standard election data schema with API connector + CSV manual import. No specific integrations promised.
+48. ~~**Alliance ride sharing** — Cross-org driver pools on election day? *(gotv.md)*~~ **Resolved:** ADR-016 GOTV §48 — Yes, opt-in per alliance. Same-org drivers prioritized, then shared pool.
+49. ~~**Reallocation algorithm** — Simple rule-based vs. predictive model? *(gotv.md)*~~ **Resolved:** ADR-016 GOTV §49 — Rule-based for v1. Transparent, auditable. Predictive via BYOM in future.
+50. ~~**Results entry security** — Preventing fraudulent results entries? *(gotv.md)*~~ **Resolved:** ADR-016 GOTV §50 — Multi-layer (identity, geolocation, photo, cross-check, audit trail). No single layer blocking.
+51. ~~**Post-election data retention** — How long is GOTV operational data retained? *(gotv.md)*~~ **Resolved:** ADR-016 §4 — Operational tier: default 2 years, configurable 90 days–5 years.
 
 ### Settings & Administration (5)
 
-52. **Settings delegation** — Can specific settings categories be delegated to non-OA roles? *(settings.md)*
-53. **Two-OA approval** — Should critical settings changes require a second OA? *(settings.md)*
-54. **Settings import/export** — Export/import configuration between tenants? *(settings.md)*
-55. **API rate limits** — Configurable per key or plan level? *(settings.md)*
-56. **Integration health monitoring** — Proactive alerting for failing integrations? *(settings.md)*
+52. ~~**Settings delegation** — Can specific settings categories be delegated to non-OA roles? *(settings.md)*~~ **Resolved:** ADR-016 §1 — No, OA-only for v1. Revisit in v2.
+53. ~~**Two-OA approval** — Should critical settings changes require a second OA? *(settings.md)*~~ **Resolved:** ADR-016 Settings §53 — Yes, for destructive ops only. Single-OA orgs get 48-hour cooling-off instead.
+54. ~~**Settings import/export** — Export/import configuration between tenants? *(settings.md)*~~ **Resolved:** ADR-016 Settings §54 — Export-only (JSON snapshot) for v1. Cross-tenant import deferred.
+55. ~~**API rate limits** — Configurable per key or plan level? *(settings.md)*~~ **Resolved:** ADR-016 Settings §55 — Plan-level defaults with per-key overrides within plan ceiling.
+56. ~~**Integration health monitoring** — Proactive alerting for failing integrations? *(settings.md)*~~ **Resolved:** ADR-016 Settings §56 — Yes. Health checks + 3-tier alert escalation (in-app → email → dashboard banner).
 
 ### Authentication & Security (4)
 
-57. **Passkey sync** — Allow cloud-synced passkeys or require device-bound only? *(auth.md)*
-58. **TOTP fallback** — Add app-based codes as additional fallback for low-connectivity areas? *(auth.md)*
-59. **OA recovery** — How does recovery work when the only OA has no trusted contacts? *(auth.md)*
-60. **Low-end device passkey support** — Minimum device/OS requirement for WebAuthn? *(auth.md)*
+57. ~~**Passkey sync** — Allow cloud-synced passkeys or require device-bound only? *(auth.md)*~~ **Resolved:** ADR-016 Auth §57 — Allow cloud-synced. Device-bound only at Maximum security tier.
+58. ~~**TOTP fallback** — Add app-based codes as additional fallback for low-connectivity areas? *(auth.md)*~~ **Resolved:** ADR-016 Auth §58 — Yes, opt-in at Enhanced/Maximum tiers.
+59. ~~**OA recovery** — How does recovery work when the only OA has no trusted contacts? *(auth.md)*~~ **Resolved:** ADR-016 Auth §59 — Platform-assisted, 72-hour cooling-off, identity verification via registration channel.
+60. ~~**Low-end device passkey support** — Minimum device/OS requirement for WebAuthn? *(auth.md)*~~ **Resolved:** ADR-016 Auth §60 — Android 9+ / iOS 16+ / Chrome 109+. Below threshold falls back to magic link.
 
 ### User Profile (3)
 
-61. **Profile photo privacy** — Visible to supporters or internal-only? *(profile.md)*
-62. **Notification sounds** — Custom sounds or default OS? *(profile.md)*
-63. **Multi-tenant notifications** — Show notifications from non-active orgs? *(profile.md)*
+61. ~~**Profile photo privacy** — Visible to supporters or internal-only? *(profile.md)*~~ **Resolved:** ADR-016 Profile §61 — Internal-only by default. Opt-in to supporter-visible.
+62. ~~**Notification sounds** — Custom sounds or default OS? *(profile.md)*~~ **Resolved:** ADR-016 Profile §62 — OS default only. Settings: sounds on/off, vibration on/off.
+63. ~~**Multi-tenant notifications** — Show notifications from non-active orgs? *(profile.md)*~~ **Resolved:** ADR-016 Profile §63 — Yes, with org badge. Mutable per org. Grouped in separate drawer section.
 
 ### Support & Help (4)
 
-64. **AI concierge language** — Use configured language or detect from question? *(help.md)*
-65. **Training completion gating** — Block shifts until required training is complete? *(help.md)*
-66. **External content** — Allow external resource links in knowledge base? *(help.md)*
-67. **AI hallucination prevention** — Ground concierge in KB only or allow broader reasoning? *(help.md)*
+64. ~~**AI concierge language** — Use configured language or detect from question? *(help.md)*~~ **Resolved:** ADR-016 Help §64 — Detect from question, fall back to configured language.
+65. ~~**Training completion gating** — Block shifts until required training is complete? *(help.md)*~~ **Resolved:** ADR-016 Help §65 — Yes, for OA-designated safety-critical modules only.
+66. ~~**External content** — Allow external resource links in knowledge base? *(help.md)*~~ **Resolved:** ADR-016 Help §66 — Yes, with visual distinction. Links only, no embedding/caching.
+67. ~~**AI hallucination prevention** — Ground concierge in KB only or allow broader reasoning? *(help.md)*~~ **Resolved:** ADR-016 Help §67 — KB-grounded only. Explicit "I don't know" for unanswerable questions.
 
 ### Public Pages (4)
 
-68. **Custom domains** — Support custom domains for public pages? *(public.md)*
-69. **Page analytics** — Built-in or external tools? *(public.md)*
-70. **Volunteer signup A/B testing** — Test variations on PUB-007? *(public.md)*
-71. **Open Graph images** — Auto-generated or manually uploaded? *(public.md)*
+68. ~~**Custom domains** — Support custom domains for public pages? *(public.md)*~~ **Resolved:** ADR-016 Public §68 — Yes, v1. SSL via Let's Encrypt. Default: GreenGrass subdomain.
+69. ~~**Page analytics** — Built-in or external tools? *(public.md)*~~ **Resolved:** ADR-016 Public §69 — Built-in lightweight (views, conversions, UTM). No third-party tracking in v1.
+70. ~~**Volunteer signup A/B testing** — Test variations on PUB-007? *(public.md)*~~ **Resolved:** ADR-016 Public §70 — Defer to v2. Extend fundraising A/B infrastructure when mature.
+71. ~~**Open Graph images** — Auto-generated or manually uploaded? *(public.md)*~~ **Resolved:** ADR-016 Public §71 — Auto-generated from title + logo + colors, with manual override.
 
 ### Onboarding (3)
 
-72. **Wizard skip behavior** — Can optional wizard steps be skipped? What's the minimum viable path? *(onboarding.md)*
-73. **Wizard resume** — If a wizard is abandoned mid-way, does it save progress? *(onboarding.md)*
-74. **Post-wizard checklist** — Is the "Getting Started" checklist dismissible or persistent until complete? *(onboarding.md)*
+72. ~~**Wizard skip behavior** — Can optional wizard steps be skipped? What's the minimum viable path? *(onboarding.md)*~~ **Resolved:** ADR-016 Onboarding §72 — 3 required steps (org name, admin, security tier). All others skippable to checklist.
+73. ~~**Wizard resume** — If a wizard is abandoned mid-way, does it save progress? *(onboarding.md)*~~ **Resolved:** ADR-016 Onboarding §73 — Yes, auto-save after each step. Resume on next login.
+74. ~~**Post-wizard checklist** — Is the "Getting Started" checklist dismissible or persistent until complete? *(onboarding.md)*~~ **Resolved:** ADR-016 Onboarding §74 — Persistent until required items done, then dismissible.
 
 ### Supporter Portal (3)
 
-75. **Authentication tiers** — Should supporters need full accounts or just magic link access? *(supporter-portal.md)*
-76. **Portal branding** — How much branding customization is available for the supporter portal? *(supporter-portal.md)*
-77. **Mobile portal** — Is the portal a separate mobile experience or responsive web? *(supporter-portal.md)*
+75. ~~**Authentication tiers** — Should supporters need full accounts or just magic link access? *(supporter-portal.md)*~~ **Resolved:** ADR-016 Portal §75 — Already decided: magic link for basic, full account for management.
+76. ~~**Portal branding** — How much branding customization is available for the supporter portal? *(supporter-portal.md)*~~ **Resolved:** ADR-016 Portal §76 — Logo, colors, content. Fixed layout. No CSS overrides.
+77. ~~**Mobile portal** — Is the portal a separate mobile experience or responsive web? *(supporter-portal.md)*~~ **Resolved:** ADR-016 Portal §77 — Responsive web, mobile-first. No native app. PWA capabilities incremental.
 
 ### Alliance (5)
 
-78. **Cross-alliance data visibility** — What contact data is shared vs. kept private? *(alliance.md)*
-79. **Alliance hierarchy** — Is the alliance flat or can there be sub-alliances? *(alliance.md)*
-80. **Joint campaign ownership** — When a joint campaign ends, who owns the data? *(alliance.md)*
-81. **Alliance dashboard permissions** — Can member org admins see other members' metrics? *(alliance.md)*
-82. **Affiliation request SLA** — Is there a timeout for unanswered affiliation requests? *(alliance.md)*
+78. ~~**Cross-alliance data visibility** — What contact data is shared vs. kept private? *(alliance.md)*~~ **Resolved:** ADR-016 Alliance §78 — Contact existence + aggregates shared; interaction details private. OA can loosen.
+79. ~~**Alliance hierarchy** — Is the alliance flat or can there be sub-alliances? *(alliance.md)*~~ **Resolved:** ADR-016 Alliance §79 — Flat for v1. No sub-alliances.
+80. ~~**Joint campaign ownership** — When a joint campaign ends, who owns the data? *(alliance.md)*~~ **Resolved:** ADR-016 Alliance §80 — Lead org retains joint record; members keep their own interaction data.
+81. ~~**Alliance dashboard permissions** — Can member org admins see other members' metrics? *(alliance.md)*~~ **Resolved:** ADR-016 Alliance §81 — Aggregate only by default. Per-member visibility requires all-member opt-in.
+82. ~~**Affiliation request SLA** — Is there a timeout for unanswered affiliation requests? *(alliance.md)*~~ **Resolved:** ADR-016 Alliance §82 — 30-day timeout with reminders at 7/14/21 days. No auto-approval.
 
 ### CRM & Data (5)
 
-83. **Dedup confidence threshold** — What match confidence level triggers auto-merge vs. manual review? *(crm.md)*
-84. **Import rollback** — Can a completed import be fully rolled back? *(crm.md)*
-85. **Segment refresh** — How often are dynamic segments recalculated? *(crm.md)*
-86. **Data export audit** — Should exports require a reason for the audit trail? *(crm.md)*
-87. **Tag taxonomy** — Should tags be flat or hierarchical? *(crm.md)*
+83. ~~**Dedup confidence threshold** — What match confidence level triggers auto-merge vs. manual review? *(crm.md)*~~ **Resolved:** ADR-016 CRM §83 — Three tiers: 95%+ auto-merge, 70–94% review queue, <70% ignore.
+84. ~~**Import rollback** — Can a completed import be fully rolled back? *(crm.md)*~~ **Resolved:** ADR-016 §4 — Yes, within rollback window (default 30 days, configurable 7–90 days). Auto-expires.
+85. ~~**Segment refresh** — How often are dynamic segments recalculated? *(crm.md)*~~ **Resolved:** ADR-016 CRM §85 — On access + daily background refresh. Manual refresh available.
+86. ~~**Data export audit** — Should exports require a reason for the audit trail? *(crm.md)*~~ **Resolved:** ADR-016 CRM §86 — Yes, for bulk exports (100+ records). Predefined reason list + audit log.
+87. ~~**Tag taxonomy** — Should tags be flat or hierarchical? *(crm.md)*~~ **Resolved:** ADR-016 CRM §87 — Flat with optional prefix convention (e.g., `region:north`). Prefix filtering in tag picker.
 
 ### Cross-Cutting (2)
 
-88. **Dashboards — real-time vs. polling** — Should dashboards use WebSockets or polling? *(dashboards.md, gotv.md)*
-89. **Dashboard widget library** — Should there be a standardized set of dashboard widgets? *(dashboards.md)*
+88. ~~**Dashboards — real-time vs. polling** — Should dashboards use WebSockets or polling? *(dashboards.md, gotv.md)*~~ **Resolved:** ADR-016 Cross §88 — Polling for v1 (covered by Nav §5). WebSockets evaluated for v2.
+89. ~~**Dashboard widget library** — Should there be a standardized set of dashboard widgets? *(dashboards.md)*~~ **Resolved:** ADR-016 Cross §89 — Yes. Fixed vocabulary: metric card, bar/line chart, table, map, status list, progress bar, alert banner.
 
-**Total: 89 questions across 21 documents.**
+**Total: 89 questions across 21 documents. All 89 resolved (ADR-016).**
 
 ### Contradictions and Overlaps
 
-| Questions | Conflict |
-|-----------|----------|
-| #27 (paid tickets) + #31 (fundraising) | Paid events overlap with fundraising. Need to decide if ticket revenue flows through the donation pipeline or a separate system. |
-| #14 (message retention) + #51 (GOTV data retention) + #84 (import rollback) | Three separate retention questions. Should be answered with a unified data retention policy. |
-| #21 (cross-channel orchestration) + #32 (pledge reminder channels) | Both touch on cross-channel coordination. A unified frequency/orchestration policy would answer both. |
+All contradictions and overlaps resolved in `decisions/016-cross-cutting-resolutions.md`.
+
+| Questions | Conflict | Resolution |
+|-----------|----------|------------|
+| #27 (paid tickets) + #31 (fundraising) | Paid events overlap with fundraising. | **Resolved:** ADR-016 §3 — Ticket revenue flows through fundraising pipeline. |
+| #14 (message retention) + #51 (GOTV data retention) + #84 (import rollback) | Three separate retention questions. | **Resolved:** ADR-016 §4 — Tiered data retention policy (operational / compliance / audit trail / rollback). |
+| #21 (cross-channel orchestration) + #32 (pledge reminder channels) | Both touch on cross-channel coordination. | **Resolved:** ADR-016 §2 — Two-layer orchestration model. |
 
 ---
 
@@ -612,9 +614,11 @@ Design decisions extracted from all 21 wireframe documents. The early-batch docs
 
 ### Contradictions Found
 
-| Decision A | Decision B | Tension |
-|------------|------------|---------|
-| "All settings OA-only" (settings.md) | Open question #52: "Can settings be delegated?" | The decision says no, the question asks if it should change. Needs resolution. |
-| "Frequency caps org-wide" (communications.md) | Open question #21: "Cross-channel orchestration" | Org-wide caps are per-channel; cross-channel may need different approach. |
+Both contradictions resolved in `decisions/016-cross-cutting-resolutions.md`.
+
+| Decision A | Decision B | Tension | Resolution |
+|------------|------------|---------|------------|
+| "All settings OA-only" (settings.md) | Open question #52: "Can settings be delegated?" | The decision says no, the question asks if it should change. | **Resolved:** ADR-016 §1 — OA-only confirmed for v1. |
+| "Frequency caps org-wide" (communications.md) | Open question #21: "Cross-channel orchestration" | Org-wide caps are per-channel; cross-channel may need different approach. | **Resolved:** ADR-016 §2 — Two complementary layers, not contradictory. |
 
 No other contradictions found. Decisions are remarkably consistent across documents.
