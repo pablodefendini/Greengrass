@@ -4,6 +4,26 @@
 
 These wireframes define the persistent UI frame around all application content — the header bar, sidebar, bottom tabs, and field mode chrome. Every screen in the platform lives inside one of these shells. Getting the shell right is prerequisite to every other wireframe.
 
+## Shell Variants
+
+The navigation shell does not correspond to individual screens in the screen inventory — it is the persistent frame around all screens. This document defines the following shell variants:
+
+| Variant | Platform | Personas | Offline | Section |
+|---------|----------|----------|---------|---------|
+| Desktop — Sidebar Expanded | Desktop | All staff | N/A (shell adapts) | Desktop Shell |
+| Desktop — Sidebar Collapsed | Desktop | All staff | N/A | Desktop Shell |
+| Desktop — Detail Panel | Desktop | All staff | N/A | Desktop Shell |
+| Desktop — Notification Drawer | Desktop | All staff | N/A | Desktop Shell |
+| Desktop — RTL Layout | Desktop | All staff | N/A | Desktop Shell |
+| Mobile — Standard App | Mobile | All staff | N/A | Mobile Shell |
+| Field Mode Shell | Mobile | V, TL | Yes (full offline) | Field Mode Shell |
+| Wizard Shell | Both | OA, V | No | Wizard Shell |
+| Supporter Portal Shell | Both | S, Public | No | Supporter Portal Shell |
+
+All shells degrade gracefully when offline: features requiring connectivity show greyed-out sidebar/tab items with an offline badge. The shell itself always renders — navigation stability is a core principle.
+
+---
+
 ## Desktop Shell — Sidebar Expanded
 
 The default desktop experience for all staff personas. Sidebar at 240px, collapsible.
@@ -966,6 +986,48 @@ Minimal navigation. Tenant-branded. Public-facing.
 - **High contrast mode:** All borders 2px, focus rings 3px with 2px offset, link underlines always visible.
 
 ---
+
+## Empty States
+
+### Notification Drawer — Empty
+
+```
+┌────────────────────────────────────────┐
+│  Notifications                    Mark │
+│  ────────────────                 all  │
+│                                        │
+│              🔔                        │
+│                                        │
+│       No notifications yet             │
+│                                        │
+│  You'll see messages, approvals,       │
+│  and alerts here as they arrive.       │
+│                                        │
+└────────────────────────────────────────┘
+```
+
+### Sidebar — Offline
+
+When the device is offline, the sidebar reflects this:
+- Online-only items: greyed text with `◌` offline badge
+- Offline-capable items: normal styling, fully functional
+- The sidebar structure never changes — items don't disappear, they grey out
+
+---
+
+## Design Decisions
+
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| Hybrid nav (top bar + sidebar) | Context in top bar, features in sidebar | Top bar for org/search/notifications; sidebar for feature navigation |
+| Stable nav on offline | Grey out items, don't remove | Users build muscle memory for where items are |
+| Sidebar 240px default | Collapsible to 56px icon rail | Wide enough for labels; collapsible for content-heavy views |
+| Field mode as full-screen takeover | Replaces entire shell | Volunteers need maximum screen space; no admin nav distraction |
+| Wizard shell as minimal frame | Progress bar + content only | Prevents wizard abandonment from sidebar distraction |
+| Per-persona mobile tab bars | 4–5 tabs customized per role | Each persona gets their most-used features in bottom tabs |
+| "More" tab for overflow | Bottom sheet with remaining items | Mobile can't fit all nav items; "More" provides access without hamburger |
+| Detail panel slides from right | Overlay on content, doesn't push sidebar | Contextual info without losing navigation context |
+| RTL via logical properties | `inline-start`/`inline-end` | Structural RTL, not mirrored CSS — works for all layout complexities |
 
 ## Open Questions
 

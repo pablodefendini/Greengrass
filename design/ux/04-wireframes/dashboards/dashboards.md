@@ -4,6 +4,41 @@
 
 Every persona has a dashboard as their home screen. Dashboards are read-heavy, action-light — they answer "how is everything going?" and surface items needing attention. This document wireframes the key dashboard variants.
 
+## Scope
+
+| ID | Screen | Personas | Offline | Mobile | Section |
+|----|--------|----------|---------|--------|---------|
+| DASH-001 | Campaign Overview Dashboard | OA, C | No | Yes | Campaign Overview |
+| DASH-002 | Field Operations Dashboard | OA, FiD | No | Yes | Field Operations |
+| DASH-003 | Fundraising Dashboard | OA, FD | No | Yes | Fundraising |
+| DASH-004 | Communications Dashboard | OA, CD | No | Yes | Communications |
+| DASH-005 | Volunteer Dashboard | OA, VC | No | Yes | Volunteer |
+| DASH-006 | Data Quality Dashboard | OA, DM | No | Desktop | Data Quality |
+| DASH-007 | Compliance Dashboard | OA, FD | No | Desktop | Compliance |
+| DASH-008 | GOTV War Room Dashboard | OA, FiD | No | Yes | GOTV War Room |
+| DASH-009 | Team Lead Dashboard | TL | No | Primary | Team Lead |
+| DASH-010 | Candidate Dashboard | C | No | Yes | Candidate |
+| DASH-011 | Alliance Dashboard | OA | No | Yes | Cross-ref → alliance.md |
+
+All dashboards are online-only. Dashboards require server data to render — when offline, the dashboard shows the last-cached version with a "Last updated: [timestamp]" indicator and a "Data may be outdated" banner.
+
+## Dashboard Navigation Context
+
+Each persona's dashboard is their home screen — the first screen after login. The sidebar shows "Dashboard" as the first item in the "OVERVIEW" section for every persona. Each persona sees only their own dashboard:
+
+- **Org Admin** → DASH-001 (Campaign Overview)
+- **Field Director** → DASH-002 (Field Operations)
+- **Finance Director** → DASH-003 (Fundraising)
+- **Communications Director** → DASH-004 (Communications)
+- **Volunteer Coordinator** → DASH-005 (Volunteer)
+- **Data Manager** → DASH-006 (Data Quality)
+- **Team Lead** → DASH-009 (Team Lead)
+- **Candidate** → DASH-010 (Candidate)
+
+The GOTV War Room Dashboard (DASH-008) replaces the Field Director's dashboard during GOTV activation and is also accessible to the Org Admin.
+
+---
+
 ## Dashboard Layout Principles
 
 - **Widget grid:** 3-4 columns on desktop, 2 on tablet, 1 on mobile
@@ -593,6 +628,380 @@ Each widget shows its own skeleton until its data arrives.
 
 ---
 
+## DASH-004: Communications Dashboard (Communications Director)
+
+All outreach channels in one view. Email, SMS/WhatsApp, social media, and press coverage.
+
+### Desktop
+
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  Communications                                    Last updated: 3 min ago  ↻│
+│  ───────────────────────────────────────────── Date range: [Last 30 days ▾] │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  📧 Emails    │  │  💬 SMS/WA    │  │  📱 Social    │  │  📰 Coverage │    │
+│  │  12,450 sent  │  │  3,200 sent   │  │  42 posts     │  │  7 mentions  │    │
+│  │  42% open     │  │  94% delivrd  │  │  18.4K reach  │  │  5 positive  │    │
+│  │  8.3% click   │  │  12% response │  │  ↑ 22%       │  │  2 neutral   │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Email Performance (30 days)    │  │  Audience Growth                 │   │
+│  │  ───────────────────────        │  │  ──────────────                  │   │
+│  │                                 │  │                                   │   │
+│  │  50%┤     __                    │  │  14K┤              ___/          │   │
+│  │  40%┤ ___/  \___     ___       │  │  12K┤         ____/              │   │
+│  │  30%┤/          \___/   \      │  │  10K┤    ____/                   │   │
+│  │  20%┤                    \_    │  │   8K┤___/                        │   │
+│  │  10%┤                          │  │   6K┤                             │   │
+│  │      W1  W2  W3  W4            │  │      W1  W2  W3  W4              │   │
+│  │                                 │  │                                   │   │
+│  │  ── Open rate  ── Click rate    │  │  ── Email  ── SMS  ── Social    │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Recent Sends                   │  │  Social Media by Platform        │   │
+│  │  ────────────                   │  │  ─────────────────────           │   │
+│  │                                 │  │                                   │   │
+│  │  📧 "Rally Invite"      2h ago │  │  Facebook   ▓▓▓▓▓▓▓▓▓▓  8.2K   │   │
+│  │     12,450 sent · 42% open     │  │  Instagram  ▓▓▓▓▓▓▓▓    6.1K   │   │
+│  │     8.3% click                  │  │  Twitter/X  ▓▓▓▓▓       3.4K   │   │
+│  │                                 │  │  TikTok     ▓▓          0.7K   │   │
+│  │  💬 "Event Reminder"    1d ago │  │                                   │   │
+│  │     1,800 sent · 94% delivered  │  │  Total reach: 18.4K             │   │
+│  │     12% response                │  │  ↑ 22% vs previous 30 days     │   │
+│  │                                 │  │                                   │   │
+│  │  📧 "Donor Thank You"   3d ago │  │                                   │   │
+│  │     342 sent · 68% open         │  │                                   │   │
+│  │     15.2% click                 │  │                                   │   │
+│  │                                 │  │                                   │   │
+│  │  [View all sends →]            │  │  [View social analytics →]       │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Scheduled Sends (3)            │  │  Channel Effectiveness           │   │
+│  │  ─────────────────              │  │  ─────────────────────           │   │
+│  │                                 │  │                                   │   │
+│  │  Mar 5, 2:00 PM                │  │  Metric        Email  SMS   Social│   │
+│  │  📧 "Rally Final Reminder"     │  │  ─────────────────────────────── │   │
+│  │     Audience: 12,450            │  │  Reach         12.4K  3.2K  18.4K│   │
+│  │     [Edit] [Pause]             │  │  Engagement     8.3%  12%   4.2% │   │
+│  │                                 │  │  Conversions    312    48    27  │   │
+│  │  Mar 8, 10:00 AM               │  │  Cost/contact  $0.02  $0.04  $0 │   │
+│  │  💬 "Phone Bank Signup"        │  │                                   │   │
+│  │     Audience: 847 volunteers    │  │  Best channel for donations:     │   │
+│  │     [Edit] [Pause]             │  │  📧 Email (78% of online gifts)  │   │
+│  │                                 │  │                                   │   │
+│  │  Mar 10, 6:00 PM               │  │  Best channel for volunteer      │   │
+│  │  📧 "Weekly Update"            │  │  signup: 💬 SMS (62% of signups) │   │
+│  │     Audience: 14,200            │  │                                   │   │
+│  │     [Edit] [Pause]             │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Mobile
+
+```
+┌──────────────────────────────┐
+│  ≡  Communications    🔍  ↻  │
+├──────────────────────────────┤
+│  Last 30 days ▾              │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  📧 Emails Sent          ││
+│  │  12,450      42% open    ││
+│  │              8.3% click  ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  💬 SMS/WhatsApp         ││
+│  │  3,200 sent  94% delivrd ││
+│  │              12% response││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  📱 Social Reach         ││
+│  │  18.4K       ↑ 22%      ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Scheduled (3)           ││
+│  │  📧 Rally Reminder  Mar 5││
+│  │  💬 Phone Bank     Mar 8 ││
+│  │  📧 Weekly Update  Mar 10││
+│  │  [View all →]            ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Recent Sends            ││
+│  │  📧 Rally Invite   42%  ││
+│  │  💬 Event Remind   94%  ││
+│  │  📧 Donor Thanks   68%  ││
+│  │  [View all →]            ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│ 📊      📧      📱     💬   ⋯│
+│ Dash   Email  Social  Msgs More│
+└──────────────────────────────┘
+```
+
+### Mobile Differences
+- Charts omitted — replaced by headline metrics per channel
+- Scheduled sends show compact list (name + date)
+- Channel effectiveness table omitted — accessible via "Social Analytics"
+- Press coverage metric card omitted — accessible from More > Press
+- Pull-to-refresh triggers data reload
+
+### Communications Dashboard — Design Notes
+- **Four-channel view:** Email, SMS/WhatsApp, Social, and Press coverage all in one place — the Comms Director shouldn't need to switch views to understand their outreach posture
+- **Scheduled sends are actionable:** Edit and Pause buttons directly on the dashboard — urgent changes shouldn't require navigating to the campaign detail
+- **Channel effectiveness table** answers the strategic question: "where should I invest my next hour of work?"
+- **Press coverage is lightweight here** — just a count and sentiment. Detailed coverage analysis lives in the Press section
+- **Audience growth chart** tracks list health over time — a declining line is an early warning
+
+---
+
+## DASH-006: Data Quality Dashboard (Data Manager)
+
+The Data Manager's command center. Data health, import quality, dedup queue, and record hygiene.
+
+### Desktop
+
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  Data Quality                                      Last updated: 1 min ago  ↻│
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  📋 Records   │  │  ⚠ Quality   │  │  🔄 Dedup     │  │  📥 Imports  │    │
+│  │  24,830       │  │  Score: 87%   │  │  Queue: 42    │  │  3 this week │    │
+│  │  total        │  │  ↑ from 82%   │  │  pending      │  │  1 in prog.  │    │
+│  │  +342 this wk │  │  review       │  │  ~120 merged  │  │  12,400 rows │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Records by Type                                                      │   │
+│  │  ──────────────                                                       │   │
+│  │                                                                       │   │
+│  │  Type          Total     Complete    Incomplete   Stale (>90d)        │   │
+│  │  ─────────────────────────────────────────────────────────────────    │   │
+│  │  Voters        18,450    16,200 88%   1,450 8%      800 4%           │   │
+│  │  Donors         3,240     3,100 96%      84 3%       56 2%           │   │
+│  │  Volunteers       847       812 96%      22 3%       13 2%           │   │
+│  │  Supporters     2,293     1,980 86%     213 9%      100 4%           │   │
+│  │  ─────────────────────────────────────────────────────────────────    │   │
+│  │  All           24,830    22,092 89%   1,769 7%      969 4%           │   │
+│  │                                                                       │   │
+│  │  [View incomplete records →]  [View stale records →]                  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Data Quality Flags (38)        │  │  Dedup Queue                     │   │
+│  │  ─────────────────              │  │  ──────────                      │   │
+│  │                                 │  │                                   │   │
+│  │  By category:                   │  │  42 potential duplicates          │   │
+│  │  Missing email     14  [Fix →]  │  │  awaiting review                 │   │
+│  │  Missing phone     11  [Fix →]  │  │                                   │   │
+│  │  Invalid address    8  [Fix →]  │  │  Confidence:                     │   │
+│  │  Missing name       3  [Fix →]  │  │  High (>90%)    12  [Review →]  │   │
+│  │  Bad phone format   2  [Fix →]  │  │  Medium (70-90%) 18  [Review →]  │   │
+│  │                                 │  │  Low (<70%)      12  [Review →]  │   │
+│  │  Trend: ↓ 15% fewer flags      │  │                                   │   │
+│  │  vs. last month                 │  │  Auto-merged this month: 78      │   │
+│  │                                 │  │  Manual merges this month: 42    │   │
+│  │                                 │  │                                   │   │
+│  │  [View all flags →]            │  │  [Open dedup queue →]            │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Recent Imports                 │  │  Recent Exports                  │   │
+│  │  ──────────────                 │  │  ──────────────                  │   │
+│  │                                 │  │                                   │   │
+│  │  ● In Progress                  │  │  Mar 1 · 10:42 AM               │   │
+│  │  Voter file — Western district  │  │  Donor export (CSV)              │   │
+│  │  12,400 rows · Mapping step     │  │  3,240 records · by Ana R.      │   │
+│  │  Started by: Carlos M. · 15m ago│  │                                   │   │
+│  │  [View progress →]             │  │  Feb 28 · 4:15 PM               │   │
+│  │                                 │  │  Volunteer roster (CSV)          │   │
+│  │  ✓ Completed                    │  │  847 records · by Carlos M.     │   │
+│  │  Phone bank list — Call Wave 3  │  │                                   │   │
+│  │  500 rows · 12 dupes merged     │  │  Feb 25 · 9:00 AM               │   │
+│  │  Quality score: 94%             │  │  Segment: "Likely Supporters"   │   │
+│  │  Completed: Yesterday           │  │  4,200 records · by Elena T.    │   │
+│  │                                 │  │                                   │   │
+│  │  ✓ Completed                    │  │                                   │   │
+│  │  Event attendees — Town Hall    │  │                                   │   │
+│  │  67 rows · 3 dupes merged       │  │                                   │   │
+│  │  Quality score: 98%             │  │                                   │   │
+│  │  Completed: 3 days ago          │  │                                   │   │
+│  │                                 │  │                                   │   │
+│  │  [View import history →]       │  │  [View export history →]         │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Data Quality Dashboard — Design Notes
+- **Desktop only** (per screen inventory) — data operations are desktop work
+- **Quality score** (87%) is a composite: weighted average of completeness (required fields filled), freshness (records updated within 90 days), and validity (well-formed emails, phones, addresses). The Data Manager can click through to see the breakdown.
+- **Records by Type table** is the most information-dense widget — answers "where are my data problems?" at a glance. Percentages are colored: green (>90%), amber (70-90%), red (<70%).
+- **Data quality flags** are categorized and actionable — each "Fix" link opens a filtered list of affected records
+- **Dedup queue** groups by confidence level — high-confidence dupes can be bulk-merged with less review friction
+- **Import in progress** is shown prominently — the Data Manager needs to know when a colleague started a large import
+- **No charts** — this dashboard is table-heavy by design. The Data Manager cares about specific numbers and lists, not trends. The one trend indicator ("15% fewer flags vs last month") is inline text, not a chart.
+
+---
+
+## DASH-007: Compliance Dashboard (Finance Director / Org Admin)
+
+Compliance health across campaign finance, data protection, and reporting obligations. Surfaces problems early so they can be fixed before they become violations.
+
+### Desktop
+
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│  Compliance                                        Last updated: 5 min ago  ↻│
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  Jurisdiction: Puerto Rico (CEE) · Race: Municipal                           │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  ⚠ Alerts     │  │  📋 Consent   │  │  📅 Deadlines │  │  📨 Requests │    │
+│  │  3 active     │  │  Health: 91%  │  │  Next: 12d   │  │  2 pending   │    │
+│  │  1 critical   │  │  ↓ from 94%   │  │  Q1 filing   │  │  SLA: OK     │    │
+│  │  2 warnings   │  │  47 expiring  │  │              │  │              │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Contribution Alerts                                                  │   │
+│  │  ──────────────────                                                   │   │
+│  │                                                                       │   │
+│  │  🔴 CRITICAL                                                         │   │
+│  │  José Delgado — $5,200 total contributions                            │   │
+│  │  Exceeds $5,000 individual limit (PR municipal race)                  │   │
+│  │  Last donation: $200 on Feb 28 · pushed over limit                    │   │
+│  │  [Review & Resolve →]                                                 │   │
+│  │                                                                       │   │
+│  │  🟡 WARNING                                                           │   │
+│  │  María Santos — $4,750 total contributions                            │   │
+│  │  95% of $5,000 limit · will trigger with any donation >$250           │   │
+│  │  [View donor profile →]                                               │   │
+│  │                                                                       │   │
+│  │  🟡 WARNING                                                           │   │
+│  │  Kim Park — Foreign address flagged                                   │   │
+│  │  Donated $100 on Feb 25 · needs residency verification                │   │
+│  │  [Review & Verify →]                                                  │   │
+│  │                                                                       │   │
+│  │  No alerts resolved in the last 7 days.                               │   │
+│  │  [View resolved alerts →]                                             │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Consent Health                 │  │  Reporting Deadlines             │   │
+│  │  ──────────────                 │  │  ───────────────                 │   │
+│  │                                 │  │                                   │   │
+│  │  By channel:                    │  │  ┌──────────────────────────┐    │   │
+│  │  Email      ▓▓▓▓▓▓▓▓▓░  94%   │  │  │  🟡 Mar 15               │    │   │
+│  │  SMS        ▓▓▓▓▓▓▓▓░░  87%   │  │  │  Quarterly filing (CEE)  │    │   │
+│  │  WhatsApp   ▓▓▓▓▓▓▓▓▓░  91%   │  │  │  Status: Data 78% ready │    │   │
+│  │  Push       ▓▓▓▓▓▓▓▓▓▓  96%   │  │  │  [Prepare report →]     │    │   │
+│  │                                 │  │  └──────────────────────────┘    │   │
+│  │  Overall: 91% valid consent     │  │                                   │   │
+│  │                                 │  │  ┌──────────────────────────┐    │   │
+│  │  ⚠ 47 consents expiring in     │  │  │  ○ Mar 31                │    │   │
+│  │    the next 30 days             │  │  │  Q1 close (books)       │    │   │
+│  │    [Send renewal requests →]    │  │  │  Status: On track       │    │   │
+│  │                                 │  │  └──────────────────────────┘    │   │
+│  │  Unsubscribes (30d): 23        │  │                                   │   │
+│  │  Bounced (30d): 8              │  │  ┌──────────────────────────┐    │   │
+│  │                                 │  │  │  ○ Apr 15                │    │   │
+│  │                                 │  │  │  Annual compliance rpt   │    │   │
+│  │                                 │  │  │  Status: Not started     │    │   │
+│  │                                 │  │  └──────────────────────────┘    │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Data Subject Requests          │  │  Automated Checks (Last Run)     │   │
+│  │  ──────────────────             │  │  ─────────────────────           │   │
+│  │                                 │  │                                   │   │
+│  │  2 pending requests             │  │  Last run: Today, 6:00 AM        │   │
+│  │                                 │  │                                   │   │
+│  │  📨 Access Request              │  │  ✓ Contribution limits    0 new  │   │
+│  │     From: Pedro Colón           │  │  ✓ Foreign donor screen   0 new  │   │
+│  │     Received: Feb 27            │  │  ✓ Consent validation     3 new  │   │
+│  │     SLA: 12 days remaining      │  │  ✓ Disclaimer check      0 new  │   │
+│  │     [Process →]                 │  │  ✓ Data completeness      5 new  │   │
+│  │                                 │  │  ✓ Retention policy       0 new  │   │
+│  │  📨 Deletion Request            │  │                                   │   │
+│  │     From: Ana Figueroa          │  │  Next scheduled run:             │   │
+│  │     Received: Mar 1             │  │  Tomorrow, 6:00 AM               │   │
+│  │     SLA: 27 days remaining      │  │                                   │   │
+│  │     [Process →]                 │  │  [View check details →]          │   │
+│  │                                 │  │  [Run checks now →]              │   │
+│  │  Resolved (last 30d): 5        │  │                                   │   │
+│  │  Avg resolution: 8 days        │  │                                   │   │
+│  │                                 │  │                                   │   │
+│  │  [View all requests →]         │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Audit Trail (Recent)                                                 │   │
+│  │  ────────────────────                                                 │   │
+│  │                                                                       │   │
+│  │  Mar 3, 9:15 AM   Elena T. exported donor data (3,240 records)       │   │
+│  │  Mar 2, 4:30 PM   System: Auto-flagged José Delgado over limit      │   │
+│  │  Mar 1, 11:00 AM  Ana F. submitted data deletion request             │   │
+│  │  Feb 28, 7:00 PM  System: Consent renewal batch sent (47 contacts)  │   │
+│  │  Feb 28, 2:15 PM  Carlos M. resolved foreign address flag (Kim Park)│   │
+│  │                                                                       │   │
+│  │  [View full audit trail →]  [Export audit log →]                     │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Compliance Dashboard — Design Notes
+- **Desktop only** (per screen inventory) — compliance review is desktop work. Mobile access via the Finance Director's mobile tabs (Dashboard, Donations, Compliance, Messages, More) shows only the metric cards and alerts, not the full dashboard.
+- **Jurisdiction context line** under the title — the compliance rules are jurisdiction-specific, so the user always knows which rules are being applied
+- **Contribution alerts are the highest-priority widget** — displayed full-width, ordered by severity (critical first). An over-limit donation is a potential legal violation and demands immediate attention.
+- **Consent health** tracks per-channel opt-in validity. The "Send renewal requests" action lets the Comms Director (via delegation) send re-consent emails to contacts whose consent is expiring.
+- **Reporting deadlines** use a timeline format with preparation status — "78% ready" tells the user they have work to do before the filing date, not just that the date is approaching.
+- **Data subject requests** show SLA timers prominently — GDPR and similar regulations have hard deadlines for responding to access/deletion requests.
+- **Automated checks** show the last batch run results — the compliance engine runs overnight and surfaces new issues. "Run checks now" allows on-demand re-evaluation.
+- **Audit trail** is a compliance necessity — every data access, export, and configuration change is logged. The dashboard shows recent entries with a link to the full searchable trail.
+
+---
+
+## DASH-011: Alliance Dashboard
+
+The Alliance Dashboard is documented in the Alliance wireframes: **[alliance/alliance.md](../alliance/alliance.md)** as ALLY-001.
+
+---
+
+## Accessibility Notes
+
+- Dashboard metric cards use `aria-label` with full descriptions (e.g., "Contacts reached: 1,847 this week, up 12%")
+- Charts include text summaries for screen readers (e.g., "Trend: increasing over 4 weeks from 30% to 42%")
+- War Room dark mode maintains WCAG AA contrast ratios
+- Auto-refresh announces updates via `aria-live="polite"` region — not disruptive to screen reader flow
+- All "View →" drill-down links have descriptive labels (not just "View")
+- Color-coded status indicators (🟢🟡🔴) always include text labels
+- Skeleton loading states use `aria-busy="true"` on the widget container
+
+## Design Decisions
+
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| One dashboard per persona | Each persona gets a dedicated home screen | Prevents information overload; focuses on role-relevant metrics |
+| Metric cards first, charts second | KPI summary always visible without scrolling | At-a-glance answer to "how are things going?" |
+| Every metric clickable | Drill-down to underlying data list | Dashboards surface signals; details live in feature screens |
+| War Room dark mode | Dark background, high-contrast data | Reduce eye strain during long election day sessions |
+| War Room 30s auto-refresh | Only the War Room auto-refreshes | Election day needs real-time; normal dashboards don't |
+| Candidate dashboard curated | Simplified view with high-impact metrics only | Candidates aren't operators — headlines, not data |
+| Data Quality dashboard table-heavy | No charts, all tables | Data Manager cares about specific numbers, not trends |
+| Compliance alerts severity-ordered | Critical first, then warnings | Potential legal violations demand immediate attention |
+| Alliance dashboard as cross-ref | Documented in alliance.md, not duplicated here | Single source of truth for alliance screens |
+
 ## Open Questions
 
 1. **Dashboard customization.** Should staff be able to rearrange dashboard widgets or pin/hide specific ones? Adds flexibility but increases complexity. Consider for v2.
@@ -600,3 +1009,7 @@ Each widget shows its own skeleton until its data arrives.
 2. **War Room large-screen mode.** For projection on large screens in a physical war room, should there be a dedicated "TV mode" that optimizes for large displays at viewing distance (larger text, fewer widgets, darker theme)?
 
 3. **Goal setting.** Where are fundraising and field goals configured? Currently shown on dashboards but the setting UX isn't defined. Likely in the relevant feature settings (Fundraising > Goals, Field > Campaign Goals).
+
+4. **Data Quality score formula.** The composite quality score (87%) needs a defined formula. Proposed: 40% completeness (required fields), 30% freshness (updated within 90 days), 30% validity (well-formed contact fields). Should this be configurable per tenant?
+
+5. **Compliance dashboard for multi-jurisdiction tenants.** Some alliances operate across jurisdictions. Should the compliance dashboard support a jurisdiction selector, or should it show a combined view with per-jurisdiction sections?

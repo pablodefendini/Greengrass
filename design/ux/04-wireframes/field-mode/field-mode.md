@@ -6,8 +6,27 @@ Field mode is the highest-risk UX in the system. A volunteer on a low-end Androi
 
 Field mode is a **full-screen takeover** — no sidebar, no tabs, no notifications. The volunteer's world is the walk list until the shift ends.
 
+## Scope
+
+| ID | Screen | Personas | Offline | Mobile | Section |
+|----|--------|----------|---------|--------|---------|
+| CANV-007 | Shift Start | V, TL | Yes | Primary | [Shift Start Flow](#shift-start-flow) |
+| CANV-008 | Walk List View | V, TL | Yes | Primary | [Walk List View](#walk-list-view) |
+| CANV-009 | Map View | V, TL | Yes | Primary | [Map View](#map-view) |
+| CANV-010 | Door Card | V, TL | Yes | Primary | [Door Card — Canvassing](#door-card--canvassing) |
+| CANV-011 | Interaction Form | V, TL | Yes | Primary | [Door Card — Canvassing](#door-card--canvassing) |
+| CANV-012 | Shift End / Debrief | V, TL | Yes | Primary | [Shift End Flow](#shift-end-flow) |
+| PHONE-004 | Call Interface BYOP | V, TL | Yes | Primary | [Phone Banking Variant](#phone-banking-variant) |
+| PHONE-005 | Call Interface Integrated | V, TL | Yes | Primary | [Phone Banking Variant](#phone-banking-variant) |
+| PHONE-006 | Call Result Form | V, TL | Yes | Primary | [Phone Banking Variant](#phone-banking-variant) |
+| VREG-004 | Voter Registration Form | V, TL | Yes | Primary | [Voter Registration Variant](#voter-registration-variant) |
+| VREG-005 | Eligibility Check | V, TL | Yes | Primary | [Voter Registration Variant](#voter-registration-variant) |
+| GOTV-008 | GOTV Door Card | V, TL, FiD | Yes | Primary | [GOTV Door Card Variant](#gotv-door-card-variant) |
+| GOTV-009 | GOTV Walk List | V, TL, FiD | Yes | Primary | [GOTV Door Card Variant](#gotv-door-card-variant) |
+
 ---
 
+<!-- CANV-007 -->
 ## Shift Start Flow
 
 ### Screen 1: Shift Selection
@@ -91,6 +110,7 @@ After tapping "Start Shift," the app prepares for field mode. This is the transi
 
 ---
 
+<!-- CANV-008 -->
 ## Walk List View
 
 The primary navigation view in field mode. Shows all assigned doors in order.
@@ -205,6 +225,7 @@ Status indicators:
 
 ---
 
+<!-- CANV-010, CANV-011 -->
 ## Door Card — Canvassing
 
 The core interaction screen. One door at a time.
@@ -368,6 +389,7 @@ Tapping anywhere cancels auto-advance (stays on this door).
 
 ---
 
+<!-- CANV-009 -->
 ## Map View
 
 Toggle between list and map using the [📍 Map View] / [← List View] buttons.
@@ -420,6 +442,7 @@ Toggle between list and map using the [📍 Map View] / [← List View] buttons.
 
 ---
 
+<!-- PHONE-004, PHONE-005, PHONE-006 -->
 ## Phone Banking Variant
 
 Phone banking uses the same field mode shell but with a call-specific card.
@@ -487,6 +510,7 @@ Same follow-up flow as canvassing (support score → issues → notes → save &
 
 ---
 
+<!-- VREG-004, VREG-005 -->
 ## Voter Registration Variant
 
 ```
@@ -584,6 +608,7 @@ Some jurisdictions require an eligibility check before registration:
 
 ---
 
+<!-- GOTV-008, GOTV-009 -->
 ## GOTV Door Card Variant
 
 On election day, the door card is simplified — no lengthy surveys, just turnout confirmation.
@@ -673,6 +698,7 @@ On election day, the door card is simplified — no lengthy surveys, just turnou
 
 ---
 
+<!-- CANV-012 -->
 ## Shift End Flow
 
 ### End Shift Confirmation
@@ -810,6 +836,14 @@ If the app crashes or the device dies during field mode:
 
 ---
 
+## Empty States
+
+**Walk list empty (no assigned contacts).** This should not occur under normal conditions — shifts are only created with contacts assigned. Defensively, if it does happen: display a message ("No doors assigned to this shift. Contact your team lead.") with a single action to exit field mode. Do not show an empty walk list.
+
+**No connectivity on shift start (cannot download walk list).** If the device is offline and no cached walk list exists for this shift, the "Enter Field Mode" button remains disabled. The pre-shift check screen shows a clear error: "Walk list unavailable. Connect to the internet to download your assignment." If a stale cached version exists, offer it with an age warning ("Walk list from 6 hours ago — some doors may have been reassigned") and allow the volunteer to proceed.
+
+---
+
 ## Touch Target Specifications
 
 All interactive elements in field mode use larger targets than the standard app:
@@ -834,13 +868,27 @@ Field mode users are often:
 
 ---
 
-## Accessibility in Field Mode
+## Accessibility Notes
 
 - **High contrast:** Field mode defaults to slightly higher contrast than the standard app (better outdoor visibility)
 - **Large text:** All text is at minimum 16px. Voter names are 20px. Response buttons use 18px labels.
 - **No gesture-only actions:** Every swipe action has a button alternative.
 - **Screen reader:** Walk list items announce: "Door 13 of 47. Ana Martínez, 742 Calle Sol Apartment 3. Not yet visited."
 - **Reduced motion:** Auto-advance after "Not Home" is disabled in reduced motion mode (manual advance only).
+
+---
+
+## Design Decisions
+
+| Decision | Rationale |
+|----------|-----------|
+| Touch targets: 48px minimum, 56px for primary actions in field mode | Volunteers operate in challenging conditions — walking, one-handed, gloved hands, outdoor lighting, low-end devices with less responsive touch screens. |
+| Crash recovery via auto-save on every interaction | Field volunteers cannot afford to lose data. Every completed door interaction is persisted to local storage immediately, independent of sync status. |
+| GOTV door card is distinct from the canvassing door card | GOTV has a binary goal (voted / not voted) rather than a scored survey. A simplified card reduces cognitive load on election day when speed is critical. |
+| Field mode as full-screen takeover replacing the nav shell | Eliminates distractions and accidental navigation. The volunteer's context is a single linear workflow — the walk list — until the shift ends. |
+| Walk list sorted by optimized route by default | Volunteers should not have to think about routing. The system pre-computes a walking-efficient order to minimize backtracking across the turf. |
+| Phone banking uses the same field mode shell | Provides a consistent volunteer experience across activity types. Training once on the field mode UX covers canvassing, phone banking, voter registration, and GOTV. |
+| "Not Home" as a quick action with auto-advance | "Not Home" is the most common canvassing outcome. It needs the fastest possible path — one tap, minimal follow-up (just the literature question), then auto-advance to the next door. |
 
 ---
 

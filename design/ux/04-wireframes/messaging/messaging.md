@@ -4,8 +4,44 @@
 
 Internal messaging is how the campaign coordinates. DMs between staff, group conversations for teams, briefings for the Candidate, and the War Room coordination channel on election day. This document wireframes the messaging screens across desktop and mobile.
 
+Note: this document is organized by UI pattern (conversation list, thread anatomy, message types, special channels) rather than by individual screen, since messaging screens share significant structural overlap.
+
+## Scope
+
+| ID | Screen | Personas | Offline | Mobile | Section |
+|----|--------|----------|---------|--------|---------|
+| MSG-001 | Message List (Inbox) | All authenticated | Partial | Primary | Conversation List |
+| MSG-002 | Conversation View (DM) | All authenticated | Partial | Primary | Thread Anatomy |
+| MSG-003 | Conversation View (Group) | All authenticated | Partial | Primary | Thread Anatomy |
+| MSG-004 | Thread View | All authenticated | Partial | Primary | Thread Anatomy |
+| MSG-005 | Group Create/Edit | OA, CD, FD, FiD, VC | No | Yes | Group Conversation Info |
+| MSG-006 | Broadcast Composer | OA, CD, FiD, VC | No | Desktop | New Conversation |
+| MSG-007 | War Room Channel | OA, FiD, CD, VC | No | Yes | War Room Channel |
+| MSG-008 | Contextual Thread (Event) | OA, VC, TL | Partial | Yes | Contextual Threads |
+| MSG-009 | Contextual Thread (Shift) | OA, FiD, VC, TL | Partial | Yes | Contextual Threads |
+| MSG-010 | Contextual Thread (Issue) | OA, FiD | No | Yes | Contextual Threads |
+| MSG-011 | Contextual Thread (Donation Flag) | OA, FD | No | Desktop | Contextual Threads |
+| MSG-012 | Candidate Briefing View | C | Partial | Primary | Candidate Briefing Message |
+| MSG-013 | Candidate Approval Queue | C | No | Primary | Approval Request in Messages |
+| MSG-014 | Alliance Channel | OA | No | Yes | Alliance Channel |
+
+## Messaging Navigation Context
+
+```
+All personas see "Messages" in their sidebar. The messaging section is simple:
+
+MESSAGING
+  Inbox              → MSG-001
+  New Message         → compose
+
+War Room channel (MSG-007) appears in sidebar during GOTV activation only.
+Alliance Channel (MSG-014) appears in the Alliance sidebar section.
+Contextual threads (MSG-008 through MSG-011) are accessed from their parent context (event detail, shift view, issue queue, donation flag), not from the messaging sidebar.
+```
+
 ---
 
+<!-- MSG-001 -->
 ## Desktop — Conversation List + Thread (Split View)
 
 The default messaging layout on desktop uses a split view: conversation list on the left, active thread on the right.
@@ -75,6 +111,7 @@ States:
   👥 = Group (stacked avatars or group icon)
 ```
 
+<!-- MSG-002, MSG-003, MSG-004 -->
 ### Thread Anatomy
 
 ```
@@ -235,6 +272,7 @@ Thread info shows:
 
 ---
 
+<!-- MSG-006 -->
 ## New Conversation
 
 ### Desktop — Compose
@@ -265,6 +303,7 @@ Thread info shows:
 
 ---
 
+<!-- MSG-012 -->
 ## Candidate Briefing Message
 
 Briefings are styled distinctly from casual messages — structured, formatted, actionable.
@@ -305,6 +344,7 @@ Briefings are:
 
 ---
 
+<!-- MSG-013 -->
 ## Approval Request in Messages
 
 When content needs the Candidate's approval, it arrives as a special message type:
@@ -336,6 +376,7 @@ When content needs the Candidate's approval, it arrives as a special message typ
 
 ---
 
+<!-- MSG-007 -->
 ## War Room Channel (Election Day)
 
 During election day, a dedicated War Room conversation appears pinned at the top of everyone's messages with GOTV access.
@@ -399,6 +440,7 @@ War Room specifics:
 
 ---
 
+<!-- MSG-005 -->
 ## Group Conversation Info
 
 ```
@@ -486,12 +528,34 @@ Alliance messages (cross-org):
 
 ---
 
-## Accessibility
+## Empty States Summary
+
+| Screen | Empty Message | Action |
+|--------|--------------|--------|
+| MSG-001 Inbox | No messages yet. Start a conversation with a team member or group. | New Message |
+| MSG-001 Search/Filter | No conversations found matching your search. Try different keywords or clear filters. | Clear Search |
+| MSG-007 War Room | The War Room is not active. This channel becomes available during GOTV activation on election day. | — |
+
+---
+
+## Accessibility Notes
 
 - **Screen reader:** Messages announced as: "[Sender name], [timestamp]: [message content]"
 - **Keyboard:** Arrow keys navigate between messages. Enter opens thread. Escape returns to list.
 - **Focus:** When opening a thread, focus moves to the most recent message. Composer is Tab-accessible.
 - **Contrast:** Message bubbles meet 4.5:1 contrast. Sent vs. received bubbles are distinguishable by position and subtle color difference (not color alone — also alignment).
+
+## Design Decisions
+
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| Desktop split view for messaging | Standard split view — conversation list on left, thread on right | Standard messaging UX that users already know. No need to innovate on a well-understood pattern |
+| Candidate briefings as structured format | Bordered card with labeled sections (event, topics, attachments, notes) | Briefings need to be scannable — structured format lets the Candidate extract key info quickly, unlike a wall of chat text |
+| Encryption indicators | Lock icon (🔒) in thread header for E2E encrypted messages | Users need clear, unambiguous visibility into whether a conversation is protected. Lock icon is universally understood |
+| War Room as special channel | Dedicated channel type with system alerts, issue reports, and priority notifications | Election day coordination has unique needs — system alerts, priority override, structured issue reporting — that don't fit standard group chat |
+| Contextual threads accessed from parent context | Event threads from event detail, shift threads from shift view, etc. — not from messaging sidebar | Reduces messaging clutter. Contextual threads are about the context (the event, the shift), not about "messaging" as an activity |
+| Offline messaging with local queue | Messages composed offline are queued locally and sent automatically on reconnect | Field staff in low-connectivity areas need to communicate without waiting for signal. Queue-and-send is transparent and reliable |
+| Mobile as full-screen conversation view | Conversation list and thread are separate full-screen views on mobile | Phone screens are too small for a split view. Full-screen per view is the standard mobile messaging pattern |
 
 ---
 
