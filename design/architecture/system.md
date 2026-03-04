@@ -118,8 +118,22 @@ Signup request
 **DECIDED:** Subdomain as default, custom domain supported.
 
 - **Default:** `orgname.greengrass.app`. Provisioned automatically during tenant setup. Wildcard DNS and TLS via Let's Encrypt.
-- **Custom domain:** Tenants can configure their own domain (e.g., `organize.campaign.org`). Requires the tenant to update their DNS records (CNAME). The platform handles TLS certificate provisioning automatically once DNS is configured.
+- **Custom domain:** Tenants can configure their own domain (e.g., `organize.campaign.org`). Requires the tenant to update their DNS records (CNAME). The platform handles TLS certificate provisioning automatically once DNS is configured. SSL certificates are provisioned via Let's Encrypt with automated cert issuance triggered on DNS validation ([ADR-016 §68](../decisions/016-cross-cutting-resolutions.md)). Custom domains are critical for brand credibility — supporters clicking a donation link need to see the org's domain.
 - **Both can coexist.** The subdomain always works as a fallback even if a custom domain is configured.
+
+### Public page infrastructure
+
+**Open Graph images** ([ADR-016 §71](../decisions/016-cross-cutting-resolutions.md)): The platform auto-generates OG images from the page title + org logo + brand colors (server-side template composition, not AI). OAs can override with a manually uploaded image per page. This ensures every shared link has a social media preview image without requiring design effort.
+
+**Built-in lightweight analytics** ([ADR-016 §69](../decisions/016-cross-cutting-resolutions.md)): Public pages track views, unique visitors, conversion rate, and referral source (UTM parameters). No third-party analytics (Google Analytics, Meta Pixel) in v1 — these raise privacy and cookie consent complexity. OAs can add external scripts via a custom code injection field (advanced setting, off by default).
+
+**v2 forward reference:** [Public Page A/B Testing](../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will extend the fundraising A/B testing infrastructure to volunteer signup pages and other public pages.
+
+### Settings export
+
+(Decided in [ADR-016 §54](../decisions/016-cross-cutting-resolutions.md))
+
+OAs can export their tenant settings as a JSON snapshot for documentation, backup, or sharing with consultants. Cross-tenant import (apply Org A's settings to Org B) is deferred to a future version — it requires validating that the target tenant has matching integrations, payment processors, and compliance jurisdiction.
 
 ---
 
@@ -191,7 +205,7 @@ Person (the omni-list record)
 │   ├── team_assignment → Team
 │   ├── shift_history[] → Shift
 │   ├── hours_logged
-│   └── training_completion[]
+│   └── training_completion[] (includes required_before_field flag per module)
 ├── tags[]
 ├── segments[]
 ├── communication_history[] → CommunicationEvent
@@ -241,6 +255,33 @@ CanvassingInteraction
 ├── device_id
 └── location (lat/lng, optional)
 
+CanvassingScript
+├── id (UUID)
+├── campaign → Campaign
+├── name
+├── version (incrementing — active shifts are version-locked)
+├── questions[] (ordered list of script questions with response options)
+├── language_variants[] → ContentItem
+├── status (draft | active | archived)
+├── created_by → Person
+├── created_at
+└── updated_at
+
+ScriptTemplate
+├── id (UUID)
+├── name
+├── description
+├── source_script → CanvassingScript (copy-from reference, not a live link)
+├── questions[] (copied from source at template creation time)
+├── created_by → Person
+└── created_at
+```
+
+**Script template workflow** ([ADR-016 §9–10](../decisions/016-cross-cutting-resolutions.md)): "Save as Template" copies a campaign script into the org-wide template library. Creating a new campaign script offers "Start from template" or "Start blank." Once copied, the campaign script is independent — editing it does not affect the template or other campaigns. Script versioning is per-campaign: active shifts are version-locked; urgent updates appear on the volunteer's next door card, never mid-interaction.
+
+**Training completion gating** ([ADR-016 §65](../decisions/016-cross-cutting-resolutions.md)): The OA marks specific training modules as `required_before_field`. The shift assignment flow checks this flag — volunteers who haven't completed required modules cannot be assigned to shifts. The assignment screen shows "Training incomplete" with a link to the outstanding module. Non-required training is encouraged but not gated.
+
+```
 Donation
 ├── id (UUID)
 ├── donor → Person
@@ -251,6 +292,9 @@ Donation
 ├── method (card | pix | upi | promptpay | cash | etc.)
 ├── payment_processor_reference
 ├── covers_fees (boolean)
+├── event_id → Event (nullable — set when donation is a ticket purchase)
+├── ticket_type (nullable — e.g., general, vip, student)
+├── ticket_quantity (nullable — number of tickets in this transaction)
 ├── compliance_data (encrypted)
 ├── receipt_sent (boolean)
 ├── created_at
@@ -322,6 +366,32 @@ Country
 - **Maintenance:** Electoral boundaries change. Pre-loaded data is versioned and updated per election cycle for active countries.
 - **User-friendliness:** Data entry, import, and export across the platform should be as frictionless as possible — this applies to geographic data, voter files, and all other data types.
 
+### Export audit policy
+
+(Decided in [ADR-016 §86](../decisions/016-cross-cutting-resolutions.md))
+
+Exporting more than 100 records requires the user to select a reason from a predefined list (Compliance reporting / Campaign operations / Data migration / Alliance sharing / Other + free text). The reason is logged in the audit trail alongside the export metadata (who, when, how many records, which fields). Individual record views and small exports (<100 records) do not require a reason.
+
+### Dedup confidence engine
+
+(Decided in [ADR-016 §83](../decisions/016-cross-cutting-resolutions.md). Refines the suggest-and-confirm approach from [ADR-004](../decisions/004-data-model-integrity.md).)
+
+The dedup engine applies three tiers based on match confidence:
+
+| Confidence | Action | Example |
+|-----------|--------|---------|
+| 95%+ (exact) | Auto-merge with audit log | Same email address + same phone number |
+| 70–94% (likely) | Surface in dedup review queue for manual merge | Similar name + same postal code |
+| Below 70% | Ignore unless manually searched | Same last name only |
+
+Thresholds are org-configurable. Auto-merged records are logged in the audit trail with the match reason and can be unmerged within the import rollback window (30 days default). This refines ADR-004's "no automatic merging" stance: exact matches (95%+) with multiple corroborating identifiers are safe to auto-merge; the review queue remains for ambiguous cases.
+
+### Dynamic segment refresh
+
+(Decided in [ADR-016 §85](../decisions/016-cross-cutting-resolutions.md))
+
+Dynamic segments recalculate on two triggers: **on access** (when a user views the segment) and **daily background job** (ensuring campaign targeting is fresh). The segment list shows "Last refreshed: [timestamp]" per segment. Large segments (50k+ contacts) show a loading state during recalculation rather than stale data. Manual refresh is available via a refresh button on the segment detail screen.
+
 ---
 
 ## Identity & Authentication Architecture
@@ -347,13 +417,26 @@ The identity service is a shared platform component, separate from any tenant:
 └─────────────────────────────────────┘
 ```
 
-**Credential store:** Passkey public keys, email/password hashes (argon2id), magic link tokens, OTP seeds. Never stores plaintext credentials. Separate from tenant databases.
+**Credential store:** Passkey public keys, email/password hashes (argon2id), magic link tokens, OTP seeds, TOTP secrets. Never stores plaintext credentials. Separate from tenant databases.
+
+**Authentication method tiers** (decided in [ADR-016 §57–60](../decisions/016-cross-cutting-resolutions.md)):
+
+| Method | Availability | Notes |
+|--------|-------------|-------|
+| Cloud-synced passkeys (iCloud Keychain, Google Password Manager) | Default for all tiers | Phishing resistance + practical recoverability. Device-bound only at Maximum tier. |
+| TOTP (Google Authenticator, etc.) | Opt-in at Enhanced / Maximum tiers | Works fully offline after setup — critical for intermittent connectivity |
+| Magic link (email-based) | Fallback for pre-WebAuthn devices (below Android 9 / iOS 16 / Chrome 109) | Auto-detected; login screen shows appropriate flow |
+| Password (argon2id) | Available but not encouraged | Legacy fallback |
+
+The login screen auto-detects WebAuthn support. Devices below the passkey threshold get magic link authentication automatically — no user decision needed.
 
 **Profile federation:** Maps a platform identity to its per-tenant profiles. When a user logs in, the identity service determines which tenants they belong to and which tenant to route them to (or presents a tenant selector if multiple).
 
 **Session manager:** Issues and validates session tokens. Enforces role-based session duration (decided in users.md). Handles remote revocation — when a Volunteer Coordinator revokes a session, the session manager invalidates the token immediately.
 
 **Recovery service:** Manages trusted contact recovery flow. Routes recovery requests to designated contacts. Issues new credential setup flows after approved recovery.
+
+**OA recovery — bootstrap problem** (decided in [ADR-016 §59](../decisions/016-cross-cutting-resolutions.md)): When the first OA has no trusted contacts to vouch for them, platform-assisted recovery applies. The OA contacts GreenGrass support, who verify identity through the original registration channel (signup email, payment method on file). After verification, a **72-hour cooling-off recovery** begins — longer than the standard 24-hour peer-verified path because there is no peer verification. During cooling-off, all org email contacts receive a notification. This is intentionally slow and visible — it's the highest-risk recovery path.
 
 **DECIDED:** Centralized primary in the incorporation jurisdiction with read replicas per country.
 
@@ -391,6 +474,23 @@ For canvassing and field operations:
 5. When connectivity returns: token re-validated with identity service, data synced
 6. At shift end: token expires, data wiped from device
 ```
+
+### Destructive operation approval
+
+(Decided in [ADR-016 §53](../decisions/016-cross-cutting-resolutions.md))
+
+Destructive operations require confirmation from a second OA:
+
+- Deleting the organization
+- Revoking all API keys
+- Changing the security tier downward
+- Removing the last integration of a critical type (payment processor, SMS provider)
+
+Routine settings changes do not require two-OA approval.
+
+**Single-OA fallback:** If the org has only one OA, destructive operations require a 48-hour cooling-off period with email confirmation instead. This prevents accidental or coerced catastrophic changes without blocking single-admin orgs.
+
+**v2 forward reference:** [Settings Delegation](../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will introduce controlled delegation of low-risk settings to non-OA roles. The two-OA approval flow ensures that even with delegation, the most dangerous operations remain protected.
 
 ---
 
@@ -581,6 +681,54 @@ All data mutations — online and offline — are stored as an immutable event l
 
 ---
 
+## Data Retention Architecture
+
+(Decided in [ADR-016 §4](../decisions/016-cross-cutting-resolutions.md). Supersedes [ADR-004](../decisions/004-data-model-integrity.md)'s uniform 10-year retention with a refined tiered model.)
+
+### Four-tier retention model
+
+| Tier | What is stored | Default retention | Bounds | Deletable? |
+|------|---------------|-------------------|--------|------------|
+| **Operational** | Full content: message bodies, attachments, canvass responses, GOTV operational data, shift logs | 2 years | 90 days – 5 years | Yes, after minimum period |
+| **Compliance** | Financial records: donation details, receipts, tax documents, compliance filings | Per local law | 5 – 10 years | No, until legal minimum expires |
+| **Audit trail** | Action metadata only (see below) | Indefinite | — | No |
+| **Import rollback** | Undo capability for data imports | 30 days | 7 – 90 days | Auto-expires |
+
+### Metadata vs. content distinction
+
+The audit trail records **that an action happened** — who did what, when, to what entity. It does **not** store the content of the action.
+
+**Example — a message is sent, then purged after the operational retention window:**
+
+| What exists before purge | What exists after purge |
+|------------------------|----------------------|
+| Operational tier: full message body, attachments, thread context | **Deleted.** Message body and attachments are gone. |
+| Audit trail: "Staff A sent SMS to Contact B on 2026-03-04 at 14:32 UTC" | **Preserved.** The metadata log entry remains indefinitely. |
+
+This distinction is critical for three reasons:
+
+1. **Privacy compliance:** When a supporter requests data deletion, content is purged from the operational tier. The audit trail retains only the metadata record — no personal content.
+2. **Storage:** Indefinite retention of metadata-only records is feasible. Indefinite retention of full message bodies and attachments is not.
+3. **Legal exposure:** If compelled to produce records, the organization hands over metadata (who/what/when) — not full communication content that may have been legitimately purged.
+
+### Reconciliation with ADR-004
+
+ADR-004 established "10-year retention globally" for audit logs based on Lebanon's commercial records requirement. ADR-016 refines this: the audit trail (metadata-only) is retained **indefinitely** — exceeding 10 years — while operational content (message bodies, canvass responses) follows the shorter operational tier. The compliance tier (financial records) retains for 5–10 years per jurisdiction, encompassing ADR-004's original intent. The net effect is *stronger* retention for what matters (audit metadata) and *appropriate* retention for content (bounded by privacy and storage constraints).
+
+### Purge lifecycle
+
+```
+Content enters operational tier → retention clock starts at creation
+  → OA configures retention within bounds (default: 2 years)
+  → At expiry: content purged, audit metadata preserved
+  → Compliance tier content: purge blocked until legal minimum expires
+  → Import rollback: auto-expires, no OA action needed
+```
+
+The OA configures retention periods within bounds. The system enforces minimums — an OA cannot set message retention below 90 days. Compliance tier minimums are derived from the tenant's configured jurisdiction(s).
+
+---
+
 ## Communication Infrastructure
 
 ### Email
@@ -626,7 +774,7 @@ Tenant App → Message Queue → Channel Router → Provider Adapter → SMS Gat
 
 **Channel architecture:**
 - **Provider-agnostic adapter layer** — abstract SMS and WhatsApp behind a common interface with per-country provider adapters (Twilio, Vonage, local providers).
-- **WhatsApp Business API** — requires business verification, has template-based messaging rules, per-message pricing. Messages must use pre-approved templates for outbound; free-form messaging only within 24-hour reply windows.
+- **WhatsApp Business API** — requires business verification, has template-based messaging rules, per-message pricing. Messages must use pre-approved templates for outbound; free-form messaging only within 24-hour reply windows. The platform tracks template approval status per template (Approved / Pending / Rejected) by polling the WhatsApp Business API. Status is displayed inline in the message composer so staff never attempt to send a rejected or pending template ([ADR-016 §18](../decisions/016-cross-cutting-resolutions.md)).
 - **Consent enforcement** — the channel router checks consent status (per-channel + per-purpose, decided in workflows.md) before dispatching any message.
 
 ### Social media
@@ -642,6 +790,22 @@ Tenant App → Post Scheduler → Platform Adapter → Social Media API
 - Common interface: publish(post), schedule(post, time), getAnalytics(post_id)
 - Adapters handle platform-specific quirks (character limits, media formats, API rate limits)
 - New platforms added by writing new adapters, no core changes
+
+### Cross-channel orchestration engine
+
+(Decided in [ADR-016 §2](../decisions/016-cross-cutting-resolutions.md))
+
+Communications are governed by two complementary layers enforced at send time:
+
+**Layer 1 — Per-channel frequency caps** (existing decision): Org-wide ceilings on contacts per channel per time period. Example: max 2 emails/week, max 1 SMS/day. Configured by OA in communications settings.
+
+**Layer 2 — Cross-channel quiet window** (new): After contacting a person on *any* channel about a specific topic, same-topic messages on other channels are suppressed for a configurable window (default: 24 hours). Different topics on different channels are allowed, up to each channel's per-channel cap.
+
+**Enforcement:** The channel router checks both layers before dispatching any message. A message that passes the per-channel cap may still be deferred by the cross-channel quiet window. Deferred messages are re-evaluated at the next send window.
+
+**Per-person contact log:** Each person's recent contact history (channel, topic, timestamp) is maintained in the cache layer for fast enforcement lookups at send time.
+
+**v2 forward reference:** The [Visual Flow Builder](../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will orchestrate multi-channel sequences within a single flow. The two-layer model provides the enforcement substrate that the flow builder routes through.
 
 ---
 
@@ -691,6 +855,18 @@ PaymentAdapter {
 
 **Alliance donation splitting:** When a donation comes through a joint fundraising page, the payment router applies the split rules (configured per campaign, decided in workflows.md), records the full donation, and attributes the split portions to each member org's financial records.
 
+### Event ticket routing
+
+(Decided in [ADR-016 §3](../decisions/016-cross-cutting-resolutions.md))
+
+Paid event tickets are processed through the fundraising pipeline. A ticket purchase is a Donation record with event metadata (`event_id`, `ticket_type`, `ticket_quantity`). There is no separate payment pipeline for events.
+
+- **Event system** handles: registration, attendance tracking, check-in, capacity
+- **Fundraising system** handles: payment processing, receipt generation, compliance tracking, refunds
+- **Refund policy** is unified: governed by payment processor policy plus an org-configurable maximum window (default: 90 days)
+
+Event screens display ticket revenue as a metric but link to the fundraising system for financial details. In most jurisdictions, political event tickets are legally treated as contributions — a single pipeline means one set of compliance rules, one receipt generator, one reconciliation workflow.
+
 ---
 
 ## Analytics Architecture
@@ -722,9 +898,79 @@ PaymentAdapter {
 - Batch processors run on a schedule (hourly for recent data, daily for older data) to compute aggregates, trends, and reports.
 - Used for: fundraising trends, volunteer growth, engagement analysis, compliance reports.
 
+### Dashboard polling infrastructure
+
+(Decided in [ADR-016 §5, §88](../decisions/016-cross-cutting-resolutions.md))
+
+All dashboards use polling (not WebSockets) at tiered intervals. Polling degrades gracefully on intermittent connections; WebSockets add connection management complexity without proportional benefit at these refresh rates.
+
+**Tiered refresh intervals:**
+
+| Dashboard type | Interval | Rationale |
+|---------------|----------|-----------|
+| Operational (GOTV war room, field ops) | 30 seconds | Time-critical during active operations |
+| Campaign (fundraising, communications, events) | 5 minutes | Changes throughout the day, not second-by-second |
+| Administrative (compliance, data quality, settings) | 15 minutes | Slow-moving data |
+
+**Freshness state machine** — mandatory on every dashboard:
+
+| State | Indicator | Trigger |
+|-------|-----------|---------|
+| **Current** | Subtle timestamp: "Updated 30s ago" | Data age < refresh interval |
+| **Refreshing** | Spinner replacing the timestamp | Poll in progress |
+| **Stale** | Amber warning: "Data is 5+ minutes old" | Data age > 2× refresh interval |
+| **Disconnected** | Persistent red/amber banner: "Offline — showing cached data from [timestamp]" | Network unreachable; cannot be dismissed |
+
+On **operational dashboards** (GOTV war room, field ops), the freshness indicator is high-visibility ambient information — color, position, and size ensure it is noticed without active attention. Staff making time-sensitive decisions during election day must never mistake stale data for current data.
+
+**Manual refresh button is mandatory** on every dashboard. Auto-refresh pauses when the browser tab is not visible (saves bandwidth). Immediate refresh on reconnect after an offline period.
+
 **DECIDED:** NATS JetStream.
 
 Lightweight, durable event streaming. Simpler to operate than Kafka, sufficient for per-tenant event volumes (thousands of events per day, not millions per second). Single binary, easy to deploy per-tenant or as a shared service within a country cluster. Supports durable subscriptions for the real-time analytics pipeline and event replay for the event sourcing architecture.
+
+---
+
+## Election Day Architecture
+
+(Decided in [ADR-016 §47–50](../decisions/016-cross-cutting-resolutions.md))
+
+Election day is the highest-stakes operational moment. The architecture supports three distinct capabilities: election data ingestion, results entry verification, and alliance ride sharing.
+
+### Election data schema and ingestion
+
+The platform defines a **standard election data schema** for polling locations, candidate lists, district boundaries, and results. Two ingestion paths feed this schema:
+
+| Path | When | How |
+|------|------|-----|
+| **API connector** | Jurisdictions with machine-readable feeds | Per-tenant configuration pointing to the electoral authority's API. Adapter per jurisdiction. |
+| **CSV / spreadsheet import** | Everywhere else (most global south contexts) | Manual upload with column mapping, validation, and preview before commit. |
+
+No specific electoral authority integration is promised in v1. The value is the standard schema and the manual import workflow. API connectors are added per-jurisdiction as demand warrants.
+
+### Results entry verification pipeline
+
+Poll watchers submit results through the mobile app. Five verification layers compound without blocking speed:
+
+| Layer | Mechanism | Blocking? |
+|-------|-----------|-----------|
+| **Identity** | Only registered poll watchers (via GOTV-012) can submit | Yes — submission requires authenticated watcher identity |
+| **Geolocation** | Optional GPS stamp (watcher near polling location) | No — GPS may be unavailable indoors |
+| **Photo evidence** | Camera capture of official results board/tally sheet | No — attached for audit, not gated |
+| **Cross-check** | Side-by-side comparison when multiple watchers submit from the same location | No — flags discrepancies for war room review |
+| **Audit trail** | All submissions immutable with timestamp, submitter ID, device info | Always on — non-deletable per retention policy |
+
+No single layer is blocking (except identity). The layers compound: a fraudulent entry would need a registered watcher, at the right location, with a convincing photo, that matches other watchers' submissions. The war room dashboard highlights discrepancies for human review.
+
+### Alliance ride sharing
+
+(Decided in [ADR-016 §48](../decisions/016-cross-cutting-resolutions.md))
+
+Alliance members can contribute drivers to a shared pool for election day rides-to-polls. Opt-in per alliance, enabled by the alliance lead in GOTV settings.
+
+**Routing priority:** Same-org drivers first, then alliance pool. Each org sees only rides fulfilled by their own drivers in their own reporting. The alliance dashboard shows aggregate ride metrics.
+
+**Data boundary:** Ride request data (voter name, pickup address) is shared only with the assigned driver's org for the duration of the ride. No persistent cross-org data sharing from ride fulfillment.
 
 ---
 
@@ -762,9 +1008,42 @@ ContentItem
 - AI-generated translations are marked `ai_generated` and must be reviewed before being published (decided in geography.md).
 - Translation memory: reviewed translations are stored and used to improve future AI translations for consistency.
 
+**v2 forward reference:** The [Shared Content Library](../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will provide centralized asset management with tagging, search, usage tracking, rights management, and cross-feature reuse. v1 uses direct file upload per campaign/post with a "recent uploads" panel for lightweight reuse.
+
 ---
 
 ## AI Integration
+
+**DECIDED:** BYOM (Bring Your Own Model) — provider-agnostic, org-configured. Supersedes the previous hybrid (managed-key vs BYOK) model per [ADR-016 §38](../decisions/016-cross-cutting-resolutions.md). Supersedes [ADR-013](../decisions/013-analytics-ai.md) AI model decision.
+
+### BYOM architecture
+
+```
+┌─────────────────────────────────────────────────┐
+│                AI Abstraction Layer               │
+│                                                   │
+│  Common interface: generate(prompt, context)       │
+│  Capabilities: text generation, translation,       │
+│                summarization, KB-grounded Q&A      │
+│                                                   │
+│  ┌─────────────┐  ┌─────────────┐  ┌──────────┐  │
+│  │  Org's Own   │  │  Platform    │  │ Provider  │  │
+│  │  Provider    │  │  Default     │  │ Registry  │  │
+│  │  (BYOM)      │  │  (fallback)  │  │          │  │
+│  └──────┬──────┘  └──────┬──────┘  └──────────┘  │
+└─────────┼────────────────┼────────────────────────┘
+          │                │
+     Org's AI API    Platform-managed
+     endpoint        model
+```
+
+**BYOM configuration:** The OA configures their AI provider in settings — API endpoint, credentials, and model identifier. The platform's AI features (message generation, translation, concierge) route through the org's configured provider. This follows the same self-sovereignty pattern as BYOK for encryption.
+
+**Platform default:** Orgs without their own AI infrastructure get a platform-managed model. All AI features work out of the box for smaller orgs.
+
+**Provider-agnostic interface:** The platform defines what it needs (text generation with language support, structured output, grounding), not which specific model. An abstraction layer handles provider-specific API differences — the same adapter pattern used for payments and communications.
+
+**BYOK + BYOM interaction:** When a BYOK tenant configures an external BYOM provider, data sent to the AI provider leaves the tenant's encryption perimeter. This is the tenant's informed choice — the platform surfaces a clear warning during BYOM configuration: *"Your AI provider will receive unencrypted prompt data. This data leaves your encryption boundary."* The OA must acknowledge this tradeoff. Tenants at Maximum security tier who require data to stay within their perimeter must self-host their AI model.
 
 ### Activism message generation
 
@@ -797,6 +1076,8 @@ Campaign talking points + Supporter context
 - Language and tone appropriate for the target (elected official, regulator).
 - Personally identifiable information used only as the supporter provides it.
 
+**Output formats:** Messages can be sent via email or downloaded as a formatted PDF for printing and physical mailing ([ADR-016 §39](../decisions/016-cross-cutting-resolutions.md)). The PDF includes the target's mailing address, formatted letter body, and the supporter's name. PDF rendering uses the same content — just a different output format — so this is a lightweight server-side rendering pipeline, not a separate generation path.
+
 ### Translation service
 
 ```
@@ -807,13 +1088,15 @@ Source content → Translation Service → AI-generated draft
                                      Published translation
 ```
 
-**DECIDED:** Hybrid — external API for managed-key tenants, self-hosted for BYOK tenants.
+Translation uses the same BYOM abstraction layer. Orgs with multilingual AI capabilities in their own provider benefit from continuity of tone and terminology across GreenGrass and their other tools.
 
-- **Managed-key tenants:** External AI API (Claude, GPT, or best-available) for message generation and translation. These tenants already trust GreenGrass with their encryption keys, so using an external AI with appropriate data processing agreements is consistent with the trust model. Highest quality, especially for multilingual output.
-- **BYOK tenants:** Self-hosted open models (Llama, Mistral, or best-available open model) running within the tenant's infrastructure boundary. Data never leaves the trust perimeter. Quality may be lower for some languages (Thai, Arabic) — this is a known tradeoff of the BYOK sovereignty model.
-- **Common interface:** The AI service abstracted behind an adapter, same as payments and comms. The tenant's encryption model determines which backend is used. Swappable as open models improve.
+### AI concierge
 
-<!-- REVISIT: GPU infrastructure costs for self-hosted models per country. May need shared GPU pools within a country cluster rather than per-tenant GPU allocation. Also, open model quality for Thai and Arabic should be evaluated during pilot. -->
+The in-app help concierge is grounded strictly in the org's knowledge base and GreenGrass platform documentation. No broader reasoning or external knowledge — a hallucinated answer about election law or compliance has real consequences. If a question cannot be answered from grounded sources, the concierge says "I don't have information about that" and offers to connect the user with support.
+
+Language detection: responds in the language the user types in. Falls back to the user's configured profile language if detection confidence is low.
+
+**v2 forward reference:** The BYOM infrastructure enables orgs to leverage their own fine-tuned models for the concierge — models that understand their specific terminology, organizational context, and operational patterns. This is additive; the grounding constraint (KB-only) remains regardless of the underlying model.
 
 ---
 
@@ -847,13 +1130,24 @@ Source content → Translation Service → AI-generated draft
 - Adapters are per-tenant (each tenant configures their own API keys, accounts, etc.).
 - Data flowing through integrations is logged in the audit trail.
 
+**Integration health monitoring** (decided in [ADR-016 §56](../decisions/016-cross-cutting-resolutions.md)):
+
+The integration hub runs periodic health checks per integration (API ping, token validity, last successful sync timestamp). Status is displayed in the integration settings screen: Connected (green), Degraded (amber), Failed (red).
+
+Alert escalation:
+1. In-app notification to OA after first failure
+2. Email alert after 3 consecutive failures
+3. Dashboard warning banner if a critical integration (payment processor, SMS provider) is down
+
+The integration detail screen shows a health timeline (last 30 days) so the OA can distinguish intermittent issues from sustained failures.
+
 ### Public API
 
 **DECIDED:** REST + webhooks. Public API from day one.
 
 - **REST API:** Documented, versioned, OAuth2-authenticated. Full CRUD on tenant resources (contacts, donations, events, campaigns, etc.) scoped by the caller's role and permissions.
 - **Webhooks:** Real-time event notifications — donation received, volunteer signed up, canvassing interaction recorded, event RSVP, etc. Tenants configure webhook endpoints and select which events to subscribe to.
-- **Rate limiting:** Per-tenant, per-API-key. Prevents abuse without limiting legitimate integration.
+- **Rate limiting:** Per-tenant, per-API-key. Each pricing plan defines default rate limits. OAs can adjust limits per API key within the plan's ceiling ([ADR-016 §55](../decisions/016-cross-cutting-resolutions.md)). Standard headers on all responses: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`.
 - **Not an afterthought:** The public API is the same API the GreenGrass frontend consumes. No private backdoors that the public API can't access. Tenants can build anything on top of GreenGrass that GreenGrass itself can build.
 
 This is a core commitment to the sovereignty model — tenants who can build on top of the platform aren't locked into it.
@@ -994,8 +1288,10 @@ For self-hosted tenants, GreenGrass provides:
 6. ~~Sync protocol~~ → Event sourcing
 7. ~~Event streaming~~ → NATS JetStream
 8. ~~Email infrastructure~~ → Self-hosted, per-country
-9. ~~AI models~~ → Hybrid (external API for managed-key, self-hosted for BYOK)
+9. ~~AI models~~ → ~~Hybrid (external API for managed-key, self-hosted for BYOK)~~ → **BYOM** (Bring Your Own Model) — orgs configure their own AI provider; platform provides default fallback. Supersedes the hybrid model per [ADR-016 §38](../decisions/016-cross-cutting-resolutions.md).
 10. ~~Public API~~ → REST + webhooks, day one
 11. ~~Technology stack~~ → Validated (TypeScript/SvelteKit/Capacitor/PostgreSQL), native iOS path preserved
 12. ~~Self-hosted updates~~ → Auto-update with rollback + prominent notifications
 13. ~~Tenant URLs~~ → Subdomain default + custom domain support
+14. ~~Data retention~~ → Tiered (operational/compliance/audit/import rollback) per [ADR-016 §4](../decisions/016-cross-cutting-resolutions.md). Supersedes ADR-004's uniform 10-year policy.
+15. ~~89 wireframe open questions~~ → All resolved per [ADR-016](../decisions/016-cross-cutting-resolutions.md)
