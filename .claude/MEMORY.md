@@ -1,0 +1,69 @@
+# Memory
+
+## Project State
+
+**Phase:** Specification & Design (complete)
+**Ready for:** Implementation
+
+## Key Counts
+
+| Artifact | Count |
+|----------|-------|
+| Spec documents | 12 |
+| UX documents | 37 (in reading order) |
+| Wireframe documents | 21 |
+| Screens | 236 |
+| ADRs | 16 (001-016) |
+| Diary entries | 8 |
+
+## Completed Work
+
+1. **Specification** — 12 interconnected spec documents covering product, users, workflows, geography, security, compliance, fundraising, integrations, support, GOTV, messaging, press
+2. **Architecture** — System architecture document with data model, infrastructure, and technical decisions
+3. **Information Architecture** — Navigation model, screen inventory, persona views, URL structure
+4. **Design System** — Foundations, theming, components, responsive strategy
+5. **Wireframes** — 21 documents covering 236 screens across all feature areas
+6. **Wireframe Audit** — Normalized structure, filled gaps, consolidated open questions
+7. **Open Question Resolution** — All 89 questions resolved in ADR-016
+8. **Architecture Reconciliation** — system.md updated to reflect ADR-016 decisions
+9. **Housekeeping** — Documentation consistency, numbering fixes, README updates
+
+## Key Decisions (from ADR-016)
+
+- **AI Model:** BYOM (Bring Your Own Model) — tenants provide their own API keys
+- **Data Retention:** Tiered policy (operational/compliance/archival)
+- **Channel Orchestration:** Two-layer (platform-wide + per-campaign)
+- **Election Results Security:** Multi-layer (Entry → Confirmation → Entry Lock → Canvass)
+- **v2 Tentpoles:** Visual Flow Builder, Shared Content Library, Settings Delegation, Public Page A/B Testing
+
+## File Locations
+
+- Specs: `spec/*.md`
+- UX: `design/ux/` (see `00-overview.md` for reading order)
+- Architecture: `design/architecture/system.md`
+- Decisions: `decisions/001-016.md` + `ux-decisions.md`
+- Diary: `diary/01-08.md`
+
+## Recent Session (2026-03-05)
+
+### Housekeeping Tasks Completed
+
+1. Updated `diary/README.md` with entries 6 and 7
+2. Updated `README.md` — project status, structure, UX overview reference
+3. Updated `CLAUDE.md` — phase status, project structure with UX hierarchy
+4. Fixed scrambled numbering in `design/ux/00-overview.md` (entries 25-31 were out of order)
+5. Verified all document counts are consistent across files
+
+### Issues Found and Resolved
+
+| Issue | Resolution |
+|-------|------------|
+| Wireframe numbering scrambled (25-31) | Fixed — now 1-37 sequential |
+| diary/README.md missing entries 6-7 | Added |
+| README.md said "moving into UX design" | Updated to "complete" |
+| CLAUDE.md structure incomplete | Added UX subdirs and diary |
+
+### No Changes Needed
+
+- UX document count (37) is correct — refers to reading order items
+- ADR count (16) is correct — `ux-decisions.md` is supplementary, not numbered

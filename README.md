@@ -10,9 +10,9 @@ Puerto Rico (alpha), Brazil, Thailand, India, and Lebanon — each with distinct
 
 ## Project Status
 
-**Current phase: Specification & Design**
+**Current phase: Specification & Design (complete)**
 
-All product specifications are complete. The project is moving into UX design.
+All product specifications, UX design artifacts, and architecture documents are complete. The project is ready to move into implementation.
 
 ## Working with This Project
 
@@ -51,7 +51,8 @@ If you're new to the project, read the specs in this order:
 11. **[`spec/messaging.md`](spec/messaging.md)** — Internal communications, notifications, E2E encryption.
 12. **[`spec/press.md`](spec/press.md)** — Press, media, social media, public profiles, endorsements.
 13. **[`design/architecture/system.md`](design/architecture/system.md)** — System architecture, data model, infrastructure.
-14. **[`decisions/`](decisions/)** — 15 Architecture Decision Records extracting and formalizing decisions from all spec and design documents.
+14. **[`design/ux/00-overview.md`](design/ux/00-overview.md)** — UX design overview with reading order for all 37 UX documents.
+15. **[`decisions/`](decisions/)** — 16 Architecture Decision Records extracting and formalizing decisions from all spec and design documents.
 
 ## Project Structure
 
@@ -74,25 +75,19 @@ GreenGrass/
 │   ├── messaging.md               # Internal communications
 │   └── press.md                   # Press, media, public communications
 ├── design/
-│   ├── ux/                        # UX design artifacts (next phase)
+│   ├── ux/                        # UX design artifacts
+│   │   ├── 00-overview.md         # Reading order and glossary
+│   │   ├── 01-information-architecture/  # Navigation, screens, personas, URLs
+│   │   ├── 02-global-patterns/    # Offline, notifications, search, security UX
+│   │   ├── 03-design-system/      # Foundations, theming, components, responsive
+│   │   └── 04-wireframes/         # 21 wireframe documents (236 screens)
 │   └── architecture/
 │       └── system.md              # System architecture
-└── decisions/                     # Architecture Decision Records (ADRs)
-    ├── 001-platform-architecture.md
-    ├── 002-security-threat-model.md
-    ├── 003-identity-access-organization.md
-    ├── 004-data-model-integrity.md
-    ├── 005-offline-first-sync.md
-    ├── 006-field-operations-gotv.md
-    ├── 007-fundraising-payments.md
-    ├── 008-communications-messaging.md
-    ├── 009-compliance-legal.md
-    ├── 010-internationalization-localization.md
-    ├── 011-design-system-ux.md
-    ├── 012-external-integrations.md
-    ├── 013-analytics-ai.md
-    ├── 014-volunteer-onboarding.md
-    └── 015-product-scope.md
+├── decisions/                     # Architecture Decision Records (ADRs)
+│   ├── 001-platform-architecture.md
+│   ├── ...                        # 002-015: security, identity, data, offline, etc.
+│   └── 016-cross-cutting-resolutions.md  # Resolution of 89 open questions
+└── diary/                         # Project diary (8 entries)
 ```
 
 ## Key Design Principles

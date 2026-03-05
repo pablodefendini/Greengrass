@@ -15,3 +15,9 @@ The diary captures the process, decisions, surprises, and lessons learned from d
 4. **[The Design System and Wireframes](04-design-system-and-wireframes.md)** — Building a visual language before having a brand. System fonts over custom fonts, 8px grids, theming as a cascade, and why ASCII wireframes work better than expected.
 
 5. **[The Wireframe Audit](05-the-wireframe-audit.md)** — Auditing 21 wireframe documents for consistency, normalizing 9 early-batch docs to a standard structure, filling 15 missing wireframes, and making implicit conventions explicit.
+
+6. **[Resolving the Open Questions](06-resolving-the-open-questions.md)** — Systematically resolving all 89 open questions from the wireframe audit. Cross-cutting policies first (data retention, channel orchestration), then category by category. BYOM emerges from an AI question, v2 tentpoles identified.
+
+7. **[Reconciling the Architecture](07-reconciling-the-architecture.md)** — Updating the system architecture document to reflect ADR-016 decisions. 22 changes: 2 new sections (Data Retention, Election Day), 1 rewrite (AI Integration for BYOM), 19 augmentations. The BYOK + BYOM tension documented.
+
+8. **[Housekeeping](08-housekeeping.md)** — Documentation audit and consistency fixes. Stale READMEs, scrambled numbering in the UX overview, missing diary entries. Creating a memory file for session persistence. The project is now ready for implementation.

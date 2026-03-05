@@ -6,16 +6,14 @@ GreenGrass is a custom platform for managing grassroots political elections in t
 
 ## Project Phase
 
-**Current phase: Specification & Design**
+**Current phase: Specification & Design (complete)**
 
-We are working top-down — starting from a high-level product description and progressively drilling down into:
+All spec and design work is done. The project is ready for implementation.
 
-1. **Product definition** — what it does, who it serves, core workflows
-2. **UX design** — user journeys, interface patterns, accessibility constraints
-3. **Architecture & engineering** — system design, data model, infrastructure decisions
-4. **Software development** — implementation
-
-No code is being written yet. All work is spec and design.
+Completed phases:
+1. **Product definition** — 12 spec documents covering product, users, workflows, security, compliance, etc.
+2. **UX design** — 37 documents: information architecture, global patterns, design system, 21 wireframes (236 screens)
+3. **Architecture** — system architecture document, 16 ADRs formalizing all decisions
 
 ## Project Structure
 
@@ -24,7 +22,7 @@ GreenGrass/
 ├── CLAUDE.md                      # Project instructions (this file)
 ├── .claude/
 │   └── SKILLS.md                  # Project-specific skills
-├── spec/
+├── spec/                          # Product specifications (12 docs)
 │   ├── product.md                 # High-level product description
 │   ├── users.md                   # User personas and roles
 │   ├── workflows.md               # Core workflows and user journeys
@@ -38,10 +36,16 @@ GreenGrass/
 │   ├── messaging.md               # Internal communications and notifications
 │   └── press.md                   # Press, media, and public communications
 ├── design/
-│   ├── ux/                        # UX design artifacts
+│   ├── ux/                        # UX design artifacts (37 docs)
+│   │   ├── 00-overview.md         # Reading order and glossary
+│   │   ├── 01-information-architecture/  # Navigation, screens, personas, URLs
+│   │   ├── 02-global-patterns/    # Offline, notifications, search, security UX
+│   │   ├── 03-design-system/      # Foundations, theming, components, responsive
+│   │   └── 04-wireframes/         # 21 wireframe documents (236 screens)
 │   └── architecture/
 │       └── system.md              # System architecture and data model
-└── decisions/                     # Architecture Decision Records (ADRs)
+├── decisions/                     # Architecture Decision Records (16 ADRs)
+└── diary/                         # Project diary (8 entries)
 ```
 
 ## Conventions
