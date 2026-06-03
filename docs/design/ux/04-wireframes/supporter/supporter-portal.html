@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supporter Portal Wireframes · GreenGrass</title>
+<meta name="description" content="Supporter Portal Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="./supporter-portal.html" aria-current="page" class="active">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="supporter-portal-wireframes" tabindex="-1"><a class="heading-anchor" href="#supporter-portal-wireframes" aria-hidden="true">#</a> Supporter Portal Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>The supporter portal is the public-facing personal space for donors and supporters. It's visually branded with the tenant's colors and logo, uses simplified navigation (no sidebar), and handles donation history, recurring management, event RSVPs, and profile/preferences. Mobile-first.</p>
+<p>The portal exists at <code>/portal/*</code> routes and uses the <code>(portal)</code> layout group — separate from the main app shell.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUP-001</td>
+<td>Supporter Home</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td>Portal Home</td>
+</tr>
+<tr>
+<td>SUP-002</td>
+<td>Donation History</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td>Donation History</td>
+</tr>
+<tr>
+<td>SUP-003</td>
+<td>Donation Receipt View</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td>Donation Receipt View</td>
+</tr>
+<tr>
+<td>SUP-004</td>
+<td>Recurring Donation Management</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td>Portal Home (inline)</td>
+</tr>
+<tr>
+<td>SUP-005</td>
+<td>Payment Method Update</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td>Payment Method Update</td>
+</tr>
+<tr>
+<td>SUP-006</td>
+<td>Supporter Profile</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td>Supporter Profile</td>
+</tr>
+<tr>
+<td>SUP-007</td>
+<td>Communication Preferences</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td>Communication Preferences</td>
+</tr>
+<tr>
+<td>SUP-008</td>
+<td>My Events</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td>Events Page</td>
+</tr>
+<tr>
+<td>SUP-009</td>
+<td>Year-End Statement Download</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td>Year-End Statement Download</td>
+</tr>
+</tbody>
+</table>
+<p>All supporter portal screens are online-only. The portal is a public web experience — no offline capability.</p>
+<p>Cross-references: FUND-005 (Public Donation Form) is wireframed in the fundraising section of this document and also in <code>fundraising/fundraising.md</code>. EVT-006 and EVT-007 (Public Event Pages) are wireframed in <code>events/events.md</code>.</p>
+<h2 id="supporter-portal-navigation-context" tabindex="-1"><a class="heading-anchor" href="#supporter-portal-navigation-context" aria-hidden="true">#</a> Supporter Portal Navigation Context</h2>
+<p>The portal uses a simplified horizontal nav (desktop) or tab bar (mobile), not the standard sidebar:</p>
+<pre><code>Desktop:   [Logo]  Home  |  Donations  |  Events  |  Preferences     [Account ▾]  [Español ▾]
+Mobile:    [Perfil]  [Donaciones]  [Eventos]
+</code></pre>
+<p>Pre-auth pages (donation form, event page) show no navigation — just the tenant header and content.</p>
+<hr>
+<h2 id="public-donation-page-pre-auth" tabindex="-1"><a class="heading-anchor" href="#public-donation-page-pre-auth" aria-hidden="true">#</a> Public Donation Page (Pre-Auth)</h2>
+<p>The first touchpoint. Tenant-branded. No login required to donate.</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde de Puerto Rico                         [Log In]  [Español ▾] │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                          │   │
+│  │                  Support Partido Verde                                   │   │
+│  │                  ─────────────────────                                   │   │
+│  │                                                                          │   │
+│  │      Your contribution powers our campaign for a                         │   │
+│  │      greener, more equitable Puerto Rico.                                │   │
+│  │                                                                          │   │
+│  └──────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────┐                   │
+│  │                                                          │                   │
+│  │  Choose an amount:                                       │                   │
+│  │                                                          │                   │
+│  │  ┌───────┐  ┌───────┐  ┌───────┐  ┌───────┐            │                   │
+│  │  │  $25  │  │  $50  │  │ [$100]│  │ $250  │            │                   │
+│  │  └───────┘  └───────┘  └───────┘  └───────┘            │                   │
+│  │                                                          │                   │
+│  │  ┌───────┐  ┌───────┐                                   │                   │
+│  │  │ $500  │  │ Other │                                   │                   │
+│  │  └───────┘  └───────┘                                   │                   │
+│  │                                                          │                   │
+│  │  ☐ Make this a monthly donation                          │                   │
+│  │                                                          │                   │
+│  │  ─────────────────────────────────────────               │                   │
+│  │                                                          │                   │
+│  │  Your Information                                        │                   │
+│  │                                                          │                   │
+│  │  First Name *              Last Name *                   │                   │
+│  │  ┌─────────────────┐      ┌─────────────────┐          │                   │
+│  │  │                 │      │                 │          │                   │
+│  │  └─────────────────┘      └─────────────────┘          │                   │
+│  │                                                          │                   │
+│  │  Email *                                                 │                   │
+│  │  ┌──────────────────────────────────────────┐           │                   │
+│  │  │                                          │           │                   │
+│  │  └──────────────────────────────────────────┘           │                   │
+│  │                                                          │                   │
+│  │  Address *                                               │                   │
+│  │  ┌──────────────────────────────────────────┐           │                   │
+│  │  │                                          │           │                   │
+│  │  └──────────────────────────────────────────┘           │                   │
+│  │                                                          │                   │
+│  │  City *                State *        ZIP *              │                   │
+│  │  ┌──────────┐        ┌────────┐      ┌──────┐          │                   │
+│  │  │          │        │  PR ▾  │      │      │          │                   │
+│  │  └──────────┘        └────────┘      └──────┘          │                   │
+│  │                                                          │                   │
+│  │  Employer *                Occupation *                   │                   │
+│  │  ┌─────────────────┐      ┌─────────────────┐          │                   │
+│  │  │                 │      │                 │          │                   │
+│  │  └─────────────────┘      └─────────────────┘          │                   │
+│  │  ⓘ Required by campaign finance law.                    │                   │
+│  │                                                          │                   │
+│  │  ─────────────────────────────────────────               │                   │
+│  │                                                          │                   │
+│  │  Payment                                                 │                   │
+│  │  ┌──────────────────────────────────────────┐           │                   │
+│  │  │  Card Number                              │           │                   │
+│  │  │  ┌────────────────────────────────────┐   │           │                   │
+│  │  │  │ 4242 4242 4242 4242               │   │           │                   │
+│  │  │  └────────────────────────────────────┘   │           │                   │
+│  │  │  Exp          CVC                         │           │                   │
+│  │  │  ┌──────────┐ ┌──────────┐                │           │                   │
+│  │  │  │ 12/27    │ │ 123      │                │           │                   │
+│  │  │  └──────────┘ └──────────┘                │           │                   │
+│  │  └──────────────────────────────────────────┘           │                   │
+│  │                                                          │                   │
+│  │  ┌──────────────────────────────────────────────────┐   │                   │
+│  │  │  💰  Donate $100                                  │   │                   │
+│  │  └──────────────────────────────────────────────────┘   │                   │
+│  │                                                          │                   │
+│  │  ☐ Subscribe to email updates from Partido Verde        │                   │
+│  │                                                          │                   │
+│  └──────────────────────────────────────────────────────────┘                   │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────────────┐   │
+│  │  Paid for by Partido Verde de Puerto Rico.                               │   │
+│  │  Contributions are not tax-deductible. Federal law requires us           │   │
+│  │  to use our best efforts to collect and report the name, mailing         │   │
+│  │  address, occupation, and name of employer of individuals whose          │   │
+│  │  contributions exceed $200 in an election cycle.                         │   │
+│  └──────────────────────────────────────────────────────────────────────────┘   │
+│                                                                                 │
+│  Partido Verde de Puerto Rico · Privacy Policy · Terms of Service              │
+└─────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-donation-page" tabindex="-1"><a class="heading-anchor" href="#mobile-donation-page" aria-hidden="true">#</a> Mobile Donation Page</h3>
+<pre><code>┌──────────────────────────────┐
+│  🌿 Partido Verde   [Español]│
+├──────────────────────────────┤
+│                              │
+│  Support Partido Verde       │
+│  ─────────────────────       │
+│                              │
+│  Your contribution powers    │
+│  our campaign.               │
+│                              │
+│  ┌──────┐ ┌──────┐ ┌──────┐│
+│  │ $25  │ │ $50  │ │[$100]││
+│  └──────┘ └──────┘ └──────┘│
+│  ┌──────┐ ┌──────┐ ┌──────┐│
+│  │ $250 │ │ $500 │ │Other ││
+│  └──────┘ └──────┘ └──────┘│
+│                              │
+│  ☐ Make this monthly         │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  First Name *                │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  └──────────────────────────┘│
+│  Last Name *                 │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  └──────────────────────────┘│
+│  Email *                     │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  └──────────────────────────┘│
+│         ↓ scroll             │
+│  (Address, employer fields)  │
+│  (Payment card fields)       │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  💰  Donate $100         ││
+│  └──────────────────────────┘│
+│                              │
+│  Compliance disclaimer...    │
+│                              │
+│  Privacy · Terms             │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="donation-confirmation" tabindex="-1"><a class="heading-anchor" href="#donation-confirmation" aria-hidden="true">#</a> Donation Confirmation</h3>
+<pre><code>┌──────────────────────────────┐
+│  🌿 Partido Verde            │
+├──────────────────────────────┤
+│                              │
+│           ✓                  │
+│                              │
+│  Thank you!                  │
+│  ─────────────────────       │
+│                              │
+│  Your $100 donation to       │
+│  Partido Verde has been      │
+│  processed successfully.     │
+│                              │
+│  A receipt has been sent     │
+│  to ana@email.com.           │
+│                              │
+│  Transaction: #GG-2026-4521 │
+│  Date: March 3, 2026        │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Create an Account       ││
+│  │  View your history,      ││
+│  │  manage recurring, get   ││
+│  │  receipts.               ││
+│  └──────────────────────────┘│
+│                              │
+│  [Return to Partido Verde]   │
+│                              │
+│  Privacy · Terms             │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="supporter-portal-logged-in" tabindex="-1"><a class="heading-anchor" href="#supporter-portal-logged-in" aria-hidden="true">#</a> Supporter Portal (Logged In)</h2>
+<h3 id="portal-home" tabindex="-1"><a class="heading-anchor" href="#portal-home" aria-hidden="true">#</a> Portal Home</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde de Puerto Rico                   [Mi Perfil]  [Cerrar]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Mi Perfil]    [Donaciones]    [Eventos]    [Preferencias]                  │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Hola, Ana                                                                   │
+│  ─────────                                                                   │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                       │
+│  │  💰 Donated   │  │  🔄 Recurring │  │  📅 Events   │                       │
+│  │  $1,250 total │  │  $100/month   │  │  2 upcoming  │                       │
+│  │  8 donations  │  │  Next: Apr 1  │  │  next: Mar 5 │                       │
+│  └──────────────┘  └──────────────┘  └──────────────┘                       │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Quick Actions                                                        │   │
+│  │  ────────────────                                                     │   │
+│  │  [💰 Donate Again]  [📅 View Events]  [⚙ Update Preferences]        │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Recent Activity                                                      │   │
+│  │  ────────────────                                                     │   │
+│  │  Mar 1   $100 monthly donation processed                ✓ Receipt    │   │
+│  │  Feb 28  RSVP'd to Rally at Plaza (Mar 5)                            │   │
+│  │  Feb 1   $100 monthly donation processed                ✓ Receipt    │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  Partido Verde de Puerto Rico · Privacidad · Términos · Ayuda              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="donation-history" tabindex="-1"><a class="heading-anchor" href="#donation-history" aria-hidden="true">#</a> Donation History</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde de Puerto Rico                   [Mi Perfil]  [Cerrar]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Mi Perfil]    [◉ Donaciones]    [Eventos]    [Preferencias]               │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Historial de Donaciones                                                     │
+│  ─────────────────────────                                                   │
+│                                                                              │
+│  Total donado: $1,250  ·  8 donaciones  ·  Desde enero 2025                 │
+│                                                                              │
+│  [💰 Donar Otra Vez]                                                        │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Date         Amount    Type       Status     Receipt               │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  Mar 1, 2026  $100.00   Mensual    ✓ Procesado  [↓ PDF]            │   │
+│  │  Feb 1, 2026  $100.00   Mensual    ✓ Procesado  [↓ PDF]            │   │
+│  │  Jan 15, 2026 $250.00   Única      ✓ Procesado  [↓ PDF]            │   │
+│  │  Jan 1, 2026  $100.00   Mensual    ✓ Procesado  [↓ PDF]            │   │
+│  │  Dec 1, 2025  $100.00   Mensual    ✓ Procesado  [↓ PDF]            │   │
+│  │  Nov 1, 2025  $100.00   Mensual    ✓ Procesado  [↓ PDF]            │   │
+│  │  Oct 1, 2025  $100.00   Mensual    ✓ Procesado  [↓ PDF]            │   │
+│  │  Sep 1, 2025  $100.00   Mensual    ✓ Procesado  [↓ PDF]            │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────                                                   │
+│                                                                              │
+│  Donación Recurrente                                                         │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  $100.00 / mes                                                       │   │
+│  │  Próxima: April 1, 2026                                              │   │
+│  │  Método: Visa ending 4242                                            │   │
+│  │  Activa desde: September 1, 2025                                     │   │
+│  │                                                                      │   │
+│  │  [Cambiar Monto]  [Actualizar Tarjeta]  [Pausar]  [Cancelar]       │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ⓘ Necesitas un resumen anual de tus donaciones?                           │
+│  [Generar Resumen Anual (2025) →]                                           │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  Partido Verde de Puerto Rico · Privacidad · Términos · Ayuda              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="events-page" tabindex="-1"><a class="heading-anchor" href="#events-page" aria-hidden="true">#</a> Events Page</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde de Puerto Rico                   [Mi Perfil]  [Cerrar]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Mi Perfil]    [Donaciones]    [◉ Eventos]    [Preferencias]               │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Próximos Eventos                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  Rally at Plaza del Mercado                                          │   │
+│  │  📅 March 5, 2026 · 6:00 PM                                         │   │
+│  │  📍 Plaza del Mercado, San Juan                                      │   │
+│  │  👥 142 attending                                                     │   │
+│  │                                                                      │   │
+│  │  Join us for a community rally featuring live music,                 │   │
+│  │  speakers, and a celebration of our campaign progress.               │   │
+│  │                                                                      │   │
+│  │  ✓ You're going                            [Cancel RSVP]            │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  Town Hall: Healthcare Access                                        │   │
+│  │  📅 March 12, 2026 · 7:00 PM                                        │   │
+│  │  📍 Centro Comunal, Bayamón                                          │   │
+│  │  👥 67 attending                                                      │   │
+│  │                                                                      │   │
+│  │  An open forum to discuss healthcare access and our                  │   │
+│  │  party's policy proposals.                                           │   │
+│  │                                                                      │   │
+│  │  [RSVP — I'm Going]                                                 │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Past Events                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Feb 22  Volunteer Appreciation Night  ✓ Attended                   │   │
+│  │  Feb 8   Phone Bank Kickoff           ✓ Attended                   │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  Partido Verde de Puerto Rico · Privacidad · Términos · Ayuda              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="preferences" tabindex="-1"><a class="heading-anchor" href="#preferences" aria-hidden="true">#</a> Preferences</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde de Puerto Rico                   [Mi Perfil]  [Cerrar]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Mi Perfil]    [Donaciones]    [Eventos]    [◉ Preferencias]               │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Preferencias de Comunicación                                                │
+│  ────────────────────────────                                                │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Email                                                               │   │
+│  │  ────────                                                            │   │
+│  │  ☑ Campaign updates and news                                         │   │
+│  │  ☑ Event invitations                                                 │   │
+│  │  ☑ Fundraising appeals                                               │   │
+│  │  ☑ Donation receipts (cannot be disabled)                            │   │
+│  │  ☐ Volunteer opportunities                                           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  SMS / WhatsApp                                                      │   │
+│  │  ────────────                                                        │   │
+│  │  ☑ Event reminders                                                   │   │
+│  │  ☐ Campaign updates                                                  │   │
+│  │  ☐ Fundraising appeals                                               │   │
+│  │                                                                      │   │
+│  │  Phone: +1 787-555-0147   [Change]                                   │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Push Notifications (App)                                            │   │
+│  │  ──────────────────────                                              │   │
+│  │  ☑ Event reminders                                                   │   │
+│  │  ☑ Donation receipts                                                 │   │
+│  │  ☐ Campaign updates                                                  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────                                               │
+│                                                                              │
+│  Language: [Español ▾]                                                       │
+│                                                                              │
+│  ─────────────────────────────                                               │
+│                                                                              │
+│  [Unsubscribe from all communications]                                      │
+│  ⓘ You will still receive donation receipts and account security notices.   │
+│                                                                              │
+│  ─────────────────────────────                                               │
+│                                                                              │
+│  Data &amp; Privacy                                                              │
+│  [Download my data]  [Delete my account]                                    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  [Save Changes]                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  Partido Verde de Puerto Rico · Privacidad · Términos · Ayuda              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="public-event-page-no-auth" tabindex="-1"><a class="heading-anchor" href="#public-event-page-no-auth" aria-hidden="true">#</a> Public Event Page (No Auth)</h2>
+<p>Accessible via shared link. Tenant-branded.</p>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde de Puerto Rico                               [Español ▾] │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │              [Event hero image or color block]                       │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Rally at Plaza del Mercado                                                  │
+│  ═══════════════════════════                                                 │
+│                                                                              │
+│  📅  March 5, 2026 · 6:00 PM — 9:00 PM                                     │
+│  📍  Plaza del Mercado, Calle Dos Hermanos, San Juan, PR                    │
+│  👥  142 people going                                                        │
+│                                                                              │
+│  ─────────────────────────────                                               │
+│                                                                              │
+│  Join us for a community rally featuring live music, speakers,              │
+│  food vendors, and a celebration of our campaign progress.                  │
+│                                                                              │
+│  Featured speakers:                                                          │
+│  • Ana Martínez, Candidate for District 5                                   │
+│  • Dr. Elena Torres, Healthcare Policy Director                             │
+│  • Carlos Rivera, Community Organizer                                       │
+│                                                                              │
+│  ─────────────────────────────                                               │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────┐                  │
+│  │                                                        │                  │
+│  │  RSVP                                                  │                  │
+│  │                                                        │                  │
+│  │  Name *           ┌──────────────────────────┐        │                  │
+│  │                    │                          │        │                  │
+│  │                    └──────────────────────────┘        │                  │
+│  │  Email *          ┌──────────────────────────┐        │                  │
+│  │                    │                          │        │                  │
+│  │                    └──────────────────────────┘        │                  │
+│  │  Phone (optional) ┌──────────────────────────┐        │                  │
+│  │                    │                          │        │                  │
+│  │                    └──────────────────────────┘        │                  │
+│  │                                                        │                  │
+│  │  ┌──────────────────────────────────────────────┐     │                  │
+│  │  │  ✓  RSVP — I'm Going                        │     │                  │
+│  │  └──────────────────────────────────────────────┘     │                  │
+│  │                                                        │                  │
+│  └────────────────────────────────────────────────────────┘                  │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  [Map showing venue location]                                        │   │
+│  │                                                                      │   │
+│  │  [Get Directions →]                                                  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────                                               │
+│  Share: [Facebook] [Twitter] [WhatsApp] [Copy Link]                         │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  Partido Verde de Puerto Rico · Privacidad · Términos                       │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="sup-003-donation-receipt-view" tabindex="-1"><a class="heading-anchor" href="#sup-003-donation-receipt-view" aria-hidden="true">#</a> SUP-003: Donation Receipt View</h2>
+<p>Accessed from the donation history table (SUP-002) by tapping a donation row. Displays a printable, downloadable receipt for a single donation. Mobile-first single-column layout.</p>
+<pre><code>┌──────────────────────────────┐
+│  🌿 Partido Verde            │
+├──────────────────────────────┤
+│                              │
+│  [← Back to History]        │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  🌿 Partido Verde de     ││
+│  │  Puerto Rico              ││
+│  │                           ││
+│  │  Donation Receipt         ││
+│  │  ════════════════         ││
+│  └──────────────────────────┘│
+│                              │
+│  Date                        │
+│  March 1, 2026               │
+│                              │
+│  Amount                      │
+│  $100.00 USD                 │
+│                              │
+│  Donor                       │
+│  Ana Martínez                │
+│  ana@email.com               │
+│                              │
+│  Payment Method              │
+│  Visa ending in 4242         │
+│                              │
+│  Transaction ID              │
+│  #GG-2026-4521               │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Tax Deductibility           │
+│  This contribution is not    │
+│  tax-deductible for federal  │
+│  income tax purposes.        │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Paid for by Partido Verde   │
+│  de Puerto Rico. Federal law │
+│  requires us to use our best │
+│  efforts to collect and      │
+│  report the name, mailing    │
+│  address, occupation, and    │
+│  name of employer of         │
+│  individuals whose           │
+│  contributions exceed $200   │
+│  in an election cycle.       │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ↓  Download PDF         ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ✉  Email Receipt        ││
+│  └──────────────────────────┘│
+│                              │
+│  [← Back to History]        │
+│                              │
+│  Privacy · Terms             │
+└──────────────────────────────┘
+</code></pre>
+<p>The receipt header displays the organization's logo and name, followed by the receipt title. Donation details are presented in a label/value list format optimized for scanning. The tax deductibility statement and compliance disclaimer are pulled from the organization's compliance configuration — different tenants may have different legal language depending on their jurisdiction and tax status.</p>
+<p>The two action buttons allow the supporter to download a PDF version of the receipt (for filing) or email a copy to their address on file. Both buttons are full-width on mobile for easy tap targets.</p>
+<hr>
+<h2 id="sup-005-payment-method-update" tabindex="-1"><a class="heading-anchor" href="#sup-005-payment-method-update" aria-hidden="true">#</a> SUP-005: Payment Method Update</h2>
+<p>Accessed from the recurring donation management section of donation history (SUP-002) via the &quot;Actualizar Tarjeta&quot; button, or from account settings. Requires a full account — magic link access is not sufficient for financial changes.</p>
+<pre><code>┌──────────────────────────────┐
+│  🌿 Partido Verde            │
+├──────────────────────────────┤
+│                              │
+│  [← Back to Donations]      │
+│                              │
+│  Update Payment Method       │
+│  ═══════════════════════     │
+│                              │
+│  Current Payment Method      │
+│  ─────────────────────       │
+│  ┌──────────────────────────┐│
+│  │  💳 Visa ending in 4242  ││
+│  │  Expires: 12/2027        ││
+│  └──────────────────────────┘│
+│                              │
+│  ⓘ This will update the     │
+│  payment method for 1 active │
+│  recurring donation.         │
+│                              │
+│  New Payment Method          │
+│  ─────────────────────       │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Card Number              ││
+│  │  ┌──────────────────────┐││
+│  │  │                      │││
+│  │  └──────────────────────┘││
+│  │  Exp          CVV        ││
+│  │  ┌──────────┐ ┌────────┐││
+│  │  │          │ │        │││
+│  │  └──────────┘ └────────┘││
+│  └──────────────────────────┘│
+│                              │
+│  Billing Address             │
+│  ─────────────────────       │
+│                              │
+│  Address *                   │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  └──────────────────────────┘│
+│  City *                      │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  └──────────────────────────┘│
+│  State *        ZIP *        │
+│  ┌────────────┐ ┌──────────┐│
+│  │  PR ▾      │ │          ││
+│  └────────────┘ └──────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Update Payment Method   ││
+│  └──────────────────────────┘│
+│                              │
+│  🔒 Your payment information │
+│  is securely processed by    │
+│  [processor name]. GreenGrass│
+│  does not store your card    │
+│  details.                    │
+│                              │
+│  Privacy · Terms             │
+└──────────────────────────────┘
+</code></pre>
+<p>The card entry fields are rendered inside a PCI-compliant iframe provided by the payment processor — GreenGrass never handles raw card data. The billing address section is shown when required by the processor for address verification (AVS).</p>
+<p>If the supporter has active recurring donations, an informational banner at the top of the form tells them how many recurring donations will be affected. On success, the screen shows a confirmation message:</p>
+<pre><code>┌──────────────────────────────┐
+│                              │
+│           ✓                  │
+│                              │
+│  Payment Method Updated      │
+│  ─────────────────────       │
+│                              │
+│  Your next recurring         │
+│  donation will use the new   │
+│  card ending in 8910.        │
+│                              │
+│  [← Back to Donations]      │
+│                              │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="sup-006-supporter-profile" tabindex="-1"><a class="heading-anchor" href="#sup-006-supporter-profile" aria-hidden="true">#</a> SUP-006: Supporter Profile</h2>
+<p>Personal information management for supporters. Simpler than the staff profile screen (PROF-001) — no avatar, no timezone, no role information. Accessed from the &quot;Mi Perfil&quot; tab in the portal navigation.</p>
+<pre><code>┌──────────────────────────────┐
+│  🌿 Partido Verde            │
+├──────────────────────────────┤
+│                              │
+│  [◉ Mi Perfil]  [Donaciones]│
+│  [Eventos]  [Preferencias]   │
+│                              │
+├──────────────────────────────┤
+│                              │
+│  Mi Perfil                   │
+│  ═════════                   │
+│                              │
+│  First Name *                │
+│  ┌──────────────────────────┐│
+│  │ Ana                      ││
+│  └──────────────────────────┘│
+│                              │
+│  Last Name *                 │
+│  ┌──────────────────────────┐│
+│  │ Martínez                 ││
+│  └──────────────────────────┘│
+│                              │
+│  Email                       │
+│  ana@email.com               │
+│  ⓘ Managed via your account │
+│                              │
+│  Phone                       │
+│  ┌──────────────────────────┐│
+│  │ +1 787-555-0147          ││
+│  └──────────────────────────┘│
+│  [Verify Phone]              │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Mailing Address             │
+│  (used for receipts and      │
+│  year-end statements)        │
+│                              │
+│  Address                     │
+│  ┌──────────────────────────┐│
+│  │ 123 Calle Sol            ││
+│  └──────────────────────────┘│
+│  City                        │
+│  ┌──────────────────────────┐│
+│  │ San Juan                 ││
+│  └──────────────────────────┘│
+│  State           ZIP         │
+│  ┌────────────┐ ┌──────────┐│
+│  │  PR ▾      │ │ 00901    ││
+│  └────────────┘ └──────────┘│
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Language Preference         │
+│  ┌──────────────────────────┐│
+│  │  Español ▾               ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Save Changes            ││
+│  └──────────────────────────┘│
+│                              │
+│  ─────────────────────       │
+│                              │
+│  [Delete My Account]         │
+│                              │
+│  Privacy · Terms             │
+└──────────────────────────────┘
+</code></pre>
+<p>The email field is read-only — displayed as plain text with a helper note. Email changes are handled through account management (password reset / re-verification flow), not inline editing.</p>
+<p>Phone verification uses a one-time code sent via SMS. Tapping &quot;Verify Phone&quot; sends a code and displays an inline verification field:</p>
+<pre><code>  Phone
+  ┌──────────────────────────┐
+  │ +1 787-555-0147          │
+  └──────────────────────────┘
+  Enter verification code:
+  ┌──────────────────────────┐
+  │                          │
+  └──────────────────────────┘
+  [Verify]  [Resend Code]
+</code></pre>
+<p>The &quot;Delete My Account&quot; link at the bottom triggers a confirmation dialog explaining data retention:</p>
+<pre><code>┌──────────────────────────────┐
+│                              │
+│  Delete Your Account?        │
+│  ─────────────────────       │
+│                              │
+│  This will:                  │
+│  • Remove your personal info │
+│  • Cancel recurring donations│
+│  • Remove event RSVPs        │
+│                              │
+│  Donation records will be    │
+│  retained as required by     │
+│  campaign finance law, but   │
+│  your account will be        │
+│  deactivated.                │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Delete My Account       ││
+│  └──────────────────────────┘│
+│  [Cancel]                    │
+│                              │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="sup-007-communication-preferences" tabindex="-1"><a class="heading-anchor" href="#sup-007-communication-preferences" aria-hidden="true">#</a> SUP-007: Communication Preferences</h2>
+<p>Supporter's control over how the organization contacts them. Accessed from the &quot;Preferencias&quot; tab in the portal navigation. This is a dedicated, more detailed version of the preferences — the existing Preferences screen in the portal provides a consolidated view, while this screen offers granular per-channel control.</p>
+<pre><code>┌──────────────────────────────┐
+│  🌿 Partido Verde            │
+├──────────────────────────────┤
+│                              │
+│  [Mi Perfil]  [Donaciones]  │
+│  [Eventos]  [◉ Preferencias]│
+│                              │
+├──────────────────────────────┤
+│                              │
+│  Communication Preferences   │
+│  ════════════════════════    │
+│                              │
+│  Email                       │
+│  ─────────────────────       │
+│  ☑ Campaign updates          │
+│  ☑ Donation receipts         │
+│    ⓘ Cannot be disabled     │
+│  ☑ Event invitations         │
+│  ☐ Fundraising appeals       │
+│                              │
+│  SMS                         │
+│  ─────────────────────       │
+│  ☑ Event reminders           │
+│  ☐ Campaign updates          │
+│                              │
+│  WhatsApp                    │
+│  ─────────────────────       │
+│  ☐ All communications        │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  How often should we email   │
+│  you?                        │
+│  ┌──────────────────────────┐│
+│  │  As needed ▾             ││
+│  └──────────────────────────┘│
+│  Options: As needed /        │
+│  Weekly digest /             │
+│  Monthly digest              │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Data Sharing                │
+│  ☐ Allow Partido Verde to   │
+│    share my contact info     │
+│    with allied organizations │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Save Preferences        ││
+│  └──────────────────────────┘│
+│                              │
+│  [Unsubscribe from all]     │
+│  ⓘ You can update these     │
+│  preferences at any time.    │
+│  Required transactional      │
+│  emails (receipts, account   │
+│  changes) cannot be disabled.│
+│                              │
+│  Privacy · Terms             │
+└──────────────────────────────┘
+</code></pre>
+<p>The &quot;Unsubscribe from all&quot; link triggers a confirmation dialog:</p>
+<pre><code>┌──────────────────────────────┐
+│                              │
+│  Unsubscribe from All?       │
+│  ─────────────────────       │
+│                              │
+│  You will stop receiving:    │
+│  • Campaign updates          │
+│  • Event invitations         │
+│  • Fundraising appeals       │
+│  • SMS and WhatsApp messages │
+│                              │
+│  You will still receive:     │
+│  • Donation receipts         │
+│  • Account security notices  │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Unsubscribe from All    ││
+│  └──────────────────────────┘│
+│  [Cancel]                    │
+│                              │
+└──────────────────────────────┘
+</code></pre>
+<p>Channel preferences are persisted per-supporter and respected by all outbound communication systems (email, SMS, WhatsApp). The frequency preference controls email digest batching — when set to &quot;Weekly digest&quot; or &quot;Monthly digest,&quot; non-urgent emails are aggregated into a single message rather than sent individually.</p>
+<hr>
+<h2 id="sup-009-year-end-statement-download" tabindex="-1"><a class="heading-anchor" href="#sup-009-year-end-statement-download" aria-hidden="true">#</a> SUP-009: Year-End Statement Download</h2>
+<p>Tax statement summarizing a full year of donations. Accessed from the donation history page (SUP-002) via the &quot;Generar Resumen Anual&quot; link. Only years with recorded donations appear in the year selector.</p>
+<pre><code>┌──────────────────────────────┐
+│  🌿 Partido Verde            │
+├──────────────────────────────┤
+│                              │
+│  [← Back to Donations]      │
+│                              │
+│  Year-End Statement          │
+│  ═══════════════════         │
+│                              │
+│  Year                        │
+│  ┌──────────────────────────┐│
+│  │  2025 ▾                  ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │                           ││
+│  │  Donation Summary         ││
+│  │  ─────────────────        ││
+│  │                           ││
+│  │  Year:       2025         ││
+│  │  Total:      $1,250.00    ││
+│  │  Donations:  8            ││
+│  │                           ││
+│  │  Organization:            ││
+│  │  Partido Verde de         ││
+│  │  Puerto Rico              ││
+│  │                           ││
+│  │  Tax ID:                  ││
+│  │  XX-XXXXXXX               ││
+│  │                           ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ↓  Download PDF Statement││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ✉  Email Statement      ││
+│  └──────────────────────────┘│
+│                              │
+│  ─────────────────────       │
+│                              │
+│  This contribution is not    │
+│  tax-deductible for federal  │
+│  income tax purposes. Paid   │
+│  for by Partido Verde de     │
+│  Puerto Rico.                │
+│                              │
+│  Privacy · Terms             │
+└──────────────────────────────┘
+</code></pre>
+<p>When the supporter selects a year with no donations, the summary card is replaced with an empty state:</p>
+<pre><code>┌──────────────────────────────┐
+│                              │
+│  No donations recorded       │
+│  for 2024.                   │
+│                              │
+│  Select another year or      │
+│  [Make a Donation →]         │
+│                              │
+└──────────────────────────────┘
+</code></pre>
+<p>The PDF statement is generated server-side and includes: the organization's name and tax ID (if applicable), the supporter's name and mailing address (from their profile), a line-item table of all donations for the selected year, and the total. The tax deductibility footer text is pulled from the organization's compliance configuration — the language shown here (&quot;not tax-deductible&quot;) is an example; some organizations in different jurisdictions may have deductible contributions and different required language.</p>
+<p>The &quot;Email Statement&quot; button sends the PDF to the supporter's email address on file, with a confirmation toast: &quot;Statement emailed to <a href="mailto:ana@email.com">ana@email.com</a>.&quot;</p>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty State</th>
+<th>Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portal Home</td>
+<td>No donation history</td>
+<td>&quot;You haven't made any donations yet.&quot;</td>
+<td>[Make a Donation →]</td>
+</tr>
+<tr>
+<td>Donation History</td>
+<td>No donations</td>
+<td>&quot;No donations found.&quot;</td>
+<td>[Make a Donation →]</td>
+</tr>
+<tr>
+<td>My Events</td>
+<td>No RSVPs</td>
+<td>&quot;You haven't RSVPed to any events yet.&quot;</td>
+<td>[Browse Events →]</td>
+</tr>
+<tr>
+<td>Recurring Management</td>
+<td>No recurring</td>
+<td>&quot;You don't have any recurring donations.&quot;</td>
+<td>[Set Up Monthly Giving →]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>All form fields properly labeled with <code>&lt;label&gt;</code> elements</li>
+<li>Amount selection buttons behave as radio group (<code>role=&quot;radiogroup&quot;</code>)</li>
+<li>Donation form validation: inline errors, field-level announcements via <code>aria-describedby</code></li>
+<li>Receipt downloads: announced to screen reader</li>
+<li>RSVP buttons: clear state change (&quot;RSVP — I'm Going&quot; → &quot;You're Going ✓&quot;)</li>
+<li>Portal navigation: <code>role=&quot;navigation&quot;</code> with <code>aria-label=&quot;Supporter portal&quot;</code></li>
+<li>Color contrast: tenant brand colors validated for WCAG AA on white/light backgrounds</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tenant-branded portal</td>
+<td>Org's colors, logo, and name — not GreenGrass-branded</td>
+<td>Supporters should feel they're interacting with their org</td>
+</tr>
+<tr>
+<td>Two-tier authentication</td>
+<td>Magic link for viewing, full account for management</td>
+<td>Low barrier to see history; higher bar for financial changes</td>
+</tr>
+<tr>
+<td>No dark mode on public pages</td>
+<td>Always tenant's configured theme (typically light)</td>
+<td>Consistent brand experience across all supporters</td>
+</tr>
+<tr>
+<td>Mobile-first design</td>
+<td>Designed for phone, adapted up to desktop</td>
+<td>Most supporters access from social media links on phones</td>
+</tr>
+<tr>
+<td>Compliance disclaimers in system style</td>
+<td>Not branded — legal requirement</td>
+<td>Disclaimers must be clearly distinguishable from marketing content</td>
+</tr>
+<tr>
+<td>Donation amounts as button grid</td>
+<td>Pre-set amounts + custom field</td>
+<td>Faster than free-text; pre-sets can be optimized per campaign</td>
+</tr>
+<tr>
+<td>Horizontal nav (not sidebar)</td>
+<td>Simple page-to-page navigation</td>
+<td>Portal has fewer screens; sidebar would be overkill</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Peer-to-peer fundraising pages.</strong> Deferred feature, but the portal architecture should accommodate personal fundraising pages in the future (supporters creating their own pages to share).</p>
+</li>
+<li>
+<p><strong>Donor wall / leaderboard.</strong> Should the portal include an optional &quot;Top Donors&quot; or campaign progress page visible to all supporters? Motivates giving but may raise privacy concerns.</p>
+</li>
+<li>
+<p><strong>Portal as PWA.</strong> Should the supporter portal be installable as a PWA from the browser? Supporters don't need the full Capacitor app, but a home-screen shortcut with push notifications could increase engagement.</p>
+</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#supporter-portal-navigation-context"># Supporter Portal Navigation Context</a></li><li class="toc-2"><a href="#public-donation-page-pre-auth"># Public Donation Page (Pre-Auth)</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#mobile-donation-page"># Mobile Donation Page</a></li><li class="toc-3"><a href="#donation-confirmation"># Donation Confirmation</a></li><li class="toc-2"><a href="#supporter-portal-logged-in"># Supporter Portal (Logged In)</a></li><li class="toc-3"><a href="#portal-home"># Portal Home</a></li><li class="toc-3"><a href="#donation-history"># Donation History</a></li><li class="toc-3"><a href="#events-page"># Events Page</a></li><li class="toc-3"><a href="#preferences"># Preferences</a></li><li class="toc-2"><a href="#public-event-page-no-auth"># Public Event Page (No Auth)</a></li><li class="toc-2"><a href="#sup-003-donation-receipt-view"># SUP-003: Donation Receipt View</a></li><li class="toc-2"><a href="#sup-005-payment-method-update"># SUP-005: Payment Method Update</a></li><li class="toc-2"><a href="#sup-006-supporter-profile"># SUP-006: Supporter Profile</a></li><li class="toc-2"><a href="#sup-007-communication-preferences"># SUP-007: Communication Preferences</a></li><li class="toc-2"><a href="#sup-009-year-end-statement-download"># SUP-009: Year-End Statement Download</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

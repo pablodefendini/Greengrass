@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings &amp; Admin Wireframes · GreenGrass</title>
+<meta name="description" content="Settings &amp; Admin Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="./settings.html" aria-current="page" class="active">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="settings-admin-wireframes" tabindex="-1"><a class="heading-anchor" href="#settings-admin-wireframes" aria-hidden="true">#</a> Settings &amp; Admin Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Settings is the control plane for the organization — branding, roles, compliance, integrations, security, and billing. Every screen in this section is Org Admin–only and desktop-preferred. These are low-frequency, high-impact screens: most settings are configured once during onboarding and rarely revisited, but getting them wrong has cascading consequences (wrong compliance rules, broken integrations, misconfigured permissions).</p>
+<p>The core UX challenge: settings screens must balance comprehensiveness with approachability. A new Org Admin setting up their first campaign needs guided setup. An experienced admin making a quick adjustment needs to find the right toggle without wading through tutorials. The solution: organized categories, in-context help text on every setting, and progressive disclosure for advanced options.</p>
+<p>All settings screens share a common pattern: three-tier settings hierarchy (org → feature → personal), change tracking (&quot;Last modified by X on date&quot;), unsaved changes warning on navigation, and per-field validation.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Category</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SET-001</td>
+<td>Org Profile &amp; Branding</td>
+<td>Organization</td>
+<td><code>/settings/org</code></td>
+</tr>
+<tr>
+<td>SET-002</td>
+<td>Role Template Editor</td>
+<td>Roles &amp; Permissions</td>
+<td><code>/settings/roles</code></td>
+</tr>
+<tr>
+<td>SET-003</td>
+<td>Permission Override Panel</td>
+<td>Roles &amp; Permissions</td>
+<td><code>/settings/roles/[id]/permissions</code></td>
+</tr>
+<tr>
+<td>SET-004</td>
+<td>Staff Management List</td>
+<td>Staff</td>
+<td><code>/settings/staff</code></td>
+</tr>
+<tr>
+<td>SET-005</td>
+<td>Staff Invite Flow</td>
+<td>Staff</td>
+<td><code>/settings/staff/invite</code></td>
+</tr>
+<tr>
+<td>SET-006</td>
+<td>Geographic Scope Configuration</td>
+<td>Campaign</td>
+<td><code>/settings/geography</code></td>
+</tr>
+<tr>
+<td>SET-007</td>
+<td>Campaign Period Configuration</td>
+<td>Campaign</td>
+<td><code>/settings/campaign-period</code></td>
+</tr>
+<tr>
+<td>SET-008</td>
+<td>Compliance Configuration</td>
+<td>Compliance</td>
+<td><code>/settings/compliance</code></td>
+</tr>
+<tr>
+<td>SET-009</td>
+<td>Contribution Limits Configuration</td>
+<td>Compliance</td>
+<td><code>/settings/contribution-limits</code></td>
+</tr>
+<tr>
+<td>SET-010</td>
+<td>Disclaimer Text Configuration</td>
+<td>Compliance</td>
+<td><code>/settings/disclaimers</code></td>
+</tr>
+<tr>
+<td>SET-011</td>
+<td>Data Retention Policy</td>
+<td>Compliance</td>
+<td><code>/settings/data-retention</code></td>
+</tr>
+<tr>
+<td>SET-012</td>
+<td>Integration Settings Hub</td>
+<td>Integrations</td>
+<td><code>/settings/integrations</code></td>
+</tr>
+<tr>
+<td>SET-013</td>
+<td>WhatsApp Business Setup</td>
+<td>Integrations</td>
+<td><code>/settings/integrations/whatsapp</code></td>
+</tr>
+<tr>
+<td>SET-014</td>
+<td>SMS Provider Configuration</td>
+<td>Integrations</td>
+<td><code>/settings/integrations/sms</code></td>
+</tr>
+<tr>
+<td>SET-015</td>
+<td>Email Domain Configuration</td>
+<td>Integrations</td>
+<td><code>/settings/integrations/email</code></td>
+</tr>
+<tr>
+<td>SET-016</td>
+<td>Social Media Account Connections</td>
+<td>Integrations</td>
+<td><code>/settings/integrations/social</code></td>
+</tr>
+<tr>
+<td>SET-017</td>
+<td>Billing &amp; Subscription</td>
+<td>Financial</td>
+<td><code>/settings/billing</code></td>
+</tr>
+<tr>
+<td>SET-018</td>
+<td>Audit Trail Viewer</td>
+<td>Security</td>
+<td><code>/settings/audit-trail</code></td>
+</tr>
+<tr>
+<td>SET-019</td>
+<td>Security Settings</td>
+<td>Security</td>
+<td><code>/settings/security</code></td>
+</tr>
+<tr>
+<td>SET-020</td>
+<td>Encryption Key Management</td>
+<td>Security</td>
+<td><code>/settings/encryption</code></td>
+</tr>
+<tr>
+<td>SET-021</td>
+<td>API Key Management</td>
+<td>Developer</td>
+<td><code>/settings/api-keys</code></td>
+</tr>
+<tr>
+<td>SET-022</td>
+<td>Webhook Configuration</td>
+<td>Developer</td>
+<td><code>/settings/webhooks</code></td>
+</tr>
+</tbody>
+</table>
+<p>All screens: OA only, No offline, Desktop-preferred.</p>
+<h2 id="settings-navigation-context" tabindex="-1"><a class="heading-anchor" href="#settings-navigation-context" aria-hidden="true">#</a> Settings Navigation Context</h2>
+<pre><code>SETTINGS (sidebar section — OA only)
+
+  Organization
+    Org Profile &amp; Branding  → SET-001
+
+  Team
+    Staff Management        → SET-004
+    Role Templates          → SET-002
+
+  Campaign
+    Geographic Scope        → SET-006
+    Campaign Period          → SET-007
+
+  Compliance
+    Compliance Config       → SET-008
+    Contribution Limits     → SET-009
+    Disclaimers             → SET-010
+    Data Retention          → SET-011
+
+  Integrations
+    Overview                → SET-012
+    WhatsApp                → SET-013
+    SMS                     → SET-014
+    Email Domain            → SET-015
+    Social Accounts         → SET-016
+
+  Security
+    Security Settings       → SET-019
+    Encryption Keys         → SET-020
+    Audit Trail             → SET-018
+
+  Developer
+    API Keys                → SET-021
+    Webhooks                → SET-022
+
+  Billing
+    Plan &amp; Billing          → SET-017
+</code></pre>
+<hr>
+<h2 id="set-001-org-profile-branding" tabindex="-1"><a class="heading-anchor" href="#set-001-org-profile-branding" aria-hidden="true">#</a> SET-001: Org Profile &amp; Branding</h2>
+<p>Configure organization identity and visual branding applied across public pages and internal interface.</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Organization                                                     │
+│                                                                  [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Organization Identity ─────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Organization Name *                                                   │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Partido Verde de Puerto Rico                                    │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Short Name (for nav, mobile)                                          │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Partido Verde                                                   │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Logo                                                                  │ │
+│  │  ┌──────────┐                                                         │ │
+│  │  │  [logo]  │  [Change Logo]  [Remove]                                │ │
+│  │  │  120×120 │  PNG or SVG, min 120×120px                              │ │
+│  │  └──────────┘                                                         │ │
+│  │                                                                        │ │
+│  │  Default Language *                  Additional Languages              │ │
+│  │  [Español (Puerto Rico) ▾]          [+ Add Language]                  │ │
+│  │                                      · English (US) [×]               │ │
+│  │                                                                        │ │
+│  │  Timezone *                                                            │ │
+│  │  [America/Puerto_Rico (AST) ▾]                                        │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Branding ──────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Primary Color             Accent Color                                │ │
+│  │  ┌────┐ ┌──────────────┐   ┌────┐ ┌──────────────┐                   │ │
+│  │  │ ██ │ │ #2E7D32      │   │ ██ │ │ #1B5E20      │                   │ │
+│  │  └────┘ └──────────────┘   └────┘ └──────────────┘                   │ │
+│  │                                                                        │ │
+│  │  ⓘ Colors are used on public pages (donation forms, event pages,      │ │
+│  │    supporter portal) and the login screen. The internal staff          │ │
+│  │    interface uses system colors with your primary as an accent.        │ │
+│  │                                                                        │ │
+│  │  Preview                                                               │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │  [Logo]  Partido Verde de Puerto Rico                           │  │ │
+│  │  │  ──────────────────────────────────────                         │  │ │
+│  │  │  [████████ Donate Now ████████]                                 │  │ │
+│  │  │                                                                  │  │ │
+│  │  │  Public page preview with your brand colors                     │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ▸ Contact Information (collapsed)                                           │
+│  ▸ Public Website &amp; Social Links (collapsed)                                 │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Last modified by Jorge Rivera on Feb 15, 2026                               │
+│  [Save]                                                                      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction" tabindex="-1"><a class="heading-anchor" href="#interaction" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Color picker</strong>: swatch + hex input. Live preview updates as colors change</li>
+<li><strong>Logo upload</strong>: validates dimensions and format. Shows how logo appears at different sizes (nav, login, public)</li>
+<li><strong>Language</strong>: default determines the UI language for new users. Additional languages enable content translation</li>
+<li><strong>Unsaved changes</strong>: navigating away with changes shows &quot;You have unsaved changes. Save before leaving?&quot;</li>
+<li><strong>Change tracking</strong>: footer shows who last modified and when</li>
+</ul>
+<hr>
+<h2 id="set-002-role-template-editor" tabindex="-1"><a class="heading-anchor" href="#set-002-role-template-editor" aria-hidden="true">#</a> SET-002: Role Template Editor</h2>
+<p>Create and edit role templates that define what each persona can see and do.</p>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Role Templates                              [+ Create Template]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Template              Based On    Members   Last Modified             │  │
+│  │ ────────────────────  ─────────   ────────  ──────────────            │  │
+│  │ Org Admin             (system)    2         System default            │  │
+│  │ Communications Dir.   (system)    1         System default            │  │
+│  │ Finance Director      (system)    1         Feb 20, 2026             │  │
+│  │ Field Director         (system)    1         System default            │  │
+│  │ Volunteer Coordinator (system)    2         System default            │  │
+│  │ Data Manager          (system)    1         System default            │  │
+│  │ Volunteer             (system)    48        System default            │  │
+│  │ Team Lead             (system)    6         System default            │  │
+│  │ Candidate             (system)    1         System default            │  │
+│  │ Regional Coordinator  Custom      3         Mar 1, 2026  ✎           │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ⓘ System templates can be customized but not deleted. Custom templates      │
+│    are created by cloning a system template and adjusting permissions.        │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="template-detail-on-click" tabindex="-1"><a class="heading-anchor" href="#template-detail-on-click" aria-hidden="true">#</a> Template Detail (on click)</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Role Templates              Field Director                                │
+│                                                                  [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Template Name: Field Director                                               │
+│  Based on: System default                                                    │
+│  Members: 1 (Ana López)                                                      │
+│                                                                              │
+│  ┌─ Permissions ───────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Feature Area        View    Create   Edit    Delete   Export   Admin  │ │
+│  │  ─────────────────   ──────  ──────   ──────  ──────   ──────  ─────  │ │
+│  │                                                                        │ │
+│  │  ▾ Field Operations                                                    │ │
+│  │  Canvassing          ☑       ☑        ☑       ☑        ☑       ☑      │ │
+│  │  Phone Banking       ☑       ☑        ☑       ☑        ☑       ☑      │ │
+│  │  Voter Registration  ☑       ☑        ☑       ☑        ☑       ☑      │ │
+│  │  Turfs               ☑       ☑        ☑       ☑        —       ☑      │ │
+│  │                                                                        │ │
+│  │  ▾ GOTV                                                                │ │
+│  │  Universe            ☑       ☑        ☑       —        ☑       ☑      │ │
+│  │  Turfs               ☑       ☑        ☑       ☑        —       ☑      │ │
+│  │  Staging             ☑       ☑        ☑       ☑        —       —      │ │
+│  │  War Room            ☑       —        —       —        —       —      │ │
+│  │                                                                        │ │
+│  │  ▾ People / CRM                                                        │ │
+│  │  Contacts            ☑       —        ☑       —        ☑       —      │ │
+│  │  Segments            ☑       ☑        ☑       —        ☑       —      │ │
+│  │  Tags                ☑       ☑        ☑       —        —       —      │ │
+│  │                                                                        │ │
+│  │  ▸ Communications (collapsed)                                          │ │
+│  │  ▸ Fundraising (collapsed)                                             │ │
+│  │  ▸ Events (collapsed)                                                  │ │
+│  │  ▸ Messaging (collapsed)                                               │ │
+│  │  ▸ Alliance (collapsed)                                                │ │
+│  │  ▸ Settings (collapsed)                                                │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  [Clone Template]  [Reset to Default]                            [Save]      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-1" tabindex="-1"><a class="heading-anchor" href="#interaction-1" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Permission matrix</strong>: feature areas as rows, actions as columns. Checkboxes toggle individual permissions</li>
+<li><strong>Collapsible sections</strong>: feature areas expand/collapse. Only the most relevant areas for the role are expanded by default</li>
+<li><strong>[Clone Template]</strong>: creates a custom template based on this one — useful for creating variants (e.g., &quot;Regional Coordinator&quot; based on &quot;Field Director&quot;)</li>
+<li><strong>[Reset to Default]</strong>: restores system defaults for system templates. Confirmation required</li>
+<li><strong>Member count</strong>: shows how many users have this role. Clicking opens the staff list filtered to that role</li>
+<li><strong>Modified indicator</strong>: custom permissions show a dot indicator next to changed checkboxes vs. the system default</li>
+</ul>
+<hr>
+<h2 id="set-003-permission-override-panel" tabindex="-1"><a class="heading-anchor" href="#set-003-permission-override-panel" aria-hidden="true">#</a> SET-003: Permission Override Panel</h2>
+<p>Apply per-user permission exceptions beyond their role template.</p>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Staff &gt; Ana López                    Permission Overrides                 │
+│                                                                  [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Role Template: Field Director                                               │
+│  Overrides: 2 active                                                         │
+│                                                                              │
+│  ┌─ Override List ─────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  ✚ Fundraising &gt; Donations &gt; Export    Added by Jorge R. on Feb 20    │ │
+│  │    Reason: Needs to export donor lists for field targeting             │ │
+│  │    [Remove Override]                                                   │ │
+│  │                                                                        │ │
+│  │  ✚ Communications &gt; Email &gt; View       Added by Jorge R. on Mar 1     │ │
+│  │    Reason: Monitor outreach campaign results                          │ │
+│  │    [Remove Override]                                                   │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  [+ Add Override]                                                            │
+│                                                                              │
+│  ⓘ Overrides grant additional permissions beyond the role template.          │
+│    To restrict permissions, create a more limited custom role template.       │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="add-override-modal" tabindex="-1"><a class="heading-anchor" href="#add-override-modal" aria-hidden="true">#</a> Add Override Modal</h3>
+<pre><code>┌─ Add Permission Override ──────────────────────┐
+│                                                 │
+│  Feature Area                                   │
+│  [Fundraising ▾]                               │
+│                                                 │
+│  Sub-Area                                       │
+│  [Donations ▾]                                 │
+│                                                 │
+│  Permission                                     │
+│  [Export ▾]                                    │
+│                                                 │
+│  Reason *                                       │
+│  ┌─────────────────────────────────────────┐   │
+│  │ Needs donor lists for field targeting   │   │
+│  └─────────────────────────────────────────┘   │
+│  Required for audit trail.                     │
+│                                                 │
+│  [Cancel]                       [Add Override]  │
+│                                                 │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-2" tabindex="-1"><a class="heading-anchor" href="#interaction-2" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Additive only</strong>: overrides can only grant additional permissions, not revoke. To restrict, use a different role template</li>
+<li><strong>Reason required</strong>: every override must have a documented reason — creates audit trail for security reviews</li>
+<li><strong>Per-user</strong>: overrides apply to one user only, not the role template</li>
+<li><strong>Audit trail</strong>: who added the override and when is always visible</li>
+</ul>
+<hr>
+<h2 id="set-004-staff-management-list" tabindex="-1"><a class="heading-anchor" href="#set-004-staff-management-list" aria-hidden="true">#</a> SET-004: Staff Management List</h2>
+<p>View and manage all staff members.</p>
+<h3 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Staff Management                              [+ Invite Staff]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Search staff...]   Role: [All ▾]   Status: [All ▾]                        │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Name              Email                    Role           Status      │  │
+│  │ ────────────────  ──────────────────────   ─────────────  ──────      │  │
+│  │ Jorge Rivera      jorge@partido.org        Org Admin      ● Active   │  │
+│  │ Ana López         ana@partido.org          Field Director  ● Active   │  │
+│  │ Carlos Méndez     carlos@partido.org       Comms Director  ● Active   │  │
+│  │ María Santos      maria@partido.org        Vol. Coord.    ● Active   │  │
+│  │ Luisa Fernández   luisa@partido.org        Data Manager   ● Active   │  │
+│  │ Pedro Ríos        pedro@partido.org        Finance Dir.   ● Active   │  │
+│  │ Carmen Vega       carmen@partido.org       Candidate      ● Active   │  │
+│  │ Luis Ortiz        luis@partido.org         Reg. Coord.    ● Active   │  │
+│  │ Rosa Delgado      rosa@partido.org         Vol. Coord.    ◐ Invited  │  │
+│  │ Miguel Torres     miguel@partido.org       Team Lead      ● Active   │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  Showing 10 of 10 staff members                                              │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                      │
+│  │ Total Staff  │  │ Active       │  │ Pending      │                      │
+│  │ 10           │  │ 9            │  │ 1            │                      │
+│  └──────────────┘  └──────────────┘  └──────────────┘                      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="row-actions-click-row-detail-panel-or-modal" tabindex="-1"><a class="heading-anchor" href="#row-actions-click-row-detail-panel-or-modal" aria-hidden="true">#</a> Row Actions (click row → detail panel or modal)</h3>
+<ul>
+<li><strong>Edit</strong>: change role, geographic scope</li>
+<li><strong>Resend Invite</strong>: for pending invitations</li>
+<li><strong>Reset Passkey</strong>: trigger passkey reset for the user</li>
+<li><strong>Deactivate</strong>: disable account (reversible). Confirmation: &quot;This will immediately revoke [name]'s access to all GreenGrass features.&quot;</li>
+<li><strong>View Overrides</strong>: go to SET-003 for this user</li>
+<li><strong>View Activity</strong>: shows recent login and action history for this user</li>
+</ul>
+<h3 id="interaction-3" tabindex="-1"><a class="heading-anchor" href="#interaction-3" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Status badges</strong>: ● Active, ◐ Invited (pending acceptance), ○ Deactivated</li>
+<li><strong>Filter by role</strong>: dropdown shows all role templates with member counts</li>
+<li><strong>Last activity</strong>: optional column showing when each user last logged in — helps identify inactive accounts</li>
+<li><strong>Bulk actions</strong>: select multiple → Resend Invites, Deactivate</li>
+</ul>
+<hr>
+<h2 id="set-005-staff-invite-flow" tabindex="-1"><a class="heading-anchor" href="#set-005-staff-invite-flow" aria-hidden="true">#</a> SET-005: Staff Invite Flow</h2>
+<p>Invite new staff members with role and scope assignment.</p>
+<h3 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Staff Management                      Invite Staff Member                 │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Step 1: Contact ───────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Email Address *                                                       │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ rosa@partido.org                                                │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Name *                                                                │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Rosa Delgado                                                    │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Step 2: Role ──────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Role Template *                                                       │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ [Volunteer Coordinator ▾]                                       │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  This role can:                                                        │ │
+│  │  · View and manage volunteers                                          │ │
+│  │  · Create and manage events                                            │ │
+│  │  · Assign volunteers to shifts                                         │ │
+│  │  · View field operation results                                        │ │
+│  │  · Access messaging                                                    │ │
+│  │                                                                        │ │
+│  │  This role cannot:                                                      │ │
+│  │  · Access fundraising or financial data                                │ │
+│  │  · Modify settings or integrations                                     │ │
+│  │  · View or edit security settings                                      │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Step 3: Scope (optional) ──────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Geographic Scope                                                      │ │
+│  │  ○ Full access (all regions)                                           │ │
+│  │  ● Restricted to specific regions:                                     │ │
+│  │    ☑ San Juan North                                                    │ │
+│  │    ☑ Bayamón                                                           │ │
+│  │    □ Caguas                                                            │ │
+│  │    □ Carolina                                                          │ │
+│  │    □ Ponce                                                             │ │
+│  │                                                                        │ │
+│  │  ⓘ Scoped users only see contacts, turfs, and events within their     │ │
+│  │    assigned regions.                                                    │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  [Cancel]                                                 [Send Invitation]  │
+│                                                                              │
+│  ⓘ An invitation email will be sent with a link to set up their account      │
+│    and register a passkey. Invitations expire after 7 days.                  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-4" tabindex="-1"><a class="heading-anchor" href="#interaction-4" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Role summary</strong>: plain-language &quot;can / cannot&quot; summary — not the raw permission matrix. Helps OA confirm they're assigning the right role</li>
+<li><strong>Geographic scope</strong>: optional restriction. Useful for regional coordinators who should only see their area</li>
+<li><strong>Invitation email</strong>: system-sent with setup link. 7-day expiry, resendable from SET-004</li>
+<li><strong>Duplicate check</strong>: warns if email is already registered or has a pending invitation</li>
+</ul>
+<hr>
+<h2 id="set-006-geographic-scope-configuration" tabindex="-1"><a class="heading-anchor" href="#set-006-geographic-scope-configuration" aria-hidden="true">#</a> SET-006: Geographic Scope Configuration</h2>
+<p>Define the campaign's geographic boundaries and regions.</p>
+<h3 id="desktop-5" tabindex="-1"><a class="heading-anchor" href="#desktop-5" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Geographic Scope                                     [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────────────────────────┐  ┌────────────────────────────────────┐│
+│  │                                  │  │ Regions                            ││
+│  │     [Map showing campaign area]  │  │ ────────                           ││
+│  │                                  │  │                                    ││
+│  │     Shaded regions visible       │  │ ☑ San Juan North       4,450 ctct ││
+│  │                                  │  │ ☑ Bayamón              3,440 ctct ││
+│  │                                  │  │ ☑ Caguas               2,710 ctct ││
+│  │                                  │  │ ☑ Carolina             2,170 ctct ││
+│  │                                  │  │ ☑ Ponce                2,062 ctct ││
+│  │                                  │  │                                    ││
+│  │                                  │  │ Total: 14,832 contacts             ││
+│  │                                  │  │                                    ││
+│  │                                  │  │ [+ Add Region]                     ││
+│  │                                  │  │                                    ││
+│  └──────────────────────────────────┘  └────────────────────────────────────┘│
+│                                                                              │
+│  ┌─ Scope Type ────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Jurisdiction Level *                                                  │ │
+│  │  ○ Country       ○ State/Province    ● District/Municipality           │ │
+│  │  ○ County/Parish ○ Precinct          ○ Custom boundaries               │ │
+│  │                                                                        │ │
+│  │  Country: [Puerto Rico ▾]                                              │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ⓘ Geographic scope determines which contacts, turfs, and polling locations  │
+│    appear in the platform. Staff with regional scope restrictions will only   │
+│    see data within their assigned regions.                                    │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="set-007-campaign-period-configuration" tabindex="-1"><a class="heading-anchor" href="#set-007-campaign-period-configuration" aria-hidden="true">#</a> SET-007: Campaign Period Configuration</h2>
+<p>Set the official campaign period for compliance calculations.</p>
+<h3 id="desktop-6" tabindex="-1"><a class="heading-anchor" href="#desktop-6" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Campaign Period                                      [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Current Campaign Period ───────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Campaign Name *                                                       │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ 2026 General Election                                           │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Start Date *                         End Date *                       │ │
+│  │  ┌────────────────────────────┐      ┌────────────────────────────┐   │ │
+│  │  │ 2026-01-15  📅             │      │ 2026-11-03  📅             │   │ │
+│  │  └────────────────────────────┘      └────────────────────────────┘   │ │
+│  │                                                                        │ │
+│  │  Election Date *                                                       │ │
+│  │  ┌────────────────────────────┐                                       │ │
+│  │  │ 2026-11-03  📅             │                                       │ │
+│  │  └────────────────────────────┘                                       │ │
+│  │                                                                        │ │
+│  │  Status: ● Active (Day 48 of 293)                                     │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ⓘ The campaign period determines when contribution limits are enforced,     │
+│    when compliance reports are generated, and when GOTV features activate.   │
+│    Changing dates after contributions have been recorded may require          │
+│    compliance review.                                                        │
+│                                                                              │
+│  ▸ Previous Campaign Periods (collapsed — archive of past campaigns)         │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="set-008-compliance-configuration" tabindex="-1"><a class="heading-anchor" href="#set-008-compliance-configuration" aria-hidden="true">#</a> SET-008: Compliance Configuration</h2>
+<p>Set the jurisdiction and compliance framework.</p>
+<h3 id="desktop-7" tabindex="-1"><a class="heading-anchor" href="#desktop-7" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Compliance                                           [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Compliance Framework ──────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Jurisdiction *                                                        │ │
+│  │  [Puerto Rico ▾]                                                       │ │
+│  │                                                                        │ │
+│  │  Framework *                                                           │ │
+│  │  [Puerto Rico Election Code (Ley Electoral) ▾]                         │ │
+│  │                                                                        │ │
+│  │  Campaign Type *                                                       │ │
+│  │  ○ Gubernatorial    ○ Legislative    ○ Municipal                       │ │
+│  │  ○ Federal           ○ Referendum     ● Other                          │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Enforced Rules ────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Based on your jurisdiction and framework:                             │ │
+│  │                                                                        │ │
+│  │  ☑ Individual contribution limits                                      │ │
+│  │  ☑ Corporate/organizational contribution limits                        │ │
+│  │  ☑ Donor identity verification                                         │ │
+│  │  ☑ Disclosure requirements (public donor reporting)                    │ │
+│  │  ☑ Communication disclaimers (&quot;Paid for by...&quot;)                        │ │
+│  │  □ Foreign contribution prohibition                                    │ │
+│  │  □ In-kind contribution tracking                                       │ │
+│  │                                                                        │ │
+│  │  ⓘ Rules are pre-configured based on jurisdiction. You can enable      │ │
+│  │    additional rules but cannot disable jurisdiction-required ones.      │ │
+│  │    Required rules are locked ☑.                                        │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Enforcement Behavior ──────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  When a compliance violation is detected:                              │ │
+│  │  ● Block the action and require review                                 │ │
+│  │  ○ Allow with warning and flag for review                              │ │
+│  │  ○ Allow with automatic flag (no blocking)                             │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="set-009-contribution-limits-configuration" tabindex="-1"><a class="heading-anchor" href="#set-009-contribution-limits-configuration" aria-hidden="true">#</a> SET-009: Contribution Limits Configuration</h2>
+<p>Define per-donor contribution limits.</p>
+<h3 id="desktop-8" tabindex="-1"><a class="heading-anchor" href="#desktop-8" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Contribution Limits                                  [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Per-Cycle Limits ──────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Donor Type           Per Donation    Per Cycle     Aggregation        │ │
+│  │  ─────────────────    ────────────    ─────────     ────────────       │ │
+│  │  Individual           No limit        $2,900        Per election       │ │
+│  │  Corporation/Org      No limit        $5,000        Per election       │ │
+│  │  PAC                  No limit        $5,000        Per election       │ │
+│  │  Self-Funding         No limit        No limit      —                  │ │
+│  │                                                                        │ │
+│  │  [Edit Limits]                                                         │ │
+│  │                                                                        │ │
+│  │  Currency: [USD ▾]                                                     │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Aggregate Tracking ────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  How are contributions aggregated?                                     │ │
+│  │  ● Per election cycle (defined in Campaign Period)                     │ │
+│  │  ○ Per calendar year                                                   │ │
+│  │  ○ Rolling 12 months                                                   │ │
+│  │                                                                        │ │
+│  │  Include in-kind contributions in aggregate?                           │ │
+│  │  ○ Yes    ● No                                                        │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Over-Limit Behavior ───────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  When a donor exceeds their limit:                                     │ │
+│  │  ● Block the donation and show an explanation to the donor             │ │
+│  │  ○ Accept and flag for Finance Director review                         │ │
+│  │  ○ Accept the maximum allowed amount and refund the excess             │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="set-010-disclaimer-text-configuration" tabindex="-1"><a class="heading-anchor" href="#set-010-disclaimer-text-configuration" aria-hidden="true">#</a> SET-010: Disclaimer Text Configuration</h2>
+<p>Configure legal disclaimers for public-facing content.</p>
+<h3 id="desktop-9" tabindex="-1"><a class="heading-anchor" href="#desktop-9" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Disclaimers                                          [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Primary Disclaimer ───────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Text *                                                                │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Paid for by Partido Verde de Puerto Rico. Not authorized by     │  │ │
+│  │  │ any candidate or candidate's committee.                         │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Applied to: ☑ Donation forms  ☑ Email campaigns  ☑ SMS               │ │
+│  │              ☑ Social posts    ☑ Public pages     ☑ Print materials   │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Additional Disclaimers ────────────────────────────────────────── [+] ┐ │
+│  │                                                                        │ │
+│  │  Fundraising Disclaimer                                                │ │
+│  │  &quot;Contributions are not tax-deductible for federal income tax...&quot;     │ │
+│  │  Applied to: Donation forms, Donation confirmations                   │ │
+│  │  [Edit] [×]                                                            │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Translations ─────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Language         Primary Disclaimer     Status                       │ │
+│  │  ──────────────   ──────────────────     ──────                       │ │
+│  │  Español (PR)     &quot;Pagado por Partido    ✓ Set                       │ │
+│  │                    Verde de PR...&quot;                                     │ │
+│  │  English (US)     &quot;Paid for by Partido   ✓ Set                       │ │
+│  │                    Verde de PR...&quot;                                     │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="set-011-data-retention-policy" tabindex="-1"><a class="heading-anchor" href="#set-011-data-retention-policy" aria-hidden="true">#</a> SET-011: Data Retention Policy</h2>
+<p>Configure automatic data deletion rules.</p>
+<h3 id="desktop-10" tabindex="-1"><a class="heading-anchor" href="#desktop-10" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Data Retention                                       [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Retention Rules ───────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Data Type               Retain For     After Expiry    Status        │ │
+│  │  ─────────────────────   ────────────   ────────────   ──────         │ │
+│  │  Contact PII             Until deleted  Manual only     ● Active      │ │
+│  │  Canvassing responses    2 years        Auto-delete     ● Active      │ │
+│  │  Message content         1 year         Auto-delete     ● Active      │ │
+│  │  Donation records        7 years        Archive only    ● Active      │ │
+│  │  Audit logs              5 years        Archive only    ● Active      │ │
+│  │  Session data            90 days        Auto-delete     ● Active      │ │
+│  │                                                                        │ │
+│  │  [Edit Rules]                                                          │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Post-Campaign Cleanup ─────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  After the campaign period ends:                                       │ │
+│  │  ○ Retain all data (manual cleanup later)                              │ │
+│  │  ● Apply retention rules from the table above                         │ │
+│  │  ○ Prompt for bulk cleanup review                                      │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ⚠ Donation records have a minimum 7-year retention period for compliance.   │
+│    This cannot be shortened.                                                 │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="set-012-integration-settings-hub" tabindex="-1"><a class="heading-anchor" href="#set-012-integration-settings-hub" aria-hidden="true">#</a> SET-012: Integration Settings Hub</h2>
+<p>Central overview of all third-party integrations.</p>
+<h3 id="desktop-11" tabindex="-1"><a class="heading-anchor" href="#desktop-11" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Integrations                                                     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Communications ────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐     │ │
+│  │  │ 📧 Email         │  │ 💬 SMS           │  │ 📱 WhatsApp      │     │ │
+│  │  │ ● Connected      │  │ ● Connected      │  │ ○ Not set up     │     │ │
+│  │  │ sendgrid.com     │  │ Twilio           │  │                  │     │ │
+│  │  │ Last sync: 2m    │  │ Last sync: 5m    │  │                  │     │ │
+│  │  │ [Configure →]    │  │ [Configure →]    │  │ [Set Up →]       │     │ │
+│  │  └──────────────────┘  └──────────────────┘  └──────────────────┘     │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Social Media ──────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐     │ │
+│  │  │ 𝕏 Twitter/X     │  │ 📘 Facebook      │  │ 📸 Instagram     │     │ │
+│  │  │ ● Connected      │  │ ● Connected      │  │ ● Connected      │     │ │
+│  │  │ @partido_verde   │  │ Partido Verde    │  │ via Facebook     │     │ │
+│  │  │ [Configure →]    │  │ [Configure →]    │  │ [Configure →]    │     │ │
+│  │  └──────────────────┘  └──────────────────┘  └──────────────────┘     │ │
+│  │                                                                        │ │
+│  │  ┌──────────────────┐                                                  │ │
+│  │  │ 🎵 TikTok       │                                                  │ │
+│  │  │ ● Connected      │                                                  │ │
+│  │  │ @partido_verde   │                                                  │ │
+│  │  │ [Configure →]    │                                                  │ │
+│  │  └──────────────────┘                                                  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Payments ──────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  ┌──────────────────┐                                                  │ │
+│  │  │ 💳 Stripe        │                                                  │ │
+│  │  │ ● Connected      │                                                  │ │
+│  │  │ Test mode: OFF   │                                                  │ │
+│  │  │ [Configure →]    │  (links to FUND-019)                             │ │
+│  │  └──────────────────┘                                                  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ▸ Maps &amp; Geolocation (collapsed)                                            │
+│  ▸ Video Conferencing (collapsed)                                            │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-5" tabindex="-1"><a class="heading-anchor" href="#interaction-5" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Status cards</strong>: each integration shows connection status, provider name, and last sync time</li>
+<li><strong>[Configure →]</strong>: navigates to the detailed setup screen (SET-013, SET-014, SET-015, SET-016)</li>
+<li><strong>[Set Up →]</strong>: for unconfigured integrations — starts the setup flow</li>
+<li><strong>Categories</strong>: Communications, Social Media, Payments, Maps, Video — grouped by function</li>
+</ul>
+<hr>
+<h2 id="set-013-set-016-integration-detail-screens" tabindex="-1"><a class="heading-anchor" href="#set-013-set-016-integration-detail-screens" aria-hidden="true">#</a> SET-013 – SET-016: Integration Detail Screens</h2>
+<p>All integration detail screens follow the same pattern. Showing WhatsApp (SET-013) as representative.</p>
+<h3 id="set-013-whatsapp-business-setup" tabindex="-1"><a class="heading-anchor" href="#set-013-whatsapp-business-setup" aria-hidden="true">#</a> SET-013: WhatsApp Business Setup</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Integrations                WhatsApp Business Setup                       │
+│                                                                  [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Status: ○ Not Connected                                                     │
+│                                                                              │
+│  ┌─ Connection ────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  To connect WhatsApp Business:                                         │ │
+│  │  1. Create a WhatsApp Business account at business.whatsapp.com        │ │
+│  │  2. Generate an API token                                              │ │
+│  │  3. Enter the token below                                              │ │
+│  │                                                                        │ │
+│  │  Phone Number *                                                        │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ +1 (787) 555-0100                                              │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  API Token *                                                           │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ ••••••••••••••••••••••••                                        │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  [Test Connection]                         [Connect]                   │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Message Templates ── (shown after connection) ─────────────────── [+] ┐ │
+│  │                                                                        │ │
+│  │  WhatsApp requires pre-approved templates for outbound messages.       │ │
+│  │                                                                        │ │
+│  │  Template Name           Status        Last Used                      │ │
+│  │  ─────────────────────   ──────────    ──────────                     │ │
+│  │  election_reminder       ● Approved    Mar 2, 2026                    │ │
+│  │  donation_thank_you      ● Approved    Feb 28, 2026                   │ │
+│  │  event_invitation        ◐ Pending     —                              │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ▸ Webhook Configuration (collapsed)                                         │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>SET-014 (SMS)</strong>: same pattern — provider selection (Twilio/AWS SNS/other), API credentials, phone number configuration, test message, delivery logs.</p>
+<p><strong>SET-015 (Email Domain)</strong>: cross-references COMM-010. DNS record generation (SPF/DKIM/DMARC), verification status, auto-polling.</p>
+<p><strong>SET-016 (Social Accounts)</strong>: cross-references SOCIAL-005. OAuth connection per platform, token status, permissions display.</p>
+<hr>
+<h2 id="set-017-billing-subscription" tabindex="-1"><a class="heading-anchor" href="#set-017-billing-subscription" aria-hidden="true">#</a> SET-017: Billing &amp; Subscription</h2>
+<p>Manage the organization's subscription plan and billing.</p>
+<h3 id="desktop-12" tabindex="-1"><a class="heading-anchor" href="#desktop-12" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Billing &amp; Subscription                                           │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Current Plan ──────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Plan: Campaign Pro                                                    │ │
+│  │  Price: $149/month                                                     │ │
+│  │  Billing cycle: Monthly                                                │ │
+│  │  Next renewal: April 1, 2026                                           │ │
+│  │                                                                        │ │
+│  │  Includes:                                                             │ │
+│  │  · Up to 25 staff users (using 10)                                     │ │
+│  │  · Up to 50,000 contacts (using 14,832)                                │ │
+│  │  · All features except Alliance                                        │ │
+│  │  · Standard support                                                    │ │
+│  │                                                                        │ │
+│  │  [Change Plan]   [Switch to Annual (save 20%)]                        │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Payment Method ────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  💳 Visa ending in 4242                    Expires 09/2027             │ │
+│  │  [Update Payment Method]                                               │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Billing History ───────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Date          Amount    Status     Invoice                           │ │
+│  │  ──────────    ────────  ──────     ───────                           │ │
+│  │  Mar 1, 2026   $149.00   Paid       [Download PDF]                    │ │
+│  │  Feb 1, 2026   $149.00   Paid       [Download PDF]                    │ │
+│  │  Jan 1, 2026   $149.00   Paid       [Download PDF]                    │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Billing Contact ───────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Name: Pedro Ríos (Finance Director)                                   │ │
+│  │  Email: pedro@partido.org                                              │ │
+│  │  [Update Contact]                                                      │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="set-018-audit-trail-viewer" tabindex="-1"><a class="heading-anchor" href="#set-018-audit-trail-viewer" aria-hidden="true">#</a> SET-018: Audit Trail Viewer</h2>
+<p>Searchable log of all user actions for compliance and security monitoring.</p>
+<h3 id="desktop-13" tabindex="-1"><a class="heading-anchor" href="#desktop-13" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Audit Trail                                      [Export CSV]     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Search...]  User: [All ▾]  Action: [All ▾]  Date: [Last 7 days ▾]        │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Timestamp            User             Action           Detail         │  │
+│  │ ────────────────     ──────────────   ──────────────   ────────────   │  │
+│  │ Mar 3, 2:46 PM      Jorge Rivera     Data Export      Contacts CSV   │  │
+│  │ Mar 3, 2:30 PM      Ana López        Setting Change   Turf re-cut    │  │
+│  │ Mar 3, 1:15 PM      Carlos Méndez    Email Sent       Campaign: ...  │  │
+│  │ Mar 3, 12:00 PM     Jorge Rivera     Login            Passkey auth   │  │
+│  │ Mar 3, 11:45 AM     Pedro Ríos       Refund           #DON-1247      │  │
+│  │ Mar 3, 10:30 AM     María Santos     Staff Invite     Rosa Delgado   │  │
+│  │ Mar 2, 5:00 PM      Jorge Rivera     Permission Chg   Ana +Export    │  │
+│  │ Mar 2, 3:15 PM      Luisa Fernández  Data Import      2,847 rows     │  │
+│  │ Mar 2, 2:00 PM      Jorge Rivera     Setting Change   Compliance     │  │
+│  │ Mar 2, 1:30 PM      Ana López        Login            Passkey auth   │  │
+│  │                                                                       │  │
+│  │ [Load more...]                                                        │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  Action Types: Login, Logout, Data Export, Data Import, Setting Change,      │
+│  Permission Change, Staff Invite, Staff Deactivation, Refund, Email Sent,    │
+│  SMS Sent, Contact Delete, Bulk Action, API Key Created, Key Rotation        │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-6" tabindex="-1"><a class="heading-anchor" href="#interaction-6" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Searchable</strong>: full-text search across all fields</li>
+<li><strong>Filterable</strong>: by user, action type, date range</li>
+<li><strong>Non-deletable</strong>: audit logs cannot be modified or deleted — tamper-proof</li>
+<li><strong>Export</strong>: CSV or JSON for compliance reporting</li>
+<li><strong>Row click</strong>: expands to show full detail (IP address, user agent, affected records)</li>
+</ul>
+<hr>
+<h2 id="set-019-security-settings" tabindex="-1"><a class="heading-anchor" href="#set-019-security-settings" aria-hidden="true">#</a> SET-019: Security Settings</h2>
+<p>Configure organization-wide security posture.</p>
+<h3 id="desktop-14" tabindex="-1"><a class="heading-anchor" href="#desktop-14" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Security                                             [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Security Tier ─────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  ○ Standard — Passkey authentication, encrypted data at rest           │ │
+│  │  ● Enhanced — Standard + MFA required, session timeout, IP logging     │ │
+│  │  ○ Maximum — Enhanced + BYOK encryption, IP allowlist, device auth    │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Authentication ────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  ☑ Require passkey for all staff                                       │ │
+│  │  ☑ Require MFA for Org Admin role                                      │ │
+│  │  □ Require MFA for all staff roles                                     │ │
+│  │                                                                        │ │
+│  │  Session Timeout                                                       │ │
+│  │  [4 hours ▾]  (staff must re-authenticate after this period)           │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Access Controls ───────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  IP Allowlist                                                          │ │
+│  │  ○ Disabled (any IP)                                                   │ │
+│  │  ● Enabled — staff can only log in from these IPs/ranges:             │ │
+│  │    ┌──────────────────────────────────────────────────────────┐        │ │
+│  │    │ 203.0.113.0/24  (Office network)               [×]     │        │ │
+│  │    │ 198.51.100.42   (Jorge home)                    [×]     │        │ │
+│  │    │ [+ Add IP/Range]                                        │        │ │
+│  │    └──────────────────────────────────────────────────────────┘        │ │
+│  │                                                                        │ │
+│  │  ⓘ IP allowlist does not apply to field mode (volunteers need          │ │
+│  │    mobile access from any network).                                    │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Incident Response ─────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Security Contact Email *                                              │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ security@partido.org                                            │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  ☑ Send email alert on: suspicious login attempts                     │ │
+│  │  ☑ Send email alert on: data exports                                  │ │
+│  │  ☑ Send email alert on: permission changes                            │ │
+│  │  □ Send email alert on: all logins                                    │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ▸ Duress Mode Configuration (collapsed — see Security UX Patterns)          │
+│  ▸ Trusted Contact Recovery (collapsed)                                      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="set-020-encryption-key-management" tabindex="-1"><a class="heading-anchor" href="#set-020-encryption-key-management" aria-hidden="true">#</a> SET-020: Encryption Key Management</h2>
+<p>BYOK key management for tenants using Maximum security tier.</p>
+<h3 id="desktop-15" tabindex="-1"><a class="heading-anchor" href="#desktop-15" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Encryption Key Management                                        │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Current Key ───────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Key ID: gg-key-2026-001                                               │ │
+│  │  Created: Jan 15, 2026                                                 │ │
+│  │  Algorithm: AES-256-GCM                                                │ │
+│  │  Status: ● Active                                                      │ │
+│  │                                                                        │ │
+│  │  Key Shares: 3 of 5 (Shamir's Secret Sharing)                          │ │
+│  │  Share holders:                                                        │ │
+│  │  · Jorge Rivera (OA) — share 1                                         │ │
+│  │  · Pedro Ríos (FD) — share 2                                           │ │
+│  │  · Ana López (FiD) — share 3                                           │ │
+│  │  · Carmen Vega (Candidate) — share 4                                   │ │
+│  │  · External counsel — share 5                                           │ │
+│  │                                                                        │ │
+│  │  [Rotate Key]  [Export Key Backup]                                     │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Key History ───────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Key ID               Created         Status      Rotated By          │ │
+│  │  ────────────────     ──────────      ──────      ──────────          │ │
+│  │  gg-key-2026-001      Jan 15, 2026    ● Active    —                   │ │
+│  │  gg-key-2025-003      Sep 1, 2025     ○ Retired   Jorge Rivera       │ │
+│  │  gg-key-2025-002      Jun 1, 2025     ○ Retired   Jorge Rivera       │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ⚠ Key rotation requires 3 of 5 share holders present. Schedule a key       │
+│    rotation ceremony when planning to rotate. See the BYOK Key Generation    │
+│    wizard in Onboarding for the initial key setup process.                    │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-7" tabindex="-1"><a class="heading-anchor" href="#interaction-7" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Maximum tier only</strong>: this screen is only visible/accessible for tenants on the Maximum security tier</li>
+<li><strong>[Rotate Key]</strong>: initiates key rotation ceremony — requires 3 of 5 share holders to be present. Links to a wizard flow similar to the initial BYOK generation (ONB-005)</li>
+<li><strong>[Export Key Backup]</strong>: encrypted backup of the key, downloadable. Requires 3-of-5 share holder authentication</li>
+<li><strong>Key history</strong>: all previous keys listed with creation date, retirement date, and who initiated rotation</li>
+<li><strong>Share holders</strong>: the 5 people who hold key shares. Changing share holders requires a full key rotation</li>
+</ul>
+<hr>
+<h2 id="set-021-api-key-management" tabindex="-1"><a class="heading-anchor" href="#set-021-api-key-management" aria-hidden="true">#</a> SET-021: API Key Management</h2>
+<p>Generate and manage API keys for external integrations.</p>
+<h3 id="desktop-16" tabindex="-1"><a class="heading-anchor" href="#desktop-16" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; API Keys                                      [+ Generate Key]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Name              Scope            Created      Last Used    Status   │  │
+│  │ ────────────────  ──────────────   ──────────   ──────────   ──────   │  │
+│  │ CRM Sync          Contacts (R/W)   Feb 1, 2026  Mar 3, 2026  Active  │  │
+│  │                   Segments (R)                                        │  │
+│  │                                                                       │  │
+│  │ Analytics Export   Contacts (R)     Jan 15, 2026 Feb 28, 2026 Active  │  │
+│  │                   Donations (R)                                       │  │
+│  │                   Events (R)                                          │  │
+│  │                                                                       │  │
+│  │ Test Key           All (R)          Mar 1, 2026  Mar 1, 2026  Active  │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ⓘ API keys grant programmatic access to your organization's data. Treat     │
+│    them like passwords — never share them in code repositories or messages.  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="generate-key-modal" tabindex="-1"><a class="heading-anchor" href="#generate-key-modal" aria-hidden="true">#</a> Generate Key Modal</h3>
+<p>Fields: Name, Scope (checkboxes for each feature area + read/write), IP restrictions (optional), Expiration (optional). Key shown once after generation — must copy immediately.</p>
+<hr>
+<h2 id="set-022-webhook-configuration" tabindex="-1"><a class="heading-anchor" href="#set-022-webhook-configuration" aria-hidden="true">#</a> SET-022: Webhook Configuration</h2>
+<p>Register webhooks for system events.</p>
+<h3 id="desktop-17" tabindex="-1"><a class="heading-anchor" href="#desktop-17" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Settings &gt; Webhooks                                      [+ Add Webhook]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Name            URL                         Events     Status         │  │
+│  │ ──────────────  ──────────────────────────   ────────   ──────         │  │
+│  │ CRM Sync        https://crm.example.com/wh  3 events   ● Active      │  │
+│  │                 contact.created, contact.updated, contact.deleted     │  │
+│  │                 Success rate: 99.2% (last 30 days)                    │  │
+│  │                                                                       │  │
+│  │ Donation Alert  https://slack.example.com/wh 1 event    ● Active      │  │
+│  │                 donation.received                                     │  │
+│  │                 Success rate: 100% (last 30 days)                     │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="addedit-webhook-modal" tabindex="-1"><a class="heading-anchor" href="#addedit-webhook-modal" aria-hidden="true">#</a> Add/Edit Webhook Modal</h3>
+<p>Fields: Name, URL, Secret (auto-generated, for signature verification), Events (checkboxes: contact.created/updated/deleted, donation.received/refunded, event.created, shift.completed, etc.), Retry policy (1/3/5 retries with exponential backoff). [Test Webhook] sends a test payload.</p>
+<h3 id="webhook-detail-click-row" tabindex="-1"><a class="heading-anchor" href="#webhook-detail-click-row" aria-hidden="true">#</a> Webhook Detail (click row)</h3>
+<p>Shows delivery log: timestamp, event type, response code, response time. Failed deliveries highlighted with retry status.</p>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SET-002 (no custom roles)</td>
+<td>System role templates are pre-configured. Create a custom template to define specialized roles.</td>
+<td>+ Create Template</td>
+</tr>
+<tr>
+<td>SET-004 (no staff)</td>
+<td>Invite your team to start using GreenGrass.</td>
+<td>+ Invite Staff</td>
+</tr>
+<tr>
+<td>SET-012 (no integrations)</td>
+<td>Connect your communication tools, social accounts, and payment processors.</td>
+<td>(cards show &quot;Set Up&quot; for each)</td>
+</tr>
+<tr>
+<td>SET-018 (no activity)</td>
+<td>Audit trail records all significant actions. Activity will appear here once staff start using the platform.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>SET-021 (no API keys)</td>
+<td>Generate API keys to connect external tools and services to GreenGrass.</td>
+<td>+ Generate Key</td>
+</tr>
+<tr>
+<td>SET-022 (no webhooks)</td>
+<td>Webhooks send real-time notifications to your external services when events happen in GreenGrass.</td>
+<td>+ Add Webhook</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>All settings forms use visible labels (no placeholder-only)</li>
+<li>Permission matrix checkboxes have row + column header associations for screen readers</li>
+<li>Color picker includes hex text input (not color-only interaction)</li>
+<li>Audit trail table is keyboard-navigable with row expansion</li>
+<li>Security tier descriptions use text, not just visual emphasis</li>
+<li>IP allowlist input validates format with helpful error messages</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All settings OA-only</td>
+<td>No delegation of settings access</td>
+<td>Settings affect the entire organization. A single point of responsibility reduces misconfiguration risk</td>
+</tr>
+<tr>
+<td>Three-tier security</td>
+<td>Standard / Enhanced / Maximum</td>
+<td>Organizations have different risk profiles. A low-risk local campaign doesn't need BYOK encryption. A national campaign in a hostile environment does</td>
+</tr>
+<tr>
+<td>Additive-only permission overrides</td>
+<td>Overrides can only grant, not revoke</td>
+<td>Restricting permissions should be done through role templates, not per-user exceptions. This prevents a &quot;Swiss cheese&quot; permission model</td>
+</tr>
+<tr>
+<td>Integration hub as card grid</td>
+<td>Visual status cards, not a settings form</td>
+<td>Integrations are independent services. Card layout makes connection status scannable at a glance</td>
+</tr>
+<tr>
+<td>Audit trail non-deletable</td>
+<td>No delete/edit capability for audit entries</td>
+<td>Tamper-proof audit trail is a compliance requirement. Even OA cannot modify logs</td>
+</tr>
+<tr>
+<td>Separate screens per integration</td>
+<td>Individual setup screens (SET-013-016)</td>
+<td>Each integration has unique configuration requirements (OAuth vs API key, templates, DNS records). A combined form would be overwhelming</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li><strong>Settings delegation</strong> — should specific settings categories be delegatable to non-OA roles? E.g., Communications Director managing email domain settings, Finance Director managing billing. Current design is OA-only for simplicity but may not scale</li>
+<li><strong>Setting change approval</strong> — should critical settings changes (security tier, compliance framework, key rotation) require a second OA to approve? Prevents a single compromised OA account from weakening security</li>
+<li><strong>Settings import/export</strong> — should organizations be able to export their settings configuration and import it into a new tenant? Useful for alliance members who want consistent configuration</li>
+<li><strong>API rate limits</strong> — what rate limits apply to API keys? Should these be configurable per key, or set at the plan level?</li>
+<li><strong>Integration health monitoring</strong> — should the platform proactively alert when an integration is failing (e.g., email delivery rate drops, WhatsApp token expires)? Currently passive — staff must check the integration hub</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#settings-navigation-context"># Settings Navigation Context</a></li><li class="toc-2"><a href="#set-001-org-profile-branding"># SET-001: Org Profile &amp;amp; Branding</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#interaction"># Interaction</a></li><li class="toc-2"><a href="#set-002-role-template-editor"># SET-002: Role Template Editor</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-3"><a href="#template-detail-on-click"># Template Detail (on click)</a></li><li class="toc-3"><a href="#interaction-1"># Interaction</a></li><li class="toc-2"><a href="#set-003-permission-override-panel"># SET-003: Permission Override Panel</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-3"><a href="#add-override-modal"># Add Override Modal</a></li><li class="toc-3"><a href="#interaction-2"># Interaction</a></li><li class="toc-2"><a href="#set-004-staff-management-list"># SET-004: Staff Management List</a></li><li class="toc-3"><a href="#desktop-3"># Desktop</a></li><li class="toc-3"><a href="#row-actions-click-row-detail-panel-or-modal"># Row Actions (click row → detail panel or modal)</a></li><li class="toc-3"><a href="#interaction-3"># Interaction</a></li><li class="toc-2"><a href="#set-005-staff-invite-flow"># SET-005: Staff Invite Flow</a></li><li class="toc-3"><a href="#desktop-4"># Desktop</a></li><li class="toc-3"><a href="#interaction-4"># Interaction</a></li><li class="toc-2"><a href="#set-006-geographic-scope-configuration"># SET-006: Geographic Scope Configuration</a></li><li class="toc-3"><a href="#desktop-5"># Desktop</a></li><li class="toc-2"><a href="#set-007-campaign-period-configuration"># SET-007: Campaign Period Configuration</a></li><li class="toc-3"><a href="#desktop-6"># Desktop</a></li><li class="toc-2"><a href="#set-008-compliance-configuration"># SET-008: Compliance Configuration</a></li><li class="toc-3"><a href="#desktop-7"># Desktop</a></li><li class="toc-2"><a href="#set-009-contribution-limits-configuration"># SET-009: Contribution Limits Configuration</a></li><li class="toc-3"><a href="#desktop-8"># Desktop</a></li><li class="toc-2"><a href="#set-010-disclaimer-text-configuration"># SET-010: Disclaimer Text Configuration</a></li><li class="toc-3"><a href="#desktop-9"># Desktop</a></li><li class="toc-2"><a href="#set-011-data-retention-policy"># SET-011: Data Retention Policy</a></li><li class="toc-3"><a href="#desktop-10"># Desktop</a></li><li class="toc-2"><a href="#set-012-integration-settings-hub"># SET-012: Integration Settings Hub</a></li><li class="toc-3"><a href="#desktop-11"># Desktop</a></li><li class="toc-3"><a href="#interaction-5"># Interaction</a></li><li class="toc-2"><a href="#set-013-set-016-integration-detail-screens"># SET-013 – SET-016: Integration Detail Screens</a></li><li class="toc-3"><a href="#set-013-whatsapp-business-setup"># SET-013: WhatsApp Business Setup</a></li><li class="toc-2"><a href="#set-017-billing-subscription"># SET-017: Billing &amp;amp; Subscription</a></li><li class="toc-3"><a href="#desktop-12"># Desktop</a></li><li class="toc-2"><a href="#set-018-audit-trail-viewer"># SET-018: Audit Trail Viewer</a></li><li class="toc-3"><a href="#desktop-13"># Desktop</a></li><li class="toc-3"><a href="#interaction-6"># Interaction</a></li><li class="toc-2"><a href="#set-019-security-settings"># SET-019: Security Settings</a></li><li class="toc-3"><a href="#desktop-14"># Desktop</a></li><li class="toc-2"><a href="#set-020-encryption-key-management"># SET-020: Encryption Key Management</a></li><li class="toc-3"><a href="#desktop-15"># Desktop</a></li><li class="toc-3"><a href="#interaction-7"># Interaction</a></li><li class="toc-2"><a href="#set-021-api-key-management"># SET-021: API Key Management</a></li><li class="toc-3"><a href="#desktop-16"># Desktop</a></li><li class="toc-3"><a href="#generate-key-modal"># Generate Key Modal</a></li><li class="toc-2"><a href="#set-022-webhook-configuration"># SET-022: Webhook Configuration</a></li><li class="toc-3"><a href="#desktop-17"># Desktop</a></li><li class="toc-3"><a href="#addedit-webhook-modal"># Add/Edit Webhook Modal</a></li><li class="toc-3"><a href="#webhook-detail-click-row"># Webhook Detail (click row)</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

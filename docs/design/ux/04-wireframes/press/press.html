@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Press &amp; Media Wireframes · GreenGrass</title>
+<meta name="description" content="Press &amp; Media Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="./press.html" aria-current="page" class="active">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="press-media-wireframes" tabindex="-1"><a class="heading-anchor" href="#press-media-wireframes" aria-hidden="true">#</a> Press &amp; Media Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Press operations are a force multiplier for resource-constrained campaigns — earned media is often the highest-ROI communication channel. These wireframes cover media contact management, press content creation (releases, advisories, statements), media kit management, coverage tracking and analytics, endorsement pipeline, talking points, interview scheduling, and spokesperson configuration.</p>
+<p>The core UX challenge: press work is relationship-driven and time-sensitive. A press release needs to go out in hours, not days. A statement responding to breaking news needs approval in minutes. The tools must be fast, with approval workflows that accelerate rather than block, and relationship context always visible when composing.</p>
+<p>Social media management is wireframed separately in <code>social-media/social-media.md</code>. This document covers traditional press operations.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PRESS-001</td>
+<td>Media Contact List</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Media Contacts</td>
+</tr>
+<tr>
+<td>PRESS-002</td>
+<td>Media Contact Detail</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Media Contacts</td>
+</tr>
+<tr>
+<td>PRESS-003</td>
+<td>Media List Management</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Media Contacts</td>
+</tr>
+<tr>
+<td>PRESS-004</td>
+<td>Press Release Builder</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Press Content</td>
+</tr>
+<tr>
+<td>PRESS-005</td>
+<td>Press Release Preview</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Press Content</td>
+</tr>
+<tr>
+<td>PRESS-006</td>
+<td>Press Release Distribution</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Press Content</td>
+</tr>
+<tr>
+<td>PRESS-007</td>
+<td>Media Advisory Builder</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Press Content</td>
+</tr>
+<tr>
+<td>PRESS-008</td>
+<td>Statement Builder</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Press Content</td>
+</tr>
+<tr>
+<td>PRESS-009</td>
+<td>Media Kit Management</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Media Kit</td>
+</tr>
+<tr>
+<td>PRESS-010</td>
+<td>Coverage Log</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Coverage</td>
+</tr>
+<tr>
+<td>PRESS-011</td>
+<td>Coverage Analytics</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Coverage</td>
+</tr>
+<tr>
+<td>PRESS-012</td>
+<td>Endorsement Pipeline</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Endorsements</td>
+</tr>
+<tr>
+<td>PRESS-013</td>
+<td>Endorsement Detail</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Endorsements</td>
+</tr>
+<tr>
+<td>PRESS-014</td>
+<td>Talking Points Library</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Spokesperson</td>
+</tr>
+<tr>
+<td>PRESS-015</td>
+<td>Interview Schedule</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Interviews</td>
+</tr>
+<tr>
+<td>PRESS-016</td>
+<td>Spokesperson Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Spokesperson</td>
+</tr>
+</tbody>
+</table>
+<h2 id="press-navigation-context" tabindex="-1"><a class="heading-anchor" href="#press-navigation-context" aria-hidden="true">#</a> Press Navigation Context</h2>
+<pre><code>PRESS (Communications Director sidebar)
+  Media Contacts      → PRESS-001
+  Releases            → press release list (within PRESS-004)
+  Advisories          → advisory list (within PRESS-007)
+  Statements          → statement list (within PRESS-008)
+  Coverage            → PRESS-010
+  Endorsements        → PRESS-012
+  Talking Points      → PRESS-014
+  Interviews          → PRESS-015
+</code></pre>
+<hr>
+<h2 id="press-001-media-contact-list" tabindex="-1"><a class="heading-anchor" href="#press-001-media-contact-list" aria-hidden="true">#</a> PRESS-001: Media Contact List</h2>
+<p>Browse and manage journalists, editors, and media contacts. These are CRM contacts with press-specific fields.</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Media Contacts                                           [+ New Contact]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  🔍 Search by name, outlet, or beat...                                      │
+│  Filters: [Outlet ▾]  [Beat ▾]  [Coverage Area ▾]  [Relationship ▾]        │
+│                                                                              │
+│  Name              Outlet              Beat         Area        Rel.  Last   │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Elena Vargas      El Nuevo Día        Politics     PR-wide     ●●●○  Mar 1 │
+│  Ricardo Morales   WAPA TV             Local Gov    San Juan    ●●○○  Feb 28│
+│  Ana Pérez         Associated Press    Elections    Caribbean   ●●●●  Feb 25│
+│  James Cooke       The Guardian        LatAm        Internat.   ●○○○  Feb 20│
+│  Carla Méndez      Metro PR            Community    Metro area  ●●●○  Feb 15│
+│  Kenji Watanabe    NHK World           Elections    Internat.   ●○○○  —     │
+│  Luisa Rodríguez   Radio Isla 1320     Politics     PR-wide     ●●○○  Feb 10│
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Showing 1-25 of 84                                                          │
+│                                                                              │
+│  Lists: [Political Reporters (23)]  [National Press (8)]  [All Media ▾]    │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  Media Contacts       [+]  │
+├────────────────────────────┤
+│                            │
+│  🔍 Search...              │
+│  [Filters ▾]               │
+│                            │
+│  ┌──────────────────────┐  │
+│  │ Elena Vargas    ●●●○ │  │
+│  │ El Nuevo Día         │  │
+│  │ Politics · PR-wide   │  │
+│  │ Last: Mar 1          │  │
+│  ├──────────────────────┤  │
+│  │ Ricardo Morales ●●○○ │  │
+│  │ WAPA TV              │  │
+│  │ Local Gov · San Juan │  │
+│  │ Last: Feb 28         │  │
+│  ├──────────────────────┤  │
+│  │ Ana Pérez       ●●●● │  │
+│  │ Associated Press     │  │
+│  │ Elections · Caribb.  │  │
+│  │ Last: Feb 25         │  │
+│  └──────────────────────┘  │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="relationship-status-indicator" tabindex="-1"><a class="heading-anchor" href="#relationship-status-indicator" aria-hidden="true">#</a> Relationship Status Indicator</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Display</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cold</td>
+<td>●○○○</td>
+<td>No prior contact or initial outreach only</td>
+</tr>
+<tr>
+<td>Warm</td>
+<td>●●○○</td>
+<td>Some interaction, responded to pitches</td>
+</tr>
+<tr>
+<td>Established</td>
+<td>●●●○</td>
+<td>Regular contact, has covered the campaign</td>
+</tr>
+<tr>
+<td>Close</td>
+<td>●●●●</td>
+<td>Strong relationship, reliable coverage</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction" tabindex="-1"><a class="heading-anchor" href="#interaction" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Row click</strong> → opens PRESS-002 Media Contact Detail</li>
+<li><strong>&quot;+ New Contact&quot;</strong> → opens contact create form with media-specific fields pre-shown</li>
+<li><strong>Relationship dots</strong>: visual indicator, not a filter on its own. Filterable via the Relationship dropdown</li>
+<li><strong>Lists bar</strong> (bottom): quick-filter by media list. Shows list name and count. &quot;All Media&quot; shows all press contacts</li>
+<li><strong>&quot;Last&quot; column</strong>: last interaction date (pitch sent, response received, interview, etc.)</li>
+</ul>
+<h3 id="states" tabindex="-1"><a class="heading-anchor" href="#states" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No media contacts yet. Add journalists and editors to build your press contact database.&quot; [Add Contact]</li>
+</ul>
+<hr>
+<h2 id="press-002-media-contact-detail" tabindex="-1"><a class="heading-anchor" href="#press-002-media-contact-detail" aria-hidden="true">#</a> PRESS-002: Media Contact Detail</h2>
+<p>Full profile of a media contact with interaction history. Extends the standard CRM contact detail (CRM-002) with press-specific sections.</p>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Media Contacts    Elena Vargas                    [Edit]  [Pitch →]  [⋮] │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌────────────────────────────────┬──────────────────────────────────────┐   │
+│  │                                │                                      │   │
+│  │  Elena Vargas              ●●●○│  Contact                             │   │
+│  │  Political Reporter            │  ──────                              │   │
+│  │  El Nuevo Día                  │  elena.vargas@elnuevodia.com         │   │
+│  │                                │  +1 (787) 555-0198                   │   │
+│  │  Beat: Politics, Elections     │  WhatsApp preferred                  │   │
+│  │  Area: PR-wide                 │                                      │   │
+│  │  Language: Spanish, English    │  Social                              │   │
+│  │                                │  ──────                              │   │
+│  │  Relationship: Established     │  @elenavargas_pr (𝕏)                │   │
+│  │                                │                                      │   │
+│  │  Notes:                        │                                      │   │
+│  │  Covers legislative sessions.  │                                      │   │
+│  │  Deadline: 4 PM weekdays.      │                                      │   │
+│  │  Prefers WhatsApp for initial  │                                      │   │
+│  │  pitches, email for materials. │                                      │   │
+│  │                                │                                      │   │
+│  └────────────────────────────────┴──────────────────────────────────────┘   │
+│                                                                              │
+│  Member of Lists: Political Reporters, PR-Wide Press, Election Night Pool   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Interaction History                                                         │
+│  ────────────────────                                                        │
+│                                                                              │
+│  Mar 1   📤 Pitch sent: &quot;Spring campaign fundraising milestone&quot;              │
+│          Via: Email · By: Ana Reyes                                          │
+│          Response: Interested — requested interview                          │
+│                                                                              │
+│  Feb 20  📰 Coverage: &quot;Partido Verde surpasses voter outreach targets&quot;      │
+│          El Nuevo Día · Positive · [View Article →]                         │
+│                                                                              │
+│  Feb 15  📤 Press release sent: &quot;Healthcare policy announcement&quot;             │
+│          Via: Email · Response: Covered (see Feb 20)                         │
+│                                                                              │
+│  Feb 1   🎙 Interview: Candidate on healthcare platform                     │
+│          Phone, 15 min · Resulted in coverage                                │
+│                                                                              │
+│  Jan 20  📤 Pitch sent: &quot;Campaign launch announcement&quot;                      │
+│          Via: WhatsApp · Response: Passed (not her beat at the time)         │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Coverage from this journalist: 4 articles                    [View All →]  │
+│  Pitch success rate: 67% (4 of 6 pitches resulted in coverage)              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-1" tabindex="-1"><a class="heading-anchor" href="#interaction-1" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>&quot;Pitch →&quot;</strong>: opens a compose flow pre-filled with this journalist's email/WhatsApp. Logged as a pitch interaction</li>
+<li><strong>Interaction history</strong>: auto-populated from pitches, releases sent to media lists containing this contact, interviews, and coverage links. Chronological, most recent first</li>
+<li><strong>&quot;View Article →&quot;</strong>: opens external link to the coverage</li>
+<li><strong>Edit</strong>: modifies contact fields (relationship status, notes, beat, etc.)</li>
+<li><strong>Overflow menu</strong> (⋮): Add to List, Remove from List, Log Interaction, View in CRM</li>
+<li><strong>Coverage stats</strong>: auto-calculated from interaction history</li>
+</ul>
+<hr>
+<h2 id="press-003-media-list-management" tabindex="-1"><a class="heading-anchor" href="#press-003-media-list-management" aria-hidden="true">#</a> PRESS-003: Media List Management</h2>
+<p>Create and manage curated lists of journalists for targeted outreach.</p>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Media Lists                                               [+ New List]     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Political Reporters — PR                                   [Edit]   │   │
+│  │  Type: Dynamic (Beat = Politics, Area = PR)                         │   │
+│  │  23 contacts · Last used: Mar 1 (Spring fundraising release)        │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  National Press                                             [Edit]   │   │
+│  │  Type: Static (manually curated)                                    │   │
+│  │  8 contacts · Last used: Feb 15 (Healthcare announcement)           │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  Election Night Pool                                        [Edit]   │   │
+│  │  Type: Static                                                       │   │
+│  │  12 contacts · Last used: —                                         │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  Friendly Columnists                                        [Edit]   │   │
+│  │  Type: Dynamic (Relationship ≥ Established)                         │   │
+│  │  6 contacts · Last used: Feb 28 (Statement on housing)              │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="new-edit-list" tabindex="-1"><a class="heading-anchor" href="#new-edit-list" aria-hidden="true">#</a> New / Edit List</h3>
+<pre><code>│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  List Name *                                                         │   │
+│  │  ┌──────────────────────────────────────────────────────────────┐   │   │
+│  │  │ Political Reporters — PR                                     │   │   │
+│  │  └──────────────────────────────────────────────────────────────┘   │   │
+│  │                                                                      │   │
+│  │  Type                                                                │   │
+│  │  ● Dynamic (auto-updates based on criteria)                          │   │
+│  │  ○ Static (manually add/remove contacts)                             │   │
+│  │                                                                      │   │
+│  │  Criteria (dynamic):                                                 │   │
+│  │  Beat = [Politics ▾]  AND  Coverage Area = [PR-wide ▾]             │   │
+│  │  [+ Add Criteria]                                                    │   │
+│  │                                                                      │   │
+│  │  Matching contacts: 23                    [View Contacts →]         │   │
+│  │                                                                      │   │
+│  │  [Save]                                                              │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+</code></pre>
+<h3 id="interaction-2" tabindex="-1"><a class="heading-anchor" href="#interaction-2" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Dynamic lists</strong>: auto-update as contacts are added/modified. Criteria use AND logic</li>
+<li><strong>Static lists</strong>: manual add/remove via contact search</li>
+<li><strong>&quot;Edit&quot;</strong>: opens inline edit panel</li>
+<li><strong>&quot;View Contacts →&quot;</strong>: navigates to PRESS-001 filtered by this list</li>
+<li><strong>List usage tracking</strong>: shows when the list was last used for distribution</li>
+</ul>
+<hr>
+<h2 id="press-004-press-release-builder" tabindex="-1"><a class="heading-anchor" href="#press-004-press-release-builder" aria-hidden="true">#</a> PRESS-004: Press Release Builder</h2>
+<p>Structured content builder for press releases. Uses the Composer pattern with press-specific structure.</p>
+<h3 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Releases    New Press Release            [Save Draft]  [Submit ▾]        │
+├────────────────────────────────┬─────────────────────────────────────────────┤
+│                                │                                             │
+│  STRUCTURE                     │  Preview                                    │
+│  ─────────                     │  ───────                                    │
+│                                │                                             │
+│  Status: ✎ Draft               │  FOR IMMEDIATE RELEASE                      │
+│                                │  March 3, 2026                              │
+│  Headline *                    │                                             │
+│  ┌──────────────────────────┐  │  PARTIDO VERDE SURPASSES                   │
+│  │ Partido Verde Surpasses  │  │  $300K FUNDRAISING GOAL                    │
+│  │ $300K Fundraising Goal   │  │                                             │
+│  └──────────────────────────┘  │  Spring campaign raises $347,200            │
+│                                │  from 2,847 donors across                   │
+│  Subhead                       │  Puerto Rico                                │
+│  ┌──────────────────────────┐  │                                             │
+│  │ Spring campaign raises   │  │  SAN JUAN, PR — Partido Verde              │
+│  │ $347,200 from 2,847      │  │  today announced that its Spring            │
+│  │ donors across Puerto Rico│  │  Drive 2026 has surpassed its              │
+│  └──────────────────────────┘  │  $300,000 fundraising goal,                │
+│                                │  raising $347,200 from 2,847               │
+│  Dateline *                    │  individual donors...                        │
+│  ┌──────────────────────────┐  │                                             │
+│  │ San Juan, PR             │  │  &quot;This milestone shows that                │
+│  └──────────────────────────┘  │  our movement is growing,&quot;                  │
+│                                │  said María Torres, Campaign                │
+│  Release timing                │  Director. &quot;Every dollar came               │
+│  ● For immediate release       │  from people who believe in a               │
+│  ○ Embargoed until:            │  greener Puerto Rico.&quot;                      │
+│    ┌────────────┐ ┌────────┐  │                                             │
+│    │ Mar 5      │ │ 8 AM ▾ │  │  ###                                        │
+│    └────────────┘ └────────┘  │                                             │
+│                                │  ABOUT PARTIDO VERDE                        │
+│  ─────────────                 │  Partido Verde de Puerto Rico               │
+│                                │  is a grassroots political                   │
+│  BODY *                        │  movement dedicated to                      │
+│  ┌──────────────────────────┐  │  environmental justice and                  │
+│  │ Partido Verde today      │  │  social equity...                           │
+│  │ announced that its       │  │                                             │
+│  │ Spring Drive 2026 has    │  │  CONTACT                                    │
+│  │ surpassed its $300,000   │  │  Ana Reyes, Press Secretary                │
+│  │ fundraising goal...      │  │  press@partidoverde.org                    │
+│  └──────────────────────────┘  │  +1 (787) 555-0100                         │
+│  Rich text (bold, italic,     │                                             │
+│  lists, links)                 │  ─────────────────                           │
+│                                │  Paid for by Partido Verde                  │
+│  ▸ QUOTE BLOCKS (2)           │  de Puerto Rico                              │
+│  ▸ BOILERPLATE                 │                                             │
+│  ▸ CONTACT INFO                │                                             │
+│  ▸ MEDIA ASSETS                │                                             │
+│                                │                                             │
+└────────────────────────────────┴─────────────────────────────────────────────┘
+</code></pre>
+<h3 id="collapsed-sections" tabindex="-1"><a class="heading-anchor" href="#collapsed-sections" aria-hidden="true">#</a> Collapsed Sections</h3>
+<p><strong>QUOTE BLOCKS:</strong></p>
+<pre><code>│  Quote 1                                                                     │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ &quot;This milestone shows that our movement is growing. Every dollar    │   │
+│  │ came from people who believe in a greener Puerto Rico.&quot;             │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  Attributed to: María Torres, Campaign Director                             │
+│  [+ Add Quote Block]                                                         │
+</code></pre>
+<p><strong>BOILERPLATE:</strong></p>
+<pre><code>│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Partido Verde de Puerto Rico is a grassroots political movement     │   │
+│  │ dedicated to environmental justice and social equity...             │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  ⓘ Boilerplate is shared across all releases. Edit in org settings.        │
+│  [Use org default]                                                           │
+</code></pre>
+<p><strong>CONTACT INFO:</strong></p>
+<pre><code>│  Press contact: [Ana Reyes ▾]                                                │
+│  Email: press@partidoverde.org                                               │
+│  Phone: +1 (787) 555-0100                                                    │
+│  ⓘ Auto-populated from spokesperson configuration (PRESS-016).              │
+</code></pre>
+<p><strong>MEDIA ASSETS:</strong></p>
+<pre><code>│  Attached assets (included with distribution):                               │
+│  ┌────────┐  ┌────────┐                                                    │
+│  │ [img]  │  │ + Add  │                                                    │
+│  │ hires  │  │ Asset  │                                                    │
+│  │ photo  │  │        │                                                    │
+│  └────────┘  └────────┘                                                    │
+│  From media kit or upload                                                    │
+</code></pre>
+<h3 id="interaction-3" tabindex="-1"><a class="heading-anchor" href="#interaction-3" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Split-pane</strong>: structure left, live preview right. Preview updates as content changes</li>
+<li><strong>Submit dropdown</strong>: &quot;Submit for Approval&quot; (routes to candidate), &quot;Save Draft&quot;</li>
+<li><strong>Embargo</strong>: when embargoed, the preview shows &quot;EMBARGOED UNTIL [date/time]&quot; header. Distribution includes embargo notice</li>
+<li><strong>Compliance disclaimer</strong>: auto-appended in preview. Cannot be removed</li>
+<li><strong>Versioning</strong>: edit mode shows version number. &quot;Previous Versions&quot; link shows history</li>
+<li><strong>Preview button</strong>: opens PRESS-005 full-page preview</li>
+</ul>
+<h3 id="press-release-list-sidebar-entry-point" tabindex="-1"><a class="heading-anchor" href="#press-release-list-sidebar-entry-point" aria-hidden="true">#</a> Press Release List (sidebar entry point)</h3>
+<pre><code>│  Press Releases                                           [+ New Release]   │
+│                                                                              │
+│  [All]  [Draft]  [Pending Approval]  [Approved]  [Distributed]             │
+│                                                                              │
+│  Release                      Date        Status           Distributed To   │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Fundraising milestone        Mar 3       ◷ Pending        —               │
+│  Healthcare policy launch     Feb 15      ✓ Distributed    24 contacts     │
+│  Campaign launch              Jan 20      ✓ Distributed    32 contacts     │
+</code></pre>
+<hr>
+<h2 id="press-005-press-release-preview" tabindex="-1"><a class="heading-anchor" href="#press-005-press-release-preview" aria-hidden="true">#</a> PRESS-005: Press Release Preview</h2>
+<p>Full-page preview of a press release as it will appear when distributed.</p>
+<h3 id="desktop-mobile" tabindex="-1"><a class="heading-anchor" href="#desktop-mobile" aria-hidden="true">#</a> Desktop &amp; Mobile</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ⚠ PREVIEW    [← Back to Editor]   [Submit for Approval]   [Distribute]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  (Full rendering of the press release in distribution format:                │
+│   clean, professional layout with proper formatting of                       │
+│   headline, dateline, body, quotes, boilerplate, contact,                   │
+│   and compliance disclaimer. Identical to what journalists                   │
+│   receive via email.)                                                        │
+│                                                                              │
+│  Mobile preview accessible — scrollable single-column layout.               │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-4" tabindex="-1"><a class="heading-anchor" href="#interaction-4" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li>Read-only rendering of the complete press release</li>
+<li><strong>&quot;Submit for Approval&quot;</strong>: routes to candidate approval flow</li>
+<li><strong>&quot;Distribute&quot;</strong>: only enabled if status is &quot;Approved&quot;. Opens PRESS-006</li>
+<li><strong>Mobile</strong>: accessible for reviewing press releases on the go</li>
+</ul>
+<hr>
+<h2 id="press-006-press-release-distribution" tabindex="-1"><a class="heading-anchor" href="#press-006-press-release-distribution" aria-hidden="true">#</a> PRESS-006: Press Release Distribution</h2>
+<p>Select recipients and send an approved press release.</p>
+<h3 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Release    Distribute: Fundraising Milestone                    [Send]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Status: ✓ Approved by María Torres (Candidate) · Mar 3, 10:15 AM          │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  RECIPIENTS                                                                  │
+│  ──────────                                                                  │
+│                                                                              │
+│  Media lists:                                                                │
+│  ☑ Political Reporters — PR (23 contacts)                                   │
+│  ☐ National Press (8 contacts)                                               │
+│  ☐ Election Night Pool (12 contacts)                                         │
+│  ☐ Friendly Columnists (6 contacts)                                          │
+│                                                                              │
+│  Individual contacts:                                                        │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ + Add individual contacts...                                        │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  Added: Ana Pérez (AP), James Cooke (The Guardian)                          │
+│                                                                              │
+│  Total recipients: 25 (23 from list + 2 individual)                         │
+│  Duplicates removed: 0                                                       │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  PERSONALIZATION                                                             │
+│  ───────────────                                                             │
+│                                                                              │
+│  Subject line *                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Press Release: Partido Verde Surpasses $300K Fundraising Goal       │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ☑ Personalize greeting (&quot;Dear {{journalist_name}},&quot;)                       │
+│  ☐ Add pitch note (custom text before the release body)                     │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  ATTACHMENTS                                                                 │
+│  ───────────                                                                 │
+│  ☑ Press release as PDF attachment                                           │
+│  ☑ High-resolution photo: campaign_milestone.jpg (2.4 MB)                   │
+│  ☐ Include media kit link                                                    │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  EMBARGO                                                                     │
+│  ───────                                                                     │
+│  ⓘ This release is set for IMMEDIATE RELEASE.                               │
+│                                                                              │
+│  [Preview Email]  [Send Test to Me]                                          │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="embargoed-variant" tabindex="-1"><a class="heading-anchor" href="#embargoed-variant" aria-hidden="true">#</a> Embargoed Variant</h3>
+<pre><code>│  EMBARGO                                                                     │
+│  ───────                                                                     │
+│  ⚠ This release is EMBARGOED until March 5, 2026 at 8:00 AM AST.           │
+│  Embargo notice will be included in the email.                               │
+│                                                                              │
+│  ☑ Track embargo acknowledgment (request reply confirmation)                 │
+</code></pre>
+<h3 id="interaction-5" tabindex="-1"><a class="heading-anchor" href="#interaction-5" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Media list checkboxes</strong>: select one or more lists. Contact count shown per list. Deduplication is automatic</li>
+<li><strong>Individual contacts</strong>: type-ahead search of media contacts</li>
+<li><strong>&quot;Send Test to Me&quot;</strong>: sends the distribution email to the current user for review</li>
+<li><strong>&quot;Preview Email&quot;</strong>: shows the complete email (subject, greeting, release body, attachments) as the journalist will receive it</li>
+<li><strong>&quot;Send&quot;</strong>: confirmation dialog: &quot;Send to 25 journalists now?&quot; Logged to audit trail and each contact's interaction history</li>
+<li><strong>Post-send</strong>: each contact's record (PRESS-002) updated with &quot;Press release sent&quot; interaction entry</li>
+</ul>
+<hr>
+<h2 id="press-007-media-advisory-builder" tabindex="-1"><a class="heading-anchor" href="#press-007-media-advisory-builder" aria-hidden="true">#</a> PRESS-007: Media Advisory Builder</h2>
+<p>Simplified content builder for media advisories — shorter than press releases, focused on alerting media to upcoming events.</p>
+<h3 id="desktop-5" tabindex="-1"><a class="heading-anchor" href="#desktop-5" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Advisories    New Media Advisory               [Save Draft]  [Submit ▾]  │
+├────────────────────────────────┬─────────────────────────────────────────────┤
+│                                │                                             │
+│  ADVISORY                      │  Preview                                    │
+│  ────────                      │  ───────                                    │
+│                                │                                             │
+│  Headline *                    │  MEDIA ADVISORY                             │
+│  ┌──────────────────────────┐  │  March 3, 2026                              │
+│  │ Partido Verde to Hold    │  │                                             │
+│  │ Community Rally in San   │  │  PARTIDO VERDE TO HOLD                     │
+│  │ Juan                     │  │  COMMUNITY RALLY IN SAN JUAN              │
+│  └──────────────────────────┘  │                                             │
+│                                │  WHO:  Candidate María Torres              │
+│  Linked event (optional):     │        and community leaders                │
+│  ┌──────────────────────────┐  │                                             │
+│  │ Rally at Plaza del ▾     │  │  WHAT: Community rally with                │
+│  └──────────────────────────┘  │        speakers, music, and                │
+│  ⓘ Auto-fills WHO/WHAT/WHEN/  │        policy announcements                │
+│    WHERE from event details.   │                                             │
+│                                │  WHEN: March 5, 2026                        │
+│  WHO *                         │        6:00 PM — 9:00 PM                    │
+│  ┌──────────────────────────┐  │                                             │
+│  │ Candidate María Torres   │  │  WHERE: Plaza del Mercado                  │
+│  │ and community leaders    │  │         Calle Dos Hermanos                 │
+│  └──────────────────────────┘  │         San Juan, PR 00907                 │
+│                                │                                             │
+│  WHAT *                        │  WHY:  To celebrate fundraising             │
+│  ┌──────────────────────────┐  │        milestone and announce              │
+│  │ Community rally with     │  │        community initiatives               │
+│  │ speakers, music, and     │  │                                             │
+│  │ policy announcements     │  │  MEDIA: Photo and video                    │
+│  └──────────────────────────┘  │         opportunities available            │
+│                                │                                             │
+│  WHEN *                        │  CONTACT                                    │
+│  ┌──────────────────────────┐  │  Ana Reyes, Press Secretary                │
+│  │ March 5, 2026            │  │  press@partidoverde.org                    │
+│  │ 6:00 PM — 9:00 PM       │  │                                             │
+│  └──────────────────────────┘  │  ─────────────────                          │
+│                                │  Paid for by Partido Verde                  │
+│  WHERE *                       │  de Puerto Rico                              │
+│  ┌──────────────────────────┐  │                                             │
+│  │ Plaza del Mercado,       │  │                                             │
+│  │ Calle Dos Hermanos,      │  │                                             │
+│  │ San Juan, PR 00907       │  │                                             │
+│  └──────────────────────────┘  │                                             │
+│                                │                                             │
+│  WHY                           │                                             │
+│  ┌──────────────────────────┐  │                                             │
+│  │ To celebrate fundraising │  │                                             │
+│  │ milestone and announce   │  │                                             │
+│  │ community initiatives    │  │                                             │
+│  └──────────────────────────┘  │                                             │
+│                                │                                             │
+│  MEDIA OPPORTUNITIES           │                                             │
+│  ☑ Photo opportunity            │                                             │
+│  ☑ Video/broadcast opportunity  │                                             │
+│  ☐ Interviews available         │                                             │
+│                                │                                             │
+└────────────────────────────────┴─────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-6" tabindex="-1"><a class="heading-anchor" href="#interaction-6" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Event linking</strong>: selecting a platform event auto-fills WHEN and WHERE fields. WHO and WHAT need human input</li>
+<li><strong>Submit</strong>: same approval and distribution workflow as press releases (→ PRESS-006)</li>
+<li><strong>Split-pane preview</strong>: updates in real time</li>
+</ul>
+<hr>
+<h2 id="press-008-statement-builder" tabindex="-1"><a class="heading-anchor" href="#press-008-statement-builder" aria-hidden="true">#</a> PRESS-008: Statement Builder</h2>
+<p>Rapid-response content builder for official campaign statements. Optimized for speed.</p>
+<h3 id="desktop-6" tabindex="-1"><a class="heading-anchor" href="#desktop-6" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Statements   New Statement                     [Save Draft]  [Submit ▾]  │
+├────────────────────────────────┬─────────────────────────────────────────────┤
+│                                │                                             │
+│  ⚡ URGENT                     │  Preview                                    │
+│  ☐ Mark as urgent (expedites  │  ───────                                    │
+│    approval)                   │                                             │
+│                                │  STATEMENT FROM MARÍA TORRES               │
+│  Topic *                       │  ON PROPOSED WATER POLICY                   │
+│  ┌──────────────────────────┐  │                                             │
+│  │ Proposed water policy    │  │  March 3, 2026                              │
+│  └──────────────────────────┘  │                                             │
+│                                │  &quot;The proposed changes to                    │
+│  Attributed to *               │  water management policy fail               │
+│  ┌──────────────────────────┐  │  to address the fundamental                │
+│  │ María Torres, Candidate ▾│  │  access issues facing rural                │
+│  └──────────────────────────┘  │  communities. We call on the               │
+│                                │  legislature to...&quot;                         │
+│  Statement text *              │                                             │
+│  ┌──────────────────────────┐  │  — María Torres                            │
+│  │ &quot;The proposed changes to │  │    Candidate, District 5                   │
+│  │ water management policy  │  │    Partido Verde de Puerto Rico            │
+│  │ fail to address the      │  │                                             │
+│  │ fundamental access       │  │  ─────────────────                          │
+│  │ issues facing rural      │  │  Paid for by Partido Verde                  │
+│  │ communities. We call on  │  │  de Puerto Rico                              │
+│  │ the legislature to...&quot;   │  │                                             │
+│  └──────────────────────────┘  │                                             │
+│                                │                                             │
+│  Distribution:                 │                                             │
+│  ☑ Media lists                 │                                             │
+│  ☑ Social media (post draft)  │                                             │
+│  ☐ Email to supporters         │                                             │
+│                                │                                             │
+└────────────────────────────────┴─────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-7" tabindex="-1"><a class="heading-anchor" href="#interaction-7" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Urgent flag</strong>: marks statement as priority in the approval queue. Candidate receives push notification for urgent statements</li>
+<li><strong>Submit dropdown</strong>: &quot;Submit for Approval&quot; (standard), &quot;Publish — Emergency Bypass&quot; (OA/CD only, skips candidate approval, logged for audit, candidate notified after the fact)</li>
+<li><strong>Distribution checkboxes</strong>: selects channels. When approved, statement is distributed to selected channels. &quot;Social media&quot; creates a draft post in SOCIAL-002 pre-filled with the statement text</li>
+<li><strong>Speed-oriented</strong>: fewer fields than press release. No boilerplate, no subhead, no media assets — just the statement text and attribution</li>
+</ul>
+<hr>
+<h2 id="press-009-media-kit-management" tabindex="-1"><a class="heading-anchor" href="#press-009-media-kit-management" aria-hidden="true">#</a> PRESS-009: Media Kit Management</h2>
+<p>Manage the persistent collection of campaign materials for journalist reference.</p>
+<h3 id="desktop-7" tabindex="-1"><a class="heading-anchor" href="#desktop-7" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Media Kit                                          [Preview Public Page]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Public URL: greengrass.io/partido-verde/press        [Copy]                │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Assets                                                                      │
+│  ──────                                                                      │
+│                                                                              │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐                │
+│  │ 📄             │  │ 📷             │  │ 📷             │                │
+│  │ Candidate Bio  │  │ Headshot       │  │ Action Shot    │                │
+│  │ .docx · 24 KB  │  │ .jpg · 4.2 MB  │  │ .jpg · 3.8 MB  │                │
+│  │ Access: Public │  │ Access: Public │  │ Access: Gated  │                │
+│  │ [Edit] [⋮]     │  │ [Edit] [⋮]     │  │ [Edit] [⋮]     │                │
+│  └────────────────┘  └────────────────┘  └────────────────┘                │
+│                                                                              │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐                │
+│  │ 📄             │  │ 🎨             │  │ 📄             │                │
+│  │ Org Boilerplate│  │ Logo Pack      │  │ Policy Brief   │                │
+│  │ .docx · 8 KB   │  │ .zip · 1.2 MB  │  │ .pdf · 340 KB  │                │
+│  │ Access: Public │  │ Access: Public │  │ Access: Gated  │                │
+│  │ [Edit] [⋮]     │  │ [Edit] [⋮]     │  │ [Edit] [⋮]     │                │
+│  └────────────────┘  └────────────────┘  └────────────────┘                │
+│                                                                              │
+│  [+ Upload Asset]                                                            │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Access Tracking (Last 30 days)                                              │
+│  ──────────────────                                                          │
+│  Total views: 47 · Downloads: 23 · Gated access requests: 8                │
+│                                                                              │
+│  Recent gated access:                                                        │
+│  Mar 2  elena.vargas@elnuevodia.com  — Action Shot, Policy Brief            │
+│  Feb 28 james.cooke@guardian.com     — Policy Brief                          │
+│  [View All →]                                                                │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="asset-access-levels" tabindex="-1"><a class="heading-anchor" href="#asset-access-levels" aria-hidden="true">#</a> Asset Access Levels</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public</td>
+<td>Freely downloadable, no login required</td>
+</tr>
+<tr>
+<td>Gated</td>
+<td>Requires email to download. Email auto-creates media contact record in CRM</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction-8" tabindex="-1"><a class="heading-anchor" href="#interaction-8" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>&quot;+ Upload Asset&quot;</strong>: file upload with name, description, access level (public/gated), and optional usage rights notes</li>
+<li><strong>&quot;Preview Public Page&quot;</strong>: opens the public-facing media kit page as journalists will see it</li>
+<li><strong>Edit</strong>: modify asset metadata (name, description, access level). Replace file</li>
+<li><strong>Overflow menu</strong> (⋮): Download, Replace File, Delete, View Access Log</li>
+<li><strong>Gated access log</strong>: shows who accessed gated assets. Auto-creates CRM contact if email is new</li>
+</ul>
+<hr>
+<h2 id="press-010-coverage-log" tabindex="-1"><a class="heading-anchor" href="#press-010-coverage-log" aria-hidden="true">#</a> PRESS-010: Coverage Log</h2>
+<p>Track media coverage generated by the campaign. Manual logging with rich metadata.</p>
+<h3 id="desktop-8" tabindex="-1"><a class="heading-anchor" href="#desktop-8" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Coverage Log                                          [+ Log Coverage]     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  🔍 Search by headline, outlet, or journalist...                            │
+│  Filters: [Sentiment ▾]  [Format ▾]  [Date Range ▾]  [Topic ▾]             │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  📰 Partido Verde surpasses voter outreach targets                   │   │
+│  │  El Nuevo Día · Elena Vargas · Feb 20, 2026                         │   │
+│  │  Format: Article · Sentiment: ✓ Positive                            │   │
+│  │  Topics: Canvassing, Field Operations                                │   │
+│  │  Linked to: Healthcare policy press release                          │   │
+│  │  [View Article →]                                              [⋮]   │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │                                                                      │   │
+│  │  📺 Campaign rally draws hundreds in San Juan                        │   │
+│  │  WAPA TV · Ricardo Morales · Mar 5, 2026                            │   │
+│  │  Format: TV Segment · Sentiment: ✓ Positive                         │   │
+│  │  Topics: Events, Community                                           │   │
+│  │  Linked to: Rally media advisory                                     │   │
+│  │  [View Clip →]                                                 [⋮]   │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │                                                                      │   │
+│  │  📰 Green party faces questions on infrastructure policy             │   │
+│  │  Caribbean Business · Staff Reporter · Feb 28, 2026                 │   │
+│  │  Format: Article · Sentiment: ⚡ Mixed                               │   │
+│  │  Topics: Infrastructure, Policy                                      │   │
+│  │  Linked to: — (unsolicited)                                          │   │
+│  │  [View Article →]                                              [⋮]   │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="log-coverage-form" tabindex="-1"><a class="heading-anchor" href="#log-coverage-form" aria-hidden="true">#</a> Log Coverage Form</h3>
+<pre><code>│  Log Coverage                                                       [Save]  │
+│  ────────────                                                                │
+│                                                                              │
+│  Headline *          ┌──────────────────────────────────────────────────┐   │
+│                      │ Partido Verde surpasses voter outreach targets   │   │
+│                      └──────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Outlet *            ┌──────────────────────────┐                           │
+│                      │ El Nuevo Día         [▾]  │                           │
+│                      └──────────────────────────┘                           │
+│                                                                              │
+│  Journalist          ┌──────────────────────────┐                           │
+│                      │ Elena Vargas          [▾] │  (search media contacts)  │
+│                      └──────────────────────────┘                           │
+│                                                                              │
+│  Date published *    ┌──────────────┐                                       │
+│                      │ Feb 20, 2026 │                                       │
+│                      └──────────────┘                                       │
+│                                                                              │
+│  URL                 ┌──────────────────────────────────────────────────┐   │
+│                      │ https://elnuevodia.com/...                       │   │
+│                      └──────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Format              ○ Article  ○ TV Segment  ○ Radio  ○ Podcast            │
+│                      ○ Social Media Mention  ○ Other                         │
+│                                                                              │
+│  Sentiment           ○ Positive  ○ Neutral  ○ Negative  ○ Mixed             │
+│                                                                              │
+│  Topics              [Canvassing ▾] [+ Add]                                 │
+│                                                                              │
+│  Reach estimate      ┌──────────┐  (optional)                               │
+│                      │          │                                            │
+│                      └──────────┘                                            │
+│                                                                              │
+│  Linked to           ┌──────────────────────────────────────────────────┐   │
+│                      │ Healthcare policy press release             [▾]  │   │
+│                      └──────────────────────────────────────────────────┘   │
+│  (optional: link to the pitch/release that generated this coverage)          │
+│                                                                              │
+│  Notes               ┌──────────────────────────────────────────────────┐   │
+│                      │                                                  │   │
+│                      └──────────────────────────────────────────────────┘   │
+</code></pre>
+<h3 id="states-1" tabindex="-1"><a class="heading-anchor" href="#states-1" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No media coverage logged yet. When your pitches and releases generate coverage, log it here to track your press impact.&quot; [Log Coverage]</li>
+</ul>
+<hr>
+<h2 id="press-011-coverage-analytics" tabindex="-1"><a class="heading-anchor" href="#press-011-coverage-analytics" aria-hidden="true">#</a> PRESS-011: Coverage Analytics</h2>
+<p>Aggregate coverage metrics and trends.</p>
+<h3 id="desktop-9" tabindex="-1"><a class="heading-anchor" href="#desktop-9" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Coverage Analytics                             [Date Range ▾]  [Export]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Period: Last 90 Days                                                        │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │ Total        │  │ Positive     │  │ Pitch→Cover  │  │ Est. Reach   │   │
+│  │ Coverage     │  │              │  │ Rate         │  │              │   │
+│  │ 18 pieces    │  │ 72%          │  │ 67%          │  │ 245K         │   │
+│  │ ↑ 5 vs prior │  │              │  │ (8 of 12)   │  │              │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│                                                                              │
+│  Coverage by Sentiment                                                       │
+│  ─────────────────────                                                       │
+│  Positive  13 (72%)  ████████████████████████████████████████████████       │
+│  Neutral    3 (17%)  ██████████████                                         │
+│  Mixed      2 (11%)  ████████                                               │
+│  Negative   0 (0%)                                                           │
+│                                                                              │
+│  Coverage by Format                                                          │
+│  ──────────────────                                                          │
+│  Article     10      ████████████████████████████████████████               │
+│  TV Segment   4      ████████████████                                       │
+│  Radio        2      ████████                                               │
+│  Social       2      ████████                                               │
+│                                                                              │
+│  Coverage by Topic                                                           │
+│  ─────────────────                                                           │
+│  Topic              Coverage   Sentiment                                     │
+│  ─────────────────────────────────────────                                   │
+│  Healthcare          5         ✓✓✓✓⚡                                        │
+│  Environment         4         ✓✓✓✓                                         │
+│  Community/Events    3         ✓✓✓                                          │
+│  Fundraising         3         ✓✓⚡                                          │
+│  Infrastructure      2         ✓⚡                                           │
+│  Education           1         ✓                                            │
+│                                                                              │
+│  Most Responsive Journalists                                                 │
+│  ────────────────────────────                                                │
+│  Journalist          Outlet          Pitches  Covered  Rate                  │
+│  Elena Vargas        El Nuevo Día    6        4        67%                   │
+│  Ana Pérez           AP              3        2        67%                   │
+│  Carla Méndez        Metro PR        4        2        50%                   │
+│  Ricardo Morales     WAPA TV         3        1        33%                   │
+│                                                                              │
+│  Coverage Over Time                                                          │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  (Bar chart: monthly coverage count with sentiment color coding)    │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="press-012-endorsement-pipeline" tabindex="-1"><a class="heading-anchor" href="#press-012-endorsement-pipeline" aria-hidden="true">#</a> PRESS-012: Endorsement Pipeline</h2>
+<p>Kanban-style pipeline for tracking endorsements from identification through public announcement.</p>
+<h3 id="desktop-10" tabindex="-1"><a class="heading-anchor" href="#desktop-10" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Endorsements                                          [+ New Endorsement]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌────────────┬────────────┬────────────┬────────────┬────────────┐        │
+│  │ Identified │ Approached │ Considering│ Committed  │ Public     │        │
+│  │     (5)    │     (3)    │    (2)     │    (1)     │    (8)     │        │
+│  ├────────────┼────────────┼────────────┼────────────┼────────────┤        │
+│  │            │            │            │            │            │        │
+│  │ ┌────────┐│ ┌────────┐ │ ┌────────┐ │ ┌────────┐ │ ┌────────┐ │        │
+│  │ │Dr. Rosa ││ │Sen.    │ │ │Chamber │ │ │Env.    │ │ │Rep.    │ │        │
+│  │ │López    ││ │Martín  │ │ │of Comm.│ │ │Defense │ │ │García  │ │        │
+│  │ │Univ.    ││ │Rivera  │ │ │PR      │ │ │League  │ │ │(Dist.3)│ │        │
+│  │ │Prof.    ││ │(Dist.2)│ │ │        │ │ │        │ │ │Elected │ │        │
+│  │ │Target:  ││ │Contacted│ │ │Meeting │ │ │Ready to│ │ │Jan 20  │ │        │
+│  │ │Mar 15   ││ │Feb 28  │ │ │Mar 10  │ │ │announce│ │ │        │ │        │
+│  │ └────────┘│ └────────┘ │ └────────┘ │ └────────┘ │ └────────┘ │        │
+│  │            │            │            │            │            │        │
+│  │ ┌────────┐│ ┌────────┐ │ ┌────────┐ │            │ ┌────────┐ │        │
+│  │ │Labor   ││ │Mayor   │ │ │ACLU PR │ │            │ │Teachers│ │        │
+│  │ │Union   ││ │Sánchez │ │ │        │ │            │ │Union   │ │        │
+│  │ │Local 42││ │(Caguas)│ │ │Reviewing│            │ │PR      │ │        │
+│  │ │        ││ │        │ │ │platform│ │            │ │Feb 5   │ │        │
+│  │ │Target: ││ │Called   │ │ │        │ │            │ │        │ │        │
+│  │ │Mar 20  ││ │Mar 1   │ │ │        │ │            │ │        │ │        │
+│  │ └────────┘│ └────────┘ │ └────────┘ │            │ └────────┘ │        │
+│  │            │            │            │            │            │        │
+│  │ ┌────────┐│ ┌────────┐ │            │            │ ... +6     │        │
+│  │ │Comm.   ││ │Rev.    │ │            │            │ more       │        │
+│  │ │Board   ││ │Méndez  │ │            │            │            │        │
+│  │ │Pres.   ││ │(Church)│ │            │            │            │        │
+│  │ └────────┘│ └────────┘ │            │            │            │        │
+│  │            │            │            │            │            │        │
+│  │ ... +2    │            │            │            │            │        │
+│  │            │            │            │            │            │        │
+│  └────────────┴────────────┴────────────┴────────────┴────────────┘        │
+│                                                                              │
+│  Categories: [All]  [Elected Officials (5)]  [Organizations (8)]            │
+│              [Community Leaders (4)]  [Individuals (2)]                     │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-9" tabindex="-1"><a class="heading-anchor" href="#interaction-9" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Drag-and-drop</strong>: cards can be dragged between pipeline stages. Moving to &quot;Public&quot; triggers announcement workflow</li>
+<li><strong>Card click</strong> → opens PRESS-013 Endorsement Detail</li>
+<li><strong>&quot;+ New Endorsement&quot;</strong>: creates a new endorsement in the &quot;Identified&quot; stage</li>
+<li><strong>Category filter</strong>: filter by endorser type</li>
+<li><strong>&quot;Public&quot; trigger</strong>: when a card is moved to &quot;Public,&quot; prompt: &quot;Announce this endorsement? This will generate a press release draft and social media post.&quot; Options: &quot;Generate Announcement&quot;, &quot;Skip — Just Mark Public&quot;</li>
+</ul>
+<hr>
+<h2 id="press-013-endorsement-detail" tabindex="-1"><a class="heading-anchor" href="#press-013-endorsement-detail" aria-hidden="true">#</a> PRESS-013: Endorsement Detail</h2>
+<p>Full endorsement record with relationship tracking.</p>
+<h3 id="desktop-11" tabindex="-1"><a class="heading-anchor" href="#desktop-11" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Endorsements    Environmental Defense League             [Edit]  [⋮]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Status: ● Committed                        Category: Organization          │
+│  ──────────────────────────────────────────────────────────────────────      │
+│  ● Identified → ● Approached → ● Considering → ● Committed → ○ Public      │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Endorser                                                                    │
+│  ────────                                                                    │
+│  Environmental Defense League of Puerto Rico                                 │
+│  Contact: Dr. Carmen Vélez, Executive Director                              │
+│  [View Contact →]                                                            │
+│                                                                              │
+│  Endorsement Quote                                                           │
+│  ─────────────────                                                           │
+│  &quot;Partido Verde's environmental platform is the most comprehensive          │
+│  we've seen from any party in Puerto Rico. Their commitment to clean        │
+│  water access and renewable energy aligns with our mission.&quot;                │
+│  — Dr. Carmen Vélez, Executive Director                                     │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  📷 Photo: carmen_velez_headshot.jpg                     [View] [Replace]   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Timeline                                                                    │
+│  ────────                                                                    │
+│  Mar 1   Moved to Committed — Dr. Vélez confirmed endorsement               │
+│  Feb 25  Meeting with Dr. Vélez — discussed platform alignment              │
+│  Feb 20  Moved to Considering — board reviewing platform                    │
+│  Feb 15  Moved to Approached — sent endorsement request packet              │
+│  Feb 1   Identified — recommended by Teachers' Union                        │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Assigned to: Ana Reyes                      Target date: Mar 10            │
+│  Notes: Board vote scheduled for March 8. Expect formal letter after.       │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  [Move to Public &amp; Announce]                                                 │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-10" tabindex="-1"><a class="heading-anchor" href="#interaction-10" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Pipeline progress bar</strong>: visual indicator of current stage</li>
+<li><strong>&quot;Move to Public &amp; Announce&quot;</strong>: triggers announcement workflow (press release draft + social media post)</li>
+<li><strong>Timeline</strong>: auto-populated from stage changes and manual notes</li>
+<li><strong>Edit</strong>: modify endorser info, quote, photo, assigned staff, target date, notes</li>
+<li><strong>Mobile</strong>: scrollable single-column view for checking endorsement status on the go</li>
+</ul>
+<hr>
+<h2 id="press-014-talking-points-library" tabindex="-1"><a class="heading-anchor" href="#press-014-talking-points-library" aria-hidden="true">#</a> PRESS-014: Talking Points Library</h2>
+<p>Managed collection of approved talking points organized by topic.</p>
+<h3 id="desktop-12" tabindex="-1"><a class="heading-anchor" href="#desktop-12" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Talking Points                                        [+ New Topic]        │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  🔍 Search talking points...                                                │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  🏥 Healthcare                                  Updated: Mar 1  [▾] │   │
+│  │  ──────────                                                         │   │
+│  │                                                                      │   │
+│  │  • We support universal primary healthcare access as a              │   │
+│  │    fundamental right for all Puerto Ricans.                         │   │
+│  │                                                                      │   │
+│  │  • Our plan invests $50M in community health centers, creating     │   │
+│  │    200 new jobs and serving 100,000 additional patients annually.   │   │
+│  │                                                                      │   │
+│  │  • When asked about costs: &quot;The cost of inaction is higher —       │   │
+│  │    preventable ER visits alone cost PR taxpayers $120M annually.&quot;   │   │
+│  │                                                                      │   │
+│  │  • Key stat: 340,000 Puerto Ricans currently lack reliable access  │   │
+│  │    to primary care.                                                  │   │
+│  │                                                                      │   │
+│  │  Version 3 · Last updated by Ana Reyes                              │   │
+│  │  [Edit]  [View History]  [Share with Team]                          │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  🌿 Environment                                Updated: Feb 25 [▾] │   │
+│  │  ─────────────                                                      │   │
+│  │                                                                      │   │
+│  │  • Partido Verde's climate action plan targets 100% renewable       │   │
+│  │    energy for PR by 2035.                                           │   │
+│  │                                                                      │   │
+│  │  • We oppose any new fossil fuel infrastructure on the island.     │   │
+│  │                                                                      │   │
+│  │  • When asked about jobs: &quot;Renewable energy creates 3x more jobs   │   │
+│  │    per dollar invested than fossil fuels.&quot;                          │   │
+│  │                                                                      │   │
+│  │  [Edit]  [View History]  [Share with Team]                          │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  💧 Water Access                               Updated: Feb 20 [▾] │   │
+│  │  ▸ (collapsed — click to expand)                                    │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  🎓 Education                                  Updated: Feb 15 [▾] │   │
+│  │  ▸ (collapsed)                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  🏠 Housing                                    Updated: Jan 30 [▾] │   │
+│  │  ▸ (collapsed)                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-11" tabindex="-1"><a class="heading-anchor" href="#interaction-11" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Accordion layout</strong>: topics expand/collapse. Most recently updated topics expanded by default</li>
+<li><strong>&quot;Edit&quot;</strong>: opens rich text editor for the topic's talking points</li>
+<li><strong>&quot;View History&quot;</strong>: shows previous versions with diff highlighting</li>
+<li><strong>&quot;Share with Team&quot;</strong>: sends the current talking points to designated staff via internal messaging. Used when talking points are updated and the team needs to be informed</li>
+<li><strong>&quot;+ New Topic&quot;</strong>: creates a new topic section</li>
+<li><strong>Search</strong>: full-text search across all talking points</li>
+<li><strong>Candidate briefing integration</strong>: before an interview (PRESS-015), relevant talking points are automatically surfaced</li>
+</ul>
+<h3 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h3>
+<p>Accordion layout adapts naturally. Used by spokespeople to review talking points before press interactions.</p>
+<hr>
+<h2 id="press-015-interview-schedule" tabindex="-1"><a class="heading-anchor" href="#press-015-interview-schedule" aria-hidden="true">#</a> PRESS-015: Interview Schedule</h2>
+<p>Track interview requests and scheduled interviews.</p>
+<h3 id="desktop-13" tabindex="-1"><a class="heading-anchor" href="#desktop-13" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Interviews                                          [+ Log Interview]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Upcoming]  [Past]  [Requests]  [All]                                      │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  Mar 5, 10:00 AM — Phone Interview                                  │   │
+│  │  Journalist: Elena Vargas, El Nuevo Día                              │   │
+│  │  Topic: Spring fundraising milestone                                 │   │
+│  │  Interviewee: María Torres (Candidate)                               │   │
+│  │  Duration: 20 min                                                    │   │
+│  │                                                                      │   │
+│  │  Prep: Talking points on [Fundraising] · Recent coverage from       │   │
+│  │  El Nuevo Día (3 articles)                                           │   │
+│  │  [View Prep →]                                                       │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │                                                                      │   │
+│  │  Mar 8, 2:00 PM — In-Person Interview                               │   │
+│  │  Journalist: Ricardo Morales, WAPA TV                                │   │
+│  │  Topic: Community rally follow-up                                    │   │
+│  │  Interviewee: María Torres (Candidate)                               │   │
+│  │  Duration: 15 min · On camera                                        │   │
+│  │                                                                      │   │
+│  │  [View Prep →]                                                       │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Pending Requests                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  📩 Interview Request                                                │   │
+│  │  James Cooke, The Guardian                                           │   │
+│  │  Topic: LatAm environmental politics                                 │   │
+│  │  Requested: Mar 3 · Format: Video call, 30 min                      │   │
+│  │  [Accept &amp; Schedule]  [Decline]  [Reply]                             │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interview-prep-view-expanded-from-view-prep-" tabindex="-1"><a class="heading-anchor" href="#interview-prep-view-expanded-from-view-prep-" aria-hidden="true">#</a> Interview Prep View (expanded from &quot;View Prep →&quot;)</h3>
+<pre><code>│  Interview Prep                                                              │
+│  ──────────────                                                              │
+│                                                                              │
+│  Talking Points                                                              │
+│  · Fundraising: $347K raised, 2,847 donors, 100% grassroots                │
+│  · Spring Drive: surpassed $300K goal                                        │
+│  · Next milestone: voter registration drive launching April                 │
+│  [View Full Talking Points →]                                                │
+│                                                                              │
+│  Recent Coverage from El Nuevo Día                                          │
+│  · Feb 20: &quot;Partido Verde surpasses voter outreach targets&quot; (Positive)      │
+│  · Jan 15: &quot;Green party launches spring campaign&quot; (Neutral)                 │
+│  · Dec 10: &quot;Environmental groups back Verde platform&quot; (Positive)            │
+│                                                                              │
+│  Journalist Notes                                                            │
+│  Elena Vargas covers legislative sessions. Deadline: 4 PM weekdays.         │
+│  Previously covered healthcare and environment angles favorably.            │
+</code></pre>
+<h3 id="interaction-12" tabindex="-1"><a class="heading-anchor" href="#interaction-12" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>&quot;+ Log Interview&quot;</strong>: manually add an interview (scheduled or completed)</li>
+<li><strong>&quot;Accept &amp; Schedule&quot;</strong>: opens scheduling form (date, time, format, duration, interviewee). Sends confirmation to journalist (via email). Adds to candidate briefing</li>
+<li><strong>&quot;View Prep →&quot;</strong>: shows relevant talking points + recent coverage from the requesting outlet + journalist notes. Auto-assembled — no manual prep required</li>
+<li><strong>Post-interview</strong>: after the interview date passes, status changes to &quot;Completed.&quot; &quot;Log outcome&quot; prompt appears: aired/published, killed, pending. Link to resulting coverage</li>
+<li><strong>Mobile</strong>: list view for checking upcoming interviews on the go</li>
+</ul>
+<hr>
+<h2 id="press-016-spokesperson-configuration" tabindex="-1"><a class="heading-anchor" href="#press-016-spokesperson-configuration" aria-hidden="true">#</a> PRESS-016: Spokesperson Configuration</h2>
+<p>Designate authorized spokespeople and assign topic areas. OA-only.</p>
+<h3 id="desktop-14" tabindex="-1"><a class="heading-anchor" href="#desktop-14" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Spokesperson Configuration                                                 │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Designated Spokespeople                                                     │
+│  ───────────────────────                                                     │
+│                                                                              │
+│  Person              Role                Topic Areas              Default    │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  María Torres        Candidate           All topics               ●         │
+│  Ana Reyes           Press Secretary      All topics (primary)     ○         │
+│  Dr. Pedro Vélez     Policy Director      Healthcare, Education    ○         │
+│  Jorge Vega          Finance Director     Fundraising, Budget      ○         │
+│                                                                              │
+│  [+ Add Spokesperson]                                                        │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Contact Routing                                                             │
+│  ───────────────                                                             │
+│                                                                              │
+│  When a journalist contacts the campaign through the public profile          │
+│  or media kit, inquiries are routed by topic:                                │
+│                                                                              │
+│  Topic                Routed to                                              │
+│  ─────────────────────────────────────────                                   │
+│  Healthcare           Dr. Pedro Vélez                                        │
+│  Education            Dr. Pedro Vélez                                        │
+│  Fundraising/Budget   Jorge Vega                                             │
+│  All other topics     Ana Reyes (default)                                    │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Press Contact Info (displayed on press releases and media kit)              │
+│  ────────────────────                                                        │
+│  Name:   Ana Reyes, Press Secretary                                          │
+│  Email:  press@partidoverde.org                                              │
+│  Phone:  +1 (787) 555-0100                                                   │
+│                                                                              │
+│  [Save Changes]                                                              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-13" tabindex="-1"><a class="heading-anchor" href="#interaction-13" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>&quot;+ Add Spokesperson&quot;</strong>: search team members, assign topic areas</li>
+<li><strong>Default spokesperson</strong>: receives all inquiries not matched to a specific topic</li>
+<li><strong>Topic routing</strong>: configures automatic routing of press inquiries from public-facing forms</li>
+<li><strong>Press contact info</strong>: displayed on press releases and the media kit page</li>
+</ul>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PRESS-001 Media Contacts</td>
+<td>No media contacts yet. Add journalists and editors to build your press contact database.</td>
+<td>Add Contact</td>
+</tr>
+<tr>
+<td>PRESS-010 Coverage</td>
+<td>No media coverage logged yet. When your pitches and releases generate coverage, log it here.</td>
+<td>Log Coverage</td>
+</tr>
+<tr>
+<td>PRESS-012 Endorsements</td>
+<td>No endorsements tracked yet. Use the pipeline to manage your endorsement strategy.</td>
+<td>Add Endorsement</td>
+</tr>
+<tr>
+<td>PRESS-014 Talking Points</td>
+<td>No talking points yet. Create topic-organized talking points for your team and spokespeople.</td>
+<td>Create Topic</td>
+</tr>
+<tr>
+<td>PRESS-015 Interviews</td>
+<td>No interviews scheduled. Log interview requests and upcoming interviews here.</td>
+<td>Log Interview</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Relationship status dots (●○○○) accompanied by text label on hover/focus and in contact detail</li>
+<li>Sentiment indicators use icon + text (not color alone): ✓ Positive, ⚡ Mixed, ✗ Negative</li>
+<li>Endorsement pipeline uses column headers with counts, not just visual positioning</li>
+<li>Talking points accordion sections have keyboard expand/collapse</li>
+<li>Interview prep information is structured text, not just visual blocks</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Media contacts as CRM extension</td>
+<td>Press-specific fields on standard Contact records</td>
+<td>Journalists are contacts — separate databases fragment relationships and miss cross-references (a journalist who donates, a donor who writes)</td>
+</tr>
+<tr>
+<td>Endorsement pipeline as Kanban</td>
+<td>Visual pipeline with drag-and-drop stages</td>
+<td>Endorsement strategy is inherently pipeline-shaped. The CD needs to see the funnel at a glance</td>
+</tr>
+<tr>
+<td>Statement builder as streamlined</td>
+<td>Minimal fields vs. press release builder</td>
+<td>Statements are reactive and time-sensitive. The builder must not slow down a rapid response</td>
+</tr>
+<tr>
+<td>Coverage logging as manual</td>
+<td>No automated media monitoring in v1</td>
+<td>Automated monitoring is expensive, Western-focused, and poorly covers global south regional media. Manual is more accurate for the target market</td>
+</tr>
+<tr>
+<td>Interview prep as auto-assembled</td>
+<td>System surfaces relevant talking points and journalist history</td>
+<td>Manual prep is error-prone and time-consuming. Auto-assembly ensures the candidate always has context</td>
+</tr>
+<tr>
+<td>Talking points as versioned</td>
+<td>Full version history with diff</td>
+<td>Talking points evolve as policy positions develop. Staff must always use current language. History preserves the evolution</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li><strong>Embargo enforcement</strong> — can the platform technically enforce embargoes, or is it purely trust-based with tracking? Currently trust-based (track who received it, no technical mechanism to prevent early publication)</li>
+<li><strong>Crisis communications mode</strong> — should there be a dedicated &quot;crisis mode&quot; that shortcuts approval workflows, pins key messages, and coordinates rapid response? Or is the urgent flag on statements sufficient?</li>
+<li><strong>Coverage sentiment auto-suggestion</strong> — should the system suggest sentiment based on headline analysis, or is manual classification always more accurate for the nuanced coverage in this context?</li>
+<li><strong>Endorsement public display</strong> — where exactly do public endorsements appear? Candidate profile page, dedicated endorsements page, or both? Design the public-facing endorsement display</li>
+<li><strong>Multi-language press releases</strong> — should the builder support creating the same release in multiple languages simultaneously, or are they separate releases? Puerto Rico's bilingual media market makes this critical</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#press-navigation-context"># Press Navigation Context</a></li><li class="toc-2"><a href="#press-001-media-contact-list"># PRESS-001: Media Contact List</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#relationship-status-indicator"># Relationship Status Indicator</a></li><li class="toc-3"><a href="#interaction"># Interaction</a></li><li class="toc-3"><a href="#states"># States</a></li><li class="toc-2"><a href="#press-002-media-contact-detail"># PRESS-002: Media Contact Detail</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-3"><a href="#interaction-1"># Interaction</a></li><li class="toc-2"><a href="#press-003-media-list-management"># PRESS-003: Media List Management</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-3"><a href="#new-edit-list"># New / Edit List</a></li><li class="toc-3"><a href="#interaction-2"># Interaction</a></li><li class="toc-2"><a href="#press-004-press-release-builder"># PRESS-004: Press Release Builder</a></li><li class="toc-3"><a href="#desktop-3"># Desktop</a></li><li class="toc-3"><a href="#collapsed-sections"># Collapsed Sections</a></li><li class="toc-3"><a href="#interaction-3"># Interaction</a></li><li class="toc-3"><a href="#press-release-list-sidebar-entry-point"># Press Release List (sidebar entry point)</a></li><li class="toc-2"><a href="#press-005-press-release-preview"># PRESS-005: Press Release Preview</a></li><li class="toc-3"><a href="#desktop-mobile"># Desktop &amp;amp; Mobile</a></li><li class="toc-3"><a href="#interaction-4"># Interaction</a></li><li class="toc-2"><a href="#press-006-press-release-distribution"># PRESS-006: Press Release Distribution</a></li><li class="toc-3"><a href="#desktop-4"># Desktop</a></li><li class="toc-3"><a href="#embargoed-variant"># Embargoed Variant</a></li><li class="toc-3"><a href="#interaction-5"># Interaction</a></li><li class="toc-2"><a href="#press-007-media-advisory-builder"># PRESS-007: Media Advisory Builder</a></li><li class="toc-3"><a href="#desktop-5"># Desktop</a></li><li class="toc-3"><a href="#interaction-6"># Interaction</a></li><li class="toc-2"><a href="#press-008-statement-builder"># PRESS-008: Statement Builder</a></li><li class="toc-3"><a href="#desktop-6"># Desktop</a></li><li class="toc-3"><a href="#interaction-7"># Interaction</a></li><li class="toc-2"><a href="#press-009-media-kit-management"># PRESS-009: Media Kit Management</a></li><li class="toc-3"><a href="#desktop-7"># Desktop</a></li><li class="toc-3"><a href="#asset-access-levels"># Asset Access Levels</a></li><li class="toc-3"><a href="#interaction-8"># Interaction</a></li><li class="toc-2"><a href="#press-010-coverage-log"># PRESS-010: Coverage Log</a></li><li class="toc-3"><a href="#desktop-8"># Desktop</a></li><li class="toc-3"><a href="#log-coverage-form"># Log Coverage Form</a></li><li class="toc-3"><a href="#states-1"># States</a></li><li class="toc-2"><a href="#press-011-coverage-analytics"># PRESS-011: Coverage Analytics</a></li><li class="toc-3"><a href="#desktop-9"># Desktop</a></li><li class="toc-2"><a href="#press-012-endorsement-pipeline"># PRESS-012: Endorsement Pipeline</a></li><li class="toc-3"><a href="#desktop-10"># Desktop</a></li><li class="toc-3"><a href="#interaction-9"># Interaction</a></li><li class="toc-2"><a href="#press-013-endorsement-detail"># PRESS-013: Endorsement Detail</a></li><li class="toc-3"><a href="#desktop-11"># Desktop</a></li><li class="toc-3"><a href="#interaction-10"># Interaction</a></li><li class="toc-2"><a href="#press-014-talking-points-library"># PRESS-014: Talking Points Library</a></li><li class="toc-3"><a href="#desktop-12"># Desktop</a></li><li class="toc-3"><a href="#interaction-11"># Interaction</a></li><li class="toc-3"><a href="#mobile-1"># Mobile</a></li><li class="toc-2"><a href="#press-015-interview-schedule"># PRESS-015: Interview Schedule</a></li><li class="toc-3"><a href="#desktop-13"># Desktop</a></li><li class="toc-3"><a href="#interview-prep-view-expanded-from-view-prep-"># Interview Prep View (expanded from &amp;quot;View Prep →&amp;quot;)</a></li><li class="toc-3"><a href="#interaction-12"># Interaction</a></li><li class="toc-2"><a href="#press-016-spokesperson-configuration"># PRESS-016: Spokesperson Configuration</a></li><li class="toc-3"><a href="#desktop-14"># Desktop</a></li><li class="toc-3"><a href="#interaction-13"># Interaction</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

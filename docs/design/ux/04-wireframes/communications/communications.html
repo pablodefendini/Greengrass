@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Communications Wireframes · GreenGrass</title>
+<meta name="description" content="Communications Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="./communications.html" aria-current="page" class="active">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="communications-wireframes" tabindex="-1"><a class="heading-anchor" href="#communications-wireframes" aria-hidden="true">#</a> Communications Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Communications is how the campaign reaches its audience — email campaigns, SMS/WhatsApp messages, templates, analytics, and consent management. These wireframes cover the admin screens used by the Communications Director and Org Admin to create, send, track, and manage outbound communications.</p>
+<p>The core UX challenge: communications span multiple channels (email, SMS, WhatsApp) with different constraints (character limits, media support, compliance rules) but need a unified management experience. The Communications Director should think in terms of &quot;reaching my audience&quot; rather than wrestling with per-channel mechanics.</p>
+<p>Internal messaging (staff/volunteer conversations, war room) is wireframed in <code>messaging/messaging.md</code>. Social media is covered in a separate document. This document covers external campaign communications only.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COMM-001</td>
+<td>Email Campaign List</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Email</td>
+</tr>
+<tr>
+<td>COMM-002</td>
+<td>Email Campaign Builder</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Email</td>
+</tr>
+<tr>
+<td>COMM-003</td>
+<td>Email Template Builder</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Templates</td>
+</tr>
+<tr>
+<td>COMM-004</td>
+<td>Email Template Library</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Templates</td>
+</tr>
+<tr>
+<td>COMM-005</td>
+<td>SMS/WhatsApp Composer</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>SMS/WhatsApp</td>
+</tr>
+<tr>
+<td>COMM-006</td>
+<td>Communication Analytics</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<td>COMM-007</td>
+<td>Consent Management</td>
+<td>OA, CD, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Consent</td>
+</tr>
+<tr>
+<td>COMM-008</td>
+<td>Communication Preferences (Staff)</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Consent</td>
+</tr>
+<tr>
+<td>COMM-009</td>
+<td>Unsubscribe Management</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Consent</td>
+</tr>
+<tr>
+<td>COMM-010</td>
+<td>Email Sending Domain Config</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Settings</td>
+</tr>
+</tbody>
+</table>
+<h2 id="communications-director-navigation-context" tabindex="-1"><a class="heading-anchor" href="#communications-director-navigation-context" aria-hidden="true">#</a> Communications Director Navigation Context</h2>
+<pre><code>OVERVIEW
+  Dashboard            → DASH-004
+
+COMMUNICATIONS
+  Email Campaigns      → COMM-001
+  SMS / WhatsApp       → COMM-005 (list view)
+  Templates            → COMM-004
+  Analytics            → COMM-006
+  Consent              → COMM-007
+  Unsubscribes         → COMM-009
+  Sending Domains      → COMM-010 (OA only)
+
+SOCIAL MEDIA
+  (covered in social-media.md)
+
+PRESS
+  (covered in press.md)
+
+PEOPLE
+  Contacts             → CRM-001
+  Segments             → CRM-005
+
+MESSAGING
+  Messages             → messaging screens
+</code></pre>
+<hr>
+<h2 id="comm-001-email-campaign-list" tabindex="-1"><a class="heading-anchor" href="#comm-001-email-campaign-list" aria-hidden="true">#</a> COMM-001: Email Campaign List</h2>
+<p>Browse and manage email campaigns. A campaign is a single email send (or scheduled send) to a segment.</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Email Campaigns                                         [+ New Campaign]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [All]  [Draft]  [Scheduled]  [Sent]  [Automated]                           │
+│                                                                              │
+│  🔍 Search campaigns...                                                     │
+│                                                                              │
+│  Campaign               Audience     Status      Sent / Open / Click        │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Spring Fundraising      All donors   ✓ Sent      4,218 / 38.2% / 12.1%    │
+│  Appeal                  (4,320)      Mar 1                                  │
+│                                                    [View Report →]           │
+│                                                                              │
+│  Volunteer Recruitment   Active vols   ◷ Sched    —                         │
+│  March 2026              (892)         Mar 5      [Edit]  [Pause]            │
+│                          8:00 AM                                             │
+│                                                                              │
+│  Weekly Newsletter       Newsletter    ⚙ Auto     12,340 / 42.1% / 8.3%    │
+│  #47                     segment       Weekly     [View Report →]            │
+│                          (3,120)       Tuesdays                              │
+│                                                                              │
+│  Event Invitation —      Seg: San      ✎ Draft    —                         │
+│  San Juan Rally          Juan area     —          [Edit]  [Delete]           │
+│                          (1,450)                                             │
+│                                                                              │
+│  GOTV Reminder           Identified    ✓ Sent     8,912 / 52.4% / 28.7%    │
+│  (Election Day)          supporters    Nov 5      [View Report →]            │
+│                          (9,200)                                             │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Showing 1-20 of 47   ◀ 1  2  3 ▶                                          │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  Email Campaigns      [+]  │
+├────────────────────────────┤
+│                            │
+│  [All] [Draft] [Sent] [▾] │
+│                            │
+│  ┌──────────────────────┐  │
+│  │ Spring Fundraising   │  │
+│  │ Appeal               │  │
+│  │ ✓ Sent · Mar 1       │  │
+│  │ 4,218 sent · 38% op  │  │
+│  ├──────────────────────┤  │
+│  │ Volunteer Recruit.   │  │
+│  │ March 2026           │  │
+│  │ ◷ Mar 5, 8:00 AM     │  │
+│  │ 892 recipients       │  │
+│  ├──────────────────────┤  │
+│  │ Event Invitation     │  │
+│  │ San Juan Rally       │  │
+│  │ ✎ Draft              │  │
+│  │ 1,450 recipients     │  │
+│  └──────────────────────┘  │
+│                            │
+│  Load more...              │
+└────────────────────────────┘
+</code></pre>
+<h3 id="status-definitions" tabindex="-1"><a class="heading-anchor" href="#status-definitions" aria-hidden="true">#</a> Status Definitions</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Icon</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Draft</td>
+<td>✎</td>
+<td>Created but not scheduled or sent</td>
+</tr>
+<tr>
+<td>Scheduled</td>
+<td>◷</td>
+<td>Queued for future send. Shows date/time</td>
+</tr>
+<tr>
+<td>Sending</td>
+<td>●</td>
+<td>Actively being sent (batched delivery)</td>
+</tr>
+<tr>
+<td>Sent</td>
+<td>✓</td>
+<td>Delivery complete. Shows metrics</td>
+</tr>
+<tr>
+<td>Automated</td>
+<td>⚙</td>
+<td>Recurring automated send (drip, digest, etc.)</td>
+</tr>
+<tr>
+<td>Paused</td>
+<td>⏸</td>
+<td>Scheduled or automated campaign paused</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction" tabindex="-1"><a class="heading-anchor" href="#interaction" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Row click</strong> → opens COMM-002 (draft/scheduled) or COMM-006 report (sent)</li>
+<li><strong>&quot;+ New Campaign&quot;</strong> → opens COMM-002 with blank campaign</li>
+<li><strong>Inline actions</strong> vary by status: Draft (Edit, Delete), Scheduled (Edit, Pause), Sent (View Report), Automated (View Report, Edit Schedule, Pause)</li>
+<li><strong>Status tabs</strong>: filter by lifecycle. Count shown in tab label</li>
+</ul>
+<h3 id="states" tabindex="-1"><a class="heading-anchor" href="#states" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No email campaigns yet. Create your first campaign to reach your audience.&quot; [Create Campaign]</li>
+<li><strong>Empty (filtered)</strong>: &quot;No [status] campaigns.&quot; [View All]</li>
+</ul>
+<hr>
+<h2 id="comm-002-email-campaign-builder" tabindex="-1"><a class="heading-anchor" href="#comm-002-email-campaign-builder" aria-hidden="true">#</a> COMM-002: Email Campaign Builder</h2>
+<p>Full-featured email campaign editor. Multi-step but presented as a single scrollable page with sections (not a wizard — the user can jump between sections).</p>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Campaigns   Spring Fundraising Appeal              [Save Draft] [Send ▾] │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  SETUP                                                                       │
+│  ─────                                                                       │
+│                                                                              │
+│  Campaign name *                                                             │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Spring Fundraising Appeal                                           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  From name *                  From email *                                   │
+│  ┌──────────────────────┐    ┌──────────────────────────────────────┐      │
+│  │ Partido Verde        │    │ info@partidoverde.org           [▾]  │      │
+│  └──────────────────────┘    └──────────────────────────────────────┘      │
+│                                                                              │
+│  Reply-to (optional)                                                         │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ replies@partidoverde.org                                            │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  AUDIENCE                                                                    │
+│  ────────                                                                    │
+│                                                                              │
+│  Segment *                                                                   │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ All donors                                                     [▾]  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  4,320 contacts · 4,218 with valid email · 102 suppressed                   │
+│                                                                              │
+│  Suppression info:                                                           │
+│  · 48 unsubscribed · 31 bounced · 18 no email · 5 duplicate                │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  CONTENT                                                                     │
+│  ───────                                                                     │
+│                                                                              │
+│  Subject line *                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Your support makes a difference, {{first_name}}                     │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  52 characters · [A/B Test Subject]                                          │
+│                                                                              │
+│  Preview text                                                                │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Join 412 donors who gave this spring...                             │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Template    [Spring Appeal ▾]    [Edit Template →]   [Browse Templates]    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  ┌────────────────────────────────────────────────────────────────┐  │   │
+│  │  │                                                                │  │   │
+│  │  │  🌿  PARTIDO VERDE                                             │  │   │
+│  │  │                                                                │  │   │
+│  │  │  Dear {{first_name}},                                          │  │   │
+│  │  │                                                                │  │   │
+│  │  │  Spring is a time for growth — in our gardens and in           │  │   │
+│  │  │  our movement. This month, 412 supporters have already         │  │   │
+│  │  │  contributed to our Spring Drive.                              │  │   │
+│  │  │                                                                │  │   │
+│  │  │  ┌──────────────────────────────────────────────────────┐     │  │   │
+│  │  │  │              [Donate Now — $100]                      │     │  │   │
+│  │  │  └──────────────────────────────────────────────────────┘     │  │   │
+│  │  │                                                                │  │   │
+│  │  │  Every dollar goes directly to organizing in your              │  │   │
+│  │  │  community.                                                    │  │   │
+│  │  │                                                                │  │   │
+│  │  │  Con esperanza,                                                │  │   │
+│  │  │  María Torres, Campaign Director                               │  │   │
+│  │  │                                                                │  │   │
+│  │  │  ─────────────────────────────────                             │  │   │
+│  │  │  Paid for by Partido Verde de Puerto Rico                      │  │   │
+│  │  │  Unsubscribe | Update preferences                             │  │   │
+│  │  │                                                                │  │   │
+│  │  └────────────────────────────────────────────────────────────────┘  │   │
+│  │                                                                      │   │
+│  │  Device: [Desktop ▾]   [Edit in Template Builder →]                  │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ⓘ Compliance disclaimer auto-appended based on jurisdiction settings.      │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  DELIVERY                                                                    │
+│  ────────                                                                    │
+│                                                                              │
+│  ● Send now                                                                  │
+│  ○ Schedule for   ┌────────────────┐  ┌────────────┐                       │
+│                    │ Mar 5, 2026    │  │ 8:00 AM ▾  │                       │
+│                    └────────────────┘  └────────────┘                       │
+│  ○ Optimal send time (system chooses per-recipient based on open history)    │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Pre-send Checklist                                                          │
+│  ✓ Subject line set                                                          │
+│  ✓ Audience selected (4,218 recipients)                                      │
+│  ✓ Template content filled                                                   │
+│  ✓ Compliance disclaimer present                                             │
+│  ✓ Unsubscribe link present                                                  │
+│  ◷ Test send — [Send Test to Me]                                            │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="send-button-dropdown" tabindex="-1"><a class="heading-anchor" href="#send-button-dropdown" aria-hidden="true">#</a> Send Button Dropdown</h3>
+<ul>
+<li><strong>Send Now</strong>: confirmation dialog: &quot;Send to 4,218 recipients now? This cannot be undone.&quot;</li>
+<li><strong>Schedule</strong>: saves scheduled send. Shows in campaign list as &quot;Scheduled&quot;</li>
+<li><strong>Send Test</strong>: sends to the current user's email address (or a custom address)</li>
+</ul>
+<h3 id="interaction-1" tabindex="-1"><a class="heading-anchor" href="#interaction-1" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Section navigation</strong>: each section (Setup, Audience, Content, Delivery) is a collapsible section. Jump links in a sticky mini-nav would be a future enhancement</li>
+<li><strong>Segment selector</strong>: dropdown of saved segments from CRM. Shows recipient count, suppression breakdown</li>
+<li><strong>Subject A/B test</strong>: clicking &quot;A/B Test Subject&quot; reveals a variant subject field and traffic split slider</li>
+<li><strong>Template selector</strong>: dropdown of templates from COMM-004. &quot;Edit Template →&quot; opens COMM-003 in a new tab. Content is rendered inline as a live preview</li>
+<li><strong>Device toggle</strong>: switches content preview between desktop and mobile widths</li>
+<li><strong>Personalization tokens</strong>: <code>{{first_name}}</code>, <code>{{last_name}}</code>, etc. Typing <code>{{</code> in subject or preview text shows autocomplete</li>
+<li><strong>Compliance disclaimer</strong>: auto-appended, cannot be removed. Editable content in org settings</li>
+<li><strong>Pre-send checklist</strong>: auto-validated. Items show ✓ (complete), ✗ (missing), or ◷ (recommended). All ✗ items must be resolved before send is enabled</li>
+<li><strong>Auto-save</strong>: every change auto-saves as draft</li>
+</ul>
+<h3 id="automated-campaign-variant" tabindex="-1"><a class="heading-anchor" href="#automated-campaign-variant" aria-hidden="true">#</a> Automated Campaign Variant</h3>
+<p>For automated campaigns (drip sequences, recurring digests), the Delivery section changes:</p>
+<pre><code>│  AUTOMATION                                                                  │
+│  ──────────                                                                  │
+│                                                                              │
+│  Trigger                                                                     │
+│  ● Recurring schedule                                                        │
+│    Every [Tuesday ▾] at [8:00 AM ▾]                                         │
+│  ○ Event-triggered                                                           │
+│    When: [Contact created ▾]  Wait: [3 days ▾]                              │
+│                                                                              │
+│  Status: ⚙ Active — Next send: Mar 5, 8:00 AM                              │
+│  [Pause Automation]                                                          │
+</code></pre>
+<hr>
+<h2 id="comm-003-email-template-builder" tabindex="-1"><a class="heading-anchor" href="#comm-003-email-template-builder" aria-hidden="true">#</a> COMM-003: Email Template Builder</h2>
+<p>Visual editor for creating reusable email templates. Block-based layout with drag-and-drop.</p>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Templates   Edit: Spring Appeal Template           [Save]  [Use in ▾]   │
+├─────────────────┬────────────────────────────────────────────────────────────┤
+│                 │                                                            │
+│  BLOCKS         │  Canvas                                                    │
+│  ──────         │  ──────                                                    │
+│                 │                                                            │
+│  ┌───────────┐  │  ┌────────────────────────────────────────────────────┐   │
+│  │ ☰ Header  │  │  │                                                    │   │
+│  └───────────┘  │  │  🌿  PARTIDO VERDE                                 │   │
+│  ┌───────────┐  │  │  ════════════════                                   │   │
+│  │ ¶ Text    │  │  │                                                    │   │
+│  └───────────┘  │  │  Dear {{first_name}},                               │   │
+│  ┌───────────┐  │  │                                                    │   │
+│  │ 🖼 Image  │  │  │  [Click any block to edit]                         │   │
+│  └───────────┘  │  │                                                    │   │
+│  ┌───────────┐  │  │  Spring is a time for growth...                     │   │
+│  │ ▣ Button  │  │  │                                                    │   │
+│  └───────────┘  │  │  ┌────────────────────────────────────────────┐    │   │
+│  ┌───────────┐  │  │  │          [Donate Now — $100]                │    │   │
+│  │ ── Divider│  │  │  └────────────────────────────────────────────┘    │   │
+│  └───────────┘  │  │                                                    │   │
+│  ┌───────────┐  │  │  Every dollar goes directly to organizing...        │   │
+│  │ ☐ Columns │  │  │                                                    │   │
+│  └───────────┘  │  │  Con esperanza,                                     │   │
+│  ┌───────────┐  │  │  María Torres                                       │   │
+│  │ {} Token  │  │  │                                                    │   │
+│  └───────────┘  │  │  ─────────────────────────────────                  │   │
+│  ┌───────────┐  │  │  Paid for by Partido Verde de PR                    │   │
+│  │ 📋 Social │  │  │  Unsubscribe | Preferences                         │   │
+│  └───────────┘  │  │                                                    │   │
+│                 │  └────────────────────────────────────────────────────┘   │
+│  ──────         │                                                            │
+│                 │  Device: [Desktop ▾]   Width: [600px]                      │
+│  STYLES         │                                                            │
+│                 │  ─────────────────────────────────────────────────────     │
+│  Background     │                                                            │
+│  [#ffffff]      │  Block Settings (when a block is selected)                 │
+│                 │  ────────────────                                           │
+│  Font           │  Text block selected                                       │
+│  [System ▾]     │  Font size: [16px ▾]  Color: [#1a1a1a]                    │
+│                 │  Padding: T[16] R[24] B[16] L[24]                         │
+│  Link color     │  ☐ Bold  ☐ Italic  Align: [Left ▾]                       │
+│  [#2563eb]      │                                                            │
+│                 │                                                            │
+└─────────────────┴────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="block-types" tabindex="-1"><a class="heading-anchor" href="#block-types" aria-hidden="true">#</a> Block Types</h3>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Logo + org name, configurable background color</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Rich text with merge tokens, inline links</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>Upload or URL, alt text required, responsive sizing</td>
+</tr>
+<tr>
+<td>Button</td>
+<td>CTA with configurable text, URL, color, size</td>
+</tr>
+<tr>
+<td>Divider</td>
+<td>Horizontal rule with configurable style</td>
+</tr>
+<tr>
+<td>Columns</td>
+<td>2-column or 3-column layout for side-by-side content</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>Standalone merge field block (e.g., donation amount)</td>
+</tr>
+<tr>
+<td>Social</td>
+<td>Social media icon row with configurable links</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction-2" tabindex="-1"><a class="heading-anchor" href="#interaction-2" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Drag-and-drop</strong>: blocks from the left panel drag onto the canvas. Blocks on canvas can be reordered</li>
+<li><strong>Click to edit</strong>: clicking a block on the canvas selects it and shows block-specific settings below the canvas</li>
+<li><strong>Inline editing</strong>: text and button blocks support direct editing on the canvas</li>
+<li><strong>Compliance footer</strong>: always present, locked at the bottom. Content editable in org settings but cannot be removed from template</li>
+<li><strong>Device toggle</strong>: switches canvas width to simulate mobile rendering</li>
+<li><strong>&quot;Use in ▾&quot;</strong>: dropdown to create a new campaign using this template (→ COMM-002) or copy template</li>
+<li><strong>Save</strong>: saves template. Templates are reusable across campaigns</li>
+</ul>
+<h3 id="states-1" tabindex="-1"><a class="heading-anchor" href="#states-1" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>New template</strong>: empty canvas with a single header block and compliance footer pre-inserted</li>
+</ul>
+<hr>
+<h2 id="comm-004-email-template-library" tabindex="-1"><a class="heading-anchor" href="#comm-004-email-template-library" aria-hidden="true">#</a> COMM-004: Email Template Library</h2>
+<p>Browse, search, and manage reusable email templates.</p>
+<h3 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Email Templates                                       [+ New Template]     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [All]  [Fundraising]  [Events]  [Newsletter]  [GOTV]  [Custom]            │
+│                                                                              │
+│  🔍 Search templates...                                                     │
+│                                                                              │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐                │
+│  │                │  │                │  │                │                │
+│  │  ┌──────────┐  │  │  ┌──────────┐  │  │  ┌──────────┐  │                │
+│  │  │ 🌿       │  │  │  │ 🌿       │  │  │  │ 🌿       │  │                │
+│  │  │ ▔▔▔▔▔▔▔▔ │  │  │  │ ▔▔▔▔▔▔▔▔ │  │  │  │ ▔▔▔▔▔▔▔▔ │  │                │
+│  │  │ ▔▔▔▔▔▔   │  │  │  │ 🖼       │  │  │  │ ▔▔▔▔▔▔   │  │                │
+│  │  │ ▔▔▔▔▔    │  │  │  │ ▔▔▔▔▔▔   │  │  │  │ ▔▔▔▔▔    │  │                │
+│  │  │ [Button] │  │  │  │ ▔▔▔▔     │  │  │  │ ▔▔▔▔▔▔▔  │  │                │
+│  │  │          │  │  │  │ [Button] │  │  │  │ ▔▔▔▔     │  │                │
+│  │  └──────────┘  │  │  └──────────┘  │  │  └──────────┘  │                │
+│  │                │  │                │  │                │                │
+│  │  Spring Appeal │  │  Event Invite  │  │  Weekly        │                │
+│  │  Fundraising   │  │  Events        │  │  Newsletter    │                │
+│  │  Used 3 times  │  │  Used 8 times  │  │  Newsletter    │                │
+│  │  Modified Mar 1│  │  Modified Feb  │  │  Used 47 times │                │
+│  │                │  │                │  │  Modified Feb  │                │
+│  │  [Edit] [⋮]   │  │  [Edit] [⋮]   │  │  [Edit] [⋮]   │                │
+│  └────────────────┘  └────────────────┘  └────────────────┘                │
+
+│  ┌────────────────┐  ┌────────────────┐                                    │
+│  │                │  │                │                                    │
+│  │  ┌──────────┐  │  │  ┌──────────┐  │                                    │
+│  │  │ 🌿       │  │  │  │ 🌿       │  │                                    │
+│  │  │ ▔▔▔▔▔▔▔▔ │  │  │  │ ▔▔▔▔▔▔▔▔ │  │                                    │
+│  │  │ ▔▔▔▔▔▔   │  │  │  │ ▔▔▔▔▔▔▔  │  │                                    │
+│  │  │ ▔▔▔▔▔    │  │  │  │ [Button] │  │                                    │
+│  │  │ ▔▔▔▔▔▔▔  │  │  │  │ ▔▔▔▔▔▔   │  │                                    │
+│  │  └──────────┘  │  │  └──────────┘  │                                    │
+│  │                │  │                │                                    │
+│  │  GOTV Remind.  │  │  Thank You     │                                    │
+│  │  GOTV          │  │  Fundraising   │                                    │
+│  │  Used 1 time   │  │  Used 12 times │                                    │
+│  │  Modified Nov  │  │  Modified Jan  │                                    │
+│  │                │  │                │                                    │
+│  │  [Edit] [⋮]   │  │  [Edit] [⋮]   │                                    │
+│  └────────────────┘  └────────────────┘                                    │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  Templates            [+]  │
+├────────────────────────────┤
+│                            │
+│  [All] [Fund.] [Events] ▾ │
+│                            │
+│  ┌──────────────────────┐  │
+│  │ ┌────┐ Spring Appeal │  │
+│  │ │ 🌿 │ Fundraising   │  │
+│  │ │    │ Used 3 times  │  │
+│  │ └────┘ Mar 1         │  │
+│  ├──────────────────────┤  │
+│  │ ┌────┐ Event Invite  │  │
+│  │ │ 🌿 │ Events        │  │
+│  │ │    │ Used 8 times  │  │
+│  │ └────┘ Feb 20        │  │
+│  ├──────────────────────┤  │
+│  │ ┌────┐ Weekly Newslt │  │
+│  │ │ 🌿 │ Newsletter    │  │
+│  │ │    │ Used 47 times │  │
+│  │ └────┘ Feb 18        │  │
+│  └──────────────────────┘  │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-3" tabindex="-1"><a class="heading-anchor" href="#interaction-3" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Card layout</strong> (desktop): thumbnail preview of template, name, category, usage count, last modified</li>
+<li><strong>List layout</strong> (mobile): compact rows with small thumbnail</li>
+<li><strong>Category tabs</strong>: filter templates by purpose. Categories assigned when creating/editing a template</li>
+<li><strong>Edit</strong> → opens COMM-003 Template Builder</li>
+<li><strong>Overflow menu</strong> (⋮): Duplicate, Rename, Delete (only if not used by active campaigns), Assign Category</li>
+<li><strong>&quot;+ New Template&quot;</strong>: opens COMM-003 with blank template or offers &quot;Start from existing&quot; to duplicate</li>
+</ul>
+<h3 id="states-2" tabindex="-1"><a class="heading-anchor" href="#states-2" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No email templates yet. Templates make it easy to maintain consistent branding across campaigns.&quot; [Create Template]</li>
+</ul>
+<hr>
+<h2 id="comm-005-smswhatsapp-composer" tabindex="-1"><a class="heading-anchor" href="#comm-005-smswhatsapp-composer" aria-hidden="true">#</a> COMM-005: SMS/WhatsApp Composer</h2>
+<p>Compose and send SMS or WhatsApp messages to a segment. Uses the Composer pattern with channel-specific adaptations.</p>
+<h3 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Messages   New SMS/WhatsApp Message                 [Save Draft] [Send ▾]│
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Channel                                                                     │
+│  ┌──────────────────┐  ┌──────────────────┐                                │
+│  │  [● SMS]         │  │  ○ WhatsApp      │                                │
+│  │  Text message    │  │  Rich message    │                                │
+│  └──────────────────┘  └──────────────────┘                                │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  AUDIENCE                                                                    │
+│  ────────                                                                    │
+│                                                                              │
+│  Segment *                                                                   │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Active volunteers — San Juan                                   [▾]  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  892 contacts · 847 with phone · 45 no phone                               │
+│  Consent: 812 opted in for SMS · 35 opted out                               │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  MESSAGE                                                  [{{}} Insert Token]│
+│  ───────                                                                     │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Hi {{first_name}}! Reminder: our volunteer training is this        │   │
+│  │ Saturday at 10am at Centro Comunitario. RSVP: {{event_link}}       │   │
+│  │                                                                     │   │
+│  │ Reply STOP to unsubscribe.                                          │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  128 / 160 characters (1 SMS segment)    ████████████████████░░░░  80%      │
+│                                                                              │
+│  ⓘ &quot;Reply STOP&quot; auto-appended for compliance.                               │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  DELIVERY                                                                    │
+│  ────────                                                                    │
+│                                                                              │
+│  ● Send now                                                                  │
+│  ○ Schedule for   ┌────────────────┐  ┌────────────┐                       │
+│                    │ Mar 5, 2026    │  │ 10:00 AM ▾ │                       │
+│                    └────────────────┘  └────────────┘                       │
+│                                                                              │
+│  ⚠ Time-of-day check: 23 recipients in a timezone where it will be          │
+│    before 8 AM. These will be delayed to 8 AM local time.                    │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Preview                                                                     │
+│  ┌─────────────────────────────────┐                                        │
+│  │  ┌───────────────────────────┐  │                                        │
+│  │  │ Partido Verde             │  │                                        │
+│  │  │                           │  │                                        │
+│  │  │ Hi Ana! Reminder: our     │  │                                        │
+│  │  │ volunteer training is     │  │                                        │
+│  │  │ this Saturday at 10am at  │  │                                        │
+│  │  │ Centro Comunitario.       │  │                                        │
+│  │  │ RSVP: pverde.org/e/123    │  │                                        │
+│  │  │                           │  │                                        │
+│  │  │ Reply STOP to unsub.      │  │                                        │
+│  │  └───────────────────────────┘  │                                        │
+│  └─────────────────────────────────┘                                        │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="whatsapp-variant" tabindex="-1"><a class="heading-anchor" href="#whatsapp-variant" aria-hidden="true">#</a> WhatsApp Variant</h3>
+<p>When WhatsApp is selected, the composer changes:</p>
+<pre><code>│  MESSAGE                                                  [{{}} Insert Token]│
+│  ───────                                                                     │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Hi {{first_name}}! 🌿                                               │   │
+│  │                                                                      │   │
+│  │ Reminder: our volunteer training is *this Saturday* at 10am at       │   │
+│  │ Centro Comunitario.                                                  │   │
+│  │                                                                      │   │
+│  │ 📍 Location: Calle Sol 123, San Juan                                │   │
+│  │ 🕐 Time: 10:00 AM — 12:00 PM                                       │   │
+│  │                                                                      │   │
+│  │ Tap below to RSVP:                                                   │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  No character limit · Supports *bold*, _italic_, ~strikethrough~            │
+│                                                                              │
+│  Media attachment                                                            │
+│  ┌──────────────────────────┐                                               │
+│  │    📎 Attach Image/PDF   │                                               │
+│  └──────────────────────────┘                                               │
+│                                                                              │
+│  Quick reply buttons (optional, max 3)                                       │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                      │
+│  │ ✓ I'll be    │  │ ✗ Can't make │  │ + Add button │                      │
+│  │   there      │  │   it         │  │              │                      │
+│  └──────────────┘  └──────────────┘  └──────────────┘                      │
+</code></pre>
+<h3 id="smswhatsapp-message-list-sidebar-entry-point" tabindex="-1"><a class="heading-anchor" href="#smswhatsapp-message-list-sidebar-entry-point" aria-hidden="true">#</a> SMS/WhatsApp Message List (sidebar entry point)</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  SMS / WhatsApp Messages                                  [+ New Message]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [All]  [Draft]  [Scheduled]  [Sent]                                        │
+│                                                                              │
+│  Message            Channel    Audience     Sent      Delivered   Date       │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Training Remind.   SMS        Active vols  812       798 (98%)   Mar 3     │
+│  GOTV — Vote Today  WhatsApp   Supporters   4,120     4,089 (99%) Nov 5     │
+│  Event Cancellation SMS        Event RSVPs  234       230 (98%)   Feb 28    │
+│  Shift Reminder      SMS        Sat shift    45        45 (100%)   Feb 22    │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-4" tabindex="-1"><a class="heading-anchor" href="#interaction-4" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Channel toggle</strong>: SMS vs WhatsApp. Switching channels adapts the composer (character counter, media, quick replies)</li>
+<li><strong>Character counter</strong> (SMS only): shows count, segment count (messages &gt; 160 chars = multiple SMS segments with cost implications). Color changes at 80% (amber) and 100% (red)</li>
+<li><strong>Personalization tokens</strong>: <code>{{first_name}}</code>, <code>{{event_link}}</code>, etc. &quot;Insert Token&quot; button shows available fields</li>
+<li><strong>Compliance auto-append</strong>: &quot;Reply STOP&quot; for SMS, unsubscribe link for WhatsApp. Cannot be removed</li>
+<li><strong>Time-of-day enforcement</strong>: system blocks sends during quiet hours (configurable, default 8 PM — 8 AM) per recipient timezone. Warning shown if schedule would violate</li>
+<li><strong>Frequency cap check</strong>: warning if audience has been messaged recently (&quot;47 recipients received an SMS within the last 7 days&quot;)</li>
+<li><strong>Preview</strong>: phone mockup showing the message as it will appear to recipients, with tokens resolved using sample data</li>
+<li><strong>Quick reply buttons</strong> (WhatsApp only): up to 3, replies are captured and logged on the contact record</li>
+</ul>
+<h3 id="states-3" tabindex="-1"><a class="heading-anchor" href="#states-3" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No SMS or WhatsApp messages yet. Text messaging is great for time-sensitive communications like event reminders and GOTV.&quot; [Compose Message]</li>
+</ul>
+<hr>
+<h2 id="comm-006-communication-analytics" tabindex="-1"><a class="heading-anchor" href="#comm-006-communication-analytics" aria-hidden="true">#</a> COMM-006: Communication Analytics</h2>
+<p>Cross-channel analytics for all outbound communications. The big picture: &quot;how is our audience engagement?&quot;</p>
+<h3 id="desktop-5" tabindex="-1"><a class="heading-anchor" href="#desktop-5" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Communication Analytics                        [Date Range ▾]  [Export ▾]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Period: Last 30 Days                                                        │
+│                                                                              │
+│  Channel Overview                                                            │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │ Email        │  │ SMS          │  │ WhatsApp     │  │ Total Reach  │   │
+│  │ 12 campaigns │  │ 8 messages   │  │ 3 messages   │  │ 18,400       │   │
+│  │ 38.2% open   │  │ 97.8% deliv  │  │ 99.1% deliv  │  │ unique       │   │
+│  │ 12.1% click  │  │              │  │ 84% read     │  │ contacts     │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Email Performance                                                           │
+│  ─────────────────                                                           │
+│                                                                              │
+│  Campaign               Sent     Open%    Click%   Unsub%   Bounce%         │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Spring Fundraising      4,218    38.2%    12.1%    0.8%     1.2%           │
+│  Weekly Newsletter #47   3,120    42.1%    8.3%     0.3%     0.9%           │
+│  Volunteer Recruitment   892      51.3%    22.7%    0.1%     0.7%           │
+│  Event Invitation        1,450    44.8%    31.2%    0.4%     1.1%           │
+│                                                                              │
+│  Trends (30 days)                                                            │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  40% ┤                                                               │   │
+│  │      │     ╱╲         ╱╲                                             │   │
+│  │  30% ┤   ╱    ╲     ╱    ╲      ╱╲                   ← Open rate    │   │
+│  │      │  ╱      ╲   ╱      ╲    ╱  ╲                                  │   │
+│  │  20% ┤ ╱        ╲ ╱        ╲  ╱    ╲                                 │   │
+│  │      │╱          ╳          ╲╱      ╲                                │   │
+│  │  10% ┤     ──────────────────────────── ← Click rate                 │   │
+│  │      │                                                               │   │
+│  │   0% ┼────────────────────────────────────────                       │   │
+│  │       W1        W2        W3        W4                               │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  SMS / WhatsApp Performance                                                  │
+│  ──────────────────────────                                                  │
+│                                                                              │
+│  Message              Channel   Sent     Delivered   Read     Replies        │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Training Reminder    SMS       812      798 (98%)   —        12             │
+│  GOTV — Vote Today    WhatsApp  4,120    4,089 (99%) 84%      342            │
+│  Event Cancellation   SMS       234      230 (98%)   —        5              │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Audience Health                                                             │
+│  ───────────────                                                             │
+│  Total contacts with email:      8,420                                       │
+│  Opted in (email):               7,890 (93.7%)                               │
+│  Hard bounced (removed):         124 (1.5%)                                  │
+│  Total contacts with phone:      6,340                                       │
+│  Opted in (SMS):                 5,890 (92.9%)                               │
+│  Opted in (WhatsApp):            4,120 (65.0%)                               │
+│                                                                              │
+│  ⓘ Audience health metrics help monitor list quality and compliance.         │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-5" tabindex="-1"><a class="heading-anchor" href="#interaction-5" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Date range</strong>: preset periods (Last 7 days, Last 30 days, Last 90 days, This year, Custom)</li>
+<li><strong>Export</strong>: CSV (raw data) or PDF (formatted report). Audit-logged</li>
+<li><strong>Campaign row click</strong>: expands to show per-campaign detail (top links clicked, geographic distribution, device breakdown)</li>
+<li><strong>Trend chart</strong>: line chart showing open and click rate over time. Hover for per-week values</li>
+<li><strong>Audience Health section</strong>: monitors list hygiene. Alerts if bounce rate exceeds threshold or opt-in rate drops</li>
+</ul>
+<h3 id="states-4" tabindex="-1"><a class="heading-anchor" href="#states-4" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No communications sent yet. Analytics will appear here after your first campaign.&quot; [Create Email Campaign] [Compose SMS]</li>
+<li><strong>No data in range</strong>: &quot;No communications sent in this period.&quot; [Change Date Range]</li>
+</ul>
+<hr>
+<h2 id="comm-007-consent-management" tabindex="-1"><a class="heading-anchor" href="#comm-007-consent-management" aria-hidden="true">#</a> COMM-007: Consent Management</h2>
+<p>Manage per-channel, per-purpose consent records. Critical for multi-jurisdictional compliance (GDPR, CCPA, local election law).</p>
+<h3 id="desktop-6" tabindex="-1"><a class="heading-anchor" href="#desktop-6" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Consent Management                                        [Export Audit]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Consent Overview                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  Channel ╲ Purpose   Transact.  Events   Fundrais.  GOTV    Newsletter       │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Email              8,120      6,450    5,890      7,200   4,320             │
+│  SMS                5,890      4,120    3,450      5,100   2,890             │
+│  WhatsApp           4,120      3,200    2,780      3,890   2,100             │
+│                                                                              │
+│  Total unique contacts with any consent: 8,420                               │
+│  Contacts with no consent (receive nothing): 340                             │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Recent Consent Changes                                                      │
+│  ──────────────────────                                                      │
+│                                                                              │
+│  Contact              Action          Channel     Purpose     Date           │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  María García         Opted out       Email       Newsletter  Mar 3          │
+│  Carlos Ruiz          Opted in        WhatsApp    Events      Mar 2          │
+│  Anonymous (ID 4782)  Opted out all   SMS         All         Mar 1          │
+│  Lucía Fernández      Renewed         Email       Fundraising Feb 28         │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Consent Expiry                                                              │
+│  ──────────────                                                              │
+│  ⓘ Some jurisdictions require consent renewal. Contacts below have           │
+│    consent approaching expiry.                                               │
+│                                                                              │
+│  Expiring in 30 days:      142 contacts   [Send Renewal Request]            │
+│  Expiring in 60 days:      318 contacts   [Send Renewal Request]            │
+│  Expired (no longer valid): 47 contacts   [View List]                        │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Default Consent Rules                                                       │
+│  ─────────────────────                                                       │
+│  When a contact is created via:                                              │
+│                                                                              │
+│  Source              Default consent granted                                 │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Online donation     Email: Transactional, Fundraising                       │
+│  Event RSVP          Email: Events; SMS: Events (if phone given)             │
+│  Volunteer signup    Email: All; SMS: All; WhatsApp: Events, GOTV            │
+│  Import              None (must be explicitly mapped during import)           │
+│  Manual create       None (staff must select during creation)                │
+│                                                                              │
+│  [Edit Default Rules]                                                        │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-6" tabindex="-1"><a class="heading-anchor" href="#interaction-6" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Consent matrix</strong>: read-only overview. Numbers are clickable — opens filtered contact list (CRM-001) showing those contacts</li>
+<li><strong>&quot;Export Audit&quot;</strong>: exports full consent audit trail (who consented to what, when, via what mechanism). Required for compliance audits</li>
+<li><strong>&quot;Send Renewal Request&quot;</strong>: queues a re-consent email to contacts with expiring consent. Confirmation dialog with recipient count</li>
+<li><strong>&quot;Edit Default Rules&quot;</strong>: opens a modal/drawer to configure which consent levels are auto-granted per contact source</li>
+<li><strong>Consent changes log</strong>: audit trail of all consent modifications. Filterable by contact, action, channel</li>
+</ul>
+<h3 id="states-5" tabindex="-1"><a class="heading-anchor" href="#states-5" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No consent records yet. Consent tracking begins automatically when contacts are created or imported.&quot;</li>
+</ul>
+<hr>
+<h2 id="comm-008-communication-preferences-staff" tabindex="-1"><a class="heading-anchor" href="#comm-008-communication-preferences-staff" aria-hidden="true">#</a> COMM-008: Communication Preferences (Staff)</h2>
+<p>Org-wide default communication preferences and frequency caps. Governs how aggressively the org can communicate.</p>
+<h3 id="desktop-7" tabindex="-1"><a class="heading-anchor" href="#desktop-7" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Communication Preferences                                                   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Frequency Caps                                                              │
+│  ──────────────                                                              │
+│                                                                              │
+│  Maximum sends per contact per period:                                       │
+│                                                                              │
+│  Channel    Per Day    Per Week    Per Month                                 │
+│  ─────────────────────────────────────────────                               │
+│  Email      [ 1 ]      [ 3 ]       [ 8 ]                                    │
+│  SMS        [ 1 ]      [ 2 ]       [ 4 ]                                    │
+│  WhatsApp   [ 1 ]      [ 2 ]       [ 4 ]                                    │
+│                                                                              │
+│  ⓘ Transactional messages (receipts, confirmations) are exempt from caps.   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Quiet Hours                                                                 │
+│  ───────────                                                                 │
+│                                                                              │
+│  Do not send SMS/WhatsApp between:                                           │
+│  ┌──────────┐  and  ┌──────────┐  (recipient local time)                   │
+│  │ 8:00 PM  │       │ 8:00 AM  │                                            │
+│  └──────────┘       └──────────┘                                            │
+│                                                                              │
+│  ☑ Override quiet hours for election day GOTV messages                       │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Compliance Disclaimers                                                      │
+│  ──────────────────────                                                      │
+│                                                                              │
+│  Email footer disclaimer *                                                   │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Paid for by Partido Verde de Puerto Rico. PO Box 1234, San Juan,   │   │
+│  │ PR 00901. Federal ID: XX-XXXXXXX.                                   │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  SMS disclaimer (auto-appended)                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Reply STOP to unsubscribe.                                          │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Sender Identities                                                           │
+│  ─────────────────                                                           │
+│                                                                              │
+│  Name                     Email                        Default               │
+│  Partido Verde            info@partidoverde.org        ● Yes                 │
+│  María Torres, Director   maria@partidoverde.org       ○                     │
+│  Campaign Team            team@partidoverde.org        ○                     │
+│                                                                              │
+│  [+ Add Sender Identity]                                                     │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  [Save Changes]                                                              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-7" tabindex="-1"><a class="heading-anchor" href="#interaction-7" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Frequency caps</strong>: numeric inputs. System enforces at send time — if a campaign would exceed the cap for any recipient, those recipients are excluded with a warning in the pre-send checklist</li>
+<li><strong>Quiet hours</strong>: time pickers. Applied per recipient timezone</li>
+<li><strong>GOTV override</strong>: election day checkbox allows GOTV messages to bypass quiet hours</li>
+<li><strong>Disclaimers</strong>: required fields. Auto-appended to all communications in the respective channel</li>
+<li><strong>Sender identities</strong>: each sender needs a verified email domain (COMM-010). &quot;Add Sender Identity&quot; validates against configured domains</li>
+<li><strong>Save</strong>: applies changes org-wide</li>
+</ul>
+<hr>
+<h2 id="comm-009-unsubscribe-management" tabindex="-1"><a class="heading-anchor" href="#comm-009-unsubscribe-management" aria-hidden="true">#</a> COMM-009: Unsubscribe Management</h2>
+<p>View and manage unsubscribed contacts. Ensures compliance with opt-out requests.</p>
+<h3 id="desktop-8" tabindex="-1"><a class="heading-anchor" href="#desktop-8" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Unsubscribe Management                                    [Export]         │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Summary                                                                     │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │ Total Unsub  │  │ This Month   │  │ Unsub Rate   │  │ Trend        │   │
+│  │ 487          │  │ 12           │  │ 0.8%         │  │ ↓ Improving  │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│                                                                              │
+│  🔍 Search by name or email...                                              │
+│  Filters: [Channel ▾]  [Reason ▾]  [Date Range ▾]                          │
+│                                                                              │
+│  Contact              Channel   Reason              Date       Source        │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  María García         Email     Newsletter only     Mar 3      Unsub link   │
+│  Carlos Ruiz          SMS       All                 Mar 2      Reply STOP   │
+│  Amina Diallo         Email     Too frequent        Feb 28     Unsub link   │
+│  Pedro Martínez       WhatsApp  Not interested      Feb 25     In-app       │
+│  Lisa Chen            Email     All                 Feb 20     Unsub link   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Showing 1-50 of 487                                                         │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  ⚠ Manual re-subscribe                                                       │
+│  Re-subscribing a contact requires documented proof of consent (e.g.,        │
+│  written request from the contact). All re-subscribes are audit-logged.      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="reason-categories" tabindex="-1"><a class="heading-anchor" href="#reason-categories" aria-hidden="true">#</a> Reason Categories</h3>
+<table>
+<thead>
+<tr>
+<th>Reason</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All (global unsubscribe)</td>
+<td>Unsub link, Reply STOP, manual request</td>
+</tr>
+<tr>
+<td>Too frequent</td>
+<td>Unsub page selection</td>
+</tr>
+<tr>
+<td>Not interested</td>
+<td>Unsub page selection</td>
+</tr>
+<tr>
+<td>Specific purpose only</td>
+<td>Unsub page — opted out of one purpose (e.g., newsletter)</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>Unsub page — free text</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction-8" tabindex="-1"><a class="heading-anchor" href="#interaction-8" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Row click</strong>: opens contact detail (CRM-002) with consent tab focused</li>
+<li><strong>Suppression is automatic</strong>: unsubscribed contacts are excluded from all future sends for the relevant channel/purpose. No manual action needed</li>
+<li><strong>Manual re-subscribe</strong>: requires clicking through a confirmation dialog with a reason field. Logged to audit trail. Used only when a contact explicitly requests re-subscription</li>
+<li><strong>Export</strong>: for compliance audit. Includes timestamp, reason, source, and audit chain</li>
+</ul>
+<h3 id="states-6" tabindex="-1"><a class="heading-anchor" href="#states-6" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No unsubscribed contacts. When recipients opt out of communications, they'll appear here.&quot;</li>
+</ul>
+<hr>
+<h2 id="comm-010-email-sending-domain-config" tabindex="-1"><a class="heading-anchor" href="#comm-010-email-sending-domain-config" aria-hidden="true">#</a> COMM-010: Email Sending Domain Config</h2>
+<p>Configure and verify email sending domains. Required for deliverability and compliance. OA-only.</p>
+<h3 id="desktop-9" tabindex="-1"><a class="heading-anchor" href="#desktop-9" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Sending Domain Configuration                                               │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ⓘ Configure your email sending domains to improve deliverability and        │
+│    prevent your emails from being marked as spam.                            │
+│                                                                              │
+│  Verified Domains                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  partidoverde.org                                         [⚙]       │   │
+│  │  Status: ✓ Verified                                                 │   │
+│  │                                                                      │   │
+│  │  DNS Records:                                                        │   │
+│  │  ✓ SPF    — v=spf1 include:greengrass.io ~all                      │   │
+│  │  ✓ DKIM   — selector: gg._domainkey.partidoverde.org               │   │
+│  │  ✓ DMARC  — v=DMARC1; p=quarantine; rua=mailto:dmarc@pverde.org   │   │
+│  │                                                                      │   │
+│  │  Last verified: Mar 1, 2026                                         │   │
+│  │  Sender identities using this domain: 3                             │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  campaign2026.pr                                          [⚙]       │   │
+│  │  Status: ◷ Pending verification                                     │   │
+│  │                                                                      │   │
+│  │  DNS Records needed:                                                 │   │
+│  │  ✗ SPF    — Add this TXT record to your DNS:                       │   │
+│  │             v=spf1 include:greengrass.io ~all                       │   │
+│  │  ✗ DKIM   — Add this CNAME record:                                 │   │
+│  │             gg._domainkey → dkim.greengrass.io                      │   │
+│  │  ✗ DMARC  — Recommended but not required                           │   │
+│  │                                                                      │   │
+│  │  [Copy All DNS Records]  [Re-check DNS]                             │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  [+ Add Domain]                                                              │
+│                                                                              │
+│  Add Domain:                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ newdomain.org                                                       │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  [Verify Domain]                                                             │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-9" tabindex="-1"><a class="heading-anchor" href="#interaction-9" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Add Domain</strong>: enter domain name, system generates required DNS records</li>
+<li><strong>&quot;Copy All DNS Records&quot;</strong>: copies TXT and CNAME records for pasting into DNS provider</li>
+<li><strong>&quot;Re-check DNS&quot;</strong>: triggers immediate DNS verification. Shows results inline</li>
+<li><strong>Verification polling</strong>: system automatically checks DNS every hour for pending domains. Notifies the OA when verification succeeds</li>
+<li><strong>Settings gear</strong> (⚙): Remove domain (confirmation if sender identities use it), View delivery stats for domain</li>
+<li><strong>Verified indicators</strong>: ✓ (verified), ✗ (not found), ◷ (checking)</li>
+</ul>
+<h3 id="states-7" tabindex="-1"><a class="heading-anchor" href="#states-7" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>No domains</strong>: &quot;Add your email sending domain to start sending campaigns. Without a verified domain, emails may be marked as spam.&quot; [Add Domain]</li>
+</ul>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COMM-001 Email Campaigns</td>
+<td>No email campaigns yet. Create your first campaign to reach your audience.</td>
+<td>Create Campaign</td>
+</tr>
+<tr>
+<td>COMM-004 Templates</td>
+<td>No email templates yet. Templates make it easy to maintain consistent branding across campaigns.</td>
+<td>Create Template</td>
+</tr>
+<tr>
+<td>COMM-005 SMS/WhatsApp</td>
+<td>No SMS or WhatsApp messages yet. Text messaging is great for time-sensitive communications.</td>
+<td>Compose Message</td>
+</tr>
+<tr>
+<td>COMM-006 Analytics</td>
+<td>No communications sent yet. Analytics will appear here after your first campaign.</td>
+<td>Create Email Campaign</td>
+</tr>
+<tr>
+<td>COMM-010 Sending Domains</td>
+<td>Add your email sending domain to start sending campaigns.</td>
+<td>Add Domain</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Email campaign status uses icon + text label, not color alone</li>
+<li>Character counter for SMS uses color + numeric display + progress bar</li>
+<li>Template library thumbnails have descriptive alt text (template name and category)</li>
+<li>Consent matrix numbers are actual links, not just styled text — screen reader announces &quot;6,450 contacts opted in for Events via Email&quot;</li>
+<li>Quiet hours time pickers support keyboard input in addition to dropdown selection</li>
+<li>Compliance flag severity indicators use semantic labels (not just icons)</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campaign builder as single page, not wizard</td>
+<td>Scrollable sections with jump links</td>
+<td>Email campaigns are iterative — users jump between subject, content, and audience. A wizard forces linear progression</td>
+</tr>
+<tr>
+<td>Template library as card grid</td>
+<td>Card with thumbnail preview</td>
+<td>Visual preview is critical for choosing the right template. Cards use the space better than a list</td>
+</tr>
+<tr>
+<td>SMS and WhatsApp in one screen</td>
+<td>Channel toggle within a single composer</td>
+<td>Same audience targeting, similar workflow. Separate screens would fragment the experience for minimal UI difference</td>
+</tr>
+<tr>
+<td>Consent as channel × purpose matrix</td>
+<td>Table overview with drill-down</td>
+<td>The matrix is the correct mental model — consent is always about &quot;which channel for which purpose.&quot; Grid makes gaps visible</td>
+</tr>
+<tr>
+<td>Frequency caps as org-wide settings</td>
+<td>Global caps, not per-campaign</td>
+<td>Per-campaign caps are too granular — the contact's total experience matters. Transactional messages exempt</td>
+</tr>
+<tr>
+<td>Unsubscribe reasons captured</td>
+<td>Structured selection on unsub page</td>
+<td>Reasons help diagnose communication quality issues. &quot;Too frequent&quot; vs &quot;not interested&quot; are different problems</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li><strong>Email builder complexity</strong> — should the template builder (COMM-003) support conditional content blocks (show/hide based on contact attributes), or is that over-engineering for the v1? Conditional content significantly increases builder complexity</li>
+<li><strong>WhatsApp Business API</strong> — WhatsApp requires pre-approved message templates for some use cases. Should template approval status be visible in the composer, or is that an integration detail handled transparently?</li>
+<li><strong>A/B testing for SMS</strong> — email supports subject line A/B testing (COMM-002). Should SMS support message body A/B testing? Lower volume may make statistical significance hard to reach</li>
+<li><strong>Drip sequence builder</strong> — COMM-002 mentions automated campaigns with triggers. Is a visual drip/flow builder needed, or are simple &quot;trigger + delay + send&quot; rules sufficient for v1?</li>
+<li><strong>Cross-channel orchestration</strong> — should the system prevent sending an SMS and email about the same topic on the same day? Currently frequency caps are per-channel; cross-channel caps would be more protective but harder to configure</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#communications-director-navigation-context"># Communications Director Navigation Context</a></li><li class="toc-2"><a href="#comm-001-email-campaign-list"># COMM-001: Email Campaign List</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#status-definitions"># Status Definitions</a></li><li class="toc-3"><a href="#interaction"># Interaction</a></li><li class="toc-3"><a href="#states"># States</a></li><li class="toc-2"><a href="#comm-002-email-campaign-builder"># COMM-002: Email Campaign Builder</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-3"><a href="#send-button-dropdown"># Send Button Dropdown</a></li><li class="toc-3"><a href="#interaction-1"># Interaction</a></li><li class="toc-3"><a href="#automated-campaign-variant"># Automated Campaign Variant</a></li><li class="toc-2"><a href="#comm-003-email-template-builder"># COMM-003: Email Template Builder</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-3"><a href="#block-types"># Block Types</a></li><li class="toc-3"><a href="#interaction-2"># Interaction</a></li><li class="toc-3"><a href="#states-1"># States</a></li><li class="toc-2"><a href="#comm-004-email-template-library"># COMM-004: Email Template Library</a></li><li class="toc-3"><a href="#desktop-3"># Desktop</a></li><li class="toc-3"><a href="#mobile-1"># Mobile</a></li><li class="toc-3"><a href="#interaction-3"># Interaction</a></li><li class="toc-3"><a href="#states-2"># States</a></li><li class="toc-2"><a href="#comm-005-smswhatsapp-composer"># COMM-005: SMS/WhatsApp Composer</a></li><li class="toc-3"><a href="#desktop-4"># Desktop</a></li><li class="toc-3"><a href="#whatsapp-variant"># WhatsApp Variant</a></li><li class="toc-3"><a href="#smswhatsapp-message-list-sidebar-entry-point"># SMS/WhatsApp Message List (sidebar entry point)</a></li><li class="toc-3"><a href="#interaction-4"># Interaction</a></li><li class="toc-3"><a href="#states-3"># States</a></li><li class="toc-2"><a href="#comm-006-communication-analytics"># COMM-006: Communication Analytics</a></li><li class="toc-3"><a href="#desktop-5"># Desktop</a></li><li class="toc-3"><a href="#interaction-5"># Interaction</a></li><li class="toc-3"><a href="#states-4"># States</a></li><li class="toc-2"><a href="#comm-007-consent-management"># COMM-007: Consent Management</a></li><li class="toc-3"><a href="#desktop-6"># Desktop</a></li><li class="toc-3"><a href="#interaction-6"># Interaction</a></li><li class="toc-3"><a href="#states-5"># States</a></li><li class="toc-2"><a href="#comm-008-communication-preferences-staff"># COMM-008: Communication Preferences (Staff)</a></li><li class="toc-3"><a href="#desktop-7"># Desktop</a></li><li class="toc-3"><a href="#interaction-7"># Interaction</a></li><li class="toc-2"><a href="#comm-009-unsubscribe-management"># COMM-009: Unsubscribe Management</a></li><li class="toc-3"><a href="#desktop-8"># Desktop</a></li><li class="toc-3"><a href="#reason-categories"># Reason Categories</a></li><li class="toc-3"><a href="#interaction-8"># Interaction</a></li><li class="toc-3"><a href="#states-6"># States</a></li><li class="toc-2"><a href="#comm-010-email-sending-domain-config"># COMM-010: Email Sending Domain Config</a></li><li class="toc-3"><a href="#desktop-9"># Desktop</a></li><li class="toc-3"><a href="#interaction-9"># Interaction</a></li><li class="toc-3"><a href="#states-7"># States</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

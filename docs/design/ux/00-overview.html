@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UX Design Overview · GreenGrass</title>
+<meta name="description" content="UX Design Overview — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../spec/workflows.html">Core Workflows</a></li><li><a href="../../spec/geography.html">Target Geography</a></li><li><a href="../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../spec/integrations.html">External Integrations</a></li><li><a href="../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./00-overview.html" aria-current="page" class="active">UX Design Overview</a></li><li><a href="./01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="./01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="./01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="./01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="./02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="./02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="./02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="./02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="./02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="./02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="./03-design-system/foundations.html">Design System Foundations</a></li><li><a href="./03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="./03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="./03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="./04-wireframes/index.html">Wireframes</a></li><li><a href="./04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="./04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="./04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="./04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="./04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="./04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="./04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="./04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="./04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="./04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="./04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="./04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="./04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="./04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="./04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="./04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="./04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="./04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="./04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="./04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="./04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="./04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../diary/index.html">Project Diary</a></li><li><a href="../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../claude/MEMORY.html">Memory</a></li><li><a href="../../claude/SKILLS.html">Skills</a></li><li><a href="../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="ux-design-overview" tabindex="-1"><a class="heading-anchor" href="#ux-design-overview" aria-hidden="true">#</a> UX Design Overview</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This directory contains the UX design artifacts for GreenGrass — a platform for managing grassroots political elections in the global south. The UX design phase follows the completion of 12 product specifications and a system architecture document.</p>
+<p>The core UX challenge: 10 distinct personas across radically different contexts share one application. A volunteer knocking doors on a low-end Android phone in rural India needs a completely different interface than an Org Admin configuring compliance settings on a desktop in Puerto Rico. The UX must serve both without compromise.</p>
+<h2 id="reading-order" tabindex="-1"><a class="heading-anchor" href="#reading-order" aria-hidden="true">#</a> Reading Order</h2>
+<h3 id="phase-1-information-architecture" tabindex="-1"><a class="heading-anchor" href="#phase-1-information-architecture" aria-hidden="true">#</a> Phase 1: Information Architecture</h3>
+<p>Start here. The IA documents define the global structure everything else hangs off of.</p>
+<ol>
+<li>
+<p><strong><a href="./01-information-architecture/navigation-model.html">Navigation Model</a></strong> — How the platform organizes its features into a navigable structure. Defines the desktop shell (hybrid top bar + sidebar), mobile layout (bottom tabs), and field mode (full-screen takeover). The most critical IA document.</p>
+</li>
+<li>
+<p><strong><a href="./01-information-architecture/screen-inventory.html">Screen Inventory</a></strong> — Comprehensive catalog of every screen in the platform (~236 screens across 21 feature areas). Each entry identifies personas, offline capability, and mobile optimization. The master reference for wireframing and implementation scoping.</p>
+</li>
+<li>
+<p><strong><a href="./01-information-architecture/persona-views.html">Persona Views</a></strong> — How the platform renders differently for each of the 10 personas. Defines home screens, sidebar sections, mobile tabs, and what each persona <em>doesn't</em> see. The &quot;role-adaptive UX&quot; specification.</p>
+</li>
+<li>
+<p><strong><a href="./01-information-architecture/url-structure.html">URL Structure</a></strong> — Maps the screen inventory to SvelteKit routes. Defines six layout groups (public, auth, app, field-mode, portal, wizard), routing patterns, auth guards, and offline-capable routes.</p>
+</li>
+</ol>
+<h3 id="phase-2-global-patterns" tabindex="-1"><a class="heading-anchor" href="#phase-2-global-patterns" aria-hidden="true">#</a> Phase 2: Global Patterns</h3>
+<p>Recurring UI patterns that apply across the entire platform.</p>
+<ol start="5">
+<li>
+<p><strong><a href="./02-global-patterns/pattern-catalog.html">Pattern Catalog</a></strong> — 20 recurring UI patterns: list views, detail views, builders, forms, wizards, dashboards, maps, check-in tools, field mode, and more. Cross-cutting concerns: empty states, loading, error states, accessibility.</p>
+</li>
+<li>
+<p><strong><a href="./02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></strong> — Five connectivity states, data freshness indicators, pending changes queue, conflict resolution, pre-loading strategy, battery and data usage awareness, shift sync lifecycle.</p>
+</li>
+<li>
+<p><strong><a href="./02-global-patterns/notification-patterns.html">Notification Patterns</a></strong> — Notification center, four priority levels, delivery channels (in-app, push, email, SMS), per-persona defaults, email digests, election day notification behavior, Do Not Disturb.</p>
+</li>
+<li>
+<p><strong><a href="./02-global-patterns/search-patterns.html">Search Patterns</a></strong> — Global search with type-ahead, contextual search per feature area, filter patterns, saved searches, encryption constraints on search (BYOK tenants).</p>
+</li>
+<li>
+<p><strong><a href="./02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></strong> — Three-tier settings hierarchy (org/feature/personal), contextual help panels, knowledge base, AI concierge, language switching, onboarding flows, keyboard shortcuts.</p>
+</li>
+<li>
+<p><strong><a href="./02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></strong> — Duress mode sanitization rules per feature area, BYOK key generation ceremony, panic button behavior, passkey auth flows, session management, trusted contact recovery, device authorization.</p>
+</li>
+</ol>
+<h3 id="phase-3-design-system-foundations" tabindex="-1"><a class="heading-anchor" href="#phase-3-design-system-foundations" aria-hidden="true">#</a> Phase 3: Design System Foundations</h3>
+<p>The visual and component foundations.</p>
+<ol start="11">
+<li>
+<p><strong><a href="./03-design-system/foundations.html">Foundations</a></strong> — 8px spacing scale, semantic color token system, Inter type scale, 4/8/12-column grid, elevation layers, border radius, Lucide iconography, motion tokens, z-index scale, density modes.</p>
+</li>
+<li>
+<p><strong><a href="./03-design-system/theming-strategy.html">Theming Strategy</a></strong> — Per-tenant branding (color + logo), automatic derivative color generation, CSS custom property cascade, RTL via CSS logical properties, dark mode token mapping, high contrast mode, large text mode, reduced motion, theme composition layers.</p>
+</li>
+<li>
+<p><strong><a href="./03-design-system/component-inventory.html">Component Inventory</a></strong> — ~125 components across 13 categories: primitives, typography, buttons, forms, layout, navigation, data display, feedback, overlays, messaging, field mode, dashboard, specialized. Naming conventions, state definitions, composition patterns.</p>
+</li>
+<li>
+<p><strong><a href="./03-design-system/responsive-strategy.html">Responsive Strategy</a></strong> — Five breakpoints (640/768/1024/1280/1536px), mobile-first CSS, component adaptation tables, Capacitor native API usage, safe areas, performance budgets (150KB JS, 2s FCP on 3G), code splitting strategy, testing matrix.</p>
+</li>
+</ol>
+<h3 id="phase-4-wireframes" tabindex="-1"><a class="heading-anchor" href="#phase-4-wireframes" aria-hidden="true">#</a> Phase 4: Wireframes</h3>
+<p>Detailed screen specifications with ASCII wireframes for key screens and flows. Implementation-ready.</p>
+<ol start="15">
+<li>
+<p><strong><a href="./04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell</a></strong> — Desktop shell (sidebar expanded/collapsed, detail panel, notification drawer, RTL), mobile shell (per-persona tab bars, hamburger menu, &quot;More&quot; bottom sheet), field mode shell (walk list, door card, map, shift lifecycle), wizard shell, supporter portal shell. Responsive breakpoint transitions, interaction specs, accessibility notes.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/dashboards/dashboards.html">Dashboards</a></strong> — All 11 dashboards: Campaign Overview (Org Admin), Field Operations (Field Director), Fundraising (Finance Director), Communications (Comms Director), Volunteer (Volunteer Coordinator), Data Quality (Data Manager), Compliance (Finance Director), GOTV War Room (election day, auto-refresh, dark mode), Team Lead, Candidate (curated/simplified), Alliance (cross-ref). Empty states, loading skeletons.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/field-mode/field-mode.html">Field Mode</a></strong> — Complete shift lifecycle: pre-shift check, walk list (list + map views), door card with script and response capture, follow-up questions, &quot;Not Home&quot; quick result. Phone banking variant, voter registration variant, GOTV door card, ride request flow. End shift confirmation, sync screen, debrief. Crash recovery. Touch target specifications.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/onboarding/onboarding.html">Onboarding</a></strong> — Org Setup wizard (5 steps: auth, org profile, team invites, configuration, review &amp; launch), Volunteer Onboarding (4 steps: account, tour, training, ready), BYOK Key Generation wizard (5 steps with Shamir's Secret Sharing). Post-wizard &quot;Getting Started&quot; checklist.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/messaging/messaging.html">Messaging</a></strong> — Desktop split view (conversation list + thread), mobile full-screen flows, compose, candidate briefings (structured/formatted), approval requests (approve/reject/comment inline), War Room channel (election day, system alerts, issue reports), offline messaging, encryption indicators.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/supporter/supporter-portal.html">Supporter Portal</a></strong> — Public donation page (pre-auth, tenant-branded), donation confirmation, portal home, donation history with recurring management, events with RSVP, communication preferences, public event page. Magic link + full account authentication tiers.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/alliance/alliance.html">Alliance</a></strong> — Alliance Dashboard (aggregate metrics + per-org breakdowns, desktop + mobile), Member List with detail panel, Affiliation Request Form and Queue, Sharing Configuration (by category and by org views), Joint Campaign Setup wizard (4 steps, 4 campaign types, 3 governance models), Shared Analytics (cross-org charts and tables), GOTV Alliance Coordination (election day cross-org war room). Empty states for no-alliance, pending affiliation, and new alliance.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/crm/crm.html">CRM / People</a></strong> — Contact List (filterable, persona-adaptive columns, desktop + mobile), Contact Detail (unified record with persona-specific tabs, activity timeline, offline partial), Contact Create/Edit (progressive disclosure, dupe detection on save), Segment Builder (visual query builder with live preview), Segment List, Dedup Review Queue (confidence-grouped), Dedup Side-by-Side Comparison (field-by-field merge with preview), Data Import Wizard (4-step: upload, column mapping, dedup preview, confirm), Import History, Data Export (field selection, format choice, audit logged), Data Quality Report (score breakdown, completeness by field, validity issues, staleness), Tag Management. Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/field-ops/field-ops.html">Field Operations (Admin)</a></strong> — Canvassing: Campaign List/Create-Edit, Script Builder (split-pane with live preview, branching logic, score mapping), Turf Management Map (draw/select/assign turfs, completion color coding), Turf Auto-Generation (constraint-based with preview), Walk List Management (assign/reassign volunteers), Results Review (per-turf breakdown, support distribution, flagged interactions), Progress Map (full-width geographic view with active volunteer positions). Phone Banking: Campaign List/Create-Edit (BYOP/integrated dialer, segment-based call lists with exclusions), Script Builder (shared with canvassing + phone-specific steps), Progress Dashboard (real-time caller activity, call outcomes, support scores). Voter Registration: Drive List/Create-Edit (jurisdiction-driven), Jurisdiction Template Selector (country-specific registration forms with eligibility rules), Results Review (registration progress, follow-up pipeline, data issues). Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/fundraising/fundraising.html">Fundraising (Admin)</a></strong> — Donation List/Detail (filterable, multi-currency, flagged donation variant), Donation Form Builder (split-pane with live preview, amount configuration, donor fields, appearance, payment methods), Form Preview, Embed Config (inline/modal/button types, domain allowlist), Fundraising Campaign List/Create-Edit (goal tracking, linked forms and communications), Recurring Donation Management (MRR metrics, status lifecycle, charge history, admin pause/cancel), Pledge Management (pledge lifecycle, reminder scheduling, fulfillment linking), Refund Processing (full/partial, alliance split reversal, cash manual handling), Cash Donation Recording (mobile-first, offline-capable, receipt photo), Cash Reconciliation (two-column matching, discrepancy tracking), Compliance Flag Review (severity-ordered, fraud indicators, approve/refund/block actions), A/B Test Setup/Results (variant configuration, statistical significance tracking), Alliance Split Configuration (percentage/fixed/threshold types, unanimous approval), Alliance Fundraising Report (per-org breakdown, disbursement history), Payment Processor Configuration (guided connect flow, test transactions, credential security), Year-End Statement Generator (bulk generation, email delivery, PDF download). Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/communications/communications.html">Communications</a></strong> — Email Campaign List (status lifecycle, inline metrics), Email Campaign Builder (setup/audience/content/delivery sections, template selection, personalization tokens, pre-send checklist, subject A/B testing, automated campaign variant), Email Template Builder (block-based drag-and-drop, inline editing, compliance footer), Email Template Library (card grid with thumbnails, categories), SMS/WhatsApp Composer (channel toggle, character counter with segment tracking, WhatsApp quick reply buttons, time-of-day enforcement, frequency cap checks), Communication Analytics (cross-channel overview, email performance table, trend charts, audience health), Consent Management (channel × purpose matrix, consent expiry tracking, renewal requests, default rules per contact source), Communication Preferences (frequency caps, quiet hours with GOTV override, compliance disclaimers, sender identities), Unsubscribe Management (reason tracking, manual re-subscribe with audit), Email Sending Domain Config (DNS record generation, SPF/DKIM/DMARC verification). Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/social-media/social-media.html">Social Media</a></strong> — Social Media Dashboard (connected accounts with follower counts, this week's performance metrics, upcoming scheduled posts, recent posts with cross-platform engagement), Post Composer (multi-platform with per-platform overrides, character counters, media with crop notes, compliance disclaimers, scheduling, approval routing), Post Calendar (month/week/list views, drag-to-reschedule, day detail panel), Post Analytics (per-post detail with per-platform breakdown and 48-hour performance chart, aggregate analytics with platform comparison and best posting times), Social Account Connection (OAuth flow, token status, permissions display), Platform-Specific Preview (side-by-side previews with per-platform warnings). Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/events/events.html">Events</a></strong> — Event List (persona-adaptive admin vs volunteer/supporter views, event type icons, capacity indicators), Event Create/Edit (in-person/virtual/hybrid toggle, RSVP settings with open/invite-only/approval-required modes, capacity with waitlist, reminders, promotion links, staff assignment, fundraising integration, media), Event Detail (admin view with RSVP summary/staff/discussion thread, volunteer view with RSVP action/calendar/directions, post-event outcome variant), RSVP Management (full list with approval queue variant, bulk actions, guest tracking), Check-in Tool (mobile-first offline-capable with progress counter, alphabetical list with tap-to-check-in, QR scan mode with camera, walk-in registration, 56px touch targets, haptic feedback, 10-second undo), Event Metrics (RSVP/attendance/walk-in/show-rate metrics, RSVP source breakdown, check-in timeline chart, fundraising data, CRM impact, comparison to similar events, post-event action buttons), Virtual Event Setup (platform selection, unique link generation for attendance tracking, recording sharing), Post-Event Survey Builder (6 question types, drag-to-reorder, results visualization with response distribution, volunteer-interest CRM linking). Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/press/press.html">Press &amp; Media</a></strong> — Media Contact List/Detail (press-specific CRM fields, relationship dots, interaction history with pitch/response/coverage timeline, pitch success rate), Media List Management (dynamic criteria-based + static curated lists), Press Release Builder (split-pane with structured template: headline/dateline/body/quotes/boilerplate/contact, embargo support, versioning, compliance disclaimer, approval workflow), Press Release Preview (full distribution format), Press Release Distribution (media list + individual selection, personalization, attachments, embargo tracking), Media Advisory Builder (WHO/WHAT/WHEN/WHERE structured template with event auto-fill), Statement Builder (streamlined rapid-response, urgent flag with push notification, emergency bypass for OA/CD), Media Kit Management (asset cards with public/gated access levels, gated access creates CRM contacts, download tracking), Coverage Log (manual entry with headline/outlet/journalist/sentiment/format/topics, linked to pitch/release), Coverage Analytics (sentiment distribution, format breakdown, topic analysis, pitch-to-coverage rate, journalist responsiveness, coverage over time), Endorsement Pipeline (Kanban: identified→approached→considering→committed→public, drag-and-drop, &quot;Public&quot; triggers announcement workflow with press release + social post), Endorsement Detail (stage progress, endorser profile, quote, photo, timeline, assignment), Talking Points Library (topic-organized accordion, versioned with diff, team distribution via messaging, candidate briefing integration), Interview Schedule (upcoming/past/requests tabs, auto-assembled prep with talking points + journalist history + recent outlet coverage, accept/decline/reply for requests, post-interview outcome logging), Spokesperson Configuration (designated spokespeople with topic areas, contact routing rules, press contact info for releases). Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/activism/activism.html">Activism</a></strong> — Activism Campaign List (letter/email, petition, public comment types with type-specific metrics), Letter/Email Action Setup (target info, talking points with priority ordering for AI, template message, public page configuration), Petition Setup (petition statement, signature goal with goal-reached behavior, signer information fields with visibility controls), Public Comment Campaign Setup (regulatory body, docket number, deadline with auto-close, submission method: platform-direct/manual-download/both), Action Page — Public (mobile-first two-step flow: supporter info → AI message generation, action counter social proof, tenant-branded compliance disclaimer), Petition Page — Public (mobile-first signing with progress bar, truncated petition text with expand, recent signatures with privacy-preserving display), AI Message Generation Preview (unique AI-written message from talking points + personal connection, explicit approval checkbox, edit/regenerate/fallback-to-template, 3 regeneration limit, transparency disclosure), Activism Campaign Analytics (type-specific metrics, actions-over-time chart, geographic distribution map + table, per-supporter action feed with CRM links, message viewing), Delivery Event Documentation (delivery method/location/recipient, photo evidence with camera capture, attached documents, target response tracking, staff present, related press coverage linking, partial offline support). Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/gotv/gotv.html">GOTV Admin</a></strong> — GOTV Universe Builder (criteria-based segment builder with include/exclude rules, support score and voting history filters, geographic breakdown, tier segmentation for priority ordering, finalize-and-lock workflow), Early Voting Data Upload (CSV/Excel upload with column mapping, voter ID primary match key with name+DOB fallback, match preview showing universe impact, cumulative uploads with history and undo), Volunteer Staging Setup (map with location pins + detail panel, capacity tracking with visual bar, contact person and hours, customizable supplies checklist, volunteer roster per location), GOTV Turf Cutting (interactive map with draw/select/split tools, supporter density heatmap overlay, auto-generate with configurable parameters: contacts per turf, max completion time, optimization priority, multi-pass scheduling for morning/afternoon/evening, volunteer assignment, dynamic re-cutting on election day), Election Day Comms Plan (visual timeline of communication waves, per-wave configuration: time, auto/manual trigger, channel SMS/WhatsApp/Email, audience targeting with dynamic &quot;who haven't voted&quot; filter, personalization tokens, WhatsApp quick reply buttons, GOTV quiet hours override, election day live send controls), Poll Watcher Registry (list with status badges ○◐●, assigned/backup polling locations, jurisdiction requirements and deadline warnings, export roster for filing), Poll Watcher Credential Tracking (credential number/dates/document upload, verification status, printable summary), Ride Coordination Dispatcher (map + split panel with pending requests and available drivers, priority ordering with urgent flags for wait time and accessibility, smart driver matching by proximity/vehicle/workload, multi-passenger optimization, status tracking: Pending→Assigned→En Route→Transporting→Completed, auto-refresh, multiple ride sources), Poll Watcher Issue Queue (severity-ordered: Critical/High/Medium with color + icon badges, category filter: Voter Access/Equipment/Campaign Violation/Wait Times/Accessibility/Intimidation, issue detail with photo/video evidence, escalation routing to legal/election protection/electoral commission, internal timestamped notes, resolution audit trail, auto-refresh with sound notification for Critical), Turnout Dashboard Map View (full-width choropleth map color-coded by turnout rate red→green relative to target, overlay toggles for turf boundaries/canvassers/staging/polling locations, click-turf detail panel with per-tier voted counts and data source confidence, auto-refresh 60s), Turnout Dashboard Segment View (table with turnout by support tier/geography/demographics/custom, target vs actual with gap column and ⚠ flags, turnout-over-time chart with target pace dotted line, drill-down to individual contacts), Reallocation Suggestions (platform-generated prioritized suggestions: canvasser shifts, phone bank surges, targeted SMS, each with rationale citing specific data, approve/modify/reject controls, previously actioned audit trail, regenerate from latest data), Election Night Results Entry (mobile-first numeric entry per race per location, pre-filled candidates from staff config, partial vs final status, validation against registered voter counts, timestamp auto-recorded), Election Night Results Dashboard (candidate bar chart with vote counts and percentages, reporting progress tracker, results timeline chart showing trend as results come in, per-location table with status, internal comparison against support score predictions, map view toggle, multi-race tabs, 30-second auto-refresh), Post-Election Analysis (tabbed: Turnout with segment/region tables and target comparison, Operations with door knock/phone/ride metrics and contact rates by region, Volunteers with per-volunteer performance, Model Validation comparing support scores vs actual turnout with accuracy assessment, Resources with staging utilization and operational efficiency, PDF export), Staging Location Check-in (mobile-first for Team Lead, progress counter with visual bar, not-checked-in list prioritized with phone numbers and turf assignments, tap-to-check-in with haptic confirmation and 10-second undo, QR scan option, 56px touch targets, report issue and contact Field Director). Empty states. Cross-references: DASH-008 War Room Dashboard, GOTV field mode screens (Door Card, Walk List, Chase Call), ALLY-008 Alliance GOTV Coordination.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/settings/settings.html">Settings &amp; Admin</a></strong> — Org Profile &amp; Branding (organization name/short name, logo upload with size preview, primary/accent color picker with live preview, default/additional languages, timezone), Role Template Editor (system + custom templates, permission matrix with feature areas as rows and View/Create/Edit/Delete/Export/Admin as columns, collapsible feature sections, clone and reset to default, member count per role), Permission Override Panel (per-user additive-only overrides with required reason for audit trail, added-by tracking), Staff Management List (filterable by role/status, Active/Invited/Deactivated badges, row actions: edit role, resend invite, reset passkey, deactivate, view overrides, view activity), Staff Invite Flow (email + name, role selection with plain-language can/cannot summary, optional geographic scope restriction to specific regions), Geographic Scope Configuration (map with shaded regions + region list with contact counts, jurisdiction level selector: Country/State/District/County/Precinct/Custom), Campaign Period Configuration (campaign name, start/end/election dates, status with day count, previous periods archive), Compliance Configuration (jurisdiction + framework selection, enforced rules checklist with jurisdiction-required rules locked, enforcement behavior: block/warn/flag), Contribution Limits Configuration (per-donor-type per-cycle limits table: Individual/Corporation/PAC/Self-Funding, aggregation method, over-limit behavior: block/flag/partial-accept), Disclaimer Text Configuration (primary disclaimer with per-channel application checkboxes, additional disclaimers, per-language translations), Data Retention Policy (per-data-type retention rules with retain period and expiry action: auto-delete/archive/manual, post-campaign cleanup behavior, minimum retention for compliance), Integration Settings Hub (card grid by category: Communications/Social/Payments/Maps/Video, status/provider/sync time per card), WhatsApp Business Setup (phone number, API token, test connection, message template management with approval status), SMS Provider Configuration (provider selection, credentials, phone numbers, test delivery), Email Domain Configuration (cross-ref COMM-010, DNS records, SPF/DKIM/DMARC verification), Social Media Account Connections (cross-ref SOCIAL-005, per-platform OAuth), Billing &amp; Subscription (current plan with usage metrics, payment method, billing history with invoice downloads, billing contact), Audit Trail Viewer (searchable filterable log of all user actions: logins, exports, permission changes, settings changes, expandable row detail with IP/user agent, non-deletable tamper-proof, CSV/JSON export), Security Settings (three-tier Standard/Enhanced/Maximum, passkey/MFA requirements, session timeout, IP allowlist with field mode exemption, incident response email alerts for suspicious logins/exports/permission changes, duress mode and trusted contact recovery collapsed sections), Encryption Key Management (BYOK for Maximum tier, current key with algorithm/status/Shamir share holders, key rotation ceremony requiring 3-of-5, encrypted key backup export, key history with rotation audit), API Key Management (named keys with scoped permissions per feature area + read/write, IP restrictions, expiration, usage tracking, key shown once on generation), Webhook Configuration (named webhooks with URL/secret/event selection, retry policy, test webhook, delivery log with response codes and timing, success rate tracking). Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/auth/auth.html">Authentication</a></strong> — Login with Passkey (single CTA centered card, &lt;3 second biometric login, tenant-branded with org logo + name, &quot;What's a passkey?&quot; expandable), Login Fallback (magic link with 15-minute expiry and 60-second resend cooldown + SMS OTP with 6-digit auto-submit and 10-minute expiry, rate limiting 3 per 15 minutes), Account Recovery via Trusted Contacts (2-of-3 approval default, 24-hour cooling-off period with countdown, old passkeys invalidated on recovery, &quot;No, This Isn't Them&quot; cancels immediately, no admin-initiated recovery), Passkey Registration (guided enrollment with platform-specific instructions for iOS Face ID/Touch ID/Android biometric/security key, &quot;What's a passkey?&quot; plain-language explanation, duress passkey option for Maximum security tier), Trusted Contact Setup (2-5 contacts from same org, contacts notified when added, removal requires re-auth), Device Authorization (QR code with 5-minute expiry + manual alphanumeric code, approval from existing device with device details, new device appears in device list), Session Expired (data preserved in local storage, one-tap re-authenticate, sensitive action re-auth variant showing action description and timeout context). Edge case states (no passkey found, rate limited, no trusted contacts, incompatible device, expired QR).</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/profile/profile.html">User Profile</a></strong> — Personal Profile (name, avatar upload/remove, phone with verification, email read-only/admin-managed, language and timezone, role and organization display, last login), Notification Preferences (channel × type matrix: In-App/Push/Email/SMS columns × Messages/Approvals/Assignments/Reminders/Campaign Updates/Security Alerts rows, quiet hours with start/end time and GOTV override toggle, email digest frequency: real-time/daily/weekly), Security Settings — Personal (registered devices list with platform/browser/last used and remove requiring re-auth, trusted contacts management with add/remove, security summary checklist with ✓/○ indicators for passkey/trusted contacts/recovery/devices, duress passkey setup for Maximum tier), Language Preference (instant-apply radio buttons, RTL auto-flip, bilingual header showing current and new language, tenant-controlled language list), Tenant Switcher (org cards with logo/role/last active time, full context switch clearing local state, [+ Join Another Org] with invite code entry). Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/help/help.html">Support &amp; Help</a></strong> — Knowledge Base Browser (full-text search with instant results, role-filtered articles prioritized by user's persona, category cards matching sidebar structure, popular/recently updated articles, desktop grid / mobile list), Knowledge Base Article (formatted content with table of contents sidebar, related articles, thumbs up/down feedback, partial offline with cached text/images, deep links to platform screens, breadcrumb navigation), AI Concierge Chat (context-aware knowing current screen and user role, responses with article links + direct action links, chat history persisted, desktop side panel / mobile full screen, escalation to human support for premium tenants, quick suggestion chips), Training Module List (volunteer view with Required/Recommended sections and progress bars, admin view with per-module completion rates and per-volunteer matrix), Training Module Content (sequential lessons with progress indicator, text/images/video content types, offline caching for text and images, bookmark and resume, estimated time), Training Quiz (one question at a time with progress dots, configurable pass threshold, retake option, offline-capable with sync on reconnect, results review with correct answers and explanations), Certification Status (volunteer view with module cards showing ✓ completed/◐ in progress/○ not started, admin cross-tab matrix with volunteer rows × module columns, expiration tracking with renewal prompts), Training Content Editor (module settings with title/description/requirements, lesson list with drag-to-reorder, quiz question editor with 4 question types, assignment targeting all/specific roles/specific people, versioning with draft/published states, save draft and publish actions). Empty states.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/public/public.html">Public Pages</a></strong> — Candidate Profile Page (<code>/p/[slug]</code> short URL, candidate photo/name/title/tagline, bio with expandable full text, dynamic endorsements from pipeline, upcoming public events from events module, donate and volunteer CTAs, social media links, SEO meta tags and Open Graph, tenant compliance disclaimer), Organization Profile Page (<code>/o/[slug]</code> short URL, org logo/name/mission, hero image, get involved CTAs for donate/volunteer/events, dynamic upcoming events from events module, recent press coverage from coverage log, compliance disclaimer), Volunteer Signup Page (minimal required fields: name and email only, optional phone, interest checkboxes for role matching: canvassing/phone banking/events/data entry/other, availability grid, CRM integration creating or matching contact tagged &quot;Prospective Volunteer&quot;, consent opt-in not pre-checked, confirmation screen with donation upsell and social share buttons), Media Kit Page (press contact info with name/title/email/phone, downloadable assets organized by category: logos PNG/SVG, photos hi-res, documents PDF, optional gated access requiring email which creates CRM contact tagged &quot;Media,&quot; download tracking per asset, recent press coverage). Cross-references: PUB-003 Supporter Portal (<a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a> + <a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a>), PUB-004 Public Event Page (<a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a> EVT-003), PUB-005 Action Page (<a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a> ACT-005), PUB-006 Petition Page (<a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a> ACT-006). Empty states.</p>
+</li>
+</ol>
+<h3 id="wireframe-audit" tabindex="-1"><a class="heading-anchor" href="#wireframe-audit" aria-hidden="true">#</a> Wireframe Audit</h3>
+<ol start="36">
+<li>
+<p><strong><a href="./04-wireframes/audit.html">Wireframe Audit Report</a></strong> — Structural audit of all 21 wireframe documents. Executive summary with coverage stats (236 screens inventoried, 15 formerly missing now added, 9 docs normalized to standard structure). Per-document gap analysis, design system token assessment, offline coverage grading, terminology audit. Appendix A: 89 consolidated open questions across all docs, categorized and deduplicated. Appendix B: consolidated design decisions from all docs with contradiction analysis.</p>
+</li>
+<li>
+<p><strong><a href="./04-wireframes/index.html#screen-index">Screen Index</a></strong> — Cross-reference of all 236 screen IDs to their wireframe location with status (Complete / Covered / Cross-ref / Missing).</p>
+</li>
+</ol>
+<h2 id="ux-principles" tabindex="-1"><a class="heading-anchor" href="#ux-principles" aria-hidden="true">#</a> UX Principles</h2>
+<p>These principles guide all design decisions for GreenGrass.</p>
+<h3 id="1-the-volunteer-in-the-field-comes-first" tabindex="-1"><a class="heading-anchor" href="#1-the-volunteer-in-the-field-comes-first" aria-hidden="true">#</a> 1. The volunteer in the field comes first</h3>
+<p>Every design decision is pressure-tested against the hardest user: a volunteer on a low-end Android phone with intermittent connectivity, walking door-to-door in a rural area. If a pattern doesn't work for them, it doesn't ship. Desktop admin interfaces are important but must never compromise the field experience.</p>
+<h3 id="2-invisible-complexity" tabindex="-1"><a class="heading-anchor" href="#2-invisible-complexity" aria-hidden="true">#</a> 2. Invisible complexity</h3>
+<p>10 personas share one application, but no user should feel the weight of the others. Features outside a user's access are absent — not greyed out, not hidden behind permission dialogs, but truly invisible. The Volunteer sees a simple, focused app. The Org Admin sees a full-featured platform. Neither knows the other's view exists.</p>
+<h3 id="3-offline-is-not-an-error-state" tabindex="-1"><a class="heading-anchor" href="#3-offline-is-not-an-error-state" aria-hidden="true">#</a> 3. Offline is not an error state</h3>
+<p>Offline mode is a first-class operating condition, not a degraded fallback. The UI should communicate connectivity status clearly but never make the user feel that they're using a broken version of the app. Field operations work fully offline. Data syncs when it can.</p>
+<h3 id="4-stability-over-dynamism-in-navigation" tabindex="-1"><a class="heading-anchor" href="#4-stability-over-dynamism-in-navigation" aria-hidden="true">#</a> 4. Stability over dynamism in navigation</h3>
+<p>The navigation structure stays stable regardless of connectivity, context, or time of day. Items don't appear and disappear as conditions change. Offline-unavailable features are greyed out with a badge, not removed. Users build muscle memory for where things are — that memory must be reliable.</p>
+<h3 id="5-security-is-invisible-until-it-matters" tabindex="-1"><a class="heading-anchor" href="#5-security-is-invisible-until-it-matters" aria-hidden="true">#</a> 5. Security is invisible until it matters</h3>
+<p>The security architecture (5-tier model, BYOK encryption, passkey auth, duress mode) is substantial, but users shouldn't feel its weight during normal operation. Login should be one tap (passkey). Encryption should be automatic. Security surfaces (audit trail, key management, duress mode) are available but not prominent. The exception: when security <em>needs</em> attention (compromised passkey, key rotation, active threat), the UI must be unambiguous and direct.</p>
+<h3 id="6-respect-the-device" tabindex="-1"><a class="heading-anchor" href="#6-respect-the-device" aria-hidden="true">#</a> 6. Respect the device</h3>
+<p>Mobile is not a shrunken desktop. Mobile screens are designed for mobile — large touch targets, vertical scrolling, one-handed operation. Desktop screens use the space — data tables, side-by-side panels, drag-and-drop. The same feature may have significantly different interfaces on each platform, and that's correct.</p>
+<h3 id="7-rtl-is-structural-not-decorative" tabindex="-1"><a class="heading-anchor" href="#7-rtl-is-structural-not-decorative" aria-hidden="true">#</a> 7. RTL is structural, not decorative</h3>
+<p>Right-to-left support is built into every layout decision from day one, not retrofitted. Sidebar position, tab bar order, icon direction, text alignment, breadcrumb direction — all defined in terms of logical properties (<code>inline-start</code>/<code>inline-end</code>), not physical ones (<code>left</code>/<code>right</code>).</p>
+<h3 id="8-election-day-is-a-different-app" tabindex="-1"><a class="heading-anchor" href="#8-election-day-is-a-different-app" aria-hidden="true">#</a> 8. Election day is a different app</h3>
+<p>When GOTV operations activate, the platform transforms. Dashboards change, notification priorities shift, new screens appear, field mode switches to GOTV-specific flows. This transformation is designed, not improvised — it's part of the navigation model and persona views.</p>
+<h2 id="glossary" tabindex="-1"><a class="heading-anchor" href="#glossary" aria-hidden="true">#</a> Glossary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Field mode</strong></td>
+<td>Full-screen mobile takeover for active shift work (canvassing, phone banking, voter registration, GOTV). Replaces the normal navigation shell entirely.</td>
+</tr>
+<tr>
+<td><strong>Navigation shell</strong></td>
+<td>The persistent UI frame around content: header bar, sidebar (desktop), bottom tab bar (mobile).</td>
+</tr>
+<tr>
+<td><strong>Role template</strong></td>
+<td>A named collection of permissions and navigation items assigned to a user. Determines what the user sees.</td>
+</tr>
+<tr>
+<td><strong>Persona</strong></td>
+<td>One of 10 archetypal users: Org Admin, Communications Director, Finance Director, Field Director, Volunteer Coordinator, Data Manager, Volunteer, Team Lead, Candidate, Supporter.</td>
+</tr>
+<tr>
+<td><strong>Layout group</strong></td>
+<td>A SvelteKit routing concept: routes grouped under a shared layout without affecting the URL. GreenGrass uses six: <code>(public)</code>, <code>(auth)</code>, <code>(app)</code>, <code>(field-mode)</code>, <code>(portal)</code>, <code>(wizard)</code>.</td>
+</tr>
+<tr>
+<td><strong>Universal chrome</strong></td>
+<td>UI elements present in all navigation contexts (except field mode): sync indicator, notification bell, user menu, language switcher, help access.</td>
+</tr>
+<tr>
+<td><strong>Detail panel</strong></td>
+<td>A contextual right panel on desktop that shows additional information without navigating away (e.g., viewing a contact while browsing a list).</td>
+</tr>
+<tr>
+<td><strong>Duress mode</strong></td>
+<td>A security feature where logging in with a special passkey shows a sanitized version of the platform with plausible but scrubbed data.</td>
+</tr>
+<tr>
+<td><strong>War room</strong></td>
+<td>The real-time GOTV operations center active on election day. Includes turnout tracking, resource reallocation, issue escalation, and communication coordination.</td>
+</tr>
+<tr>
+<td><strong>Alliance</strong></td>
+<td>A federation of sovereign organizations sharing resources, coordinating campaigns, and splitting fundraising through explicit sharing rules.</td>
+</tr>
+<tr>
+<td><strong>GOTV</strong></td>
+<td>Get Out The Vote — election day operations focused on ensuring identified supporters actually vote.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cross-references-to-specs" tabindex="-1"><a class="heading-anchor" href="#cross-references-to-specs" aria-hidden="true">#</a> Cross-References to Specs</h2>
+<table>
+<thead>
+<tr>
+<th>UX Concept</th>
+<th>Primary Spec</th>
+<th>Key Sections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Personas and roles</td>
+<td><code>spec/users.md</code></td>
+<td>All 10 personas, role templates, permissions</td>
+</tr>
+<tr>
+<td>Core workflows</td>
+<td><code>spec/workflows.md</code></td>
+<td>12 workflows: canvassing, fundraising, events, etc.</td>
+</tr>
+<tr>
+<td>Security UX</td>
+<td><code>spec/security.md</code></td>
+<td>5-tier model, duress mode, passkey auth, BYOK</td>
+</tr>
+<tr>
+<td>Offline behavior</td>
+<td><code>design/architecture/system.md</code></td>
+<td>Sync protocol, offline DB, conflict resolution</td>
+</tr>
+<tr>
+<td>Election day ops</td>
+<td><code>spec/gotv.md</code></td>
+<td>War room, turnout tracking, GOTV canvassing</td>
+</tr>
+<tr>
+<td>Messaging</td>
+<td><code>spec/messaging.md</code></td>
+<td>DMs, groups, broadcasts, E2E encryption</td>
+</tr>
+<tr>
+<td>Fundraising UX</td>
+<td><code>spec/fundraising.md</code></td>
+<td>Donation forms, donor portal, compliance</td>
+</tr>
+<tr>
+<td>Communications</td>
+<td><code>spec/workflows.md</code> + <code>spec/press.md</code></td>
+<td>Email, SMS, social media, press</td>
+</tr>
+<tr>
+<td>Localization</td>
+<td><code>spec/geography.md</code></td>
+<td>5 target countries, RTL, multilingual</td>
+</tr>
+<tr>
+<td>Support &amp; help</td>
+<td><code>spec/support.md</code></td>
+<td>8 onboarding wizards, knowledge base, concierge</td>
+</tr>
+<tr>
+<td>Compliance</td>
+<td><code>spec/compliance.md</code></td>
+<td>Campaign finance, data protection, consent</td>
+</tr>
+<tr>
+<td>System architecture</td>
+<td><code>design/architecture/system.md</code></td>
+<td>SvelteKit + Capacitor, API-first, tenant isolation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<p>UX-specific decisions are recorded in <code>decisions/ux-decisions.md</code>. This document covers wireframe structural conventions, design token integration approach, offline behavior specification, terminology conventions, and screen ID assignment.</p>
+<p>Key decisions already made during Phase 1 IA work:</p>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Document</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desktop navigation paradigm</td>
+<td>Hybrid: top bar (context) + sidebar (features)</td>
+<td><a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a></td>
+</tr>
+<tr>
+<td>Role stacking in navigation</td>
+<td>Grouped sections with collapsible headers</td>
+<td><a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a></td>
+</tr>
+<tr>
+<td>Alliance navigation</td>
+<td>Dedicated alliance section in sidebar</td>
+<td><a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a></td>
+</tr>
+<tr>
+<td>Duress mode navigation</td>
+<td>Sanitized real structure with scrubbed data</td>
+<td><a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a></td>
+</tr>
+<tr>
+<td>Offline feature degradation</td>
+<td>Grey out with offline badge (stable navigation)</td>
+<td><a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a></td>
+</tr>
+</tbody>
+</table>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#reading-order"># Reading Order</a></li><li class="toc-3"><a href="#phase-1-information-architecture"># Phase 1: Information Architecture</a></li><li class="toc-3"><a href="#phase-2-global-patterns"># Phase 2: Global Patterns</a></li><li class="toc-3"><a href="#phase-3-design-system-foundations"># Phase 3: Design System Foundations</a></li><li class="toc-3"><a href="#phase-4-wireframes"># Phase 4: Wireframes</a></li><li class="toc-3"><a href="#wireframe-audit"># Wireframe Audit</a></li><li class="toc-2"><a href="#ux-principles"># UX Principles</a></li><li class="toc-3"><a href="#1-the-volunteer-in-the-field-comes-first"># 1. The volunteer in the field comes first</a></li><li class="toc-3"><a href="#2-invisible-complexity"># 2. Invisible complexity</a></li><li class="toc-3"><a href="#3-offline-is-not-an-error-state"># 3. Offline is not an error state</a></li><li class="toc-3"><a href="#4-stability-over-dynamism-in-navigation"># 4. Stability over dynamism in navigation</a></li><li class="toc-3"><a href="#5-security-is-invisible-until-it-matters"># 5. Security is invisible until it matters</a></li><li class="toc-3"><a href="#6-respect-the-device"># 6. Respect the device</a></li><li class="toc-3"><a href="#7-rtl-is-structural-not-decorative"># 7. RTL is structural, not decorative</a></li><li class="toc-3"><a href="#8-election-day-is-a-different-app"># 8. Election day is a different app</a></li><li class="toc-2"><a href="#glossary"># Glossary</a></li><li class="toc-2"><a href="#cross-references-to-specs"># Cross-References to Specs</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li></ul></nav></div>
+</div>
+<script src="../../assets/search.js" defer></script>
+<script src="../../assets/app.js" defer></script>
+</body>
+</html>

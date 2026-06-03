@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADR-006: Field Operations &amp; GOTV · GreenGrass</title>
+<meta name="description" content="ADR-006: Field Operations &amp; GOTV — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../spec/product.html">Project: GreenGrass</a></li><li><a href="../spec/users.html">Users &amp; Roles</a></li><li><a href="../spec/workflows.html">Core Workflows</a></li><li><a href="../spec/geography.html">Target Geography</a></li><li><a href="../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../spec/integrations.html">External Integrations</a></li><li><a href="../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="./002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="./003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="./004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="./005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="./006-field-operations-gotv.html" aria-current="page" class="active">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="./007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="./008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="./009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="./010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="./011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="./012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="./013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="./014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="./015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="./016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="./ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Decisions</nav>
+    <article class="prose">
+<h1 id="adr-006-field-operations-gotv" tabindex="-1"><a class="heading-anchor" href="#adr-006-field-operations-gotv" aria-hidden="true">#</a> ADR-006: Field Operations &amp; GOTV</h1>
+<p><strong>Status:</strong> Accepted
+<strong>Date:</strong> 2026-03-03
+<strong>Sources:</strong> <code>spec/gotv.md</code>, <code>spec/workflows.md</code>, <code>design/ux/04-wireframes/field-mode/field-mode.md</code>, <code>design/ux/03-design-system/foundations.md</code></p>
+<h2 id="context" tabindex="-1"><a class="heading-anchor" href="#context" aria-hidden="true">#</a> Context</h2>
+<p>Field operations — canvassing, voter registration drives, phone banking, and GOTV — are the most operationally intense workflows in the platform. Election day in particular compresses all campaign activity into a few hours with fixed deadlines (polls close). These workflows demand a purpose-built interface optimized for one-handed mobile use while walking, in variable lighting, with unreliable connectivity. The standard platform UI, designed for desktop and general mobile use, is too complex and too small-targeted for field conditions.</p>
+<p>GOTV operations also require the platform to make real-time resource allocation decisions — shifting canvassers from high-turnout to low-turnout areas, routing ride requests to nearby drivers, and managing communication waves to unvoted supporters.</p>
+<h2 id="decision" tabindex="-1"><a class="heading-anchor" href="#decision" aria-hidden="true">#</a> Decision</h2>
+<h3 id="automated-gotv-universe-builder" tabindex="-1"><a class="heading-anchor" href="#automated-gotv-universe-builder" aria-hidden="true">#</a> Automated GOTV universe builder</h3>
+<p>The platform generates the GOTV universe automatically based on configurable criteria: support score thresholds, voting history filters, geographic filters. Campaign staff review, adjust segments, add/remove voters, and finalize. This reduces manual work for building the target list and ensures consistency, while preserving human control over the final universe.</p>
+<p>Turnout data (early voting, canvasser reports, phone banker confirmations, voter self-reports) feeds back into the universe with confidence-weighted confirmations: official election data removes voters from contact lists entirely, while canvasser/phone banker reports deprioritize but don't fully remove (acknowledging the lower certainty of field reports).</p>
+<p><strong>Alternatives considered:</strong> Fully manual universe building was rejected because it's error-prone at scale and wastes staff time on mechanical work. Fully automated with no review was rejected because campaign staff understand political nuances the algorithm cannot capture.</p>
+<h3 id="api-ready-but-manual-first-electoral-data-integration" tabindex="-1"><a class="heading-anchor" href="#api-ready-but-manual-first-electoral-data-integration" aria-hidden="true">#</a> API-ready but manual-first electoral data integration</h3>
+<p>Electoral commission integration points are designed as adapter slots, but all countries start with manual workflows (file upload/download). API integrations are built only when a specific pilot demands it. Electoral commission APIs are rare, unreliable, and vary wildly by country — speculative API work would be wasted.</p>
+<p>Early/absentee voting data follows the same pattern: real-time feeds where jurisdictions provide them, manual upload as universal fallback.</p>
+<h3 id="configurable-gotv-communication-waves" tabindex="-1"><a class="heading-anchor" href="#configurable-gotv-communication-waves" aria-hidden="true">#</a> Configurable GOTV communication waves</h3>
+<p>The election day communication sequence (morning reminder, midday follow-up, afternoon push, final push) is independently configurable per wave: each can be fully automated or manual-trigger. Morning reminders might auto-send, while the final push might wait for staff to review real-time turnout data before triggering.</p>
+<p><strong>Alternatives considered:</strong> Fully automated waves were rejected because the final push decision depends on real-time context that only war room staff can assess. Fully manual was rejected because morning reminders are routine and shouldn't require human intervention.</p>
+<h3 id="field-mode-renders-at-phone-size-on-larger-devices" tabindex="-1"><a class="heading-anchor" href="#field-mode-renders-at-phone-size-on-larger-devices" aria-hidden="true">#</a> Field mode renders at phone size on larger devices</h3>
+<p>Field mode is a full-screen takeover that completely replaces normal navigation — no sidebar, tabs, or extraneous notifications. The volunteer's world is the walk list until the shift ends. On tablets or desktops, field mode still renders at phone dimensions to maintain the one-handed, walking-optimized interface. Tablets and desktops accessing field operations are redirected to the management view.</p>
+<p>The shift lifecycle is a first-class event boundary: start shift downloads data → field mode active → end shift triggers sync + debrief + hour logging + turf release → return to normal shell. Crash recovery shows last position and allows resume.</p>
+<h3 id="44px-touch-targets-standard-48px-in-field-mode" tabindex="-1"><a class="heading-anchor" href="#44px-touch-targets-standard-48px-in-field-mode" aria-hidden="true">#</a> 44px touch targets standard, 48px in field mode</h3>
+<p>Default touch targets are 44px minimum (WCAG 2.1 AAA). Field mode increases to 56px minimum to account for walking, one-handed use, poor lighting, and gloves. Issue checkboxes in poll watcher forms use 44px tap areas. &quot;Not Home&quot; auto-advances after 3 seconds to minimize dwell time between doors.</p>
+<p>Dynamic resource reallocation on election day uses automatic suggestions with human approval: the platform analyzes real-time turnout data and surfaces reallocation recommendations (&quot;Precinct 7 at 35% turnout — consider shifting canvassers from Precinct 12 at 78%&quot;). War room staff approve, reject, or modify each suggestion.</p>
+<h2 id="consequences" tabindex="-1"><a class="heading-anchor" href="#consequences" aria-hidden="true">#</a> Consequences</h2>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Automated universe builder scales to campaigns with hundreds of thousands of target voters</li>
+<li>Manual-first electoral data integration avoids wasted work on unreliable APIs while keeping the architecture ready for future automation</li>
+<li>Configurable communication waves balance automation efficiency with human judgment for high-stakes decisions</li>
+<li>Field mode's full-screen takeover eliminates distractions and ensures usability in challenging physical conditions</li>
+<li>Larger touch targets in field mode reduce errors during walking/one-handed use</li>
+</ul>
+<p><strong>Costs:</strong></p>
+<ul>
+<li>Field mode is essentially a separate application shell requiring its own design, testing, and maintenance</li>
+<li>GOTV universe builder requires tuning per-country (different voter history data, support scoring models)</li>
+<li>Election day sync priority and reallocation engine add significant real-time infrastructure requirements</li>
+<li>Field mode on tablets/desktops showing phone-sized UI is suboptimal for users who want to use larger screens in the field</li>
+</ul>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>Field mode must work fully offline (see <a href="./005-offline-first-sync.html">ADR-005</a>)</li>
+<li>Walk list data must be pre-downloadable within reasonable bandwidth and storage limits</li>
+<li>Election day sync interval drops to near-real-time (every 30 seconds) — infrastructure must handle this at peak volunteer load</li>
+<li>Reallocation suggestions must update within 30 seconds of underlying turnout data changes</li>
+</ul>
+<p><strong>Related ADRs:</strong> <a href="./005-offline-first-sync.html">ADR-005</a> (offline-first field operations), <a href="./011-design-system-ux.html">ADR-011</a> (touch targets, spacing, performance budgets), <a href="./013-analytics-ai.html">ADR-013</a> (real-time analytics for election day dashboards)</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#context"># Context</a></li><li class="toc-2"><a href="#decision"># Decision</a></li><li class="toc-3"><a href="#automated-gotv-universe-builder"># Automated GOTV universe builder</a></li><li class="toc-3"><a href="#api-ready-but-manual-first-electoral-data-integration"># API-ready but manual-first electoral data integration</a></li><li class="toc-3"><a href="#configurable-gotv-communication-waves"># Configurable GOTV communication waves</a></li><li class="toc-3"><a href="#field-mode-renders-at-phone-size-on-larger-devices"># Field mode renders at phone size on larger devices</a></li><li class="toc-3"><a href="#44px-touch-targets-standard-48px-in-field-mode"># 44px touch targets standard, 48px in field mode</a></li><li class="toc-2"><a href="#consequences"># Consequences</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -21,3 +21,5 @@ The diary captures the process, decisions, surprises, and lessons learned from d
 7. **[Reconciling the Architecture](07-reconciling-the-architecture.md)** — Updating the system architecture document to reflect ADR-016 decisions. 22 changes: 2 new sections (Data Retention, Election Day), 1 rewrite (AI Integration for BYOM), 19 augmentations. The BYOK + BYOM tension documented.
 
 8. **[Housekeeping](08-housekeeping.md)** — Documentation audit and consistency fixes. Stale READMEs, scrambled numbering in the UX overview, missing diary entries. Creating a memory file for session persistence. The project is now ready for implementation.
+
+9. **[The Documentation Website](09-the-documentation-website.md)** — Turning ~80 Markdown files into a browsable website with a sidebar table of contents. A custom static generator over a docs framework, styled with GreenGrass's own design tokens. How the build became an audit and caught 33 broken links, and why the Markdown stays canonical while the site is just the front door.

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pattern Catalog · GreenGrass</title>
+<meta name="description" content="Pattern Catalog — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="./pattern-catalog.html" aria-current="page" class="active">Pattern Catalog</a></li><li><a href="./offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="./notification-patterns.html">Notification Patterns</a></li><li><a href="./search-patterns.html">Search Patterns</a></li><li><a href="./settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="./security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="pattern-catalog" tabindex="-1"><a class="heading-anchor" href="#pattern-catalog" aria-hidden="true">#</a> Pattern Catalog</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document inventories the recurring UI patterns used across GreenGrass. Each pattern is a reusable interaction model that appears in multiple screens and feature areas. Defining them here ensures consistency — the same pattern should look and behave the same way everywhere it appears.</p>
+<p>This catalog is the reference for component design (Phase 3) and wireframing (Phase 4). Individual patterns that require deep specification (offline/sync, notifications, search, security) have their own documents in this directory.</p>
+<h2 id="pattern-summary" tabindex="-1"><a class="heading-anchor" href="#pattern-summary" aria-hidden="true">#</a> Pattern Summary</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Pattern</th>
+<th>Screen Count</th>
+<th>Offline</th>
+<th>Mobile-Primary</th>
+<th>Key Personas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>List View</td>
+<td>~23</td>
+<td>Partial</td>
+<td>Some</td>
+<td>All staff</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Detail View</td>
+<td>~14</td>
+<td>Partial</td>
+<td>Some</td>
+<td>All staff</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Create/Edit Form</td>
+<td>~29</td>
+<td>No</td>
+<td>Few</td>
+<td>Staff creators</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Builder Interface</td>
+<td>~8</td>
+<td>No</td>
+<td>No</td>
+<td>Staff creators</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Wizard Flow</td>
+<td>8</td>
+<td>No</td>
+<td>2</td>
+<td>OA, V</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Dashboard</td>
+<td>~21</td>
+<td>No</td>
+<td>Some</td>
+<td>All staff, C</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Map Interface</td>
+<td>6</td>
+<td>1</td>
+<td>1</td>
+<td>OA, FiD, V, TL</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Calendar/Schedule</td>
+<td>~4</td>
+<td>No</td>
+<td>Some</td>
+<td>OA, VC, CD</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Composer</td>
+<td>~5</td>
+<td>No</td>
+<td>Some</td>
+<td>OA, CD, FiD</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Approval Queue</td>
+<td>~3</td>
+<td>No</td>
+<td>1</td>
+<td>C, CD, FD</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Review Queue</td>
+<td>~5</td>
+<td>Partial</td>
+<td>1</td>
+<td>OA, DM, FiD</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Check-in Tool</td>
+<td>4</td>
+<td>Yes</td>
+<td>All</td>
+<td>VC, TL, V</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Pipeline/Kanban</td>
+<td>1</td>
+<td>No</td>
+<td>No</td>
+<td>OA, CD</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Import/Export Flow</td>
+<td>5</td>
+<td>No</td>
+<td>No</td>
+<td>OA, DM</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Configuration Panel</td>
+<td>~16</td>
+<td>No</td>
+<td>No</td>
+<td>OA</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Side-by-Side Comparison</td>
+<td>~3</td>
+<td>No</td>
+<td>No</td>
+<td>OA, DM</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Split View / Detail Panel</td>
+<td>~6</td>
+<td>Partial</td>
+<td>No</td>
+<td>All staff</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Field Mode (Full-Screen)</td>
+<td>~16</td>
+<td>Yes</td>
+<td>All</td>
+<td>V, TL</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Real-Time Dashboard</td>
+<td>~3</td>
+<td>No</td>
+<td>Some</td>
+<td>OA, FiD</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Contextual Thread</td>
+<td>~4</td>
+<td>Partial</td>
+<td>Yes</td>
+<td>All staff</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="1-list-view" tabindex="-1"><a class="heading-anchor" href="#1-list-view" aria-hidden="true">#</a> 1. List View</h2>
+<p>The most common pattern in the platform. A filterable, sortable, searchable collection of records.</p>
+<h3 id="where-it-appears" tabindex="-1"><a class="heading-anchor" href="#where-it-appears" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Contacts (CRM-001), Segments (CRM-005), Import History (CRM-012), Canvassing Campaigns (CANV-001), Walk Lists (CANV-006), Phone Bank Campaigns (PHONE-001), Voter Reg Drives (VREG-001), Donations (FUND-001), Fundraising Campaigns (FUND-018), Email Campaigns (COMM-001), Email Templates (COMM-004), Events (EVT-001), Activism Campaigns (ACT-001), Media Contacts (PRESS-001), Media Lists (PRESS-003), Coverage Log (PRESS-010), Talking Points (PRESS-014), Message Inbox (MSG-001), Staff List (SET-004), Alliance Members (ALLY-002), Poll Watcher Issues (GOTV-016).</p>
+<h3 id="anatomy" tabindex="-1"><a class="heading-anchor" href="#anatomy" aria-hidden="true">#</a> Anatomy</h3>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  [Search...]          [Filter ▾]  [Sort ▾]  [+ New]  │  ← Action bar
+├──────────────────────────────────────────────────────┤
+│  ☐  Name            Status      Date        Actions  │  ← Column headers
+├──────────────────────────────────────────────────────┤
+│  ☐  Record 1        Active      Jan 15      ⋯       │
+│  ☐  Record 2        Draft       Jan 14      ⋯       │
+│  ☐  Record 3        Active      Jan 13      ⋯       │
+│  ...                                                  │
+├──────────────────────────────────────────────────────┤
+│  ◀  Page 1 of 12  ▶          Showing 1-25 of 287    │  ← Pagination
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="behaviors" tabindex="-1"><a class="heading-anchor" href="#behaviors" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Search</strong> — debounced text search across key fields (name, email, title). Server-side.</li>
+<li><strong>Filters</strong> — contextual to the list type. Filters shown as chips above the list when active. &quot;Clear all&quot; to reset.</li>
+<li><strong>Sort</strong> — click column header to sort. Ascending/descending toggle. Default sort varies by list (most recent first for activity, alphabetical for contacts).</li>
+<li><strong>Bulk actions</strong> — select multiple rows via checkboxes. Bulk action bar appears at top (delete, export, tag, assign). Limited to safe operations.</li>
+<li><strong>Row actions</strong> — overflow menu (⋯) on each row for quick actions (edit, duplicate, delete, archive).</li>
+<li><strong>Row click</strong> — navigates to detail view. On desktop with detail panel, opens in the right panel. On mobile, navigates to a full-screen detail view.</li>
+<li><strong>Empty state</strong> — when the list has no records, show a persona-specific prompt (&quot;Create your first canvassing campaign&quot; for a Field Director, &quot;Import your voter file&quot; for a Data Manager).</li>
+<li><strong>Loading</strong> — skeleton rows (not spinner) while data loads.</li>
+<li><strong>Pagination</strong> — server-side pagination. 25 rows default. User can change to 50 or 100. Infinite scroll on mobile.</li>
+</ul>
+<h3 id="mobile-variant" tabindex="-1"><a class="heading-anchor" href="#mobile-variant" aria-hidden="true">#</a> Mobile Variant</h3>
+<p>On mobile, the list view becomes a vertical card list:</p>
+<ul>
+<li>No table columns — each record is a card with key info stacked vertically</li>
+<li>Search and filter accessible via top bar icons</li>
+<li>Swipe actions on cards (archive, delete) where appropriate</li>
+<li>Pull-to-refresh</li>
+<li>Infinite scroll instead of pagination</li>
+</ul>
+<h3 id="offline-variant" tabindex="-1"><a class="heading-anchor" href="#offline-variant" aria-hidden="true">#</a> Offline Variant</h3>
+<p>Most lists require connectivity. Exception: the message inbox (MSG-001) shows cached conversations when offline, with a banner indicating the list may not be current.</p>
+<hr>
+<h2 id="2-detail-view" tabindex="-1"><a class="heading-anchor" href="#2-detail-view" aria-hidden="true">#</a> 2. Detail View</h2>
+<p>A comprehensive view of a single record, showing all fields, related records, history, and available actions.</p>
+<h3 id="where-it-appears-1" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-1" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Contact Detail (CRM-002), Donation Detail (FUND-002), Event Detail (EVT-003), Media Contact Detail (PRESS-002), Endorsement Detail (PRESS-013), Conversation View (MSG-002/003), Supporter Profile (SUP-006), Canvassing Results (CANV-013).</p>
+<h3 id="anatomy-1" tabindex="-1"><a class="heading-anchor" href="#anatomy-1" aria-hidden="true">#</a> Anatomy</h3>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  ← Back    Record Name                [Edit] [⋯]    │  ← Header
+├──────────────────────────────────────────────────────┤
+│  ┌─────────────────────┐  ┌────────────────────────┐ │
+│  │ Key info             │  │ Status / tags          │ │
+│  │ (name, type, date)   │  │ (active, flagged, etc) │ │
+│  └─────────────────────┘  └────────────────────────┘ │
+├──────────────────────────────────────────────────────┤
+│  [Overview] [Activity] [Related] [Notes]             │  ← Tabs
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  Tab content (fields, timeline, linked records, etc)  │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="behaviors-1" tabindex="-1"><a class="heading-anchor" href="#behaviors-1" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Header</strong> — record name/title, primary status, edit button, overflow menu (delete, duplicate, merge, export).</li>
+<li><strong>Tabs</strong> — organize related information without overwhelming. Common tabs: Overview (primary fields), Activity (timeline of interactions), Related (linked records — a contact's donations, events, communications), Notes (free-form notes).</li>
+<li><strong>Edit action</strong> — navigates to the edit form (or enables inline editing for simple fields).</li>
+<li><strong>Related records</strong> — shown as mini-lists within tabs. Clicking a related record navigates to its detail view.</li>
+<li><strong>Activity timeline</strong> — chronological feed of all interactions with this record (emails sent, donations received, events attended, notes added, status changes). Each entry links to its source.</li>
+</ul>
+<h3 id="mobile-variant-1" tabindex="-1"><a class="heading-anchor" href="#mobile-variant-1" aria-hidden="true">#</a> Mobile Variant</h3>
+<ul>
+<li>Full-screen view. Back button returns to list.</li>
+<li>Tabs become a horizontal scrollable tab bar or collapsible sections.</li>
+<li>Key info card is sticky at top when scrolling.</li>
+</ul>
+<h3 id="desktop-with-detail-panel" tabindex="-1"><a class="heading-anchor" href="#desktop-with-detail-panel" aria-hidden="true">#</a> Desktop with Detail Panel</h3>
+<p>On desktop, detail views can open in the right panel (split view) while the list remains visible on the left. The user can navigate between records in the list without losing the detail panel context. The panel can be dismissed or expanded to full-screen.</p>
+<hr>
+<h2 id="3-createedit-form" tabindex="-1"><a class="heading-anchor" href="#3-createedit-form" aria-hidden="true">#</a> 3. Create/Edit Form</h2>
+<p>Structured data entry for creating or modifying records. The most varied pattern — forms range from 3-field contact creation to 20+ field campaign configuration.</p>
+<h3 id="where-it-appears-2" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-2" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Contact Create/Edit (CRM-003), Campaign Create/Edit (CANV-002, PHONE-002, VREG-002, FUND-019), Event Create/Edit (EVT-002), Group Create/Edit (MSG-005), Refund Processing (FUND-009), Pledge Management (FUND-008), and many more — ~29 screens.</p>
+<h3 id="anatomy-2" tabindex="-1"><a class="heading-anchor" href="#anatomy-2" aria-hidden="true">#</a> Anatomy</h3>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  ← Back    Create [Record Type]      [Save] [Cancel] │  ← Header
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  Section: Basic Information                    [▾]    │
+│  ┌─────────────────────────────────────────────────┐  │
+│  │ Field Label *              [input value      ]  │  │
+│  │ Field Label                [input value      ]  │  │
+│  │ Field Label *              [dropdown ▾       ]  │  │
+│  └─────────────────────────────────────────────────┘  │
+│                                                       │
+│  Section: Additional Details                   [▸]    │  ← Collapsed
+│                                                       │
+│  Section: Settings                             [▸]    │  ← Collapsed
+│                                                       │
+├──────────────────────────────────────────────────────┤
+│  [Cancel]                                     [Save]  │  ← Sticky footer
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="behaviors-2" tabindex="-1"><a class="heading-anchor" href="#behaviors-2" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Progressive disclosure</strong> — organize fields in collapsible sections. Required fields visible by default; optional/advanced fields in collapsed sections. Reduces cognitive load for simple use cases.</li>
+<li><strong>Validation</strong> — inline validation on blur (not keystroke). Error messages appear below the field. Required fields marked with asterisk. Form-level validation on submit if inline checks pass.</li>
+<li><strong>Auto-save</strong> — for complex forms (campaign creation, event setup), auto-save drafts every 30 seconds. Drafts visible in the parent list with &quot;Draft&quot; status badge.</li>
+<li><strong>Sticky save/cancel</strong> — action buttons stick to the bottom of the viewport so they're always accessible during long forms.</li>
+<li><strong>Dirty state</strong> — if the user navigates away with unsaved changes, show a confirmation dialog (&quot;You have unsaved changes. Discard?&quot;).</li>
+<li><strong>Help text</strong> — brief explanatory text below complex fields. For compliance-sensitive fields, include &quot;Why is this required?&quot; expandable help.</li>
+</ul>
+<h3 id="mobile-variant-2" tabindex="-1"><a class="heading-anchor" href="#mobile-variant-2" aria-hidden="true">#</a> Mobile Variant</h3>
+<ul>
+<li>Full-screen form. Sections stack vertically.</li>
+<li>Large input fields with appropriate mobile keyboards (numeric for phone, email for email).</li>
+<li>Sticky save button at bottom of screen.</li>
+<li>Collapsed sections show a preview of their content (first field value) when collapsed.</li>
+</ul>
+<hr>
+<h2 id="4-builder-interface" tabindex="-1"><a class="heading-anchor" href="#4-builder-interface" aria-hidden="true">#</a> 4. Builder Interface</h2>
+<p>Visual, interactive editors for composing complex structured content. These are the platform's power tools — complex enough to warrant desktop-only design.</p>
+<h3 id="sub-types" tabindex="-1"><a class="heading-anchor" href="#sub-types" aria-hidden="true">#</a> Sub-Types</h3>
+<h4 id="email-builder-comm-002-comm-003" tabindex="-1"><a class="heading-anchor" href="#email-builder-comm-002-comm-003" aria-hidden="true">#</a> Email Builder (COMM-002, COMM-003)</h4>
+<p>Block-based visual editor. Drag-and-drop content blocks (text, image, button, divider, columns). Personalization token insertion (<code>{{first_name}}</code>, <code>{{donation_amount}}</code>). Mobile preview toggle. Compliance disclaimer auto-inserted based on jurisdiction.</p>
+<h4 id="script-builder-canv-003-phone-003" tabindex="-1"><a class="heading-anchor" href="#script-builder-canv-003-phone-003" aria-hidden="true">#</a> Script Builder (CANV-003, PHONE-003)</h4>
+<p>Branching logic editor. Question → response options → conditional next question. Visual flow diagram showing branches. Test mode to walk through the script as a volunteer would experience it.</p>
+<h4 id="segment-builder-crm-004" tabindex="-1"><a class="heading-anchor" href="#segment-builder-crm-004" aria-hidden="true">#</a> Segment Builder (CRM-004)</h4>
+<p>Criteria-based query builder. Add criteria (field, operator, value), combine with AND/OR logic. Real-time count of matching records updates as criteria change. Save as reusable segment.</p>
+<h4 id="donation-form-builder-fund-003" tabindex="-1"><a class="heading-anchor" href="#donation-form-builder-fund-003" aria-hidden="true">#</a> Donation Form Builder (FUND-003)</h4>
+<p>Form layout editor. Configure suggested amounts, payment methods, recurring options, custom fields, branding, compliance disclaimers. Live preview of the public donation form.</p>
+<h4 id="survey-builder-evt-010" tabindex="-1"><a class="heading-anchor" href="#survey-builder-evt-010" aria-hidden="true">#</a> Survey Builder (EVT-010)</h4>
+<p>Question editor. Add questions (multiple choice, open-ended, rating scale, NPS). Drag-to-reorder. Conditional display rules. Preview mode.</p>
+<h3 id="common-behaviors" tabindex="-1"><a class="heading-anchor" href="#common-behaviors" aria-hidden="true">#</a> Common Behaviors</h3>
+<ul>
+<li><strong>Live preview</strong> — all builders show a real-time preview of the output. For email and donation forms, this includes a mobile preview toggle.</li>
+<li><strong>Template library</strong> — start from a template or blank. Save current work as a new template.</li>
+<li><strong>Undo/redo</strong> — essential for complex editing. Keyboard shortcuts (Ctrl+Z/Ctrl+Y).</li>
+<li><strong>Version history</strong> — auto-saved versions. Can restore a previous version.</li>
+<li><strong>Desktop-only</strong> — builders require full-width screens for the editing canvas + preview pane. Not available on mobile.</li>
+</ul>
+<hr>
+<h2 id="5-wizard-flow" tabindex="-1"><a class="heading-anchor" href="#5-wizard-flow" aria-hidden="true">#</a> 5. Wizard Flow</h2>
+<p>Guided multi-step processes for complex setup tasks. See also: <code>settings-help-patterns.md</code> for onboarding details.</p>
+<h3 id="where-it-appears-3" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-3" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Org Setup (WIZ-001), Payment Processor (WIZ-002), BYOK Key Generation (WIZ-003), Compliance Configuration (WIZ-004), WhatsApp Business Setup (WIZ-005), SMS Number Setup (WIZ-006), Voter File Import (WIZ-007), Volunteer Onboarding (WIZ-008).</p>
+<h3 id="anatomy-3" tabindex="-1"><a class="heading-anchor" href="#anatomy-3" aria-hidden="true">#</a> Anatomy</h3>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  [Logo]           Step 3 of 7            [Save &amp; Exit]│  ← Wizard header
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  ○───●───●───○───○───○───○                            │  ← Progress bar
+│       Step 1  Step 2  Step 3                          │
+│                                                       │
+│  ┌─────────────────────────────────────────────────┐  │
+│  │                                                 │  │
+│  │  Step-specific content                          │  │
+│  │  (form fields, instructions, confirmation)      │  │
+│  │                                                 │  │
+│  └─────────────────────────────────────────────────┘  │
+│                                                       │
+├──────────────────────────────────────────────────────┤
+│  [← Back]                                  [Next →]   │  ← Step navigation
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="behaviors-3" tabindex="-1"><a class="heading-anchor" href="#behaviors-3" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Progress indicator</strong> — shows completed, current, and remaining steps. Steps can be labeled or numbered.</li>
+<li><strong>Step validation</strong> — each step validates before allowing progression. Back is always available.</li>
+<li><strong>Save &amp; Exit</strong> — persists wizard state. Returning to the wizard resumes at the last completed step.</li>
+<li><strong>Contextual help</strong> — each step can have inline help text and links to knowledge base articles.</li>
+<li><strong>Completion state</strong> — final step shows a summary of what was configured and suggests next actions.</li>
+<li><strong>Sidebar replaced</strong> — during a wizard, the sidebar shows wizard step names instead of normal navigation (per <a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a>).</li>
+</ul>
+<hr>
+<h2 id="6-dashboard" tabindex="-1"><a class="heading-anchor" href="#6-dashboard" aria-hidden="true">#</a> 6. Dashboard</h2>
+<p>Visual summaries of key metrics organized in widget grids. Each persona has a different default dashboard.</p>
+<h3 id="where-it-appears-4" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-4" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Campaign Overview (DASH-001), Field Operations (DASH-002), Fundraising (DASH-003), Communications (DASH-004), Volunteer (DASH-005), Data Quality (DASH-006), Compliance (DASH-007), War Room (DASH-008), Team Lead (DASH-009), Candidate (DASH-010), Alliance (DASH-011).</p>
+<h3 id="widget-types" tabindex="-1"><a class="heading-anchor" href="#widget-types" aria-hidden="true">#</a> Widget Types</h3>
+<table>
+<thead>
+<tr>
+<th>Widget</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric card</td>
+<td>Single KPI with trend indicator</td>
+<td>&quot;Total Raised: $47,320 ↑12%&quot;</td>
+</tr>
+<tr>
+<td>Thermometer</td>
+<td>Goal progress bar</td>
+<td>Fundraising goal: 63% of $100K</td>
+</tr>
+<tr>
+<td>Line chart</td>
+<td>Trend over time</td>
+<td>Daily donation totals, 30-day view</td>
+</tr>
+<tr>
+<td>Bar chart</td>
+<td>Comparison across categories</td>
+<td>Doors knocked by turf</td>
+</tr>
+<tr>
+<td>Map heatmap</td>
+<td>Geographic distribution</td>
+<td>Turnout by precinct</td>
+</tr>
+<tr>
+<td>Distribution</td>
+<td>Breakdown by category</td>
+<td>Donors by amount tier</td>
+</tr>
+<tr>
+<td>Alert list</td>
+<td>Items needing attention</td>
+<td>Compliance flags, sync errors</td>
+</tr>
+<tr>
+<td>Activity feed</td>
+<td>Recent actions</td>
+<td>Latest donations, volunteer signups</td>
+</tr>
+</tbody>
+</table>
+<h3 id="behaviors-4" tabindex="-1"><a class="heading-anchor" href="#behaviors-4" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Date range filter</strong> — dashboards default to a relevant range (today for war room, this month for fundraising, this campaign for field). User can adjust.</li>
+<li><strong>Drill-down</strong> — clicking a metric card or chart navigates to the underlying list or detail view. The metric card is a shortcut, not a dead end.</li>
+<li><strong>Refresh</strong> — dashboards show &quot;Last updated: X&quot; timestamp. Manual refresh button. War room dashboard auto-refreshes on a 30-second interval.</li>
+<li><strong>Responsive grid</strong> — widgets reflow based on viewport. Desktop: 2-4 columns. Tablet: 2 columns. Mobile: 1 column, stacked vertically.</li>
+<li><strong>Empty states</strong> — when a metric has no data, the widget shows a contextual message (&quot;No donations yet — set up your first donation form&quot; with a link to the form builder).</li>
+</ul>
+<h3 id="mobile-variant-3" tabindex="-1"><a class="heading-anchor" href="#mobile-variant-3" aria-hidden="true">#</a> Mobile Variant</h3>
+<p>Widgets stack vertically in priority order (most important metric first). Charts simplify to essential elements (fewer axis labels, no legend on small charts). Metric cards become full-width.</p>
+<hr>
+<h2 id="7-map-interface" tabindex="-1"><a class="heading-anchor" href="#7-map-interface" aria-hidden="true">#</a> 7. Map Interface</h2>
+<p>Interactive geographic visualizations for spatial data — turfs, canvassing progress, voter distribution, turnout.</p>
+<h3 id="where-it-appears-5" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-5" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Turf Management (CANV-004), Turf Auto-Generation (CANV-005), Field Mode Map (CANV-009), Canvassing Progress (CANV-014), GOTV Turf Cutting (GOTV-004), Turnout Map (GOTV-017).</p>
+<h3 id="sub-types-1" tabindex="-1"><a class="heading-anchor" href="#sub-types-1" aria-hidden="true">#</a> Sub-Types</h3>
+<h4 id="management-map-desktop" tabindex="-1"><a class="heading-anchor" href="#management-map-desktop" aria-hidden="true">#</a> Management Map (desktop)</h4>
+<p>Full-featured map for creating and managing turfs. Drawing tools (polygon, rectangle), boundary layers (precincts, districts), data overlays (voter density, support scores). Used by Field Directors to plan operations.</p>
+<h4 id="field-map-mobile-offline" tabindex="-1"><a class="heading-anchor" href="#field-map-mobile-offline" aria-hidden="true">#</a> Field Map (mobile, offline)</h4>
+<p>Simplified map for volunteers in the field. Shows current location, walk list route, doors visited vs. remaining. Pre-cached map tiles for offline use. Large touch targets for door selection. No drawing tools — view-only.</p>
+<h4 id="analytics-map-desktop" tabindex="-1"><a class="heading-anchor" href="#analytics-map-desktop" aria-hidden="true">#</a> Analytics Map (desktop)</h4>
+<p>Heatmap overlays for understanding geographic patterns. Turnout by precinct, canvassing coverage, support score distribution. Color-coded legends. Zoom to specific areas.</p>
+<h3 id="common-behaviors-1" tabindex="-1"><a class="heading-anchor" href="#common-behaviors-1" aria-hidden="true">#</a> Common Behaviors</h3>
+<ul>
+<li><strong>Base map</strong> — street map by default. Satellite available for rural areas where street maps are sparse.</li>
+<li><strong>Layers</strong> — toggle data layers on/off. Boundary layers (precincts, turfs), data layers (heatmaps, markers).</li>
+<li><strong>Search</strong> — search by address to navigate to a specific location.</li>
+<li><strong>Zoom/pan</strong> — standard map controls. Auto-fit to data bounds when loading.</li>
+</ul>
+<hr>
+<h2 id="8-calendar-schedule-view" tabindex="-1"><a class="heading-anchor" href="#8-calendar-schedule-view" aria-hidden="true">#</a> 8. Calendar / Schedule View</h2>
+<p>Time-based visualization for events, shifts, and scheduled content.</p>
+<h3 id="where-it-appears-6" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-6" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Post Calendar (SOCIAL-003), Interview Schedule (PRESS-015), Event scheduling (within EVT-002), Shift scheduling (within volunteer management).</p>
+<h3 id="behaviors-5" tabindex="-1"><a class="heading-anchor" href="#behaviors-5" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>View modes</strong> — month, week, day. Default varies by context (week for events, month for content calendar).</li>
+<li><strong>Color coding</strong> — events colored by type, status, or assignment.</li>
+<li><strong>Click to create</strong> — clicking an empty time slot opens a create form for that date/time.</li>
+<li><strong>Click to view</strong> — clicking an existing item opens its detail view.</li>
+<li><strong>Drag to reschedule</strong> — desktop only. Drag items to new time slots.</li>
+</ul>
+<h3 id="mobile-variant-4" tabindex="-1"><a class="heading-anchor" href="#mobile-variant-4" aria-hidden="true">#</a> Mobile Variant</h3>
+<p>Agenda view (vertical list sorted by date) replaces the calendar grid on mobile. Date picker for navigation. Each item is a tappable card.</p>
+<hr>
+<h2 id="9-composer-interface" tabindex="-1"><a class="heading-anchor" href="#9-composer-interface" aria-hidden="true">#</a> 9. Composer Interface</h2>
+<p>Real-time content composition with preview and compliance checking.</p>
+<h3 id="where-it-appears-7" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-7" aria-hidden="true">#</a> Where It Appears</h3>
+<p>SMS/WhatsApp Composer (COMM-005), Post Composer (SOCIAL-002), Press Release Builder (PRESS-004), Media Advisory (PRESS-007), Statement Builder (PRESS-008).</p>
+<h3 id="common-behaviors-2" tabindex="-1"><a class="heading-anchor" href="#common-behaviors-2" aria-hidden="true">#</a> Common Behaviors</h3>
+<ul>
+<li><strong>Character counter</strong> — for SMS and social posts, show remaining characters with warning at thresholds.</li>
+<li><strong>Live preview</strong> — real-time preview of the output as it will appear to recipients. For social media, platform-specific previews (how it looks on Twitter vs. Instagram).</li>
+<li><strong>Personalization tokens</strong> — insert merge tags for recipient-specific content.</li>
+<li><strong>Compliance auto-insertion</strong> — jurisdiction-specific disclaimers added automatically based on tenant configuration.</li>
+<li><strong>Media attachment</strong> — image/file upload with preview.</li>
+<li><strong>Schedule or send</strong> — choose immediate send, scheduled send (date/time picker), or save as draft.</li>
+<li><strong>Approval routing</strong> — if the content type requires approval (Candidate-approved press releases, social posts), the compose flow routes to the approval queue instead of sending directly.</li>
+</ul>
+<hr>
+<h2 id="10-approval-queue" tabindex="-1"><a class="heading-anchor" href="#10-approval-queue" aria-hidden="true">#</a> 10. Approval Queue</h2>
+<p>Review and approve/reject content or actions that require authorization.</p>
+<h3 id="where-it-appears-8" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-8" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Candidate Approval Queue (MSG-013), Compliance Flag Review (FUND-012), press release approval workflows, social media post approval.</p>
+<h3 id="anatomy-4" tabindex="-1"><a class="heading-anchor" href="#anatomy-4" aria-hidden="true">#</a> Anatomy</h3>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Pending Approvals (3)                    [Filters]   │
+├──────────────────────────────────────────────────────┤
+│  ┌────────────────────────────────────────────────┐   │
+│  │  Press Release: &quot;Statement on Education...&quot;    │   │
+│  │  Submitted by: Maria · 2 hours ago  · URGENT  │   │
+│  │  [Preview]    [Approve]  [Reject]  [Comment]   │   │
+│  └────────────────────────────────────────────────┘   │
+│  ┌────────────────────────────────────────────────┐   │
+│  │  Social Post: Instagram · Scheduled 3pm today  │   │
+│  │  Submitted by: Carlos · 45 min ago             │   │
+│  │  [Preview]    [Approve]  [Reject]  [Comment]   │   │
+│  └────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="behaviors-6" tabindex="-1"><a class="heading-anchor" href="#behaviors-6" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Preview</strong> — full preview of the content as it will appear when published/sent.</li>
+<li><strong>Approve/Reject</strong> — single-action buttons. Reject requires a reason (comment).</li>
+<li><strong>Comment</strong> — add feedback without approving or rejecting. Triggers a notification to the submitter.</li>
+<li><strong>Priority</strong> — urgent items visually distinguished (color, position, badge).</li>
+<li><strong>Badge count</strong> — the approval queue count appears as a badge on the mobile tab and sidebar item.</li>
+</ul>
+<hr>
+<h2 id="11-review-queue" tabindex="-1"><a class="heading-anchor" href="#11-review-queue" aria-hidden="true">#</a> 11. Review Queue</h2>
+<p>Structured review for data quality, compliance, and operational decisions. Similar to approval queues but focused on data rather than content.</p>
+<h3 id="where-it-appears-9" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-9" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Dedup Review Queue (CRM-006), Dedup Comparison (CRM-007), Compliance Flag Review (FUND-012), Poll Watcher Issue Queue (GOTV-016), Poll Watcher Issue Report (GOTV-015).</p>
+<h3 id="behaviors-7" tabindex="-1"><a class="heading-anchor" href="#behaviors-7" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Side-by-side comparison</strong> — for dedup, show two records side by side with differences highlighted. Merge controls for each field (keep left, keep right, keep both).</li>
+<li><strong>Categorization</strong> — items categorized by type/severity. Filters by category.</li>
+<li><strong>Escalation</strong> — items can be escalated to a higher authority (poll watcher issues to legal team, compliance flags to Org Admin).</li>
+<li><strong>Resolution</strong> — each item requires a resolution action (merge, dismiss, flag, escalate). Resolution is logged in the audit trail.</li>
+</ul>
+<hr>
+<h2 id="12-check-in-tool" tabindex="-1"><a class="heading-anchor" href="#12-check-in-tool" aria-hidden="true">#</a> 12. Check-in Tool</h2>
+<p>Fast, mobile-first interfaces for confirming attendance at events and operations.</p>
+<h3 id="where-it-appears-10" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-10" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Event Check-in (EVT-005), Staging Location Check-in (GOTV-023), Poll Watcher Check-in (GOTV-014).</p>
+<h3 id="anatomy-5" tabindex="-1"><a class="heading-anchor" href="#anatomy-5" aria-hidden="true">#</a> Anatomy</h3>
+<pre><code>┌──────────────────────────────────┐
+│  Event Check-in    12 of 45 ✓   │
+├──────────────────────────────────┤
+│  [Search name...]                │
+│                                  │
+│  ┌────────────────────────────┐  │
+│  │  Ana Martínez        [✓]  │  │
+│  │  Carlos Reyes        [ ]  │  │
+│  │  Diana Flores        [✓]  │  │
+│  │  Eduardo Vega        [ ]  │  │
+│  └────────────────────────────┘  │
+│                                  │
+│  [Scan QR Code]                  │
+└──────────────────────────────────┘
+</code></pre>
+<h3 id="behaviors-8" tabindex="-1"><a class="heading-anchor" href="#behaviors-8" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Quick search</strong> — type-ahead search to find a specific person. First-letter jump.</li>
+<li><strong>QR scan</strong> — camera-based QR code scanning for fast check-in (if volunteer has a QR code from their invitation).</li>
+<li><strong>Tap to check in</strong> — large touch targets. Checkmark appears immediately with a brief haptic/visual confirmation.</li>
+<li><strong>Undo</strong> — accidental check-in can be undone within 10 seconds.</li>
+<li><strong>Counter</strong> — running count of checked-in vs. expected (&quot;12 of 45 checked in&quot;).</li>
+<li><strong>Offline</strong> — works fully offline. Check-in data stored locally, synced when connected. Clear sync status indicator.</li>
+</ul>
+<hr>
+<h2 id="13-pipeline-kanban-view" tabindex="-1"><a class="heading-anchor" href="#13-pipeline-kanban-view" aria-hidden="true">#</a> 13. Pipeline / Kanban View</h2>
+<p>Stage-based progression view for items moving through a process.</p>
+<h3 id="where-it-appears-11" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-11" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Endorsement Pipeline (PRESS-012): identified → approached → considering → committed → public.</p>
+<h3 id="behaviors-9" tabindex="-1"><a class="heading-anchor" href="#behaviors-9" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Columns</strong> — one per stage. Cards within each column represent items.</li>
+<li><strong>Drag to advance</strong> — drag a card from one column to the next to change its stage.</li>
+<li><strong>Card content</strong> — key info visible on the card (name, date entered stage, urgency).</li>
+<li><strong>Click for detail</strong> — clicking a card opens the full detail view.</li>
+<li><strong>Counts</strong> — each column header shows the count of items in that stage.</li>
+<li><strong>Desktop only</strong> — kanban boards require horizontal space. On mobile, show as a filterable list with stage as a dropdown.</li>
+</ul>
+<hr>
+<h2 id="14-importexport-flow" tabindex="-1"><a class="heading-anchor" href="#14-importexport-flow" aria-hidden="true">#</a> 14. Import/Export Flow</h2>
+<p>Data movement in and out of the platform.</p>
+<h3 id="where-it-appears-12" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-12" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Data Import Wizard (CRM-008 through CRM-011), Import History (CRM-012), Data Export (CRM-013), Early Voting Upload (GOTV-002).</p>
+<h3 id="import-flow" tabindex="-1"><a class="heading-anchor" href="#import-flow" aria-hidden="true">#</a> Import Flow</h3>
+<ol>
+<li><strong>Upload</strong> — drag-and-drop or file picker. Validate format (CSV, Excel). Show file preview.</li>
+<li><strong>Column mapping</strong> — auto-detect column headers, let user confirm/adjust mappings. Show sample data for each mapped field.</li>
+<li><strong>Preview</strong> — show what will be created, updated, or skipped. Highlight potential duplicates.</li>
+<li><strong>Confirm</strong> — summary of actions. &quot;Import X records&quot; button.</li>
+<li><strong>Progress</strong> — progress bar during import. Don't block navigation — import runs in background with notification on completion.</li>
+<li><strong>Report</strong> — post-import summary: X created, Y updated, Z skipped, W errors. Link to review errors.</li>
+</ol>
+<h3 id="export-flow" tabindex="-1"><a class="heading-anchor" href="#export-flow" aria-hidden="true">#</a> Export Flow</h3>
+<ol>
+<li><strong>Select data</strong> — choose record type, apply filters (segment, date range, tags).</li>
+<li><strong>Choose fields</strong> — select which fields to include in the export.</li>
+<li><strong>Choose format</strong> — CSV, Excel, JSON.</li>
+<li><strong>Export</strong> — runs in background. Notification with download link when ready.</li>
+</ol>
+<hr>
+<h2 id="15-configuration-panel" tabindex="-1"><a class="heading-anchor" href="#15-configuration-panel" aria-hidden="true">#</a> 15. Configuration Panel</h2>
+<p>Settings interfaces for platform, feature, and integration configuration.</p>
+<h3 id="where-it-appears-13" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-13" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Org Profile (SET-001), Role Templates (SET-002), Compliance Config (SET-008), Integration Settings (SET-012 through SET-016), Billing (SET-017), Security (SET-019), Encryption (SET-020).</p>
+<h3 id="anatomy-6" tabindex="-1"><a class="heading-anchor" href="#anatomy-6" aria-hidden="true">#</a> Anatomy</h3>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Settings &gt; Compliance                                │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  ▾ Contribution Limits                                │
+│    Individual limit    [$2,900    ]                    │
+│    PAC limit           [$5,000    ]                    │
+│    ⓘ Based on your jurisdiction's requirements        │
+│                                                       │
+│  ▸ Campaign Period                                    │
+│  ▸ Disclaimers                                        │
+│  ▸ Data Retention                                     │
+│                                                       │
+├──────────────────────────────────────────────────────┤
+│  Last modified: Jan 15, 2026 by admin@campaign.org   │
+│  [Cancel]                                     [Save]  │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="behaviors-10" tabindex="-1"><a class="heading-anchor" href="#behaviors-10" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Collapsible sections</strong> — group related settings. Only one or two sections expanded at a time.</li>
+<li><strong>Smart defaults</strong> — pre-filled based on jurisdiction/context. Clearly labeled as defaults.</li>
+<li><strong>Help text</strong> — contextual explanations for each setting. Compliance settings include &quot;Why is this required?&quot; links.</li>
+<li><strong>Change tracking</strong> — shows who last modified and when. Audit trail for all changes.</li>
+<li><strong>Test button</strong> — for integrations, a &quot;Test Connection&quot; button validates the configuration works.</li>
+<li><strong>Desktop only</strong> — configuration interfaces require full-width layouts for complex forms.</li>
+</ul>
+<hr>
+<h2 id="16-side-by-side-comparison" tabindex="-1"><a class="heading-anchor" href="#16-side-by-side-comparison" aria-hidden="true">#</a> 16. Side-by-Side Comparison</h2>
+<p>Dual-pane interface for comparing records, versions, or variants.</p>
+<h3 id="where-it-appears-14" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-14" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Dedup Comparison (CRM-007), A/B Test Results (FUND-014), talking points version comparison.</p>
+<h3 id="behaviors-11" tabindex="-1"><a class="heading-anchor" href="#behaviors-11" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Two-column layout</strong> — record A on the left, record B on the right. Field-by-field alignment.</li>
+<li><strong>Difference highlighting</strong> — fields that differ are highlighted (color-coded). Identical fields are dimmed.</li>
+<li><strong>Merge controls</strong> — for dedup, each differing field has &quot;Keep Left&quot; / &quot;Keep Right&quot; / &quot;Keep Both&quot; controls.</li>
+<li><strong>Preview</strong> — before confirming a merge, show the resulting merged record.</li>
+<li><strong>Desktop only</strong> — requires horizontal space. On tablet, consider a stacked vertical comparison. Not available on phone.</li>
+</ul>
+<hr>
+<h2 id="17-split-view-detail-panel" tabindex="-1"><a class="heading-anchor" href="#17-split-view-detail-panel" aria-hidden="true">#</a> 17. Split View / Detail Panel</h2>
+<p>Two-pane layout with a list or parent view on one side and a detail view on the other. Defined in <a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a> as a core desktop interaction pattern.</p>
+<h3 id="where-it-appears-15" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-15" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Contact list + detail, message inbox + conversation, donation list + detail, event list + detail, issue queue + detail.</p>
+<h3 id="behaviors-12" tabindex="-1"><a class="heading-anchor" href="#behaviors-12" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Desktop only</strong> — on mobile, list and detail are separate full-screen views.</li>
+<li><strong>Resizable</strong> — user can drag the divider to adjust pane proportions. Preference persisted.</li>
+<li><strong>Dismissable</strong> — close button on the detail panel returns to full-width list.</li>
+<li><strong>Navigation within panel</strong> — prev/next arrows in the detail panel header to move through list items without closing the panel.</li>
+<li><strong>Small viewport fallback</strong> — on narrow desktop viewports, the detail panel opens as an overlay instead of a side-by-side split.</li>
+</ul>
+<hr>
+<h2 id="18-field-mode-full-screen-takeover" tabindex="-1"><a class="heading-anchor" href="#18-field-mode-full-screen-takeover" aria-hidden="true">#</a> 18. Field Mode (Full-Screen Takeover)</h2>
+<p>The volunteer's canvassing, phone banking, voter registration, and GOTV interface. A completely different navigation paradigm from the rest of the app. Defined in detail in <a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a>.</p>
+<h3 id="where-it-appears-16" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-16" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Canvassing (CANV-007 through CANV-012), Phone Banking (PHONE-004 through PHONE-006), Voter Registration (VREG-004, VREG-005), GOTV (GOTV-008 through GOTV-010).</p>
+<h3 id="key-characteristics" tabindex="-1"><a class="heading-anchor" href="#key-characteristics" aria-hidden="true">#</a> Key Characteristics</h3>
+<ul>
+<li><strong>Full-screen</strong> — no sidebar, no bottom tabs, no standard navigation. Only the field header and task controls.</li>
+<li><strong>Linear progression</strong> — move through items one at a time (next door, next call, next voter).</li>
+<li><strong>Large touch targets</strong> — designed for one-handed use while standing, walking, or in poor lighting.</li>
+<li><strong>Offline-first</strong> — all data is pre-loaded. Works without connectivity. Syncs when available.</li>
+<li><strong>Minimal decisions</strong> — the interface guides the volunteer through each interaction with clear, simple options.</li>
+<li><strong>Crash recovery</strong> — position in the walk/call list is persisted locally after each interaction. App restarts at the exact same position.</li>
+</ul>
+<p>See also: <code>offline-sync-patterns.md</code> for sync behavior during field mode.</p>
+<hr>
+<h2 id="19-real-time-dashboard-war-room" tabindex="-1"><a class="heading-anchor" href="#19-real-time-dashboard-war-room" aria-hidden="true">#</a> 19. Real-Time Dashboard (War Room)</h2>
+<p>Live-updating operational dashboard for election day and active field operations.</p>
+<h3 id="where-it-appears-17" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-17" aria-hidden="true">#</a> Where It Appears</h3>
+<p>War Room Dashboard (DASH-008), Turnout Dashboard (GOTV-017, GOTV-018), War Room Channel (MSG-007).</p>
+<h3 id="key-differences-from-standard-dashboards" tabindex="-1"><a class="heading-anchor" href="#key-differences-from-standard-dashboards" aria-hidden="true">#</a> Key Differences from Standard Dashboards</h3>
+<ul>
+<li><strong>Auto-refresh</strong> — data updates every 30 seconds (or via WebSocket where available). No manual refresh needed.</li>
+<li><strong>Alert prioritization</strong> — urgent items (low turnout areas, escalated issues, resource gaps) surface prominently.</li>
+<li><strong>Action buttons</strong> — dashboard widgets include inline action buttons (approve reallocation, send message wave, escalate issue). The war room is an action center, not just a display.</li>
+<li><strong>Communication integration</strong> — the war room channel (MSG-007) is integrated into the dashboard view, showing real-time structured updates alongside the data.</li>
+</ul>
+<hr>
+<h2 id="20-contextual-thread" tabindex="-1"><a class="heading-anchor" href="#20-contextual-thread" aria-hidden="true">#</a> 20. Contextual Thread</h2>
+<p>Discussion threads attached to specific platform objects (events, shifts, issues, donations) for collaborative review and coordination.</p>
+<h3 id="where-it-appears-18" tabindex="-1"><a class="heading-anchor" href="#where-it-appears-18" aria-hidden="true">#</a> Where It Appears</h3>
+<p>Event Thread (MSG-008), Shift Thread (MSG-009), Issue Thread (MSG-010), Donation Flag Thread (MSG-011).</p>
+<h3 id="behaviors-13" tabindex="-1"><a class="heading-anchor" href="#behaviors-13" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Attached to parent</strong> — the thread is accessed from the parent object's detail view (e.g., an &quot;Discussion&quot; tab on the event detail page), not from the messaging inbox.</li>
+<li><strong>Same conversation UI</strong> — uses the same message composition and display components as DMs and groups.</li>
+<li><strong>Participants</strong> — automatically includes people associated with the parent object (event organizers, shift volunteers, compliance reviewers).</li>
+<li><strong>Notifications</strong> — new messages in contextual threads notify participants through the standard notification system.</li>
+<li><strong>Offline</strong> — cached threads are readable offline. New messages queue for sync.</li>
+</ul>
+<hr>
+<h2 id="cross-cutting-concerns" tabindex="-1"><a class="heading-anchor" href="#cross-cutting-concerns" aria-hidden="true">#</a> Cross-Cutting Concerns</h2>
+<h3 id="empty-states" tabindex="-1"><a class="heading-anchor" href="#empty-states" aria-hidden="true">#</a> Empty States</h3>
+<p>Every pattern has an empty state — what the user sees when there's no data yet. Empty states are persona-specific:</p>
+<ul>
+<li>They acknowledge the absence of data without making the user feel lost</li>
+<li>They suggest a clear next action (&quot;Create your first event,&quot; &quot;Import your voter file&quot;)</li>
+<li>They link directly to the action they suggest</li>
+<li>They're never just &quot;No data found&quot; — that's a system message, not a UX</li>
+</ul>
+<h3 id="loading-states" tabindex="-1"><a class="heading-anchor" href="#loading-states" aria-hidden="true">#</a> Loading States</h3>
+<ul>
+<li><strong>Lists</strong> — skeleton rows (grey blocks mimicking the layout of real rows)</li>
+<li><strong>Dashboards</strong> — skeleton widgets</li>
+<li><strong>Detail views</strong> — skeleton with the layout structure visible</li>
+<li><strong>Never a full-screen spinner</strong> — the user should always see where they are, even while data loads</li>
+</ul>
+<h3 id="error-states" tabindex="-1"><a class="heading-anchor" href="#error-states" aria-hidden="true">#</a> Error States</h3>
+<ul>
+<li><strong>Inline errors</strong> — form validation errors appear below the specific field</li>
+<li><strong>Toast notifications</strong> — transient errors (network timeout, save failed) appear as toasts with a retry action</li>
+<li><strong>Full-screen error</strong> — only for unrecoverable errors (404, server down). Shows a clear message and a &quot;Go home&quot; link</li>
+<li><strong>Offline-specific errors</strong> — &quot;This feature requires a connection&quot; with an explanation and a suggestion of what they can do offline</li>
+</ul>
+<h3 id="accessibility" tabindex="-1"><a class="heading-anchor" href="#accessibility" aria-hidden="true">#</a> Accessibility</h3>
+<p>All patterns must meet WCAG 2.1 AA:</p>
+<ul>
+<li>Keyboard navigable (tab order, focus indicators, keyboard shortcuts)</li>
+<li>Screen reader compatible (ARIA labels, roles, live regions for dynamic content)</li>
+<li>Color contrast ratios (4.5:1 for text, 3:1 for large text and UI components)</li>
+<li>Touch targets minimum 44x44px on mobile</li>
+<li>No information conveyed by color alone (always paired with text, icon, or pattern)</li>
+</ul>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Drag-and-drop on mobile.</strong> Several patterns use drag-and-drop on desktop (builders, kanban, calendar). What's the mobile equivalent? Long-press to reorder? Or replace with explicit move buttons?</p>
+</li>
+<li>
+<p><strong>Keyboard shortcuts.</strong> Should the platform support a keyboard shortcut layer for power users (e.g., <code>G then D</code> for Dashboard, <code>G then M</code> for Messages)? Low priority but high value for all-day staff users.</p>
+</li>
+<li>
+<p><strong>Dark mode.</strong> Some patterns (especially maps and dashboards) would benefit from a dark mode for election night/war room use. Should dark mode be user-selectable, automatic (time-based), or feature-specific (war room only)?</p>
+</li>
+</ol>
+<!-- REVISIT: The exact component breakdown (which patterns become which components) is deferred to the component-inventory.md in Phase 3. This catalog defines the patterns; the component inventory defines the implementation units. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#pattern-summary"># Pattern Summary</a></li><li class="toc-2"><a href="#1-list-view"># 1. List View</a></li><li class="toc-3"><a href="#where-it-appears"># Where It Appears</a></li><li class="toc-3"><a href="#anatomy"># Anatomy</a></li><li class="toc-3"><a href="#behaviors"># Behaviors</a></li><li class="toc-3"><a href="#mobile-variant"># Mobile Variant</a></li><li class="toc-3"><a href="#offline-variant"># Offline Variant</a></li><li class="toc-2"><a href="#2-detail-view"># 2. Detail View</a></li><li class="toc-3"><a href="#where-it-appears-1"># Where It Appears</a></li><li class="toc-3"><a href="#anatomy-1"># Anatomy</a></li><li class="toc-3"><a href="#behaviors-1"># Behaviors</a></li><li class="toc-3"><a href="#mobile-variant-1"># Mobile Variant</a></li><li class="toc-3"><a href="#desktop-with-detail-panel"># Desktop with Detail Panel</a></li><li class="toc-2"><a href="#3-createedit-form"># 3. Create/Edit Form</a></li><li class="toc-3"><a href="#where-it-appears-2"># Where It Appears</a></li><li class="toc-3"><a href="#anatomy-2"># Anatomy</a></li><li class="toc-3"><a href="#behaviors-2"># Behaviors</a></li><li class="toc-3"><a href="#mobile-variant-2"># Mobile Variant</a></li><li class="toc-2"><a href="#4-builder-interface"># 4. Builder Interface</a></li><li class="toc-3"><a href="#sub-types"># Sub-Types</a></li><li class="toc-3"><a href="#common-behaviors"># Common Behaviors</a></li><li class="toc-2"><a href="#5-wizard-flow"># 5. Wizard Flow</a></li><li class="toc-3"><a href="#where-it-appears-3"># Where It Appears</a></li><li class="toc-3"><a href="#anatomy-3"># Anatomy</a></li><li class="toc-3"><a href="#behaviors-3"># Behaviors</a></li><li class="toc-2"><a href="#6-dashboard"># 6. Dashboard</a></li><li class="toc-3"><a href="#where-it-appears-4"># Where It Appears</a></li><li class="toc-3"><a href="#widget-types"># Widget Types</a></li><li class="toc-3"><a href="#behaviors-4"># Behaviors</a></li><li class="toc-3"><a href="#mobile-variant-3"># Mobile Variant</a></li><li class="toc-2"><a href="#7-map-interface"># 7. Map Interface</a></li><li class="toc-3"><a href="#where-it-appears-5"># Where It Appears</a></li><li class="toc-3"><a href="#sub-types-1"># Sub-Types</a></li><li class="toc-3"><a href="#common-behaviors-1"># Common Behaviors</a></li><li class="toc-2"><a href="#8-calendar-schedule-view"># 8. Calendar / Schedule View</a></li><li class="toc-3"><a href="#where-it-appears-6"># Where It Appears</a></li><li class="toc-3"><a href="#behaviors-5"># Behaviors</a></li><li class="toc-3"><a href="#mobile-variant-4"># Mobile Variant</a></li><li class="toc-2"><a href="#9-composer-interface"># 9. Composer Interface</a></li><li class="toc-3"><a href="#where-it-appears-7"># Where It Appears</a></li><li class="toc-3"><a href="#common-behaviors-2"># Common Behaviors</a></li><li class="toc-2"><a href="#10-approval-queue"># 10. Approval Queue</a></li><li class="toc-3"><a href="#where-it-appears-8"># Where It Appears</a></li><li class="toc-3"><a href="#anatomy-4"># Anatomy</a></li><li class="toc-3"><a href="#behaviors-6"># Behaviors</a></li><li class="toc-2"><a href="#11-review-queue"># 11. Review Queue</a></li><li class="toc-3"><a href="#where-it-appears-9"># Where It Appears</a></li><li class="toc-3"><a href="#behaviors-7"># Behaviors</a></li><li class="toc-2"><a href="#12-check-in-tool"># 12. Check-in Tool</a></li><li class="toc-3"><a href="#where-it-appears-10"># Where It Appears</a></li><li class="toc-3"><a href="#anatomy-5"># Anatomy</a></li><li class="toc-3"><a href="#behaviors-8"># Behaviors</a></li><li class="toc-2"><a href="#13-pipeline-kanban-view"># 13. Pipeline / Kanban View</a></li><li class="toc-3"><a href="#where-it-appears-11"># Where It Appears</a></li><li class="toc-3"><a href="#behaviors-9"># Behaviors</a></li><li class="toc-2"><a href="#14-importexport-flow"># 14. Import/Export Flow</a></li><li class="toc-3"><a href="#where-it-appears-12"># Where It Appears</a></li><li class="toc-3"><a href="#import-flow"># Import Flow</a></li><li class="toc-3"><a href="#export-flow"># Export Flow</a></li><li class="toc-2"><a href="#15-configuration-panel"># 15. Configuration Panel</a></li><li class="toc-3"><a href="#where-it-appears-13"># Where It Appears</a></li><li class="toc-3"><a href="#anatomy-6"># Anatomy</a></li><li class="toc-3"><a href="#behaviors-10"># Behaviors</a></li><li class="toc-2"><a href="#16-side-by-side-comparison"># 16. Side-by-Side Comparison</a></li><li class="toc-3"><a href="#where-it-appears-14"># Where It Appears</a></li><li class="toc-3"><a href="#behaviors-11"># Behaviors</a></li><li class="toc-2"><a href="#17-split-view-detail-panel"># 17. Split View / Detail Panel</a></li><li class="toc-3"><a href="#where-it-appears-15"># Where It Appears</a></li><li class="toc-3"><a href="#behaviors-12"># Behaviors</a></li><li class="toc-2"><a href="#18-field-mode-full-screen-takeover"># 18. Field Mode (Full-Screen Takeover)</a></li><li class="toc-3"><a href="#where-it-appears-16"># Where It Appears</a></li><li class="toc-3"><a href="#key-characteristics"># Key Characteristics</a></li><li class="toc-2"><a href="#19-real-time-dashboard-war-room"># 19. Real-Time Dashboard (War Room)</a></li><li class="toc-3"><a href="#where-it-appears-17"># Where It Appears</a></li><li class="toc-3"><a href="#key-differences-from-standard-dashboards"># Key Differences from Standard Dashboards</a></li><li class="toc-2"><a href="#20-contextual-thread"># 20. Contextual Thread</a></li><li class="toc-3"><a href="#where-it-appears-18"># Where It Appears</a></li><li class="toc-3"><a href="#behaviors-13"># Behaviors</a></li><li class="toc-2"><a href="#cross-cutting-concerns"># Cross-Cutting Concerns</a></li><li class="toc-3"><a href="#empty-states"># Empty States</a></li><li class="toc-3"><a href="#loading-states"># Loading States</a></li><li class="toc-3"><a href="#error-states"># Error States</a></li><li class="toc-3"><a href="#accessibility"># Accessibility</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

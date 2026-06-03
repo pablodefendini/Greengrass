@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security UX Patterns · GreenGrass</title>
+<meta name="description" content="Security UX Patterns — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="./pattern-catalog.html">Pattern Catalog</a></li><li><a href="./offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="./notification-patterns.html">Notification Patterns</a></li><li><a href="./search-patterns.html">Search Patterns</a></li><li><a href="./settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="./security-ux-patterns.html" aria-current="page" class="active">Security UX Patterns</a></li><li><a href="../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="security-ux-patterns" tabindex="-1"><a class="heading-anchor" href="#security-ux-patterns" aria-hidden="true">#</a> Security UX Patterns</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document defines the UX patterns for GreenGrass's security features — duress mode, BYOK key management, session handling, the panic button, and authentication flows. These features protect users in politically sensitive contexts where the wrong data in the wrong hands can be dangerous.</p>
+<p>The design constraint: security must be invisible during normal operation and unambiguous during a threat. A volunteer canvassing in a hostile area should never think about encryption. But if they need to lock the app, the panic button must be instantly accessible and unmistakable.</p>
+<h2 id="duress-mode" tabindex="-1"><a class="heading-anchor" href="#duress-mode" aria-hidden="true">#</a> Duress Mode</h2>
+<h3 id="what-it-is" tabindex="-1"><a class="heading-anchor" href="#what-it-is" aria-hidden="true">#</a> What It Is</h3>
+<p>Duress mode activates when a user logs in with a duress passkey (a separate passkey enrolled specifically for this purpose). The platform shows a sanitized version of the real interface — the navigation looks identical, but content is scrubbed to remove politically sensitive data.</p>
+<p><strong>DECIDED (from <a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a>): Sanitized real structure.</strong> The duress view presents the real navigation with plausible but scrubbed data.</p>
+<h3 id="enrollment" tabindex="-1"><a class="heading-anchor" href="#enrollment" aria-hidden="true">#</a> Enrollment</h3>
+<p>During security setup, users in the Aggressive security tier are prompted to enroll a duress passkey:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Duress Passkey Setup                                 │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  A duress passkey lets you log in under coercion      │
+│  and see a safe version of the platform.              │
+│                                                       │
+│  When you use this passkey:                           │
+│  • The platform looks and works normally              │
+│  • All sensitive data is hidden                       │
+│  • Your real data is not affected                     │
+│  • A silent alert is sent to your org admin           │
+│                                                       │
+│  Important: Use a different finger or device          │
+│  for your duress passkey than your regular one.       │
+│                                                       │
+│  [Enroll Duress Passkey]                              │
+│  [Skip for Now]                                       │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>The duress passkey enrollment is never forced</strong> — it's offered during security setup and available in personal security settings, but optional.</p>
+<h3 id="sanitization-rules" tabindex="-1"><a class="heading-anchor" href="#sanitization-rules" aria-hidden="true">#</a> Sanitization Rules</h3>
+<p>When duress mode is active, every feature area shows plausible but safe data:</p>
+<table>
+<thead>
+<tr>
+<th>Feature Area</th>
+<th>Normal View</th>
+<th>Duress View</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contacts</strong></td>
+<td>Full CRM with support scores, voter ID data</td>
+<td>15-20 innocuous contacts. No support scores, no voter ID data. Names are common, not identifiable as activists.</td>
+</tr>
+<tr>
+<td><strong>Dashboards</strong></td>
+<td>Real metrics</td>
+<td>Plausible low numbers. &quot;47 contacts, 3 events, 12 volunteers.&quot; No trend lines, no goal thermometers.</td>
+</tr>
+<tr>
+<td><strong>Canvassing</strong></td>
+<td>Active campaigns, turfs, walk lists</td>
+<td>No campaigns. Empty state: &quot;Create your first campaign.&quot;</td>
+</tr>
+<tr>
+<td><strong>Fundraising</strong></td>
+<td>Donation history, forms, compliance</td>
+<td>A few small donations. No compliance flags. No large donors.</td>
+</tr>
+<tr>
+<td><strong>Messages</strong></td>
+<td>Real conversations</td>
+<td>2-3 innocuous conversations. &quot;Team meeting tomorrow,&quot; &quot;Thanks for the update.&quot; No political content.</td>
+</tr>
+<tr>
+<td><strong>Events</strong></td>
+<td>Full event list with RSVPs</td>
+<td>1-2 past public events. No upcoming events.</td>
+</tr>
+<tr>
+<td><strong>Press</strong></td>
+<td>Media contacts, releases, endorsements</td>
+<td>Empty. &quot;No press activity yet.&quot;</td>
+</tr>
+<tr>
+<td><strong>GOTV</strong></td>
+<td>Election day operations</td>
+<td>Empty. Not in election mode.</td>
+</tr>
+<tr>
+<td><strong>Settings</strong></td>
+<td>Full configuration</td>
+<td>Reduced settings. No security tier indicators, no encryption key management.</td>
+</tr>
+<tr>
+<td><strong>Audit trail</strong></td>
+<td>Full activity log</td>
+<td>Limited to the sanitized data's activity.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key principles:</strong></p>
+<ul>
+<li><strong>Plausible, not empty.</strong> A completely empty account would be suspicious. The duress view shows a small, low-activity but real-looking account.</li>
+<li><strong>No political markers.</strong> Contact names, event titles, and message content contain no political parties, candidates, or policy issues.</li>
+<li><strong>Consistent across sessions.</strong> The duress data is the same every time the duress passkey is used — it doesn't change between logins. (Otherwise, an observer who forces two logins would see different data and know something is wrong.)</li>
+<li><strong>No breadcrumbs.</strong> The duress view leaves no trace that the real account has more data. No &quot;hidden items&quot; indicators, no mismatched counts, no leaked metadata.</li>
+<li><strong>Silent alert.</strong> When a duress login occurs, a silent notification is sent to the Org Admin (to their email, not to in-app notifications — in case the Org Admin is also under duress).</li>
+</ul>
+<h3 id="duress-mode-indicators" tabindex="-1"><a class="heading-anchor" href="#duress-mode-indicators" aria-hidden="true">#</a> Duress Mode Indicators</h3>
+<p><strong>For the user in duress mode:</strong> There is NO indicator that duress mode is active. The entire point is that an observer cannot distinguish the duress view from a real session. The user knows they used their duress passkey — that's the only signal.</p>
+<p><strong>For the Org Admin:</strong> The silent alert includes the user's identity, time, device info, and location (if available). The Org Admin can then take appropriate action (notify trusted contacts, activate organizational safety protocols).</p>
+<hr>
+<h2 id="byok-key-management" tabindex="-1"><a class="heading-anchor" href="#byok-key-management" aria-hidden="true">#</a> BYOK Key Management</h2>
+<h3 id="key-generation-ceremony" tabindex="-1"><a class="heading-anchor" href="#key-generation-ceremony" aria-hidden="true">#</a> Key Generation Ceremony</h3>
+<p>The BYOK key generation wizard (WIZ-003) guides the Org Admin through creating and securing their organization's encryption keys. This is one of the most security-critical UX flows in the platform.</p>
+<pre><code>Step 1: Understanding
+┌──────────────────────────────────────────────────────┐
+│  BYOK Key Generation          Step 1 of 5            │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  Your organization's data will be encrypted with      │
+│  a key that only you control.                         │
+│                                                       │
+│  What this means:                                     │
+│  ✓ GreenGrass cannot read your data                   │
+│  ✓ Your data cannot be handed over without your key   │
+│  ✓ You are responsible for backing up your key         │
+│                                                       │
+│  ⚠ If you lose your key and your backup,             │
+│    your data is permanently inaccessible.              │
+│    GreenGrass cannot recover it.                       │
+│                                                       │
+│  [I Understand → Next]                                │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+
+Step 2: Key Generation
+┌──────────────────────────────────────────────────────┐
+│  Generating your encryption key...                    │
+│                                                       │
+│  ████████████████████████  100%                       │
+│                                                       │
+│  ✓ Key generated on your device                       │
+│  ✓ Key never leaves your device unencrypted           │
+│                                                       │
+│  [Next →]                                             │
+└──────────────────────────────────────────────────────┘
+
+Step 3: Backup
+┌──────────────────────────────────────────────────────┐
+│  Back up your key                                     │
+│                                                       │
+│  Choose one or more backup methods:                   │
+│                                                       │
+│  [Download Key File]                                  │
+│  Save to a secure location (USB drive, safe)          │
+│                                                       │
+│  [Print Recovery Sheet]                               │
+│  A printable sheet with your recovery phrase           │
+│                                                       │
+│  ⚠ Store your backup separately from your device.    │
+│    If your device is compromised, your backup          │
+│    should be in a different location.                  │
+│                                                       │
+│  [Next →]                                             │
+└──────────────────────────────────────────────────────┘
+
+Step 4: Verification
+┌──────────────────────────────────────────────────────┐
+│  Verify your backup                                   │
+│                                                       │
+│  Enter the 5th and 11th words of your recovery        │
+│  phrase to confirm you saved it correctly:             │
+│                                                       │
+│  Word 5:  [________]                                  │
+│  Word 11: [________]                                  │
+│                                                       │
+│  [Verify →]                                           │
+└──────────────────────────────────────────────────────┘
+
+Step 5: Complete
+┌──────────────────────────────────────────────────────┐
+│  ✓ Your encryption keys are set up                    │
+│                                                       │
+│  Your organization's data is now encrypted with       │
+│  keys only you control.                               │
+│                                                       │
+│  Important reminders:                                 │
+│  • Keep your backup secure                            │
+│  • Consider rotating your keys periodically           │
+│  • If you suspect compromise, rotate immediately      │
+│                                                       │
+│  [Go to Dashboard]                                    │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="key-rotation" tabindex="-1"><a class="heading-anchor" href="#key-rotation" aria-hidden="true">#</a> Key Rotation</h3>
+<p>Key rotation is available in Settings &gt; Security &gt; Encryption Key Management:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Encryption Key Management                            │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  Current key status: Active                           │
+│  Created: January 15, 2026                            │
+│  Last rotated: Never                                  │
+│                                                       │
+│  Recommended: Rotate keys after security events       │
+│  (staff departure, suspected compromise, device loss) │
+│                                                       │
+│  [Rotate Key]                                         │
+│                                                       │
+│  Key rotation re-encrypts all data with a new key.    │
+│  This process runs in the background and may take     │
+│  several hours for large datasets.                    │
+│                                                       │
+│  Previous keys: 0 rotated keys retained               │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Key rotation triggers</strong> (suggested, not forced):</p>
+<ul>
+<li>Staff member leaves the organization</li>
+<li>Device lost or stolen</li>
+<li>Suspected security incident</li>
+<li>Periodic rotation (recommended annually)</li>
+</ul>
+<p>The platform prompts the Org Admin to consider key rotation after relevant events (e.g., &quot;Maria López was removed from staff. Consider rotating your encryption keys.&quot;) but never forces rotation.</p>
+<hr>
+<h2 id="panic-button" tabindex="-1"><a class="heading-anchor" href="#panic-button" aria-hidden="true">#</a> Panic Button</h2>
+<h3 id="what-it-does" tabindex="-1"><a class="heading-anchor" href="#what-it-does" aria-hidden="true">#</a> What It Does</h3>
+<p>The panic button immediately locks the app and requires re-authentication. It's the emergency stop for situations where a user needs to secure the app instantly.</p>
+<h3 id="placement" tabindex="-1"><a class="heading-anchor" href="#placement" aria-hidden="true">#</a> Placement</h3>
+<ul>
+<li><strong>Field mode:</strong> Visible in the field action bar at the bottom of the screen. Labeled with a lock icon. Always one tap away.</li>
+<li><strong>Standard app:</strong> Not permanently visible. Accessible via a keyboard shortcut (<code>Cmd+Shift+L</code> on desktop) or a quick gesture (e.g., triple-tap the app icon on mobile).</li>
+</ul>
+<h3 id="behavior" tabindex="-1"><a class="heading-anchor" href="#behavior" aria-hidden="true">#</a> Behavior</h3>
+<pre><code>User taps panic button:
+
+1. Screen immediately goes blank (white or black, no content flash)
+2. All in-memory data is cleared
+3. App shows the login screen
+4. No indication of what was being viewed before
+5. Silent alert sent to Org Admin (if configured)
+
+If user was in field mode:
+- Shift data is saved locally before lock (no data loss)
+- On re-authentication, shift resumes where it left off
+- If duress passkey is used to re-authenticate: shift data is hidden
+</code></pre>
+<h3 id="design-considerations" tabindex="-1"><a class="heading-anchor" href="#design-considerations" aria-hidden="true">#</a> Design Considerations</h3>
+<ul>
+<li><strong>No confirmation dialog.</strong> &quot;Are you sure?&quot; defeats the purpose. The panic button is for emergencies — it acts immediately.</li>
+<li><strong>No animation.</strong> The screen goes blank instantly. No fade, no transition. Speed is a safety feature.</li>
+<li><strong>Silent.</strong> No sound, no vibration. The lock should not draw attention.</li>
+<li><strong>Accessible but not accidental.</strong> In field mode, the lock button is positioned where it won't be triggered by accidental touches (corner of the screen, requires deliberate tap). The triple-tap gesture on mobile requires three quick taps in succession.</li>
+</ul>
+<hr>
+<h2 id="authentication-patterns" tabindex="-1"><a class="heading-anchor" href="#authentication-patterns" aria-hidden="true">#</a> Authentication Patterns</h2>
+<h3 id="login-flow" tabindex="-1"><a class="heading-anchor" href="#login-flow" aria-hidden="true">#</a> Login Flow</h3>
+<p>The primary login flow uses passkeys:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│                                                       │
+│  [GreenGrass Logo]                                    │
+│                                                       │
+│  [Sign in with Passkey]                               │
+│                                                       │
+│  ─────── or ───────                                   │
+│                                                       │
+│  [Sign in with Magic Link]                            │
+│  [Sign in with SMS Code]                              │
+│                                                       │
+│  [Account Recovery →]                                 │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Passkey flow:</strong></p>
+<ol>
+<li>User taps &quot;Sign in with Passkey&quot;</li>
+<li>Device biometric prompt appears (fingerprint, face, PIN)</li>
+<li>Authentication completes — user enters the app</li>
+<li>Total time: ~2 seconds</li>
+</ol>
+<p><strong>Fallback flows</strong> (for devices without passkey support or user preference):</p>
+<ul>
+<li><strong>Magic link:</strong> User enters email → receives a link → taps link → authenticated</li>
+<li><strong>SMS OTP:</strong> User enters phone number → receives a code → enters code → authenticated</li>
+</ul>
+<p><strong>No password flow.</strong> The platform does not support passwords. This is a deliberate security decision — passwords are phishable, passkeys are not.</p>
+<h3 id="session-management" tabindex="-1"><a class="heading-anchor" href="#session-management" aria-hidden="true">#</a> Session Management</h3>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Session Length</th>
+<th>Re-auth Triggers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Org Admin</td>
+<td>Short (hours)</td>
+<td>Sensitive actions (key management, role changes, billing)</td>
+</tr>
+<tr>
+<td>Staff (all)</td>
+<td>Medium (workday)</td>
+<td>Sensitive actions</td>
+</tr>
+<tr>
+<td>Volunteer / Team Lead</td>
+<td>Medium (workday) / shift-length (field)</td>
+<td>After shift end, after re-entering from background (&gt;30 min)</td>
+</tr>
+<tr>
+<td>Candidate</td>
+<td>Medium (workday)</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>Supporter</td>
+<td>Long (weeks)</td>
+<td>Payment changes, personal info updates</td>
+</tr>
+</tbody>
+</table>
+<h3 id="re-authentication" tabindex="-1"><a class="heading-anchor" href="#re-authentication" aria-hidden="true">#</a> Re-Authentication</h3>
+<p>When a session requires re-authentication (for sensitive actions or expired sessions):</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│                                                       │
+│  Verify your identity                                 │
+│                                                       │
+│  This action requires re-authentication.              │
+│                                                       │
+│  [Verify with Passkey]                                │
+│                                                       │
+│  [Use alternative method →]                           │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p>Re-authentication is a single biometric check — it should take &lt;3 seconds. The user stays on the same screen and can proceed with their action immediately after verification.</p>
+<h3 id="session-expiration" tabindex="-1"><a class="heading-anchor" href="#session-expiration" aria-hidden="true">#</a> Session Expiration</h3>
+<p>When a session expires:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│                                                       │
+│  Your session has expired                             │
+│                                                       │
+│  For your security, you've been signed out            │
+│  after a period of inactivity.                        │
+│                                                       │
+│  [Sign In]                                            │
+│                                                       │
+│  Any unsaved changes have been preserved.             │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Behaviors:</strong></p>
+<ul>
+<li><strong>Unsaved data preservation.</strong> If the user was filling out a form, the data is saved locally and restored after re-login.</li>
+<li><strong>Redirect after login.</strong> After re-authenticating, the user returns to the exact screen they were on.</li>
+<li><strong>No data exposure.</strong> The session expiration screen shows no information about what the user was doing.</li>
+</ul>
+<hr>
+<h2 id="trusted-contact-recovery" tabindex="-1"><a class="heading-anchor" href="#trusted-contact-recovery" aria-hidden="true">#</a> Trusted Contact Recovery</h2>
+<h3 id="setup" tabindex="-1"><a class="heading-anchor" href="#setup" aria-hidden="true">#</a> Setup</h3>
+<p>During onboarding (or in personal security settings), users set up trusted contacts for account recovery:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Trusted Contacts                                     │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  If you lose access to your account, trusted          │
+│  contacts can help you recover it.                    │
+│                                                       │
+│  We recommend 2-3 trusted contacts who:               │
+│  • You trust with access to your account              │
+│  • Are not likely to be compromised at the same time  │
+│  • Have their own GreenGrass accounts                 │
+│                                                       │
+│  Trusted Contacts:                                    │
+│  ┌────────────────────────────────────────────────┐   │
+│  │  1. Maria López (Campaign Manager)      [✗]   │   │
+│  │  2. Carlos Reyes (Field Director)        [✗]   │   │
+│  └────────────────────────────────────────────────┘   │
+│                                                       │
+│  [+ Add Trusted Contact]                              │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="recovery-flow" tabindex="-1"><a class="heading-anchor" href="#recovery-flow" aria-hidden="true">#</a> Recovery Flow</h3>
+<p>When a user needs account recovery:</p>
+<ol>
+<li>User taps &quot;Account Recovery&quot; on the login screen</li>
+<li>User enters their email/phone to identify their account</li>
+<li>System contacts their trusted contacts: &quot;Ana needs help recovering her account. If you trust this request, approve it in the app.&quot;</li>
+<li>Trusted contacts receive an in-app notification with approve/deny</li>
+<li>When the required number of trusted contacts approve (configurable, default 2 of 3), the user can enroll a new passkey</li>
+<li>The user is authenticated with their new passkey</li>
+</ol>
+<p><strong>Security considerations:</strong></p>
+<ul>
+<li>Recovery notifications include the requester's identity and approximate location (so trusted contacts can verify)</li>
+<li>A cooling-off period (configurable, default 24 hours) before recovery completes — to allow time to detect social engineering</li>
+<li>Failed recovery attempts are logged and visible to the Org Admin</li>
+<li>The old passkey is invalidated when recovery completes</li>
+</ul>
+<hr>
+<h2 id="device-authorization" tabindex="-1"><a class="heading-anchor" href="#device-authorization" aria-hidden="true">#</a> Device Authorization</h2>
+<h3 id="multi-device-management" tabindex="-1"><a class="heading-anchor" href="#multi-device-management" aria-hidden="true">#</a> Multi-Device Management</h3>
+<p>Users can manage their authorized devices in personal security settings:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Your Devices                                         │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  ● This device                                        │
+│    iPhone 14 · Last active: now                       │
+│                                                       │
+│  ○ MacBook Pro                                        │
+│    Last active: 2 hours ago                           │
+│    [Remove]                                           │
+│                                                       │
+│  ○ iPad Air                                           │
+│    Last active: 3 days ago                            │
+│    [Remove]                                           │
+│                                                       │
+│  [+ Add Device]                                       │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Behaviors:</strong></p>
+<ul>
+<li><strong>Remove device</strong> — immediately revokes the passkey on that device. If the device is currently logged in, the session is terminated.</li>
+<li><strong>Add device</strong> — generates a time-limited QR code or link to enroll a new passkey on another device.</li>
+<li><strong>Device naming</strong> — devices are auto-named from their user agent (can be manually renamed for clarity).</li>
+</ul>
+<hr>
+<h2 id="security-indicators" tabindex="-1"><a class="heading-anchor" href="#security-indicators" aria-hidden="true">#</a> Security Indicators</h2>
+<h3 id="encryption-status" tabindex="-1"><a class="heading-anchor" href="#encryption-status" aria-hidden="true">#</a> Encryption Status</h3>
+<p>Visible in message threads (per <a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a>):</p>
+<pre><code>│  🔒 Messages are end-to-end encrypted               │
+│  Only you and the members of this conversation       │
+│  can read these messages.                             │
+</code></pre>
+<p>For BYOK tenants, an additional indicator in settings:</p>
+<pre><code>│  🔑 Your data is encrypted with your organization's  │
+│     keys. GreenGrass cannot access your data.         │
+</code></pre>
+<h3 id="session-security-indicator" tabindex="-1"><a class="heading-anchor" href="#session-security-indicator" aria-hidden="true">#</a> Session Security Indicator</h3>
+<p>In personal security settings, a summary of current session security:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Session Security                                     │
+├──────────────────────────────────────────────────────┤
+│  ✓ Authenticated via passkey (biometric)              │
+│  ✓ Connection encrypted (TLS 1.3)                     │
+│  ✓ Data encrypted at rest (BYOK)                      │
+│  ✓ 2 trusted contacts configured                      │
+│  ○ Duress passkey not set up  [Set up →]              │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p>This is informational — the user doesn't need to act on it during normal operation. It's available for users who want to verify their security posture.</p>
+<hr>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Duress mode plausibility testing.</strong> How do we validate that the duress view is convincing? User testing with people who don't know about the duress feature — can they tell the difference between a low-activity real account and a duress account?</p>
+</li>
+<li>
+<p><strong>Key escrow option.</strong> For tenants in the Standard security tier who don't want BYOK responsibility, should there be a managed key option where GreenGrass holds the keys? This would mean GreenGrass <em>can</em> read their data, but some orgs may prefer convenience over sovereignty.</p>
+</li>
+<li>
+<p><strong>Biometric lock for sensitive screens.</strong> Beyond session-level re-auth, should individual screens (encryption settings, audit trail, compliance) require a biometric check every time they're accessed? This adds friction but increases security for shared devices.</p>
+</li>
+<li>
+<p><strong>Security onboarding for volunteers.</strong> Volunteers in high-risk contexts need to understand the panic button and duress features without being overwhelmed. How much security onboarding is appropriate for someone whose primary task is knocking on doors?</p>
+</li>
+</ol>
+<!-- REVISIT: The duress data generation strategy (how the sanitized data is created and maintained) needs detailed specification during implementation. Static data? Procedurally generated? Maintained manually by the Org Admin? Each approach has different trade-offs for plausibility and maintenance burden. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#duress-mode"># Duress Mode</a></li><li class="toc-3"><a href="#what-it-is"># What It Is</a></li><li class="toc-3"><a href="#enrollment"># Enrollment</a></li><li class="toc-3"><a href="#sanitization-rules"># Sanitization Rules</a></li><li class="toc-3"><a href="#duress-mode-indicators"># Duress Mode Indicators</a></li><li class="toc-2"><a href="#byok-key-management"># BYOK Key Management</a></li><li class="toc-3"><a href="#key-generation-ceremony"># Key Generation Ceremony</a></li><li class="toc-3"><a href="#key-rotation"># Key Rotation</a></li><li class="toc-2"><a href="#panic-button"># Panic Button</a></li><li class="toc-3"><a href="#what-it-does"># What It Does</a></li><li class="toc-3"><a href="#placement"># Placement</a></li><li class="toc-3"><a href="#behavior"># Behavior</a></li><li class="toc-3"><a href="#design-considerations"># Design Considerations</a></li><li class="toc-2"><a href="#authentication-patterns"># Authentication Patterns</a></li><li class="toc-3"><a href="#login-flow"># Login Flow</a></li><li class="toc-3"><a href="#session-management"># Session Management</a></li><li class="toc-3"><a href="#re-authentication"># Re-Authentication</a></li><li class="toc-3"><a href="#session-expiration"># Session Expiration</a></li><li class="toc-2"><a href="#trusted-contact-recovery"># Trusted Contact Recovery</a></li><li class="toc-3"><a href="#setup"># Setup</a></li><li class="toc-3"><a href="#recovery-flow"># Recovery Flow</a></li><li class="toc-2"><a href="#device-authorization"># Device Authorization</a></li><li class="toc-3"><a href="#multi-device-management"># Multi-Device Management</a></li><li class="toc-2"><a href="#security-indicators"># Security Indicators</a></li><li class="toc-3"><a href="#encryption-status"># Encryption Status</a></li><li class="toc-3"><a href="#session-security-indicator"># Session Security Indicator</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

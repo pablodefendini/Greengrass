@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fundraising &amp; Payment Infrastructure · GreenGrass</title>
+<meta name="description" content="Fundraising &amp; Payment Infrastructure — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html">Core Workflows</a></li><li><a href="./geography.html">Target Geography</a></li><li><a href="./security.html">Security &amp; Threat Model</a></li><li><a href="./compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html" aria-current="page" class="active">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html">External Integrations</a></li><li><a href="./support.html">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="./press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="fundraising-payment-infrastructure" tabindex="-1"><a class="heading-anchor" href="#fundraising-payment-infrastructure" aria-hidden="true">#</a> Fundraising &amp; Payment Infrastructure</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document specifies the fundraising capabilities and payment infrastructure for GreenGrass. It builds on decisions made in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> (donation flows, alliance splits, analytics), <a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> (foreign contribution blocking, campaign finance reporting, consent), <a href="http://geography.md" target="_blank" rel="noopener noreferrer">geography.md</a> (per-country payment methods), and <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a> (payment adapter pattern, data model).</p>
+<p>Fundraising is a core survival function for political campaigns. In the global south, payment infrastructure varies dramatically — from PIX in Brazil (instant, free, ubiquitous) to cash-heavy workflows in Lebanon (banking system in crisis). GreenGrass must handle all of this behind a consistent interface while ensuring every transaction is auditable, compliant, and attributable.</p>
+<h2 id="fundraising-philosophy" tabindex="-1"><a class="heading-anchor" href="#fundraising-philosophy" aria-hidden="true">#</a> Fundraising Philosophy</h2>
+<ol>
+<li><strong>Every payment method is first-class.</strong> Cash donations are not second-class transactions. PIX is not a workaround for credit cards. Each country's dominant payment method gets native integration, not adapter shims.</li>
+<li><strong>Compliance is the product.</strong> Campaign finance reporting, donor disclosure, contribution limits — these aren't tax on the fundraising feature, they're the reason campaigns choose a purpose-built platform over generic payment tools.</li>
+<li><strong>Transparency to donors.</strong> Donors see exactly where their money goes — processing fees, splits, net amount to campaign. No hidden fees, no opaque splits.</li>
+<li><strong>Offline-capable.</strong> Cash donation recording must work without connectivity. Sync when back online.</li>
+</ol>
+<h2 id="payment-processor-strategy" tabindex="-1"><a class="heading-anchor" href="#payment-processor-strategy" aria-hidden="true">#</a> Payment Processor Strategy</h2>
+<h3 id="processor-selection-approach" tabindex="-1"><a class="heading-anchor" href="#processor-selection-approach" aria-hidden="true">#</a> Processor Selection Approach</h3>
+<p><strong>DECIDED: Hybrid — global processor as backbone + local processors for country-specific methods.</strong> A global processor (e.g., Stripe) handles credit cards and provides baseline infrastructure. Local processors handle country-specific payment methods (PIX, UPI, PromptPay, ATH Movil, OMT) for best rates and native coverage. The payment adapter pattern in <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a> supports this cleanly — each processor is an adapter behind a common interface.</p>
+<h3 id="per-country-payment-integration-plan" tabindex="-1"><a class="heading-anchor" href="#per-country-payment-integration-plan" aria-hidden="true">#</a> Per-Country Payment Integration Plan</h3>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Primary methods</th>
+<th>Processor approach</th>
+<th>Settlement currency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puerto Rico</td>
+<td>Credit cards, ATH Movil, Venmo, Zelle</td>
+<td>Credit cards via global processor; ATH Movil via ATH Business API; Venmo/Zelle via respective APIs or manual tracking</td>
+<td>USD</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>PIX, Boleto, Credit cards</td>
+<td>PIX via local processor (e.g., Mercado Pago, PagSeguro, or direct Central Bank integration); credit cards via global processor or local processor</td>
+<td>BRL</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>PromptPay, TrueMoney, Bank transfer</td>
+<td>PromptPay via local processor (e.g., Omise/Opn Payments); TrueMoney via API; bank transfer via local processor</td>
+<td>THB</td>
+</tr>
+<tr>
+<td>India</td>
+<td>UPI, Paytm, PhonePe, Bank transfer</td>
+<td>UPI via local payment aggregator (e.g., Razorpay, Cashfree); other wallets via same aggregator</td>
+<td>INR</td>
+</tr>
+<tr>
+<td>Lebanon</td>
+<td>Cash, OMT, Bank transfer</td>
+<td>Cash tracked in-platform; OMT via manual recording (no API); bank transfers where banking system permits</td>
+<td>USD (de facto dollarized economy) or LBP</td>
+</tr>
+</tbody>
+</table>
+<h3 id="processor-onboarding" tabindex="-1"><a class="heading-anchor" href="#processor-onboarding" aria-hidden="true">#</a> Processor Onboarding</h3>
+<p>Each tenant must configure at least one payment processor during onboarding (decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>). The platform provides:</p>
+<ul>
+<li><strong>Guided setup wizard</strong> — walks tenant through connecting their payment processor account(s)</li>
+<li><strong>Pre-configured processor options</strong> — per-jurisdiction list of supported processors with setup instructions</li>
+<li><strong>Test mode</strong> — tenants can create test donations to verify their configuration before going live</li>
+<li><strong>Credential security</strong> — processor API keys stored in HashiCorp Vault (per <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a>), encrypted at rest, never exposed in the UI after initial entry</li>
+</ul>
+<h2 id="multi-currency-handling" tabindex="-1"><a class="heading-anchor" href="#multi-currency-handling" aria-hidden="true">#</a> Multi-Currency Handling</h2>
+<p><strong>DECIDED: Multi-currency acceptance, single settlement.</strong> Tenants accept donations in multiple currencies, but all donations settle into the tenant's primary currency. The platform records original currency, original amount, conversion rate, and settled amount. Donors give in their own currency (critical for diaspora fundraising), campaigns receive everything in their primary currency. Clean for accounting, no multi-currency bank accounts needed.</p>
+<p>Implementation:</p>
+<ul>
+<li><strong>Every donation records:</strong> original currency, original amount, conversion rate (if converted), settlement currency, settlement amount, processor fees, net amount</li>
+<li><strong>Conversion rates</strong> are captured at transaction time and stored immutably — no retroactive recalculation</li>
+<li><strong>Display currency</strong> is configurable per tenant for dashboards and reports, with original currency always visible on individual transaction records</li>
+<li><strong>Alliance splits</strong> (decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) are calculated on the settlement amount, not the original amount, to avoid conversion discrepancies</li>
+</ul>
+<h2 id="donation-types-flows" tabindex="-1"><a class="heading-anchor" href="#donation-types-flows" aria-hidden="true">#</a> Donation Types &amp; Flows</h2>
+<h3 id="one-time-donations" tabindex="-1"><a class="heading-anchor" href="#one-time-donations" aria-hidden="true">#</a> One-Time Donations</h3>
+<p>Already specified in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>. Key additions:</p>
+<ul>
+<li><strong>Minimum donation amounts</strong> — configurable per tenant, with jurisdiction-specific floors where applicable</li>
+<li><strong>Maximum donation amounts</strong> — enforced per jurisdiction contribution limits (<a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a>), with real-time checking against cumulative donor total</li>
+<li><strong>Anonymous donations</strong> — permitted where jurisdiction allows, with separate tracking for compliance (some jurisdictions require identity for donations above a threshold even if displayed as &quot;anonymous&quot; to the campaign)</li>
+</ul>
+<h3 id="recurring-donations" tabindex="-1"><a class="heading-anchor" href="#recurring-donations" aria-hidden="true">#</a> Recurring Donations</h3>
+<p><a href="http://Workflows.md" target="_blank" rel="noopener noreferrer">Workflows.md</a> established recurring donations exist. Detailed specification:</p>
+<h4 id="setup" tabindex="-1"><a class="heading-anchor" href="#setup" aria-hidden="true">#</a> Setup</h4>
+<ul>
+<li>Donor selects recurring frequency: monthly (default), weekly, quarterly, annually</li>
+<li>Donor sets amount per period</li>
+<li>Payment method must support recurring charges (credit card, UPI autopay, some PIX configurations; not cash, not OMT, not Venmo/Zelle)</li>
+<li>Donor receives confirmation with clear terms: amount, frequency, next charge date, how to cancel</li>
+</ul>
+<h4 id="management" tabindex="-1"><a class="heading-anchor" href="#management" aria-hidden="true">#</a> Management</h4>
+<ul>
+<li><strong>Donor self-service portal</strong> — donors can view, modify, pause, or cancel recurring donations without contacting the campaign</li>
+<li><strong>Modification options:</strong> change amount, change frequency, change payment method, pause (with resume date), cancel</li>
+<li><strong>Campaign-side management:</strong> Finance Director can view all recurring donors, filter by status (active, paused, failed, cancelled), and export</li>
+</ul>
+<h4 id="payment-processing" tabindex="-1"><a class="heading-anchor" href="#payment-processing" aria-hidden="true">#</a> Payment Processing</h4>
+<ul>
+<li>Platform triggers recurring charges via processor on schedule</li>
+<li><strong>Retry logic on failure:</strong></li>
+</ul>
+<p><strong>DECIDED: Smart retry.</strong> Retry at processor-recommended optimal times when available (up to 4 attempts over 14 days), fall back to simple schedule (day 1, 3, 7) for processors that don't provide smart retry data. After final failure, mark as failed and notify both donor (with link to update payment method) and campaign.</p>
+<ul>
+<li><strong>On final failure:</strong> recurring donation marked as failed, donor notified with link to update payment method, campaign notified in compliance dashboard</li>
+<li><strong>Successful charge:</strong> receipt generated, donor record updated, audit trail entry created</li>
+</ul>
+<h4 id="notifications" tabindex="-1"><a class="heading-anchor" href="#notifications" aria-hidden="true">#</a> Notifications</h4>
+<ul>
+<li><strong>Pre-charge reminder</strong> (optional, configurable by tenant) — notify donor X days before next charge</li>
+<li><strong>Successful charge confirmation</strong> — receipt via email/SMS per donor preference</li>
+<li><strong>Failed charge notification</strong> — immediate notification to donor with remediation link</li>
+<li><strong>Expiring payment method</strong> — notify donor when card is approaching expiration (if processor provides this data)</li>
+</ul>
+<h3 id="pledges" tabindex="-1"><a class="heading-anchor" href="#pledges" aria-hidden="true">#</a> Pledges</h3>
+<p><strong>DECIDED: First-class pledges.</strong> Donors can pledge a future donation. The platform tracks pledge status (pending, fulfilled, lapsed), sends configurable reminders, and connects fulfillment to the actual payment when it arrives. Pledges are a formal donation type with their own lifecycle — created during phone banking or canvassing, reminder sent on schedule, fulfilled when donor completes payment, lapsed after configurable expiry. Connects the field operation to the fundraising pipeline.</p>
+<h3 id="peer-to-peer-fundraising" tabindex="-1"><a class="heading-anchor" href="#peer-to-peer-fundraising" aria-hidden="true">#</a> Peer-to-Peer Fundraising</h3>
+<p><strong>DECIDED: Deferred.</strong> Not for alpha or early pilots. All fundraising pages are campaign-controlled for now. However, the data model should accommodate peer-to-peer fundraising (supporter-created pages linked to campaigns, with attribution tracking) so it can be added later without migration pain.</p>
+<h2 id="donation-forms" tabindex="-1"><a class="heading-anchor" href="#donation-forms" aria-hidden="true">#</a> Donation Forms</h2>
+<h3 id="form-types" tabindex="-1"><a class="heading-anchor" href="#form-types" aria-hidden="true">#</a> Form Types</h3>
+<ol>
+<li><strong>Hosted donation page</strong> — full-page donation form on the tenant's GreenGrass subdomain (or custom domain). Campaign-branded, mobile-optimized, multilingual.</li>
+<li><strong>Embeddable widget</strong> — JavaScript embed for third-party websites. Renders an inline donation form or a modal. Respects the host page's styling where possible.</li>
+<li><strong>Link-based</strong> — shareable URL that opens the hosted donation page. Works in SMS, WhatsApp, email, social media.</li>
+</ol>
+<h3 id="form-configuration" tabindex="-1"><a class="heading-anchor" href="#form-configuration" aria-hidden="true">#</a> Form Configuration</h3>
+<p>Tenants configure donation forms with:</p>
+<ul>
+<li><strong>Suggested amounts</strong> — up to 5 preset amounts + custom amount option</li>
+<li><strong>Default amount</strong> — which preset is pre-selected (if any)</li>
+<li><strong>Recurring option</strong> — whether to show recurring toggle, and whether recurring or one-time is the default</li>
+<li><strong>Processing fee option</strong> — whether to offer donors the choice to cover processing fees</li>
+<li><strong>Required fields</strong> — per-jurisdiction donor information requirements (name, email/phone, employer/occupation)</li>
+<li><strong>Custom fields</strong> — tenant-defined additional fields (e.g., &quot;How did you hear about us?&quot;, T-shirt size for event donations)</li>
+<li><strong>Payment methods</strong> — which configured payment methods to show on this form</li>
+<li><strong>Language</strong> — form language (from tenant's configured languages), with auto-detection based on visitor's browser/device language</li>
+<li><strong>Branding</strong> — logo, colors, hero image, thank-you message</li>
+<li><strong>Designation</strong> — optional fund/campaign designation if the tenant uses fund accounting</li>
+</ul>
+<h3 id="processing-fee-pass-through" tabindex="-1"><a class="heading-anchor" href="#processing-fee-pass-through" aria-hidden="true">#</a> Processing Fee Pass-Through</h3>
+<p><strong>DECIDED: Opt-in checkbox.</strong> &quot;Add $X.XX to cover processing fees so 100% of your donation goes to [campaign].&quot; Fee calculated in real-time based on the processor's rate for the selected payment method, displayed before donor confirms. Whether the checkbox is checked or unchecked by default is tenant-configurable. MVP feature — table stakes for campaign fundraising platforms.</p>
+<h3 id="form-analytics" tabindex="-1"><a class="heading-anchor" href="#form-analytics" aria-hidden="true">#</a> Form Analytics</h3>
+<p>Each donation form tracks:</p>
+<ul>
+<li>Views, starts (donor began entering info), completions, abandonment rate</li>
+<li>Conversion by payment method, device type, referral source</li>
+<li>Average donation amount</li>
+<li>A/B test results (if configured)</li>
+</ul>
+<p><strong>DECIDED: Built-in A/B testing.</strong> Tenants can create form variants (different suggested amounts, copy, layouts), split traffic between them, and track conversion per variant. Platform declares a winner based on configurable success metric (conversion rate, average donation, total revenue). Core fundraising optimization capability.</p>
+<h2 id="processing-fees" tabindex="-1"><a class="heading-anchor" href="#processing-fees" aria-hidden="true">#</a> Processing Fees</h2>
+<h3 id="fee-structure" tabindex="-1"><a class="heading-anchor" href="#fee-structure" aria-hidden="true">#</a> Fee Structure</h3>
+<p><strong>DECIDED: Zero platform fee.</strong> GreenGrass takes no cut of donations. Tenants pay only the payment processor's fees. Every dollar goes to the campaign. Revenue comes entirely from platform subscriptions and services. Strongest alignment with mission and cleanest positioning — GreenGrass's financial incentives are tied to platform quality, not donation volume.</p>
+<h3 id="fee-transparency" tabindex="-1"><a class="heading-anchor" href="#fee-transparency" aria-hidden="true">#</a> Fee Transparency</h3>
+<p>Regardless of fee structure:</p>
+<ul>
+<li>Donors see the total amount they'll be charged, including any fees they've opted to cover</li>
+<li>Campaigns see: gross donation, processor fee, net amount</li>
+<li>Receipts show the full donation amount (gross), not the net — the donor gave the full amount, fees are the campaign's cost of doing business (unless donor opted to cover them)</li>
+</ul>
+<h3 id="per-method-fee-expectations" tabindex="-1"><a class="heading-anchor" href="#per-method-fee-expectations" aria-hidden="true">#</a> Per-Method Fee Expectations</h3>
+<table>
+<thead>
+<tr>
+<th>Payment method</th>
+<th>Typical processor fee</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Credit card</td>
+<td>2.9% + $0.30 (varies)</td>
+<td>Highest fee, most universal</td>
+</tr>
+<tr>
+<td>PIX (Brazil)</td>
+<td>0-1%</td>
+<td>Very low cost, instant settlement</td>
+</tr>
+<tr>
+<td>UPI (India)</td>
+<td>0% (government subsidized, may change)</td>
+<td>Currently free for merchants</td>
+</tr>
+<tr>
+<td>PromptPay (Thailand)</td>
+<td>0-0.25%</td>
+<td>Very low cost</td>
+</tr>
+<tr>
+<td>ATH Movil (PR)</td>
+<td>~1-2%</td>
+<td>Lower than credit cards</td>
+</tr>
+<tr>
+<td>Venmo/Zelle</td>
+<td>Varies</td>
+<td>Person-to-person may be free, business accounts have fees</td>
+</tr>
+<tr>
+<td>OMT (Lebanon)</td>
+<td>Fixed per-transaction fee</td>
+<td>Cash-based, fee structure varies</td>
+</tr>
+<tr>
+<td>Cash</td>
+<td>0% processing fee</td>
+<td>But administrative cost of recording and reconciliation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cash-donation-handling" tabindex="-1"><a class="heading-anchor" href="#cash-donation-handling" aria-hidden="true">#</a> Cash Donation Handling</h2>
+<p><a href="http://Workflows.md" target="_blank" rel="noopener noreferrer">Workflows.md</a> established the basic cash flow. Detailed specification:</p>
+<h3 id="recording" tabindex="-1"><a class="heading-anchor" href="#recording" aria-hidden="true">#</a> Recording</h3>
+<ul>
+<li><strong>Offline-capable</strong> — cash donations can be recorded without connectivity (critical for events, canvassing)</li>
+<li><strong>Required fields:</strong> amount, date, collector (staff/volunteer who received the cash)</li>
+<li><strong>Optional fields:</strong> donor name, donor contact info, event context, designation, receipt photo</li>
+<li><strong>Anonymous tracking:</strong> if donor declines to provide identity, recorded as anonymous with collector attestation. Jurisdiction rules on anonymous donation limits enforced (e.g., India's ₹2,000 cash limit without identity)</li>
+</ul>
+<h3 id="chain-of-custody" tabindex="-1"><a class="heading-anchor" href="#chain-of-custody" aria-hidden="true">#</a> Chain of Custody</h3>
+<p><strong>DECIDED: Full chain of custody.</strong> Platform tracks who collected the cash, every handoff (volunteer → team lead → finance staff), when it was deposited, and which bank deposit it's part of. Every handoff is a logged event with collector, recipient, timestamp, and amount. Critical for compliance and fraud prevention in cash-heavy environments like Lebanon.</p>
+<h3 id="reconciliation" tabindex="-1"><a class="heading-anchor" href="#reconciliation" aria-hidden="true">#</a> Reconciliation</h3>
+<ul>
+<li>Finance Director matches cash donation records against bank deposit records</li>
+<li>Platform highlights discrepancies (recorded donations without matching deposits, deposits without matching records)</li>
+<li>Reconciliation status tracked per donation: unreconciled, matched, disputed</li>
+<li>Reconciliation reports available for compliance filing</li>
+</ul>
+<h2 id="alliance-fundraising" tabindex="-1"><a class="heading-anchor" href="#alliance-fundraising" aria-hidden="true">#</a> Alliance Fundraising</h2>
+<p>Already decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>: configurable donation splits per campaign. Detailed specification:</p>
+<h3 id="split-configuration" tabindex="-1"><a class="heading-anchor" href="#split-configuration" aria-hidden="true">#</a> Split Configuration</h3>
+<ul>
+<li>Alliance admin defines split rules per joint fundraising campaign</li>
+<li><strong>Split types:</strong>
+<ul>
+<li><strong>Percentage-based</strong> — each member org receives a configured percentage (must total 100%)</li>
+<li><strong>Fixed amount first</strong> — one org receives a fixed amount per donation, remainder split by percentage among others</li>
+<li><strong>Threshold-based</strong> — split percentages change once a fundraising goal is met (e.g., 60/40 until org A hits $50k, then 40/60)</li>
+</ul>
+</li>
+</ul>
+<p><strong>DECIDED: Unanimous consent.</strong> All member org admins must approve split changes. Money splits are too sensitive for unilateral modification. Platform sends approval requests to all member org admins, tracks responses, and only applies the new split once all have approved. Original agreed terms stand until everyone agrees to new terms.</p>
+<h3 id="split-execution" tabindex="-1"><a class="heading-anchor" href="#split-execution" aria-hidden="true">#</a> Split Execution</h3>
+<ul>
+<li>Donation is processed through the alliance's payment processor</li>
+<li>Platform calculates split amounts based on configured rules</li>
+<li>Split calculated on net amount (after processor fees) unless configured otherwise</li>
+<li>Each member org's share is recorded as a separate ledger entry</li>
+<li><strong>Disbursement timing:</strong></li>
+</ul>
+<p><strong>DECIDED: Configurable.</strong> Alliance chooses immediate or batch disbursement per campaign. Immediate requires each member org to have their own connected payment account; batch accumulates in the alliance account and disburses on a configured schedule (weekly, monthly). Alliance picks what fits the campaign's needs.</p>
+<h3 id="alliance-reporting" tabindex="-1"><a class="heading-anchor" href="#alliance-reporting" aria-hidden="true">#</a> Alliance Reporting</h3>
+<ul>
+<li>Alliance-level view: total raised, per-org attribution, split amounts, donor overlap across orgs</li>
+<li>Member org view: their share only, with donation details for their attributed donors</li>
+<li>Compliance: each org's share is reported separately for campaign finance purposes — an alliance donation is not one donation, it's multiple donations split at intake</li>
+</ul>
+<h2 id="refund-workflows" tabindex="-1"><a class="heading-anchor" href="#refund-workflows" aria-hidden="true">#</a> Refund Workflows</h2>
+<h3 id="who-can-initiate" tabindex="-1"><a class="heading-anchor" href="#who-can-initiate" aria-hidden="true">#</a> Who Can Initiate</h3>
+<ul>
+<li><strong>Finance Director/Manager</strong> — can initiate refunds from the platform</li>
+<li><strong>Donor self-service</strong> — donors cannot initiate refunds directly through the platform (they go through their payment processor's dispute process or contact the campaign)</li>
+<li><strong>Platform Admin</strong> — can initiate refunds in case of fraud or platform-level issues</li>
+</ul>
+<h3 id="refund-types" tabindex="-1"><a class="heading-anchor" href="#refund-types" aria-hidden="true">#</a> Refund Types</h3>
+<ul>
+<li><strong>Full refund</strong> — entire donation amount returned</li>
+<li><strong>Partial refund</strong> — portion of donation returned (e.g., if a donor overpaid or wants to reduce a pledge)</li>
+</ul>
+<h3 id="refund-process" tabindex="-1"><a class="heading-anchor" href="#refund-process" aria-hidden="true">#</a> Refund Process</h3>
+<ol>
+<li>Finance Director initiates refund, selects donation, enters reason</li>
+<li>Platform checks: is this donation part of an alliance split? If yes, calculate refund amounts per org</li>
+<li>Refund submitted to payment processor</li>
+<li>On processor confirmation: donation record updated, donor record updated, audit trail entry, compliance reports adjusted</li>
+<li>Donor notified of refund</li>
+</ol>
+<h3 id="refund-constraints" tabindex="-1"><a class="heading-anchor" href="#refund-constraints" aria-hidden="true">#</a> Refund Constraints</h3>
+<ul>
+<li>Refunds only possible through original payment method</li>
+<li>Cash donations cannot be &quot;refunded&quot; through the platform — handled manually, recorded as a manual adjustment</li>
+<li>Refunds of recurring donations do not automatically cancel the recurring schedule — Finance Director must cancel separately if appropriate</li>
+<li>Processor fees are generally not refunded by the processor — the campaign absorbs this cost</li>
+</ul>
+<h2 id="donor-experience" tabindex="-1"><a class="heading-anchor" href="#donor-experience" aria-hidden="true">#</a> Donor Experience</h2>
+<h3 id="donation-receipt" tabindex="-1"><a class="heading-anchor" href="#donation-receipt" aria-hidden="true">#</a> Donation Receipt</h3>
+<p>Every donation (including cash) generates a receipt containing:</p>
+<ul>
+<li>Donor name (or &quot;Anonymous Donor&quot;)</li>
+<li>Donation amount (gross — what the donor gave, not net)</li>
+<li>Date</li>
+<li>Campaign/organization name and legal entity information</li>
+<li>Tax-deductibility statement if applicable (jurisdiction-dependent — in many target countries, political donations are not tax-deductible)</li>
+<li>Transaction reference number</li>
+<li>For recurring: next charge date and cancellation instructions</li>
+</ul>
+<p>Receipts are delivered via the donor's preferred channel (email or SMS) and available in the donor self-service portal.</p>
+<h3 id="donor-self-service-portal" tabindex="-1"><a class="heading-anchor" href="#donor-self-service-portal" aria-hidden="true">#</a> Donor Self-Service Portal</h3>
+<p>Donors with an account (or who create one from a receipt link) can:</p>
+<ul>
+<li>View donation history</li>
+<li>Download receipts</li>
+<li>Manage recurring donations (modify, pause, cancel)</li>
+<li>Update payment methods</li>
+<li>Update personal information</li>
+<li>Manage communication preferences (consent)</li>
+</ul>
+<p><strong>DECIDED: Both — tiered access.</strong> Magic link for quick access (view donation history, download receipts). Full account (passkey or email) required for management actions (modify recurring donations, update payment method, change personal info). Low friction for common tasks, proper authentication for anything that touches money.</p>
+<h3 id="year-end-donor-statements" tabindex="-1"><a class="heading-anchor" href="#year-end-donor-statements" aria-hidden="true">#</a> Year-End Donor Statements</h3>
+<p>At the end of each calendar year (or fiscal year, configurable), the platform generates a consolidated donor statement:</p>
+<ul>
+<li>All donations made during the period</li>
+<li>Total amount</li>
+<li>Per-campaign breakdown</li>
+<li>Tax-relevant information per jurisdiction</li>
+<li>Sent automatically to all donors who gave during the period</li>
+</ul>
+<h2 id="fundraising-analytics" tabindex="-1"><a class="heading-anchor" href="#fundraising-analytics" aria-hidden="true">#</a> Fundraising Analytics</h2>
+<p>Already decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>: real-time fundraising thermometer, Finance Director dashboard with revenue by channel/campaign/period, donor retention, recurring health, cash vs. digital breakdown.</p>
+<h3 id="additional-analytics" tabindex="-1"><a class="heading-anchor" href="#additional-analytics" aria-hidden="true">#</a> Additional Analytics</h3>
+<ul>
+<li><strong>Donor segmentation:</strong> first-time vs. repeat, one-time vs. recurring, amount tiers, payment method, acquisition channel</li>
+<li><strong>Donor lifetime value:</strong> total contributions over time, average frequency, predicted future value</li>
+<li><strong>Lapsed donor identification:</strong> donors whose recurring donations have ended or who haven't given in X months</li>
+<li><strong>Campaign ROI:</strong> fundraising revenue vs. cost of fundraising appeals (email sends, SMS costs, etc.)</li>
+<li><strong>Conversion funnel:</strong> form view → form start → payment attempt → successful donation, with drop-off analysis per step</li>
+<li><strong>Geographic distribution:</strong> donations mapped by donor location (where available)</li>
+</ul>
+<h2 id="platform-revenue-model" tabindex="-1"><a class="heading-anchor" href="#platform-revenue-model" aria-hidden="true">#</a> Platform Revenue Model</h2>
+<p><strong>DECIDED: Flat subscription tiers.</strong> Fixed monthly/annual pricing based on feature tier (basic, professional, enterprise). Not tied to donation volume, user count, or any usage metric. Predictable for campaigns, simple to understand, no surprises. A genuinely usable free or very-low-cost tier must exist for resource-constrained campaigns.</p>
+<h3 id="pricing-principles-from-productmd-to-be-preserved-regardless-of-model" tabindex="-1"><a class="heading-anchor" href="#pricing-principles-from-productmd-to-be-preserved-regardless-of-model" aria-hidden="true">#</a> Pricing Principles (from <a href="http://product.md" target="_blank" rel="noopener noreferrer">product.md</a>, to be preserved regardless of model)</h3>
+<ul>
+<li><strong>Not per-user pricing</strong> — explicitly rejected. Campaigns shouldn't be penalized for having more volunteers.</li>
+<li><strong>Not per-transaction pricing</strong> — GreenGrass takes zero cut of donations (decided above).</li>
+<li><strong>Accessible to resource-constrained campaigns</strong> — free or very low-cost tier must exist and be genuinely usable, not crippled.</li>
+<li><strong>Transparent</strong> — no hidden fees, no surprise charges.</li>
+</ul>
+<h2 id="fraud-prevention" tabindex="-1"><a class="heading-anchor" href="#fraud-prevention" aria-hidden="true">#</a> Fraud Prevention</h2>
+<h3 id="donation-fraud-indicators" tabindex="-1"><a class="heading-anchor" href="#donation-fraud-indicators" aria-hidden="true">#</a> Donation Fraud Indicators</h3>
+<p>The platform monitors for:</p>
+<ul>
+<li><strong>Rapid small donations</strong> from the same source (structuring to avoid disclosure thresholds)</li>
+<li><strong>Mismatched donor information</strong> (name on payment method doesn't match donor info provided)</li>
+<li><strong>Unusual geographic patterns</strong> (donation from a country where the campaign doesn't operate, unless diaspora is expected)</li>
+<li><strong>Velocity checks</strong> (unusual spike in donations from a single IP or device)</li>
+<li><strong>Known bad actors</strong> (processor-provided fraud signals)</li>
+</ul>
+<h3 id="fraud-response" tabindex="-1"><a class="heading-anchor" href="#fraud-response" aria-hidden="true">#</a> Fraud Response</h3>
+<ul>
+<li>Flagged donations are held for Finance Director review (similar to foreign contribution escrow)</li>
+<li>Finance Director can approve, refund, or escalate</li>
+<li>Repeated fraud patterns trigger alerts and can lead to payment method blocking</li>
+<li>All fraud flags and resolutions logged in audit trail</li>
+</ul>
+<h2 id="offline-donation-sync" tabindex="-1"><a class="heading-anchor" href="#offline-donation-sync" aria-hidden="true">#</a> Offline Donation Sync</h2>
+<p>Cash donations recorded offline follow the event sourcing sync protocol (<a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a>):</p>
+<ol>
+<li>Donation recorded on device, stored in SQLCipher</li>
+<li>Event created: <code>DonationRecorded { amount, donor_info, collector, timestamp, event_context }</code></li>
+<li>On connectivity: event synced to server</li>
+<li>Server validates: duplicate check (same collector, same amount, same timestamp = likely duplicate), jurisdiction rules applied</li>
+<li>Donation appears in Finance Director's reconciliation queue</li>
+<li>If conflict (same donation recorded by two people): merge-and-flag per canvassing conflict rules (<a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>)</li>
+</ol>
+<h2 id="resolved-open-questions" tabindex="-1"><a class="heading-anchor" href="#resolved-open-questions" aria-hidden="true">#</a> Resolved Open Questions</h2>
+<ol>
+<li><strong>Payment processor relationship model</strong></li>
+</ol>
+<p><strong>DECIDED: Direct merchant.</strong> Each tenant signs their own agreement with the payment processor. GreenGrass facilitates the connection (guided setup wizard, pre-configured processor options) but is not party to the financial relationship. Cleanest liability separation — GreenGrass is a software platform, not a financial intermediary. Avoids payfac regulatory burden across five countries.</p>
+<ol start="2">
+<li><strong>Cryptocurrency donations</strong></li>
+</ol>
+<p><strong>DECIDED: Deferred.</strong> Not for alpha or pilots. If a tenant accepts crypto through their own external processor, the platform can record it as a manual/external donation. No active prevention, no active support. Revisit when regulatory clarity emerges in a target jurisdiction.</p>
+<ol start="3">
+<li><strong>Matching gifts</strong></li>
+</ol>
+<p><strong>DECIDED: Deferred.</strong> Primarily a US/corporate feature, not relevant for most global south jurisdictions in early phases. Revisit when platform matures and US market grows.</p>
+<!-- REVISIT: Integration with specific payment processors (API contracts, webhook formats, settlement timing) will need detailed technical specs per processor during implementation. Each processor adapter is its own mini-integration project. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#fundraising-philosophy"># Fundraising Philosophy</a></li><li class="toc-2"><a href="#payment-processor-strategy"># Payment Processor Strategy</a></li><li class="toc-3"><a href="#processor-selection-approach"># Processor Selection Approach</a></li><li class="toc-3"><a href="#per-country-payment-integration-plan"># Per-Country Payment Integration Plan</a></li><li class="toc-3"><a href="#processor-onboarding"># Processor Onboarding</a></li><li class="toc-2"><a href="#multi-currency-handling"># Multi-Currency Handling</a></li><li class="toc-2"><a href="#donation-types-flows"># Donation Types &amp;amp; Flows</a></li><li class="toc-3"><a href="#one-time-donations"># One-Time Donations</a></li><li class="toc-3"><a href="#recurring-donations"># Recurring Donations</a></li><li class="toc-3"><a href="#pledges"># Pledges</a></li><li class="toc-3"><a href="#peer-to-peer-fundraising"># Peer-to-Peer Fundraising</a></li><li class="toc-2"><a href="#donation-forms"># Donation Forms</a></li><li class="toc-3"><a href="#form-types"># Form Types</a></li><li class="toc-3"><a href="#form-configuration"># Form Configuration</a></li><li class="toc-3"><a href="#processing-fee-pass-through"># Processing Fee Pass-Through</a></li><li class="toc-3"><a href="#form-analytics"># Form Analytics</a></li><li class="toc-2"><a href="#processing-fees"># Processing Fees</a></li><li class="toc-3"><a href="#fee-structure"># Fee Structure</a></li><li class="toc-3"><a href="#fee-transparency"># Fee Transparency</a></li><li class="toc-3"><a href="#per-method-fee-expectations"># Per-Method Fee Expectations</a></li><li class="toc-2"><a href="#cash-donation-handling"># Cash Donation Handling</a></li><li class="toc-3"><a href="#recording"># Recording</a></li><li class="toc-3"><a href="#chain-of-custody"># Chain of Custody</a></li><li class="toc-3"><a href="#reconciliation"># Reconciliation</a></li><li class="toc-2"><a href="#alliance-fundraising"># Alliance Fundraising</a></li><li class="toc-3"><a href="#split-configuration"># Split Configuration</a></li><li class="toc-3"><a href="#split-execution"># Split Execution</a></li><li class="toc-3"><a href="#alliance-reporting"># Alliance Reporting</a></li><li class="toc-2"><a href="#refund-workflows"># Refund Workflows</a></li><li class="toc-3"><a href="#who-can-initiate"># Who Can Initiate</a></li><li class="toc-3"><a href="#refund-types"># Refund Types</a></li><li class="toc-3"><a href="#refund-process"># Refund Process</a></li><li class="toc-3"><a href="#refund-constraints"># Refund Constraints</a></li><li class="toc-2"><a href="#donor-experience"># Donor Experience</a></li><li class="toc-3"><a href="#donation-receipt"># Donation Receipt</a></li><li class="toc-3"><a href="#donor-self-service-portal"># Donor Self-Service Portal</a></li><li class="toc-3"><a href="#year-end-donor-statements"># Year-End Donor Statements</a></li><li class="toc-2"><a href="#fundraising-analytics"># Fundraising Analytics</a></li><li class="toc-3"><a href="#additional-analytics"># Additional Analytics</a></li><li class="toc-2"><a href="#platform-revenue-model"># Platform Revenue Model</a></li><li class="toc-3"><a href="#pricing-principles-from-productmd-to-be-preserved-regardless-of-model"># Pricing Principles (from product.md, to be preserved regardless of model)</a></li><li class="toc-2"><a href="#fraud-prevention"># Fraud Prevention</a></li><li class="toc-3"><a href="#donation-fraud-indicators"># Donation Fraud Indicators</a></li><li class="toc-3"><a href="#fraud-response"># Fraud Response</a></li><li class="toc-2"><a href="#offline-donation-sync"># Offline Donation Sync</a></li><li class="toc-2"><a href="#resolved-open-questions"># Resolved Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

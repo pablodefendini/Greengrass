@@ -10,3 +10,6 @@ Thumbs.db
 # Claude Code local state
 .claude/projects/
 .claude/settings.local.json
+
+# Node / docs site build (docs/ is committed intentionally)
+node_modules/

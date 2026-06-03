@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activism &amp; Engagement Campaign Wireframes · GreenGrass</title>
+<meta name="description" content="Activism &amp; Engagement Campaign Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="./activism.html" aria-current="page" class="active">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="activism-engagement-campaign-wireframes" tabindex="-1"><a class="heading-anchor" href="#activism-engagement-campaign-wireframes" aria-hidden="true">#</a> Activism &amp; Engagement Campaign Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Activism campaigns turn a supporter base into a coordinated political force — letter-writing actions, petitions, and public comment submissions that create measurable constituent pressure on targets (elected officials, regulatory bodies, corporations).</p>
+<p>The core UX challenge: the platform serves two radically different users in a single flow. Staff (OA, CD) build campaigns with talking points, targets, and strategy. Supporters — often first-time participants on a mobile phone — land on a public page and must complete an action in under two minutes, with zero training. The AI message generation adds a third concern: the supporter must understand what the AI wrote on their behalf, trust it, and approve it before sending.</p>
+<p>Design priorities: (1) friction-free public action pages that maximize completion rates, (2) AI-generated messages that feel personal and transparent, (3) staff tools for tracking impact and documenting outcomes.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT-001</td>
+<td>Activism Campaign List</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td>ACT-002</td>
+<td>Letter/Email Action Setup</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td>ACT-003</td>
+<td>Petition Setup</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td>ACT-004</td>
+<td>Public Comment Campaign Setup</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td>ACT-005</td>
+<td>Action Page (Public)</td>
+<td>S, Public</td>
+<td>No</td>
+<td>Primary</td>
+<td>Public</td>
+</tr>
+<tr>
+<td>ACT-006</td>
+<td>Petition Page (Public)</td>
+<td>S, Public</td>
+<td>No</td>
+<td>Primary</td>
+<td>Public</td>
+</tr>
+<tr>
+<td>ACT-007</td>
+<td>AI Message Generation Preview</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td>Public</td>
+</tr>
+<tr>
+<td>ACT-008</td>
+<td>Activism Campaign Analytics</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td>ACT-009</td>
+<td>Delivery Event Documentation</td>
+<td>OA, CD</td>
+<td>Partial</td>
+<td>Yes</td>
+<td>Admin</td>
+</tr>
+</tbody>
+</table>
+<h2 id="activism-navigation-context" tabindex="-1"><a class="heading-anchor" href="#activism-navigation-context" aria-hidden="true">#</a> Activism Navigation Context</h2>
+<pre><code>ACTIVISM (sidebar section for OA, CD)
+  Campaigns      → ACT-001
+  Analytics      → ACT-008  (also per-campaign from ACT-001)
+
+Public routes (no sidebar):
+  /action/[id]   → ACT-005 + ACT-007
+  /petition/[id] → ACT-006
+</code></pre>
+<hr>
+<h2 id="act-001-activism-campaign-list" tabindex="-1"><a class="heading-anchor" href="#act-001-activism-campaign-list" aria-hidden="true">#</a> ACT-001: Activism Campaign List</h2>
+<p>Staff overview of all activism campaigns — letter-writing, petition, and public comment. Answers &quot;what campaigns are running, how are they performing, what needs attention?&quot;</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Activism Campaigns                                     [+ New Campaign ▾]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Search campaigns...]   Type: [All ▾]   Status: [All ▾]   Sort: [Recent ▾] │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ ✉ Clean Water Act — Email Your Representative                        │  │
+│  │   Letter/Email  ·  Active  ·  Created Mar 1                          │  │
+│  │                                                                      │  │
+│  │   Target: Sen. María Torres, District 12                             │  │
+│  │                                                                      │  │
+│  │   ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐           │  │
+│  │   │ Actions  │  │ Sent     │  │ Opened   │  │ Regions  │           │  │
+│  │   │ 847      │  │ 812      │  │ 489      │  │ 14       │           │  │
+│  │   └──────────┘  └──────────┘  └──────────┘  └──────────┘           │  │
+│  │                                                                      │  │
+│  │   [Edit]  [View Analytics]  [Copy Link]  [···]                       │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ ✍ Stop Deforestation in the Eastern Valley                           │  │
+│  │   Petition  ·  Active  ·  Created Feb 20                             │  │
+│  │                                                                      │  │
+│  │   Target: Ministry of Environment                                    │  │
+│  │                                                                      │  │
+│  │   ┌──────────────────────┐  ┌──────────┐  ┌──────────┐              │  │
+│  │   │ Signatures           │  │ Goal     │  │ Progress │              │  │
+│  │   │ 2,341                │  │ 5,000    │  │ ████░ 47%│              │  │
+│  │   └──────────────────────┘  └──────────┘  └──────────┘              │  │
+│  │                                                                      │  │
+│  │   [Edit]  [View Analytics]  [Copy Link]  [···]                       │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ 💬 Water Quality Standards Comment Period                             │  │
+│  │   Public Comment  ·  Ended Feb 28  ·  Created Feb 10                 │  │
+│  │                                                                      │  │
+│  │   Target: Environmental Regulation Agency                            │  │
+│  │                                                                      │  │
+│  │   ┌──────────┐  ┌──────────┐  ┌──────────────┐                     │  │
+│  │   │ Comments │  │ Submitted│  │ Deadline     │                     │  │
+│  │   │ 156      │  │ 143      │  │ Passed Feb 28│                     │  │
+│  │   └──────────┘  └──────────┘  └──────────────┘                     │  │
+│  │                                                                      │  │
+│  │   [View Analytics]  [···]                                            │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>[+ New Campaign ▾]</strong> dropdown:</p>
+<ul>
+<li>Create Letter/Email Action → ACT-002</li>
+<li>Create Petition → ACT-003</li>
+<li>Create Public Comment Campaign → ACT-004</li>
+</ul>
+<p><strong>[···]</strong> overflow menu:</p>
+<ul>
+<li>Duplicate Campaign</li>
+<li>Archive Campaign</li>
+<li>Delete Campaign (confirmation required)</li>
+</ul>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  Activism              [+] │
+├────────────────────────────┤
+│                            │
+│  [Search...]   [Filter ▾]  │
+│                            │
+│  ┌────────────────────────┐│
+│  │ ✉ Clean Water Act —   ││
+│  │   Email Your Rep      ││
+│  │   Letter/Email · Active││
+│  │                        ││
+│  │   847 actions · 14 reg ││
+│  │   [View] [Copy Link]   ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ ✍ Stop Deforestation  ││
+│  │   Petition · Active    ││
+│  │                        ││
+│  │   2,341 / 5,000 sigs   ││
+│  │   ████░ 47%            ││
+│  │   [View] [Copy Link]   ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ 💬 Water Quality Stds ││
+│  │   Public Comment · End ││
+│  │                        ││
+│  │   156 comments         ││
+│  │   [View]               ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="states" tabindex="-1"><a class="heading-anchor" href="#states" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Active</strong>: campaign accepting actions, full controls visible</li>
+<li><strong>Paused</strong>: campaign temporarily stopped, &quot;(Paused)&quot; badge, Resume action in overflow</li>
+<li><strong>Ended</strong>: comment period passed or manually closed, no Edit, [View Analytics] only</li>
+<li><strong>Draft</strong>: campaign not yet published, &quot;Draft&quot; badge, no public link</li>
+</ul>
+<h3 id="interaction" tabindex="-1"><a class="heading-anchor" href="#interaction" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li>Cards sorted by most recent activity by default</li>
+<li>Type filter: All / Letter-Email / Petition / Public Comment</li>
+<li>Status filter: All / Active / Paused / Ended / Draft</li>
+<li>[Copy Link] copies public URL to clipboard with toast confirmation</li>
+<li>Card click → ACT-008 analytics for that campaign</li>
+<li>Petition cards show progress bar toward goal</li>
+</ul>
+<hr>
+<h2 id="act-002-letteremail-action-setup" tabindex="-1"><a class="heading-anchor" href="#act-002-letteremail-action-setup" aria-hidden="true">#</a> ACT-002: Letter/Email Action Setup</h2>
+<p>Staff form for creating or editing letter/email action campaigns. Configure the target, template message, and talking points that the AI will use to generate personalized messages for supporters.</p>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Activism Campaigns              Letter/Email Action Setup                 │
+│                                                     [Save Draft] [Publish]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Campaign Details ──────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Campaign Name *                                                       │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Clean Water Act — Email Your Representative                     │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Internal Description                                                  │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Pressure campaign for SB-1247 clean water amendment...          │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │  Staff-only. Not shown to supporters.                                  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Target ────────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Target Name *                           Target Title                  │ │
+│  │  ┌────────────────────────────┐          ┌──────────────────────────┐  │ │
+│  │  │ Sen. María Torres          │          │ State Senator, Dist. 12  │  │ │
+│  │  └────────────────────────────┘          └──────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Target Email *                          Target Phone (optional)       │ │
+│  │  ┌────────────────────────────┐          ┌──────────────────────────┐  │ │
+│  │  │ maria.torres@senate.gov    │          │ +1 (787) 555-0142        │  │ │
+│  │  └────────────────────────────┘          └──────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Target Mailing Address (optional)                                     │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Capitol Building, Suite 401, San Juan, PR 00901                 │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ The Ask ───────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  What are you asking the target to do? *                               │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Vote YES on SB-1247 to strengthen clean water protections       │  │ │
+│  │  │ for rural communities in District 12.                           │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │  Shown to supporters as the headline ask.                              │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Talking Points ────────────────────────────────────────────────── [+] ┐ │
+│  │                                                                        │ │
+│  │  The AI uses these to generate unique personalized messages.           │ │
+│  │  Order matters — higher points are weighted more heavily.              │ │
+│  │                                                                        │ │
+│  │  1. ┌──────────────────────────────────────────────────────────────┐   │ │
+│  │     │ 3 in 10 rural families lack access to safe drinking water   │   │ │
+│  │     └──────────────────────────────────────────────────────────────┘   │ │
+│  │     [↑] [↓] [×]                                                       │ │
+│  │                                                                        │ │
+│  │  2. ┌──────────────────────────────────────────────────────────────┐   │ │
+│  │     │ SB-1247 would fund water testing for every public school    │   │ │
+│  │     └──────────────────────────────────────────────────────────────┘   │ │
+│  │     [↑] [↓] [×]                                                       │ │
+│  │                                                                        │ │
+│  │  3. ┌──────────────────────────────────────────────────────────────┐   │ │
+│  │     │ Similar legislation in 4 other states reduced contamination │   │ │
+│  │     │ incidents by 60% within 2 years                             │   │ │
+│  │     └──────────────────────────────────────────────────────────────┘   │ │
+│  │     [↑] [↓] [×]                                                       │ │
+│  │                                                                        │ │
+│  │  [+ Add Talking Point]                                                 │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Template Message ──────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Base template for the AI to personalize. Supporters see their         │ │
+│  │  unique version, not this template directly.                           │ │
+│  │                                                                        │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Dear Senator Torres,                                            │  │ │
+│  │  │                                                                  │  │ │
+│  │  │ As a constituent of District 12, I am writing to urge you to    │  │ │
+│  │  │ vote YES on SB-1247. Clean water is not a luxury — it is a      │  │ │
+│  │  │ fundamental right that too many of our neighbors still lack...  │  │ │
+│  │  │                                                                  │  │ │
+│  │  │ [Rich text: Bold, Italic, Link]                                 │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ▸ Public Page Appearance (collapsed)                                        │
+│  ▸ Promotion &amp; Sharing (collapsed)                                           │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  [Preview Public Page]                          [Save Draft]  [Publish]      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="collapsed-sections-progressive-disclosure" tabindex="-1"><a class="heading-anchor" href="#collapsed-sections-progressive-disclosure" aria-hidden="true">#</a> Collapsed Sections (Progressive Disclosure)</h3>
+<p><strong>Public Page Appearance:</strong></p>
+<ul>
+<li>Hero image (optional upload)</li>
+<li>Headline override (defaults to campaign name)</li>
+<li>Background context paragraph (shown to supporters before the action)</li>
+<li>Supporter information fields: Name (required), Email (required), Location (optional but recommended for constituent targeting), Personal connection (optional free text — e.g., &quot;I'm a parent of two students at Lincoln Elementary&quot;)</li>
+</ul>
+<p><strong>Promotion &amp; Sharing:</strong></p>
+<ul>
+<li>Public URL (auto-generated, copiable)</li>
+<li>Social share text (pre-filled, editable)</li>
+<li>Email share text for forwarding</li>
+</ul>
+<h3 id="interaction-1" tabindex="-1"><a class="heading-anchor" href="#interaction-1" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Save Draft</strong>: saves without publishing. Campaign visible only to staff</li>
+<li><strong>Publish</strong>: activates the public page. Confirmation dialog: &quot;This will make the action page live at [URL]. Supporters can start taking action immediately.&quot;</li>
+<li><strong>Talking point reordering</strong>: drag or use [↑][↓] arrows. Order determines AI weighting</li>
+<li><strong>[Preview Public Page]</strong>: opens ACT-005 in a new tab with &quot;PREVIEW&quot; banner — no actions recorded</li>
+<li><strong>Edit after publish</strong>: allowed. Changes apply immediately. Active campaign shows &quot;Published&quot; badge and &quot;Unpublish&quot; in overflow</li>
+</ul>
+<hr>
+<h2 id="act-003-petition-setup" tabindex="-1"><a class="heading-anchor" href="#act-003-petition-setup" aria-hidden="true">#</a> ACT-003: Petition Setup</h2>
+<p>Staff form for creating or editing petition campaigns. Configure the petition text, signature goal, and signer information requirements.</p>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Activism Campaigns                          Petition Setup                │
+│                                                     [Save Draft] [Publish]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Campaign Details ──────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Campaign Name *                                                       │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Stop Deforestation in the Eastern Valley                        │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Target *                                Target Title                  │ │
+│  │  ┌────────────────────────────┐          ┌──────────────────────────┐  │ │
+│  │  │ Ministry of Environment    │          │ Natural Resources Dept   │  │ │
+│  │  └────────────────────────────┘          └──────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Petition Content ──────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Petition Statement *                                                  │ │
+│  │  What are you petitioning for?                                         │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ We, the undersigned, call on the Ministry of Environment to     │  │ │
+│  │  │ immediately halt all logging permits in the Eastern Valley      │  │ │
+│  │  │ watershed and conduct an independent environmental impact       │  │ │
+│  │  │ assessment before any further development is approved.          │  │ │
+│  │  │                                                                  │  │ │
+│  │  │ The Eastern Valley is home to...                                │  │ │
+│  │  │                                                                  │  │ │
+│  │  │ [Rich text: Bold, Italic, Link]                                 │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Background Information                                                │ │
+│  │  Shown above the petition text to give context.                        │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ The Eastern Valley watershed provides drinking water to over    │  │ │
+│  │  │ 200,000 residents across three municipalities...                │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Signature Goal ────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Target Signatures *               □ Show goal publicly                │ │
+│  │  ┌────────────────┐                                                    │ │
+│  │  │ 5000           │                ☑ Show signature count              │ │
+│  │  └────────────────┘                                                    │ │
+│  │                                                                        │ │
+│  │  When goal is reached:                                                 │ │
+│  │  ○ Keep collecting signatures                                          │ │
+│  │  ○ Show &quot;Goal reached!&quot; and keep collecting                            │ │
+│  │  ○ Close petition                                                      │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Signer Information ────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Field              Required    Visible on petition                    │ │
+│  │  ─────────────────  ─────────   ────────────────────                   │ │
+│  │  Name               ☑ Always    ☑ Show (first name + last initial)     │ │
+│  │  Email              ☑ Always    □ Hide                                 │ │
+│  │  Location           ☑ Required  ☑ Show (city only)                     │ │
+│  │  Comment            □ Optional  ☑ Show (as &quot;Why I signed&quot;)             │ │
+│  │  Phone              □ Optional  □ Hide                                 │ │
+│  │                                                                        │ │
+│  │  ⓘ Email is always required for dedup and CRM linking.                │ │
+│  │    It is never shown publicly.                                         │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ▸ Public Page Appearance (collapsed)                                        │
+│  ▸ Promotion &amp; Sharing (collapsed)                                           │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  [Preview Public Page]                          [Save Draft]  [Publish]      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-2" tabindex="-1"><a class="heading-anchor" href="#interaction-2" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Signer information table</strong>: checkboxes control what fields appear on the public page and what is shown in the signature list</li>
+<li><strong>Privacy by default</strong>: email never shown publicly, location shows city only, name shows first name + last initial</li>
+<li><strong>Goal behavior</strong>: three options for what happens when signature target is reached</li>
+<li><strong>Show goal publicly</strong>: whether the target number is displayed. Some orgs prefer hiding it until close to achieving it</li>
+<li><strong>[Preview Public Page]</strong>: opens ACT-006 in preview mode</li>
+<li><strong>Publish/Save Draft</strong>: same behavior as ACT-002</li>
+</ul>
+<hr>
+<h2 id="act-004-public-comment-campaign-setup" tabindex="-1"><a class="heading-anchor" href="#act-004-public-comment-campaign-setup" aria-hidden="true">#</a> ACT-004: Public Comment Campaign Setup</h2>
+<p>Staff form for creating a public comment submission campaign. Defines the regulatory comment period, provides background for supporters, and creates a template comment.</p>
+<h3 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Activism Campaigns               Public Comment Campaign Setup            │
+│                                                     [Save Draft] [Publish]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Campaign Details ──────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Campaign Name *                                                       │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Water Quality Standards Comment Period                          │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Regulatory Body *                       Regulation/Docket Number      │ │
+│  │  ┌────────────────────────────┐          ┌──────────────────────────┐  │ │
+│  │  │ Environmental Regulation   │          │ ERA-2026-0142            │  │ │
+│  │  │ Agency                     │          │                          │  │ │
+│  │  └────────────────────────────┘          └──────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Comment Period ────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Deadline *                              Days Remaining                │ │
+│  │  ┌────────────────────────────┐          ┌──────────────────────────┐  │ │
+│  │  │ 2026-03-28  📅             │          │ 25 days (auto-calc)      │  │ │
+│  │  └────────────────────────────┘          └──────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  ⚠ Campaign will auto-close when the deadline passes.                 │ │
+│  │                                                                        │ │
+│  │  Submission Method *                                                   │ │
+│  │  ○ Platform submits directly (via email to regulatory body)            │ │
+│  │  ○ Supporter downloads comment and submits manually                    │ │
+│  │  ○ Both options available to supporter                                 │ │
+│  │                                                                        │ │
+│  │  Submission Email (if platform submits)                                │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ comments@era.gov                                                │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Background &amp; Talking Points ───────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Issue Explainer *                                                     │ │
+│  │  Plain-language explanation shown to supporters.                       │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ The Environmental Regulation Agency is proposing new water      │  │ │
+│  │  │ quality standards that would weaken protections for rural       │  │ │
+│  │  │ communities. The public comment period is your chance to        │  │ │
+│  │  │ tell the agency that strong standards matter...                 │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Talking Points                                                   [+]  │ │
+│  │  ──────────────                                                        │ │
+│  │  1. ┌──────────────────────────────────────────────────────────────┐   │ │
+│  │     │ Current standards have prevented 500+ contamination cases   │   │ │
+│  │     └──────────────────────────────────────────────────────────────┘   │ │
+│  │     [↑] [↓] [×]                                                       │ │
+│  │                                                                        │ │
+│  │  2. ┌──────────────────────────────────────────────────────────────┐   │ │
+│  │     │ Weakening standards would disproportionately affect         │   │ │
+│  │     │ low-income communities who can't afford filtration           │   │ │
+│  │     └──────────────────────────────────────────────────────────────┘   │ │
+│  │     [↑] [↓] [×]                                                       │ │
+│  │                                                                        │ │
+│  │  [+ Add Talking Point]                                                 │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Template Comment ──────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Base template for AI personalization.                                 │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Re: Docket ERA-2026-0142                                        │  │ │
+│  │  │                                                                  │  │ │
+│  │  │ I am writing to express my strong opposition to the proposed    │  │ │
+│  │  │ weakening of water quality standards. As a resident of...      │  │ │
+│  │  │                                                                  │  │ │
+│  │  │ [Rich text: Bold, Italic]                                       │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ▸ Public Page Appearance (collapsed)                                        │
+│  ▸ Promotion &amp; Sharing (collapsed)                                           │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  [Preview Public Page]                          [Save Draft]  [Publish]      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-3" tabindex="-1"><a class="heading-anchor" href="#interaction-3" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Deadline auto-close</strong>: when the comment period deadline passes, the campaign auto-closes. Staff can override to keep it open if the deadline is extended</li>
+<li><strong>Submission method</strong>: determines whether the platform sends comments directly (via configured email) or provides a download for manual submission. &quot;Both&quot; lets the supporter choose</li>
+<li><strong>Days Remaining</strong>: auto-calculated from deadline. Shows urgency — turns amber at 7 days, red at 3 days</li>
+<li><strong>Talking points</strong>: same reorderable list as ACT-002. AI uses these plus the template to generate personalized comments</li>
+<li><strong>Docket number</strong>: included in the generated comment header for official record matching</li>
+</ul>
+<hr>
+<h2 id="act-005-action-page-public" tabindex="-1"><a class="heading-anchor" href="#act-005-action-page-public" aria-hidden="true">#</a> ACT-005: Action Page (Public)</h2>
+<p>The public-facing page where supporters take action on a letter/email campaign. Mobile-first design — most supporters arrive via a shared link on their phone. The flow: read the context → provide your info → review AI-generated message → approve and send.</p>
+<h3 id="mobile-primary" tabindex="-1"><a class="heading-anchor" href="#mobile-primary" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  [Org Logo]                │
+│  Partido Verde de PR       │
+├────────────────────────────┤
+│                            │
+│  Email Your                │
+│  Representative            │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │     [Hero Image]       ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Ask Sen. Torres to vote   │
+│  YES on clean water        │
+│  protections for District  │
+│  12 families.              │
+│                            │
+│  3 in 10 rural families    │
+│  lack access to safe       │
+│  drinking water. SB-1247   │
+│  would change that.        │
+│                            │
+│  847 people have taken     │
+│  action ✓                  │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Take Action               │
+│  ────────────              │
+│                            │
+│  Your Name *               │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Your Email *              │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Your Location             │
+│  ┌────────────────────────┐│
+│  │ City, State/Region     ││
+│  └────────────────────────┘│
+│  Helps show you're a       │
+│  real constituent.         │
+│                            │
+│  Your Connection           │
+│  (optional)                │
+│  ┌────────────────────────┐│
+│  │ Why does this matter   ││
+│  │ to you personally?     ││
+│  │                        ││
+│  │                        ││
+│  └────────────────────────┘│
+│  The AI will weave this    │
+│  into your message.        │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │   Generate My Message  ││
+│  │                        ││
+│  └────────────────────────┘│
+│     48px tall, full-width  │
+│                            │
+│  ┌────────────────────────┐│
+│  │ ⓘ We'll create a      ││
+│  │ unique message using   ││
+│  │ your info and our key  ││
+│  │ points. You'll review  ││
+│  │ it before anything is  ││
+│  │ sent.                  ││
+│  └────────────────────────┘│
+│                            │
+│  Paid for by Partido Verde │
+│  de Puerto Rico            │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  [Org Logo]  Partido Verde de Puerto Rico                                    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌──────────────────────────────────┐  │
+│  │                                 │  │                                  │  │
+│  │  Email Your Representative      │  │  Take Action                     │  │
+│  │                                 │  │  ──────────────                  │  │
+│  │  ┌─────────────────────────┐   │  │                                  │  │
+│  │  │                         │   │  │  Your Name *                     │  │
+│  │  │     [Hero Image]        │   │  │  ┌──────────────────────────┐   │  │
+│  │  │                         │   │  │  │                          │   │  │
+│  │  └─────────────────────────┘   │  │  └──────────────────────────┘   │  │
+│  │                                 │  │                                  │  │
+│  │  Ask Sen. Torres to vote YES    │  │  Your Email *                   │  │
+│  │  on clean water protections     │  │  ┌──────────────────────────┐   │  │
+│  │  for District 12 families.      │  │  │                          │   │  │
+│  │                                 │  │  └──────────────────────────┘   │  │
+│  │  3 in 10 rural families lack    │  │                                  │  │
+│  │  access to safe drinking        │  │  Your Location                  │  │
+│  │  water. SB-1247 would change    │  │  ┌──────────────────────────┐   │  │
+│  │  that by funding water          │  │  │ City, State/Region       │   │  │
+│  │  testing for every public       │  │  └──────────────────────────┘   │  │
+│  │  school and mandating...        │  │                                  │  │
+│  │                                 │  │  Your Connection (optional)     │  │
+│  │  847 people have taken          │  │  ┌──────────────────────────┐   │  │
+│  │  action ✓                       │  │  │ Why does this matter    │   │  │
+│  │                                 │  │  │ to you personally?      │   │  │
+│  │                                 │  │  └──────────────────────────┘   │  │
+│  │                                 │  │                                  │  │
+│  │                                 │  │  ┌──────────────────────────┐   │  │
+│  │                                 │  │  │   Generate My Message    │   │  │
+│  │                                 │  │  └──────────────────────────┘   │  │
+│  │                                 │  │                                  │  │
+│  │                                 │  │  ⓘ We'll create a unique       │  │
+│  │                                 │  │  message using your info.       │  │
+│  │                                 │  │  You review before sending.     │  │
+│  │                                 │  │                                  │  │
+│  └─────────────────────────────────┘  └──────────────────────────────────┘  │
+│                                                                              │
+│  Paid for by Partido Verde de Puerto Rico                                    │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<p>Desktop uses a two-column layout: context/story on the left, action form on the right.</p>
+<h3 id="flow" tabindex="-1"><a class="heading-anchor" href="#flow" aria-hidden="true">#</a> Flow</h3>
+<ol>
+<li>Supporter lands on page (via shared link from email, SMS, WhatsApp, social)</li>
+<li>Reads the ask and background context</li>
+<li>Fills in name, email, location, optional personal connection</li>
+<li>Taps &quot;Generate My Message&quot;</li>
+<li>→ Transitions to ACT-007 (AI Message Generation Preview)</li>
+<li>Reviews, optionally edits, approves</li>
+<li>→ Confirmation screen (inline, replaces form)</li>
+</ol>
+<h3 id="confirmation-replaces-form-after-successful-send" tabindex="-1"><a class="heading-anchor" href="#confirmation-replaces-form-after-successful-send" aria-hidden="true">#</a> Confirmation (replaces form after successful send)</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│         ✓                  │
+│                            │
+│  Your message has been     │
+│  sent to Sen. Torres.      │
+│                            │
+│  You're #848 to take       │
+│  action. Thank you!        │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Help spread the word:     │
+│                            │
+│  [Share on WhatsApp]       │
+│  [Share on Facebook]       │
+│  [Copy Link]               │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Stay connected:           │
+│  ┌────────────────────────┐│
+│  │ Get updates from       ││
+│  │ Partido Verde          ││
+│  │ ☑ Email  □ SMS         ││
+│  │ [Sign Up]              ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-4" tabindex="-1"><a class="heading-anchor" href="#interaction-4" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Action counter</strong>: real-time count of total actions taken. Social proof — &quot;847 people have taken action&quot;</li>
+<li><strong>Personal connection field</strong>: optional but valuable. The AI weaves personal stories into the generated message, making each one unique and impactful</li>
+<li><strong>Generate My Message</strong>: validates required fields, then transitions to ACT-007. Loading state: &quot;Generating your personalized message...&quot; with spinner</li>
+<li><strong>Compliance disclaimer</strong>: always visible at bottom — tenant-branded &quot;Paid for by...&quot; text</li>
+<li><strong>CRM integration</strong>: on submit, supporter is added to CRM (or matched to existing record via email dedup)</li>
+<li><strong>Consent opt-in</strong>: confirmation screen offers opt-in for future communications — not pre-checked</li>
+</ul>
+<hr>
+<h2 id="act-006-petition-page-public" tabindex="-1"><a class="heading-anchor" href="#act-006-petition-page-public" aria-hidden="true">#</a> ACT-006: Petition Page (Public)</h2>
+<p>Public-facing petition page. Simpler than the letter action — supporter reads the petition, signs it, done. No AI generation needed. Mobile-first.</p>
+<h3 id="mobile-primary-1" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-1" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  [Org Logo]                │
+│  Partido Verde de PR       │
+├────────────────────────────┤
+│                            │
+│  Stop Deforestation        │
+│  in the Eastern Valley     │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │     [Hero Image]       ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  To: Ministry of           │
+│  Environment               │
+│                            │
+│  The Eastern Valley        │
+│  watershed provides        │
+│  drinking water to over    │
+│  200,000 residents across  │
+│  three municipalities...   │
+│                            │
+│  [Read full petition ▾]    │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  2,341 have signed         │
+│  ┌────────────────────────┐│
+│  │ ████████████░░░░░░ 47% ││
+│  │ Goal: 5,000            ││
+│  └────────────────────────┘│
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Sign This Petition        │
+│  ──────────────────        │
+│                            │
+│  Your Name *               │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Your Email *              │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Your Location *           │
+│  ┌────────────────────────┐│
+│  │ City, State/Region     ││
+│  └────────────────────────┘│
+│                            │
+│  Why I'm Signing           │
+│  (optional)                │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │   Sign the Petition    ││
+│  │                        ││
+│  └────────────────────────┘│
+│     48px tall, full-width  │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Recent Signatures         │
+│  ──────────────────        │
+│                            │
+│  Ana R. · San Juan         │
+│  &quot;Our children deserve     │
+│   clean water.&quot;            │
+│                            │
+│  Carlos M. · Bayamón       │
+│  2 hours ago               │
+│                            │
+│  María L. · Caguas         │
+│  &quot;I grew up swimming in    │
+│   the valley's rivers.&quot;    │
+│                            │
+│  [Show more signatures]    │
+│                            │
+│  Paid for by Partido Verde │
+│  de Puerto Rico            │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="desktop-5" tabindex="-1"><a class="heading-anchor" href="#desktop-5" aria-hidden="true">#</a> Desktop</h3>
+<p>Two-column layout like ACT-005: petition text + signatures on left, sign form on right.</p>
+<h3 id="confirmation" tabindex="-1"><a class="heading-anchor" href="#confirmation" aria-hidden="true">#</a> Confirmation</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│         ✍                  │
+│                            │
+│  Thank you for signing!    │
+│                            │
+│  You're signature #2,342.  │
+│  Only 2,658 more needed    │
+│  to reach our goal.        │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Help us get there:        │
+│                            │
+│  [Share on WhatsApp]       │
+│  [Share on Facebook]       │
+│  [Copy Link]               │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Stay connected:           │
+│  ┌────────────────────────┐│
+│  │ Get updates from       ││
+│  │ Partido Verde          ││
+│  │ ☑ Email  □ SMS         ││
+│  │ [Sign Up]              ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-5" tabindex="-1"><a class="heading-anchor" href="#interaction-5" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Progress bar</strong>: visual goal tracking. Counter updates in real-time after signing</li>
+<li><strong>Read full petition</strong>: expandable — shows truncated version by default on mobile to keep the sign form above the fold</li>
+<li><strong>Recent signatures</strong>: social proof. Shows first name + last initial, city, and optional comment. Most recent first. Respects signer visibility settings from ACT-003</li>
+<li><strong>Sign the Petition</strong>: validates required fields, submits immediately (no AI step). Shows spinner briefly, then confirmation</li>
+<li><strong>Dedup</strong>: if email matches an existing CRM record, the signature is linked to the existing contact (no duplicate created). If the email already signed this petition, shows &quot;You've already signed this petition. Thank you!&quot; instead of the form</li>
+<li><strong>Confirmation math</strong>: &quot;Only X more needed to reach our goal&quot; — keeps momentum visible</li>
+</ul>
+<hr>
+<h2 id="act-007-ai-message-generation-preview" tabindex="-1"><a class="heading-anchor" href="#act-007-ai-message-generation-preview" aria-hidden="true">#</a> ACT-007: AI Message Generation Preview</h2>
+<p>Inline component within ACT-005 where supporters review the AI-generated personalized message before approving it. This is the most critical UX in the activism flow — it must build trust, give the supporter control, and make approval effortless.</p>
+<h3 id="mobile-primary-2" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-2" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  Your Message to           │
+│  Sen. Torres               │
+├────────────────────────────┤
+│                            │
+│  ┌────────────────────────┐│
+│  │ ⓘ This message was    ││
+│  │ written for you based  ││
+│  │ on key facts and your  ││
+│  │ personal connection.   ││
+│  │ It's unique — no one   ││
+│  │ else will send this    ││
+│  │ exact message.         ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │ Dear Senator Torres,   ││
+│  │                        ││
+│  │ My name is Ana Reyes   ││
+│  │ and I live in Caguas   ││
+│  │ with my two children   ││
+│  │ who attend Lincoln     ││
+│  │ Elementary. I'm writing││
+│  │ because clean water is ││
+│  │ not an abstract issue  ││
+│  │ for our family — last  ││
+│  │ year the school        ││
+│  │ fountain was shut down ││
+│  │ for three weeks due to ││
+│  │ contamination concerns.││
+│  │                        ││
+│  │ SB-1247 would require  ││
+│  │ water testing at every ││
+│  │ public school in your  ││
+│  │ district. Right now, 3 ││
+│  │ in 10 rural families   ││
+│  │ lack access to safe    ││
+│  │ drinking water. Four   ││
+│  │ other states have      ││
+│  │ passed similar bills   ││
+│  │ and seen contamination ││
+│  │ drop by 60% in two     ││
+│  │ years.                 ││
+│  │                        ││
+│  │ Please vote YES on     ││
+│  │ SB-1247. Our children  ││
+│  │ deserve safe water at  ││
+│  │ school.                ││
+│  │                        ││
+│  │ Sincerely,             ││
+│  │ Ana Reyes              ││
+│  │ Caguas, PR             ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  [✎ Edit Message]          │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  ☑ I've reviewed this      │
+│    message and approve     │
+│    sending it on my behalf │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │    Send My Message     ││
+│  │                        ││
+│  └────────────────────────┘│
+│    48px tall, full-width   │
+│    Disabled until checkbox │
+│    is checked              │
+│                            │
+│  [← Change my info]       │
+│                            │
+│  ┌────────────────────────┐│
+│  │ Your message will be   ││
+│  │ sent via email to      ││
+│  │ maria.torres@senate.gov││
+│  │ from GreenGrass on your││
+│  │ behalf. Your name and  ││
+│  │ location will be       ││
+│  │ included.              ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="edit-mode-when-edit-message-is-tapped" tabindex="-1"><a class="heading-anchor" href="#edit-mode-when-edit-message-is-tapped" aria-hidden="true">#</a> Edit Mode (when [✎ Edit Message] is tapped)</h3>
+<pre><code>┌────────────────────────────┐
+│  Edit Your Message         │
+├────────────────────────────┤
+│                            │
+│  ┌────────────────────────┐│
+│  │ Dear Senator Torres,   ││
+│  │                        ││
+│  │ My name is Ana Reyes   ││
+│  │ and I live in Caguas   ││
+│  │ with my two children   ││
+│  │ who attend Lincoln     ││
+│  │ Elementary...          ││
+│  │                        ││
+│  │ [Editable text area    ││
+│  │  full message visible  ││
+│  │  for editing]          ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  [Use This Version]        │
+│  [↺ Regenerate Message]    │
+│  [← Discard Changes]      │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="states-1" tabindex="-1"><a class="heading-anchor" href="#states-1" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Loading</strong>: &quot;Generating your personalized message...&quot; with progress indicator. Typically 2-4 seconds</li>
+<li><strong>Generated</strong>: message displayed read-only with approval checkbox</li>
+<li><strong>Editing</strong>: message in editable textarea with save/regenerate/discard options</li>
+<li><strong>Error</strong>: &quot;We couldn't generate your message. You can try again or use the template below.&quot; Falls back to showing the staff-created template with a [Send Template] button</li>
+<li><strong>Regenerated</strong>: same as Generated but with &quot;↺ New version&quot; badge. Regeneration limit: 3 per session</li>
+</ul>
+<h3 id="interaction-6" tabindex="-1"><a class="heading-anchor" href="#interaction-6" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Approval checkbox</strong>: explicit opt-in before the Send button activates. Required for trust and legal compliance</li>
+<li><strong>Edit Message</strong>: opens the generated text in an editable area. Supporter can modify freely</li>
+<li><strong>Regenerate</strong>: creates a new AI-generated version. Different phrasing, same talking points. Limited to 3 regenerations to prevent abuse</li>
+<li><strong>[← Change my info]</strong>: returns to ACT-005 form with fields preserved, so supporter can update their name/location/connection</li>
+<li><strong>Transparency note</strong>: bottom disclosure explains exactly what happens — sent via email, from platform on behalf, name and location included</li>
+<li><strong>Send button</strong>: disabled until checkbox is checked. On send: email dispatched to target, action recorded, supporter redirected to confirmation screen in ACT-005</li>
+<li><strong>Fallback</strong>: if AI generation fails, show the staff template (ACT-002 template message) with the supporter's name inserted. Never block the action</li>
+</ul>
+<hr>
+<h2 id="act-008-activism-campaign-analytics" tabindex="-1"><a class="heading-anchor" href="#act-008-activism-campaign-analytics" aria-hidden="true">#</a> ACT-008: Activism Campaign Analytics</h2>
+<p>Per-campaign analytics for staff. Shows total participation, geographic distribution, and per-supporter action history. Metrics vary by campaign type.</p>
+<h3 id="desktop-6" tabindex="-1"><a class="heading-anchor" href="#desktop-6" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Activism Campaigns        Clean Water Act Analytics          [Export CSV] │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │ Total Actions│  │ Sent         │  │ Opened       │  │ Participants │    │
+│  │ 847          │  │ 812          │  │ 489 (60%)    │  │ 847          │    │
+│  │ ↑ 23 today   │  │ 96% sent     │  │              │  │ unique       │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Actions Over Time                                                           │
+│  ──────────────────                                                          │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  120 ┤                                                               │   │
+│  │  100 ┤          ██                                                   │   │
+│  │   80 ┤       ██ ██ ██                                                │   │
+│  │   60 ┤    ██ ██ ██ ██ ██                                             │   │
+│  │   40 ┤ ██ ██ ██ ██ ██ ██ ██ ██                                      │   │
+│  │   20 ┤ ██ ██ ██ ██ ██ ██ ██ ██ ██ ██ ██                             │   │
+│  │    0 ┼──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──                    │   │
+│  │       M1  M3  M5  M7  M9  M11 M13 M15 M17 M19 M21                  │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Geographic Distribution                                                     │
+│  ────────────────────────                                                    │
+│  ┌──────────────────────────────────┐  ┌────────────────────────────────┐   │
+│  │                                  │  │ Region         Actions   %    │   │
+│  │      [Map visualization]         │  │ ──────────────────────────── │   │
+│  │                                  │  │ San Juan        234     28%  │   │
+│  │      Shaded by action density.   │  │ Bayamón         187     22%  │   │
+│  │      Darker = more actions.      │  │ Caguas          142     17%  │   │
+│  │                                  │  │ Carolina        98      12%  │   │
+│  │                                  │  │ Ponce           76       9%  │   │
+│  │                                  │  │ Mayagüez        53       6%  │   │
+│  │                                  │  │ Other           57       7%  │   │
+│  └──────────────────────────────────┘  └────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Action Feed                                          [Search...] [Filter]  │
+│  ───────────                                                                 │
+│                                                                              │
+│  Ana Reyes · Caguas · Mar 3, 2:14 PM                                        │
+│  Sent ✓ · Opened ✓ · Personal connection: &quot;Parent at Lincoln Elementary&quot;    │
+│  [View Message] [View in CRM →]                                              │
+│                                                                              │
+│  Carlos Méndez · Bayamón · Mar 3, 1:52 PM                                   │
+│  Sent ✓ · Opened — · No personal connection                                 │
+│  [View Message] [View in CRM →]                                              │
+│                                                                              │
+│  Luisa Fernández · San Juan · Mar 3, 12:30 PM                               │
+│  Sent ✓ · Opened ✓ · Personal connection: &quot;Chemistry teacher&quot;               │
+│  [View Message] [View in CRM →]                                              │
+│                                                                              │
+│  [Load more...]                                                              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="campaign-type-specific-metrics" tabindex="-1"><a class="heading-anchor" href="#campaign-type-specific-metrics" aria-hidden="true">#</a> Campaign-Type Specific Metrics</h3>
+<p><strong>Letter/Email Actions (shown above):</strong></p>
+<ul>
+<li>Total Actions, Sent (delivery rate), Opened (read receipt if available), Participants</li>
+<li>Geographic distribution (critical for constituent-based pressure)</li>
+<li>Per-supporter: Sent/Opened status, personal connection text, CRM link</li>
+</ul>
+<p><strong>Petitions:</strong></p>
+<ul>
+<li>Signatures (total), Goal Progress (% and bar), Daily Rate, Regions</li>
+<li>Signature timeline (similar chart)</li>
+<li>Recent signatures list with comments</li>
+<li>[Document Delivery →] link to ACT-009</li>
+</ul>
+<p><strong>Public Comments:</strong></p>
+<ul>
+<li>Comments Generated, Submitted (platform vs manual breakdown), Deadline countdown</li>
+<li>Submission timeline</li>
+<li>Per-comment: submission method (platform/manual), submission status</li>
+<li>Docket reference for regulatory record</li>
+</ul>
+<h3 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h3>
+<p>Stacks vertically: metric cards → chart → table (scrollable). Map replaced with region list only.</p>
+<h3 id="interaction-7" tabindex="-1"><a class="heading-anchor" href="#interaction-7" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>[View Message]</strong>: modal showing the AI-generated message that was sent</li>
+<li><strong>[View in CRM →]</strong>: navigates to CRM-002 (Contact Detail) for that supporter</li>
+<li><strong>[Export CSV]</strong>: exports all action data — supporters, messages, timestamps, geography</li>
+<li><strong>Geographic map</strong>: click a region to filter the action feed to that area</li>
+<li><strong>Sent/Opened tracking</strong>: for letter/email campaigns, &quot;Sent&quot; means email was dispatched, &quot;Opened&quot; means read receipt was received (not always available)</li>
+</ul>
+<hr>
+<h2 id="act-009-delivery-event-documentation" tabindex="-1"><a class="heading-anchor" href="#act-009-delivery-event-documentation" aria-hidden="true">#</a> ACT-009: Delivery Event Documentation</h2>
+<p>Staff interface for documenting petition delivery or campaign completion events. When signatures are delivered to the target (printed and hand-delivered, emailed in bulk, presented at a hearing), this screen records the evidence.</p>
+<h3 id="desktop-7" tabindex="-1"><a class="heading-anchor" href="#desktop-7" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Campaign Analytics            Document Delivery Event                     │
+│                                                               [Save Event]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Campaign: Stop Deforestation in the Eastern Valley                          │
+│  Petition · 2,341 signatures collected                                       │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  ┌─ Delivery Details ──────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Delivery Date *                         Delivery Time                 │ │
+│  │  ┌────────────────────────────┐          ┌──────────────────────────┐  │ │
+│  │  │ 2026-03-03  📅             │          │ 10:00 AM                 │  │ │
+│  │  └────────────────────────────┘          └──────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Delivery Method *                                                     │ │
+│  │  ○ In-person delivery                                                  │ │
+│  │  ○ Mailed / Shipped                                                    │ │
+│  │  ○ Email delivery (bulk)                                               │ │
+│  │  ○ Presented at public hearing                                         │ │
+│  │  ○ Other                                                               │ │
+│  │                                                                        │ │
+│  │  Location (if in-person)                                               │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Ministry of Environment, Main Office, Av. Central 450           │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Delivered To                                                          │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Dr. Carmen Soto, Deputy Minister for Natural Resources          │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Staff Present                                                         │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ [× Jorge Rivera]  [× Ana López]  [Add staff...]                │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Evidence ──────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Photos                                                                │ │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐             │ │
+│  │  │          │  │          │  │          │  │          │             │ │
+│  │  │  [photo] │  │  [photo] │  │  [photo] │  │   [+]   │             │ │
+│  │  │          │  │          │  │          │  │  Upload  │             │ │
+│  │  │          │  │          │  │          │  │          │             │ │
+│  │  └──────────┘  └──────────┘  └──────────┘  └──────────┘             │ │
+│  │  Delivery handoff  Petition stack  Target receiving                  │ │
+│  │                                                                        │ │
+│  │  Documents                                                             │ │
+│  │  📎 Cover letter.pdf                                     [×]          │ │
+│  │  📎 Signature pages — certified.pdf                      [×]          │ │
+│  │  [+ Attach Document]                                                   │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Outcome ───────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Target Response                                                       │ │
+│  │  ○ Acknowledged receipt                                                │ │
+│  │  ○ Committed to action                                                 │ │
+│  │  ○ Noncommittal                                                        │ │
+│  │  ○ Refused / Hostile                                                   │ │
+│  │  ○ No direct response                                                  │ │
+│  │  ○ Not yet known                                                       │ │
+│  │                                                                        │ │
+│  │  Notes                                                                 │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Deputy Minister Soto accepted the petition and said her team   │  │ │
+│  │  │ would review it within 30 days. She noted the number of        │  │ │
+│  │  │ signatures and asked about the geographic distribution...      │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Related Coverage ──────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Link press coverage of this delivery:                                 │ │
+│  │  [+ Link Coverage Entry]  (searches PRESS coverage log)                │ │
+│  │                                                                        │ │
+│  │  📰 &quot;2,000+ Sign Petition Against Valley Logging&quot; — El Nuevo Día      │ │
+│  │     Mar 3, 2026  ·  Print + Online  ·  [View in Coverage Log →]       │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  [Save Event]    [Save &amp; Share with Team]                                    │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-2" tabindex="-1"><a class="heading-anchor" href="#mobile-2" aria-hidden="true">#</a> Mobile</h3>
+<p>Same fields, stacked vertically. Photo upload uses device camera directly. GPS auto-fills location if permitted.</p>
+<h3 id="interaction-8" tabindex="-1"><a class="heading-anchor" href="#interaction-8" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Partial offline support</strong>: delivery details and photos can be captured in the field without connectivity. Data syncs when connection is restored. Offline state shows &quot;Saved locally — will sync when connected&quot; banner</li>
+<li><strong>Photo upload</strong>: supports camera capture (preferred in field) or gallery selection. Photos auto-compress for bandwidth</li>
+<li><strong>Staff present</strong>: tag picker from org member list. Records who attended the delivery for accountability</li>
+<li><strong>Related coverage</strong>: links to entries in the Coverage Log (PRESS-010). Cross-references press coverage of the delivery event</li>
+<li><strong>[Save &amp; Share with Team]</strong>: saves and sends a summary to the campaign's internal messaging thread with photos attached</li>
+<li><strong>Target response</strong>: tracked over time — staff can return to update the response as it evolves</li>
+<li><strong>Multiple deliveries</strong>: a campaign can have multiple delivery events (e.g., petition delivered to multiple officials). Each is a separate ACT-009 record</li>
+</ul>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT-001 (no campaigns)</td>
+<td>Activism campaigns let you organize letter-writing actions, petitions, and public comment campaigns. Create your first campaign to start mobilizing supporters.</td>
+<td>[+ New Campaign ▾]</td>
+</tr>
+<tr>
+<td>ACT-001 (no results)</td>
+<td>No campaigns match your filters.</td>
+<td>Clear filters</td>
+</tr>
+<tr>
+<td>ACT-005 (campaign ended)</td>
+<td>This action is no longer active. Thank you for your interest.</td>
+<td>(link to org homepage if available)</td>
+</tr>
+<tr>
+<td>ACT-006 (petition closed)</td>
+<td>This petition has been closed. Thank you to all 2,341 signers.</td>
+<td>Share link</td>
+</tr>
+<tr>
+<td>ACT-008 (no actions yet)</td>
+<td>No one has taken action yet. Share the campaign link to get started.</td>
+<td>Copy Link</td>
+</tr>
+<tr>
+<td>ACT-009 (no deliveries)</td>
+<td>No delivery events have been documented for this campaign.</td>
+<td>Document Delivery</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Public action pages (ACT-005, ACT-006) meet WCAG AA for contrast — critical since these serve the broadest audience</li>
+<li>All form fields have visible labels (no placeholder-only labels)</li>
+<li>AI-generated message is in a clearly bounded region with role=&quot;region&quot; and aria-label=&quot;Your generated message&quot;</li>
+<li>Approval checkbox is large (minimum 24×24px tap target) with explicit label text</li>
+<li>Progress bars have aria-valuenow, aria-valuemin, aria-valuemax</li>
+<li>Signature counter live-updates use aria-live=&quot;polite&quot;</li>
+<li>Photo upload includes alt text input for each photo (screen reader users can describe delivery photos)</li>
+<li>Talking point reordering supports keyboard (arrow keys) in addition to drag</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI-generated messages (not template copy-paste)</td>
+<td>Each supporter gets a unique AI-written message</td>
+<td>Prevents the &quot;form letter&quot; effect that targets learn to ignore. Unique messages carry more weight and avoid anti-astroturfing filters</td>
+</tr>
+<tr>
+<td>Explicit approval checkbox</td>
+<td>Supporter must check &quot;I've reviewed this message&quot; before sending</td>
+<td>Legal and ethical requirement — the message is sent on their behalf. Explicit consent prevents &quot;I didn't know what I was signing&quot;</td>
+</tr>
+<tr>
+<td>Personal connection as optional input</td>
+<td>Supporter can share why the issue matters to them personally</td>
+<td>AI weaves personal stories into the message, making it more compelling. Optional to reduce friction</td>
+</tr>
+<tr>
+<td>Talking points ordered (not unordered)</td>
+<td>Staff controls priority order of talking points</td>
+<td>Order determines AI emphasis — most important points first. Gives staff strategic control over message content</td>
+</tr>
+<tr>
+<td>Real-time action counter on public pages</td>
+<td>Shows total actions taken, updated live</td>
+<td>Social proof drives participation — seeing 847 others acted reduces hesitation</td>
+</tr>
+<tr>
+<td>Petition signatures show first name + last initial only</td>
+<td>Privacy-preserving default for public display</td>
+<td>Full names could expose supporters in politically sensitive contexts. Staff configures visibility in ACT-003</td>
+</tr>
+<tr>
+<td>Regeneration limit (3 per session)</td>
+<td>Supporters can regenerate the AI message up to 3 times</td>
+<td>Prevents abuse of AI generation while giving supporters enough control to get a message they're comfortable with</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li><strong>Multi-target campaigns</strong> — should a single letter campaign support multiple targets (e.g., &quot;email all 3 senators in your district&quot;)? Current wireframe shows single-target. Multi-target would require target lookup by supporter location</li>
+<li><strong>AI model choice</strong> — which AI model generates personalized messages? Needs to be fast (2-4 second generation time), multilingual, and cost-effective at scale. Model selection affects message quality and per-action cost</li>
+<li><strong>Letter vs email</strong> — should the platform also support generating printable letters (PDF) for campaigns targeting officials without email or where physical mail carries more weight? Current scope is email-only</li>
+<li><strong>Comment submission verification</strong> — for public comment campaigns using &quot;platform submits directly,&quot; how do we verify the regulatory body's email actually accepts the comment? Some agencies use web forms only</li>
+<li><strong>Supporter identity verification</strong> — should there be any verification that the supporter is a real constituent (e.g., zip code validation against the target's district)? Too much friction kills completion rates, but fake actions undermine credibility</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#activism-navigation-context"># Activism Navigation Context</a></li><li class="toc-2"><a href="#act-001-activism-campaign-list"># ACT-001: Activism Campaign List</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#states"># States</a></li><li class="toc-3"><a href="#interaction"># Interaction</a></li><li class="toc-2"><a href="#act-002-letteremail-action-setup"># ACT-002: Letter/Email Action Setup</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-3"><a href="#collapsed-sections-progressive-disclosure"># Collapsed Sections (Progressive Disclosure)</a></li><li class="toc-3"><a href="#interaction-1"># Interaction</a></li><li class="toc-2"><a href="#act-003-petition-setup"># ACT-003: Petition Setup</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-3"><a href="#interaction-2"># Interaction</a></li><li class="toc-2"><a href="#act-004-public-comment-campaign-setup"># ACT-004: Public Comment Campaign Setup</a></li><li class="toc-3"><a href="#desktop-3"># Desktop</a></li><li class="toc-3"><a href="#interaction-3"># Interaction</a></li><li class="toc-2"><a href="#act-005-action-page-public"># ACT-005: Action Page (Public)</a></li><li class="toc-3"><a href="#mobile-primary"># Mobile (Primary)</a></li><li class="toc-3"><a href="#desktop-4"># Desktop</a></li><li class="toc-3"><a href="#flow"># Flow</a></li><li class="toc-3"><a href="#confirmation-replaces-form-after-successful-send"># Confirmation (replaces form after successful send)</a></li><li class="toc-3"><a href="#interaction-4"># Interaction</a></li><li class="toc-2"><a href="#act-006-petition-page-public"># ACT-006: Petition Page (Public)</a></li><li class="toc-3"><a href="#mobile-primary-1"># Mobile (Primary)</a></li><li class="toc-3"><a href="#desktop-5"># Desktop</a></li><li class="toc-3"><a href="#confirmation"># Confirmation</a></li><li class="toc-3"><a href="#interaction-5"># Interaction</a></li><li class="toc-2"><a href="#act-007-ai-message-generation-preview"># ACT-007: AI Message Generation Preview</a></li><li class="toc-3"><a href="#mobile-primary-2"># Mobile (Primary)</a></li><li class="toc-3"><a href="#edit-mode-when-edit-message-is-tapped"># Edit Mode (when [✎ Edit Message] is tapped)</a></li><li class="toc-3"><a href="#states-1"># States</a></li><li class="toc-3"><a href="#interaction-6"># Interaction</a></li><li class="toc-2"><a href="#act-008-activism-campaign-analytics"># ACT-008: Activism Campaign Analytics</a></li><li class="toc-3"><a href="#desktop-6"># Desktop</a></li><li class="toc-3"><a href="#campaign-type-specific-metrics"># Campaign-Type Specific Metrics</a></li><li class="toc-3"><a href="#mobile-1"># Mobile</a></li><li class="toc-3"><a href="#interaction-7"># Interaction</a></li><li class="toc-2"><a href="#act-009-delivery-event-documentation"># ACT-009: Delivery Event Documentation</a></li><li class="toc-3"><a href="#desktop-7"># Desktop</a></li><li class="toc-3"><a href="#mobile-2"># Mobile</a></li><li class="toc-3"><a href="#interaction-8"># Interaction</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

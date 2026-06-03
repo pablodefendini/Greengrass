@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tenant Support &amp; Onboarding · GreenGrass</title>
+<meta name="description" content="Tenant Support &amp; Onboarding — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html">Core Workflows</a></li><li><a href="./geography.html">Target Geography</a></li><li><a href="./security.html">Security &amp; Threat Model</a></li><li><a href="./compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html">External Integrations</a></li><li><a href="./support.html" aria-current="page" class="active">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="./press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="tenant-support-onboarding" tabindex="-1"><a class="heading-anchor" href="#tenant-support-onboarding" aria-hidden="true">#</a> Tenant Support &amp; Onboarding</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document catalogs every place where GreenGrass needs to educate, guide, or support tenants through a process. It emerged from the pattern across all other specs: payment processor setup, WhatsApp verification, SMS number provisioning, compliance configuration, BYOK key management, voter file import, platform migration — tenants need help at every turn.</p>
+<p>This is not a customer support ticket system spec. It's an inventory of the <strong>support surface</strong> — every touchpoint where GreenGrass must provide guidance — and the strategy for delivering that guidance at scale across five countries, seven languages, and wildly different technical sophistication levels.</p>
+<h2 id="support-philosophy" tabindex="-1"><a class="heading-anchor" href="#support-philosophy" aria-hidden="true">#</a> Support Philosophy</h2>
+<ol>
+<li><strong>The platform is the primary support channel.</strong> Guided wizards, contextual help, smart defaults, and compliance guardrails should handle 80% of support needs. If tenants regularly need human help for something, the UX has failed.</li>
+<li><strong>Compliance guidance is not optional.</strong> Campaign finance rules, data protection obligations, consent requirements — tenants must understand these. GreenGrass makes compliance the path of least resistance through templates, automated checks, and clear warnings.</li>
+<li><strong>Localized support.</strong> Every support resource must be available in the tenant's configured language. AI-assisted translation with human review (per <a href="http://geography.md" target="_blank" rel="noopener noreferrer">geography.md</a>) applies to support content, not just the UI.</li>
+<li><strong>Tiered support model.</strong> Self-service for common tasks, concierge for complex setup, human support for edge cases. Scale support without scaling headcount linearly.</li>
+</ol>
+<h2 id="support-surface-inventory" tabindex="-1"><a class="heading-anchor" href="#support-surface-inventory" aria-hidden="true">#</a> Support Surface Inventory</h2>
+<h3 id="tier-1-in-platform-self-service" tabindex="-1"><a class="heading-anchor" href="#tier-1-in-platform-self-service" aria-hidden="true">#</a> Tier 1: In-Platform Self-Service</h3>
+<p>These are guidance touchpoints built directly into the platform UI. No human intervention needed.</p>
+<h4 id="onboarding-wizards" tabindex="-1"><a class="heading-anchor" href="#onboarding-wizards" aria-hidden="true">#</a> Onboarding Wizards</h4>
+<table>
+<thead>
+<tr>
+<th>Wizard</th>
+<th>Triggered by</th>
+<th>Steps</th>
+<th>Spec reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Org setup</strong></td>
+<td>New tenant provisioning</td>
+<td>Passkey setup → org profile (name, branding, languages) → invite staff → configure jurisdiction</td>
+<td>workflows.md:36-39</td>
+</tr>
+<tr>
+<td><strong>Payment processor</strong></td>
+<td>First visit to fundraising settings</td>
+<td>Select jurisdiction → choose processor(s) from supported list → enter credentials → test donation → verify</td>
+<td>fundraising.md:36-39</td>
+</tr>
+<tr>
+<td><strong>BYOK key generation</strong></td>
+<td>Tenant choosing BYOK during setup</td>
+<td>Explain implications → generate key → secure backup (Shamir's option) → confirm recovery plan → acknowledge key-loss consequences</td>
+<td>security.md:270-272, <a href="http://system.md:483" target="_blank" rel="noopener noreferrer">system.md:483</a></td>
+</tr>
+<tr>
+<td><strong>Compliance configuration</strong></td>
+<td>After jurisdiction selection</td>
+<td>Pre-load jurisdiction templates → configure contribution limits → set campaign period dates → configure disclaimer text → set retention policy</td>
+<td>compliance.md:375-380</td>
+</tr>
+<tr>
+<td><strong>WhatsApp Business setup</strong></td>
+<td>Enabling WhatsApp channel</td>
+<td>Meta verification walkthrough → business account setup → phone number registration → first template submission → test message</td>
+<td><a href="http://integrations.md:154" target="_blank" rel="noopener noreferrer">integrations.md:154</a></td>
+</tr>
+<tr>
+<td><strong>SMS number setup</strong></td>
+<td>Enabling SMS channel</td>
+<td>Country-specific guide → recommended number type → provider account setup → number acquisition → DLT/10DLC registration (if applicable) → test message</td>
+<td><a href="http://integrations.md:160" target="_blank" rel="noopener noreferrer">integrations.md:160</a></td>
+</tr>
+<tr>
+<td><strong>Voter file import</strong></td>
+<td>First data import</td>
+<td>Upload file → format detection → column mapping with suggestions → preview → dedup preview → confirm → post-import report</td>
+<td>integrations.md:215-225</td>
+</tr>
+<tr>
+<td><strong>Volunteer onboarding</strong></td>
+<td>Volunteer first login</td>
+<td>Passkey/fallback setup → trusted contact designation → platform tour → org-specific training → knowledge checks → certification (if configured)</td>
+<td>workflows.md:83-86, 106-113</td>
+</tr>
+</tbody>
+</table>
+<h4 id="contextual-help" tabindex="-1"><a class="heading-anchor" href="#contextual-help" aria-hidden="true">#</a> Contextual Help</h4>
+<p>In-context guidance that appears where the user needs it:</p>
+<ul>
+<li><strong>Tooltips and info panels</strong> — every configuration field that has compliance implications includes an explanation of why it matters and what the jurisdiction requires</li>
+<li><strong>Smart defaults with explanations</strong> — when the platform pre-fills a value (e.g., contribution limits for a US federal race), it shows why and lets the tenant override</li>
+<li><strong>Warning banners</strong> — when an action may violate campaign period restrictions, foreign contribution rules, or consent requirements, a clear warning explains the risk before the user proceeds</li>
+<li><strong>Lèse-majesté warnings</strong> — prominent, persistent warnings for Thai tenants when creating content (per <a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a>)</li>
+<li><strong>Data subject request guidance</strong> — when a deletion request arrives, the compliance dashboard shows jurisdiction-specific retention obligations alongside the request</li>
+</ul>
+<h4 id="templates-pre-built-content" tabindex="-1"><a class="heading-anchor" href="#templates-pre-built-content" aria-hidden="true">#</a> Templates &amp; Pre-Built Content</h4>
+<table>
+<thead>
+<tr>
+<th>Template type</th>
+<th>What it provides</th>
+<th>Spec reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Jurisdiction compliance templates</strong></td>
+<td>Pre-loaded contribution limits, disclosure thresholds, campaign period rules, communication restrictions, disclaimer text</td>
+<td>compliance.md:375-376</td>
+</tr>
+<tr>
+<td><strong>Voter registration form templates</strong></td>
+<td>Per-jurisdiction eligibility requirements, required fields, documentation rules, submission procedures</td>
+<td>workflows.md:330-332</td>
+</tr>
+<tr>
+<td><strong>Data Processing Agreement (DPA)</strong></td>
+<td>Standard DPA template covering data categories, purposes, sub-processors, security measures, breach notification, audit rights</td>
+<td><a href="http://compliance.md:242" target="_blank" rel="noopener noreferrer">compliance.md:242</a></td>
+</tr>
+<tr>
+<td><strong>Data Protection Impact Assessment (DPIA)</strong></td>
+<td>Template DPIA for tenants processing sensitive political data at scale (required under LGPD, PDPA)</td>
+<td><a href="http://compliance.md:244" target="_blank" rel="noopener noreferrer">compliance.md:244</a></td>
+</tr>
+<tr>
+<td><strong>Role templates</strong></td>
+<td>Pre-built role configurations (Org Admin, Campaign Manager, Finance Director, Communications Director, Field Director, Volunteer Coordinator, Data Manager, Volunteer, Team Lead, Candidate, Deputy)</td>
+<td>users.md:167-176</td>
+</tr>
+<tr>
+<td><strong>Email templates</strong></td>
+<td>Visual, mobile-first email template builder with pre-built layouts</td>
+<td><a href="http://workflows.md:434" target="_blank" rel="noopener noreferrer">workflows.md:434</a></td>
+</tr>
+<tr>
+<td><strong>Canvassing scripts</strong></td>
+<td>Script builder with branching logic based on responses</td>
+<td><a href="http://workflows.md:211" target="_blank" rel="noopener noreferrer">workflows.md:211</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="automated-compliance-checks" tabindex="-1"><a class="heading-anchor" href="#automated-compliance-checks" aria-hidden="true">#</a> Automated Compliance Checks</h4>
+<p>The platform continuously monitors and alerts:</p>
+<ul>
+<li><strong>Real-time:</strong> contribution limit checking, foreign donor screening, consent verification at send time, disclaimer presence on outbound communications</li>
+<li><strong>Batch:</strong> approaching contribution limits, consent expiration alerts, missing required donor information, campaign period restriction enforcement</li>
+<li><strong>Pre-report:</strong> data completeness checks before filing deadlines, donation record reconciliation</li>
+<li><strong>Compliance dashboard:</strong> contribution alerts, consent health, reporting deadlines with preparation status, data subject requests with SLA timers, searchable audit trail</li>
+</ul>
+<h3 id="tier-2-guided-support-resources" tabindex="-1"><a class="heading-anchor" href="#tier-2-guided-support-resources" aria-hidden="true">#</a> Tier 2: Guided Support Resources</h3>
+<p>Self-service content that tenants consume independently, but requires GreenGrass to create and maintain.</p>
+<h4 id="knowledge-base" tabindex="-1"><a class="heading-anchor" href="#knowledge-base" aria-hidden="true">#</a> Knowledge Base</h4>
+<p>A searchable, multilingual knowledge base covering:</p>
+<p><strong>Getting Started</strong></p>
+<ul>
+<li>Platform overview and core concepts</li>
+<li>Org setup walkthrough (with screenshots/video)</li>
+<li>Staff role configuration guide</li>
+<li>Volunteer onboarding setup guide</li>
+<li>First campaign creation guide</li>
+</ul>
+<p><strong>Integration Guides</strong></p>
+<ul>
+<li>Payment processor setup — per processor, per country</li>
+<li>WhatsApp Business API setup — step-by-step Meta verification guide</li>
+<li>SMS provider setup — per country (number types, registration requirements, compliance checklists)</li>
+<li>Phone banking provider setup (pilot phase)</li>
+<li>Zoom integration setup</li>
+<li>Jitsi self-hosted setup</li>
+<li>Email sending domain configuration (SPF, DKIM, DMARC)</li>
+</ul>
+<p><strong>Data Management</strong></p>
+<ul>
+<li>Voter file import guide — per country (expected formats, common issues, field mapping tips)</li>
+<li>Platform migration guides — per source platform (NationBuilder, NGP VAN, Action Network, CiviCRM)</li>
+<li>Data export guide</li>
+<li>Deduplication and merge guide</li>
+<li>Electoral boundary data import guide (GeoJSON, Shapefile, KML)</li>
+</ul>
+<p><strong>Compliance Guides</strong></p>
+<ul>
+<li>Campaign finance reporting — per jurisdiction (what to file, when, how to generate reports)</li>
+<li>Consent management best practices — per jurisdiction</li>
+<li>Data subject rights handling — step-by-step for each right (access, correction, deletion)</li>
+<li>Foreign contribution compliance — how the two-tier screening works, handling flagged donations</li>
+<li>Campaign period restrictions — per jurisdiction, what changes during campaign periods</li>
+</ul>
+<p><strong>Security Guides</strong></p>
+<ul>
+<li>BYOK key management — generation, backup, rotation, recovery, what happens if you lose your key</li>
+<li>Passkey setup and management</li>
+<li>Trusted contact recovery setup</li>
+<li>Device security recommendations</li>
+<li>Security tier selection guide (standard, enhanced, aggressive)</li>
+<li>Self-hosted deployment guide — step-by-step with configuration templates</li>
+</ul>
+<p><strong>Fundraising Guides</strong></p>
+<ul>
+<li>Donation form creation and optimization</li>
+<li>A/B testing guide</li>
+<li>Recurring donation management</li>
+<li>Cash donation recording and chain-of-custody</li>
+<li>Alliance fundraising setup and split configuration</li>
+<li>Pledge management</li>
+<li>Refund processing</li>
+</ul>
+<h4 id="video-tutorials" tabindex="-1"><a class="heading-anchor" href="#video-tutorials" aria-hidden="true">#</a> Video Tutorials</h4>
+<p>Short (&lt;5 min) task-specific videos for visual learners:</p>
+<ul>
+<li>Platform walkthrough (interactive tour equivalent as a video)</li>
+<li>Creating your first donation form</li>
+<li>Importing a voter file</li>
+<li>Setting up a canvassing campaign</li>
+<li>Configuring compliance settings</li>
+<li>Managing recurring donations</li>
+<li>Using the compliance dashboard</li>
+</ul>
+<p>All videos produced in English first, subtitled in all supported languages, with AI-assisted translation and human review.</p>
+<h4 id="in-platform-training-module" tabindex="-1"><a class="heading-anchor" href="#in-platform-training-module" aria-hidden="true">#</a> In-Platform Training Module</h4>
+<p>Already decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>: full onboarding module with:</p>
+<ul>
+<li>Platform walkthrough (interactive tour)</li>
+<li>Org-customizable training materials (campaign messaging, local context, safety protocols)</li>
+<li>Knowledge checks and quizzes</li>
+<li>Certification gates before field tools access</li>
+<li>Training materials cached for offline viewing</li>
+<li>Configurable per tenant (which modules are required, which are optional)</li>
+</ul>
+<h3 id="tier-3-concierge-hands-on-support" tabindex="-1"><a class="heading-anchor" href="#tier-3-concierge-hands-on-support" aria-hidden="true">#</a> Tier 3: Concierge &amp; Hands-On Support</h3>
+<p>For complex setup tasks that self-service can't fully handle.</p>
+<h4 id="onboarding-concierge" tabindex="-1"><a class="heading-anchor" href="#onboarding-concierge" aria-hidden="true">#</a> Onboarding Concierge</h4>
+<p><strong>DECIDED: AI-first with human escalation.</strong> AI concierge (in-platform chat) handles first contact, guides through common setup tasks, answers standard questions. Available 24/7, multilingual. When the AI can't resolve or the tenant requests it, escalates to a human specialist. Humans focus on edge cases, complex jurisdictional questions, and high-stakes setup (BYOK key management, self-hosted deployment). Scales while maintaining quality for the hard problems.</p>
+<p><strong>Concierge scope — complex tasks that benefit from guided support:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Complexity reason</th>
+<th>Concierge role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WhatsApp Business verification</td>
+<td>Meta's process is opaque and slow</td>
+<td>Guide through verification, troubleshoot rejections, help with template approval</td>
+</tr>
+<tr>
+<td>BYOK key setup</td>
+<td>High stakes — key loss means permanent data loss</td>
+<td>Walk through generation, verify backup, confirm recovery plan</td>
+</tr>
+<tr>
+<td>Payment processor configuration</td>
+<td>Per-country variation, credential management</td>
+<td>Help connect to correct processor, verify test transactions</td>
+</tr>
+<tr>
+<td>Compliance configuration for new jurisdictions</td>
+<td>Legal complexity, jurisdiction-specific rules</td>
+<td>Review configuration, flag potential issues, recommend settings</td>
+</tr>
+<tr>
+<td>Platform migration</td>
+<td>Data mapping complexity, relationship preservation</td>
+<td>Review source data, recommend mapping, verify import quality</td>
+</tr>
+<tr>
+<td>Electoral boundary data import</td>
+<td>GIS expertise needed</td>
+<td>Help with format conversion, validate boundaries, troubleshoot rendering</td>
+</tr>
+<tr>
+<td>Self-hosted deployment</td>
+<td>Infrastructure expertise needed</td>
+<td>Guide through deployment, verify configuration, troubleshoot connectivity</td>
+</tr>
+</tbody>
+</table>
+<h4 id="local-support-partnerships" tabindex="-1"><a class="heading-anchor" href="#local-support-partnerships" aria-hidden="true">#</a> Local Support Partnerships</h4>
+<p>Per <a href="http://product.md" target="_blank" rel="noopener noreferrer">product.md</a>: full launch includes local support network with partnerships to provide training and customer service in key regions.</p>
+<ul>
+<li><strong>Per-country support partners</strong> — local organizations or contractors who understand the political, cultural, and regulatory context</li>
+<li><strong>Language-native support</strong> — support in the tenant's language, not through translation</li>
+<li><strong>On-the-ground training</strong> — in-person training sessions for large org rollouts, especially in countries with low digital literacy or complex political contexts</li>
+<li><strong>Regulatory liaison</strong> — local partners can help navigate country-specific regulatory requirements that the platform's automated guidance can't fully address</li>
+</ul>
+<h4 id="developer-support" tabindex="-1"><a class="heading-anchor" href="#developer-support" aria-hidden="true">#</a> Developer Support</h4>
+<p>For tenants using the public API:</p>
+<ul>
+<li><strong>API reference</strong> — auto-generated from OpenAPI spec, interactive (Swagger UI or similar)</li>
+<li><strong>Webhook documentation</strong> — event schemas, delivery guarantees, retry behavior</li>
+<li><strong>SDKs</strong> — JavaScript/TypeScript (first-class), Python (community or first-class based on demand)</li>
+<li><strong>Sandbox environment</strong> — per-tenant test environment with seed data</li>
+<li><strong>Developer community</strong> — forum or discussion board for API users to share integrations, ask questions, and contribute</li>
+</ul>
+<h2 id="support-content-lifecycle" tabindex="-1"><a class="heading-anchor" href="#support-content-lifecycle" aria-hidden="true">#</a> Support Content Lifecycle</h2>
+<h3 id="creation" tabindex="-1"><a class="heading-anchor" href="#creation" aria-hidden="true">#</a> Creation</h3>
+<ul>
+<li>All support content authored in English first</li>
+<li>AI-assisted translation into all supported languages (per <a href="http://geography.md" target="_blank" rel="noopener noreferrer">geography.md</a>)</li>
+<li>Human review required for all translated support content before publication</li>
+<li>Critical content (compliance guides, security guides, legal templates) requires legal review per jurisdiction</li>
+</ul>
+<h3 id="maintenance" tabindex="-1"><a class="heading-anchor" href="#maintenance" aria-hidden="true">#</a> Maintenance</h3>
+<ul>
+<li>Support content versioned alongside platform releases</li>
+<li>When a feature changes, associated support content is flagged for update</li>
+<li>Per-country compliance guides reviewed before each election cycle in that country</li>
+<li>Jurisdiction template updates trigger knowledge base article updates</li>
+<li>Deprecation notices when support content becomes outdated</li>
+</ul>
+<h3 id="localization-priority" tabindex="-1"><a class="heading-anchor" href="#localization-priority" aria-hidden="true">#</a> Localization Priority</h3>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Content type</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0 — before launch</td>
+<td>Onboarding wizards, compliance configuration, security setup</td>
+<td>Tenants can't use the platform without these</td>
+</tr>
+<tr>
+<td>P1 — at launch</td>
+<td>Core knowledge base articles, integration guides, compliance guides</td>
+<td>Tenants need these within first week</td>
+</tr>
+<tr>
+<td>P2 — within 30 days</td>
+<td>Video tutorials, advanced guides, migration guides</td>
+<td>Nice-to-have at launch, necessary for growth</td>
+</tr>
+<tr>
+<td>P3 — ongoing</td>
+<td>Community-contributed content, edge case documentation</td>
+<td>Accumulates over time</td>
+</tr>
+</tbody>
+</table>
+<h2 id="support-channels" tabindex="-1"><a class="heading-anchor" href="#support-channels" aria-hidden="true">#</a> Support Channels</h2>
+<h3 id="in-platform" tabindex="-1"><a class="heading-anchor" href="#in-platform" aria-hidden="true">#</a> In-Platform</h3>
+<ul>
+<li><strong>Contextual help</strong> — tooltips, info panels, warning banners (always available)</li>
+<li><strong>Knowledge base search</strong> — searchable from within the platform</li>
+<li><strong>AI concierge</strong> — in-platform chat for guided setup and troubleshooting (per concierge decision)</li>
+<li><strong>Training module</strong> — structured onboarding content (per <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>)</li>
+</ul>
+<h3 id="external" tabindex="-1"><a class="heading-anchor" href="#external" aria-hidden="true">#</a> External</h3>
+<ul>
+<li><strong>Documentation site</strong> — public knowledge base (hosted separately from the platform)</li>
+<li><strong>Community forum</strong> — for tenant-to-tenant support, feature requests, and best practice sharing</li>
+<li><strong>Email support</strong> — for issues that can't be resolved through self-service</li>
+<li><strong>Status page</strong> — self-hosted (per <a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a>) for platform health visibility</li>
+</ul>
+<h3 id="what-greengrass-does-not-provide" tabindex="-1"><a class="heading-anchor" href="#what-greengrass-does-not-provide" aria-hidden="true">#</a> What GreenGrass Does NOT Provide</h3>
+<ul>
+<li><strong>Legal advice</strong> — GreenGrass provides compliance guidance and templates, not legal counsel. Every compliance guide includes a disclaimer that tenants should consult local legal counsel for their specific situation.</li>
+<li><strong>Campaign strategy</strong> — GreenGrass provides tools, not political consulting. The platform helps campaigns execute, not decide what to execute.</li>
+<li><strong>Content creation</strong> — beyond AI-assisted translation and messaging generation (per <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>), GreenGrass doesn't create campaign content for tenants.</li>
+<li><strong>Data entry services</strong> — the platform provides import tools and guidance, but tenants manage their own data.</li>
+</ul>
+<h2 id="support-metrics" tabindex="-1"><a class="heading-anchor" href="#support-metrics" aria-hidden="true">#</a> Support Metrics</h2>
+<p>Track to measure support quality and identify UX failures:</p>
+<ul>
+<li><strong>Wizard completion rate</strong> — percentage of tenants who complete each onboarding wizard without abandoning</li>
+<li><strong>Time to first donation</strong> — how long from tenant creation to first successful donation (proxy for onboarding effectiveness)</li>
+<li><strong>Knowledge base search → resolution</strong> — percentage of searches that don't result in a support ticket</li>
+<li><strong>Concierge escalation rate</strong> — percentage of AI concierge conversations that escalate to human</li>
+<li><strong>Support ticket volume by category</strong> — identifies which areas need better self-service</li>
+<li><strong>Per-country support volume</strong> — identifies which jurisdictions need more localized guidance</li>
+</ul>
+<h2 id="support-roadmap" tabindex="-1"><a class="heading-anchor" href="#support-roadmap" aria-hidden="true">#</a> Support Roadmap</h2>
+<h3 id="alpha-puerto-rico" tabindex="-1"><a class="heading-anchor" href="#alpha-puerto-rico" aria-hidden="true">#</a> Alpha (Puerto Rico)</h3>
+<ul>
+<li>All onboarding wizards operational (English + Spanish)</li>
+<li>Core knowledge base articles (English + Spanish)</li>
+<li>Compliance guides for US/FEC and Puerto Rico CEE</li>
+<li>AI concierge (per decision) — English and Spanish</li>
+<li>Email support channel</li>
+<li>Payment processor setup guide (Stripe + ATH Movil)</li>
+<li>FEC reporting guide</li>
+</ul>
+<h3 id="pilot-1-brazil" tabindex="-1"><a class="heading-anchor" href="#pilot-1-brazil" aria-hidden="true">#</a> Pilot 1 (Brazil)</h3>
+<ul>
+<li>All content translated to Portuguese</li>
+<li>Brazil-specific compliance guides (LGPD, TSE)</li>
+<li>PIX setup guide</li>
+<li>WhatsApp Business setup concierge (Portuguese)</li>
+<li>TSE reporting guide</li>
+<li>Local support partner engagement (Brazil)</li>
+</ul>
+<h3 id="pilot-2-thailand" tabindex="-1"><a class="heading-anchor" href="#pilot-2-thailand" aria-hidden="true">#</a> Pilot 2 (Thailand)</h3>
+<ul>
+<li>All content translated to Thai</li>
+<li>Thailand-specific compliance guides (PDPA, ECT, lèse-majesté)</li>
+<li>PromptPay setup guide</li>
+<li>Lèse-majesté content warnings fully localized</li>
+<li>Security tier guidance (aggressive tier emphasis)</li>
+<li>Local support partner engagement (Thailand)</li>
+</ul>
+<h3 id="pilot-3-india" tabindex="-1"><a class="heading-anchor" href="#pilot-3-india" aria-hidden="true">#</a> Pilot 3 (India)</h3>
+<ul>
+<li>All content translated to Hindi + English (regional languages per demand)</li>
+<li>India-specific compliance guides (DPDPA, ECI, FCRA, MCC)</li>
+<li>UPI setup guide</li>
+<li>DLT SMS registration guide</li>
+<li>Multi-language consent notice setup guide</li>
+<li>Local support partner engagement (India)</li>
+</ul>
+<h3 id="pilot-4-lebanon" tabindex="-1"><a class="heading-anchor" href="#pilot-4-lebanon" aria-hidden="true">#</a> Pilot 4 (Lebanon)</h3>
+<ul>
+<li>All content translated to Arabic + French + English</li>
+<li>Lebanon-specific compliance guides (GDPR-as-baseline, SCE, cash handling)</li>
+<li>OMT recording guide</li>
+<li>Cash chain-of-custody guide</li>
+<li>Self-hosted deployment guide (critical for Lebanon security context)</li>
+<li>Aggressive security tier setup guide</li>
+<li>Local support partner engagement (Lebanon)</li>
+</ul>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Community-contributed support content</strong> — should tenants be able to contribute knowledge base articles or guides? Could be valuable for jurisdiction-specific tips from experienced campaigns, but needs moderation.</p>
+</li>
+<li>
+<p><strong>Support SLAs</strong> — should paid tiers include guaranteed response times? What are reasonable SLAs given the global timezone spread?</p>
+</li>
+<li>
+<p><strong>Training certification marketplace</strong> — could GreenGrass-certified trainers (individuals or organizations) offer paid training services through the platform? Revenue share model?</p>
+</li>
+<li>
+<p><strong>Offline support content</strong> — for environments with unreliable connectivity (Lebanon, rural India), should the knowledge base and training materials be downloadable for offline access?</p>
+</li>
+</ol>
+<!-- REVISIT: The AI concierge's capabilities, training data, and escalation rules need detailed specification during implementation. This is both a product design challenge (conversation flows, persona, tone) and a technical challenge (which AI model, how to keep it current with platform changes, how to handle jurisdiction-specific questions). -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#support-philosophy"># Support Philosophy</a></li><li class="toc-2"><a href="#support-surface-inventory"># Support Surface Inventory</a></li><li class="toc-3"><a href="#tier-1-in-platform-self-service"># Tier 1: In-Platform Self-Service</a></li><li class="toc-3"><a href="#tier-2-guided-support-resources"># Tier 2: Guided Support Resources</a></li><li class="toc-3"><a href="#tier-3-concierge-hands-on-support"># Tier 3: Concierge &amp;amp; Hands-On Support</a></li><li class="toc-2"><a href="#support-content-lifecycle"># Support Content Lifecycle</a></li><li class="toc-3"><a href="#creation"># Creation</a></li><li class="toc-3"><a href="#maintenance"># Maintenance</a></li><li class="toc-3"><a href="#localization-priority"># Localization Priority</a></li><li class="toc-2"><a href="#support-channels"># Support Channels</a></li><li class="toc-3"><a href="#in-platform"># In-Platform</a></li><li class="toc-3"><a href="#external"># External</a></li><li class="toc-3"><a href="#what-greengrass-does-not-provide"># What GreenGrass Does NOT Provide</a></li><li class="toc-2"><a href="#support-metrics"># Support Metrics</a></li><li class="toc-2"><a href="#support-roadmap"># Support Roadmap</a></li><li class="toc-3"><a href="#alpha-puerto-rico"># Alpha (Puerto Rico)</a></li><li class="toc-3"><a href="#pilot-1-brazil"># Pilot 1 (Brazil)</a></li><li class="toc-3"><a href="#pilot-2-thailand"># Pilot 2 (Thailand)</a></li><li class="toc-3"><a href="#pilot-3-india"># Pilot 3 (India)</a></li><li class="toc-3"><a href="#pilot-4-lebanon"># Pilot 4 (Lebanon)</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

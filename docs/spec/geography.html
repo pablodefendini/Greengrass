@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Target Geography · GreenGrass</title>
+<meta name="description" content="Target Geography — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html">Core Workflows</a></li><li><a href="./geography.html" aria-current="page" class="active">Target Geography</a></li><li><a href="./security.html">Security &amp; Threat Model</a></li><li><a href="./compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html">External Integrations</a></li><li><a href="./support.html">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="./press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="target-geography" tabindex="-1"><a class="heading-anchor" href="#target-geography" aria-hidden="true">#</a> Target Geography</h1>
+<h2 id="rollout-sequence" tabindex="-1"><a class="heading-anchor" href="#rollout-sequence" aria-hidden="true">#</a> Rollout Sequence</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Country</th>
+<th>Languages</th>
+<th>Payment rails</th>
+<th>Key considerations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alpha</td>
+<td>Puerto Rico</td>
+<td>Spanish, English</td>
+<td>ATH Movil, Venmo, Zelle, credit cards (US financial system)</td>
+<td>Founders' home base. US territory — US election law, FEC compliance. Bilingual. Good connectivity with rural gaps. Smallest, most controlled environment for initial validation.</td>
+</tr>
+<tr>
+<td>Pilot 1</td>
+<td>Brazil</td>
+<td>Portuguese</td>
+<td>PIX (dominant), Boleto, credit cards</td>
+<td>Largest Latin American democracy. Active grassroots movements. PIX is a dominant instant payment system requiring first-class integration. Good urban connectivity, variable rural.</td>
+</tr>
+<tr>
+<td>Pilot 2</td>
+<td>Thailand</td>
+<td>Thai</td>
+<td>PromptPay, TrueMoney, bank transfer</td>
+<td>Thai script support. Good mobile penetration. Complex political environment with history of military intervention — security tier features become relevant.</td>
+</tr>
+<tr>
+<td>Pilot 3</td>
+<td>India</td>
+<td>Hindi, English + regional languages</td>
+<td>UPI (dominant), Paytm, PhonePe, bank transfer</td>
+<td>Largest democracy. Massive scale stress test. Multi-language within a single deployment. Enormous voter files. Diverse regulatory landscape across states. UPI integration essential.</td>
+</tr>
+<tr>
+<td>Pilot 4</td>
+<td>Lebanon</td>
+<td>Arabic, French, English</td>
+<td>Cash-heavy, OMT, bank transfers (banking system in crisis)</td>
+<td><strong>RTL support required.</strong> Three languages per deployment. Most demanding security context — aggressive tier features (duress mode, traffic analysis resistance) are practical necessities. Economic crisis affects payment infrastructure. Sectarian political system.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="language-support-roadmap" tabindex="-1"><a class="heading-anchor" href="#language-support-roadmap" aria-hidden="true">#</a> Language Support Roadmap</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Languages added</th>
+<th>Script requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alpha</td>
+<td>Spanish, English</td>
+<td>Latin (LTR)</td>
+</tr>
+<tr>
+<td>Pilot 1</td>
+<td>Portuguese</td>
+<td>Latin (LTR)</td>
+</tr>
+<tr>
+<td>Pilot 2</td>
+<td>Thai</td>
+<td>Thai script (LTR)</td>
+</tr>
+<tr>
+<td>Pilot 3</td>
+<td>Hindi + regional languages (TBD)</td>
+<td>Devanagari + others (LTR)</td>
+</tr>
+<tr>
+<td>Pilot 4</td>
+<td>Arabic, French</td>
+<td>Arabic script (<strong>RTL</strong>), Latin (LTR)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Architecture implication:</strong> RTL support must be designed into the UI framework from the start, even if Arabic isn't needed until Pilot 4. Retrofitting RTL into a mature LTR UI is significantly more expensive than building bidirectional support from day one.</p>
+<h2 id="payment-integration-roadmap" tabindex="-1"><a class="heading-anchor" href="#payment-integration-roadmap" aria-hidden="true">#</a> Payment Integration Roadmap</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Payment systems</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alpha</td>
+<td>Credit cards, ATH Movil, Venmo, Zelle</td>
+<td>US financial system — well-documented APIs, familiar compliance</td>
+</tr>
+<tr>
+<td>Pilot 1</td>
+<td>PIX, Boleto</td>
+<td>Brazilian instant payment (Central Bank regulated), bank slip</td>
+</tr>
+<tr>
+<td>Pilot 2</td>
+<td>PromptPay, TrueMoney</td>
+<td>Thai instant payment, e-wallet</td>
+</tr>
+<tr>
+<td>Pilot 3</td>
+<td>UPI, Paytm, PhonePe</td>
+<td>Indian instant payment ecosystem (massive scale)</td>
+</tr>
+<tr>
+<td>Pilot 4</td>
+<td>OMT, cash-heavy workflows</td>
+<td>Money transfer service, emphasis on cash donation tracking due to banking crisis</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Architecture implication:</strong> The payment layer must be modular — a common interface with per-country payment adapters. Each country's payment landscape is fundamentally different. The fundraising workflow's cash donation tracking (decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) becomes critical for Lebanon.</p>
+<h2 id="compliance-roadmap" tabindex="-1"><a class="heading-anchor" href="#compliance-roadmap" aria-hidden="true">#</a> Compliance Roadmap</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Key compliance areas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alpha</td>
+<td>US/FEC election law, US data protection, Puerto Rico-specific regulations</td>
+</tr>
+<tr>
+<td>Pilot 1</td>
+<td>Brazilian election law (TSE regulations), LGPD (Brazil's data protection law)</td>
+</tr>
+<tr>
+<td>Pilot 2</td>
+<td>Thai election law, PDPA (Thailand's data protection act), political activity restrictions</td>
+</tr>
+<tr>
+<td>Pilot 3</td>
+<td>Indian election law (ECI regulations), IT Act, state-level variations</td>
+</tr>
+<tr>
+<td>Pilot 4</td>
+<td>Lebanese election law (sectarian representation rules), no comprehensive data protection law (as of 2024), complex multi-confessional legal system</td>
+</tr>
+</tbody>
+</table>
+<!-- REVISIT: Each country needs a dedicated compliance assessment before pilot launch. This should be a separate compliance spec per country, developed with local legal counsel. -->
+<h2 id="data-residency-implications" tabindex="-1"><a class="heading-anchor" href="#data-residency-implications" aria-hidden="true">#</a> Data Residency Implications</h2>
+<p>Per the security spec, data residency is per-country. This means GreenGrass needs hosting presence in or near:</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Hosting location needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alpha</td>
+<td>US (Puerto Rico is US territory)</td>
+</tr>
+<tr>
+<td>Pilot 1</td>
+<td>Brazil (LGPD has data localization preferences)</td>
+</tr>
+<tr>
+<td>Pilot 2</td>
+<td>Thailand or Singapore (regional hub)</td>
+</tr>
+<tr>
+<td>Pilot 3</td>
+<td>India (data localization requirements under discussion/implementation)</td>
+</tr>
+<tr>
+<td>Pilot 4</td>
+<td>Lebanon or privacy-friendly European location (given banking/infrastructure instability)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="security-tier-relevance-by-country" tabindex="-1"><a class="heading-anchor" href="#security-tier-relevance-by-country" aria-hidden="true">#</a> Security Tier Relevance by Country</h2>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Expected security tier demand</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puerto Rico</td>
+<td>Standard</td>
+<td>Stable US political environment</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>Standard to Enhanced</td>
+<td>Political polarization, but generally stable institutions</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>Enhanced to Aggressive</td>
+<td>History of military coups, political repression, lèse-majesté laws</td>
+</tr>
+<tr>
+<td>India</td>
+<td>Enhanced to Aggressive</td>
+<td>State surveillance capabilities, political pressure on opposition, scale of data</td>
+</tr>
+<tr>
+<td>Lebanon</td>
+<td>Aggressive</td>
+<td>Sectarian tensions, multiple intelligence services, regional geopolitical pressures, Hezbollah/state actor considerations</td>
+</tr>
+</tbody>
+</table>
+<h2 id="localization-strategy" tabindex="-1"><a class="heading-anchor" href="#localization-strategy" aria-hidden="true">#</a> Localization Strategy</h2>
+<p><strong>DECIDED:</strong> AI-assisted with human review.</p>
+<p>AI generates initial translations, local teams review and correct. Balances speed and cost across a wide language surface (Spanish, Portuguese, Thai, Hindi, Arabic, French, English) while maintaining quality through human oversight.</p>
+<ul>
+<li>AI-generated translations are flagged as drafts until a human reviewer approves them.</li>
+<li>Critical flows (security prompts, legal text, donation forms, consent language) require human sign-off before going live.</li>
+<li>Local campaign teams can contribute corrections and improvements through an in-platform review interface.</li>
+<li>Translation memory accumulates reviewed translations to improve consistency and reduce review burden over time.</li>
+</ul>
+<p><strong>DECIDED:</strong> Both UI and content localization.</p>
+<p><strong>UI localization:</strong> The platform interface (buttons, labels, navigation, system messages, error states) is translated into all supported languages.</p>
+<p><strong>Content localization:</strong> Campaign content — email templates, canvassing scripts, donation form text, event descriptions, action page copy — can be authored in multiple languages within a single campaign. The correct version is served based on:</p>
+<ul>
+<li>The recipient's language preference (stored on their platform identity)</li>
+<li>The volunteer's language setting (for field tools like canvassing scripts)</li>
+<li>The visitor's browser/device language (for public-facing pages, with manual override)</li>
+</ul>
+<p><strong>Architecture implication:</strong> Every content-authoring surface in the platform needs multi-language support — not as an afterthought, but as a core capability. Content objects store multiple language variants, and the AI-assisted translation pipeline (decided above) can help staff generate initial translations of their content across the org's configured languages.</p>
+<!-- REVISIT: The content localization data model (how multi-language variants are stored, versioned, and served) needs treatment in the architecture spec. Also, the AI-assisted translation could be offered as an in-platform tool for campaign content, not just for UI strings. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#rollout-sequence"># Rollout Sequence</a></li><li class="toc-2"><a href="#language-support-roadmap"># Language Support Roadmap</a></li><li class="toc-2"><a href="#payment-integration-roadmap"># Payment Integration Roadmap</a></li><li class="toc-2"><a href="#compliance-roadmap"># Compliance Roadmap</a></li><li class="toc-2"><a href="#data-residency-implications"># Data Residency Implications</a></li><li class="toc-2"><a href="#security-tier-relevance-by-country"># Security Tier Relevance by Country</a></li><li class="toc-2"><a href="#localization-strategy"># Localization Strategy</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

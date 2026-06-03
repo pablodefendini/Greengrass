@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Core Workflows · GreenGrass</title>
+<meta name="description" content="Core Workflows — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html" aria-current="page" class="active">Core Workflows</a></li><li><a href="./geography.html">Target Geography</a></li><li><a href="./security.html">Security &amp; Threat Model</a></li><li><a href="./compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html">External Integrations</a></li><li><a href="./support.html">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="./press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="core-workflows" tabindex="-1"><a class="heading-anchor" href="#core-workflows" aria-hidden="true">#</a> Core Workflows</h1>
+<h2 id="overview" tabindex="-1"><a class="heading-anchor" href="#overview" aria-hidden="true">#</a> Overview</h2>
+<p>This document defines the core user journeys through the GreenGrass platform. Each workflow maps a real-world campaign activity to a sequence of platform interactions, identifying who's involved, what happens at each step, and where key design decisions arise.</p>
+<p>Workflows are organized by campaign function, not by feature. A single workflow may touch multiple platform features (CRM, comms, events, analytics).</p>
+<h3 id="cross-cutting-concerns" tabindex="-1"><a class="heading-anchor" href="#cross-cutting-concerns" aria-hidden="true">#</a> Cross-cutting concerns</h3>
+<p>Several constraints apply to all workflows:</p>
+<ul>
+<li><strong>Offline capability:</strong> Which steps must work without connectivity? (See offline section per workflow)</li>
+<li><strong>Mobile-first:</strong> Every workflow must be usable on a phone. Desktop is the enhanced experience, not the primary one.</li>
+<li><strong>Multilingual:</strong> All user-facing content and interfaces must support the tenant's configured languages.</li>
+<li><strong>Audit trail:</strong> Every data-mutating step is logged (decided in <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a>).</li>
+</ul>
+<hr>
+<h2 id="1-tenant-onboarding" tabindex="-1"><a class="heading-anchor" href="#1-tenant-onboarding" aria-hidden="true">#</a> 1. Tenant Onboarding</h2>
+<p>The journey from &quot;we want to use GreenGrass&quot; to &quot;we're running our campaign on it.&quot;</p>
+<h3 id="actors" tabindex="-1"><a class="heading-anchor" href="#actors" aria-hidden="true">#</a> Actors</h3>
+<ul>
+<li><strong>Org founder</strong> — the person setting up the tenant (campaign manager, party leader, candidate)</li>
+<li><strong>Platform Admin</strong> — GreenGrass team (provisioning, support)</li>
+</ul>
+<h3 id="flow" tabindex="-1"><a class="heading-anchor" href="#flow" aria-hidden="true">#</a> Flow</h3>
+<pre><code>1. Org founder signs up on GreenGrass website
+2. Select entity type: Party/Org, Candidate, or Alliance
+3. Choose hosting tier (standard / enhanced / maximum) and data residency country
+4. Choose encryption model (BYOK default, managed keys opt-in)
+5. Platform Admin provisions the tenant
+6. Org founder completes Org Admin onboarding:
+   a. Set up passkey
+   b. Configure org profile (name, branding, languages)
+   c. Invite initial staff members
+   d. Configure payment processor(s) for fundraising
+   e. Import initial data (voter file, existing supporter list) — or start fresh
+7. Org Admin sets up role templates (use defaults or customize)
+8. Org Admin configures privacy and visibility settings
+9. Tenant is live
+</code></pre>
+<h3 id="decision-points" tabindex="-1"><a class="heading-anchor" href="#decision-points" aria-hidden="true">#</a> Decision points</h3>
+<p><strong>DECIDED:</strong> Fully automated, self-serve.</p>
+<p>Sign up, configure, provision, go — no human in the loop. The platform handles tenant provisioning end-to-end: infrastructure spin-up, database creation, encryption key setup (BYOK flow or managed), and initial configuration.</p>
+<p>This is architecturally ambitious given per-country data residency and single-tenant isolation, but it's the right target. The provisioning pipeline must be robust enough to create isolated tenants in the correct country on demand.</p>
+<!-- REVISIT: The provisioning automation pipeline is a major piece of infrastructure work. Needs detailed treatment in the architecture spec — orchestration, country-specific hosting providers, failure handling, rollback. Early phases (alpha/pilot) may use a simpler pipeline with guardrails while full automation is built out. -->
+<h3 id="offline-capability" tabindex="-1"><a class="heading-anchor" href="#offline-capability" aria-hidden="true">#</a> Offline capability</h3>
+<ul>
+<li>None required. Onboarding requires connectivity.</li>
+</ul>
+<hr>
+<h2 id="2-volunteer-onboarding" tabindex="-1"><a class="heading-anchor" href="#2-volunteer-onboarding" aria-hidden="true">#</a> 2. Volunteer Onboarding</h2>
+<p>The journey from &quot;I want to help&quot; to &quot;I'm ready to canvass.&quot;</p>
+<h3 id="actors-1" tabindex="-1"><a class="heading-anchor" href="#actors-1" aria-hidden="true">#</a> Actors</h3>
+<ul>
+<li><strong>Prospective volunteer</strong> — person signing up</li>
+<li><strong>Volunteer Coordinator</strong> — staff member managing volunteers</li>
+<li><strong>Team Lead</strong> — (optional) field leader the volunteer is assigned to</li>
+</ul>
+<h3 id="flow-1" tabindex="-1"><a class="heading-anchor" href="#flow-1" aria-hidden="true">#</a> Flow</h3>
+<pre><code>1. Prospective volunteer finds the campaign (website, social media, event, word of mouth)
+2. Signs up through a public-facing volunteer form
+   a. Provides basic info (name, phone, email, language preference, location)
+   b. Indicates availability and interests (canvassing, phone banking, events, etc.)
+3. System creates a platform identity (or links to existing one if they're already in the system)
+4. System checks for dedup against existing CRM records
+   a. If match found → link to existing record, add volunteer facet
+   b. If no match → create new record
+5. Volunteer Coordinator reviews and approves the signup (or auto-approve if org configured)
+6. Volunteer receives onboarding:
+   a. Set up passkey (primary) or fallback auth
+   b. Designate trusted contact(s) for account recovery
+   c. Brief orientation (platform tour, what to expect)
+   d. Assign to team and/or geographic scope
+7. Volunteer appears on the Volunteer Coordinator's roster
+8. Volunteer can now:
+   a. View available shifts and events
+   b. Sign up for shifts
+   c. Access training materials
+   d. See their team and Team Lead (if visibility enabled)
+</code></pre>
+<h3 id="decision-points-1" tabindex="-1"><a class="heading-anchor" href="#decision-points-1" aria-hidden="true">#</a> Decision points</h3>
+<p><strong>DECIDED:</strong> Configurable per tenant.</p>
+<p>Each org sets their own volunteer approval policy:</p>
+<ul>
+<li><strong>Auto-approve</strong> — volunteers are immediately active after signup. Fastest onboarding, good for low-threat environments.</li>
+<li><strong>Require approval</strong> — Volunteer Coordinator reviews and approves each signup before the volunteer gets platform access. Appropriate for high-threat environments or orgs concerned about infiltration.</li>
+</ul>
+<p>The default can be set at the org level, with the option to override per signup channel (e.g., auto-approve referrals from existing volunteers, require approval for cold signups).</p>
+<p><strong>DECIDED:</strong> Full onboarding module.</p>
+<p>The platform provides a built-in onboarding and training system:</p>
+<ul>
+<li><strong>Platform walkthrough</strong> — interactive tour of the tools the volunteer will use (canvassing app, phone banking, event RSVP, etc.)</li>
+<li><strong>Org-customizable content</strong> — the org can add their own training materials (campaign messaging, local context, do's and don'ts, safety protocols)</li>
+<li><strong>Quizzes and checkpoints</strong> — knowledge checks to confirm the volunteer understands the tools and the campaign's expectations</li>
+<li><strong>Certification gates</strong> — orgs can require completion of specific training modules before a volunteer can access field tools (e.g., must complete canvassing training before being assigned a walk list)</li>
+<li><strong>Training materials cached for offline viewing</strong> after initial download</li>
+</ul>
+<!-- REVISIT: Training module content management (how orgs author and organize training content), progress tracking, and whether training completion feeds into the volunteer's CRM record should be detailed in the UX spec. -->
+<h3 id="offline-capability-1" tabindex="-1"><a class="heading-anchor" href="#offline-capability-1" aria-hidden="true">#</a> Offline capability</h3>
+<ul>
+<li>Signup requires connectivity.</li>
+<li>Post-onboarding, training materials could be cached for offline viewing.</li>
+</ul>
+<hr>
+<h2 id="3-canvassing-door-to-door-outreach" tabindex="-1"><a class="heading-anchor" href="#3-canvassing-door-to-door-outreach" aria-hidden="true">#</a> 3. Canvassing (Door-to-Door Outreach)</h2>
+<p>The core field operation. This is the workflow with the strongest offline requirements and the most complex data flow.</p>
+<h3 id="actors-2" tabindex="-1"><a class="heading-anchor" href="#actors-2" aria-hidden="true">#</a> Actors</h3>
+<ul>
+<li><strong>Field Director</strong> — plans and oversees the canvassing operation</li>
+<li><strong>Volunteer Coordinator</strong> — manages volunteer scheduling</li>
+<li><strong>Team Lead</strong> — leads a small group in the field</li>
+<li><strong>Volunteer (canvasser)</strong> — knocks doors, records interactions</li>
+<li><strong>Voter/Constituent</strong> — the person being contacted</li>
+</ul>
+<h3 id="pre-operation-staff-requires-connectivity" tabindex="-1"><a class="heading-anchor" href="#pre-operation-staff-requires-connectivity" aria-hidden="true">#</a> Pre-operation (staff, requires connectivity)</h3>
+<pre><code>1. Field Director defines a canvassing campaign:
+   a. Select target geography (precinct, neighborhood, turf)
+   b. Define canvassing goals (voter ID, persuasion, GOTV, voter registration)
+   c. Create or select a canvassing script (questions, talking points, response options)
+   d. Set date(s) and shifts
+2. Field Director cuts turf:
+   a. Divide target geography into walk lists (manageable chunks for one canvasser)
+   b. Each walk list = a sequence of addresses with associated voter records
+   c. Assign walk lists to shifts
+3. Volunteer Coordinator opens shifts for signup:
+   a. Volunteers see available shifts and sign up
+   b. Or Volunteer Coordinator assigns volunteers directly
+4. Team Leads are assigned to teams
+</code></pre>
+<h3 id="day-of-operation" tabindex="-1"><a class="heading-anchor" href="#day-of-operation" aria-hidden="true">#</a> Day-of operation</h3>
+<pre><code>5. Team Lead checks in:
+   a. Opens field mode on their device
+   b. Sees their team roster, turf assignment, walk lists
+   c. Downloads walk list data for offline use
+   d. Checks in arriving volunteers
+6. Volunteer starts canvassing:
+   a. Opens field mode → enters shift-length session
+   b. Downloads assigned walk list (addresses, voter records, script)
+   c. Walks to first door
+7. At each door:
+   a. App shows voter info for that address (name, age, previous contact history)
+   b. Volunteer follows the script
+   c. Records the interaction:
+      - Contact result (spoke to voter, not home, refused, moved, etc.)
+      - Responses to script questions (support level, key issues, etc.)
+      - Free-text notes
+      - Voter registration status update (if applicable)
+   d. App marks address as completed and advances to next
+   e. All data saved locally on device
+8. Periodically (when connectivity available):
+   a. App syncs completed interactions to the server
+   b. Downloads any updates (e.g., turf reassignments from Team Lead)
+9. Volunteer completes their walk list or shift ends:
+   a. Final sync of all outstanding data
+   b. Shift lifecycle event fires (decided in users.md):
+      - Sync remaining data
+      - Log volunteer hours
+      - Prompt for shift debrief
+      - Release turf assignment
+      - Close field mode session
+   c. Team Lead is notified of completion
+</code></pre>
+<h3 id="post-operation-staff-requires-connectivity" tabindex="-1"><a class="heading-anchor" href="#post-operation-staff-requires-connectivity" aria-hidden="true">#</a> Post-operation (staff, requires connectivity)</h3>
+<pre><code>10. Field Director reviews results:
+    a. Doors knocked, contact rate, response data
+    b. Canvassing progress map (which turfs are complete)
+    c. Flagged issues from Team Leads or volunteers
+11. Data Manager reviews data quality:
+    a. Dedup check on any new records created in the field
+    b. Flag incomplete or suspicious entries
+12. CRM updated:
+    a. Voter records updated with canvassing interaction data
+    b. Support scores recalculated
+    c. Follow-up actions generated (e.g., voter needs registration help → routed to voter reg workflow)
+</code></pre>
+<h3 id="offline-requirements" tabindex="-1"><a class="heading-anchor" href="#offline-requirements" aria-hidden="true">#</a> Offline requirements</h3>
+<p>This is the most offline-dependent workflow in the platform:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Offline capable?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download walk list</td>
+<td>Requires initial connectivity</td>
+<td>Data cached on device for offline use</td>
+</tr>
+<tr>
+<td>Record interactions</td>
+<td>Yes, fully offline</td>
+<td>All data stored locally</td>
+</tr>
+<tr>
+<td>Sync data</td>
+<td>Requires connectivity</td>
+<td>Opportunistic sync when available</td>
+</tr>
+<tr>
+<td>View voter records</td>
+<td>Yes, from cached data</td>
+<td>Limited to downloaded walk list</td>
+</tr>
+<tr>
+<td>Team Lead reassignment</td>
+<td>Requires connectivity</td>
+<td>Real-time coordination needs the network</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conflict-resolution" tabindex="-1"><a class="heading-anchor" href="#conflict-resolution" aria-hidden="true">#</a> Conflict resolution</h3>
+<p><strong>DECIDED:</strong> Merge and flag.</p>
+<p>When conflicting records sync from multiple devices, both records are preserved and flagged for human review. The Data Manager sees both records side-by-side — who recorded what, when, from which device — and decides how to reconcile. No data is silently discarded. Consistent with the suggest-and-confirm dedup approach decided in <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>.</p>
+<p><strong>DECIDED:</strong> Operational data only.</p>
+<p>The walk list downloads: name, address, age, previous contact result (e.g., &quot;spoke March 5 — leaning supportive&quot;), and the canvassing script. Enough context for an effective conversation without exposing the full voter record.</p>
+<p><strong>Excluded from device:</strong> detailed canvassing notes from prior visits, internal tags and scores, donation history, national ID, full communication history. This data stays on the server — if the device is seized or compromised, exposure is limited to what's operationally necessary.</p>
+<p>All on-device data is encrypted and wiped at session end (decided in <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a>).</p>
+<hr>
+<h2 id="4-phone-banking" tabindex="-1"><a class="heading-anchor" href="#4-phone-banking" aria-hidden="true">#</a> 4. Phone Banking</h2>
+<p>Structured phone outreach from a call center or distributed callers.</p>
+<h3 id="actors-3" tabindex="-1"><a class="heading-anchor" href="#actors-3" aria-hidden="true">#</a> Actors</h3>
+<ul>
+<li><strong>Field Director</strong> — plans the phone bank campaign</li>
+<li><strong>Volunteer Coordinator</strong> — manages shifts and caller assignments</li>
+<li><strong>Volunteer (caller)</strong> — makes the calls</li>
+<li><strong>Voter/Constituent</strong> — the person being called</li>
+</ul>
+<h3 id="flow-2" tabindex="-1"><a class="heading-anchor" href="#flow-2" aria-hidden="true">#</a> Flow</h3>
+<pre><code>1. Field Director creates a phone bank campaign:
+   a. Define target list (from CRM segments — e.g., registered voters who haven't been contacted)
+   b. Create or select a call script
+   c. Set campaign parameters (dates, shift times, calls per shift)
+2. Volunteer Coordinator creates shifts and opens for signup
+3. Volunteer starts a phone bank shift:
+   a. Logs in, enters phone bank mode
+   b. System presents the next contact from the call list
+   c. Volunteer sees: name, phone number, call script, any prior contact notes
+4. Volunteer makes the call:
+   a. Dials the number (through platform VoIP or their own phone)
+   b. Follows the script
+   c. Records the result:
+      - Call outcome (answered, voicemail, busy, wrong number, disconnected, do-not-call)
+      - Responses to script questions
+      - Free-text notes
+   d. System advances to the next contact
+5. Shift ends:
+   a. Shift lifecycle event fires
+   b. Volunteer hours logged
+   c. Debrief prompt
+6. Field Director reviews results:
+   a. Calls made, contact rate, response data
+   b. Do-not-call list updated
+</code></pre>
+<h3 id="decision-points-2" tabindex="-1"><a class="heading-anchor" href="#decision-points-2" aria-hidden="true">#</a> Decision points</h3>
+<p><strong>DECIDED:</strong> BYOP for MVP, hybrid integration for pilot.</p>
+<p><strong>MVP:</strong> Volunteer uses their personal phone. The platform shows the contact, the script, and records the result. No telephony infrastructure needed. Simplest and cheapest path to a working phone bank.</p>
+<p><strong>Pilot:</strong> Integrate with an external telephony provider (Twilio, Plivo, or regional equivalent) for click-to-call from within the platform. The calling happens through the provider but the UX feels native — volunteer sees the script, clicks call, records the result, and the system advances to the next contact. Call duration and outcomes tracked automatically.</p>
+<!-- REVISIT: Telephony provider selection will depend on target countries and cost. Some regions have local providers that are cheaper and more reliable than global ones. Also, volunteer phone number privacy — with BYOP, the volunteer's personal number is visible to the person being called. The hybrid integration can mask this. -->
+<h3 id="offline-capability-2" tabindex="-1"><a class="heading-anchor" href="#offline-capability-2" aria-hidden="true">#</a> Offline capability</h3>
+<ul>
+<li>Phone banking requires connectivity (need to load contacts, sync results in real time to prevent duplicate calls).</li>
+<li><strong>Not an offline-capable workflow.</strong></li>
+</ul>
+<hr>
+<h2 id="5-voter-registration-drive" tabindex="-1"><a class="heading-anchor" href="#5-voter-registration-drive" aria-hidden="true">#</a> 5. Voter Registration Drive</h2>
+<p>Field teams registering voters, often in public locations or door-to-door.</p>
+<h3 id="actors-4" tabindex="-1"><a class="heading-anchor" href="#actors-4" aria-hidden="true">#</a> Actors</h3>
+<ul>
+<li><strong>Field Director</strong> — plans and targets the drive</li>
+<li><strong>Volunteer Coordinator</strong> — manages volunteers</li>
+<li><strong>Team Lead</strong> — manages on-site team</li>
+<li><strong>Volunteer (registrar)</strong> — helps people register</li>
+<li><strong>Unregistered voter</strong> — the person being registered</li>
+</ul>
+<h3 id="flow-3" tabindex="-1"><a class="heading-anchor" href="#flow-3" aria-hidden="true">#</a> Flow</h3>
+<pre><code>1. Field Director plans the voter registration drive:
+   a. Identify target area or event (community center, market, campus, door-to-door)
+   b. Determine registration requirements for the jurisdiction
+   c. Prepare registration materials (forms, ID requirements checklist)
+   d. Create shifts and assign volunteers
+2. On-site:
+   a. Team Lead sets up and checks in volunteers
+   b. Volunteer approaches or is approached by an unregistered voter
+   c. Volunteer opens voter registration tool:
+      - Captures registrant information (name, address, DOB, ID number if required)
+      - Verifies eligibility based on jurisdiction rules
+      - Completes the digital registration form (or assists with paper form)
+   d. Data saved locally on device
+   e. Syncs when connectivity available
+3. Post-drive:
+   a. Registration data synced to CRM
+   b. New voter records created (with dedup check)
+   c. Registrants added to follow-up pipeline (confirm registration processed, GOTV outreach)
+   d. Drive metrics logged (registrations completed, volunteers participated, hours)
+</code></pre>
+<h3 id="offline-requirements-1" tabindex="-1"><a class="heading-anchor" href="#offline-requirements-1" aria-hidden="true">#</a> Offline requirements</h3>
+<ul>
+<li><strong>Must work fully offline.</strong> Voter registration drives often happen in locations with poor connectivity (rural areas, outdoor events).</li>
+<li>Registration data stored on-device, encrypted, synced when connectivity restores.</li>
+<li>Same conflict resolution and device data minimization principles as canvassing.</li>
+</ul>
+<h3 id="compliance-considerations" tabindex="-1"><a class="heading-anchor" href="#compliance-considerations" aria-hidden="true">#</a> Compliance considerations</h3>
+<p><strong>DECIDED:</strong> Both — pre-built jurisdiction templates where available, custom configuration where not.</p>
+<ul>
+<li><strong>Jurisdiction templates:</strong> GreenGrass builds and maintains voter registration form templates for target countries, incorporating eligibility requirements, required fields, documentation rules, and submission procedures. Orgs select their jurisdiction and get a ready-to-use form.</li>
+<li><strong>Custom form builder:</strong> For countries or regions without a pre-built template, orgs can configure their own registration forms using a form builder with validation rules, required field logic, and submission workflow configuration.</li>
+<li><strong>Community contribution:</strong> As orgs in new jurisdictions build custom forms, those configurations can be submitted back to GreenGrass as candidate templates for other orgs in the same jurisdiction.</li>
+</ul>
+<!-- REVISIT: Which jurisdiction templates to build first depends on target geography (next spec pass). Template maintenance is ongoing — election laws change. Need a process for keeping templates current. -->
+<hr>
+<h2 id="6-fundraising" tabindex="-1"><a class="heading-anchor" href="#6-fundraising" aria-hidden="true">#</a> 6. Fundraising</h2>
+<p>The donation lifecycle — from first contribution to ongoing donor relationship.</p>
+<h3 id="actors-5" tabindex="-1"><a class="heading-anchor" href="#actors-5" aria-hidden="true">#</a> Actors</h3>
+<ul>
+<li><strong>Finance Director</strong> — configures fundraising, manages financial operations</li>
+<li><strong>Communications Director</strong> — creates fundraising appeals</li>
+<li><strong>Donor</strong> — the person contributing</li>
+<li><strong>Org Admin</strong> — oversees compliance</li>
+</ul>
+<h3 id="online-donation-flow" tabindex="-1"><a class="heading-anchor" href="#online-donation-flow" aria-hidden="true">#</a> Online donation flow</h3>
+<pre><code>1. Donor encounters a donation prompt:
+   a. Campaign website (embedded donation form)
+   b. Email appeal (link to donation page)
+   c. SMS/WhatsApp message with donation link
+   d. Social media post with donation link
+   e. In-app donation page (for supporters with accounts)
+2. Donor lands on donation form:
+   a. Select amount (suggested amounts or custom)
+   b. Choose one-time or recurring
+   c. Option to cover processing fees
+   d. Select payment method (country-specific options)
+   e. Provide required donor information (name, email/phone, employer/occupation if required by jurisdiction)
+   f. Confirm and submit
+3. Payment processed:
+   a. Payment processor handles the transaction
+   b. Platform receives confirmation
+   c. Receipt generated and sent to donor (email/SMS)
+   d. Donor record created or updated in CRM (dedup check)
+   e. Donation logged with full audit trail
+4. Post-donation:
+   a. Thank-you message sent (automated, configurable)
+   b. Donor enters follow-up pipeline (future appeals, event invitations, volunteer recruitment)
+   c. If recurring: scheduled payments managed, notifications on success/failure
+</code></pre>
+<h3 id="cash-donation-flow" tabindex="-1"><a class="heading-anchor" href="#cash-donation-flow" aria-hidden="true">#</a> Cash donation flow</h3>
+<pre><code>1. At an in-person event, someone donates cash
+2. Staff or volunteer with appropriate permissions opens cash donation tool:
+   a. Records donor information (name, contact info — or anonymous if allowed by jurisdiction)
+   b. Records amount
+   c. Records event context
+   d. Takes photo of any physical receipt/form (optional)
+3. Cash donation logged in the system with audit trail
+4. Finance Director reviews and reconciles cash donations
+</code></pre>
+<h3 id="fundraising-campaign-management" tabindex="-1"><a class="heading-anchor" href="#fundraising-campaign-management" aria-hidden="true">#</a> Fundraising campaign management</h3>
+<pre><code>1. Finance Director creates a fundraising campaign:
+   a. Set goal amount and deadline
+   b. Configure donation form (suggested amounts, messaging, payment methods)
+   c. Create embeddable form for external sites
+2. Communications Director creates fundraising appeals:
+   a. Draft email/SMS/WhatsApp message
+   b. Link to the donation form
+   c. Schedule sends to target segments
+3. Analytics:
+   a. Real-time fundraising dashboard (total raised, donor count, average donation, goal progress)
+   b. Donor segmentation (first-time vs recurring, amount tiers, geographic distribution)
+   c. Channel performance (which appeal drove the most donations)
+</code></pre>
+<h3 id="decision-points-3" tabindex="-1"><a class="heading-anchor" href="#decision-points-3" aria-hidden="true">#</a> Decision points</h3>
+<p><strong>DECIDED:</strong> Configurable per campaign.</p>
+<p>The alliance defines donation split rules when creating each joint fundraising campaign. Different campaigns can have different splits — a voter registration drive might split evenly, while a candidate-focused campaign might weight toward that candidate's org.</p>
+<p>Split rules are set by the Alliance Admin with agreement from participating member orgs. Each org's financial records reflect their portion with full audit trail tracing the split from original donation through to distribution.</p>
+<h3 id="offline-capability-3" tabindex="-1"><a class="heading-anchor" href="#offline-capability-3" aria-hidden="true">#</a> Offline capability</h3>
+<ul>
+<li>Online donations require connectivity (payment processing).</li>
+<li>Cash donation recording should work offline and sync later.</li>
+</ul>
+<hr>
+<h2 id="7-multi-channel-communications" tabindex="-1"><a class="heading-anchor" href="#7-multi-channel-communications" aria-hidden="true">#</a> 7. Multi-Channel Communications</h2>
+<p>Outreach across email, SMS, WhatsApp, and social media.</p>
+<h3 id="actors-6" tabindex="-1"><a class="heading-anchor" href="#actors-6" aria-hidden="true">#</a> Actors</h3>
+<ul>
+<li><strong>Communications Director</strong> — creates and manages campaigns</li>
+<li><strong>Org Admin</strong> — approves sensitive communications</li>
+<li><strong>Data Manager</strong> — manages contact lists and segments</li>
+</ul>
+<h3 id="email-campaign-flow" tabindex="-1"><a class="heading-anchor" href="#email-campaign-flow" aria-hidden="true">#</a> Email campaign flow</h3>
+<pre><code>1. Communications Director creates a campaign:
+   a. Select audience segment from CRM (e.g., supporters in District 5 who attended an event)
+   b. Design email using template builder (visual, mobile-first)
+   c. Write content (subject, body, CTA)
+   d. Set sender identity and reply-to
+   e. Preview and test send
+2. Schedule or send:
+   a. Send immediately or schedule for optimal time
+   b. System checks: opt-in status, bounce list, suppression list
+   c. Sends in batches (deliverability management)
+3. Tracking:
+   a. Open rate, click rate, unsubscribe rate
+   b. Bounces and complaints processed automatically
+   c. Engagement data flows back to CRM (contact record updated)
+4. Automated follow-ups:
+   a. Configurable rules (e.g., &quot;if not opened in 3 days, resend with different subject&quot;)
+   b. Drip sequences for onboarding, fundraising, GOTV
+</code></pre>
+<h3 id="sms-whatsapp-flow" tabindex="-1"><a class="heading-anchor" href="#sms-whatsapp-flow" aria-hidden="true">#</a> SMS / WhatsApp flow</h3>
+<pre><code>1. Communications Director creates a message:
+   a. Select audience segment
+   b. Write message (character limits for SMS, richer content for WhatsApp)
+   c. Include links, media (WhatsApp), or quick-reply options
+2. Compliance check:
+   a. Opt-in verification (has recipient consented to this channel?)
+   b. Time-of-day restrictions (no messages at 3am)
+   c. Frequency caps (don't over-message)
+3. Send and track:
+   a. Delivery status, read receipts (WhatsApp), replies
+   b. Replies routed to appropriate staff for response
+   c. Engagement data flows back to CRM
+</code></pre>
+<h3 id="social-media-flow" tabindex="-1"><a class="heading-anchor" href="#social-media-flow" aria-hidden="true">#</a> Social media flow</h3>
+<pre><code>1. Communications Director creates a post:
+   a. Write content, attach media
+   b. Select platforms (Facebook, Instagram, Twitter/X, TikTok, etc.)
+   c. Adapt content per platform (character limits, aspect ratios)
+   d. Schedule or post immediately
+2. Track:
+   a. Engagement metrics per platform (likes, shares, comments, reach)
+   b. Cross-platform analytics dashboard
+   c. Comment monitoring and response tools
+</code></pre>
+<h3 id="decision-points-4" tabindex="-1"><a class="heading-anchor" href="#decision-points-4" aria-hidden="true">#</a> Decision points</h3>
+<p><strong>DECIDED:</strong> Post scheduling and analytics, with the architecture open for deeper integration later.</p>
+<ul>
+<li><strong>In scope:</strong> Multi-platform post scheduling, publishing, and performance analytics (engagement metrics, reach, growth). Links out to native platforms for engagement (comments, DMs, replies).</li>
+<li><strong>Out of scope for now:</strong> Comment management, DM handling, and in-platform engagement tools.</li>
+<li><strong>Architecture:</strong> The social media integration layer should be modular — per-platform adapters behind a common interface — so deeper engagement features can be added per platform as demand warrants, without rearchitecting.</li>
+</ul>
+<p><strong>DECIDED:</strong> Per-channel + per-purpose with smart defaults.</p>
+<p><strong>Granularity:</strong> Consent is tracked per combination of channel (email, SMS, WhatsApp) and purpose (transactional, event-related, fundraising, GOTV, activism/advocacy, newsletter).</p>
+<p><strong>Smart defaults:</strong> The system infers reasonable initial consent based on the context of opt-in:</p>
+<ul>
+<li>Giving a phone number for an event RSVP → SMS transactional and event-related: yes. SMS fundraising: no (requires separate explicit opt-in).</li>
+<li>Signing up to volunteer → email transactional and event-related: yes. Email fundraising and newsletter: prompted, not assumed.</li>
+<li>Donating → email transactional (receipt): yes. Email fundraising: prompted.</li>
+</ul>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li><strong>Revocable</strong> — one-click unsubscribe/opt-out on every message, with immediate effect.</li>
+<li><strong>Auditable</strong> — the system records when consent was granted, through what mechanism, and when it was revoked. Logged in the audit trail.</li>
+<li><strong>Accessible</strong> — supporters can view and manage all their consent preferences from their profile.</li>
+<li><strong>Enforced</strong> — the comms system checks consent at send time. No message goes out without valid consent for that channel + purpose combination.</li>
+</ul>
+<h3 id="offline-capability-4" tabindex="-1"><a class="heading-anchor" href="#offline-capability-4" aria-hidden="true">#</a> Offline capability</h3>
+<ul>
+<li><strong>Not offline-capable.</strong> Communications require connectivity to send and track.</li>
+<li>Message drafting could work offline and queue for send when connectivity restores.</li>
+</ul>
+<hr>
+<h2 id="8-event-management" tabindex="-1"><a class="heading-anchor" href="#8-event-management" aria-hidden="true">#</a> 8. Event Management</h2>
+<p>Campaign events — rallies, town halls, fundraisers, volunteer trainings, canvass launches.</p>
+<h3 id="actors-7" tabindex="-1"><a class="heading-anchor" href="#actors-7" aria-hidden="true">#</a> Actors</h3>
+<ul>
+<li><strong>Volunteer Coordinator</strong> (or Event Organizer staff role) — creates and manages events</li>
+<li><strong>Communications Director</strong> — promotes events</li>
+<li><strong>Volunteer / Supporter</strong> — attends events</li>
+<li><strong>Team Lead</strong> — manages on-site check-in</li>
+</ul>
+<h3 id="flow-4" tabindex="-1"><a class="heading-anchor" href="#flow-4" aria-hidden="true">#</a> Flow</h3>
+<pre><code>1. Create event:
+   a. Event details (name, date/time, location, description, capacity)
+   b. Event type (rally, town hall, fundraiser, training, canvass launch, phone bank, virtual)
+   c. RSVP settings (open, invite-only, approval-required)
+   d. Assign staff roles (who's managing, who's checking in)
+2. Promote event:
+   a. Send invitations via email/SMS/WhatsApp to target segments
+   b. Post to social media
+   c. Public event page (shareable link)
+   d. Calendar integration (export to personal calendar)
+3. RSVPs:
+   a. Supporters RSVP through form, email link, or in-app
+   b. RSVP data flows to CRM
+   c. Automated reminders sent before the event (configurable timing)
+   d. Capacity management (waitlist if full)
+4. Day-of:
+   a. Check-in tool (Team Lead or staff scans QR code, searches name, or marks attendance manually)
+   b. Walk-in registration for non-RSVP attendees
+   c. Attendance data recorded in real time
+   d. Cash donation collection at fundraising events (links to cash donation workflow)
+5. Post-event:
+   a. Attendance data synced to CRM
+   b. Follow-up messages sent to attendees (thank you, next steps, volunteer recruitment)
+   c. Follow-up messages sent to no-shows (sorry we missed you, link to recording if virtual)
+   d. Event metrics logged (RSVPs, attendance, conversion rate, donations collected)
+   e. Post-event survey (optional)
+</code></pre>
+<h3 id="virtual-events" tabindex="-1"><a class="heading-anchor" href="#virtual-events" aria-hidden="true">#</a> Virtual events</h3>
+<p><strong>DECIDED:</strong> External integration with registration bridge.</p>
+<ul>
+<li>GreenGrass manages the full event lifecycle: creation, promotion, RSVPs, reminders, follow-up, and analytics.</li>
+<li>For virtual events, the platform integrates with external video providers (Zoom, Google Meet, Jitsi, etc.).</li>
+<li>A unique link is generated per registrant, enabling attendance tracking through the integration — GreenGrass knows who actually showed up, not just who RSVP'd.</li>
+<li>Attendance data flows back to CRM records automatically.</li>
+<li>Video hosting is explicitly out of scope — building streaming infrastructure is a separate product.</li>
+</ul>
+<h3 id="offline-capability-5" tabindex="-1"><a class="heading-anchor" href="#offline-capability-5" aria-hidden="true">#</a> Offline capability</h3>
+<ul>
+<li>Event creation and promotion require connectivity.</li>
+<li><strong>Check-in should work offline</strong> — events may be in locations with poor connectivity. Attendance data syncs when connectivity restores.</li>
+</ul>
+<hr>
+<h2 id="9-activism-engagement-campaigns" tabindex="-1"><a class="heading-anchor" href="#9-activism-engagement-campaigns" aria-hidden="true">#</a> 9. Activism &amp; Engagement Campaigns</h2>
+<p>Coordinated action beyond elections — pressure campaigns, letter-writing, petitions, public comment submissions.</p>
+<h3 id="actors-8" tabindex="-1"><a class="heading-anchor" href="#actors-8" aria-hidden="true">#</a> Actors</h3>
+<ul>
+<li><strong>Campaign Manager / Org Admin</strong> — defines the action campaign</li>
+<li><strong>Communications Director</strong> — promotes the action</li>
+<li><strong>Supporter / Volunteer</strong> — takes the action</li>
+<li><strong>Target</strong> — the person or institution being pressured (elected official, regulator, corporation)</li>
+</ul>
+<h3 id="emailletter-writing-campaign" tabindex="-1"><a class="heading-anchor" href="#emailletter-writing-campaign" aria-hidden="true">#</a> Email/Letter writing campaign</h3>
+<pre><code>1. Staff creates an action campaign:
+   a. Define the target (elected official, regulatory body, etc.)
+   b. Provide target's contact information (email, mailing address, phone)
+   c. Write a template letter/email that supporters can customize
+   d. Set talking points and key messages
+   e. Define the ask (vote yes/no, sign a resolution, respond to constituents)
+2. Promote the action:
+   a. Send appeal to supporters via email/SMS/WhatsApp
+   b. Post to social media
+   c. Public action page (shareable link)
+3. Supporter takes action:
+   a. Lands on action page
+   b. Reviews the template letter
+   c. Optionally personalizes the message
+   d. Provides their contact info (for the target to see it's from a real constituent)
+   e. Submits — system sends the letter/email to the target
+4. Tracking:
+   a. Total actions taken
+   b. Geographic distribution of participants (important for constituent-based pressure)
+   c. Per-supporter action history (flows to CRM)
+</code></pre>
+<h3 id="petition-campaign" tabindex="-1"><a class="heading-anchor" href="#petition-campaign" aria-hidden="true">#</a> Petition campaign</h3>
+<pre><code>1. Staff creates a petition:
+   a. Define the petition text and ask
+   b. Set a signature goal
+   c. Configure signer information requirements
+2. Promote:
+   a. Multi-channel outreach (same as above)
+   b. Public petition page with signature counter
+3. Supporter signs:
+   a. Provides name, location, optional comment
+   b. Signature recorded and counted
+   c. Signer added to CRM (dedup check)
+4. Delivery:
+   a. Petition delivered to target (digitally or printed)
+   b. Delivery event documented (photo, press coverage)
+</code></pre>
+<h3 id="public-comment-submission" tabindex="-1"><a class="heading-anchor" href="#public-comment-submission" aria-hidden="true">#</a> Public comment submission</h3>
+<pre><code>1. Staff identifies a regulatory comment period:
+   a. Define the issue, deadline, and submission mechanism
+   b. Provide background information and talking points
+   c. Create a template comment
+2. Promote and mobilize:
+   a. Multi-channel outreach
+   b. Explainer content (why this matters, how to comment)
+3. Supporter submits comment:
+   a. Reviews template, personalizes
+   b. Submits through the platform (if the regulatory body accepts electronic submissions)
+      or downloads/copies for manual submission
+4. Tracking:
+   a. Comments submitted through the platform
+   b. Supporter action history updated
+</code></pre>
+<h3 id="decision-points-5" tabindex="-1"><a class="heading-anchor" href="#decision-points-5" aria-hidden="true">#</a> Decision points</h3>
+<p><strong>DECIDED:</strong> Platform sends on behalf of the supporter, with AI-generated custom messaging approved by the user.</p>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>Staff creates the action campaign with talking points, key messages, and the ask.</li>
+<li>Supporter lands on the action page and provides their info (name, location, personal connection to the issue if desired).</li>
+<li>An AI agent generates a unique, personalized message based on the campaign's talking points and the supporter's input — no two messages are identical.</li>
+<li>The supporter reviews the generated message in the UI, can edit it, and approves it before it's sent.</li>
+<li>The platform sends the approved message to the target on the supporter's behalf.</li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>High completion rate (one-click approval, no email client gymnastics)</li>
+<li>Each message is authentically worded — targets cannot dismiss them as identical astroturfing</li>
+<li>The supporter retains control — nothing goes out without their approval</li>
+<li>The AI draws on the campaign's talking points for message consistency while varying tone, structure, and personal framing</li>
+</ul>
+<!-- REVISIT: AI model selection, prompt design for message generation, content guardrails (preventing the AI from going off-message), and cost per generation need to be addressed in the architecture spec. Also, the supporter's approval creates a consent record in the audit trail. -->
+<h3 id="offline-capability-6" tabindex="-1"><a class="heading-anchor" href="#offline-capability-6" aria-hidden="true">#</a> Offline capability</h3>
+<ul>
+<li>Action pages and petition signing require connectivity (real-time count, delivery).</li>
+<li><strong>Not offline-capable.</strong></li>
+</ul>
+<hr>
+<h2 id="10-alliance-coordination" tabindex="-1"><a class="heading-anchor" href="#10-alliance-coordination" aria-hidden="true">#</a> 10. Alliance Coordination</h2>
+<p>Workflows specific to alliance-level operations across member orgs.</p>
+<h3 id="joint-campaign-launch" tabindex="-1"><a class="heading-anchor" href="#joint-campaign-launch" aria-hidden="true">#</a> Joint campaign launch</h3>
+<pre><code>1. Alliance Admin creates a joint campaign:
+   a. Define campaign scope (GOTV, voter registration, issue advocacy)
+   b. Invite member orgs to participate
+   c. Member Org Admins accept and configure their sharing preferences
+2. Resource sharing activated:
+   a. Shared volunteer pool populated (from participating orgs' volunteers)
+   b. Shared voter contact data merged (with dedup, respecting per-org sharing rules)
+   c. Joint canvassing turfs cut across org boundaries
+   d. Shared analytics dashboard created
+3. Operations:
+   a. Canvassing, phone banking, events run through member orgs' tenants but with alliance-level coordination
+   b. &quot;Don't re-knock&quot; list shared across participating orgs
+   c. Volunteer assignments can cross org boundaries (with volunteer consent)
+4. Reporting:
+   a. Alliance-level aggregate metrics
+   b. Per-org breakdowns (visible only to that org and the alliance admin)
+</code></pre>
+<h3 id="alliance-fundraising" tabindex="-1"><a class="heading-anchor" href="#alliance-fundraising" aria-hidden="true">#</a> Alliance fundraising</h3>
+<pre><code>1. Alliance creates a joint fundraising campaign:
+   a. Configure donation split rules
+   b. Create shared donation form with alliance branding
+   c. Member orgs promote through their own channels
+2. Donations processed:
+   a. Payment goes to alliance payment processor
+   b. Split applied per configured rules
+   c. Each org receives their portion
+   d. Audit trail captures full flow
+3. Reporting:
+   a. Alliance-level totals
+   b. Per-org attribution
+</code></pre>
+<h3 id="affiliation-management" tabindex="-1"><a class="heading-anchor" href="#affiliation-management" aria-hidden="true">#</a> Affiliation management</h3>
+<pre><code>1. Candidate or org requests affiliation with a party or alliance:
+   a. Request sent through platform
+   b. Party/Alliance Admin reviews and approves
+   c. Affiliation established — sharing options become available
+2. Disaffiliation:
+   a. Either party can initiate
+   b. Shared resources are revoked
+   c. Data that belongs to each tenant stays with that tenant
+   d. Platform identities of people in both orgs are unaffected
+   e. Audit trail captures the affiliation change
+</code></pre>
+<h3 id="decision-points-6" tabindex="-1"><a class="heading-anchor" href="#decision-points-6" aria-hidden="true">#</a> Decision points</h3>
+<p><strong>DECIDED:</strong> Configurable per campaign.</p>
+<p>The alliance chooses the governance model when creating each joint campaign:</p>
+<ul>
+<li><strong>Alliance-controlled</strong> — Alliance Admin directs operations. Member orgs contribute resources but the alliance runs the show. For tightly coordinated efforts like a national GOTV push.</li>
+<li><strong>Org-controlled</strong> — each member org runs their piece independently. The alliance provides coordination (dedup, shared lists, aggregate reporting) but doesn't direct operations. For loose coalitions or issue-based alignments.</li>
+<li><strong>Shared governance</strong> — the joint campaign gets its own role structure with staff from multiple orgs collaborating under shared permissions. For campaigns where multiple orgs are true co-equals.</li>
+</ul>
+<p>Different joint campaigns within the same alliance can use different models. A coalition might centrally direct a voter registration drive while loosely coordinating on a fundraising campaign.</p>
+<h3 id="offline-capability-7" tabindex="-1"><a class="heading-anchor" href="#offline-capability-7" aria-hidden="true">#</a> Offline capability</h3>
+<ul>
+<li>Alliance coordination requires connectivity.</li>
+<li>Individual org workflows within a joint campaign follow their own offline rules (canvassing is offline-capable, phone banking is not, etc.)</li>
+</ul>
+<hr>
+<h2 id="11-data-import-management" tabindex="-1"><a class="heading-anchor" href="#11-data-import-management" aria-hidden="true">#</a> 11. Data Import &amp; Management</h2>
+<p>Getting data into the system, keeping it clean, getting it out.</p>
+<h3 id="voter-file-import" tabindex="-1"><a class="heading-anchor" href="#voter-file-import" aria-hidden="true">#</a> Voter file import</h3>
+<pre><code>1. Data Manager initiates a voter file import:
+   a. Upload file (CSV, with configurable column mapping)
+   b. System validates format and data quality
+   c. Preview import (sample records, field mapping confirmation)
+   d. System runs dedup matching against existing records
+   e. Matched records flagged for review (suggest and confirm)
+   f. Data Manager confirms import
+2. Post-import:
+   a. New records created, existing records updated
+   b. Import logged in audit trail (who imported what, when, source file)
+   c. Data quality report generated (incomplete records, potential duplicates remaining)
+</code></pre>
+<h3 id="data-export" tabindex="-1"><a class="heading-anchor" href="#data-export" aria-hidden="true">#</a> Data export</h3>
+<pre><code>1. Authorized user (Data Manager, Org Admin) initiates an export:
+   a. Select data set (contacts, donors, volunteers, event attendees, etc.)
+   b. Apply filters (segment, geography, date range)
+   c. Select fields to include
+   d. Choose format (CSV, JSON)
+2. Security checks:
+   a. User has export permission for this data scope
+   b. Export logged in audit trail (who exported what, when)
+   c. Sensitive fields may be redacted or excluded based on role
+3. Export generated and delivered:
+   a. Download link (time-limited) or direct download
+   b. Optional: encrypted export file
+</code></pre>
+<h3 id="decision-points-7" tabindex="-1"><a class="heading-anchor" href="#decision-points-7" aria-hidden="true">#</a> Decision points</h3>
+<p><strong>DECIDED:</strong> Full export with relationship data, as a contractual guarantee.</p>
+<ul>
+<li><strong>Scope:</strong> Everything the org owns — contacts, donor records, donation history, communication history, canvassing data, volunteer records and hours, event data, analytics, tags, segments, notes, audit logs for their tenant.</li>
+<li><strong>Relationships preserved:</strong> Cross-references are included — which donors attended which events, which volunteers canvassed which turfs, which supporters opened which emails. The data retains its relational value, not just flat tables.</li>
+<li><strong>Standard formats:</strong> Exported in open, standard formats (CSV, JSON) with documentation of the schema. No proprietary lock-in.</li>
+<li><strong>Contractual guarantee:</strong> Data portability is a right guaranteed in the terms of service, not just a feature. It is documented, regularly tested, and enforceable. If GreenGrass shuts down, is acquired, or the org simply wants to leave, their data is theirs to take.</li>
+<li><strong>Timely:</strong> Export must be available on demand, not subject to a queue or approval process. The org doesn't need to explain why.</li>
+</ul>
+<h3 id="offline-capability-8" tabindex="-1"><a class="heading-anchor" href="#offline-capability-8" aria-hidden="true">#</a> Offline capability</h3>
+<ul>
+<li>Import and export require connectivity.</li>
+</ul>
+<hr>
+<h2 id="12-reporting-analytics" tabindex="-1"><a class="heading-anchor" href="#12-reporting-analytics" aria-hidden="true">#</a> 12. Reporting &amp; Analytics</h2>
+<p>How campaign leaders understand what's happening and make decisions.</p>
+<h3 id="actors-9" tabindex="-1"><a class="heading-anchor" href="#actors-9" aria-hidden="true">#</a> Actors</h3>
+<ul>
+<li><strong>Org Admin / Campaign Manager</strong> — strategic overview</li>
+<li><strong>Candidate</strong> — curated high-level view</li>
+<li><strong>Field Director</strong> — field operation metrics</li>
+<li><strong>Finance Director</strong> — financial metrics</li>
+<li><strong>Communications Director</strong> — engagement metrics</li>
+</ul>
+<h3 id="dashboard-hierarchy" tabindex="-1"><a class="heading-anchor" href="#dashboard-hierarchy" aria-hidden="true">#</a> Dashboard hierarchy</h3>
+<pre><code>Campaign overview (Org Admin / Candidate):
+├── Fundraising: total raised, goal progress, donor count, avg donation
+├── Field: doors knocked, voter contacts made, contact rate, support scores
+├── Communications: emails sent, open rate, SMS delivered, social engagement
+├── Volunteers: active count, hours logged, shifts filled vs available
+└── Events: upcoming, recent attendance, RSVPs pending
+
+Field operations (Field Director):
+├── Canvassing progress map (turfs complete vs remaining)
+├── Contact rate by turf, team, volunteer
+├── Support score distribution
+├── Voter registration drive metrics
+└── Phone bank metrics (calls made, contact rate, outcomes)
+
+Fundraising (Finance Director):
+├── Revenue by channel, campaign, time period
+├── Donor retention and churn
+├── Recurring donation health
+├── Cash vs digital breakdown
+├── Compliance reporting (per jurisdiction requirements)
+└── Payment processor status
+
+Communications (Communications Director):
+├── Email performance (opens, clicks, bounces, unsubscribes)
+├── SMS / WhatsApp delivery and engagement
+├── Social media performance per platform
+├── Audience growth over time
+└── Channel effectiveness comparison
+</code></pre>
+<h3 id="decision-points-8" tabindex="-1"><a class="heading-anchor" href="#decision-points-8" aria-hidden="true">#</a> Decision points</h3>
+<p><strong>DECIDED:</strong> Hybrid — real-time for active operations, batch for historical analysis.</p>
+<ul>
+<li><strong>Real-time:</strong> Field day dashboards (doors knocked, contact rate, team progress), phone bank dashboards (calls made, outcomes), election day tracker, live fundraising thermometer during appeals. Data updates as it flows in from the field.</li>
+<li><strong>Batch:</strong> Historical trend reporting (fundraising over time, volunteer growth, engagement trends), cross-campaign comparisons, compliance reports. Aggregated on a defined schedule (hourly or daily depending on the metric).</li>
+</ul>
+<p>The right freshness for the right context — a Field Director on canvassing day needs live data, a campaign manager reviewing last quarter's performance can wait for the rollup.</p>
+<!-- REVISIT: The real-time analytics pipeline (event streaming, aggregation, push to dashboards) is a significant architecture decision. Needs treatment in the architecture spec. -->
+<h3 id="offline-capability-9" tabindex="-1"><a class="heading-anchor" href="#offline-capability-9" aria-hidden="true">#</a> Offline capability</h3>
+<ul>
+<li><strong>Not offline-capable.</strong> Dashboards and reports require connectivity.</li>
+</ul>
+<hr>
+<h2 id="open-questions-resolved" tabindex="-1"><a class="heading-anchor" href="#open-questions-resolved" aria-hidden="true">#</a> Open Questions — Resolved</h2>
+<ol>
+<li><s><strong>GOTV workflow</strong></s> — <strong>RESOLVED.</strong> Separate spec. Election day operations (rides to polls, poll monitoring, real-time voter check-in tracking) are a distinct, high-stakes workflow that warrants its own detailed spec document.</li>
+<li><s><strong>Internal messaging workflow</strong></s> — <strong>RESOLVED.</strong> Needs its own spec pass. Candidate-to-staff and staff-to-staff communication workflows need detailed definition, particularly how they interact with E2E encryption (decided in <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a>) and the candidate's curated interface.</li>
+<li><s><strong>Press and media workflows</strong></s> — <strong>RESOLVED.</strong> In scope. Press contact management, media lists, press release distribution, delivery events, and media coverage tracking are within the platform's scope. Needs its own spec.</li>
+<li><s><strong>Volunteer gamification</strong></s> — <strong>RESOLVED.</strong> Out of scope. There are better ways to optimize for meaningful engagement than cheap gamification. No leaderboards, badges, or achievement systems.</li>
+<li><s><strong>Multi-campaign coordination within a single org</strong></s> — <strong>RESOLVED.</strong> Handled by existing campaign-level scoping in the permissions model (decided in <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>). Staff, data, and operations can be scoped to specific campaigns within a tenant. No additional workflow spec needed as long as campaign-level definitions remain consistent.</li>
+</ol>
+<h2 id="future-specs-identified" tabindex="-1"><a class="heading-anchor" href="#future-specs-identified" aria-hidden="true">#</a> Future Specs Identified</h2>
+<ul>
+<li><code>spec/gotv.md</code> — Election day / Get Out The Vote operations</li>
+<li><code>spec/messaging.md</code> — Internal communications (staff-to-staff, candidate-to-staff)</li>
+<li><code>spec/press.md</code> — Press, media, and public relations workflows</li>
+</ul>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#overview"># Overview</a></li><li class="toc-3"><a href="#cross-cutting-concerns"># Cross-cutting concerns</a></li><li class="toc-2"><a href="#1-tenant-onboarding"># 1. Tenant Onboarding</a></li><li class="toc-3"><a href="#actors"># Actors</a></li><li class="toc-3"><a href="#flow"># Flow</a></li><li class="toc-3"><a href="#decision-points"># Decision points</a></li><li class="toc-3"><a href="#offline-capability"># Offline capability</a></li><li class="toc-2"><a href="#2-volunteer-onboarding"># 2. Volunteer Onboarding</a></li><li class="toc-3"><a href="#actors-1"># Actors</a></li><li class="toc-3"><a href="#flow-1"># Flow</a></li><li class="toc-3"><a href="#decision-points-1"># Decision points</a></li><li class="toc-3"><a href="#offline-capability-1"># Offline capability</a></li><li class="toc-2"><a href="#3-canvassing-door-to-door-outreach"># 3. Canvassing (Door-to-Door Outreach)</a></li><li class="toc-3"><a href="#actors-2"># Actors</a></li><li class="toc-3"><a href="#pre-operation-staff-requires-connectivity"># Pre-operation (staff, requires connectivity)</a></li><li class="toc-3"><a href="#day-of-operation"># Day-of operation</a></li><li class="toc-3"><a href="#post-operation-staff-requires-connectivity"># Post-operation (staff, requires connectivity)</a></li><li class="toc-3"><a href="#offline-requirements"># Offline requirements</a></li><li class="toc-3"><a href="#conflict-resolution"># Conflict resolution</a></li><li class="toc-2"><a href="#4-phone-banking"># 4. Phone Banking</a></li><li class="toc-3"><a href="#actors-3"># Actors</a></li><li class="toc-3"><a href="#flow-2"># Flow</a></li><li class="toc-3"><a href="#decision-points-2"># Decision points</a></li><li class="toc-3"><a href="#offline-capability-2"># Offline capability</a></li><li class="toc-2"><a href="#5-voter-registration-drive"># 5. Voter Registration Drive</a></li><li class="toc-3"><a href="#actors-4"># Actors</a></li><li class="toc-3"><a href="#flow-3"># Flow</a></li><li class="toc-3"><a href="#offline-requirements-1"># Offline requirements</a></li><li class="toc-3"><a href="#compliance-considerations"># Compliance considerations</a></li><li class="toc-2"><a href="#6-fundraising"># 6. Fundraising</a></li><li class="toc-3"><a href="#actors-5"># Actors</a></li><li class="toc-3"><a href="#online-donation-flow"># Online donation flow</a></li><li class="toc-3"><a href="#cash-donation-flow"># Cash donation flow</a></li><li class="toc-3"><a href="#fundraising-campaign-management"># Fundraising campaign management</a></li><li class="toc-3"><a href="#decision-points-3"># Decision points</a></li><li class="toc-3"><a href="#offline-capability-3"># Offline capability</a></li><li class="toc-2"><a href="#7-multi-channel-communications"># 7. Multi-Channel Communications</a></li><li class="toc-3"><a href="#actors-6"># Actors</a></li><li class="toc-3"><a href="#email-campaign-flow"># Email campaign flow</a></li><li class="toc-3"><a href="#sms-whatsapp-flow"># SMS / WhatsApp flow</a></li><li class="toc-3"><a href="#social-media-flow"># Social media flow</a></li><li class="toc-3"><a href="#decision-points-4"># Decision points</a></li><li class="toc-3"><a href="#offline-capability-4"># Offline capability</a></li><li class="toc-2"><a href="#8-event-management"># 8. Event Management</a></li><li class="toc-3"><a href="#actors-7"># Actors</a></li><li class="toc-3"><a href="#flow-4"># Flow</a></li><li class="toc-3"><a href="#virtual-events"># Virtual events</a></li><li class="toc-3"><a href="#offline-capability-5"># Offline capability</a></li><li class="toc-2"><a href="#9-activism-engagement-campaigns"># 9. Activism &amp;amp; Engagement Campaigns</a></li><li class="toc-3"><a href="#actors-8"># Actors</a></li><li class="toc-3"><a href="#emailletter-writing-campaign"># Email/Letter writing campaign</a></li><li class="toc-3"><a href="#petition-campaign"># Petition campaign</a></li><li class="toc-3"><a href="#public-comment-submission"># Public comment submission</a></li><li class="toc-3"><a href="#decision-points-5"># Decision points</a></li><li class="toc-3"><a href="#offline-capability-6"># Offline capability</a></li><li class="toc-2"><a href="#10-alliance-coordination"># 10. Alliance Coordination</a></li><li class="toc-3"><a href="#joint-campaign-launch"># Joint campaign launch</a></li><li class="toc-3"><a href="#alliance-fundraising"># Alliance fundraising</a></li><li class="toc-3"><a href="#affiliation-management"># Affiliation management</a></li><li class="toc-3"><a href="#decision-points-6"># Decision points</a></li><li class="toc-3"><a href="#offline-capability-7"># Offline capability</a></li><li class="toc-2"><a href="#11-data-import-management"># 11. Data Import &amp;amp; Management</a></li><li class="toc-3"><a href="#voter-file-import"># Voter file import</a></li><li class="toc-3"><a href="#data-export"># Data export</a></li><li class="toc-3"><a href="#decision-points-7"># Decision points</a></li><li class="toc-3"><a href="#offline-capability-8"># Offline capability</a></li><li class="toc-2"><a href="#12-reporting-analytics"># 12. Reporting &amp;amp; Analytics</a></li><li class="toc-3"><a href="#actors-9"># Actors</a></li><li class="toc-3"><a href="#dashboard-hierarchy"># Dashboard hierarchy</a></li><li class="toc-3"><a href="#decision-points-8"># Decision points</a></li><li class="toc-3"><a href="#offline-capability-9"># Offline capability</a></li><li class="toc-2"><a href="#open-questions-resolved"># Open Questions — Resolved</a></li><li class="toc-2"><a href="#future-specs-identified"># Future Specs Identified</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

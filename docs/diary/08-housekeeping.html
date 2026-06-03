@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diary Entry 8: Housekeeping · GreenGrass</title>
+<meta name="description" content="Diary Entry 8: Housekeeping — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../spec/product.html">Project: GreenGrass</a></li><li><a href="../spec/users.html">Users &amp; Roles</a></li><li><a href="../spec/workflows.html">Core Workflows</a></li><li><a href="../spec/geography.html">Target Geography</a></li><li><a href="../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../spec/integrations.html">External Integrations</a></li><li><a href="../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./index.html">Project Diary</a></li><li><a href="./01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="./02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="./03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="./04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="./05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="./06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="./07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="./08-housekeeping.html" aria-current="page" class="active">Diary Entry 8: Housekeeping</a></li><li><a href="./09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Diary</nav>
+    <article class="prose">
+<h1 id="diary-entry-8-housekeeping" tabindex="-1"><a class="heading-anchor" href="#diary-entry-8-housekeeping" aria-hidden="true">#</a> Diary Entry 8: Housekeeping</h1>
+<p><strong>Date:</strong> 2026-03-05</p>
+<hr>
+<h2 id="the-task" tabindex="-1"><a class="heading-anchor" href="#the-task" aria-hidden="true">#</a> The Task</h2>
+<p>After seven diary entries documenting the creation of 12 specs, 37 UX documents, 16 ADRs, and a system architecture document, the documentation about the documentation had drifted out of sync. Time to clean house.</p>
+<h2 id="what-we-found" tabindex="-1"><a class="heading-anchor" href="#what-we-found" aria-hidden="true">#</a> What We Found</h2>
+<p>A documentation audit revealed several inconsistencies:</p>
+<p><strong>Stale references:</strong></p>
+<ul>
+<li><code>README.md</code> still said the project was &quot;moving into UX design&quot; — it's been complete for days</li>
+<li><code>CLAUDE.md</code> project structure didn't show the UX subdirectories or diary folder</li>
+<li><code>diary/README.md</code> was missing entries 6 and 7</li>
+</ul>
+<p><strong>Scrambled numbering:</strong></p>
+<ul>
+<li><code>design/ux/00-overview.md</code> had entries 25-31 completely out of order: 28, 27, 26, 31, 30, 29, 25 instead of 25, 26, 27, 28, 29, 30, 31</li>
+<li>This was likely a merge artifact from a previous editing session</li>
+</ul>
+<p><strong>Counts that needed verification:</strong></p>
+<ul>
+<li>&quot;37 UX documents&quot; — correct (the 37 items in the reading order; the overview itself is the 38th file)</li>
+<li>&quot;16 ADRs&quot; — correct (001-016; <code>ux-decisions.md</code> is supplementary)</li>
+<li>&quot;21 wireframes&quot; — correct</li>
+<li>&quot;236 screens&quot; — correct</li>
+<li>&quot;7 diary entries&quot; — correct at the time, now 8</li>
+</ul>
+<h2 id="the-fixes" tabindex="-1"><a class="heading-anchor" href="#the-fixes" aria-hidden="true">#</a> The Fixes</h2>
+<ol>
+<li>
+<p><strong>diary/README.md</strong> — Added entries 6 (Resolving the Open Questions) and 7 (Reconciling the Architecture)</p>
+</li>
+<li>
+<p><strong><a href="http://README.md" target="_blank" rel="noopener noreferrer">README.md</a></strong> — Updated status to &quot;complete&quot;, added UX overview to reading order, expanded project structure tree</p>
+</li>
+<li>
+<p><strong><a href="http://CLAUDE.md" target="_blank" rel="noopener noreferrer">CLAUDE.md</a></strong> — Updated phase to &quot;complete&quot; with summary of completed work, added full UX hierarchy to project structure</p>
+</li>
+<li>
+<p><strong>design/ux/00-overview.md</strong> — Fixed the scrambled wireframe numbering. Replaced the entire corrupted block (entries 25-31) with correctly ordered entries.</p>
+</li>
+<li>
+<p><strong>.claude/MEMORY.md</strong> — Created a memory file to persist project state across sessions</p>
+</li>
+</ol>
+<h2 id="lessons" tabindex="-1"><a class="heading-anchor" href="#lessons" aria-hidden="true">#</a> Lessons</h2>
+<p><strong>Documentation rots faster than code.</strong> Every major change to the project created a small inconsistency somewhere. Specs said one thing, architecture said another, READMEs said a third. Without a deliberate housekeeping pass, these drift apart.</p>
+<p><strong>Numbering is fragile.</strong> The overview's scrambled numbers were probably caused by a large block edit that reordered entries without updating their numbers. Markdown numbered lists should auto-number, but when you're using explicit numbers for cross-referencing (as we were), a single bad edit cascades.</p>
+<p><strong>Counts are surprisingly useful.</strong> &quot;12 specs, 37 UX docs, 16 ADRs, 236 screens&quot; became a consistency check. When a file said &quot;15 ADRs&quot; or &quot;38 UX docs,&quot; it was a signal to investigate.</p>
+<p><strong>Memory files are overhead, but useful overhead.</strong> Creating <code>.claude/MEMORY.md</code> adds one more file to maintain, but it provides a single source of truth for project state that survives session boundaries.</p>
+<h2 id="current-state" tabindex="-1"><a class="heading-anchor" href="#current-state" aria-hidden="true">#</a> Current State</h2>
+<p>The project is now ready for implementation:</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Count</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spec documents</td>
+<td>12</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>UX documents</td>
+<td>37</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Wireframes</td>
+<td>21</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Screens</td>
+<td>236</td>
+<td>Specified</td>
+</tr>
+<tr>
+<td>ADRs</td>
+<td>16</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>1</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Diary entries</td>
+<td>8</td>
+<td>Current</td>
+</tr>
+</tbody>
+</table>
+<p>All documentation is consistent. All counts match. All cross-references are valid.</p>
+<p>The next step is implementation.</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#the-task"># The Task</a></li><li class="toc-2"><a href="#what-we-found"># What We Found</a></li><li class="toc-2"><a href="#the-fixes"># The Fixes</a></li><li class="toc-2"><a href="#lessons"># Lessons</a></li><li class="toc-2"><a href="#current-state"># Current State</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

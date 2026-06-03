@@ -118,20 +118,20 @@ Signup request
 **DECIDED:** Subdomain as default, custom domain supported.
 
 - **Default:** `orgname.greengrass.app`. Provisioned automatically during tenant setup. Wildcard DNS and TLS via Let's Encrypt.
-- **Custom domain:** Tenants can configure their own domain (e.g., `organize.campaign.org`). Requires the tenant to update their DNS records (CNAME). The platform handles TLS certificate provisioning automatically once DNS is configured. SSL certificates are provisioned via Let's Encrypt with automated cert issuance triggered on DNS validation ([ADR-016 §68](../decisions/016-cross-cutting-resolutions.md)). Custom domains are critical for brand credibility — supporters clicking a donation link need to see the org's domain.
+- **Custom domain:** Tenants can configure their own domain (e.g., `organize.campaign.org`). Requires the tenant to update their DNS records (CNAME). The platform handles TLS certificate provisioning automatically once DNS is configured. SSL certificates are provisioned via Let's Encrypt with automated cert issuance triggered on DNS validation ([ADR-016 §68](../../decisions/016-cross-cutting-resolutions.md)). Custom domains are critical for brand credibility — supporters clicking a donation link need to see the org's domain.
 - **Both can coexist.** The subdomain always works as a fallback even if a custom domain is configured.
 
 ### Public page infrastructure
 
-**Open Graph images** ([ADR-016 §71](../decisions/016-cross-cutting-resolutions.md)): The platform auto-generates OG images from the page title + org logo + brand colors (server-side template composition, not AI). OAs can override with a manually uploaded image per page. This ensures every shared link has a social media preview image without requiring design effort.
+**Open Graph images** ([ADR-016 §71](../../decisions/016-cross-cutting-resolutions.md)): The platform auto-generates OG images from the page title + org logo + brand colors (server-side template composition, not AI). OAs can override with a manually uploaded image per page. This ensures every shared link has a social media preview image without requiring design effort.
 
-**Built-in lightweight analytics** ([ADR-016 §69](../decisions/016-cross-cutting-resolutions.md)): Public pages track views, unique visitors, conversion rate, and referral source (UTM parameters). No third-party analytics (Google Analytics, Meta Pixel) in v1 — these raise privacy and cookie consent complexity. OAs can add external scripts via a custom code injection field (advanced setting, off by default).
+**Built-in lightweight analytics** ([ADR-016 §69](../../decisions/016-cross-cutting-resolutions.md)): Public pages track views, unique visitors, conversion rate, and referral source (UTM parameters). No third-party analytics (Google Analytics, Meta Pixel) in v1 — these raise privacy and cookie consent complexity. OAs can add external scripts via a custom code injection field (advanced setting, off by default).
 
-**v2 forward reference:** [Public Page A/B Testing](../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will extend the fundraising A/B testing infrastructure to volunteer signup pages and other public pages.
+**v2 forward reference:** [Public Page A/B Testing](../../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will extend the fundraising A/B testing infrastructure to volunteer signup pages and other public pages.
 
 ### Settings export
 
-(Decided in [ADR-016 §54](../decisions/016-cross-cutting-resolutions.md))
+(Decided in [ADR-016 §54](../../decisions/016-cross-cutting-resolutions.md))
 
 OAs can export their tenant settings as a JSON snapshot for documentation, backup, or sharing with consultants. Cross-tenant import (apply Org A's settings to Org B) is deferred to a future version — it requires validating that the target tenant has matching integrations, payment processors, and compliance jurisdiction.
 
@@ -277,9 +277,9 @@ ScriptTemplate
 └── created_at
 ```
 
-**Script template workflow** ([ADR-016 §9–10](../decisions/016-cross-cutting-resolutions.md)): "Save as Template" copies a campaign script into the org-wide template library. Creating a new campaign script offers "Start from template" or "Start blank." Once copied, the campaign script is independent — editing it does not affect the template or other campaigns. Script versioning is per-campaign: active shifts are version-locked; urgent updates appear on the volunteer's next door card, never mid-interaction.
+**Script template workflow** ([ADR-016 §9–10](../../decisions/016-cross-cutting-resolutions.md)): "Save as Template" copies a campaign script into the org-wide template library. Creating a new campaign script offers "Start from template" or "Start blank." Once copied, the campaign script is independent — editing it does not affect the template or other campaigns. Script versioning is per-campaign: active shifts are version-locked; urgent updates appear on the volunteer's next door card, never mid-interaction.
 
-**Training completion gating** ([ADR-016 §65](../decisions/016-cross-cutting-resolutions.md)): The OA marks specific training modules as `required_before_field`. The shift assignment flow checks this flag — volunteers who haven't completed required modules cannot be assigned to shifts. The assignment screen shows "Training incomplete" with a link to the outstanding module. Non-required training is encouraged but not gated.
+**Training completion gating** ([ADR-016 §65](../../decisions/016-cross-cutting-resolutions.md)): The OA marks specific training modules as `required_before_field`. The shift assignment flow checks this flag — volunteers who haven't completed required modules cannot be assigned to shifts. The assignment screen shows "Training incomplete" with a link to the outstanding module. Non-required training is encouraged but not gated.
 
 ```
 Donation
@@ -368,13 +368,13 @@ Country
 
 ### Export audit policy
 
-(Decided in [ADR-016 §86](../decisions/016-cross-cutting-resolutions.md))
+(Decided in [ADR-016 §86](../../decisions/016-cross-cutting-resolutions.md))
 
 Exporting more than 100 records requires the user to select a reason from a predefined list (Compliance reporting / Campaign operations / Data migration / Alliance sharing / Other + free text). The reason is logged in the audit trail alongside the export metadata (who, when, how many records, which fields). Individual record views and small exports (<100 records) do not require a reason.
 
 ### Dedup confidence engine
 
-(Decided in [ADR-016 §83](../decisions/016-cross-cutting-resolutions.md). Refines the suggest-and-confirm approach from [ADR-004](../decisions/004-data-model-integrity.md).)
+(Decided in [ADR-016 §83](../../decisions/016-cross-cutting-resolutions.md). Refines the suggest-and-confirm approach from [ADR-004](../../decisions/004-data-model-integrity.md).)
 
 The dedup engine applies three tiers based on match confidence:
 
@@ -388,7 +388,7 @@ Thresholds are org-configurable. Auto-merged records are logged in the audit tra
 
 ### Dynamic segment refresh
 
-(Decided in [ADR-016 §85](../decisions/016-cross-cutting-resolutions.md))
+(Decided in [ADR-016 §85](../../decisions/016-cross-cutting-resolutions.md))
 
 Dynamic segments recalculate on two triggers: **on access** (when a user views the segment) and **daily background job** (ensuring campaign targeting is fresh). The segment list shows "Last refreshed: [timestamp]" per segment. Large segments (50k+ contacts) show a loading state during recalculation rather than stale data. Manual refresh is available via a refresh button on the segment detail screen.
 
@@ -419,7 +419,7 @@ The identity service is a shared platform component, separate from any tenant:
 
 **Credential store:** Passkey public keys, email/password hashes (argon2id), magic link tokens, OTP seeds, TOTP secrets. Never stores plaintext credentials. Separate from tenant databases.
 
-**Authentication method tiers** (decided in [ADR-016 §57–60](../decisions/016-cross-cutting-resolutions.md)):
+**Authentication method tiers** (decided in [ADR-016 §57–60](../../decisions/016-cross-cutting-resolutions.md)):
 
 | Method | Availability | Notes |
 |--------|-------------|-------|
@@ -436,7 +436,7 @@ The login screen auto-detects WebAuthn support. Devices below the passkey thresh
 
 **Recovery service:** Manages trusted contact recovery flow. Routes recovery requests to designated contacts. Issues new credential setup flows after approved recovery.
 
-**OA recovery — bootstrap problem** (decided in [ADR-016 §59](../decisions/016-cross-cutting-resolutions.md)): When the first OA has no trusted contacts to vouch for them, platform-assisted recovery applies. The OA contacts GreenGrass support, who verify identity through the original registration channel (signup email, payment method on file). After verification, a **72-hour cooling-off recovery** begins — longer than the standard 24-hour peer-verified path because there is no peer verification. During cooling-off, all org email contacts receive a notification. This is intentionally slow and visible — it's the highest-risk recovery path.
+**OA recovery — bootstrap problem** (decided in [ADR-016 §59](../../decisions/016-cross-cutting-resolutions.md)): When the first OA has no trusted contacts to vouch for them, platform-assisted recovery applies. The OA contacts GreenGrass support, who verify identity through the original registration channel (signup email, payment method on file). After verification, a **72-hour cooling-off recovery** begins — longer than the standard 24-hour peer-verified path because there is no peer verification. During cooling-off, all org email contacts receive a notification. This is intentionally slow and visible — it's the highest-risk recovery path.
 
 **DECIDED:** Centralized primary in the incorporation jurisdiction with read replicas per country.
 
@@ -477,7 +477,7 @@ For canvassing and field operations:
 
 ### Destructive operation approval
 
-(Decided in [ADR-016 §53](../decisions/016-cross-cutting-resolutions.md))
+(Decided in [ADR-016 §53](../../decisions/016-cross-cutting-resolutions.md))
 
 Destructive operations require confirmation from a second OA:
 
@@ -490,7 +490,7 @@ Routine settings changes do not require two-OA approval.
 
 **Single-OA fallback:** If the org has only one OA, destructive operations require a 48-hour cooling-off period with email confirmation instead. This prevents accidental or coerced catastrophic changes without blocking single-admin orgs.
 
-**v2 forward reference:** [Settings Delegation](../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will introduce controlled delegation of low-risk settings to non-OA roles. The two-OA approval flow ensures that even with delegation, the most dangerous operations remain protected.
+**v2 forward reference:** [Settings Delegation](../../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will introduce controlled delegation of low-risk settings to non-OA roles. The two-OA approval flow ensures that even with delegation, the most dangerous operations remain protected.
 
 ---
 
@@ -683,7 +683,7 @@ All data mutations — online and offline — are stored as an immutable event l
 
 ## Data Retention Architecture
 
-(Decided in [ADR-016 §4](../decisions/016-cross-cutting-resolutions.md). Supersedes [ADR-004](../decisions/004-data-model-integrity.md)'s uniform 10-year retention with a refined tiered model.)
+(Decided in [ADR-016 §4](../../decisions/016-cross-cutting-resolutions.md). Supersedes [ADR-004](../../decisions/004-data-model-integrity.md)'s uniform 10-year retention with a refined tiered model.)
 
 ### Four-tier retention model
 
@@ -774,7 +774,7 @@ Tenant App → Message Queue → Channel Router → Provider Adapter → SMS Gat
 
 **Channel architecture:**
 - **Provider-agnostic adapter layer** — abstract SMS and WhatsApp behind a common interface with per-country provider adapters (Twilio, Vonage, local providers).
-- **WhatsApp Business API** — requires business verification, has template-based messaging rules, per-message pricing. Messages must use pre-approved templates for outbound; free-form messaging only within 24-hour reply windows. The platform tracks template approval status per template (Approved / Pending / Rejected) by polling the WhatsApp Business API. Status is displayed inline in the message composer so staff never attempt to send a rejected or pending template ([ADR-016 §18](../decisions/016-cross-cutting-resolutions.md)).
+- **WhatsApp Business API** — requires business verification, has template-based messaging rules, per-message pricing. Messages must use pre-approved templates for outbound; free-form messaging only within 24-hour reply windows. The platform tracks template approval status per template (Approved / Pending / Rejected) by polling the WhatsApp Business API. Status is displayed inline in the message composer so staff never attempt to send a rejected or pending template ([ADR-016 §18](../../decisions/016-cross-cutting-resolutions.md)).
 - **Consent enforcement** — the channel router checks consent status (per-channel + per-purpose, decided in workflows.md) before dispatching any message.
 
 ### Social media
@@ -793,7 +793,7 @@ Tenant App → Post Scheduler → Platform Adapter → Social Media API
 
 ### Cross-channel orchestration engine
 
-(Decided in [ADR-016 §2](../decisions/016-cross-cutting-resolutions.md))
+(Decided in [ADR-016 §2](../../decisions/016-cross-cutting-resolutions.md))
 
 Communications are governed by two complementary layers enforced at send time:
 
@@ -805,7 +805,7 @@ Communications are governed by two complementary layers enforced at send time:
 
 **Per-person contact log:** Each person's recent contact history (channel, topic, timestamp) is maintained in the cache layer for fast enforcement lookups at send time.
 
-**v2 forward reference:** The [Visual Flow Builder](../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will orchestrate multi-channel sequences within a single flow. The two-layer model provides the enforcement substrate that the flow builder routes through.
+**v2 forward reference:** The [Visual Flow Builder](../../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will orchestrate multi-channel sequences within a single flow. The two-layer model provides the enforcement substrate that the flow builder routes through.
 
 ---
 
@@ -857,7 +857,7 @@ PaymentAdapter {
 
 ### Event ticket routing
 
-(Decided in [ADR-016 §3](../decisions/016-cross-cutting-resolutions.md))
+(Decided in [ADR-016 §3](../../decisions/016-cross-cutting-resolutions.md))
 
 Paid event tickets are processed through the fundraising pipeline. A ticket purchase is a Donation record with event metadata (`event_id`, `ticket_type`, `ticket_quantity`). There is no separate payment pipeline for events.
 
@@ -900,7 +900,7 @@ Event screens display ticket revenue as a metric but link to the fundraising sys
 
 ### Dashboard polling infrastructure
 
-(Decided in [ADR-016 §5, §88](../decisions/016-cross-cutting-resolutions.md))
+(Decided in [ADR-016 §5, §88](../../decisions/016-cross-cutting-resolutions.md))
 
 All dashboards use polling (not WebSockets) at tiered intervals. Polling degrades gracefully on intermittent connections; WebSockets add connection management complexity without proportional benefit at these refresh rates.
 
@@ -933,7 +933,7 @@ Lightweight, durable event streaming. Simpler to operate than Kafka, sufficient 
 
 ## Election Day Architecture
 
-(Decided in [ADR-016 §47–50](../decisions/016-cross-cutting-resolutions.md))
+(Decided in [ADR-016 §47–50](../../decisions/016-cross-cutting-resolutions.md))
 
 Election day is the highest-stakes operational moment. The architecture supports three distinct capabilities: election data ingestion, results entry verification, and alliance ride sharing.
 
@@ -964,7 +964,7 @@ No single layer is blocking (except identity). The layers compound: a fraudulent
 
 ### Alliance ride sharing
 
-(Decided in [ADR-016 §48](../decisions/016-cross-cutting-resolutions.md))
+(Decided in [ADR-016 §48](../../decisions/016-cross-cutting-resolutions.md))
 
 Alliance members can contribute drivers to a shared pool for election day rides-to-polls. Opt-in per alliance, enabled by the alliance lead in GOTV settings.
 
@@ -1008,13 +1008,13 @@ ContentItem
 - AI-generated translations are marked `ai_generated` and must be reviewed before being published (decided in geography.md).
 - Translation memory: reviewed translations are stored and used to improve future AI translations for consistency.
 
-**v2 forward reference:** The [Shared Content Library](../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will provide centralized asset management with tagging, search, usage tracking, rights management, and cross-feature reuse. v1 uses direct file upload per campaign/post with a "recent uploads" panel for lightweight reuse.
+**v2 forward reference:** The [Shared Content Library](../../decisions/016-cross-cutting-resolutions.md) (v2 tentpole) will provide centralized asset management with tagging, search, usage tracking, rights management, and cross-feature reuse. v1 uses direct file upload per campaign/post with a "recent uploads" panel for lightweight reuse.
 
 ---
 
 ## AI Integration
 
-**DECIDED:** BYOM (Bring Your Own Model) — provider-agnostic, org-configured. Supersedes the previous hybrid (managed-key vs BYOK) model per [ADR-016 §38](../decisions/016-cross-cutting-resolutions.md). Supersedes [ADR-013](../decisions/013-analytics-ai.md) AI model decision.
+**DECIDED:** BYOM (Bring Your Own Model) — provider-agnostic, org-configured. Supersedes the previous hybrid (managed-key vs BYOK) model per [ADR-016 §38](../../decisions/016-cross-cutting-resolutions.md). Supersedes [ADR-013](../../decisions/013-analytics-ai.md) AI model decision.
 
 ### BYOM architecture
 
@@ -1076,7 +1076,7 @@ Campaign talking points + Supporter context
 - Language and tone appropriate for the target (elected official, regulator).
 - Personally identifiable information used only as the supporter provides it.
 
-**Output formats:** Messages can be sent via email or downloaded as a formatted PDF for printing and physical mailing ([ADR-016 §39](../decisions/016-cross-cutting-resolutions.md)). The PDF includes the target's mailing address, formatted letter body, and the supporter's name. PDF rendering uses the same content — just a different output format — so this is a lightweight server-side rendering pipeline, not a separate generation path.
+**Output formats:** Messages can be sent via email or downloaded as a formatted PDF for printing and physical mailing ([ADR-016 §39](../../decisions/016-cross-cutting-resolutions.md)). The PDF includes the target's mailing address, formatted letter body, and the supporter's name. PDF rendering uses the same content — just a different output format — so this is a lightweight server-side rendering pipeline, not a separate generation path.
 
 ### Translation service
 
@@ -1130,7 +1130,7 @@ Language detection: responds in the language the user types in. Falls back to th
 - Adapters are per-tenant (each tenant configures their own API keys, accounts, etc.).
 - Data flowing through integrations is logged in the audit trail.
 
-**Integration health monitoring** (decided in [ADR-016 §56](../decisions/016-cross-cutting-resolutions.md)):
+**Integration health monitoring** (decided in [ADR-016 §56](../../decisions/016-cross-cutting-resolutions.md)):
 
 The integration hub runs periodic health checks per integration (API ping, token validity, last successful sync timestamp). Status is displayed in the integration settings screen: Connected (green), Degraded (amber), Failed (red).
 
@@ -1147,7 +1147,7 @@ The integration detail screen shows a health timeline (last 30 days) so the OA c
 
 - **REST API:** Documented, versioned, OAuth2-authenticated. Full CRUD on tenant resources (contacts, donations, events, campaigns, etc.) scoped by the caller's role and permissions.
 - **Webhooks:** Real-time event notifications — donation received, volunteer signed up, canvassing interaction recorded, event RSVP, etc. Tenants configure webhook endpoints and select which events to subscribe to.
-- **Rate limiting:** Per-tenant, per-API-key. Each pricing plan defines default rate limits. OAs can adjust limits per API key within the plan's ceiling ([ADR-016 §55](../decisions/016-cross-cutting-resolutions.md)). Standard headers on all responses: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`.
+- **Rate limiting:** Per-tenant, per-API-key. Each pricing plan defines default rate limits. OAs can adjust limits per API key within the plan's ceiling ([ADR-016 §55](../../decisions/016-cross-cutting-resolutions.md)). Standard headers on all responses: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset`.
 - **Not an afterthought:** The public API is the same API the GreenGrass frontend consumes. No private backdoors that the public API can't access. Tenants can build anything on top of GreenGrass that GreenGrass itself can build.
 
 This is a core commitment to the sovereignty model — tenants who can build on top of the platform aren't locked into it.
@@ -1288,10 +1288,10 @@ For self-hosted tenants, GreenGrass provides:
 6. ~~Sync protocol~~ → Event sourcing
 7. ~~Event streaming~~ → NATS JetStream
 8. ~~Email infrastructure~~ → Self-hosted, per-country
-9. ~~AI models~~ → ~~Hybrid (external API for managed-key, self-hosted for BYOK)~~ → **BYOM** (Bring Your Own Model) — orgs configure their own AI provider; platform provides default fallback. Supersedes the hybrid model per [ADR-016 §38](../decisions/016-cross-cutting-resolutions.md).
+9. ~~AI models~~ → ~~Hybrid (external API for managed-key, self-hosted for BYOK)~~ → **BYOM** (Bring Your Own Model) — orgs configure their own AI provider; platform provides default fallback. Supersedes the hybrid model per [ADR-016 §38](../../decisions/016-cross-cutting-resolutions.md).
 10. ~~Public API~~ → REST + webhooks, day one
 11. ~~Technology stack~~ → Validated (TypeScript/SvelteKit/Capacitor/PostgreSQL), native iOS path preserved
 12. ~~Self-hosted updates~~ → Auto-update with rollback + prominent notifications
 13. ~~Tenant URLs~~ → Subdomain default + custom domain support
-14. ~~Data retention~~ → Tiered (operational/compliance/audit/import rollback) per [ADR-016 §4](../decisions/016-cross-cutting-resolutions.md). Supersedes ADR-004's uniform 10-year policy.
-15. ~~89 wireframe open questions~~ → All resolved per [ADR-016](../decisions/016-cross-cutting-resolutions.md)
+14. ~~Data retention~~ → Tiered (operational/compliance/audit/import rollback) per [ADR-016 §4](../../decisions/016-cross-cutting-resolutions.md). Supersedes ADR-004's uniform 10-year policy.
+15. ~~89 wireframe open questions~~ → All resolved per [ADR-016](../../decisions/016-cross-cutting-resolutions.md)

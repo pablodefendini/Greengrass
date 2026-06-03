@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Architecture · GreenGrass</title>
+<meta name="description" content="System Architecture — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../spec/workflows.html">Core Workflows</a></li><li><a href="../../spec/geography.html">Target Geography</a></li><li><a href="../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../spec/integrations.html">External Integrations</a></li><li><a href="../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./system.html" aria-current="page" class="active">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../ux/00-overview.html">UX Design Overview</a></li><li><a href="../ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../diary/index.html">Project Diary</a></li><li><a href="../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../claude/MEMORY.html">Memory</a></li><li><a href="../../claude/SKILLS.html">Skills</a></li><li><a href="../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Architecture</nav>
+    <article class="prose">
+<h1 id="system-architecture" tabindex="-1"><a class="heading-anchor" href="#system-architecture" aria-hidden="true">#</a> System Architecture</h1>
+<h2 id="overview" tabindex="-1"><a class="heading-anchor" href="#overview" aria-hidden="true">#</a> Overview</h2>
+<p>GreenGrass is a single-tenant, federated platform for grassroots political campaign management. This document defines the system architecture — how the components fit together, how data flows, and how the infrastructure supports the product requirements defined in the spec documents.</p>
+<h3 id="architectural-drivers" tabindex="-1"><a class="heading-anchor" href="#architectural-drivers" aria-hidden="true">#</a> Architectural Drivers</h3>
+<p>These product decisions (from the specs) have the strongest influence on architecture:</p>
+<ol>
+<li><strong>Single-tenant isolation</strong> with tiered security levels (container → cluster → cloud account → self-hosted)</li>
+<li><strong>Federation model</strong> — sovereign entities connected by affiliation, not a monolithic multi-tenant system</li>
+<li><strong>BYOK by default</strong> — the platform cannot read tenant data unless the tenant opts into managed keys</li>
+<li><strong>Per-country data residency</strong> — tenant data stays in a country the tenant chooses</li>
+<li><strong>Offline-first for field operations</strong> — canvassing, voter registration, and event check-in must work without connectivity</li>
+<li><strong>Mobile-first</strong> — the primary interface is a phone, not a desktop</li>
+<li><strong>RTL and multilingual from day one</strong> — architecture must support bidirectional text and content localization</li>
+<li><strong>Full audit trail</strong> — every data mutation is logged</li>
+<li><strong>Federated identity</strong> — one platform identity, per-tenant profiles</li>
+<li><strong>Real-time analytics for active operations</strong> — field day and election day dashboards update live</li>
+</ol>
+<hr>
+<h2 id="system-topology" tabindex="-1"><a class="heading-anchor" href="#system-topology" aria-hidden="true">#</a> System Topology</h2>
+<pre><code>┌─────────────────────────────────────────────────────────┐
+│                   PLATFORM LAYER                         │
+│                                                          │
+│  ┌──────────────┐  ┌──────────────┐  ┌───────────────┐  │
+│  │   Identity    │  │  Provisioning │  │   Platform    │  │
+│  │   Service     │  │  Service      │  │   Admin       │  │
+│  └──────┬───────┘  └──────┬───────┘  └───────────────┘  │
+│         │                 │                               │
+│  ┌──────┴─────────────────┴──────────────────────────┐   │
+│  │              Federation / Alliance Layer            │   │
+│  │     (cross-tenant coordination, sharing rules,      │   │
+│  │      dedup, don't-re-knock, joint campaigns)        │   │
+│  └──────┬─────────────────┬──────────────────────────┘   │
+└─────────┼─────────────────┼──────────────────────────────┘
+          │                 │
+    ┌─────┴─────┐     ┌────┴──────┐
+    │  TENANT A  │     │  TENANT B  │    ... (one per org/candidate)
+    │            │     │            │
+    │  ┌──────┐  │     │  ┌──────┐  │
+    │  │ App  │  │     │  │ App  │  │
+    │  │Server│  │     │  │Server│  │
+    │  ├──────┤  │     │  ├──────┤  │
+    │  │  DB  │  │     │  │  DB  │  │
+    │  ├──────┤  │     │  ├──────┤  │
+    │  │Cache │  │     │  │Cache │  │
+    │  ├──────┤  │     │  ├──────┤  │
+    │  │Queue │  │     │  │Queue │  │
+    │  └──────┘  │     │  └──────┘  │
+    │            │     │            │
+    └────────────┘     └────────────┘
+</code></pre>
+<h3 id="three-layer-architecture" tabindex="-1"><a class="heading-anchor" href="#three-layer-architecture" aria-hidden="true">#</a> Three-layer architecture:</h3>
+<ol>
+<li>
+<p><strong>Platform layer</strong> — shared services that exist outside any tenant: identity, provisioning, platform admin, billing. This is the only layer that sees across tenants.</p>
+</li>
+<li>
+<p><strong>Federation layer</strong> — mediates cross-tenant interactions: alliance coordination, shared resource management, dedup across orgs, joint campaign orchestration. Operates on explicit sharing rules, never has blanket access to tenant data.</p>
+</li>
+<li>
+<p><strong>Tenant layer</strong> — one complete, isolated application instance per sovereign entity (party, org, or candidate). Each tenant has its own application server, database, cache, and job queue. No tenant can see another tenant's data except through the federation layer's sharing rules.</p>
+</li>
+</ol>
+<hr>
+<h2 id="tenant-architecture" tabindex="-1"><a class="heading-anchor" href="#tenant-architecture" aria-hidden="true">#</a> Tenant Architecture</h2>
+<h3 id="whats-inside-a-tenant" tabindex="-1"><a class="heading-anchor" href="#whats-inside-a-tenant" aria-hidden="true">#</a> What's inside a tenant</h3>
+<p>Each tenant is a self-contained application deployment:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application server</td>
+<td>API, business logic, server-side rendering</td>
+</tr>
+<tr>
+<td>Primary database</td>
+<td>CRM, voter data, donations, events, comms history, audit log</td>
+</tr>
+<tr>
+<td>Cache layer</td>
+<td>Session management, hot data, rate limiting</td>
+</tr>
+<tr>
+<td>Job queue</td>
+<td>Async tasks: email sends, SMS dispatch, data imports, sync processing</td>
+</tr>
+<tr>
+<td>Object storage</td>
+<td>File uploads, media, export files, backup snapshots</td>
+</tr>
+<tr>
+<td>Search index</td>
+<td>Full-text search across CRM records, comms, notes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="isolation-tiers" tabindex="-1"><a class="heading-anchor" href="#isolation-tiers" aria-hidden="true">#</a> Isolation tiers</h3>
+<p>(Decided in <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a>)</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Implementation</th>
+<th>Boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard</td>
+<td>Dedicated containers on shared Kubernetes cluster</td>
+<td>Container + namespace isolation. Separate DB instance per tenant. Shared compute nodes.</td>
+</tr>
+<tr>
+<td>Enhanced</td>
+<td>Dedicated node pool within a cluster</td>
+<td>Tenant containers run on dedicated hardware. No shared compute with other tenants. Separate DB instance.</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>Separate cloud account</td>
+<td>Entire infrastructure stack isolated at the cloud provider level. No shared resources whatsoever.</td>
+</tr>
+<tr>
+<td>Self-hosted</td>
+<td>Tenant's own infrastructure</td>
+<td>GreenGrass provides the application package. Tenant manages everything.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DECIDED:</strong> Kubernetes with cloud-agnostic tooling. No Google Cloud dependency.</p>
+<p>K8s is CNCF-governed open source, runs on any infrastructure. GreenGrass uses Kubernetes across countries with a cloud-agnostic management layer (Rancher or Crossplane) to abstract across different providers per country. Managed K8s offerings (EKS, non-Google alternatives, or local providers) used where available to reduce operational burden; self-managed K8s (k3s or similar lightweight distributions) where managed options aren't available. No GKE.</p>
+<h3 id="tenant-provisioning-pipeline" tabindex="-1"><a class="heading-anchor" href="#tenant-provisioning-pipeline" aria-hidden="true">#</a> Tenant provisioning pipeline</h3>
+<p>(Decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — fully automated, self-serve)</p>
+<pre><code>Signup request
+  → Validate org info and select country/tier
+  → Generate tenant ID and encryption keys (BYOK flow or managed)
+  → Select target infrastructure (country-specific cluster or cloud account)
+  → Provision database (create, apply schema, seed defaults)
+  → Provision application instance (deploy container, configure networking)
+  → Configure DNS (tenant subdomain or custom domain)
+  → Configure object storage bucket
+  → Configure job queue
+  → Run health checks
+  → Deliver onboarding credentials to Org Admin
+  → Tenant is live
+</code></pre>
+<p><strong>DECIDED:</strong> Subdomain as default, custom domain supported.</p>
+<ul>
+<li><strong>Default:</strong> <code>orgname.greengrass.app</code>. Provisioned automatically during tenant setup. Wildcard DNS and TLS via Let's Encrypt.</li>
+<li><strong>Custom domain:</strong> Tenants can configure their own domain (e.g., <code>organize.campaign.org</code>). Requires the tenant to update their DNS records (CNAME). The platform handles TLS certificate provisioning automatically once DNS is configured. SSL certificates are provisioned via Let's Encrypt with automated cert issuance triggered on DNS validation (<a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §68</a>). Custom domains are critical for brand credibility — supporters clicking a donation link need to see the org's domain.</li>
+<li><strong>Both can coexist.</strong> The subdomain always works as a fallback even if a custom domain is configured.</li>
+</ul>
+<h3 id="public-page-infrastructure" tabindex="-1"><a class="heading-anchor" href="#public-page-infrastructure" aria-hidden="true">#</a> Public page infrastructure</h3>
+<p><strong>Open Graph images</strong> (<a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §71</a>): The platform auto-generates OG images from the page title + org logo + brand colors (server-side template composition, not AI). OAs can override with a manually uploaded image per page. This ensures every shared link has a social media preview image without requiring design effort.</p>
+<p><strong>Built-in lightweight analytics</strong> (<a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §69</a>): Public pages track views, unique visitors, conversion rate, and referral source (UTM parameters). No third-party analytics (Google Analytics, Meta Pixel) in v1 — these raise privacy and cookie consent complexity. OAs can add external scripts via a custom code injection field (advanced setting, off by default).</p>
+<p><strong>v2 forward reference:</strong> <a href="../../decisions/016-cross-cutting-resolutions.html">Public Page A/B Testing</a> (v2 tentpole) will extend the fundraising A/B testing infrastructure to volunteer signup pages and other public pages.</p>
+<h3 id="settings-export" tabindex="-1"><a class="heading-anchor" href="#settings-export" aria-hidden="true">#</a> Settings export</h3>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §54</a>)</p>
+<p>OAs can export their tenant settings as a JSON snapshot for documentation, backup, or sharing with consultants. Cross-tenant import (apply Org A's settings to Org B) is deferred to a future version — it requires validating that the target tenant has matching integrations, payment processors, and compliance jurisdiction.</p>
+<hr>
+<h2 id="data-model" tabindex="-1"><a class="heading-anchor" href="#data-model" aria-hidden="true">#</a> Data Model</h2>
+<h3 id="platform-level-entities-shared-across-tenants" tabindex="-1"><a class="heading-anchor" href="#platform-level-entities-shared-across-tenants" aria-hidden="true">#</a> Platform-level entities (shared across tenants)</h3>
+<pre><code>PlatformIdentity
+├── id (UUID)
+├── primary_phone (E.164, encrypted)
+├── primary_email (encrypted)
+├── name
+├── language_preference
+├── communication_preferences (per-channel, per-purpose consent)
+├── passkey_credentials[]
+├── trusted_contacts[] → PlatformIdentity
+├── tenant_memberships[] → TenantProfile
+├── created_at
+└── updated_at
+
+TenantRegistration
+├── id (UUID)
+├── entity_type (alliance | party_org | candidate)
+├── tenant_type (lightweight | full)
+├── name
+├── country
+├── hosting_tier (standard | enhanced | maximum | self_hosted)
+├── encryption_model (byok | managed)
+├── encryption_key_reference (vault path or tenant-held)
+├── affiliations[] → TenantRegistration (with affiliation_type)
+├── billing_info
+├── status (provisioning | active | suspended | decommissioned)
+├── created_at
+└── updated_at
+
+Affiliation
+├── id (UUID)
+├── parent_tenant → TenantRegistration (alliance or party)
+├── child_tenant → TenantRegistration (party, org, or candidate)
+├── affiliation_type (alliance_member | party_candidate)
+├── sharing_rules (per-resource opt-in flags)
+├── status (pending | active | revoked)
+├── created_at
+└── updated_at
+</code></pre>
+<h3 id="tenant-level-entities-per-tenant-database" tabindex="-1"><a class="heading-anchor" href="#tenant-level-entities-per-tenant-database" aria-hidden="true">#</a> Tenant-level entities (per-tenant database)</h3>
+<pre><code>Person (the omni-list record)
+├── id (UUID)
+├── platform_identity_id → PlatformIdentity (nullable — not everyone has a login)
+├── name, address, phone, email (some encrypted at application level)
+├── record_types[] (voter | donor | volunteer | supporter | contact | candidate | staff)
+├── voter_data
+│   ├── precinct / electoral_district
+│   ├── registration_status
+│   ├── voting_history[] (elections participated)
+│   ├── support_score
+│   └── demographics (age, language)
+├── donor_data
+│   ├── donation_history[] → Donation
+│   ├── recurring_status
+│   └── compliance_info (employer, occupation — encrypted)
+├── volunteer_data
+│   ├── role_templates[] → RoleTemplate
+│   ├── scopes[] → Scope
+│   ├── team_assignment → Team
+│   ├── shift_history[] → Shift
+│   ├── hours_logged
+│   └── training_completion[] (includes required_before_field flag per module)
+├── tags[]
+├── segments[]
+├── communication_history[] → CommunicationEvent
+├── household → Household
+├── notes[] (encrypted at application level)
+├── created_at
+├── updated_at
+└── merged_from[] (audit trail of dedup merges)
+
+Campaign
+├── id (UUID)
+├── name
+├── type (electoral | advocacy | voter_registration | fundraising | gotv)
+├── status (planning | active | completed | archived)
+├── geographic_scope → GeographicArea
+├── date_range
+└── parent_entity (party/org/candidate/alliance that owns this campaign)
+
+GeographicArea (hierarchical)
+├── id (UUID)
+├── name
+├── level (country | region | state | district | precinct | turf)
+├── parent → GeographicArea
+├── boundary_data (GeoJSON)
+└── metadata (population, voter count, etc.)
+
+Turf (canvassing assignment unit)
+├── id (UUID)
+├── geographic_area → GeographicArea
+├── walk_list[] → Person (ordered address sequence)
+├── campaign → Campaign
+├── assigned_to → Person (volunteer)
+├── status (unassigned | assigned | in_progress | complete)
+└── stats (doors_total, doors_knocked, contact_rate)
+
+CanvassingInteraction
+├── id (UUID)
+├── person → Person (the voter contacted)
+├── canvasser → Person (the volunteer)
+├── turf → Turf
+├── campaign → Campaign
+├── contact_result (spoke | not_home | refused | moved | etc.)
+├── script_responses[] (question_id, response)
+├── notes (encrypted at application level)
+├── recorded_at (device timestamp)
+├── synced_at (server timestamp)
+├── device_id
+└── location (lat/lng, optional)
+
+CanvassingScript
+├── id (UUID)
+├── campaign → Campaign
+├── name
+├── version (incrementing — active shifts are version-locked)
+├── questions[] (ordered list of script questions with response options)
+├── language_variants[] → ContentItem
+├── status (draft | active | archived)
+├── created_by → Person
+├── created_at
+└── updated_at
+
+ScriptTemplate
+├── id (UUID)
+├── name
+├── description
+├── source_script → CanvassingScript (copy-from reference, not a live link)
+├── questions[] (copied from source at template creation time)
+├── created_by → Person
+└── created_at
+</code></pre>
+<p><strong>Script template workflow</strong> (<a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §9–10</a>): &quot;Save as Template&quot; copies a campaign script into the org-wide template library. Creating a new campaign script offers &quot;Start from template&quot; or &quot;Start blank.&quot; Once copied, the campaign script is independent — editing it does not affect the template or other campaigns. Script versioning is per-campaign: active shifts are version-locked; urgent updates appear on the volunteer's next door card, never mid-interaction.</p>
+<p><strong>Training completion gating</strong> (<a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §65</a>): The OA marks specific training modules as <code>required_before_field</code>. The shift assignment flow checks this flag — volunteers who haven't completed required modules cannot be assigned to shifts. The assignment screen shows &quot;Training incomplete&quot; with a link to the outstanding module. Non-required training is encouraged but not gated.</p>
+<pre><code>Donation
+├── id (UUID)
+├── donor → Person
+├── campaign → Campaign (optional)
+├── amount
+├── currency
+├── type (one_time | recurring)
+├── method (card | pix | upi | promptpay | cash | etc.)
+├── payment_processor_reference
+├── covers_fees (boolean)
+├── event_id → Event (nullable — set when donation is a ticket purchase)
+├── ticket_type (nullable — e.g., general, vip, student)
+├── ticket_quantity (nullable — number of tickets in this transaction)
+├── compliance_data (encrypted)
+├── receipt_sent (boolean)
+├── created_at
+└── audit_trail
+
+Event
+├── id (UUID)
+├── name, description
+├── type (rally | town_hall | fundraiser | training | canvass_launch | phone_bank | virtual)
+├── location (physical address or virtual platform reference)
+├── date_range
+├── capacity
+├── rsvp_settings (open | invite_only | approval_required)
+├── rsvps[] → RSVP
+├── attendance[] → AttendanceRecord
+├── campaign → Campaign (optional)
+└── follow_up_status
+
+Communication
+├── id (UUID)
+├── channel (email | sms | whatsapp)
+├── purpose (transactional | event | fundraising | gotv | activism | newsletter)
+├── template → MessageTemplate
+├── audience_segment → Segment
+├── status (draft | scheduled | sending | sent | failed)
+├── stats (sent, delivered, opened, clicked, bounced, unsubscribed)
+├── scheduled_at
+├── sent_at
+└── campaign → Campaign (optional)
+
+AuditEntry
+├── id (UUID)
+├── actor → Person or PlatformAdmin
+├── action (create | update | delete | export | login | permission_change | etc.)
+├── entity_type
+├── entity_id
+├── changes (before/after diff, encrypted)
+├── ip_address
+├── device_info
+├── timestamp
+└── tenant_id
+</code></pre>
+<h3 id="geographic-data-model" tabindex="-1"><a class="heading-anchor" href="#geographic-data-model" aria-hidden="true">#</a> Geographic data model</h3>
+<p>(Deferred from <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — resolving here)</p>
+<p>The geographic model is hierarchical and flexible enough to represent different countries' political geography:</p>
+<pre><code>Country
+└── Region / State / Province
+    └── District / Municipality
+        └── Precinct / Ward / Voting Station
+            └── Turf (canvassing assignment unit — defined by campaign staff)
+</code></pre>
+<p><strong>Key design decisions:</strong></p>
+<ul>
+<li><strong>Levels are configurable per country.</strong> Puerto Rico has municipalities and precincts. India has states, parliamentary constituencies, assembly constituencies, and polling stations. The hierarchy depth and naming are tenant-configurable.</li>
+<li><strong>Boundary data stored as GeoJSON.</strong> Enables map-based turf cutting, canvassing progress visualization, and geographic scoping for permissions.</li>
+<li><strong>Turfs are campaign-defined, not administrative.</strong> A turf is a walk list — a set of addresses assigned to a canvasser. It may span parts of multiple precincts or be a subset of one. Turfs are created by Field Directors, not imported from electoral data.</li>
+</ul>
+<p><strong>DECIDED:</strong> Both — pre-loaded for target countries, import capability for everything else.</p>
+<ul>
+<li><strong>Pre-loaded:</strong> GreenGrass ships official electoral boundaries (districts, precincts, voting stations) for target countries on the rollout roadmap. A campaign in Puerto Rico selects their municipality and precincts are already there, ready for turf cutting.</li>
+<li><strong>Import:</strong> Orgs in countries without pre-loaded data can import their own geographic boundaries (GeoJSON, shapefiles). The import process validates, previews, and confirms before applying.</li>
+<li><strong>Community contribution:</strong> Orgs that import geographic data for a new jurisdiction can submit it back to GreenGrass as a candidate data set for other orgs in the same country.</li>
+<li><strong>Maintenance:</strong> Electoral boundaries change. Pre-loaded data is versioned and updated per election cycle for active countries.</li>
+<li><strong>User-friendliness:</strong> Data entry, import, and export across the platform should be as frictionless as possible — this applies to geographic data, voter files, and all other data types.</li>
+</ul>
+<h3 id="export-audit-policy" tabindex="-1"><a class="heading-anchor" href="#export-audit-policy" aria-hidden="true">#</a> Export audit policy</h3>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §86</a>)</p>
+<p>Exporting more than 100 records requires the user to select a reason from a predefined list (Compliance reporting / Campaign operations / Data migration / Alliance sharing / Other + free text). The reason is logged in the audit trail alongside the export metadata (who, when, how many records, which fields). Individual record views and small exports (&lt;100 records) do not require a reason.</p>
+<h3 id="dedup-confidence-engine" tabindex="-1"><a class="heading-anchor" href="#dedup-confidence-engine" aria-hidden="true">#</a> Dedup confidence engine</h3>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §83</a>. Refines the suggest-and-confirm approach from <a href="../../decisions/004-data-model-integrity.html">ADR-004</a>.)</p>
+<p>The dedup engine applies three tiers based on match confidence:</p>
+<table>
+<thead>
+<tr>
+<th>Confidence</th>
+<th>Action</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>95%+ (exact)</td>
+<td>Auto-merge with audit log</td>
+<td>Same email address + same phone number</td>
+</tr>
+<tr>
+<td>70–94% (likely)</td>
+<td>Surface in dedup review queue for manual merge</td>
+<td>Similar name + same postal code</td>
+</tr>
+<tr>
+<td>Below 70%</td>
+<td>Ignore unless manually searched</td>
+<td>Same last name only</td>
+</tr>
+</tbody>
+</table>
+<p>Thresholds are org-configurable. Auto-merged records are logged in the audit trail with the match reason and can be unmerged within the import rollback window (30 days default). This refines ADR-004's &quot;no automatic merging&quot; stance: exact matches (95%+) with multiple corroborating identifiers are safe to auto-merge; the review queue remains for ambiguous cases.</p>
+<h3 id="dynamic-segment-refresh" tabindex="-1"><a class="heading-anchor" href="#dynamic-segment-refresh" aria-hidden="true">#</a> Dynamic segment refresh</h3>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §85</a>)</p>
+<p>Dynamic segments recalculate on two triggers: <strong>on access</strong> (when a user views the segment) and <strong>daily background job</strong> (ensuring campaign targeting is fresh). The segment list shows &quot;Last refreshed: [timestamp]&quot; per segment. Large segments (50k+ contacts) show a loading state during recalculation rather than stale data. Manual refresh is available via a refresh button on the segment detail screen.</p>
+<hr>
+<h2 id="identity-authentication-architecture" tabindex="-1"><a class="heading-anchor" href="#identity-authentication-architecture" aria-hidden="true">#</a> Identity &amp; Authentication Architecture</h2>
+<h3 id="platform-identity-service" tabindex="-1"><a class="heading-anchor" href="#platform-identity-service" aria-hidden="true">#</a> Platform identity service</h3>
+<p>The identity service is a shared platform component, separate from any tenant:</p>
+<pre><code>┌─────────────────────────────────────┐
+│         Identity Service             │
+│                                      │
+│  ┌─────────────┐ ┌───────────────┐  │
+│  │  Credential  │ │   Profile     │  │
+│  │  Store       │ │   Federation  │  │
+│  │  (passkeys,  │ │   (tenant     │  │
+│  │   OTP, etc.) │ │   memberships)│  │
+│  └─────────────┘ └───────────────┘  │
+│  ┌─────────────┐ ┌───────────────┐  │
+│  │  Session     │ │   Recovery    │  │
+│  │  Manager     │ │   Service     │  │
+│  └─────────────┘ └───────────────┘  │
+└─────────────────────────────────────┘
+</code></pre>
+<p><strong>Credential store:</strong> Passkey public keys, email/password hashes (argon2id), magic link tokens, OTP seeds, TOTP secrets. Never stores plaintext credentials. Separate from tenant databases.</p>
+<p><strong>Authentication method tiers</strong> (decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §57–60</a>):</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Availability</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloud-synced passkeys (iCloud Keychain, Google Password Manager)</td>
+<td>Default for all tiers</td>
+<td>Phishing resistance + practical recoverability. Device-bound only at Maximum tier.</td>
+</tr>
+<tr>
+<td>TOTP (Google Authenticator, etc.)</td>
+<td>Opt-in at Enhanced / Maximum tiers</td>
+<td>Works fully offline after setup — critical for intermittent connectivity</td>
+</tr>
+<tr>
+<td>Magic link (email-based)</td>
+<td>Fallback for pre-WebAuthn devices (below Android 9 / iOS 16 / Chrome 109)</td>
+<td>Auto-detected; login screen shows appropriate flow</td>
+</tr>
+<tr>
+<td>Password (argon2id)</td>
+<td>Available but not encouraged</td>
+<td>Legacy fallback</td>
+</tr>
+</tbody>
+</table>
+<p>The login screen auto-detects WebAuthn support. Devices below the passkey threshold get magic link authentication automatically — no user decision needed.</p>
+<p><strong>Profile federation:</strong> Maps a platform identity to its per-tenant profiles. When a user logs in, the identity service determines which tenants they belong to and which tenant to route them to (or presents a tenant selector if multiple).</p>
+<p><strong>Session manager:</strong> Issues and validates session tokens. Enforces role-based session duration (decided in <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>). Handles remote revocation — when a Volunteer Coordinator revokes a session, the session manager invalidates the token immediately.</p>
+<p><strong>Recovery service:</strong> Manages trusted contact recovery flow. Routes recovery requests to designated contacts. Issues new credential setup flows after approved recovery.</p>
+<p><strong>OA recovery — bootstrap problem</strong> (decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §59</a>): When the first OA has no trusted contacts to vouch for them, platform-assisted recovery applies. The OA contacts GreenGrass support, who verify identity through the original registration channel (signup email, payment method on file). After verification, a <strong>72-hour cooling-off recovery</strong> begins — longer than the standard 24-hour peer-verified path because there is no peer verification. During cooling-off, all org email contacts receive a notification. This is intentionally slow and visible — it's the highest-risk recovery path.</p>
+<p><strong>DECIDED:</strong> Centralized primary in the incorporation jurisdiction with read replicas per country.</p>
+<ul>
+<li><strong>Primary:</strong> Authoritative identity data lives in the incorporation jurisdiction (Estonia/Switzerland). All writes (account creation, credential changes, recovery) go to the primary. Protected by the strongest legal framework available.</li>
+<li><strong>Read replicas:</strong> Each country with tenant infrastructure gets a local replica for low-latency auth validation and session checks. Replication is eventual-consistency with short lag (seconds).</li>
+<li><strong>Failover:</strong> If the primary is unreachable, read replicas can continue to validate existing sessions (cached tokens). New account creation and credential changes queue until the primary recovers.</li>
+</ul>
+<h3 id="authentication-flow" tabindex="-1"><a class="heading-anchor" href="#authentication-flow" aria-hidden="true">#</a> Authentication flow</h3>
+<pre><code>1. User navigates to app (tenant subdomain or login page)
+2. Identity service presents auth options (passkey, magic link, OTP, password)
+3. User authenticates:
+   a. Passkey: WebAuthn challenge → device biometric → signed response → verified
+   b. Magic link: email sent → user clicks → token verified
+   c. OTP: SMS sent → user enters code → verified
+   d. Password: submitted → argon2id hash compared → verified
+4. Identity service issues session token:
+   a. Access token (short-lived, JWT or opaque)
+   b. Refresh token (longer-lived, stored server-side)
+   c. Token includes: platform_identity_id, tenant_id, role_template_ids, scope_ids
+5. User routed to tenant application
+6. Tenant application validates token with identity service on each request
+</code></pre>
+<h3 id="field-mode-authentication" tabindex="-1"><a class="heading-anchor" href="#field-mode-authentication" aria-hidden="true">#</a> Field mode authentication</h3>
+<p>For canvassing and field operations:</p>
+<pre><code>1. Volunteer enters field mode before going offline
+2. System issues a field session token with extended duration (shift-length)
+3. Walk list data downloaded and encrypted on device
+4. While offline: field session token validated locally (device holds a signed token)
+5. When connectivity returns: token re-validated with identity service, data synced
+6. At shift end: token expires, data wiped from device
+</code></pre>
+<h3 id="destructive-operation-approval" tabindex="-1"><a class="heading-anchor" href="#destructive-operation-approval" aria-hidden="true">#</a> Destructive operation approval</h3>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §53</a>)</p>
+<p>Destructive operations require confirmation from a second OA:</p>
+<ul>
+<li>Deleting the organization</li>
+<li>Revoking all API keys</li>
+<li>Changing the security tier downward</li>
+<li>Removing the last integration of a critical type (payment processor, SMS provider)</li>
+</ul>
+<p>Routine settings changes do not require two-OA approval.</p>
+<p><strong>Single-OA fallback:</strong> If the org has only one OA, destructive operations require a 48-hour cooling-off period with email confirmation instead. This prevents accidental or coerced catastrophic changes without blocking single-admin orgs.</p>
+<p><strong>v2 forward reference:</strong> <a href="../../decisions/016-cross-cutting-resolutions.html">Settings Delegation</a> (v2 tentpole) will introduce controlled delegation of low-risk settings to non-OA roles. The two-OA approval flow ensures that even with delegation, the most dangerous operations remain protected.</p>
+<hr>
+<h2 id="encryption-architecture" tabindex="-1"><a class="heading-anchor" href="#encryption-architecture" aria-hidden="true">#</a> Encryption Architecture</h2>
+<h3 id="key-hierarchy" tabindex="-1"><a class="heading-anchor" href="#key-hierarchy" aria-hidden="true">#</a> Key hierarchy</h3>
+<pre><code>Platform Master Key (held by GreenGrass, HSM-backed)
+├── Identity Service Encryption Key (encrypts platform identity data)
+├── Federation Layer Key (encrypts cross-tenant coordination data)
+└── Per-Tenant Keys
+    ├── BYOK: Tenant Master Key (generated and held by tenant)
+    │   ├── Data Encryption Keys (DEKs — per-table or per-field)
+    │   └── Messaging Keys (E2E encryption keys for internal comms)
+    └── Managed: Tenant Master Key (held by GreenGrass in Vault)
+        ├── Data Encryption Keys (DEKs)
+        └── Messaging Keys
+</code></pre>
+<h3 id="envelope-encryption" tabindex="-1"><a class="heading-anchor" href="#envelope-encryption" aria-hidden="true">#</a> Envelope encryption</h3>
+<p>All tenant data is encrypted using envelope encryption:</p>
+<ol>
+<li>Data is encrypted with a <strong>Data Encryption Key (DEK)</strong> — a symmetric key unique to a table, field, or record class.</li>
+<li>The DEK is encrypted with the <strong>Tenant Master Key (TMK)</strong>.</li>
+<li>The encrypted DEK is stored alongside the encrypted data.</li>
+<li>To decrypt: retrieve the TMK (from tenant's key store for BYOK, or from Vault for managed), decrypt the DEK, decrypt the data.</li>
+</ol>
+<p><strong>For BYOK tenants:</strong> The TMK never touches GreenGrass infrastructure. It's held by the tenant (in their own key management system, or generated on their admin's device and backed up via Shamir's secret sharing across multiple Org Admins).</p>
+<h3 id="application-level-encryption" tabindex="-1"><a class="heading-anchor" href="#application-level-encryption" aria-hidden="true">#</a> Application-level encryption</h3>
+<p>(Decided in <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — high-sensitivity fields get application-level encryption on top of storage-level)</p>
+<p><strong>Encrypted fields:</strong> Political sentiment scores, canvassing notes, donor identity and compliance data, candidate private communications, national ID / voter ID numbers.</p>
+<p><strong>Implementation:</strong> These fields are encrypted/decrypted at the application layer using field-specific DEKs before being written to / read from the database. The database sees only ciphertext.</p>
+<p><strong>Searchability tradeoff:</strong> Encrypted fields cannot be searched or indexed directly. Options:</p>
+<ul>
+<li><strong>Blind index:</strong> Hash the field value with a tenant-specific key to create a searchable index that reveals nothing about the plaintext. Supports exact match only.</li>
+<li><strong>Deterministic encryption:</strong> Same plaintext always produces same ciphertext, enabling equality search. Weaker security (reveals duplicates).</li>
+<li><strong>Decrypt-on-read:</strong> No search capability. Must load and decrypt to filter. Acceptable for rarely-searched fields like notes.</li>
+</ul>
+<p><strong>DECIDED:</strong> Field-specific searchable encryption approach.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Approach</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phone number, email, national ID</td>
+<td>Blind index</td>
+<td>Need exact-match lookup for dedup. Index hashed with tenant-specific key.</td>
+</tr>
+<tr>
+<td>Canvassing notes, compliance data</td>
+<td>Decrypt-on-read</td>
+<td>Searched rarely, security is the priority. Must load and decrypt to filter.</td>
+</tr>
+<tr>
+<td>Sentiment scores</td>
+<td>Decrypt-on-read</td>
+<td>Aggregated in analytics pipelines, not searched individually.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="e2e-messaging-encryption" tabindex="-1"><a class="heading-anchor" href="#e2e-messaging-encryption" aria-hidden="true">#</a> E2E messaging encryption</h3>
+<p>(Decided in <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — E2E by default, opt-in key escrow)</p>
+<pre><code>Sender device                                    Recipient device
+┌───────────┐                                    ┌───────────┐
+│ Generate   │                                    │ Decrypt    │
+│ message    │                                    │ message    │
+│ key (MK)   │                                    │ with MK    │
+│            │      ┌──────────────────┐          │            │
+│ Encrypt    │─────→│ Server stores:   │─────────→│ Decrypt MK │
+│ message    │      │ - encrypted msg  │          │ with       │
+│ with MK    │      │ - MK encrypted   │          │ recipient's│
+│            │      │   per-recipient  │          │ private key│
+│ Encrypt MK │      │   public key     │          │            │
+│ per-recipt │      └──────────────────┘          └───────────┘
+│ public key │
+└───────────┘
+</code></pre>
+<p><strong>Key management for E2E:</strong></p>
+<ul>
+<li>Each user generates a public/private key pair on their device during onboarding.</li>
+<li>Public keys are registered with the identity service.</li>
+<li>Private keys never leave the device.</li>
+<li>Multi-device: when a user adds a new device, the existing device must authorize it (transfer the private key encrypted with a device-specific key, or re-encrypt message history for the new device).</li>
+</ul>
+<p><strong>Key escrow mode (opt-in per tenant):</strong></p>
+<ul>
+<li>If the tenant enables key escrow, message encryption keys are additionally encrypted with the tenant's master key and stored server-side.</li>
+<li>The server can decrypt messages if needed (search, compliance, recovery).</li>
+<li>The UI clearly indicates when escrow is active.</li>
+</ul>
+<h3 id="byok-key-management-ux" tabindex="-1"><a class="heading-anchor" href="#byok-key-management-ux" aria-hidden="true">#</a> BYOK key management UX</h3>
+<p>(Deferred from <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — resolving here)</p>
+<p><strong>Key generation:</strong></p>
+<ol>
+<li>During tenant onboarding, Org Admin generates a Tenant Master Key on their device.</li>
+<li>The key is never transmitted to GreenGrass servers.</li>
+</ol>
+<p><strong>Key backup via Shamir's Secret Sharing:</strong></p>
+<ol>
+<li>The TMK is split into N shares with a threshold of K (e.g., 5 shares, 3 required to reconstruct).</li>
+<li>Shares are distributed to designated key holders (Org Admin, Deputies, trusted board members).</li>
+<li>Each share is displayed as a QR code or printable recovery card.</li>
+<li>No single person holds enough shares to reconstruct the key alone.</li>
+<li>Key reconstruction requires K holders to physically (or digitally, through a secure ceremony) combine their shares.</li>
+</ol>
+<p><strong>Key rotation:</strong></p>
+<ul>
+<li>Periodic key rotation is recommended but not forced.</li>
+<li>Rotation re-encrypts all DEKs with a new TMK. Data itself is not re-encrypted (envelope encryption allows this).</li>
+<li>Rotation requires current TMK access (existing key holders must participate).</li>
+</ul>
+<p><strong>DECIDED:</strong> Tenant decides with strong guidance.</p>
+<ul>
+<li>The platform does not enforce a rotation schedule. The org chooses when to rotate.</li>
+<li><strong>Strong guidance:</strong> The platform actively recommends rotation on security events — key holder leaves the org, device compromise, post-breach, major staff turnover. Surfaced as in-app prompts, not just documentation.</li>
+<li><strong>Easy to execute:</strong> Key rotation is a guided, low-friction process in the admin UI. Re-encrypts DEKs with the new TMK. Org Admin initiates, key holders participate.</li>
+<li><strong>Reminders:</strong> If no rotation has occurred in 12+ months, the platform surfaces a non-blocking reminder to the Org Admin.</li>
+</ul>
+<hr>
+<h2 id="offline-architecture" tabindex="-1"><a class="heading-anchor" href="#offline-architecture" aria-hidden="true">#</a> Offline Architecture</h2>
+<h3 id="sync-engine" tabindex="-1"><a class="heading-anchor" href="#sync-engine" aria-hidden="true">#</a> Sync engine</h3>
+<p>The offline sync engine is the most architecturally complex component. It must handle:</p>
+<ul>
+<li><strong>Download:</strong> Walk lists, voter records (operational subset), canvassing scripts, team rosters — cached on device for offline use.</li>
+<li><strong>Upload:</strong> Canvassing interactions, voter registration data, shift completion events — queued on device, synced when connectivity returns.</li>
+<li><strong>Conflict resolution:</strong> Merge-and-flag (decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) — conflicting records are preserved and flagged for human review.</li>
+</ul>
+<pre><code>┌─────────────┐          ┌──────────────┐         ┌──────────────┐
+│   Device     │          │  Sync Server  │         │   Tenant DB   │
+│              │          │              │         │              │
+│ Local DB     │◄────────►│ Sync Queue   │────────►│ Primary DB   │
+│ (encrypted)  │  sync    │ Conflict     │  apply  │              │
+│              │  when    │ Detection    │         │ Audit Log    │
+│ Pending      │  online  │ Merge &amp; Flag │         │              │
+│ Changes Queue│          │              │         │              │
+└─────────────┘          └──────────────┘         └──────────────┘
+</code></pre>
+<h3 id="on-device-storage" tabindex="-1"><a class="heading-anchor" href="#on-device-storage" aria-hidden="true">#</a> On-device storage</h3>
+<ul>
+<li><strong>Database:</strong> SQLite (encrypted with SQLCipher) on the device. Stores downloaded walk list data and pending interactions.</li>
+<li><strong>Encryption:</strong> Device database encrypted with a key derived from the field session token. When the session expires or is revoked, the key is destroyed and the data becomes unreadable.</li>
+<li><strong>Data scope:</strong> Operational data only (decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) — name, address, age, prior contact result, script. No full voter records.</li>
+<li><strong>Capacity:</strong> Walk lists are typically 50-200 addresses. On-device storage requirements are modest.</li>
+</ul>
+<h3 id="sync-protocol" tabindex="-1"><a class="heading-anchor" href="#sync-protocol" aria-hidden="true">#</a> Sync protocol</h3>
+<pre><code>1. PRE-SHIFT (online):
+   a. Volunteer enters field mode
+   b. Device downloads assigned walk list + script + team roster
+   c. Data encrypted and stored locally
+   d. Sync checkpoint recorded (server knows what the device has)
+
+2. DURING SHIFT (offline or intermittent):
+   a. Volunteer records interactions → stored in local pending queue
+   b. Each record has: device_id, local_timestamp, entity_id, change_type, payload
+   c. When connectivity detected:
+      - Push pending changes to sync server
+      - Pull any updates (turf reassignments, new walk list additions)
+      - Update sync checkpoint
+
+3. END OF SHIFT (online):
+   a. Final sync: push all remaining pending changes
+   b. Sync server confirms receipt
+   c. Shift lifecycle event fires
+   d. Local database wiped (encryption key destroyed)
+
+4. CONFLICT HANDLING:
+   a. Sync server detects conflicting writes (same entity_id, different device_ids)
+   b. Both versions stored with conflict flag
+   c. Data Manager sees conflicts in review queue
+   d. Manual resolution: pick one, merge fields, or create separate records
+</code></pre>
+<p><strong>DECIDED:</strong> Event sourcing.</p>
+<p>All data mutations — online and offline — are stored as an immutable event log. State is reconstructed by replaying events.</p>
+<p><strong>Why this fits:</strong></p>
+<ul>
+<li>The full audit trail requirement means we're already storing every change. Event sourcing makes the audit trail the source of truth rather than a secondary log.</li>
+<li>Offline interactions are naturally events (door knocked, response recorded, registration completed) generated on a device and replayed on the server when connectivity returns.</li>
+<li>Conflicts are two event streams for the same entity from different devices. Both streams are preserved; the merge-and-flag process (decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) is a human reviewing competing event histories.</li>
+<li>Enables temporal queries (&quot;what did the data look like at 3pm on canvassing day&quot;) for debugging, dispute resolution, and compliance.</li>
+</ul>
+<p><strong>Sync flow:</strong></p>
+<ul>
+<li>Device generates events locally with device_id and local timestamps.</li>
+<li>On sync, events are pushed to the server and appended to the tenant's event log.</li>
+<li>Server detects conflicts (overlapping events for the same entity from different devices) and flags them.</li>
+<li>Current state is a materialized view of the event log, rebuilt by event replay or maintained incrementally.</li>
+</ul>
+<hr>
+<h2 id="data-retention-architecture" tabindex="-1"><a class="heading-anchor" href="#data-retention-architecture" aria-hidden="true">#</a> Data Retention Architecture</h2>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §4</a>. Supersedes <a href="../../decisions/004-data-model-integrity.html">ADR-004</a>'s uniform 10-year retention with a refined tiered model.)</p>
+<h3 id="four-tier-retention-model" tabindex="-1"><a class="heading-anchor" href="#four-tier-retention-model" aria-hidden="true">#</a> Four-tier retention model</h3>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>What is stored</th>
+<th>Default retention</th>
+<th>Bounds</th>
+<th>Deletable?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Operational</strong></td>
+<td>Full content: message bodies, attachments, canvass responses, GOTV operational data, shift logs</td>
+<td>2 years</td>
+<td>90 days – 5 years</td>
+<td>Yes, after minimum period</td>
+</tr>
+<tr>
+<td><strong>Compliance</strong></td>
+<td>Financial records: donation details, receipts, tax documents, compliance filings</td>
+<td>Per local law</td>
+<td>5 – 10 years</td>
+<td>No, until legal minimum expires</td>
+</tr>
+<tr>
+<td><strong>Audit trail</strong></td>
+<td>Action metadata only (see below)</td>
+<td>Indefinite</td>
+<td>—</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Import rollback</strong></td>
+<td>Undo capability for data imports</td>
+<td>30 days</td>
+<td>7 – 90 days</td>
+<td>Auto-expires</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metadata-vs-content-distinction" tabindex="-1"><a class="heading-anchor" href="#metadata-vs-content-distinction" aria-hidden="true">#</a> Metadata vs. content distinction</h3>
+<p>The audit trail records <strong>that an action happened</strong> — who did what, when, to what entity. It does <strong>not</strong> store the content of the action.</p>
+<p><strong>Example — a message is sent, then purged after the operational retention window:</strong></p>
+<table>
+<thead>
+<tr>
+<th>What exists before purge</th>
+<th>What exists after purge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operational tier: full message body, attachments, thread context</td>
+<td><strong>Deleted.</strong> Message body and attachments are gone.</td>
+</tr>
+<tr>
+<td>Audit trail: &quot;Staff A sent SMS to Contact B on 2026-03-04 at 14:32 UTC&quot;</td>
+<td><strong>Preserved.</strong> The metadata log entry remains indefinitely.</td>
+</tr>
+</tbody>
+</table>
+<p>This distinction is critical for three reasons:</p>
+<ol>
+<li><strong>Privacy compliance:</strong> When a supporter requests data deletion, content is purged from the operational tier. The audit trail retains only the metadata record — no personal content.</li>
+<li><strong>Storage:</strong> Indefinite retention of metadata-only records is feasible. Indefinite retention of full message bodies and attachments is not.</li>
+<li><strong>Legal exposure:</strong> If compelled to produce records, the organization hands over metadata (who/what/when) — not full communication content that may have been legitimately purged.</li>
+</ol>
+<h3 id="reconciliation-with-adr-004" tabindex="-1"><a class="heading-anchor" href="#reconciliation-with-adr-004" aria-hidden="true">#</a> Reconciliation with ADR-004</h3>
+<p>ADR-004 established &quot;10-year retention globally&quot; for audit logs based on Lebanon's commercial records requirement. ADR-016 refines this: the audit trail (metadata-only) is retained <strong>indefinitely</strong> — exceeding 10 years — while operational content (message bodies, canvass responses) follows the shorter operational tier. The compliance tier (financial records) retains for 5–10 years per jurisdiction, encompassing ADR-004's original intent. The net effect is <em>stronger</em> retention for what matters (audit metadata) and <em>appropriate</em> retention for content (bounded by privacy and storage constraints).</p>
+<h3 id="purge-lifecycle" tabindex="-1"><a class="heading-anchor" href="#purge-lifecycle" aria-hidden="true">#</a> Purge lifecycle</h3>
+<pre><code>Content enters operational tier → retention clock starts at creation
+  → OA configures retention within bounds (default: 2 years)
+  → At expiry: content purged, audit metadata preserved
+  → Compliance tier content: purge blocked until legal minimum expires
+  → Import rollback: auto-expires, no OA action needed
+</code></pre>
+<p>The OA configures retention periods within bounds. The system enforces minimums — an OA cannot set message retention below 90 days. Compliance tier minimums are derived from the tenant's configured jurisdiction(s).</p>
+<hr>
+<h2 id="communication-infrastructure" tabindex="-1"><a class="heading-anchor" href="#communication-infrastructure" aria-hidden="true">#</a> Communication Infrastructure</h2>
+<h3 id="email" tabindex="-1"><a class="heading-anchor" href="#email" aria-hidden="true">#</a> Email</h3>
+<pre><code>Tenant App → Message Queue → Email Renderer → Sending Service → Recipient
+                                                    │
+                                              Feedback Loop
+                                         (bounces, complaints,
+                                          opens, clicks)
+                                                    │
+                                              Engagement DB
+                                                    │
+                                              CRM Update
+</code></pre>
+<p><strong>Deliverability architecture:</strong></p>
+<ul>
+<li><strong>Per-tenant sending domains</strong> — each tenant configures SPF, DKIM, and DMARC on their own domain (or a GreenGrass subdomain). Isolates sender reputation per tenant.</li>
+<li><strong>IP warm-up</strong> — new tenants start on shared IP pools, graduate to dedicated IPs as volume and reputation build.</li>
+<li><strong>Bounce and complaint processing</strong> — automatic suppression of hard bounces, complaint-driven unsubscribes.</li>
+<li><strong>Rate limiting</strong> — per-tenant send rate limits to protect deliverability.</li>
+</ul>
+<p><strong>DECIDED:</strong> Self-hosted, per-country.</p>
+<p>Email infrastructure is self-hosted in each country's deployment. Email content is tenant data — it doesn't leave the country through a third-party service.</p>
+<ul>
+<li><strong>MTA:</strong> Self-hosted (Haraka or Postfix) deployed within each country's K8s cluster.</li>
+<li><strong>Per-tenant sending domains:</strong> Each tenant configures SPF, DKIM, DMARC on their own domain. Isolates sender reputation.</li>
+<li><strong>IP management:</strong> Dedicated IP pools per country. New tenants warm up gradually.</li>
+<li><strong>Deliverability monitoring:</strong> Automated bounce/complaint processing, reputation tracking, deliverability dashboards.</li>
+<li><strong>Operational cost:</strong> This is significant — email infrastructure requires ongoing attention. Deliverability expertise should be part of the GreenGrass ops team.</li>
+</ul>
+<!-- REVISIT: For the alpha phase in Puerto Rico, a managed transactional service (Postmark, SES) may be pragmatic while the self-hosted infrastructure is built out. The architecture supports swapping the email adapter per country. -->
+<h3 id="sms-whatsapp" tabindex="-1"><a class="heading-anchor" href="#sms-whatsapp" aria-hidden="true">#</a> SMS / WhatsApp</h3>
+<pre><code>Tenant App → Message Queue → Channel Router → Provider Adapter → SMS Gateway / WhatsApp API
+                                                    │
+                                              Delivery Reports
+                                              Reply Routing
+</code></pre>
+<p><strong>Channel architecture:</strong></p>
+<ul>
+<li><strong>Provider-agnostic adapter layer</strong> — abstract SMS and WhatsApp behind a common interface with per-country provider adapters (Twilio, Vonage, local providers).</li>
+<li><strong>WhatsApp Business API</strong> — requires business verification, has template-based messaging rules, per-message pricing. Messages must use pre-approved templates for outbound; free-form messaging only within 24-hour reply windows. The platform tracks template approval status per template (Approved / Pending / Rejected) by polling the WhatsApp Business API. Status is displayed inline in the message composer so staff never attempt to send a rejected or pending template (<a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §18</a>).</li>
+<li><strong>Consent enforcement</strong> — the channel router checks consent status (per-channel + per-purpose, decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) before dispatching any message.</li>
+</ul>
+<h3 id="social-media" tabindex="-1"><a class="heading-anchor" href="#social-media" aria-hidden="true">#</a> Social media</h3>
+<pre><code>Tenant App → Post Scheduler → Platform Adapter → Social Media API
+                                     │
+                              Analytics Collector → Dashboard
+</code></pre>
+<p><strong>Modular adapter pattern:</strong></p>
+<ul>
+<li>One adapter per platform (Facebook, Instagram, Twitter/X, TikTok, etc.)</li>
+<li>Common interface: publish(post), schedule(post, time), getAnalytics(post_id)</li>
+<li>Adapters handle platform-specific quirks (character limits, media formats, API rate limits)</li>
+<li>New platforms added by writing new adapters, no core changes</li>
+</ul>
+<h3 id="cross-channel-orchestration-engine" tabindex="-1"><a class="heading-anchor" href="#cross-channel-orchestration-engine" aria-hidden="true">#</a> Cross-channel orchestration engine</h3>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §2</a>)</p>
+<p>Communications are governed by two complementary layers enforced at send time:</p>
+<p><strong>Layer 1 — Per-channel frequency caps</strong> (existing decision): Org-wide ceilings on contacts per channel per time period. Example: max 2 emails/week, max 1 SMS/day. Configured by OA in communications settings.</p>
+<p><strong>Layer 2 — Cross-channel quiet window</strong> (new): After contacting a person on <em>any</em> channel about a specific topic, same-topic messages on other channels are suppressed for a configurable window (default: 24 hours). Different topics on different channels are allowed, up to each channel's per-channel cap.</p>
+<p><strong>Enforcement:</strong> The channel router checks both layers before dispatching any message. A message that passes the per-channel cap may still be deferred by the cross-channel quiet window. Deferred messages are re-evaluated at the next send window.</p>
+<p><strong>Per-person contact log:</strong> Each person's recent contact history (channel, topic, timestamp) is maintained in the cache layer for fast enforcement lookups at send time.</p>
+<p><strong>v2 forward reference:</strong> The <a href="../../decisions/016-cross-cutting-resolutions.html">Visual Flow Builder</a> (v2 tentpole) will orchestrate multi-channel sequences within a single flow. The two-layer model provides the enforcement substrate that the flow builder routes through.</p>
+<hr>
+<h2 id="payment-architecture" tabindex="-1"><a class="heading-anchor" href="#payment-architecture" aria-hidden="true">#</a> Payment Architecture</h2>
+<p>(Driven by <a href="http://geography.md" target="_blank" rel="noopener noreferrer">geography.md</a> — each country has fundamentally different payment infrastructure)</p>
+<pre><code>Donation Form → Payment Router → Provider Adapter → Payment Processor
+                    │                                       │
+              Currency                              Transaction Result
+              Conversion                                    │
+              (if needed)                              Donation Record
+                                                            │
+                                                       CRM Update
+                                                       Receipt
+                                                       Compliance Log
+</code></pre>
+<h3 id="payment-adapter-pattern" tabindex="-1"><a class="heading-anchor" href="#payment-adapter-pattern" aria-hidden="true">#</a> Payment adapter pattern</h3>
+<p>Same modular pattern as communications — a common interface with per-provider adapters:</p>
+<table>
+<thead>
+<tr>
+<th>Adapter</th>
+<th>Countries</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stripe</td>
+<td>Global (fallback)</td>
+<td>Cards, some local methods</td>
+</tr>
+<tr>
+<td>ATH Movil</td>
+<td>Puerto Rico</td>
+<td>Mobile payment</td>
+</tr>
+<tr>
+<td>PIX</td>
+<td>Brazil</td>
+<td>Instant payment (Central Bank)</td>
+</tr>
+<tr>
+<td>PromptPay</td>
+<td>Thailand</td>
+<td>Instant payment</td>
+</tr>
+<tr>
+<td>UPI</td>
+<td>India</td>
+<td>Instant payment ecosystem</td>
+</tr>
+<tr>
+<td>OMT</td>
+<td>Lebanon</td>
+<td>Money transfer</td>
+</tr>
+<tr>
+<td>Cash</td>
+<td>All</td>
+<td>In-person recording (no external processor)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Common interface:</strong></p>
+<pre><code>PaymentAdapter {
+  createPaymentIntent(amount, currency, donor_info) → PaymentIntent
+  processPayment(payment_intent) → TransactionResult
+  refund(transaction_id, amount) → RefundResult
+  getTransactionStatus(transaction_id) → Status
+  listTransactions(filters) → Transaction[]
+  generateComplianceReport(date_range) → Report
+}
+</code></pre>
+<p><strong>Multi-currency:</strong> Donations are recorded in the currency they were made in. Reporting can display in the tenant's preferred currency with conversion rates logged at transaction time.</p>
+<p><strong>Alliance donation splitting:</strong> When a donation comes through a joint fundraising page, the payment router applies the split rules (configured per campaign, decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>), records the full donation, and attributes the split portions to each member org's financial records.</p>
+<h3 id="event-ticket-routing" tabindex="-1"><a class="heading-anchor" href="#event-ticket-routing" aria-hidden="true">#</a> Event ticket routing</h3>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §3</a>)</p>
+<p>Paid event tickets are processed through the fundraising pipeline. A ticket purchase is a Donation record with event metadata (<code>event_id</code>, <code>ticket_type</code>, <code>ticket_quantity</code>). There is no separate payment pipeline for events.</p>
+<ul>
+<li><strong>Event system</strong> handles: registration, attendance tracking, check-in, capacity</li>
+<li><strong>Fundraising system</strong> handles: payment processing, receipt generation, compliance tracking, refunds</li>
+<li><strong>Refund policy</strong> is unified: governed by payment processor policy plus an org-configurable maximum window (default: 90 days)</li>
+</ul>
+<p>Event screens display ticket revenue as a metric but link to the fundraising system for financial details. In most jurisdictions, political event tickets are legally treated as contributions — a single pipeline means one set of compliance rules, one receipt generator, one reconciliation workflow.</p>
+<hr>
+<h2 id="analytics-architecture" tabindex="-1"><a class="heading-anchor" href="#analytics-architecture" aria-hidden="true">#</a> Analytics Architecture</h2>
+<p>(Decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — hybrid real-time/batch)</p>
+<pre><code>┌────────────┐     ┌──────────────┐     ┌──────────────┐
+│ Tenant App  │────→│ Event Stream  │────→│ Real-time    │
+│ (events)    │     │ (Kafka/NATS)  │     │ Aggregator   │──→ Live Dashboards
+└────────────┘     └──────┬───────┘     └──────────────┘
+                          │
+                          ▼
+                   ┌──────────────┐     ┌──────────────┐
+                   │ Event Store   │────→│ Batch        │
+                   │ (append-only) │     │ Processor    │──→ Historical Reports
+                   └──────────────┘     └──────────────┘
+</code></pre>
+<h3 id="real-time-pipeline-active-operations" tabindex="-1"><a class="heading-anchor" href="#real-time-pipeline-active-operations" aria-hidden="true">#</a> Real-time pipeline (active operations)</h3>
+<ul>
+<li>Events emitted by the tenant app (door knocked, call made, donation received, volunteer checked in) flow into an event stream.</li>
+<li>A real-time aggregator maintains running counters and pushes updates to dashboards via WebSocket.</li>
+<li>Used during: canvassing days, phone banks, election day, live fundraising appeals.</li>
+</ul>
+<h3 id="batch-pipeline-historical-analysis" tabindex="-1"><a class="heading-anchor" href="#batch-pipeline-historical-analysis" aria-hidden="true">#</a> Batch pipeline (historical analysis)</h3>
+<ul>
+<li>Events are durably stored in an append-only event store.</li>
+<li>Batch processors run on a schedule (hourly for recent data, daily for older data) to compute aggregates, trends, and reports.</li>
+<li>Used for: fundraising trends, volunteer growth, engagement analysis, compliance reports.</li>
+</ul>
+<h3 id="dashboard-polling-infrastructure" tabindex="-1"><a class="heading-anchor" href="#dashboard-polling-infrastructure" aria-hidden="true">#</a> Dashboard polling infrastructure</h3>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §5, §88</a>)</p>
+<p>All dashboards use polling (not WebSockets) at tiered intervals. Polling degrades gracefully on intermittent connections; WebSockets add connection management complexity without proportional benefit at these refresh rates.</p>
+<p><strong>Tiered refresh intervals:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dashboard type</th>
+<th>Interval</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operational (GOTV war room, field ops)</td>
+<td>30 seconds</td>
+<td>Time-critical during active operations</td>
+</tr>
+<tr>
+<td>Campaign (fundraising, communications, events)</td>
+<td>5 minutes</td>
+<td>Changes throughout the day, not second-by-second</td>
+</tr>
+<tr>
+<td>Administrative (compliance, data quality, settings)</td>
+<td>15 minutes</td>
+<td>Slow-moving data</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Freshness state machine</strong> — mandatory on every dashboard:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Indicator</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Current</strong></td>
+<td>Subtle timestamp: &quot;Updated 30s ago&quot;</td>
+<td>Data age &lt; refresh interval</td>
+</tr>
+<tr>
+<td><strong>Refreshing</strong></td>
+<td>Spinner replacing the timestamp</td>
+<td>Poll in progress</td>
+</tr>
+<tr>
+<td><strong>Stale</strong></td>
+<td>Amber warning: &quot;Data is 5+ minutes old&quot;</td>
+<td>Data age &gt; 2× refresh interval</td>
+</tr>
+<tr>
+<td><strong>Disconnected</strong></td>
+<td>Persistent red/amber banner: &quot;Offline — showing cached data from [timestamp]&quot;</td>
+<td>Network unreachable; cannot be dismissed</td>
+</tr>
+</tbody>
+</table>
+<p>On <strong>operational dashboards</strong> (GOTV war room, field ops), the freshness indicator is high-visibility ambient information — color, position, and size ensure it is noticed without active attention. Staff making time-sensitive decisions during election day must never mistake stale data for current data.</p>
+<p><strong>Manual refresh button is mandatory</strong> on every dashboard. Auto-refresh pauses when the browser tab is not visible (saves bandwidth). Immediate refresh on reconnect after an offline period.</p>
+<p><strong>DECIDED:</strong> NATS JetStream.</p>
+<p>Lightweight, durable event streaming. Simpler to operate than Kafka, sufficient for per-tenant event volumes (thousands of events per day, not millions per second). Single binary, easy to deploy per-tenant or as a shared service within a country cluster. Supports durable subscriptions for the real-time analytics pipeline and event replay for the event sourcing architecture.</p>
+<hr>
+<h2 id="election-day-architecture" tabindex="-1"><a class="heading-anchor" href="#election-day-architecture" aria-hidden="true">#</a> Election Day Architecture</h2>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §47–50</a>)</p>
+<p>Election day is the highest-stakes operational moment. The architecture supports three distinct capabilities: election data ingestion, results entry verification, and alliance ride sharing.</p>
+<h3 id="election-data-schema-and-ingestion" tabindex="-1"><a class="heading-anchor" href="#election-data-schema-and-ingestion" aria-hidden="true">#</a> Election data schema and ingestion</h3>
+<p>The platform defines a <strong>standard election data schema</strong> for polling locations, candidate lists, district boundaries, and results. Two ingestion paths feed this schema:</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>When</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API connector</strong></td>
+<td>Jurisdictions with machine-readable feeds</td>
+<td>Per-tenant configuration pointing to the electoral authority's API. Adapter per jurisdiction.</td>
+</tr>
+<tr>
+<td><strong>CSV / spreadsheet import</strong></td>
+<td>Everywhere else (most global south contexts)</td>
+<td>Manual upload with column mapping, validation, and preview before commit.</td>
+</tr>
+</tbody>
+</table>
+<p>No specific electoral authority integration is promised in v1. The value is the standard schema and the manual import workflow. API connectors are added per-jurisdiction as demand warrants.</p>
+<h3 id="results-entry-verification-pipeline" tabindex="-1"><a class="heading-anchor" href="#results-entry-verification-pipeline" aria-hidden="true">#</a> Results entry verification pipeline</h3>
+<p>Poll watchers submit results through the mobile app. Five verification layers compound without blocking speed:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Mechanism</th>
+<th>Blocking?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identity</strong></td>
+<td>Only registered poll watchers (via GOTV-012) can submit</td>
+<td>Yes — submission requires authenticated watcher identity</td>
+</tr>
+<tr>
+<td><strong>Geolocation</strong></td>
+<td>Optional GPS stamp (watcher near polling location)</td>
+<td>No — GPS may be unavailable indoors</td>
+</tr>
+<tr>
+<td><strong>Photo evidence</strong></td>
+<td>Camera capture of official results board/tally sheet</td>
+<td>No — attached for audit, not gated</td>
+</tr>
+<tr>
+<td><strong>Cross-check</strong></td>
+<td>Side-by-side comparison when multiple watchers submit from the same location</td>
+<td>No — flags discrepancies for war room review</td>
+</tr>
+<tr>
+<td><strong>Audit trail</strong></td>
+<td>All submissions immutable with timestamp, submitter ID, device info</td>
+<td>Always on — non-deletable per retention policy</td>
+</tr>
+</tbody>
+</table>
+<p>No single layer is blocking (except identity). The layers compound: a fraudulent entry would need a registered watcher, at the right location, with a convincing photo, that matches other watchers' submissions. The war room dashboard highlights discrepancies for human review.</p>
+<h3 id="alliance-ride-sharing" tabindex="-1"><a class="heading-anchor" href="#alliance-ride-sharing" aria-hidden="true">#</a> Alliance ride sharing</h3>
+<p>(Decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §48</a>)</p>
+<p>Alliance members can contribute drivers to a shared pool for election day rides-to-polls. Opt-in per alliance, enabled by the alliance lead in GOTV settings.</p>
+<p><strong>Routing priority:</strong> Same-org drivers first, then alliance pool. Each org sees only rides fulfilled by their own drivers in their own reporting. The alliance dashboard shows aggregate ride metrics.</p>
+<p><strong>Data boundary:</strong> Ride request data (voter name, pickup address) is shared only with the assigned driver's org for the duration of the ride. No persistent cross-org data sharing from ride fulfillment.</p>
+<hr>
+<h2 id="localization-architecture" tabindex="-1"><a class="heading-anchor" href="#localization-architecture" aria-hidden="true">#</a> Localization Architecture</h2>
+<h3 id="i18n-framework" tabindex="-1"><a class="heading-anchor" href="#i18n-framework" aria-hidden="true">#</a> I18n framework</h3>
+<ul>
+<li><strong>RTL support designed in from day one.</strong> All layout must use logical properties (start/end) not physical (left/right). No RTL as an afterthought.</li>
+<li><strong>String externalization:</strong> All UI strings in locale files, never hardcoded. ICU MessageFormat for pluralization, gender, and complex formatting.</li>
+<li><strong>Locale negotiation:</strong> User's platform identity language preference → tenant default language → browser language → English fallback.</li>
+</ul>
+<h3 id="content-localization-data-model" tabindex="-1"><a class="heading-anchor" href="#content-localization-data-model" aria-hidden="true">#</a> Content localization data model</h3>
+<p>(Deferred from <a href="http://geography.md" target="_blank" rel="noopener noreferrer">geography.md</a> — resolving here)</p>
+<p>Content objects (email templates, canvassing scripts, donation form text, event descriptions, action page copy) store multiple language variants:</p>
+<pre><code>ContentItem
+├── id (UUID)
+├── content_type (email_template | script | form_text | event_description | action_page)
+├── variants[]
+│   ├── language (BCP 47 tag: es, pt-BR, th, hi, ar, fr, en)
+│   ├── body (the content)
+│   ├── status (draft | ai_generated | human_reviewed | published)
+│   ├── reviewed_by → Person (nullable)
+│   └── reviewed_at
+├── source_language (the language it was originally authored in)
+├── created_by → Person
+└── created_at
+</code></pre>
+<p><strong>AI translation integration:</strong></p>
+<ul>
+<li>When staff creates content in one language, the platform can generate translations for the tenant's other configured languages.</li>
+<li>AI-generated translations are marked <code>ai_generated</code> and must be reviewed before being published (decided in <a href="http://geography.md" target="_blank" rel="noopener noreferrer">geography.md</a>).</li>
+<li>Translation memory: reviewed translations are stored and used to improve future AI translations for consistency.</li>
+</ul>
+<p><strong>v2 forward reference:</strong> The <a href="../../decisions/016-cross-cutting-resolutions.html">Shared Content Library</a> (v2 tentpole) will provide centralized asset management with tagging, search, usage tracking, rights management, and cross-feature reuse. v1 uses direct file upload per campaign/post with a &quot;recent uploads&quot; panel for lightweight reuse.</p>
+<hr>
+<h2 id="ai-integration" tabindex="-1"><a class="heading-anchor" href="#ai-integration" aria-hidden="true">#</a> AI Integration</h2>
+<p><strong>DECIDED:</strong> BYOM (Bring Your Own Model) — provider-agnostic, org-configured. Supersedes the previous hybrid (managed-key vs BYOK) model per <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §38</a>. Supersedes <a href="../../decisions/013-analytics-ai.html">ADR-013</a> AI model decision.</p>
+<h3 id="byom-architecture" tabindex="-1"><a class="heading-anchor" href="#byom-architecture" aria-hidden="true">#</a> BYOM architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────┐
+│                AI Abstraction Layer               │
+│                                                   │
+│  Common interface: generate(prompt, context)       │
+│  Capabilities: text generation, translation,       │
+│                summarization, KB-grounded Q&amp;A      │
+│                                                   │
+│  ┌─────────────┐  ┌─────────────┐  ┌──────────┐  │
+│  │  Org's Own   │  │  Platform    │  │ Provider  │  │
+│  │  Provider    │  │  Default     │  │ Registry  │  │
+│  │  (BYOM)      │  │  (fallback)  │  │          │  │
+│  └──────┬──────┘  └──────┬──────┘  └──────────┘  │
+└─────────┼────────────────┼────────────────────────┘
+          │                │
+     Org's AI API    Platform-managed
+     endpoint        model
+</code></pre>
+<p><strong>BYOM configuration:</strong> The OA configures their AI provider in settings — API endpoint, credentials, and model identifier. The platform's AI features (message generation, translation, concierge) route through the org's configured provider. This follows the same self-sovereignty pattern as BYOK for encryption.</p>
+<p><strong>Platform default:</strong> Orgs without their own AI infrastructure get a platform-managed model. All AI features work out of the box for smaller orgs.</p>
+<p><strong>Provider-agnostic interface:</strong> The platform defines what it needs (text generation with language support, structured output, grounding), not which specific model. An abstraction layer handles provider-specific API differences — the same adapter pattern used for payments and communications.</p>
+<p><strong>BYOK + BYOM interaction:</strong> When a BYOK tenant configures an external BYOM provider, data sent to the AI provider leaves the tenant's encryption perimeter. This is the tenant's informed choice — the platform surfaces a clear warning during BYOM configuration: <em>&quot;Your AI provider will receive unencrypted prompt data. This data leaves your encryption boundary.&quot;</em> The OA must acknowledge this tradeoff. Tenants at Maximum security tier who require data to stay within their perimeter must self-host their AI model.</p>
+<h3 id="activism-message-generation" tabindex="-1"><a class="heading-anchor" href="#activism-message-generation" aria-hidden="true">#</a> Activism message generation</h3>
+<p>(Decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — AI generates unique messages per supporter, approved before send)</p>
+<pre><code>Campaign talking points + Supporter context
+         │
+         ▼
+┌──────────────────┐
+│  Message          │
+│  Generation       │
+│  Service          │
+│                   │
+│  - Talking points │
+│  - Supporter info │
+│  - Target info    │
+│  - Tone/style     │
+│  - Guardrails     │
+└────────┬─────────┘
+         │
+         ▼
+  Generated message
+  (presented to supporter for review/edit/approve)
+</code></pre>
+<p><strong>Guardrails:</strong></p>
+<ul>
+<li>Message must stay on-topic with campaign talking points.</li>
+<li>No fabricated facts, statistics, or claims not in the source material.</li>
+<li>Language and tone appropriate for the target (elected official, regulator).</li>
+<li>Personally identifiable information used only as the supporter provides it.</li>
+</ul>
+<p><strong>Output formats:</strong> Messages can be sent via email or downloaded as a formatted PDF for printing and physical mailing (<a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §39</a>). The PDF includes the target's mailing address, formatted letter body, and the supporter's name. PDF rendering uses the same content — just a different output format — so this is a lightweight server-side rendering pipeline, not a separate generation path.</p>
+<h3 id="translation-service" tabindex="-1"><a class="heading-anchor" href="#translation-service" aria-hidden="true">#</a> Translation service</h3>
+<pre><code>Source content → Translation Service → AI-generated draft
+                                            │
+                                     Human review queue
+                                            │
+                                     Published translation
+</code></pre>
+<p>Translation uses the same BYOM abstraction layer. Orgs with multilingual AI capabilities in their own provider benefit from continuity of tone and terminology across GreenGrass and their other tools.</p>
+<h3 id="ai-concierge" tabindex="-1"><a class="heading-anchor" href="#ai-concierge" aria-hidden="true">#</a> AI concierge</h3>
+<p>The in-app help concierge is grounded strictly in the org's knowledge base and GreenGrass platform documentation. No broader reasoning or external knowledge — a hallucinated answer about election law or compliance has real consequences. If a question cannot be answered from grounded sources, the concierge says &quot;I don't have information about that&quot; and offers to connect the user with support.</p>
+<p>Language detection: responds in the language the user types in. Falls back to the user's configured profile language if detection confidence is low.</p>
+<p><strong>v2 forward reference:</strong> The BYOM infrastructure enables orgs to leverage their own fine-tuned models for the concierge — models that understand their specific terminology, organizational context, and operational patterns. This is additive; the grounding constraint (KB-only) remains regardless of the underlying model.</p>
+<hr>
+<h2 id="integration-architecture" tabindex="-1"><a class="heading-anchor" href="#integration-architecture" aria-hidden="true">#</a> Integration Architecture</h2>
+<h3 id="external-system-integrations" tabindex="-1"><a class="heading-anchor" href="#external-system-integrations" aria-hidden="true">#</a> External system integrations</h3>
+<pre><code>┌─────────────┐     ┌──────────────────┐     ┌──────────────┐
+│ Tenant App   │◄───►│ Integration Hub   │◄───►│ External     │
+│              │     │                   │     │ Systems      │
+│              │     │ ┌──────────────┐ │     │              │
+│              │     │ │ Adapter:     │ │     │ - Electoral  │
+│              │     │ │ Electoral    │ │     │   commission │
+│              │     │ │ Commission   │ │     │ - SMS gateway│
+│              │     │ ├──────────────┤ │     │ - Payment    │
+│              │     │ │ Adapter:     │ │     │   processor  │
+│              │     │ │ Mapping/GIS  │ │     │ - Map data   │
+│              │     │ ├──────────────┤ │     │ - Video      │
+│              │     │ │ Adapter:     │ │     │   platform   │
+│              │     │ │ Video        │ │     │ - Social     │
+│              │     │ │ Platform     │ │     │   media APIs │
+│              │     │ └──────────────┘ │     └──────────────┘
+│              │     └──────────────────┘
+└─────────────┘
+</code></pre>
+<p><strong>Integration hub pattern:</strong></p>
+<ul>
+<li>All external integrations go through a common adapter layer.</li>
+<li>Each adapter handles auth, rate limiting, error handling, and data mapping for one external system.</li>
+<li>Adapters are per-tenant (each tenant configures their own API keys, accounts, etc.).</li>
+<li>Data flowing through integrations is logged in the audit trail.</li>
+</ul>
+<p><strong>Integration health monitoring</strong> (decided in <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §56</a>):</p>
+<p>The integration hub runs periodic health checks per integration (API ping, token validity, last successful sync timestamp). Status is displayed in the integration settings screen: Connected (green), Degraded (amber), Failed (red).</p>
+<p>Alert escalation:</p>
+<ol>
+<li>In-app notification to OA after first failure</li>
+<li>Email alert after 3 consecutive failures</li>
+<li>Dashboard warning banner if a critical integration (payment processor, SMS provider) is down</li>
+</ol>
+<p>The integration detail screen shows a health timeline (last 30 days) so the OA can distinguish intermittent issues from sustained failures.</p>
+<h3 id="public-api" tabindex="-1"><a class="heading-anchor" href="#public-api" aria-hidden="true">#</a> Public API</h3>
+<p><strong>DECIDED:</strong> REST + webhooks. Public API from day one.</p>
+<ul>
+<li><strong>REST API:</strong> Documented, versioned, OAuth2-authenticated. Full CRUD on tenant resources (contacts, donations, events, campaigns, etc.) scoped by the caller's role and permissions.</li>
+<li><strong>Webhooks:</strong> Real-time event notifications — donation received, volunteer signed up, canvassing interaction recorded, event RSVP, etc. Tenants configure webhook endpoints and select which events to subscribe to.</li>
+<li><strong>Rate limiting:</strong> Per-tenant, per-API-key. Each pricing plan defines default rate limits. OAs can adjust limits per API key within the plan's ceiling (<a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §55</a>). Standard headers on all responses: <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code>, <code>X-RateLimit-Reset</code>.</li>
+<li><strong>Not an afterthought:</strong> The public API is the same API the GreenGrass frontend consumes. No private backdoors that the public API can't access. Tenants can build anything on top of GreenGrass that GreenGrass itself can build.</li>
+</ul>
+<p>This is a core commitment to the sovereignty model — tenants who can build on top of the platform aren't locked into it.</p>
+<hr>
+<h2 id="technology-stack" tabindex="-1"><a class="heading-anchor" href="#technology-stack" aria-hidden="true">#</a> Technology Stack</h2>
+<!-- DECISION NEEDED: Core technology choices.
+
+These are the highest-impact decisions for development velocity, hiring, and long-term maintenance.
+
+### Backend
+Options:
+- Node.js (TypeScript) — large ecosystem, async I/O suits web apps, TypeScript adds safety. Most hires know JS.
+- Go — excellent concurrency, compiles to single binary (good for self-hosted), fast. Smaller ecosystem for web apps.
+- Rust — maximum performance and safety, steep learning curve, slower development velocity.
+- Python (Django/FastAPI) — rapid development, huge ecosystem, good for data/AI integration. Performance limits at scale.
+- Elixir (Phoenix) — excellent concurrency model, real-time features built in (LiveView), smaller talent pool.
+
+### Frontend
+Options:
+- React / Next.js — dominant ecosystem, huge community, SSR support. Bundle size concerns for mobile-first.
+- SvelteKit — smaller bundles, better performance on low-end devices, less ecosystem.
+- Progressive Web App (PWA) — web-based, installable, works offline. Avoids app store gatekeeping.
+- React Native / Flutter — native mobile apps. Better performance, but two codebases (or cross-platform framework overhead).
+
+### Database
+Options:
+- PostgreSQL — feature-rich, excellent for structured data, JSON support, PostGIS for geographic data. Industry standard.
+- SQLite (tenant DB) + PostgreSQL (platform) — SQLite per tenant is lightweight and file-based, natural for single-tenant isolation. But limited concurrency.
+- CockroachDB — distributed PostgreSQL-compatible, built-in replication. More complex, may be overkill per tenant.
+
+### Mobile / Offline
+Options:
+- PWA with service workers + IndexedDB — web-based offline, no app store. Limited native API access.
+- PWA with SQLite (via WASM or capacitor) — web-based with robust offline DB.
+- Native app (React Native / Flutter) with SQLite — best offline experience, requires app store distribution.
+- Capacitor (web → native wrapper) — write web code, package as native app. Access to native APIs, single codebase.
+
+These choices are deeply interrelated. The recommendation section below proposes a coherent stack. -->
+<h3 id="decided-stack" tabindex="-1"><a class="heading-anchor" href="#decided-stack" aria-hidden="true">#</a> Decided stack</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend</td>
+<td>TypeScript (Node.js) with a framework TBD</td>
+<td>Large talent pool, shared language with frontend, strong typing, good async I/O. Suitable for the integration-heavy workload.</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>SvelteKit</td>
+<td>Smaller bundles critical for low-end devices and low-bandwidth. SSR for progressive enhancement. Less ecosystem than React but better performance profile for the target context.</td>
+</tr>
+<tr>
+<td>Mobile</td>
+<td>Capacitor (SvelteKit → native wrapper)</td>
+<td>Single codebase for launch. Web-first with native API access when needed (camera for QR check-in, biometrics for passkeys, offline storage).</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>PostgreSQL (per-tenant)</td>
+<td>Feature-rich, PostGIS for geographic data, excellent JSON support, proven at scale. One instance per tenant.</td>
+</tr>
+<tr>
+<td>Offline DB</td>
+<td>SQLite (SQLCipher) via Capacitor</td>
+<td>Encrypted offline storage on device. Lightweight, proven, no server dependency.</td>
+</tr>
+<tr>
+<td>Cache</td>
+<td>Redis</td>
+<td>Session management, rate limiting, real-time counters. Per-tenant instance or namespace.</td>
+</tr>
+<tr>
+<td>Job queue</td>
+<td>BullMQ (Redis-backed) or PostgreSQL-based (Graphile Worker)</td>
+<td>Async task processing: email sends, SMS dispatch, data imports, sync.</td>
+</tr>
+<tr>
+<td>Event stream</td>
+<td>NATS JetStream</td>
+<td>Lightweight, durable event streaming for real-time analytics. Simpler to operate per-tenant than Kafka.</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>Meilisearch or PostgreSQL full-text</td>
+<td>Meilisearch for fast, typo-tolerant search. PostgreSQL FTS as a simpler alternative that avoids an extra service.</td>
+</tr>
+<tr>
+<td>Object storage</td>
+<td>S3-compatible (MinIO for self-hosted)</td>
+<td>File uploads, media, exports, backups. MinIO provides S3 API on any infrastructure.</td>
+</tr>
+<tr>
+<td>Secrets management</td>
+<td>HashiCorp Vault</td>
+<td>Per-tenant encryption keys, API credentials, secrets rotation.</td>
+</tr>
+<tr>
+<td>Container orchestration</td>
+<td>Kubernetes (cloud-agnostic)</td>
+<td>Per-tenant container deployment across countries. Managed K8s where available, self-managed where needed. No GKE.</td>
+</tr>
+<tr>
+<td>IaC</td>
+<td>Terraform / OpenTofu</td>
+<td>Infrastructure as code for provisioning tenant infrastructure across providers and countries.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="native-ios-roadmap" tabindex="-1"><a class="heading-anchor" href="#native-ios-roadmap" aria-hidden="true">#</a> Native iOS roadmap</h3>
+<p>The Capacitor-wrapped SvelteKit app is the launch strategy, but the architecture must support a future native Swift iOS app without requiring backend changes.</p>
+<p><strong>Design constraints to preserve this option:</strong></p>
+<ul>
+<li><strong>API-first architecture:</strong> The backend exposes all functionality through the public REST API + webhooks. The SvelteKit frontend and Capacitor app are API consumers, not privileged clients. A future Swift app is just another API consumer.</li>
+<li><strong>No business logic in the frontend:</strong> All authorization, validation, and data processing happens server-side. The frontend is a presentation layer. A native app can replicate the UX without reimplementing business rules.</li>
+<li><strong>Offline sync protocol is client-agnostic:</strong> The event sourcing sync protocol (event push/pull, conflict detection) is defined at the API level, not coupled to a specific client implementation. A Swift app implements the same sync protocol against the same endpoints.</li>
+<li><strong>SQLCipher available on iOS natively:</strong> The offline database choice (SQLite + SQLCipher) has first-class Swift support, so the offline architecture translates directly to a native app.</li>
+<li><strong>WebAuthn/passkeys are platform-native on iOS:</strong> The passkey auth flow works natively on Apple devices — no Capacitor bridge needed for a Swift app.</li>
+</ul>
+<hr>
+<h2 id="deployment-architecture" tabindex="-1"><a class="heading-anchor" href="#deployment-architecture" aria-hidden="true">#</a> Deployment Architecture</h2>
+<h3 id="per-country-deployment" tabindex="-1"><a class="heading-anchor" href="#per-country-deployment" aria-hidden="true">#</a> Per-country deployment</h3>
+<pre><code>Country A (e.g., US/Puerto Rico)          Country B (e.g., Brazil)
+┌──────────────────────────┐             ┌──────────────────────────┐
+│  K8s Cluster              │             │  K8s Cluster              │
+│  ┌────────┐ ┌────────┐   │             │  ┌────────┐ ┌────────┐   │
+│  │Tenant 1│ │Tenant 2│   │             │  │Tenant 5│ │Tenant 6│   │
+│  └────────┘ └────────┘   │             │  └────────┘ └────────┘   │
+│  ┌────────┐               │             │  ┌────────┐               │
+│  │Tenant 3│               │             │  │Tenant 7│               │
+│  └────────┘               │             │  └────────┘               │
+│                            │             │                            │
+│  Platform Services (local) │             │  Platform Services (local) │
+│  - Identity replica        │             │  - Identity replica        │
+│  - Provisioning agent      │             │  - Provisioning agent      │
+│  - Monitoring              │             │  - Monitoring              │
+└──────────────────────────┘             └──────────────────────────┘
+              │                                       │
+              └───────────────┬───────────────────────┘
+                              │
+                   ┌──────────────────────┐
+                   │  Central Platform     │
+                   │  (incorporation       │
+                   │   jurisdiction)       │
+                   │                       │
+                   │  - Identity primary   │
+                   │  - Federation layer   │
+                   │  - Platform Admin     │
+                   │  - Billing            │
+                   │  - Provisioning       │
+                   │    orchestrator       │
+                   └──────────────────────┘
+</code></pre>
+<h3 id="self-hosted-deployment" tabindex="-1"><a class="heading-anchor" href="#self-hosted-deployment" aria-hidden="true">#</a> Self-hosted deployment</h3>
+<p>For self-hosted tenants, GreenGrass provides:</p>
+<ul>
+<li><strong>Application package:</strong> Container images, Helm charts, configuration templates.</li>
+<li><strong>Installation documentation:</strong> Step-by-step deployment guide.</li>
+<li><strong>Update mechanism:</strong> Versioned releases, migration scripts, one-command update process.</li>
+<li><strong>Health check endpoint:</strong> Self-hosted instances can optionally phone home for update notifications and health monitoring (opt-in, not required).</li>
+<li><strong>No telemetry by default.</strong> Self-hosted tenants share nothing with GreenGrass unless they choose to.</li>
+</ul>
+<p><strong>DECIDED:</strong> Auto-update with rollback, with prominent notifications.</p>
+<ul>
+<li><strong>Auto-update by default:</strong> Self-hosted instances check for updates and apply them automatically during a configurable maintenance window. Automatic rollback on failure — if health checks don't pass after the update, the system reverts to the previous version.</li>
+<li><strong>Prominent notifications:</strong> Before, during, and after updates, the Org Admin receives clear, prominent notifications — what's being updated, when, what changed, and whether the update succeeded or rolled back. No silent updates.</li>
+<li><strong>Security updates are immediate:</strong> Critical security patches bypass the maintenance window and apply as soon as possible, with notification.</li>
+<li><strong>Deferral option:</strong> Org Admin can defer non-security updates for a limited window (e.g., up to 2 weeks) if timing is bad (mid-election). Security patches cannot be deferred.</li>
+<li><strong>Changelog transparency:</strong> Every update includes a human-readable changelog. Open source application code means the tenant can inspect every change before or after it's applied.</li>
+</ul>
+<hr>
+<h2 id="open-questions-all-resolved" tabindex="-1"><a class="heading-anchor" href="#open-questions-all-resolved" aria-hidden="true">#</a> Open Questions — All Resolved</h2>
+<ol>
+<li><s>Container orchestration</s> → Kubernetes, cloud-agnostic, no GKE</li>
+<li><s>Identity service location</s> → Centralized primary + per-country read replicas</li>
+<li><s>Geographic data</s> → Pre-loaded + import + community contribution</li>
+<li><s>Searchable encryption</s> → Blind index for identifiers, decrypt-on-read for notes/scores</li>
+<li><s>Key rotation</s> → Tenant decides with strong guidance</li>
+<li><s>Sync protocol</s> → Event sourcing</li>
+<li><s>Event streaming</s> → NATS JetStream</li>
+<li><s>Email infrastructure</s> → Self-hosted, per-country</li>
+<li><s>AI models</s> → <s>Hybrid (external API for managed-key, self-hosted for BYOK)</s> → <strong>BYOM</strong> (Bring Your Own Model) — orgs configure their own AI provider; platform provides default fallback. Supersedes the hybrid model per <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §38</a>.</li>
+<li><s>Public API</s> → REST + webhooks, day one</li>
+<li><s>Technology stack</s> → Validated (TypeScript/SvelteKit/Capacitor/PostgreSQL), native iOS path preserved</li>
+<li><s>Self-hosted updates</s> → Auto-update with rollback + prominent notifications</li>
+<li><s>Tenant URLs</s> → Subdomain default + custom domain support</li>
+<li><s>Data retention</s> → Tiered (operational/compliance/audit/import rollback) per <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016 §4</a>. Supersedes ADR-004's uniform 10-year policy.</li>
+<li><s>89 wireframe open questions</s> → All resolved per <a href="../../decisions/016-cross-cutting-resolutions.html">ADR-016</a></li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#overview"># Overview</a></li><li class="toc-3"><a href="#architectural-drivers"># Architectural Drivers</a></li><li class="toc-2"><a href="#system-topology"># System Topology</a></li><li class="toc-3"><a href="#three-layer-architecture"># Three-layer architecture:</a></li><li class="toc-2"><a href="#tenant-architecture"># Tenant Architecture</a></li><li class="toc-3"><a href="#whats-inside-a-tenant"># What's inside a tenant</a></li><li class="toc-3"><a href="#isolation-tiers"># Isolation tiers</a></li><li class="toc-3"><a href="#tenant-provisioning-pipeline"># Tenant provisioning pipeline</a></li><li class="toc-3"><a href="#public-page-infrastructure"># Public page infrastructure</a></li><li class="toc-3"><a href="#settings-export"># Settings export</a></li><li class="toc-2"><a href="#data-model"># Data Model</a></li><li class="toc-3"><a href="#platform-level-entities-shared-across-tenants"># Platform-level entities (shared across tenants)</a></li><li class="toc-3"><a href="#tenant-level-entities-per-tenant-database"># Tenant-level entities (per-tenant database)</a></li><li class="toc-3"><a href="#geographic-data-model"># Geographic data model</a></li><li class="toc-3"><a href="#export-audit-policy"># Export audit policy</a></li><li class="toc-3"><a href="#dedup-confidence-engine"># Dedup confidence engine</a></li><li class="toc-3"><a href="#dynamic-segment-refresh"># Dynamic segment refresh</a></li><li class="toc-2"><a href="#identity-authentication-architecture"># Identity &amp;amp; Authentication Architecture</a></li><li class="toc-3"><a href="#platform-identity-service"># Platform identity service</a></li><li class="toc-3"><a href="#authentication-flow"># Authentication flow</a></li><li class="toc-3"><a href="#field-mode-authentication"># Field mode authentication</a></li><li class="toc-3"><a href="#destructive-operation-approval"># Destructive operation approval</a></li><li class="toc-2"><a href="#encryption-architecture"># Encryption Architecture</a></li><li class="toc-3"><a href="#key-hierarchy"># Key hierarchy</a></li><li class="toc-3"><a href="#envelope-encryption"># Envelope encryption</a></li><li class="toc-3"><a href="#application-level-encryption"># Application-level encryption</a></li><li class="toc-3"><a href="#e2e-messaging-encryption"># E2E messaging encryption</a></li><li class="toc-3"><a href="#byok-key-management-ux"># BYOK key management UX</a></li><li class="toc-2"><a href="#offline-architecture"># Offline Architecture</a></li><li class="toc-3"><a href="#sync-engine"># Sync engine</a></li><li class="toc-3"><a href="#on-device-storage"># On-device storage</a></li><li class="toc-3"><a href="#sync-protocol"># Sync protocol</a></li><li class="toc-2"><a href="#data-retention-architecture"># Data Retention Architecture</a></li><li class="toc-3"><a href="#four-tier-retention-model"># Four-tier retention model</a></li><li class="toc-3"><a href="#metadata-vs-content-distinction"># Metadata vs. content distinction</a></li><li class="toc-3"><a href="#reconciliation-with-adr-004"># Reconciliation with ADR-004</a></li><li class="toc-3"><a href="#purge-lifecycle"># Purge lifecycle</a></li><li class="toc-2"><a href="#communication-infrastructure"># Communication Infrastructure</a></li><li class="toc-3"><a href="#email"># Email</a></li><li class="toc-3"><a href="#sms-whatsapp"># SMS / WhatsApp</a></li><li class="toc-3"><a href="#social-media"># Social media</a></li><li class="toc-3"><a href="#cross-channel-orchestration-engine"># Cross-channel orchestration engine</a></li><li class="toc-2"><a href="#payment-architecture"># Payment Architecture</a></li><li class="toc-3"><a href="#payment-adapter-pattern"># Payment adapter pattern</a></li><li class="toc-3"><a href="#event-ticket-routing"># Event ticket routing</a></li><li class="toc-2"><a href="#analytics-architecture"># Analytics Architecture</a></li><li class="toc-3"><a href="#real-time-pipeline-active-operations"># Real-time pipeline (active operations)</a></li><li class="toc-3"><a href="#batch-pipeline-historical-analysis"># Batch pipeline (historical analysis)</a></li><li class="toc-3"><a href="#dashboard-polling-infrastructure"># Dashboard polling infrastructure</a></li><li class="toc-2"><a href="#election-day-architecture"># Election Day Architecture</a></li><li class="toc-3"><a href="#election-data-schema-and-ingestion"># Election data schema and ingestion</a></li><li class="toc-3"><a href="#results-entry-verification-pipeline"># Results entry verification pipeline</a></li><li class="toc-3"><a href="#alliance-ride-sharing"># Alliance ride sharing</a></li><li class="toc-2"><a href="#localization-architecture"># Localization Architecture</a></li><li class="toc-3"><a href="#i18n-framework"># I18n framework</a></li><li class="toc-3"><a href="#content-localization-data-model"># Content localization data model</a></li><li class="toc-2"><a href="#ai-integration"># AI Integration</a></li><li class="toc-3"><a href="#byom-architecture"># BYOM architecture</a></li><li class="toc-3"><a href="#activism-message-generation"># Activism message generation</a></li><li class="toc-3"><a href="#translation-service"># Translation service</a></li><li class="toc-3"><a href="#ai-concierge"># AI concierge</a></li><li class="toc-2"><a href="#integration-architecture"># Integration Architecture</a></li><li class="toc-3"><a href="#external-system-integrations"># External system integrations</a></li><li class="toc-3"><a href="#public-api"># Public API</a></li><li class="toc-2"><a href="#technology-stack"># Technology Stack</a></li><li class="toc-3"><a href="#decided-stack"># Decided stack</a></li><li class="toc-3"><a href="#native-ios-roadmap"># Native iOS roadmap</a></li><li class="toc-2"><a href="#deployment-architecture"># Deployment Architecture</a></li><li class="toc-3"><a href="#per-country-deployment"># Per-country deployment</a></li><li class="toc-3"><a href="#self-hosted-deployment"># Self-hosted deployment</a></li><li class="toc-2"><a href="#open-questions-all-resolved"># Open Questions — All Resolved</a></li></ul></nav></div>
+</div>
+<script src="../../assets/search.js" defer></script>
+<script src="../../assets/app.js" defer></script>
+</body>
+</html>

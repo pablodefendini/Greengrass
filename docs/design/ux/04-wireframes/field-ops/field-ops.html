@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Operations (Admin) Wireframes · GreenGrass</title>
+<meta name="description" content="Field Operations (Admin) Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="./field-ops.html" aria-current="page" class="active">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="field-operations-admin-wireframes" tabindex="-1"><a class="heading-anchor" href="#field-operations-admin-wireframes" aria-hidden="true">#</a> Field Operations (Admin) Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document wireframes the admin-side screens for the three field operation types: canvassing, phone banking, and voter registration. These are the planning, configuration, and review screens used by the Field Director and Org Admin — the setup work that precedes the volunteer-facing field mode (wireframed in <code>field-mode/field-mode.md</code>).</p>
+<p>The core challenge: field operations have the most complex setup-to-execution pipeline in the platform. A canvassing campaign flows from campaign creation → script building → turf cutting → walk list generation → volunteer assignment → field execution → results review. The admin UX must make this pipeline feel like a sequence of clear steps, not an overwhelming control panel.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CANV-001</td>
+<td>Canvassing Campaign List</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Canvassing</td>
+</tr>
+<tr>
+<td>CANV-002</td>
+<td>Canvassing Campaign Create/Edit</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Canvassing</td>
+</tr>
+<tr>
+<td>CANV-003</td>
+<td>Script Builder</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Canvassing</td>
+</tr>
+<tr>
+<td>CANV-004</td>
+<td>Turf Management Map</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Canvassing</td>
+</tr>
+<tr>
+<td>CANV-005</td>
+<td>Turf Auto-Generation</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Canvassing</td>
+</tr>
+<tr>
+<td>CANV-006</td>
+<td>Walk List Management</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Canvassing</td>
+</tr>
+<tr>
+<td>CANV-013</td>
+<td>Canvassing Results Review</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Canvassing</td>
+</tr>
+<tr>
+<td>CANV-014</td>
+<td>Canvassing Progress Map</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Canvassing</td>
+</tr>
+<tr>
+<td>PHONE-001</td>
+<td>Phone Bank Campaign List</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Phone Banking</td>
+</tr>
+<tr>
+<td>PHONE-002</td>
+<td>Phone Bank Campaign Create/Edit</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Phone Banking</td>
+</tr>
+<tr>
+<td>PHONE-003</td>
+<td>Phone Bank Script Builder</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Phone Banking</td>
+</tr>
+<tr>
+<td>PHONE-007</td>
+<td>Phone Bank Progress Dashboard</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Phone Banking</td>
+</tr>
+<tr>
+<td>VREG-001</td>
+<td>Voter Reg Drive List</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Voter Registration</td>
+</tr>
+<tr>
+<td>VREG-002</td>
+<td>Voter Reg Drive Create/Edit</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Voter Registration</td>
+</tr>
+<tr>
+<td>VREG-003</td>
+<td>Voter Reg Jurisdiction Template Selector</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Voter Registration</td>
+</tr>
+<tr>
+<td>VREG-006</td>
+<td>Voter Reg Results Review</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Voter Registration</td>
+</tr>
+</tbody>
+</table>
+<p>Field mode screens (CANV-007 through CANV-012, PHONE-004 through PHONE-006, VREG-004, VREG-005) are wireframed in <code>field-mode/field-mode.md</code>.</p>
+<h2 id="field-director-navigation-context" tabindex="-1"><a class="heading-anchor" href="#field-director-navigation-context" aria-hidden="true">#</a> Field Director Navigation Context</h2>
+<p>The Field Director's sidebar organizes field operations by type:</p>
+<pre><code>OVERVIEW
+  Dashboard           → DASH-002 (Field Operations)
+
+CANVASSING
+  Campaigns           → CANV-001
+  Scripts             → CANV-003
+  Turfs               → CANV-004
+  Walk Lists          → CANV-006
+  Results             → CANV-013
+  Progress Map        → CANV-014
+
+PHONE BANKING
+  Campaigns           → PHONE-001
+  Scripts             → PHONE-003
+  Progress            → PHONE-007
+
+VOTER REGISTRATION
+  Drives              → VREG-001
+  Results             → VREG-006
+
+PEOPLE
+  Contacts            → CRM-001
+  Segments            → CRM-005
+
+MESSAGING
+  Messages            → messaging screens
+</code></pre>
+<hr>
+<h2 id="shared-patterns" tabindex="-1"><a class="heading-anchor" href="#shared-patterns" aria-hidden="true">#</a> Shared Patterns</h2>
+<p>These three feature areas share common patterns:</p>
+<ul>
+<li><strong>Campaign list → Campaign detail → Create/Edit</strong> — standard list/detail/form pattern</li>
+<li><strong>Script builder</strong> — canvassing and phone banking both need configurable scripts with branching questions</li>
+<li><strong>Results review</strong> — all three have post-operation review screens with similar metrics</li>
+<li><strong>Geographic components</strong> — canvassing and voter registration involve map-based turf management</li>
+</ul>
+<hr>
+<h2 id="canvassing" tabindex="-1"><a class="heading-anchor" href="#canvassing" aria-hidden="true">#</a> Canvassing</h2>
+<h3 id="canv-001-canvassing-campaign-list" tabindex="-1"><a class="heading-anchor" href="#canv-001-canvassing-campaign-list" aria-hidden="true">#</a> CANV-001: Canvassing Campaign List</h3>
+<h4 id="personas" tabindex="-1"><a class="heading-anchor" href="#personas" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Canvassing Campaigns                                                   8    │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  [🔍 Search campaigns...]              [Filter ▾]  [+ New Campaign]         │
+│                                                                              │
+│  Active filters: Status: Active  ·  [Clear all]                             │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Campaign             Type          Progress     Shifts    Status   │   │
+│  │  ─────────────────────────────────────────────────────────────────  │   │
+│  │  Northside Canvas     Voter ID      71%          12/15     Active   │   │
+│  │  4 turfs · 200 doors remaining · 8 volunteers today                 │   │
+│  │                                                                      │   │
+│  │  Westside Follow-up   Persuasion    42%           8/20     Active   │   │
+│  │  2 turfs · 116 doors remaining · 3 volunteers today                 │   │
+│  │                                                                      │   │
+│  │  Eastside Voter ID    Voter ID      22%           4/12     Active   │   │
+│  │  3 turfs · 390 doors remaining · 0 volunteers today                 │   │
+│  │                                                                      │   │
+│  │  Phone Bank Wave 3    —             —             0/8      Draft    │   │
+│  │  ⚠ Missing script · 500 contacts in list                           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  [Active]  [Draft]  [Completed]  [All]                                      │
+│                                                                              │
+│  ◀  Page 1 of 1  ▶                               Showing 1–8 of 8          │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h4>
+<pre><code>┌──────────────────────────────┐
+│  ≡  Canvassing       🔍  +  │
+├──────────────────────────────┤
+│  Active · 3 campaigns        │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Northside Canvas        ││
+│  │  Voter ID · 71%         ││
+│  │  ▓▓▓▓▓▓▓░░░             ││
+│  │  12/15 shifts · 8 today ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  Westside Follow-up      ││
+│  │  Persuasion · 42%       ││
+│  │  ▓▓▓▓░░░░░░             ││
+│  │  8/20 shifts · 3 today  ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  Eastside Voter ID       ││
+│  │  Voter ID · 22%         ││
+│  │  ▓▓░░░░░░░░             ││
+│  │  4/12 shifts · 0 today  ││
+│  └──────────────────────────┘│
+│  ...                         │
+│                              │
+├──────────────────────────────┤
+│ 📊     🚪     🗺     💬    ⋯│
+│ Dash  Canvas  Turfs  Msgs More│
+└──────────────────────────────┘
+</code></pre>
+<h4 id="interaction-specs" tabindex="-1"><a class="heading-anchor" href="#interaction-specs" aria-hidden="true">#</a> Interaction Specs</h4>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Action</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campaign row</td>
+<td>Click</td>
+<td>Navigate to campaign detail (progress, turfs, shifts, results)</td>
+</tr>
+<tr>
+<td>+ New Campaign</td>
+<td>Click</td>
+<td>Navigate to CANV-002</td>
+</tr>
+<tr>
+<td>Draft with warning</td>
+<td>Click warning</td>
+<td>Navigate to the incomplete step (e.g., script builder)</td>
+</tr>
+<tr>
+<td>Status tabs</td>
+<td>Click</td>
+<td>Filter by status</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="canv-002-canvassing-campaign-create-edit" tabindex="-1"><a class="heading-anchor" href="#canv-002-canvassing-campaign-create-edit" aria-hidden="true">#</a> CANV-002: Canvassing Campaign Create / Edit</h3>
+<h4 id="personas-1" tabindex="-1"><a class="heading-anchor" href="#personas-1" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Campaigns    New Canvassing Campaign                 [Cancel]  [Save]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Campaign Details                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  Campaign name *     [                                          ]           │
+│                                                                              │
+│  Campaign type *     [Voter Identification              ▾]                  │
+│                      Options: Voter ID, Persuasion, GOTV, Voter Reg,        │
+│                      Issue Advocacy, Follow-up                               │
+│                                                                              │
+│  Description         [                                          ]           │
+│                      [                                          ]           │
+│                                                                              │
+│  Schedule                                                                    │
+│  ────────────────                                                            │
+│                                                                              │
+│  Start date *        [March 1, 2024         ]                               │
+│  End date            [April 30, 2024        ]                               │
+│  Shift times         [+ Add shift time]                                     │
+│                      Sat 9:00 AM – 12:00 PM  [✕]                           │
+│                      Sat 1:00 PM – 4:00 PM   [✕]                           │
+│                      Sun 10:00 AM – 1:00 PM  [✕]                           │
+│                                                                              │
+│  Target                                                                      │
+│  ────────────────                                                            │
+│                                                                              │
+│  Target segment *    [Select segment...                 ▾]                  │
+│                      Or: [All voters in selected turfs]                      │
+│  Goal                [5,000     ] doors                                     │
+│                                                                              │
+│  Script                                                          [▾]       │
+│  ────────────────                                                            │
+│                                                                              │
+│  ◉ Create new script      [Open Script Builder →]                          │
+│  ○ Use existing script    [Select script...              ▾]                 │
+│  ○ No script (notes only)                                                   │
+│                                                                              │
+│  Turfs                                                           [▾]       │
+│  ────────────────                                                            │
+│                                                                              │
+│  ◉ Select existing turfs  [Select turfs on map →]                          │
+│  ○ Auto-generate turfs    [Configure auto-generation →]                    │
+│  ○ Assign later                                                             │
+│                                                                              │
+│  Advanced                                                        [▸]       │
+│  ────────────────                                                            │
+│  Data download scope, offline data limits, shift auto-close rules           │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  [Cancel]                                    [Save as Draft]  [Activate →]  │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes" tabindex="-1"><a class="heading-anchor" href="#design-notes" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Two save actions:</strong> &quot;Save as Draft&quot; preserves incomplete campaigns. &quot;Activate&quot; validates all required fields (script, turfs, at least one shift) and makes the campaign available for volunteer signup.</li>
+<li><strong>Script and Turfs are inline launch points</strong> — the user can jump to the Script Builder or Turf Map from this form and return</li>
+<li><strong>Shift times are repeating slots</strong> — the Field Director defines the available time windows, volunteers sign up for specific dates within those windows</li>
+<li><strong>Desktop only</strong> (per screen inventory) — campaign creation is planning work</li>
+</ul>
+<hr>
+<h3 id="canv-003-script-builder" tabindex="-1"><a class="heading-anchor" href="#canv-003-script-builder" aria-hidden="true">#</a> CANV-003: Script Builder</h3>
+<p>A structured editor for creating canvassing scripts with branching questions and response options.</p>
+<h4 id="personas-2" tabindex="-1"><a class="heading-anchor" href="#personas-2" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Campaign    Script Builder                           [Cancel]  [Save]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Script name *     [Northside Voter ID Script                    ]          │
+│                                                                              │
+│  ┌──────────────────────────────┬────────────────────────────────────────┐  │
+│  │  Script Structure            │  Preview                               │  │
+│  │  ────────────────            │  ─────────                             │  │
+│  │                              │                                        │  │
+│  │  1. ☰ Introduction           │  ┌────────────────────────────────┐   │  │
+│  │     &quot;Hi, my name is...&quot;      │  │  Hi, my name is {volunteer}    │   │  │
+│  │                              │  │  and I'm with Partido Verde.   │   │  │
+│  │  2. ☰ Support Question       │  │  We're talking to voters in    │   │  │
+│  │     &quot;How do you feel...&quot;    │  │  the neighborhood about the     │   │  │
+│  │     ◻ Strong Support        │  │  upcoming election.             │   │  │
+│  │     ◻ Lean Support          │  │                                  │   │  │
+│  │     ◻ Undecided             │  │  How do you feel about the      │   │  │
+│  │     ◻ Lean Oppose           │  │  candidates running for         │   │  │
+│  │     ◻ Strong Oppose         │  │  mayor?                         │   │  │
+│  │     ◻ Refused               │  │                                  │   │  │
+│  │                              │  │  ○ Strong Support               │   │  │
+│  │  3. ☰ Key Issues             │  │  ○ Lean Support                 │   │  │
+│  │     &quot;What issues matter...&quot;  │  │  ○ Undecided                    │   │  │
+│  │     ☑ Multiple select       │  │  ○ Lean Oppose                  │   │  │
+│  │     ◻ Education             │  │  ○ Strong Oppose                │   │  │
+│  │     ◻ Environment           │  │  ○ Refused                      │   │  │
+│  │     ◻ Economy               │  │                                  │   │  │
+│  │     ◻ Healthcare            │  │                                  │   │  │
+│  │     ◻ Public Safety         │  │                                  │   │  │
+│  │                              │  │                                  │   │  │
+│  │  4. ☰ Volunteer Ask          │  │                                  │   │  │
+│  │     &quot;Would you like...&quot;     │  │                                  │   │  │
+│  │     ◻ Yes                   │  │                                  │   │  │
+│  │     ◻ Maybe later           │  │                                  │   │  │
+│  │     ◻ No                    │  │                                  │   │  │
+│  │                              │  │                                  │   │  │
+│  │  5. ☰ Closing                │  │                                  │   │  │
+│  │     &quot;Thank you for...&quot;      │  │                                  │   │  │
+│  │                              │  └────────────────────────────────┘   │  │
+│  │  [+ Add Step]               │                                        │  │
+│  │                              │                                        │  │
+│  └──────────────────────────────┴────────────────────────────────────────┘  │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  [Cancel]                                                          [Save]   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="step-editor-expanded" tabindex="-1"><a class="heading-anchor" href="#step-editor-expanded" aria-hidden="true">#</a> Step Editor (expanded)</h4>
+<p>Clicking a step in the structure panel expands its editor:</p>
+<pre><code>┌──────────────────────────────────────────────┐
+│  Step 2: Support Question                 ✕  │
+│  ────────────────────                        │
+│                                              │
+│  Step type:  [Question — Single Select  ▾]   │
+│                                              │
+│  Prompt text:                                │
+│  [How do you feel about the candidates     ] │
+│  [running for mayor?                       ] │
+│                                              │
+│  Talking points (shown to volunteer):        │
+│  [If undecided: mention park restoration   ] │
+│  [plan and community investment priorities ] │
+│                                              │
+│  Response options:                           │
+│  [Strong Support    ]  Maps to: Score 5  ✕  │
+│  [Lean Support      ]  Maps to: Score 4  ✕  │
+│  [Undecided         ]  Maps to: Score 3  ✕  │
+│  [Lean Oppose       ]  Maps to: Score 2  ✕  │
+│  [Strong Oppose     ]  Maps to: Score 1  ✕  │
+│  [Refused           ]  Maps to: —        ✕  │
+│  [+ Add option]                              │
+│                                              │
+│  ☐ Required (volunteer must select before    │
+│    proceeding)                                │
+│                                              │
+│  Branching:                                  │
+│  If &quot;Strong Support&quot; → Skip to: Step 4       │
+│  If &quot;Strong Oppose&quot;  → Skip to: Step 5       │
+│  Otherwise           → Continue to next      │
+│                                              │
+│  [Done]                                      │
+└──────────────────────────────────────────────┘
+</code></pre>
+<h4 id="step-types" tabindex="-1"><a class="heading-anchor" href="#step-types" aria-hidden="true">#</a> Step Types</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text</strong></td>
+<td>Display-only talking points or instructions</td>
+<td>Introduction, closing, transition prompts</td>
+</tr>
+<tr>
+<td><strong>Question — Single Select</strong></td>
+<td>One answer from a list</td>
+<td>Support level, yes/no, candidate preference</td>
+</tr>
+<tr>
+<td><strong>Question — Multiple Select</strong></td>
+<td>Multiple answers from a list</td>
+<td>Key issues, interests</td>
+</tr>
+<tr>
+<td><strong>Question — Free Text</strong></td>
+<td>Open-ended text input</td>
+<td>Notes, specific concerns, follow-up details</td>
+</tr>
+<tr>
+<td><strong>Question — Rating</strong></td>
+<td>1–5 scale</td>
+<td>Issue importance, satisfaction</td>
+</tr>
+<tr>
+<td><strong>Action</strong></td>
+<td>Prompt for a physical action</td>
+<td>&quot;Hand the voter a flyer&quot;, &quot;Offer yard sign&quot;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="design-notes-1" tabindex="-1"><a class="heading-anchor" href="#design-notes-1" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Split-pane layout</strong> — structure/outline on left, live preview on right. The Field Director can see what the volunteer will see as they build.</li>
+<li><strong>Drag-to-reorder</strong> — steps can be rearranged by dragging the ☰ handle</li>
+<li><strong>Branching</strong> — simple skip logic: if a specific response is selected, jump to a different step. Covers 90% of branching needs without a full flowchart editor.</li>
+<li><strong>Score mapping</strong> — response options map to support scores (1–5). This populates the contact record's support score automatically.</li>
+<li><strong>Talking points</strong> — coaching text visible to the volunteer but not part of the recorded response. Helps volunteers handle common scenarios.</li>
+<li><strong>Desktop only</strong> (per screen inventory) — script building needs the split-pane layout</li>
+<li><strong>Reusable scripts</strong> — saved scripts can be used across multiple campaigns. Changes to a script after campaigns are active create a new version (active campaigns keep their version).</li>
+</ul>
+<hr>
+<h3 id="canv-004-turf-management-map" tabindex="-1"><a class="heading-anchor" href="#canv-004-turf-management-map" aria-hidden="true">#</a> CANV-004: Turf Management Map</h3>
+<p>Interactive map for drawing, editing, and assigning canvassing turfs.</p>
+<h4 id="personas-3" tabindex="-1"><a class="heading-anchor" href="#personas-3" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Turf Management                                   Campaign: Northside       │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  ┌───────────────────────────────────────────────┬──────────────────────┐   │
+│  │                                               │  Turfs (4)           │   │
+│  │                                               │  ──────────          │   │
+│  │          [Map Interface]                      │                      │   │
+│  │                                               │  ● Turf A            │   │
+│  │    ┌─────────┐                                │    50 doors          │   │
+│  │    │ Turf A  │  ┌─────────┐                   │    Assigned: Team 1  │   │
+│  │    │  (blue) │  │ Turf B  │                   │    71% complete      │   │
+│  │    │         │  │ (green) │                   │                      │   │
+│  │    └─────────┘  │         │  ┌─────────┐      │  ● Turf B            │   │
+│  │                 └─────────┘  │ Turf C  │      │    50 doors          │   │
+│  │                              │(orange) │      │    Assigned: Team 2  │   │
+│  │    ┌─────────────┐          └─────────┘      │    68% complete      │   │
+│  │    │   Turf D    │                            │                      │   │
+│  │    │   (purple)  │                            │  ● Turf C            │   │
+│  │    │             │                            │    50 doors          │   │
+│  │    └─────────────┘                            │    Assigned: —       │   │
+│  │                                               │    0% complete       │   │
+│  │    [Draw] [Select] [Zoom+] [Zoom-] [Layers]  │                      │   │
+│  │                                               │  ● Turf D            │   │
+│  │    🟢 &gt;70%  🟡 30-70%  🔴 &lt;30%  ⚪ Unstarted │    50 doors          │   │
+│  │                                               │    Assigned: —       │   │
+│  └───────────────────────────────────────────────┤    0% complete       │   │
+│                                                   │                      │   │
+│                                                   │  [+ Draw New Turf]   │   │
+│                                                   │  [Auto-Generate →]   │   │
+│                                                   │                      │   │
+│                                                   │  Total: 200 doors   │   │
+│                                                   │  Covered: 142 (71%) │   │
+│                                                   └──────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="map-tools" tabindex="-1"><a class="heading-anchor" href="#map-tools" aria-hidden="true">#</a> Map Tools</h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Draw</strong></td>
+<td>Click to place polygon vertices on the map. Close the polygon to create a turf boundary.</td>
+</tr>
+<tr>
+<td><strong>Select</strong></td>
+<td>Click a turf on the map to select it. Shows turf details in the side panel.</td>
+</tr>
+<tr>
+<td><strong>Zoom</strong></td>
+<td>Standard map zoom controls</td>
+</tr>
+<tr>
+<td><strong>Layers</strong></td>
+<td>Toggle: voter density heatmap, precinct boundaries, completed doors, active volunteers</td>
+</tr>
+</tbody>
+</table>
+<h4 id="turf-side-panel-when-selected" tabindex="-1"><a class="heading-anchor" href="#turf-side-panel-when-selected" aria-hidden="true">#</a> Turf Side Panel (when selected)</h4>
+<pre><code>┌──────────────────────┐
+│  Turf A           ✕  │
+│  ────────            │
+│                      │
+│  Doors: 50           │
+│  Completed: 36 (72%) │
+│  Remaining: 14       │
+│                      │
+│  Est. walk time: 45m │
+│  Est. distance: 1.2km│
+│                      │
+│  Assignment           │
+│  ─────────            │
+│  Team: [Team 1    ▾] │
+│  Shift: [Sat AM   ▾] │
+│                      │
+│  Walk List            │
+│  ─────────            │
+│  [View walk list →]  │
+│  [Regenerate route]  │
+│                      │
+│  [Edit boundary]     │
+│  [Delete turf]       │
+└──────────────────────┘
+</code></pre>
+<h4 id="design-notes-2" tabindex="-1"><a class="heading-anchor" href="#design-notes-2" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Map + list split</strong> — the map shows boundaries visually, the panel provides data and actions. Clicking a turf on the map or in the list selects it in both.</li>
+<li><strong>Color coding by completion</strong> — immediate visual feedback on campaign progress</li>
+<li><strong>Voter density heatmap layer</strong> — helps the Field Director draw turfs where voters actually are, not just geographic shapes</li>
+<li><strong>Walk time estimates</strong> — based on the routing engine (OSRM). Helps size turfs for a realistic shift.</li>
+<li><strong>Desktop only</strong> (per screen inventory) — map-heavy workflow needs screen real estate</li>
+</ul>
+<hr>
+<h3 id="canv-005-turf-auto-generation" tabindex="-1"><a class="heading-anchor" href="#canv-005-turf-auto-generation" aria-hidden="true">#</a> CANV-005: Turf Auto-Generation</h3>
+<p>Automated turf creation based on constraints. Reduces manual turf drawing for large campaigns.</p>
+<h4 id="personas-4" tabindex="-1"><a class="heading-anchor" href="#personas-4" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Turf Management    Auto-Generate Turfs                                    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Area                                                                        │
+│  ────                                                                        │
+│  Generate turfs within: [Northside — Campaign boundary      ▾]              │
+│  Contains: 892 addresses with 1,247 voters                                   │
+│                                                                              │
+│  Constraints                                                                 │
+│  ───────────                                                                 │
+│                                                                              │
+│  Target doors per turf:     [40] – [60]                                     │
+│  Max walk time per turf:    [60] minutes                                    │
+│  Respect precinct boundaries: ◉ Yes  ○ No                                  │
+│  Optimize for:              ◉ Walk time  ○ Voter density  ○ Balanced       │
+│                                                                              │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  Preview                                                                     │
+│  ────────                                                                    │
+│                                                                              │
+│  ┌───────────────────────────────────────────────┐  Generated: 16 turfs    │
+│  │                                               │  Avg: 48 doors/turf     │
+│  │          [Map showing auto-generated          │  Avg walk time: 42 min  │
+│  │           turf boundaries with                │  Total coverage: 892    │
+│  │           color-coded polygons]                │  addresses (100%)       │
+│  │                                               │                         │
+│  │                                               │  Uncovered: 0           │
+│  │                                               │                         │
+│  └───────────────────────────────────────────────┘                          │
+│                                                                              │
+│  ⚠ 2 turfs exceed 60-minute walk estimate.                                  │
+│  [Adjust constraints and regenerate]                                         │
+│                                                                              │
+│  [Cancel]                    [Regenerate]              [Accept &amp; Save →]    │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-3" tabindex="-1"><a class="heading-anchor" href="#design-notes-3" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Constraint-based</strong> — the Field Director sets guardrails, the system optimizes within them</li>
+<li><strong>Live preview</strong> — the map updates with generated turfs so the Field Director can evaluate before accepting</li>
+<li><strong>Warnings for constraint violations</strong> — turfs that exceed limits are flagged</li>
+<li><strong>Regenerate</strong> re-runs the algorithm (produces different results due to non-deterministic optimization)</li>
+<li><strong>After accepting</strong>, turfs appear in the Turf Management Map (CANV-004) for manual adjustment</li>
+<li><strong>Desktop only</strong></li>
+</ul>
+<hr>
+<h3 id="canv-006-walk-list-management" tabindex="-1"><a class="heading-anchor" href="#canv-006-walk-list-management" aria-hidden="true">#</a> CANV-006: Walk List Management</h3>
+<p>Manage the generated walk lists (address sequences within turfs) and their assignments.</p>
+<h4 id="personas-5" tabindex="-1"><a class="heading-anchor" href="#personas-5" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-5" tabindex="-1"><a class="heading-anchor" href="#desktop-5" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Walk Lists                                        Campaign: Northside       │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  [🔍 Search...]              [Filter ▾]  [Sort ▾]  [+ Generate Lists]      │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Walk List       Turf     Doors   Assigned To     Status            │   │
+│  │  ─────────────────────────────────────────────────────────────────  │   │
+│  │  WL-001          Turf A   50      Carlos R.       Complete (72%)   │   │
+│  │  WL-002          Turf A   50      María S.        In Progress      │   │
+│  │  WL-003          Turf B   50      Pedro C.        In Progress      │   │
+│  │  WL-004          Turf B   50      Elena T.        Complete (100%)  │   │
+│  │  WL-005          Turf C   50      —               Unassigned       │   │
+│  │  WL-006          Turf C   50      —               Unassigned       │   │
+│  │  WL-007          Turf D   50      —               Unassigned       │   │
+│  │  WL-008          Turf D   50      —               Unassigned       │   │
+│  │  ...                                                                │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Bulk actions: [Assign ▾]  [Reassign ▾]  [Export]                          │
+│                                                                              │
+│  ◀  Page 1 of 1  ▶                              Showing 1–8 of 8           │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="walk-list-detail-side-panel" tabindex="-1"><a class="heading-anchor" href="#walk-list-detail-side-panel" aria-hidden="true">#</a> Walk List Detail (side panel)</h4>
+<pre><code>┌──────────────────────────────┐
+│  WL-001 · Turf A         ✕  │
+│  ────────────                │
+│                              │
+│  Status: Complete (72%)      │
+│  Assigned: Carlos R.         │
+│  Shift: Sat Mar 2, 9AM-12PM │
+│                              │
+│  Addresses: 50               │
+│  Contacted: 36               │
+│  Not home: 8                 │
+│  Refused: 4                  │
+│  Remaining: 2                │
+│                              │
+│  Walk route:                 │
+│  ┌──────────────────────┐   │
+│  │  [Mini map showing   │   │
+│  │   route with dots    │   │
+│  │   for each address]  │   │
+│  └──────────────────────┘   │
+│                              │
+│  [View results →]           │
+│  [Reassign →]               │
+│  [Regenerate route]         │
+└──────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-4" tabindex="-1"><a class="heading-anchor" href="#design-notes-4" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li>Walk lists are the atomic unit of assignment — one volunteer gets one walk list for one shift</li>
+<li><strong>Assign dropdown</strong> — select a volunteer from the signed-up volunteer roster for that shift</li>
+<li><strong>Reassign</strong> — move a walk list from one volunteer to another (useful when someone doesn't show up)</li>
+<li><strong>Generate Lists</strong> — creates walk lists from turfs that don't have them yet, optimizing walking route within each turf</li>
+<li><strong>Desktop only</strong> (per screen inventory)</li>
+</ul>
+<hr>
+<h3 id="canv-013-canvassing-results-review" tabindex="-1"><a class="heading-anchor" href="#canv-013-canvassing-results-review" aria-hidden="true">#</a> CANV-013: Canvassing Results Review</h3>
+<p>Post-operation view of canvassing data. The Field Director's debrief tool.</p>
+<h4 id="personas-6" tabindex="-1"><a class="heading-anchor" href="#personas-6" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-6" tabindex="-1"><a class="heading-anchor" href="#desktop-6" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Canvassing Results                                Campaign: Northside       │
+│  ───────────────────────────────────────────── Date range: [All time    ▾]  │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  🚪 Doors     │  │  📊 Contact % │  │  👍 Support   │  │  👥 Volunteers│    │
+│  │  742/1,000    │  │  71.4%        │  │  55% positive │  │  18 deployed │    │
+│  │  74% complete │  │  ↑ from 68%   │  │  (4 or 5)     │  │  142 hours   │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Results by Turf                                                      │   │
+│  │  ──────────────                                                       │   │
+│  │                                                                       │   │
+│  │  Turf     Doors   Contact%   Support    Not Home   Refused   Notes   │   │
+│  │  ──────────────────────────────────────────────────────────────────   │   │
+│  │  Turf A   50      78%        62%        14%        8%        3       │   │
+│  │  Turf B   50      72%        58%        18%        10%       1       │   │
+│  │  Turf C   50      68%        48%        22%        12%       5       │   │
+│  │  Turf D   50      64%        52%        24%        12%       2       │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Support Score Distribution     │  │  Response: Key Issues            │   │
+│  │  ─────────────────────          │  │  ─────────────────              │   │
+│  │                                 │  │                                   │   │
+│  │  Strong Support  ▓▓▓▓▓▓  24%   │  │  Environment   ▓▓▓▓▓▓▓▓▓  42%  │   │
+│  │  Lean Support    ▓▓▓▓▓▓▓ 31%   │  │  Economy       ▓▓▓▓▓▓▓    33%  │   │
+│  │  Undecided       ▓▓▓▓    18%   │  │  Healthcare    ▓▓▓▓▓▓     28%  │   │
+│  │  Lean Oppose     ▓▓      9%    │  │  Education     ▓▓▓▓       19%  │   │
+│  │  Strong Oppose   ▓       5%    │  │  Safety        ▓▓▓        14%  │   │
+│  │  Refused         ▓▓▓    13%    │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Performance by Volunteer       │  │  ⚠ Flagged Interactions (5)      │   │
+│  │  ───────────────────────        │  │  ──────────────────────          │   │
+│  │                                 │  │                                   │   │
+│  │  Name         Doors  Rate  Avg  │  │  🟡 &quot;Voter asked about mail-in │   │
+│  │  Carlos R.    42     78%   4.2m │  │     ballots — needs follow-up&quot; │   │
+│  │  María S.     38     82%   3.8m │  │     — Carlos R., Turf A        │   │
+│  │  Pedro C.     31     68%   5.1m │  │     [View →]                    │   │
+│  │  Elena T.     28     74%   4.5m │  │                                   │   │
+│  │  ...                            │  │  🟡 &quot;Refused aggressively —     │   │
+│  │                                 │  │     possible hostile address&quot;   │   │
+│  │  [View full report →]           │  │     — María S., Turf B          │   │
+│  │                                 │  │     [View →]                    │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h4>
+<ul>
+<li>Metric cards stacked vertically</li>
+<li>Turf-by-turf results as collapsible cards</li>
+<li>Charts replaced by inline bar summaries</li>
+<li>Flagged interactions as a scrollable list</li>
+</ul>
+<hr>
+<h3 id="canv-014-canvassing-progress-map" tabindex="-1"><a class="heading-anchor" href="#canv-014-canvassing-progress-map" aria-hidden="true">#</a> CANV-014: Canvassing Progress Map</h3>
+<p>Geographic visualization of canvassing coverage. The &quot;big picture&quot; view.</p>
+<h4 id="personas-7" tabindex="-1"><a class="heading-anchor" href="#personas-7" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-7" tabindex="-1"><a class="heading-anchor" href="#desktop-7" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Canvassing Progress                               Campaign: Northside       │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                       │   │
+│  │                                                                       │   │
+│  │              [Full-width map showing turf polygons                    │   │
+│  │               color-coded by completion percentage]                    │   │
+│  │                                                                       │   │
+│  │              Each turf shows:                                         │   │
+│  │              - Boundary polygon (colored)                             │   │
+│  │              - Completion percentage label                            │   │
+│  │              - Dots for each door (green=complete, grey=remaining)    │   │
+│  │              - Active volunteer location (if shift in progress)       │   │
+│  │                                                                       │   │
+│  │              Legend:                                                   │   │
+│  │              🟢 &gt;70%  🟡 30-70%  🔴 &lt;30%  ⚪ Not started            │   │
+│  │              🔵 Active volunteer                                      │   │
+│  │                                                                       │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Summary: 4 turfs · 742/1,000 doors (74%) · 3 volunteers active now        │
+│                                                                              │
+│  Layers: [☑ Turfs] [☑ Doors] [☐ Heatmap] [☑ Active Vols] [☐ Precinct]   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-5" tabindex="-1"><a class="heading-anchor" href="#design-notes-5" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Full-width map</strong> — the map is the content, not a sidebar widget</li>
+<li><strong>Active volunteer positions</strong> — when volunteers are in the field, their location is shown (blue dot) with last-sync timestamp</li>
+<li><strong>Layer toggles</strong> — the Field Director can show/hide data layers to focus on different aspects</li>
+<li><strong>Click a turf</strong> to see drill-down stats (same data as CANV-013 but scoped to that turf)</li>
+<li><strong>Desktop only</strong> (per screen inventory)</li>
+</ul>
+<hr>
+<h2 id="phone-banking" tabindex="-1"><a class="heading-anchor" href="#phone-banking" aria-hidden="true">#</a> Phone Banking</h2>
+<h3 id="phone-001-phone-bank-campaign-list" tabindex="-1"><a class="heading-anchor" href="#phone-001-phone-bank-campaign-list" aria-hidden="true">#</a> PHONE-001: Phone Bank Campaign List</h3>
+<h4 id="personas-8" tabindex="-1"><a class="heading-anchor" href="#personas-8" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-8" tabindex="-1"><a class="heading-anchor" href="#desktop-8" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Phone Banking                                                          5    │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  [🔍 Search campaigns...]              [Filter ▾]  [+ New Campaign]         │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Campaign             Target       Progress     Sessions   Status   │   │
+│  │  ─────────────────────────────────────────────────────────────────  │   │
+│  │  Wave 3 — Voter ID    1,500 calls  58%          3 active   Active   │   │
+│  │  Script: Standard ID · 870/1,500 complete · 12% contact rate        │   │
+│  │                                                                      │   │
+│  │  Donor Thank You       342 calls   100%         0          Complete │   │
+│  │  Script: Donor Thanks · 342/342 complete · 68% contact rate         │   │
+│  │                                                                      │   │
+│  │  GOTV Reminder         5,000 calls  0%          0          Scheduled│   │
+│  │  Starts: Election Day · Script: GOTV Quick                          │   │
+│  │                                                                      │   │
+│  │  Event Invite          800 calls    34%         0          Paused   │   │
+│  │  Script: Rally Invite · 272/800 complete · 22% contact rate         │   │
+│  │                                                                      │   │
+│  │  Persuasion Undecided  2,000 calls  0%          0          Draft    │   │
+│  │  ⚠ Missing script                                                  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ◀  Page 1 of 1  ▶                               Showing 1–5 of 5          │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="mobile-2" tabindex="-1"><a class="heading-anchor" href="#mobile-2" aria-hidden="true">#</a> Mobile</h4>
+<ul>
+<li>Same pattern as CANV-001 mobile: card list with name, progress bar, status</li>
+</ul>
+<hr>
+<h3 id="phone-002-phone-bank-campaign-create-edit" tabindex="-1"><a class="heading-anchor" href="#phone-002-phone-bank-campaign-create-edit" aria-hidden="true">#</a> PHONE-002: Phone Bank Campaign Create / Edit</h3>
+<h4 id="personas-9" tabindex="-1"><a class="heading-anchor" href="#personas-9" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-9" tabindex="-1"><a class="heading-anchor" href="#desktop-9" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Phone Banking    New Phone Bank Campaign             [Cancel]  [Save]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Campaign Details                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  Campaign name *     [                                          ]           │
+│                                                                              │
+│  Campaign type *     [Voter Identification              ▾]                  │
+│                      Options: Voter ID, Persuasion, GOTV, Fundraising,      │
+│                      Event Invite, Thank You, Survey                         │
+│                                                                              │
+│  Description         [                                          ]           │
+│                                                                              │
+│  Call List                                                                   │
+│  ────────────────                                                            │
+│                                                                              │
+│  Source:             [Select segment...                  ▾]                  │
+│  Contacts in segment: 2,000                                                  │
+│                                                                              │
+│  Exclude:            ☑ Already contacted in this campaign                   │
+│                      ☑ On Do Not Call list                                  │
+│                      ☐ Contacted in last [7] days (any campaign)            │
+│                                                                              │
+│  Final call list:    1,847 contacts                                          │
+│                                                                              │
+│  Schedule                                                                    │
+│  ────────────────                                                            │
+│                                                                              │
+│  Start date *        [March 1, 2024        ]                                │
+│  End date            [March 15, 2024       ]                                │
+│  Shift times         [+ Add shift time]                                     │
+│                      Tue 6:00 PM – 8:00 PM  [✕]                            │
+│                      Thu 6:00 PM – 8:00 PM  [✕]                            │
+│                      Sat 10:00 AM – 12:00 PM [✕]                           │
+│                                                                              │
+│  Calling Mode                                                                │
+│  ────────────────                                                            │
+│                                                                              │
+│  ◉ BYOP (Bring Your Own Phone)                                             │
+│    Volunteers use their personal phones. Platform shows contact              │
+│    info and script, volunteer dials manually.                                │
+│                                                                              │
+│  ○ Integrated Dialer                                                        │
+│    Click-to-call from within the platform. Requires telephony               │
+│    integration (Settings &gt; Integrations).                                    │
+│                                                                              │
+│  Script                                                                      │
+│  ────────────────                                                            │
+│                                                                              │
+│  ◉ Create new script      [Open Script Builder →]                          │
+│  ○ Use existing script    [Select script...              ▾]                 │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  [Cancel]                                    [Save as Draft]  [Activate →]  │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-6" tabindex="-1"><a class="heading-anchor" href="#design-notes-6" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Call list from segments</strong> — reuses the segment system (CRM-004/005) for targeting. The &quot;Final call list&quot; count updates live after exclusions are applied.</li>
+<li><strong>Exclusions</strong> — prevent re-calling and respect Do Not Call. Critical for legal compliance and voter goodwill.</li>
+<li><strong>BYOP vs Integrated</strong> — BYOP is the default/simpler mode. Integrated dialer requires a configured telephony provider.</li>
+<li><strong>Desktop only</strong> (per screen inventory)</li>
+</ul>
+<hr>
+<h3 id="phone-003-phone-bank-script-builder" tabindex="-1"><a class="heading-anchor" href="#phone-003-phone-bank-script-builder" aria-hidden="true">#</a> PHONE-003: Phone Bank Script Builder</h3>
+<p>Uses the same Script Builder interface as CANV-003, with phone-banking-specific step types:</p>
+<table>
+<thead>
+<tr>
+<th>Additional Step Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Voicemail Script</strong></td>
+<td>Text to read when leaving a voicemail</td>
+</tr>
+<tr>
+<td><strong>Call Outcome</strong></td>
+<td>Pre-built step: Answered, Voicemail, Busy, Wrong Number, Disconnected, Do Not Call</td>
+</tr>
+</tbody>
+</table>
+<p>The Call Outcome step is always the first step (system-generated, not editable) — before the volunteer reads any script, they record whether the call was answered.</p>
+<hr>
+<h3 id="phone-007-phone-bank-progress-dashboard" tabindex="-1"><a class="heading-anchor" href="#phone-007-phone-bank-progress-dashboard" aria-hidden="true">#</a> PHONE-007: Phone Bank Progress Dashboard</h3>
+<p>Real-time view of active phone bank sessions and campaign progress.</p>
+<h4 id="personas-10" tabindex="-1"><a class="heading-anchor" href="#personas-10" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-10" tabindex="-1"><a class="heading-anchor" href="#desktop-10" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Phone Bank: Wave 3 — Voter ID                     3 sessions active  ↻     │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  📞 Calls     │  │  📊 Contact % │  │  ⏱ Avg Call   │  │  👥 Callers  │    │
+│  │  870/1,500    │  │  12.3%        │  │  3.2 min      │  │  8 active    │    │
+│  │  58% complete │  │  ↑ from 10%   │  │  ↓ from 4.1   │  │  12 total    │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Call Outcomes                                                         │   │
+│  │  ─────────────                                                        │   │
+│  │                                                                       │   │
+│  │  Answered      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  107 (12.3%) │   │
+│  │  Voicemail     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  298 (34.3%) │   │
+│  │  No Answer     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  252 (29.0%) │   │
+│  │  Busy          ▓▓▓▓▓▓▓▓▓▓▓▓                              87 (10.0%) │   │
+│  │  Wrong Number  ▓▓▓▓▓▓▓▓▓▓                                 74 (8.5%)  │   │
+│  │  Disconnected  ▓▓▓▓▓▓                                      42 (4.8%)  │   │
+│  │  Do Not Call   ▓▓                                           10 (1.1%)  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Active Callers                 │  │  Support Score (Answered)        │   │
+│  │  ──────────────                 │  │  ─────────────────               │   │
+│  │                                 │  │                                   │   │
+│  │  ● Ana R.      12 calls  1:45  │  │  Strong Support  ▓▓▓▓    18%    │   │
+│  │  ● Carlos M.   10 calls  1:30  │  │  Lean Support    ▓▓▓▓▓▓  28%    │   │
+│  │  ● Elena T.     8 calls  1:15  │  │  Undecided       ▓▓▓▓▓▓▓ 32%    │   │
+│  │  ● Marco D.    15 calls  1:42  │  │  Lean Oppose     ▓▓      10%    │   │
+│  │  ● Rosa F.     11 calls  1:20  │  │  Strong Oppose   ▓        5%    │   │
+│  │  ● Pedro C.     9 calls  1:10  │  │  Refused         ▓▓       7%    │   │
+│  │  ● Carmen L.    7 calls  0:45  │  │                                   │   │
+│  │  ● Luis G.      5 calls  0:30  │  │                                   │   │
+│  │                                 │  │                                   │   │
+│  │  Avg calls/hour: 7.2           │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="mobile-3" tabindex="-1"><a class="heading-anchor" href="#mobile-3" aria-hidden="true">#</a> Mobile</h4>
+<ul>
+<li>Metric cards stacked</li>
+<li>Call outcomes as a compact list</li>
+<li>Active callers as a scrollable list</li>
+</ul>
+<hr>
+<h2 id="voter-registration" tabindex="-1"><a class="heading-anchor" href="#voter-registration" aria-hidden="true">#</a> Voter Registration</h2>
+<h3 id="vreg-001-voter-reg-drive-list" tabindex="-1"><a class="heading-anchor" href="#vreg-001-voter-reg-drive-list" aria-hidden="true">#</a> VREG-001: Voter Reg Drive List</h3>
+<h4 id="personas-11" tabindex="-1"><a class="heading-anchor" href="#personas-11" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-11" tabindex="-1"><a class="heading-anchor" href="#desktop-11" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Voter Registration Drives                                              4    │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  [🔍 Search drives...]                 [Filter ▾]  [+ New Drive]           │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Drive                Location          Progress     Dates     Status│   │
+│  │  ─────────────────────────────────────────────────────────────────  │   │
+│  │  Spring Registration  Westside plazas    68%         Mar 1–Apr 30  Active│
+│  │  Jurisdiction: PR · 342/500 goal · 8 volunteers                     │   │
+│  │                                                                      │   │
+│  │  Campus Drive         UPR Río Piedras    83%         Feb 15–Mar 15 Active│
+│  │  Jurisdiction: PR · 45/54 goal · 4 volunteers                       │   │
+│  │                                                                      │   │
+│  │  Market Saturdays     Mercado Santurce   34%         Mar–May       Active│
+│  │  Jurisdiction: PR · 17/50 goal · 2 volunteers per session           │   │
+│  │                                                                      │   │
+│  │  Rural Outreach       Western munic.     0%          Apr 1–30      Draft│
+│  │  Jurisdiction: PR · Goal: 200 · ⚠ No shifts created                │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ◀  Page 1 of 1  ▶                               Showing 1–4 of 4          │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="mobile-4" tabindex="-1"><a class="heading-anchor" href="#mobile-4" aria-hidden="true">#</a> Mobile</h4>
+<ul>
+<li>Card list: drive name, progress bar, goal fraction, status</li>
+</ul>
+<hr>
+<h3 id="vreg-002-voter-reg-drive-create-edit" tabindex="-1"><a class="heading-anchor" href="#vreg-002-voter-reg-drive-create-edit" aria-hidden="true">#</a> VREG-002: Voter Reg Drive Create / Edit</h3>
+<h4 id="personas-12" tabindex="-1"><a class="heading-anchor" href="#personas-12" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-12" tabindex="-1"><a class="heading-anchor" href="#desktop-12" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Voter Registration    New Registration Drive         [Cancel]  [Save]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Drive Details                                                               │
+│  ─────────────                                                               │
+│                                                                              │
+│  Drive name *        [                                          ]           │
+│  Description         [                                          ]           │
+│  Location(s)         [                                          ]           │
+│                                                                              │
+│  Jurisdiction *      [Puerto Rico                       ▾]                  │
+│                      Determines: eligible fields, ID requirements,           │
+│                      submission process                                      │
+│                                                                              │
+│  Registration Form                                                           │
+│  ─────────────                                                               │
+│                                                                              │
+│  ◉ Use jurisdiction template                                                │
+│    Puerto Rico (CEE) — standard voter registration form                      │
+│    Required: Name, DOB, Address, ID number                                  │
+│    [Preview template →]                                                     │
+│                                                                              │
+│  ○ Custom form                                                              │
+│    Configure a custom registration form with validation rules               │
+│    [Open Form Builder →]                                                    │
+│                                                                              │
+│  Schedule                                                                    │
+│  ─────────────                                                               │
+│                                                                              │
+│  Start date *        [March 1, 2024         ]                               │
+│  End date            [April 30, 2024        ]                               │
+│  Shift times         [+ Add shift time]                                     │
+│                      Sat 9:00 AM – 1:00 PM   [✕]                           │
+│                                                                              │
+│  Goal                [500     ] registrations                               │
+│                                                                              │
+│  Territory                                                       [▾]       │
+│  ─────────────                                                               │
+│                                                                              │
+│  ◉ Specific locations (list addresses or areas)                             │
+│  ○ Select turfs on map                                                      │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  [Cancel]                                    [Save as Draft]  [Activate →]  │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h3 id="vreg-003-jurisdiction-template-selector" tabindex="-1"><a class="heading-anchor" href="#vreg-003-jurisdiction-template-selector" aria-hidden="true">#</a> VREG-003: Jurisdiction Template Selector</h3>
+<p>Shown when setting up or changing the jurisdiction template for a voter registration drive.</p>
+<h4 id="personas-13" tabindex="-1"><a class="heading-anchor" href="#personas-13" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-13" tabindex="-1"><a class="heading-anchor" href="#desktop-13" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Drive Setup    Jurisdiction Template                                      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Select the jurisdiction for this registration drive.                        │
+│  The template determines required fields, eligibility rules,                 │
+│  and submission procedures.                                                  │
+│                                                                              │
+│  Country:  [Puerto Rico (US Territory)                 ▾]                   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Puerto Rico (CEE)                                      [Select →]   │   │
+│  │  ──────────────────                                                   │   │
+│  │  Comisión Estatal de Elecciones                                       │   │
+│  │                                                                       │   │
+│  │  Required fields:                                                     │   │
+│  │  • Full legal name                                                    │   │
+│  │  • Date of birth                                                      │   │
+│  │  • Residential address in PR                                          │   │
+│  │  • Social Security Number (last 4 digits)                             │   │
+│  │                                                                       │   │
+│  │  Eligibility:                                                         │   │
+│  │  • US citizen                                                         │   │
+│  │  • Resident of Puerto Rico                                            │   │
+│  │  • At least 18 years old by election day                              │   │
+│  │                                                                       │   │
+│  │  Submission: Form submitted to local CEE office                       │   │
+│  │  Last updated: January 2024                                           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Available templates:                                                        │
+│  ┌────────────────────────────────┐  ┌────────────────────────────────┐     │
+│  │  🇺🇸 United States (FEC)       │  │  🇧🇷 Brazil (TSE)              │     │
+│  │  State-specific templates      │  │  Tribunal Superior Eleitoral   │     │
+│  │  50 state templates available  │  │  [Select →]                    │     │
+│  │  [Select →]                    │  │                                │     │
+│  └────────────────────────────────┘  └────────────────────────────────┘     │
+│  ┌────────────────────────────────┐  ┌────────────────────────────────┐     │
+│  │  🇮🇳 India (ECI)               │  │  🇱🇧 Lebanon (SCE)             │     │
+│  │  Election Commission of India  │  │  Supervisory Commission       │     │
+│  │  [Select →]                    │  │  [Select →]                    │     │
+│  └────────────────────────────────┘  └────────────────────────────────┘     │
+│                                                                              │
+│  Don't see your jurisdiction? [Create custom form →]                        │
+│                                                                              │
+│  [Cancel]                                                   [Confirm →]     │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-7" tabindex="-1"><a class="heading-anchor" href="#design-notes-7" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Jurisdiction selection drives the entire form</strong> — the template determines required fields, eligibility checks, and submission workflow</li>
+<li><strong>Template details visible before selection</strong> — the user can see what fields will be required before committing</li>
+<li><strong>Country-level selection first</strong>, then specific templates within that country (e.g., US has 50 state-specific templates)</li>
+<li><strong>Custom form fallback</strong> — for jurisdictions without a template, redirects to a form builder</li>
+<li><strong>Desktop only</strong> (per screen inventory)</li>
+</ul>
+<hr>
+<h3 id="vreg-006-voter-registration-results-review" tabindex="-1"><a class="heading-anchor" href="#vreg-006-voter-registration-results-review" aria-hidden="true">#</a> VREG-006: Voter Registration Results Review</h3>
+<p>Post-drive review of registration data.</p>
+<h4 id="personas-14" tabindex="-1"><a class="heading-anchor" href="#personas-14" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, FiD</li>
+</ul>
+<h4 id="desktop-14" tabindex="-1"><a class="heading-anchor" href="#desktop-14" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Voter Reg Results                                  Drive: Spring Registration│
+│  ───────────────────────────────────────────── Date range: [All time    ▾]  │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  📋 Registered│  │  📊 Goal      │  │  👥 Volunteers│  │  ⚠ Issues    │    │
+│  │  342          │  │  68% of 500   │  │  8 total      │  │  3 pending   │    │
+│  │  new voters   │  │  ↑ pace: good │  │  42 hours     │  │  12 resolved │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Registration Progress                                                │   │
+│  │  ─────────────────────                                                │   │
+│  │                                                                       │   │
+│  │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░  342/500 (68%)                               │   │
+│  │  At current pace, goal reached by: April 12                           │   │
+│  │                                                                       │   │
+│  │  By week:                                                             │   │
+│  │  Wk 1  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  98                                    │   │
+│  │  Wk 2  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓     82                                    │   │
+│  │  Wk 3  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 102                                   │   │
+│  │  Wk 4  ▓▓▓▓▓▓▓▓▓▓▓▓         60 (in progress)                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Registrations by Location      │  │  ⚠ Data Issues (3)              │   │
+│  │  ─────────────────────          │  │  ──────────────                  │   │
+│  │                                 │  │                                   │   │
+│  │  Plaza del Mercado     148      │  │  🟡 Incomplete address — 2      │   │
+│  │  UPR Campus             98      │  │     registrations missing unit # │   │
+│  │  Calle Loíza            56      │  │     [Review →]                  │   │
+│  │  Door-to-door           40      │  │                                   │   │
+│  │                                 │  │  🟡 Age verification — 1        │   │
+│  │                                 │  │     registrant may be under 18  │   │
+│  │                                 │  │     [Review →]                  │   │
+│  │                                 │  │                                   │   │
+│  │                                 │  │  Resolved this drive: 12        │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Follow-up Pipeline                                                   │   │
+│  │  ──────────────────                                                   │   │
+│  │                                                                       │   │
+│  │  Confirmation pending:  198 (awaiting official processing)            │   │
+│  │  Confirmed registered:  132                                           │   │
+│  │  Issues with submission: 12 (need re-submission)                      │   │
+│  │                                                                       │   │
+│  │  [View all registrants →]  [Export for submission →]                  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="mobile-5" tabindex="-1"><a class="heading-anchor" href="#mobile-5" aria-hidden="true">#</a> Mobile</h4>
+<ul>
+<li>Metric cards + progress bar stacked</li>
+<li>Data issues as a compact alert list</li>
+<li>Location breakdown as inline list</li>
+</ul>
+<hr>
+<h2 id="empty-states" tabindex="-1"><a class="heading-anchor" href="#empty-states" aria-hidden="true">#</a> Empty States</h2>
+<h3 id="canvassing-campaign-list-empty" tabindex="-1"><a class="heading-anchor" href="#canvassing-campaign-list-empty" aria-hidden="true">#</a> Canvassing Campaign List — Empty</h3>
+<pre><code>│                         🚪                                                   │
+│                                                                              │
+│               No canvassing campaigns yet                                    │
+│                                                                              │
+│     Create your first campaign to start organizing                          │
+│     door-to-door voter outreach.                                            │
+│                                                                              │
+│     [Create Canvassing Campaign →]                                          │
+│                                                                              │
+│     Need help? Read the canvassing setup guide.                             │
+</code></pre>
+<h3 id="phone-bank-campaign-list-empty" tabindex="-1"><a class="heading-anchor" href="#phone-bank-campaign-list-empty" aria-hidden="true">#</a> Phone Bank Campaign List — Empty</h3>
+<pre><code>│                         📞                                                   │
+│                                                                              │
+│               No phone bank campaigns yet                                    │
+│                                                                              │
+│     Set up a phone bank campaign to reach voters by phone.                  │
+│     You'll need a contact segment and a call script.                        │
+│                                                                              │
+│     [Create Phone Bank Campaign →]                                          │
+</code></pre>
+<h3 id="voter-reg-drive-list-empty" tabindex="-1"><a class="heading-anchor" href="#voter-reg-drive-list-empty" aria-hidden="true">#</a> Voter Reg Drive List — Empty</h3>
+<pre><code>│                         📋                                                   │
+│                                                                              │
+│               No voter registration drives yet                               │
+│                                                                              │
+│     Organize drives to register new voters in your                          │
+│     community. Start by selecting your jurisdiction.                        │
+│                                                                              │
+│     [Create Registration Drive →]                                           │
+</code></pre>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Turf map (CANV-004, CANV-014) uses color + pattern fills for turfs (not color alone) — accessible to colorblind users</li>
+<li>Script builder steps are keyboard-reorderable (not drag-only) via up/down arrow buttons</li>
+<li>Walk list assignment uses standard form controls, not drag-and-drop</li>
+<li>Progress percentages in campaign lists have <code>aria-label</code> descriptions</li>
+<li>Phone bank call outcomes have both color bars and numeric labels</li>
+</ul>
+<hr>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shared patterns across all three op types</td>
+<td>Consistent list/create/results pattern</td>
+<td>Reduces learning curve — Field Director uses all three</td>
+</tr>
+<tr>
+<td>Script builder as split-pane</td>
+<td>Live preview alongside editor</td>
+<td>Immediate feedback on script changes</td>
+</tr>
+<tr>
+<td>Script branching as tree visualization</td>
+<td>Visual decision tree with collapsible branches</td>
+<td>Scripts are inherently branching; tree makes logic visible</td>
+</tr>
+<tr>
+<td>Turf management as map-first</td>
+<td>Full-width map with sidebar list as secondary</td>
+<td>Turfs are geographic — map is the natural view</td>
+</tr>
+<tr>
+<td>Auto-generation with preview</td>
+<td>User sets constraints, system generates, user approves</td>
+<td>Prevents bad auto-cuts; human judgment for edge cases</td>
+</tr>
+<tr>
+<td>Walk list assignment as table</td>
+<td>Volunteer rows with turf dropdown</td>
+<td>Simple and clear for small-to-medium teams</td>
+</tr>
+<tr>
+<td>Results review as metric cards + drill-down</td>
+<td>Summary cards at top, detailed tables below</td>
+<td>Quick overview with ability to investigate</td>
+</tr>
+<tr>
+<td>Jurisdiction template for voter reg</td>
+<td>Pre-built per-jurisdiction templates</td>
+<td>Reduces error rate for jurisdiction-specific requirements</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Script versioning.</strong> When a script is edited mid-campaign, do existing walk lists keep the old version or update? Current design: active campaigns keep their version, but should the Field Director be able to push an update to all in-progress walk lists?</p>
+</li>
+<li>
+<p><strong>Turf drawing on tablet.</strong> Turf Management Map (CANV-004) is marked desktop-only, but a Field Director in a staging area with an iPad is a realistic scenario. Should turf drawing be supported on tablets?</p>
+</li>
+<li>
+<p><strong>Phone bank caller ID.</strong> For the integrated dialer, should calls show the campaign's phone number or the volunteer's personal number? Campaign number is more professional; personal number may get better answer rates (familiar area code).</p>
+</li>
+<li>
+<p><strong>Voter registration form offline editing.</strong> If a jurisdiction template is updated while a volunteer is in the field (offline), what happens? The volunteer keeps the old template until sync. Should a warning appear on sync if the template changed mid-shift?</p>
+</li>
+<li>
+<p><strong>Cross-campaign dedup for phone banking.</strong> If a voter is in two active phone bank campaigns, should they be auto-excluded from the second to prevent over-calling? Currently this is a manual exclusion checkbox.</p>
+</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#field-director-navigation-context"># Field Director Navigation Context</a></li><li class="toc-2"><a href="#shared-patterns"># Shared Patterns</a></li><li class="toc-2"><a href="#canvassing"># Canvassing</a></li><li class="toc-3"><a href="#canv-001-canvassing-campaign-list"># CANV-001: Canvassing Campaign List</a></li><li class="toc-3"><a href="#canv-002-canvassing-campaign-create-edit"># CANV-002: Canvassing Campaign Create / Edit</a></li><li class="toc-3"><a href="#canv-003-script-builder"># CANV-003: Script Builder</a></li><li class="toc-3"><a href="#canv-004-turf-management-map"># CANV-004: Turf Management Map</a></li><li class="toc-3"><a href="#canv-005-turf-auto-generation"># CANV-005: Turf Auto-Generation</a></li><li class="toc-3"><a href="#canv-006-walk-list-management"># CANV-006: Walk List Management</a></li><li class="toc-3"><a href="#canv-013-canvassing-results-review"># CANV-013: Canvassing Results Review</a></li><li class="toc-3"><a href="#canv-014-canvassing-progress-map"># CANV-014: Canvassing Progress Map</a></li><li class="toc-2"><a href="#phone-banking"># Phone Banking</a></li><li class="toc-3"><a href="#phone-001-phone-bank-campaign-list"># PHONE-001: Phone Bank Campaign List</a></li><li class="toc-3"><a href="#phone-002-phone-bank-campaign-create-edit"># PHONE-002: Phone Bank Campaign Create / Edit</a></li><li class="toc-3"><a href="#phone-003-phone-bank-script-builder"># PHONE-003: Phone Bank Script Builder</a></li><li class="toc-3"><a href="#phone-007-phone-bank-progress-dashboard"># PHONE-007: Phone Bank Progress Dashboard</a></li><li class="toc-2"><a href="#voter-registration"># Voter Registration</a></li><li class="toc-3"><a href="#vreg-001-voter-reg-drive-list"># VREG-001: Voter Reg Drive List</a></li><li class="toc-3"><a href="#vreg-002-voter-reg-drive-create-edit"># VREG-002: Voter Reg Drive Create / Edit</a></li><li class="toc-3"><a href="#vreg-003-jurisdiction-template-selector"># VREG-003: Jurisdiction Template Selector</a></li><li class="toc-3"><a href="#vreg-006-voter-registration-results-review"># VREG-006: Voter Registration Results Review</a></li><li class="toc-2"><a href="#empty-states"># Empty States</a></li><li class="toc-3"><a href="#canvassing-campaign-list-empty"># Canvassing Campaign List — Empty</a></li><li class="toc-3"><a href="#phone-bank-campaign-list-empty"># Phone Bank Campaign List — Empty</a></li><li class="toc-3"><a href="#voter-reg-drive-list-empty"># Voter Reg Drive List — Empty</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

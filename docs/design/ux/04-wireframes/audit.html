@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe Audit Report · GreenGrass</title>
+<meta name="description" content="Wireframe Audit Report — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="./index.html">Wireframes</a></li><li><a href="./navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="./dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="./field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="./onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="./messaging/messaging.html">Messaging Wireframes</a></li><li><a href="./supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="./alliance/alliance.html">Alliance Wireframes</a></li><li><a href="./crm/crm.html">CRM / People Wireframes</a></li><li><a href="./field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="./fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="./communications/communications.html">Communications Wireframes</a></li><li><a href="./social-media/social-media.html">Social Media Wireframes</a></li><li><a href="./events/events.html">Events Wireframes</a></li><li><a href="./press/press.html">Press &amp; Media Wireframes</a></li><li><a href="./activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="./gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="./settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="./auth/auth.html">Authentication Wireframes</a></li><li><a href="./profile/profile.html">User Profile Wireframes</a></li><li><a href="./help/help.html">Support &amp; Help Wireframes</a></li><li><a href="./public/public.html">Public Pages Wireframes</a></li><li><a href="./audit.html" aria-current="page" class="active">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="wireframe-audit-report" tabindex="-1"><a class="heading-anchor" href="#wireframe-audit-report" aria-hidden="true">#</a> Wireframe Audit Report</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document presents findings from a structural audit of all 21 wireframe documents completed during Phase 4 of UX design. The audit was conducted after all wireframes were complete to normalize structure, close coverage gaps, and consolidate cross-cutting concerns.</p>
+<hr>
+<h2 id="executive-summary" tabindex="-1"><a class="heading-anchor" href="#executive-summary" aria-hidden="true">#</a> Executive Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total wireframe documents</td>
+<td>21</td>
+<td>All feature areas covered</td>
+</tr>
+<tr>
+<td>Total screens in inventory</td>
+<td>236</td>
+<td>From <code>screen-inventory.md</code></td>
+</tr>
+<tr>
+<td>Screens with full wireframes</td>
+<td>196</td>
+<td>Under a screen ID heading with wireframe content</td>
+</tr>
+<tr>
+<td>Screens covered but without ID headings</td>
+<td>25</td>
+<td>Content exists but not under standard <code>## ID: Name</code> heading</td>
+</tr>
+<tr>
+<td>Truly missing screens</td>
+<td>15</td>
+<td>No wireframe content exists</td>
+</tr>
+<tr>
+<td>Structural consistency</td>
+<td>12 of 21</td>
+<td>Follow standard 8-section template</td>
+</tr>
+<tr>
+<td>Design system token references</td>
+<td>0</td>
+<td>No wireframe doc references token names</td>
+</tr>
+<tr>
+<td>Open questions across all docs</td>
+<td>~89</td>
+<td><strong>All 89 resolved</strong> in <code>decisions/016-cross-cutting-resolutions.md</code>.</td>
+</tr>
+<tr>
+<td>Design decisions documented</td>
+<td>~72+</td>
+<td>Primarily in later-batch docs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bottom line:</strong> Coverage is strong at 83%. The primary issues are structural inconsistency in the 9 early-batch documents and the complete absence of design token references. Both are addressable without rewriting content.</p>
+<hr>
+<h2 id="standard-document-structure" tabindex="-1"><a class="heading-anchor" href="#standard-document-structure" aria-hidden="true">#</a> Standard Document Structure</h2>
+<p>The 12 later-batch documents established a de facto standard structure:</p>
+<ol>
+<li><strong>Purpose</strong> — What the feature area does, who it serves</li>
+<li><strong>Scope</strong> — Table mapping screen IDs to screen names, personas, offline status, mobile context, and in-document section</li>
+<li><strong>Navigation Context</strong> — How the feature appears in the sidebar/tabs for its primary persona</li>
+<li><strong>Screen wireframes</strong> — One <code>## ID: Screen Name</code> section per screen, each with Desktop/Mobile wireframes, Interaction Specs, and Design Notes</li>
+<li><strong>Empty States Summary</strong> — Consolidated empty/zero-data states</li>
+<li><strong>Accessibility Notes</strong> — Feature-specific accessibility considerations</li>
+<li><strong>Design Decisions</strong> — Table of key decisions with choice and rationale</li>
+<li><strong>Open Questions</strong> — Unresolved questions for future phases</li>
+</ol>
+<hr>
+<h2 id="per-document-gap-analysis" tabindex="-1"><a class="heading-anchor" href="#per-document-gap-analysis" aria-hidden="true">#</a> Per-Document Gap Analysis</h2>
+<h3 id="early-batch-9-docs-need-normalization" tabindex="-1"><a class="heading-anchor" href="#early-batch-9-docs-need-normalization" aria-hidden="true">#</a> Early Batch (9 docs — need normalization)</h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th style="text-align:center">Screen IDs</th>
+<th style="text-align:center">Scope Table</th>
+<th style="text-align:center">Nav Context</th>
+<th style="text-align:center">Empty States</th>
+<th style="text-align:center">Design Decisions</th>
+<th style="text-align:center">Accessibility</th>
+<th style="text-align:center">Open Qs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://navigation-shell.md" target="_blank" rel="noopener noreferrer">navigation-shell.md</a></td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center"><code>## Accessibility Notes</code></td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td><a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a></td>
+<td style="text-align:center">DASH-001–011</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Partial (4× inline)</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td><a href="http://field-mode.md" target="_blank" rel="noopener noreferrer">field-mode.md</a></td>
+<td style="text-align:center">Missing (14)</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center"><code>## Accessibility in Field Mode</code></td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td><a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a></td>
+<td style="text-align:center">Missing (3)</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">Partial (<code>## Wizard Design Notes</code>)</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a></td>
+<td style="text-align:center">Missing (14)</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center"><code>## Accessibility</code></td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td><a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a></td>
+<td style="text-align:center">Missing (4)</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center"><code>## Design Notes</code></td>
+<td style="text-align:center"><code>### Accessibility</code> (nested)</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td><a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a></td>
+<td style="text-align:center">ALLY-001–008</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">Yes (3 variants)</td>
+<td style="text-align:center">Yes (6× inline)</td>
+<td style="text-align:center"><code>## Accessibility Notes</code></td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td><a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a></td>
+<td style="text-align:center">CRM-001–015</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Yes (3 variants)</td>
+<td style="text-align:center">Yes (10× inline)</td>
+<td style="text-align:center"><code>## Accessibility Notes</code></td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td><a href="http://field-ops.md" target="_blank" rel="noopener noreferrer">field-ops.md</a></td>
+<td style="text-align:center">CANV/PHONE/VREG</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Missing</td>
+<td style="text-align:center">Yes (3 variants)</td>
+<td style="text-align:center">Yes (8× inline)</td>
+<td style="text-align:center"><code>## Accessibility Notes</code></td>
+<td style="text-align:center">5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>&quot;—&quot; means section not applicable (navigation-shell has no persona-specific nav; alliance has its own nav context section; field-mode runs outside the nav shell)</li>
+<li>&quot;Partial&quot; means design decisions exist but scattered inline, not in a consolidated table</li>
+<li>Screen IDs &quot;Missing (N)&quot; means N screens have wireframe content but no <code>## ID: Name</code> heading</li>
+</ul>
+<h3 id="later-batch-12-docs-structurally-consistent" tabindex="-1"><a class="heading-anchor" href="#later-batch-12-docs-structurally-consistent" aria-hidden="true">#</a> Later Batch (12 docs — structurally consistent)</h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th style="text-align:center">Screen IDs</th>
+<th style="text-align:center">Scope</th>
+<th style="text-align:center">Nav Context</th>
+<th style="text-align:center">Empty States</th>
+<th style="text-align:center">Design Decisions</th>
+<th style="text-align:center">Accessibility</th>
+<th style="text-align:center">Open Qs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a></td>
+<td style="text-align:center">FUND-001–020</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (7)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td><a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a></td>
+<td style="text-align:center">COMM-001–010</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (6)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td><a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a></td>
+<td style="text-align:center">SOCIAL-001–006</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (5)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td><a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a></td>
+<td style="text-align:center">EVT-001–010</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (6)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td><a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a></td>
+<td style="text-align:center">ACT-001–009</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (7)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a></td>
+<td style="text-align:center">PRESS-001–016</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (6)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+<td style="text-align:center">15 of 23</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (6)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td><a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a></td>
+<td style="text-align:center">SET-001–022</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (6)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td><a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a></td>
+<td style="text-align:center">AUTH-001–007</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (edge cases)</td>
+<td style="text-align:center">Yes (6)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td><a href="http://profile.md" target="_blank" rel="noopener noreferrer">profile.md</a></td>
+<td style="text-align:center">PROF-001–005</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (5)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td><a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a></td>
+<td style="text-align:center">HELP-001–008</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (6)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td><a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a></td>
+<td style="text-align:center">PUB-001–008</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes (6)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<p>All 12 later-batch documents follow the standard 8-section structure consistently.</p>
+<hr>
+<h2 id="missing-wireframes" tabindex="-1"><a class="heading-anchor" href="#missing-wireframes" aria-hidden="true">#</a> Missing Wireframes</h2>
+<p>15 screens from <code>screen-inventory.md</code> have no wireframe content in any document.</p>
+<h3 id="priority-1-supporter-facing-5-screens" tabindex="-1"><a class="heading-anchor" href="#priority-1-supporter-facing-5-screens" aria-hidden="true">#</a> Priority 1 — Supporter-Facing (5 screens)</h3>
+<p>These are the public donor experience. Missing wireframes leave gaps in a critical conversion funnel.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Target Doc</th>
+<th>Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUP-003</td>
+<td>Donation Receipt View</td>
+<td><a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a></td>
+<td>Low</td>
+</tr>
+<tr>
+<td>SUP-005</td>
+<td>Payment Method Update</td>
+<td><a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>SUP-006</td>
+<td>Supporter Profile</td>
+<td><a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a></td>
+<td>Low</td>
+</tr>
+<tr>
+<td>SUP-007</td>
+<td>Communication Preferences</td>
+<td><a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>SUP-009</td>
+<td>Year-End Statement Download</td>
+<td><a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a></td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<h3 id="priority-2-election-day-operations-5-screens" tabindex="-1"><a class="heading-anchor" href="#priority-2-election-day-operations-5-screens" aria-hidden="true">#</a> Priority 2 — Election Day Operations (5 screens)</h3>
+<p>Operational screens used during the highest-stakes moment. Missing wireframes create implementation ambiguity.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Target Doc</th>
+<th>Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GOTV-010</td>
+<td>Chase Call Interface</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>GOTV-011</td>
+<td>Ride Request Form</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+<td>Low</td>
+</tr>
+<tr>
+<td>GOTV-013</td>
+<td>Ride Driver View</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>GOTV-014</td>
+<td>Poll Watcher Check-in</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+<td>Low</td>
+</tr>
+<tr>
+<td>GOTV-015</td>
+<td>Poll Watcher Issue Report Form</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<h3 id="priority-3-onboarding-wizards-5-screens" tabindex="-1"><a class="heading-anchor" href="#priority-3-onboarding-wizards-5-screens" aria-hidden="true">#</a> Priority 3 — Onboarding Wizards (5 screens)</h3>
+<p>Wizard screens that follow an established shell pattern. Lower risk because the doc already states these mirror their settings-screen counterparts.</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Target Doc</th>
+<th>Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIZ-002</td>
+<td>Payment Processor Wizard</td>
+<td><a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a></td>
+<td>Low</td>
+</tr>
+<tr>
+<td>WIZ-004</td>
+<td>Compliance Configuration Wizard</td>
+<td><a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a></td>
+<td>Low</td>
+</tr>
+<tr>
+<td>WIZ-005</td>
+<td>WhatsApp Business Setup Wizard</td>
+<td><a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a></td>
+<td>Low</td>
+</tr>
+<tr>
+<td>WIZ-006</td>
+<td>SMS Number Setup Wizard</td>
+<td><a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a></td>
+<td>Low</td>
+</tr>
+<tr>
+<td>WIZ-007</td>
+<td>Voter File Import Wizard</td>
+<td><a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a></td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="design-system-token-integration" tabindex="-1"><a class="heading-anchor" href="#design-system-token-integration" aria-hidden="true">#</a> Design System Token Integration</h2>
+<h3 id="current-state" tabindex="-1"><a class="heading-anchor" href="#current-state" aria-hidden="true">#</a> Current State</h3>
+<p>No wireframe document references design tokens by name. Raw values are used throughout:</p>
+<ul>
+<li>Colors: <code>&quot;green dot&quot;</code>, <code>&quot;red icon&quot;</code>, <code>&quot;amber&quot;</code> — never <code>--color-success</code>, <code>--color-error</code>, <code>--color-warning</code></li>
+<li>Spacing: <code>&quot;16px padding&quot;</code>, <code>&quot;24px gap&quot;</code> — never <code>--space-4</code>, <code>--space-6</code></li>
+<li>Typography: <code>&quot;14px&quot;</code>, <code>&quot;bold&quot;</code> — never <code>--text-sm</code>, <code>--font-weight-bold</code></li>
+</ul>
+<h3 id="assessment" tabindex="-1"><a class="heading-anchor" href="#assessment" aria-hidden="true">#</a> Assessment</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Grade</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Color tokens</td>
+<td>F</td>
+<td>Zero references. Colors described by visual appearance or hex values</td>
+</tr>
+<tr>
+<td>Spacing tokens</td>
+<td>C</td>
+<td>Consistent use of 8px-multiple values but never by token name</td>
+</tr>
+<tr>
+<td>Typography tokens</td>
+<td>C</td>
+<td>Sizes follow the type scale but never reference token names</td>
+</tr>
+<tr>
+<td>Touch targets</td>
+<td>B+</td>
+<td><a href="http://field-mode.md" target="_blank" rel="noopener noreferrer">field-mode.md</a> specifies 48px/56px targets — correct values per <a href="http://foundations.md" target="_blank" rel="noopener noreferrer">foundations.md</a></td>
+</tr>
+<tr>
+<td>Overall</td>
+<td>C-</td>
+<td>Token values are implicitly followed but never explicitly referenced</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommendation" tabindex="-1"><a class="heading-anchor" href="#recommendation" aria-hidden="true">#</a> Recommendation</h3>
+<p><strong>Annotate tokens only where load-bearing — not globally.</strong> A global search-and-replace of pixel values with token names across 21 docs adds noise without improving wireframe clarity. Token references are most valuable where:</p>
+<ol>
+<li><strong>Touch targets in field mode</strong> — <code>--touch-target-min: 48px</code> and <code>--touch-target-field: 56px</code> are safety-critical</li>
+<li><strong>Spacing that deviates from defaults</strong> — where a wireframe intentionally uses non-standard spacing</li>
+<li><strong>Color semantics</strong> — where the meaning (success/error/warning) matters more than the appearance</li>
+</ol>
+<p>Record this as a UX decision. Defer comprehensive token annotation to the visual design phase.</p>
+<hr>
+<h2 id="offline-coverage" tabindex="-1"><a class="heading-anchor" href="#offline-coverage" aria-hidden="true">#</a> Offline Coverage</h2>
+<p>Per-screen offline behavior is declared in the Scope table of later-batch documents. Early-batch documents lack this declaration entirely.</p>
+<h3 id="grading" tabindex="-1"><a class="heading-anchor" href="#grading" aria-hidden="true">#</a> Grading</h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Grade</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://field-mode.md" target="_blank" rel="noopener noreferrer">field-mode.md</a></td>
+<td>A+</td>
+<td>Offline behavior deeply specified throughout. Best-in-class.</td>
+</tr>
+<tr>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a></td>
+<td>B</td>
+<td>Offline messaging section exists with detail, but no per-screen scope table</td>
+</tr>
+<tr>
+<td><a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a></td>
+<td>C</td>
+<td>Has an <code>## Offline Behavior</code> section but brief</td>
+</tr>
+<tr>
+<td><a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a></td>
+<td>C</td>
+<td>Screen inventory says CRM-002 is Partial offline — not called out in doc</td>
+</tr>
+<tr>
+<td><a href="http://navigation-shell.md" target="_blank" rel="noopener noreferrer">navigation-shell.md</a></td>
+<td>C</td>
+<td>Describes offline nav degradation but not per-variant</td>
+</tr>
+<tr>
+<td><a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a></td>
+<td>D</td>
+<td>No offline mention; all screens are online-only but should declare it</td>
+</tr>
+<tr>
+<td><a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a></td>
+<td>F</td>
+<td>No offline mention. All dashboards are online-only — needs explicit declaration</td>
+</tr>
+<tr>
+<td><a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a></td>
+<td>F</td>
+<td>No offline mention. Wizards are online-only — needs explicit declaration</td>
+</tr>
+<tr>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a></td>
+<td>A</td>
+<td>Scope table declares offline per screen. FUND-010 (cash) is Partial.</td>
+</tr>
+<tr>
+<td><a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a></td>
+<td>A</td>
+<td>Scope table declares all screens No. Correct — all online-only.</td>
+</tr>
+<tr>
+<td><a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a></td>
+<td>A</td>
+<td>Scope table declares all screens No.</td>
+</tr>
+<tr>
+<td><a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a></td>
+<td>A</td>
+<td>Scope table declares EVT-005 (check-in) Yes.</td>
+</tr>
+<tr>
+<td><a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a></td>
+<td>A</td>
+<td>Scope table declares ACT-009 Partial.</td>
+</tr>
+<tr>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a></td>
+<td>A</td>
+<td>Scope table declares all No.</td>
+</tr>
+<tr>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+<td>A</td>
+<td>Scope table present. GOTV field mode screens are offline.</td>
+</tr>
+<tr>
+<td><a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a></td>
+<td>B</td>
+<td>Scope table present but no Offline column. Purpose section states all online-only.</td>
+</tr>
+<tr>
+<td><a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a></td>
+<td>A</td>
+<td>Scope table declares all No.</td>
+</tr>
+<tr>
+<td><a href="http://profile.md" target="_blank" rel="noopener noreferrer">profile.md</a></td>
+<td>A</td>
+<td>Scope table declares all No.</td>
+</tr>
+<tr>
+<td><a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a></td>
+<td>A</td>
+<td>Scope table with partial offline for training content.</td>
+</tr>
+<tr>
+<td><a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a></td>
+<td>A</td>
+<td>Scope table declares all No.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key finding:</strong> Most admin screens are genuinely online-only. The fix is not redesigning them for offline — it's explicitly declaring <code>Offline: No</code> in a Scope table so implementers don't have to guess.</p>
+<hr>
+<h2 id="terminology-audit" tabindex="-1"><a class="heading-anchor" href="#terminology-audit" aria-hidden="true">#</a> Terminology Audit</h2>
+<h3 id="conflicts-found" tabindex="-1"><a class="heading-anchor" href="#conflicts-found" aria-hidden="true">#</a> Conflicts Found</h3>
+<table>
+<thead>
+<tr>
+<th>Term Cluster</th>
+<th>Used In</th>
+<th>Issue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>supporter / donor / contact</td>
+<td>supporter-portal, fundraising, crm</td>
+<td>&quot;Supporter&quot; is the portal persona. &quot;Donor&quot; appears in fundraising context. &quot;Contact&quot; is the CRM entity. All three can refer to the same person.</td>
+</tr>
+<tr>
+<td>staff / team member / user</td>
+<td>settings, onboarding, messaging</td>
+<td>&quot;Staff&quot; is the standard term in settings. &quot;Team member&quot; appears in some onboarding copy. &quot;User&quot; is generic.</td>
+</tr>
+<tr>
+<td>campaign</td>
+<td>fundraising, field-ops, communications, activism, GOTV</td>
+<td>Overloaded: fundraising campaign, canvassing campaign, email campaign, activism campaign, GOTV campaign. Context usually disambiguates.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="assessment-1" tabindex="-1"><a class="heading-anchor" href="#assessment-1" aria-hidden="true">#</a> Assessment</h3>
+<p>The terminology conflicts are mostly benign — context disambiguates in each case. The one exception is <strong>supporter vs. donor vs. contact</strong>: these need canonical definitions because they appear in the same feature areas (fundraising crosses supporter portal and CRM).</p>
+<h3 id="recommended-canonical-terms" tabindex="-1"><a class="heading-anchor" href="#recommended-canonical-terms" aria-hidden="true">#</a> Recommended Canonical Terms</h3>
+<table>
+<thead>
+<tr>
+<th>Canonical Term</th>
+<th>Definition</th>
+<th>Use Context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contact</strong></td>
+<td>Any person in the CRM database</td>
+<td>CRM, data import, segments</td>
+</tr>
+<tr>
+<td><strong>Supporter</strong></td>
+<td>A person who has taken a public action (donated, signed, RSVPed)</td>
+<td>Supporter portal, public pages, activism</td>
+</tr>
+<tr>
+<td><strong>Donor</strong></td>
+<td>A supporter who has made a financial contribution</td>
+<td>Fundraising reports, compliance, receipts</td>
+</tr>
+<tr>
+<td><strong>Staff</strong></td>
+<td>An authenticated user with an organizational role</td>
+<td>Settings, permissions, onboarding</td>
+</tr>
+</tbody>
+</table>
+<p>&quot;Donor&quot; is a subset of &quot;Supporter&quot; which is a subset of &quot;Contact.&quot; Use the most specific applicable term.</p>
+<hr>
+<h2 id="recommendations" tabindex="-1"><a class="heading-anchor" href="#recommendations" aria-hidden="true">#</a> Recommendations</h2>
+<h3 id="priority-1-required-before-visual-design" tabindex="-1"><a class="heading-anchor" href="#priority-1-required-before-visual-design" aria-hidden="true">#</a> Priority 1 — Required before visual design</h3>
+<ol>
+<li><strong>Normalize 9 early-batch docs</strong> — Add Scope tables, Navigation Context, Design Decisions tables, and standardized Accessibility sections. Add screen ID headings where missing.</li>
+<li><strong>Add 15 missing wireframes</strong> — Supporter portal (5), GOTV (5), onboarding wizards (5).</li>
+<li><strong>Declare offline behavior</strong> in all Scope tables — even if the answer is &quot;No&quot; for every screen.</li>
+</ol>
+<h3 id="priority-2-required-before-implementation" tabindex="-1"><a class="heading-anchor" href="#priority-2-required-before-implementation" aria-hidden="true">#</a> Priority 2 — Required before implementation</h3>
+<ol start="4">
+<li><strong>Consolidate open questions</strong> — Extract ~89 questions, categorize, deduplicate, flag contradictions.</li>
+<li><strong>Consolidate design decisions</strong> — Merge all decisions into a single index. Flag any contradictions.</li>
+<li><strong>Record UX decisions</strong> — Document structural conventions, token approach, offline requirements, terminology in <code>decisions/ux-decisions.md</code>.</li>
+</ol>
+<h3 id="priority-3-deferred-to-visual-design-phase" tabindex="-1"><a class="heading-anchor" href="#priority-3-deferred-to-visual-design-phase" aria-hidden="true">#</a> Priority 3 — Deferred to visual design phase</h3>
+<ol start="7">
+<li><strong>Design token annotation</strong> — Add token references where load-bearing (touch targets, spacing deviations, color semantics). Do not annotate globally.</li>
+<li><strong>Terminology normalization</strong> — Apply canonical terms during the sections being actively modified. No global search-and-replace.</li>
+</ol>
+<hr>
+<h2 id="appendix-a-consolidated-open-questions" tabindex="-1"><a class="heading-anchor" href="#appendix-a-consolidated-open-questions" aria-hidden="true">#</a> Appendix A: Consolidated Open Questions</h2>
+<p>Open questions extracted from all 21 wireframe documents, categorized by theme and deduplicated.</p>
+<h3 id="navigation-layout-5" tabindex="-1"><a class="heading-anchor" href="#navigation-layout-5" aria-hidden="true">#</a> Navigation &amp; Layout (5)</h3>
+<ol>
+<li><s><strong>Sidebar section collapse persistence</strong> — Should collapsed/expanded state of sidebar sections persist across sessions or reset on login? <em>(<a href="http://navigation-shell.md" target="_blank" rel="noopener noreferrer">navigation-shell.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Nav §1 — Persist across sessions via localStorage + server sync.</li>
+<li><s><strong>Detail panel memory</strong> — When navigating away and back, should the detail panel remember what was open or reset to closed? <em>(<a href="http://navigation-shell.md" target="_blank" rel="noopener noreferrer">navigation-shell.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Nav §2 — Reset on navigation, restore on browser back/forward.</li>
+<li><s><strong>Notification drawer count cap</strong> — Should the notification count badge cap at 99+, or show the actual number? <em>(<a href="http://navigation-shell.md" target="_blank" rel="noopener noreferrer">navigation-shell.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Nav §3 — Cap at 99+. Exact count inside drawer.</li>
+<li><s><strong>Dashboard personalization</strong> — Should users be able to rearrange dashboard cards or hide sections? <em>(<a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Nav §4 — No for v1. Fixed layout, role-filtered.</li>
+<li><s><strong>Dashboard refresh interval</strong> — What's the appropriate auto-refresh interval for each dashboard type? <em>(<a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Nav §5 — Tiered intervals (30s–15min) with mandatory freshness indicator and manual refresh button.</li>
+</ol>
+<h3 id="field-operations-8" tabindex="-1"><a class="heading-anchor" href="#field-operations-8" aria-hidden="true">#</a> Field Operations (8)</h3>
+<ol start="6">
+<li><s><strong>Walk list sorting</strong> — Should walk lists sort by geographic proximity (efficient routing) or by priority score (highest-value contacts first)? <em>(<a href="http://field-mode.md" target="_blank" rel="noopener noreferrer">field-mode.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Field §6 — Route-optimized by default; Field Director can override to priority-sorted.</li>
+<li><s><strong>Door card skip reasons</strong> — How many &quot;not home&quot; attempts before the contact is deprioritized? <em>(<a href="http://field-mode.md" target="_blank" rel="noopener noreferrer">field-mode.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Field §7 — 3× Not Home = deprioritize to phone queue. Refused = immediate stop. Come Back Later doesn't count.</li>
+<li><s><strong>Map offline tile size</strong> — How much map area should be pre-cached for offline use? <em>(<a href="http://field-mode.md" target="_blank" rel="noopener noreferrer">field-mode.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Field §8 — Assigned turf + 500m buffer at street-level zoom.</li>
+<li><s><strong>Script versioning in-field</strong> — If a script is updated while volunteers are in the field, when do they see the new version? <em>(<a href="http://field-ops.md" target="_blank" rel="noopener noreferrer">field-ops.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Field §9 — Active shifts version-locked; urgent updates appear on next door card.</li>
+<li><s><strong>Cross-campaign script reuse</strong> — Should scripts be shareable across campaigns? <em>(<a href="http://field-ops.md" target="_blank" rel="noopener noreferrer">field-ops.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Field §10 — Copy-as-template (not linked). Org-wide template library.</li>
+<li><s><strong>Turf auto-generation constraints</strong> — What are the practical limits (max contacts per turf, max walk time)? <em>(<a href="http://field-ops.md" target="_blank" rel="noopener noreferrer">field-ops.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Field §11 — Default 50 contacts / 2 hours per turf, configurable, mandatory preview.</li>
+<li><s><strong>Walk list reassignment</strong> — Can walk lists be reassigned mid-shift? <em>(<a href="http://field-ops.md" target="_blank" rel="noopener noreferrer">field-ops.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Field §12 — Yes. Completed doors stay, new assignee picks up, conflicts flagged for review.</li>
+<li><s><strong>Canvassing results data retention</strong> — How long are individual interaction records retained? <em>(<a href="http://field-ops.md" target="_blank" rel="noopener noreferrer">field-ops.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Field §13 / ADR-016 §4 — Operational tier, default 2 years.</li>
+</ol>
+<h3 id="messaging-communications-10" tabindex="-1"><a class="heading-anchor" href="#messaging-communications-10" aria-hidden="true">#</a> Messaging &amp; Communications (10)</h3>
+<ol start="14">
+<li><s><strong>Message retention</strong> — How long are messages stored? Is there a configurable retention policy? <em>(<a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 §4 — Tiered data retention policy. Operational tier: default 2 years, configurable 90 days–5 years.</li>
+<li><s><strong>Message search</strong> — Should full-text search be available for messages, and how does this interact with E2E encryption? <em>(<a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Comms §15 — Full-text search only with key escrow; metadata-only search for E2E conversations.</li>
+<li><s><strong>Read receipts</strong> — Should read receipts be visible to senders? Opt-in or opt-out? <em>(<a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Comms §16 — Visible by default, opt-out per user (symmetric). Disabled in duress mode.</li>
+<li><s><strong>Email builder complexity</strong> — Should the template builder support conditional content blocks in v1? <em>(<a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Comms §17 — No. Merge fields + segment-based sends for v1.</li>
+<li><s><strong>WhatsApp template approval</strong> — Should approval status be visible in the composer? <em>(<a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Comms §18 — Yes, inline status badge (approved/pending/rejected).</li>
+<li><s><strong>SMS A/B testing</strong> — Is message body A/B testing feasible given lower SMS volumes? <em>(<a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Comms §19 — Defer to v2. Volumes unlikely to produce statistical significance.</li>
+<li><s><strong>Drip sequence builder</strong> — Visual flow builder or simple trigger + delay + send rules for v1? <em>(<a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Comms §20 — Linear rules for v1. Visual flow builder is a <strong>v2 tentpole feature</strong>.</li>
+<li><s><strong>Cross-channel orchestration</strong> — Should the system prevent same-topic messages across channels on the same day? <em>(<a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 §2 — Two-layer orchestration: per-channel caps + cross-channel quiet window (default 24h).</li>
+<li><s><strong>Approval workflow for social posts</strong> — All posts or only above certain sensitivity? <em>(<a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Comms §22 — Configurable; default all posts require approval. OA can relax.</li>
+<li><s><strong>Content library</strong> — Shared asset library or file upload for v1? <em>(<a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Comms §23 — File upload + recent uploads panel for v1. Shared content library is a <strong>v2 tentpole feature</strong>.</li>
+</ol>
+<h3 id="social-media-2" tabindex="-1"><a class="heading-anchor" href="#social-media-2" aria-hidden="true">#</a> Social Media (2)</h3>
+<ol start="24">
+<li><s><strong>Cross-posting analytics</strong> — Show as 1 post with 4 platform results, or 4 separate posts? <em>(<a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Social §24 — 1 post with aggregate + per-platform breakdown.</li>
+<li><s><strong>TikTok video creation</strong> — In-platform editing or external only? <em>(<a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Social §25 — External only. Upload finished videos.</li>
+</ol>
+<h3 id="events-5" tabindex="-1"><a class="heading-anchor" href="#events-5" aria-hidden="true">#</a> Events (5)</h3>
+<ol start="26">
+<li><s><strong>Multi-day events</strong> — Single event with multiple dates or linked events? <em>(<a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Events §26 — Single event with multiple date slots.</li>
+<li><s><strong>Paid tickets</strong> — Should events support ticket pricing? Overlaps with fundraising. <em>(<a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 §3 — Yes. Ticket revenue flows through fundraising pipeline as donation + event metadata.</li>
+<li><s><strong>Recurring events</strong> — Auto-create instances or manual duplication? <em>(<a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Events §28 — Auto-create with edit/cancel-one-or-all pattern.</li>
+<li><s><strong>In-event broadcast</strong> — Should attendee messaging be available during events? <em>(<a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Events §29 — Staff via app notification; attendees via SMS to checked-in with phone numbers.</li>
+<li><s><strong>Multi-staff offline check-in</strong> — How are conflicts resolved when multiple staff check in attendees offline? <em>(<a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Events §30 — Last-write-wins, earliest timestamp, duplicate logged.</li>
+</ol>
+<h3 id="fundraising-6" tabindex="-1"><a class="heading-anchor" href="#fundraising-6" aria-hidden="true">#</a> Fundraising (6)</h3>
+<ol start="31">
+<li><s><strong>Refund time limits</strong> — Maximum age for refundable donations? Processor policies vary. <em>(<a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 §3 — Org-configurable maximum, default 90 days, bounded by processor policy.</li>
+<li><s><strong>Pledge reminder channels</strong> — All channels (email, SMS, WhatsApp) or just email? <em>(<a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 §2 — All consented channels, default email, governed by cross-channel quiet window.</li>
+<li><s><strong>Cash photo requirements</strong> — Required above certain amount? Balances audit vs. field friction. <em>(<a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Fund §33 — Required above org-configurable threshold (default $100 USD equivalent).</li>
+<li><s><strong>A/B test variant count</strong> — Support more than 2 variants? <em>(<a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Fund §34 — 2 variants (A/B) for v1.</li>
+<li><s><strong>Alliance split dispute resolution</strong> — Formal process beyond approval flow? <em>(<a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Fund §35 — Escalation to alliance lead + 14-day timeout, then revert to default split.</li>
+<li><s><strong>Dashboard data freshness for fundraising</strong> — How current should fundraising metrics be? <em>(<a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Fund §36 — Covered by Nav §5, Campaign tier (5-min refresh + freshness indicator).</li>
+</ol>
+<h3 id="activism-5" tabindex="-1"><a class="heading-anchor" href="#activism-5" aria-hidden="true">#</a> Activism (5)</h3>
+<ol start="37">
+<li><s><strong>Multi-target campaigns</strong> — Single letter campaign with multiple targets? <em>(<a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Activism §37 — Yes. One campaign, multiple targets, one letter per target per supporter.</li>
+<li><s><strong>AI model choice</strong> — Speed, multilingual capability, and cost tradeoffs? <em>(<a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Activism §38 — BYOM (Bring Your Own Model). Org-configurable AI provider with platform default fallback.</li>
+<li><s><strong>Printable letters</strong> — Generate PDF letters in addition to email? <em>(<a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Activism §39 — Yes. &quot;Download as PDF&quot; option on supporter action page.</li>
+<li><s><strong>Comment submission verification</strong> — How to verify regulatory body email accepts comments? <em>(<a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Activism §40 — Manual staff verification + delivery status tracking (Sent/Delivered/Bounced).</li>
+<li><s><strong>Supporter identity verification</strong> — Constituency validation vs. friction? <em>(<a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Activism §41 — Optional per campaign, default off (self-reported). Adds postal code field when enabled.</li>
+</ol>
+<h3 id="press-media-5" tabindex="-1"><a class="heading-anchor" href="#press-media-5" aria-hidden="true">#</a> Press &amp; Media (5)</h3>
+<ol start="42">
+<li><s><strong>Embargo enforcement</strong> — Technical enforcement or trust-based tracking? <em>(<a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Press §42 — Trust-based tracking with audit trail. Flag breaches on journalist contact records.</li>
+<li><s><strong>Crisis communications mode</strong> — Dedicated mode or urgent flag sufficient? <em>(<a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Press §43 — Urgent flag with streamlined approval, not a separate mode.</li>
+<li><s><strong>Coverage sentiment</strong> — Auto-suggest from headline analysis or manual only? <em>(<a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Press §44 — Manual only for v1. Multilingual NLP too unreliable for global south media.</li>
+<li><s><strong>Public endorsement display</strong> — Where exactly do public endorsements surface? <em>(<a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Press §45 — Three locations: Kanban pipeline, candidate dashboard, public page.</li>
+<li><s><strong>Multi-language press releases</strong> — Simultaneous or separate releases? <em>(<a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Press §46 — Single release with language variant tabs. Per-variant distribution sublists.</li>
+</ol>
+<h3 id="gotv-election-day-5" tabindex="-1"><a class="heading-anchor" href="#gotv-election-day-5" aria-hidden="true">#</a> GOTV &amp; Election Day (5)</h3>
+<ol start="47">
+<li><s><strong>Official election data feeds</strong> — Can the platform integrate with electoral authority APIs? <em>(<a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 GOTV §47 — Standard election data schema with API connector + CSV manual import. No specific integrations promised.</li>
+<li><s><strong>Alliance ride sharing</strong> — Cross-org driver pools on election day? <em>(<a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 GOTV §48 — Yes, opt-in per alliance. Same-org drivers prioritized, then shared pool.</li>
+<li><s><strong>Reallocation algorithm</strong> — Simple rule-based vs. predictive model? <em>(<a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 GOTV §49 — Rule-based for v1. Transparent, auditable. Predictive via BYOM in future.</li>
+<li><s><strong>Results entry security</strong> — Preventing fraudulent results entries? <em>(<a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 GOTV §50 — Multi-layer (identity, geolocation, photo, cross-check, audit trail). No single layer blocking.</li>
+<li><s><strong>Post-election data retention</strong> — How long is GOTV operational data retained? <em>(<a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 §4 — Operational tier: default 2 years, configurable 90 days–5 years.</li>
+</ol>
+<h3 id="settings-administration-5" tabindex="-1"><a class="heading-anchor" href="#settings-administration-5" aria-hidden="true">#</a> Settings &amp; Administration (5)</h3>
+<ol start="52">
+<li><s><strong>Settings delegation</strong> — Can specific settings categories be delegated to non-OA roles? <em>(<a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 §1 — No, OA-only for v1. Revisit in v2.</li>
+<li><s><strong>Two-OA approval</strong> — Should critical settings changes require a second OA? <em>(<a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Settings §53 — Yes, for destructive ops only. Single-OA orgs get 48-hour cooling-off instead.</li>
+<li><s><strong>Settings import/export</strong> — Export/import configuration between tenants? <em>(<a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Settings §54 — Export-only (JSON snapshot) for v1. Cross-tenant import deferred.</li>
+<li><s><strong>API rate limits</strong> — Configurable per key or plan level? <em>(<a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Settings §55 — Plan-level defaults with per-key overrides within plan ceiling.</li>
+<li><s><strong>Integration health monitoring</strong> — Proactive alerting for failing integrations? <em>(<a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Settings §56 — Yes. Health checks + 3-tier alert escalation (in-app → email → dashboard banner).</li>
+</ol>
+<h3 id="authentication-security-4" tabindex="-1"><a class="heading-anchor" href="#authentication-security-4" aria-hidden="true">#</a> Authentication &amp; Security (4)</h3>
+<ol start="57">
+<li><s><strong>Passkey sync</strong> — Allow cloud-synced passkeys or require device-bound only? <em>(<a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Auth §57 — Allow cloud-synced. Device-bound only at Maximum security tier.</li>
+<li><s><strong>TOTP fallback</strong> — Add app-based codes as additional fallback for low-connectivity areas? <em>(<a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Auth §58 — Yes, opt-in at Enhanced/Maximum tiers.</li>
+<li><s><strong>OA recovery</strong> — How does recovery work when the only OA has no trusted contacts? <em>(<a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Auth §59 — Platform-assisted, 72-hour cooling-off, identity verification via registration channel.</li>
+<li><s><strong>Low-end device passkey support</strong> — Minimum device/OS requirement for WebAuthn? <em>(<a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Auth §60 — Android 9+ / iOS 16+ / Chrome 109+. Below threshold falls back to magic link.</li>
+</ol>
+<h3 id="user-profile-3" tabindex="-1"><a class="heading-anchor" href="#user-profile-3" aria-hidden="true">#</a> User Profile (3)</h3>
+<ol start="61">
+<li><s><strong>Profile photo privacy</strong> — Visible to supporters or internal-only? <em>(<a href="http://profile.md" target="_blank" rel="noopener noreferrer">profile.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Profile §61 — Internal-only by default. Opt-in to supporter-visible.</li>
+<li><s><strong>Notification sounds</strong> — Custom sounds or default OS? <em>(<a href="http://profile.md" target="_blank" rel="noopener noreferrer">profile.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Profile §62 — OS default only. Settings: sounds on/off, vibration on/off.</li>
+<li><s><strong>Multi-tenant notifications</strong> — Show notifications from non-active orgs? <em>(<a href="http://profile.md" target="_blank" rel="noopener noreferrer">profile.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Profile §63 — Yes, with org badge. Mutable per org. Grouped in separate drawer section.</li>
+</ol>
+<h3 id="support-help-4" tabindex="-1"><a class="heading-anchor" href="#support-help-4" aria-hidden="true">#</a> Support &amp; Help (4)</h3>
+<ol start="64">
+<li><s><strong>AI concierge language</strong> — Use configured language or detect from question? <em>(<a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Help §64 — Detect from question, fall back to configured language.</li>
+<li><s><strong>Training completion gating</strong> — Block shifts until required training is complete? <em>(<a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Help §65 — Yes, for OA-designated safety-critical modules only.</li>
+<li><s><strong>External content</strong> — Allow external resource links in knowledge base? <em>(<a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Help §66 — Yes, with visual distinction. Links only, no embedding/caching.</li>
+<li><s><strong>AI hallucination prevention</strong> — Ground concierge in KB only or allow broader reasoning? <em>(<a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Help §67 — KB-grounded only. Explicit &quot;I don't know&quot; for unanswerable questions.</li>
+</ol>
+<h3 id="public-pages-4" tabindex="-1"><a class="heading-anchor" href="#public-pages-4" aria-hidden="true">#</a> Public Pages (4)</h3>
+<ol start="68">
+<li><s><strong>Custom domains</strong> — Support custom domains for public pages? <em>(<a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Public §68 — Yes, v1. SSL via Let's Encrypt. Default: GreenGrass subdomain.</li>
+<li><s><strong>Page analytics</strong> — Built-in or external tools? <em>(<a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Public §69 — Built-in lightweight (views, conversions, UTM). No third-party tracking in v1.</li>
+<li><s><strong>Volunteer signup A/B testing</strong> — Test variations on PUB-007? <em>(<a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Public §70 — Defer to v2. Extend fundraising A/B infrastructure when mature.</li>
+<li><s><strong>Open Graph images</strong> — Auto-generated or manually uploaded? <em>(<a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Public §71 — Auto-generated from title + logo + colors, with manual override.</li>
+</ol>
+<h3 id="onboarding-3" tabindex="-1"><a class="heading-anchor" href="#onboarding-3" aria-hidden="true">#</a> Onboarding (3)</h3>
+<ol start="72">
+<li><s><strong>Wizard skip behavior</strong> — Can optional wizard steps be skipped? What's the minimum viable path? <em>(<a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Onboarding §72 — 3 required steps (org name, admin, security tier). All others skippable to checklist.</li>
+<li><s><strong>Wizard resume</strong> — If a wizard is abandoned mid-way, does it save progress? <em>(<a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Onboarding §73 — Yes, auto-save after each step. Resume on next login.</li>
+<li><s><strong>Post-wizard checklist</strong> — Is the &quot;Getting Started&quot; checklist dismissible or persistent until complete? <em>(<a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Onboarding §74 — Persistent until required items done, then dismissible.</li>
+</ol>
+<h3 id="supporter-portal-3" tabindex="-1"><a class="heading-anchor" href="#supporter-portal-3" aria-hidden="true">#</a> Supporter Portal (3)</h3>
+<ol start="75">
+<li><s><strong>Authentication tiers</strong> — Should supporters need full accounts or just magic link access? <em>(<a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Portal §75 — Already decided: magic link for basic, full account for management.</li>
+<li><s><strong>Portal branding</strong> — How much branding customization is available for the supporter portal? <em>(<a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Portal §76 — Logo, colors, content. Fixed layout. No CSS overrides.</li>
+<li><s><strong>Mobile portal</strong> — Is the portal a separate mobile experience or responsive web? <em>(<a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Portal §77 — Responsive web, mobile-first. No native app. PWA capabilities incremental.</li>
+</ol>
+<h3 id="alliance-5" tabindex="-1"><a class="heading-anchor" href="#alliance-5" aria-hidden="true">#</a> Alliance (5)</h3>
+<ol start="78">
+<li><s><strong>Cross-alliance data visibility</strong> — What contact data is shared vs. kept private? <em>(<a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Alliance §78 — Contact existence + aggregates shared; interaction details private. OA can loosen.</li>
+<li><s><strong>Alliance hierarchy</strong> — Is the alliance flat or can there be sub-alliances? <em>(<a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Alliance §79 — Flat for v1. No sub-alliances.</li>
+<li><s><strong>Joint campaign ownership</strong> — When a joint campaign ends, who owns the data? <em>(<a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Alliance §80 — Lead org retains joint record; members keep their own interaction data.</li>
+<li><s><strong>Alliance dashboard permissions</strong> — Can member org admins see other members' metrics? <em>(<a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Alliance §81 — Aggregate only by default. Per-member visibility requires all-member opt-in.</li>
+<li><s><strong>Affiliation request SLA</strong> — Is there a timeout for unanswered affiliation requests? <em>(<a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Alliance §82 — 30-day timeout with reminders at 7/14/21 days. No auto-approval.</li>
+</ol>
+<h3 id="crm-data-5" tabindex="-1"><a class="heading-anchor" href="#crm-data-5" aria-hidden="true">#</a> CRM &amp; Data (5)</h3>
+<ol start="83">
+<li><s><strong>Dedup confidence threshold</strong> — What match confidence level triggers auto-merge vs. manual review? <em>(<a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 CRM §83 — Three tiers: 95%+ auto-merge, 70–94% review queue, &lt;70% ignore.</li>
+<li><s><strong>Import rollback</strong> — Can a completed import be fully rolled back? <em>(<a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 §4 — Yes, within rollback window (default 30 days, configurable 7–90 days). Auto-expires.</li>
+<li><s><strong>Segment refresh</strong> — How often are dynamic segments recalculated? <em>(<a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 CRM §85 — On access + daily background refresh. Manual refresh available.</li>
+<li><s><strong>Data export audit</strong> — Should exports require a reason for the audit trail? <em>(<a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 CRM §86 — Yes, for bulk exports (100+ records). Predefined reason list + audit log.</li>
+<li><s><strong>Tag taxonomy</strong> — Should tags be flat or hierarchical? <em>(<a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 CRM §87 — Flat with optional prefix convention (e.g., <code>region:north</code>). Prefix filtering in tag picker.</li>
+</ol>
+<h3 id="cross-cutting-2" tabindex="-1"><a class="heading-anchor" href="#cross-cutting-2" aria-hidden="true">#</a> Cross-Cutting (2)</h3>
+<ol start="88">
+<li><s><strong>Dashboards — real-time vs. polling</strong> — Should dashboards use WebSockets or polling? <em>(<a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a>, <a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Cross §88 — Polling for v1 (covered by Nav §5). WebSockets evaluated for v2.</li>
+<li><s><strong>Dashboard widget library</strong> — Should there be a standardized set of dashboard widgets? <em>(<a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a>)</em></s> <strong>Resolved:</strong> ADR-016 Cross §89 — Yes. Fixed vocabulary: metric card, bar/line chart, table, map, status list, progress bar, alert banner.</li>
+</ol>
+<p><strong>Total: 89 questions across 21 documents. All 89 resolved (ADR-016).</strong></p>
+<h3 id="contradictions-and-overlaps" tabindex="-1"><a class="heading-anchor" href="#contradictions-and-overlaps" aria-hidden="true">#</a> Contradictions and Overlaps</h3>
+<p>All contradictions and overlaps resolved in <code>decisions/016-cross-cutting-resolutions.md</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Questions</th>
+<th>Conflict</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#27 (paid tickets) + #31 (fundraising)</td>
+<td>Paid events overlap with fundraising.</td>
+<td><strong>Resolved:</strong> ADR-016 §3 — Ticket revenue flows through fundraising pipeline.</td>
+</tr>
+<tr>
+<td>#14 (message retention) + #51 (GOTV data retention) + #84 (import rollback)</td>
+<td>Three separate retention questions.</td>
+<td><strong>Resolved:</strong> ADR-016 §4 — Tiered data retention policy (operational / compliance / audit trail / rollback).</td>
+</tr>
+<tr>
+<td>#21 (cross-channel orchestration) + #32 (pledge reminder channels)</td>
+<td>Both touch on cross-channel coordination.</td>
+<td><strong>Resolved:</strong> ADR-016 §2 — Two-layer orchestration model.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="appendix-b-consolidated-design-decisions" tabindex="-1"><a class="heading-anchor" href="#appendix-b-consolidated-design-decisions" aria-hidden="true">#</a> Appendix B: Consolidated Design Decisions</h2>
+<p>Design decisions extracted from all 21 wireframe documents. The early-batch docs use inline &quot;Design Notes&quot; subsections; the later-batch docs use consolidated &quot;Design Decisions&quot; tables.</p>
+<h3 id="navigation-shell" tabindex="-1"><a class="heading-anchor" href="#navigation-shell" aria-hidden="true">#</a> Navigation &amp; Shell</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desktop nav paradigm</td>
+<td>Hybrid top bar + sidebar</td>
+<td>Context (top) + features (side) separation</td>
+<td><a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a></td>
+</tr>
+<tr>
+<td>Offline nav degradation</td>
+<td>Grey out with badge, don't remove</td>
+<td>Stable muscle memory</td>
+<td><a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a></td>
+</tr>
+<tr>
+<td>Duress mode nav</td>
+<td>Sanitized real structure</td>
+<td>Plausible deniability</td>
+<td><a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="dashboards" tabindex="-1"><a class="heading-anchor" href="#dashboards" aria-hidden="true">#</a> Dashboards</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Candidate dashboard curated</td>
+<td>Simplified view with only high-impact metrics</td>
+<td>Candidates aren't operators — they need headlines, not data</td>
+<td><a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a></td>
+</tr>
+<tr>
+<td>Communications dashboard</td>
+<td>Cross-channel unified view</td>
+<td>Prevents channel silo thinking</td>
+<td><a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a></td>
+</tr>
+<tr>
+<td>Data Quality dashboard</td>
+<td>Score-first with drill-down</td>
+<td>Score is the headline; details on demand</td>
+<td><a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a></td>
+</tr>
+<tr>
+<td>Compliance dashboard</td>
+<td>Flag-driven with action queue</td>
+<td>Compliance is reactive — surface what needs attention</td>
+<td><a href="http://dashboards.md" target="_blank" rel="noopener noreferrer">dashboards.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="field-mode" tabindex="-1"><a class="heading-anchor" href="#field-mode" aria-hidden="true">#</a> Field Mode</h3>
+<p><em>(No consolidated decisions table — inline design notes throughout. Key patterns:)</em></p>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Touch targets</td>
+<td>48px minimum, 56px in field mode</td>
+<td>Gloved hands, outdoor glare, one-handed operation</td>
+<td><a href="http://field-mode.md" target="_blank" rel="noopener noreferrer">field-mode.md</a></td>
+</tr>
+<tr>
+<td>Crash recovery</td>
+<td>Auto-save every interaction, resume on relaunch</td>
+<td>Data loss during field shifts is unacceptable</td>
+<td><a href="http://field-mode.md" target="_blank" rel="noopener noreferrer">field-mode.md</a></td>
+</tr>
+<tr>
+<td>GOTV door card variant</td>
+<td>Different from standard canvassing card</td>
+<td>GOTV has binary goal (did they vote?) vs. canvassing (persuasion)</td>
+<td><a href="http://field-mode.md" target="_blank" rel="noopener noreferrer">field-mode.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="onboarding" tabindex="-1"><a class="heading-anchor" href="#onboarding" aria-hidden="true">#</a> Onboarding</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wizard shell</td>
+<td>Stepped progress bar, no sidebar</td>
+<td>Focus on the task; prevent distraction</td>
+<td><a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a></td>
+</tr>
+<tr>
+<td>BYOK as separate wizard</td>
+<td>Not part of org setup</td>
+<td>Security ceremony deserves focused attention</td>
+<td><a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a></td>
+</tr>
+<tr>
+<td>Post-wizard checklist</td>
+<td>Persistent until dismissed</td>
+<td>Guides first-time setup without blocking</td>
+<td><a href="http://onboarding.md" target="_blank" rel="noopener noreferrer">onboarding.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="messaging" tabindex="-1"><a class="heading-anchor" href="#messaging" aria-hidden="true">#</a> Messaging</h3>
+<p><em>(No consolidated decisions table. Key patterns from inline notes:)</em></p>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desktop split view</td>
+<td>Conversation list + thread side-by-side</td>
+<td>Standard messaging UX; no need to innovate</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a></td>
+</tr>
+<tr>
+<td>Candidate briefings</td>
+<td>Structured format, not free-text</td>
+<td>Candidates need scannable info, not chat</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a></td>
+</tr>
+<tr>
+<td>Encryption indicators</td>
+<td>Lock icon on E2E messages</td>
+<td>Trust signal without technical jargon</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="supporter-portal" tabindex="-1"><a class="heading-anchor" href="#supporter-portal" aria-hidden="true">#</a> Supporter Portal</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portal branding</td>
+<td>Tenant-branded, not GreenGrass-branded</td>
+<td>Supporters should feel they're interacting with their org</td>
+<td><a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a></td>
+</tr>
+<tr>
+<td>Authentication tiers</td>
+<td>Magic link for basic, full account for management</td>
+<td>Low barrier for viewing; higher for changes</td>
+<td><a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="crm" tabindex="-1"><a class="heading-anchor" href="#crm" aria-hidden="true">#</a> CRM</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unified contact record</td>
+<td>Single record with persona-specific tabs</td>
+<td>One person = one record, regardless of role</td>
+<td><a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a></td>
+</tr>
+<tr>
+<td>Dedup side-by-side</td>
+<td>Field-by-field comparison with merge preview</td>
+<td>Manual merge needs full visibility</td>
+<td><a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a></td>
+</tr>
+<tr>
+<td>Import wizard</td>
+<td>4-step: upload → map → dedup preview → confirm</td>
+<td>Each step has a distinct purpose; can't be combined</td>
+<td><a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a></td>
+</tr>
+<tr>
+<td>Segment builder</td>
+<td>Visual query builder with live preview</td>
+<td>Technical users need power; live preview provides confidence</td>
+<td><a href="http://crm.md" target="_blank" rel="noopener noreferrer">crm.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="alliance" tabindex="-1"><a class="heading-anchor" href="#alliance" aria-hidden="true">#</a> Alliance</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alliance nav context</td>
+<td>Dedicated sidebar section, not a separate app</td>
+<td>Alliance is part of the platform, not a bolt-on</td>
+<td><a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a></td>
+</tr>
+<tr>
+<td>Sharing configuration</td>
+<td>By category and by org views</td>
+<td>Two mental models for the same data; both needed</td>
+<td><a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a></td>
+</tr>
+<tr>
+<td>Joint campaign governance</td>
+<td>Three models: lead-org, committee, equal</td>
+<td>Different alliance structures need different governance</td>
+<td><a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="field-operations-admin" tabindex="-1"><a class="heading-anchor" href="#field-operations-admin" aria-hidden="true">#</a> Field Operations (Admin)</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Script builder</td>
+<td>Split-pane with live preview</td>
+<td>Immediate feedback on script changes</td>
+<td><a href="http://field-ops.md" target="_blank" rel="noopener noreferrer">field-ops.md</a></td>
+</tr>
+<tr>
+<td>Turf management</td>
+<td>Map-first with list fallback</td>
+<td>Turfs are inherently geographic</td>
+<td><a href="http://field-ops.md" target="_blank" rel="noopener noreferrer">field-ops.md</a></td>
+</tr>
+<tr>
+<td>Shared patterns across canvassing/phone/voter reg</td>
+<td>Consistent list/create/results pattern</td>
+<td>Reduces learning curve across field op types</td>
+<td><a href="http://field-ops.md" target="_blank" rel="noopener noreferrer">field-ops.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fundraising" tabindex="-1"><a class="heading-anchor" href="#fundraising" aria-hidden="true">#</a> Fundraising</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Donation list summary bar</td>
+<td>Inline metric cards above table</td>
+<td>Finance Director checks totals frequently</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a></td>
+</tr>
+<tr>
+<td>Flagged donations in main list</td>
+<td>Warning row highlight + flag icon</td>
+<td>Flags visible in normal workflow, not separate queue</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a></td>
+</tr>
+<tr>
+<td>Cash recording mobile-first</td>
+<td>Full-screen centered form, camera integration</td>
+<td>Cash donations happen in the field</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a></td>
+</tr>
+<tr>
+<td>Reconciliation two-column</td>
+<td>Cash records left, bank deposits right</td>
+<td>Mirrors bookkeeper's desk mental model</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a></td>
+</tr>
+<tr>
+<td>A/B test separate screens</td>
+<td>Setup ≠ Results</td>
+<td>Different mental modes: configure vs. analyze</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a></td>
+</tr>
+<tr>
+<td>Alliance split approval inline</td>
+<td>Status on split card, not separate queue</td>
+<td>Few and infrequent — dedicated queue usually empty</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a></td>
+</tr>
+<tr>
+<td>Payment processor connect</td>
+<td>Inline stepped expansion, not wizard</td>
+<td>Only 3 steps; wizard overhead not warranted</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="communications" tabindex="-1"><a class="heading-anchor" href="#communications" aria-hidden="true">#</a> Communications</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campaign builder single page</td>
+<td>Scrollable sections with jump links</td>
+<td>Email campaigns are iterative, not linear</td>
+<td><a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a></td>
+</tr>
+<tr>
+<td>Template library card grid</td>
+<td>Card with thumbnail preview</td>
+<td>Visual preview critical for template selection</td>
+<td><a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a></td>
+</tr>
+<tr>
+<td>SMS + WhatsApp in one screen</td>
+<td>Channel toggle within single composer</td>
+<td>Same audience, similar workflow</td>
+<td><a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a></td>
+</tr>
+<tr>
+<td>Consent as matrix</td>
+<td>Channel × purpose table</td>
+<td>Correct mental model for consent management</td>
+<td><a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a></td>
+</tr>
+<tr>
+<td>Frequency caps org-wide</td>
+<td>Global caps, not per-campaign</td>
+<td>Per-campaign too granular to manage</td>
+<td><a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a></td>
+</tr>
+<tr>
+<td>Unsubscribe reasons</td>
+<td>Structured selection on unsub page</td>
+<td>Reasons diagnose communication quality</td>
+<td><a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="social-media" tabindex="-1"><a class="heading-anchor" href="#social-media" aria-hidden="true">#</a> Social Media</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-platform composer</td>
+<td>Single composer with platform overrides</td>
+<td>&quot;One message, multiple channels&quot; mental model</td>
+<td><a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a></td>
+</tr>
+<tr>
+<td>Calendar as primary tool</td>
+<td>Dedicated calendar view</td>
+<td>Social media is rhythm-driven</td>
+<td><a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a></td>
+</tr>
+<tr>
+<td>Side-by-side preview</td>
+<td>Full-page comparison</td>
+<td>Catches cross-platform inconsistencies</td>
+<td><a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a></td>
+</tr>
+<tr>
+<td>Account connection OA-only</td>
+<td>Org Admin exclusive</td>
+<td>OAuth tokens grant publishing access — security-sensitive</td>
+<td><a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a></td>
+</tr>
+<tr>
+<td>Engagement deferred</td>
+<td>Link out to native platforms</td>
+<td>In-platform engagement is massive scope for v1</td>
+<td><a href="http://social-media.md" target="_blank" rel="noopener noreferrer">social-media.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="events" tabindex="-1"><a class="heading-anchor" href="#events" aria-hidden="true">#</a> Events</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Check-in full-screen</td>
+<td>Dedicated check-in mode</td>
+<td>High-focus task at busy venue</td>
+<td><a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a></td>
+</tr>
+<tr>
+<td>Check-in offline-first</td>
+<td>RSVP list pre-downloaded</td>
+<td>Events happen in unreliable connectivity</td>
+<td><a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a></td>
+</tr>
+<tr>
+<td>Walk-in separate flow</td>
+<td>Distinct &quot;Walk-in&quot; button</td>
+<td>Quick registration path</td>
+<td><a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a></td>
+</tr>
+<tr>
+<td>Survey lightweight builder</td>
+<td>Simple question types</td>
+<td>Post-event surveys should be 2-minute affairs</td>
+<td><a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a></td>
+</tr>
+<tr>
+<td>Virtual as extension</td>
+<td>Virtual settings extend EVT-002</td>
+<td>Prevents duplicate event management</td>
+<td><a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a></td>
+</tr>
+<tr>
+<td>Metrics comparison</td>
+<td>Auto-populated with same-type events</td>
+<td>Trends help improvement</td>
+<td><a href="http://events.md" target="_blank" rel="noopener noreferrer">events.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="activism" tabindex="-1"><a class="heading-anchor" href="#activism" aria-hidden="true">#</a> Activism</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI-generated messages</td>
+<td>Each supporter gets unique message</td>
+<td>Prevents &quot;form letter&quot; detection</td>
+<td><a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a></td>
+</tr>
+<tr>
+<td>Explicit approval checkbox</td>
+<td>Supporter must check &quot;I've reviewed&quot;</td>
+<td>Legal and ethical requirement</td>
+<td><a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a></td>
+</tr>
+<tr>
+<td>Personal connection optional</td>
+<td>Supporter shares why issue matters</td>
+<td>AI weaves personal stories in</td>
+<td><a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a></td>
+</tr>
+<tr>
+<td>Talking points ordered</td>
+<td>Staff controls priority</td>
+<td>Order determines AI emphasis</td>
+<td><a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a></td>
+</tr>
+<tr>
+<td>Real-time action counter</td>
+<td>Total actions shown live</td>
+<td>Social proof drives participation</td>
+<td><a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a></td>
+</tr>
+<tr>
+<td>Petition signatures privacy</td>
+<td>First name + last initial only</td>
+<td>Protects supporters in sensitive contexts</td>
+<td><a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a></td>
+</tr>
+<tr>
+<td>Regeneration limit</td>
+<td>3 per session</td>
+<td>Prevents abuse while giving control</td>
+<td><a href="http://activism.md" target="_blank" rel="noopener noreferrer">activism.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="press-media" tabindex="-1"><a class="heading-anchor" href="#press-media" aria-hidden="true">#</a> Press &amp; Media</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Media contacts as CRM extension</td>
+<td>Press fields on standard Contact records</td>
+<td>Journalists are contacts — separate DB fragments relationships</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a></td>
+</tr>
+<tr>
+<td>Endorsement pipeline Kanban</td>
+<td>Visual pipeline with drag-and-drop</td>
+<td>Inherently pipeline-shaped process</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a></td>
+</tr>
+<tr>
+<td>Statement builder streamlined</td>
+<td>Minimal fields vs. press release builder</td>
+<td>Statements are reactive and time-sensitive</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a></td>
+</tr>
+<tr>
+<td>Coverage logging manual</td>
+<td>No automated media monitoring in v1</td>
+<td>Automated monitoring poorly covers global south media</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a></td>
+</tr>
+<tr>
+<td>Interview prep auto-assembled</td>
+<td>System surfaces talking points + journalist history</td>
+<td>Manual prep is error-prone</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a></td>
+</tr>
+<tr>
+<td>Talking points versioned</td>
+<td>Full version history with diff</td>
+<td>Positions evolve over time</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gotv" tabindex="-1"><a class="heading-anchor" href="#gotv" aria-hidden="true">#</a> GOTV</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Human-in-the-loop reallocation</td>
+<td>Platform suggests, staff approves</td>
+<td>Election day too high-stakes for automation</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+</tr>
+<tr>
+<td>Multi-pass turfs</td>
+<td>Morning/afternoon/evening passes</td>
+<td>Voters not home in morning reachable later</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+</tr>
+<tr>
+<td>Confidence-weighted turnout</td>
+<td>Different icons per data source</td>
+<td>Prevents overconfidence</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+</tr>
+<tr>
+<td>Separate map + segment views</td>
+<td>GOTV-017 and GOTV-018</td>
+<td>&quot;Where&quot; vs. &quot;who&quot; — different mental models</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+</tr>
+<tr>
+<td>Poll watcher separation</td>
+<td>Registry (people) + Credentials (documents)</td>
+<td>Different focus for each</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+</tr>
+<tr>
+<td>Results entry mobile-first</td>
+<td>Simple form, not spreadsheet</td>
+<td>Poll watchers need fast, one-handed interface</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="settings-admin" tabindex="-1"><a class="heading-anchor" href="#settings-admin" aria-hidden="true">#</a> Settings &amp; Admin</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All settings OA-only</td>
+<td>No delegation</td>
+<td>Single point of responsibility</td>
+<td><a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a></td>
+</tr>
+<tr>
+<td>Three-tier security</td>
+<td>Standard / Enhanced / Maximum</td>
+<td>Organizations have different risk profiles</td>
+<td><a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a></td>
+</tr>
+<tr>
+<td>Additive-only overrides</td>
+<td>Overrides grant, never revoke</td>
+<td>Prevents Swiss cheese permissions</td>
+<td><a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a></td>
+</tr>
+<tr>
+<td>Integration hub card grid</td>
+<td>Visual status cards</td>
+<td>Scannable at a glance</td>
+<td><a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a></td>
+</tr>
+<tr>
+<td>Audit trail non-deletable</td>
+<td>No delete/edit</td>
+<td>Tamper-proof compliance requirement</td>
+<td><a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a></td>
+</tr>
+<tr>
+<td>Separate per-integration screens</td>
+<td>SET-013 through SET-016</td>
+<td>Unique config requirements each</td>
+<td><a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="authentication" tabindex="-1"><a class="heading-anchor" href="#authentication" aria-hidden="true">#</a> Authentication</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Passkey-first (no passwords)</td>
+<td>Single passkey button</td>
+<td>Eliminates phishing, credential stuffing, password reuse</td>
+<td><a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a></td>
+</tr>
+<tr>
+<td>24-hour recovery cooling-off</td>
+<td>Mandatory wait period</td>
+<td>Real owner has time to notice unauthorized attempt</td>
+<td><a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a></td>
+</tr>
+<tr>
+<td>Trusted contact recovery</td>
+<td>Peer approval, not admin override</td>
+<td>No single person can access another's account</td>
+<td><a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a></td>
+</tr>
+<tr>
+<td>No &quot;forgot password&quot;</td>
+<td>Passkey + trusted contacts only</td>
+<td>No password to forget</td>
+<td><a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a></td>
+</tr>
+<tr>
+<td>Data preservation on timeout</td>
+<td>Local storage persists unsaved work</td>
+<td>Volunteers may be mid-form on timeout</td>
+<td><a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a></td>
+</tr>
+<tr>
+<td>Duress passkey optional</td>
+<td>Maximum security tier only</td>
+<td>Only orgs with genuine security threats</td>
+<td><a href="http://auth.md" target="_blank" rel="noopener noreferrer">auth.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-profile" tabindex="-1"><a class="heading-anchor" href="#user-profile" aria-hidden="true">#</a> User Profile</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Email not user-editable</td>
+<td>OA-managed only</td>
+<td>Email is account identifier for dedup, invites, audit</td>
+<td><a href="http://profile.md" target="_blank" rel="noopener noreferrer">profile.md</a></td>
+</tr>
+<tr>
+<td>Instant language switch</td>
+<td>No save/confirm</td>
+<td>Experience the language before committing</td>
+<td><a href="http://profile.md" target="_blank" rel="noopener noreferrer">profile.md</a></td>
+</tr>
+<tr>
+<td>Quiet hours with GOTV override</td>
+<td>Election day bypasses quiet hours</td>
+<td>GOTV operations are time-critical</td>
+<td><a href="http://profile.md" target="_blank" rel="noopener noreferrer">profile.md</a></td>
+</tr>
+<tr>
+<td>Security summary as checklist</td>
+<td>Green check / empty circle</td>
+<td>Quick scan for attention needed</td>
+<td><a href="http://profile.md" target="_blank" rel="noopener noreferrer">profile.md</a></td>
+</tr>
+<tr>
+<td>Tenant switcher in profile</td>
+<td>Not top-level nav</td>
+<td>Multi-tenant is uncommon (95% have one org)</td>
+<td><a href="http://profile.md" target="_blank" rel="noopener noreferrer">profile.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="support-help" tabindex="-1"><a class="heading-anchor" href="#support-help" aria-hidden="true">#</a> Support &amp; Help</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role-filtered help</td>
+<td>Articles tagged by persona</td>
+<td>Reduces noise for role-specific searches</td>
+<td><a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a></td>
+</tr>
+<tr>
+<td>AI concierge side panel (desktop)</td>
+<td>Overlays current screen</td>
+<td>Context preservation</td>
+<td><a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a></td>
+</tr>
+<tr>
+<td>Training offline caching</td>
+<td>Text/images cached, video online-only</td>
+<td>Low-connectivity training areas</td>
+<td><a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a></td>
+</tr>
+<tr>
+<td>Quiz as separate step</td>
+<td>Dedicated screen after lessons</td>
+<td>Clear learning vs. assessment separation</td>
+<td><a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a></td>
+</tr>
+<tr>
+<td>Certification expiration</td>
+<td>Configurable per module</td>
+<td>Safety training renewable; platform basics not</td>
+<td><a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a></td>
+</tr>
+<tr>
+<td>Article feedback</td>
+<td>Simple thumbs up/down</td>
+<td>Low-friction signal</td>
+<td><a href="http://help.md" target="_blank" rel="noopener noreferrer">help.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="public-pages" tabindex="-1"><a class="heading-anchor" href="#public-pages" aria-hidden="true">#</a> Public Pages</h3>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Short URL slugs</td>
+<td><code>/p/</code>, <code>/o/</code></td>
+<td>Printable, memorable for physical media</td>
+<td><a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a></td>
+</tr>
+<tr>
+<td>Mobile-first</td>
+<td>Designed for phone, adapted up</td>
+<td>Majority traffic from social media on phones</td>
+<td><a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a></td>
+</tr>
+<tr>
+<td>Minimal form fields</td>
+<td>Name and email only required</td>
+<td>Every field reduces conversion</td>
+<td><a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a></td>
+</tr>
+<tr>
+<td>Gated media kit optional</td>
+<td>OA-configurable public or gated</td>
+<td>Some orgs track downloads; others want accessibility</td>
+<td><a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a></td>
+</tr>
+<tr>
+<td>Donation upsell on confirmation</td>
+<td>Gentle CTA after volunteer signup</td>
+<td>High-engagement moment</td>
+<td><a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a></td>
+</tr>
+<tr>
+<td>No auth on public pages</td>
+<td>Completely open access</td>
+<td>Login walls kill conversion</td>
+<td><a href="http://public.md" target="_blank" rel="noopener noreferrer">public.md</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contradictions-found" tabindex="-1"><a class="heading-anchor" href="#contradictions-found" aria-hidden="true">#</a> Contradictions Found</h3>
+<p>Both contradictions resolved in <code>decisions/016-cross-cutting-resolutions.md</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Decision A</th>
+<th>Decision B</th>
+<th>Tension</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;All settings OA-only&quot; (<a href="http://settings.md" target="_blank" rel="noopener noreferrer">settings.md</a>)</td>
+<td>Open question #52: &quot;Can settings be delegated?&quot;</td>
+<td>The decision says no, the question asks if it should change.</td>
+<td><strong>Resolved:</strong> ADR-016 §1 — OA-only confirmed for v1.</td>
+</tr>
+<tr>
+<td>&quot;Frequency caps org-wide&quot; (<a href="http://communications.md" target="_blank" rel="noopener noreferrer">communications.md</a>)</td>
+<td>Open question #21: &quot;Cross-channel orchestration&quot;</td>
+<td>Org-wide caps are per-channel; cross-channel may need different approach.</td>
+<td><strong>Resolved:</strong> ADR-016 §2 — Two complementary layers, not contradictory.</td>
+</tr>
+</tbody>
+</table>
+<p>No other contradictions found. Decisions are remarkably consistent across documents.</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#executive-summary"># Executive Summary</a></li><li class="toc-2"><a href="#standard-document-structure"># Standard Document Structure</a></li><li class="toc-2"><a href="#per-document-gap-analysis"># Per-Document Gap Analysis</a></li><li class="toc-3"><a href="#early-batch-9-docs-need-normalization"># Early Batch (9 docs — need normalization)</a></li><li class="toc-3"><a href="#later-batch-12-docs-structurally-consistent"># Later Batch (12 docs — structurally consistent)</a></li><li class="toc-2"><a href="#missing-wireframes"># Missing Wireframes</a></li><li class="toc-3"><a href="#priority-1-supporter-facing-5-screens"># Priority 1 — Supporter-Facing (5 screens)</a></li><li class="toc-3"><a href="#priority-2-election-day-operations-5-screens"># Priority 2 — Election Day Operations (5 screens)</a></li><li class="toc-3"><a href="#priority-3-onboarding-wizards-5-screens"># Priority 3 — Onboarding Wizards (5 screens)</a></li><li class="toc-2"><a href="#design-system-token-integration"># Design System Token Integration</a></li><li class="toc-3"><a href="#current-state"># Current State</a></li><li class="toc-3"><a href="#assessment"># Assessment</a></li><li class="toc-3"><a href="#recommendation"># Recommendation</a></li><li class="toc-2"><a href="#offline-coverage"># Offline Coverage</a></li><li class="toc-3"><a href="#grading"># Grading</a></li><li class="toc-2"><a href="#terminology-audit"># Terminology Audit</a></li><li class="toc-3"><a href="#conflicts-found"># Conflicts Found</a></li><li class="toc-3"><a href="#assessment-1"># Assessment</a></li><li class="toc-3"><a href="#recommended-canonical-terms"># Recommended Canonical Terms</a></li><li class="toc-2"><a href="#recommendations"># Recommendations</a></li><li class="toc-3"><a href="#priority-1-required-before-visual-design"># Priority 1 — Required before visual design</a></li><li class="toc-3"><a href="#priority-2-required-before-implementation"># Priority 2 — Required before implementation</a></li><li class="toc-3"><a href="#priority-3-deferred-to-visual-design-phase"># Priority 3 — Deferred to visual design phase</a></li><li class="toc-2"><a href="#appendix-a-consolidated-open-questions"># Appendix A: Consolidated Open Questions</a></li><li class="toc-3"><a href="#navigation-layout-5"># Navigation &amp;amp; Layout (5)</a></li><li class="toc-3"><a href="#field-operations-8"># Field Operations (8)</a></li><li class="toc-3"><a href="#messaging-communications-10"># Messaging &amp;amp; Communications (10)</a></li><li class="toc-3"><a href="#social-media-2"># Social Media (2)</a></li><li class="toc-3"><a href="#events-5"># Events (5)</a></li><li class="toc-3"><a href="#fundraising-6"># Fundraising (6)</a></li><li class="toc-3"><a href="#activism-5"># Activism (5)</a></li><li class="toc-3"><a href="#press-media-5"># Press &amp;amp; Media (5)</a></li><li class="toc-3"><a href="#gotv-election-day-5"># GOTV &amp;amp; Election Day (5)</a></li><li class="toc-3"><a href="#settings-administration-5"># Settings &amp;amp; Administration (5)</a></li><li class="toc-3"><a href="#authentication-security-4"># Authentication &amp;amp; Security (4)</a></li><li class="toc-3"><a href="#user-profile-3"># User Profile (3)</a></li><li class="toc-3"><a href="#support-help-4"># Support &amp;amp; Help (4)</a></li><li class="toc-3"><a href="#public-pages-4"># Public Pages (4)</a></li><li class="toc-3"><a href="#onboarding-3"># Onboarding (3)</a></li><li class="toc-3"><a href="#supporter-portal-3"># Supporter Portal (3)</a></li><li class="toc-3"><a href="#alliance-5"># Alliance (5)</a></li><li class="toc-3"><a href="#crm-data-5"># CRM &amp;amp; Data (5)</a></li><li class="toc-3"><a href="#cross-cutting-2"># Cross-Cutting (2)</a></li><li class="toc-3"><a href="#contradictions-and-overlaps"># Contradictions and Overlaps</a></li><li class="toc-2"><a href="#appendix-b-consolidated-design-decisions"># Appendix B: Consolidated Design Decisions</a></li><li class="toc-3"><a href="#navigation-shell"># Navigation &amp;amp; Shell</a></li><li class="toc-3"><a href="#dashboards"># Dashboards</a></li><li class="toc-3"><a href="#field-mode"># Field Mode</a></li><li class="toc-3"><a href="#onboarding"># Onboarding</a></li><li class="toc-3"><a href="#messaging"># Messaging</a></li><li class="toc-3"><a href="#supporter-portal"># Supporter Portal</a></li><li class="toc-3"><a href="#crm"># CRM</a></li><li class="toc-3"><a href="#alliance"># Alliance</a></li><li class="toc-3"><a href="#field-operations-admin"># Field Operations (Admin)</a></li><li class="toc-3"><a href="#fundraising"># Fundraising</a></li><li class="toc-3"><a href="#communications"># Communications</a></li><li class="toc-3"><a href="#social-media"># Social Media</a></li><li class="toc-3"><a href="#events"># Events</a></li><li class="toc-3"><a href="#activism"># Activism</a></li><li class="toc-3"><a href="#press-media"># Press &amp;amp; Media</a></li><li class="toc-3"><a href="#gotv"># GOTV</a></li><li class="toc-3"><a href="#settings-admin"># Settings &amp;amp; Admin</a></li><li class="toc-3"><a href="#authentication"># Authentication</a></li><li class="toc-3"><a href="#user-profile"># User Profile</a></li><li class="toc-3"><a href="#support-help"># Support &amp;amp; Help</a></li><li class="toc-3"><a href="#public-pages"># Public Pages</a></li><li class="toc-3"><a href="#contradictions-found"># Contradictions Found</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

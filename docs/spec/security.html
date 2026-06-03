@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security &amp; Threat Model · GreenGrass</title>
+<meta name="description" content="Security &amp; Threat Model — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html">Core Workflows</a></li><li><a href="./geography.html">Target Geography</a></li><li><a href="./security.html" aria-current="page" class="active">Security &amp; Threat Model</a></li><li><a href="./compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html">External Integrations</a></li><li><a href="./support.html">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="./press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="security-threat-model" tabindex="-1"><a class="heading-anchor" href="#security-threat-model" aria-hidden="true">#</a> Security &amp; Threat Model</h1>
+<h2 id="why-this-document-matters" tabindex="-1"><a class="heading-anchor" href="#why-this-document-matters" aria-hidden="true">#</a> Why This Document Matters</h2>
+<p>GreenGrass is a political organizing platform operating in the global south. This is not a standard enterprise security context. The people using this platform — candidates, organizers, volunteers, supporters — may face real-world consequences if their data is compromised: surveillance, harassment, arrest, or violence. Security failures are not just reputational or financial risks — they are safety risks.</p>
+<p>Every security decision must be evaluated against this reality.</p>
+<hr>
+<h2 id="threat-actors" tabindex="-1"><a class="heading-anchor" href="#threat-actors" aria-hidden="true">#</a> Threat Actors</h2>
+<h3 id="tier-1-state-actors" tabindex="-1"><a class="heading-anchor" href="#tier-1-state-actors" aria-hidden="true">#</a> Tier 1: State Actors</h3>
+<p>Nation-state intelligence and security services with significant technical capabilities.</p>
+<p><strong>Motivation:</strong> Monitor opposition political activity, identify organizers, suppress movements, gather intelligence on candidates and their supporters.</p>
+<p><strong>Capabilities:</strong></p>
+<ul>
+<li>Network traffic interception and deep packet inspection</li>
+<li>Compel local ISPs and telecoms to hand over data</li>
+<li>Legal and extralegal access to cloud infrastructure within their jurisdiction</li>
+<li>Targeted device compromise (spyware like Pegasus)</li>
+<li>Social engineering at scale</li>
+<li>Physical seizure of devices</li>
+</ul>
+<p><strong>Likelihood:</strong> High in many target countries. This is the defining threat.</p>
+<h3 id="tier-2-non-state-geopolitical-actors" tabindex="-1"><a class="heading-anchor" href="#tier-2-non-state-geopolitical-actors" aria-hidden="true">#</a> Tier 2: Non-State Geopolitical Actors</h3>
+<p>Multinational corporations, foreign political organizations, extractive industries, transnational NGOs, and other powerful non-state entities with interests in the political outcome.</p>
+<p><strong>Motivation:</strong> Protect business interests (mining, energy, agriculture), advance foreign political agendas, suppress labor or environmental movements, maintain favorable regulatory environments.</p>
+<p><strong>Capabilities:</strong></p>
+<ul>
+<li>Corporate intelligence and private investigation firms</li>
+<li>Commercial surveillance tools (legally acquired spyware, data brokers)</li>
+<li>Significant financial resources to hire technical talent</li>
+<li>Legal pressure (lawsuits, injunctions to compel data disclosure)</li>
+<li>Influence over local media and institutions</li>
+<li>Social media manipulation and astroturfing at scale</li>
+</ul>
+<p><strong>Likelihood:</strong> High in contexts where grassroots campaigns challenge entrenched corporate or foreign interests — extractive industries, land rights, labor organizing, environmental movements.</p>
+<h3 id="tier-3-political-opponents" tabindex="-1"><a class="heading-anchor" href="#tier-3-political-opponents" aria-hidden="true">#</a> Tier 3: Political Opponents</h3>
+<p>Rival campaigns, parties, or political operatives.</p>
+<p><strong>Motivation:</strong> Gain competitive advantage — steal voter data, donor lists, campaign strategy. Discredit or disrupt opposition campaigns.</p>
+<p><strong>Capabilities:</strong></p>
+<ul>
+<li>Social engineering (posing as volunteers to gain access)</li>
+<li>Bribery or coercion of insiders</li>
+<li>Hiring hackers or using commercial surveillance tools</li>
+<li>Weaponizing stolen data through media leaks</li>
+</ul>
+<p><strong>Likelihood:</strong> High, especially during election cycles.</p>
+<h3 id="tier-4-criminal-actors" tabindex="-1"><a class="heading-anchor" href="#tier-4-criminal-actors" aria-hidden="true">#</a> Tier 4: Criminal Actors</h3>
+<p>Organized crime, ransomware operators, opportunistic attackers.</p>
+<p><strong>Motivation:</strong> Financial gain — ransom, selling data, fraud using donor payment information.</p>
+<p><strong>Capabilities:</strong></p>
+<ul>
+<li>Ransomware and extortion</li>
+<li>Credential stuffing and phishing</li>
+<li>Exploiting known vulnerabilities</li>
+<li>Payment fraud</li>
+</ul>
+<p><strong>Likelihood:</strong> Moderate. Political campaigns are not primary targets for most criminal actors, but donor payment data and the high-profile nature of campaigns can attract attention.</p>
+<h3 id="tier-5-insider-threats" tabindex="-1"><a class="heading-anchor" href="#tier-5-insider-threats" aria-hidden="true">#</a> Tier 5: Insider Threats</h3>
+<p>Current or former staff, volunteers, or affiliated org members.</p>
+<p><strong>Motivation:</strong> Personal grievance, ideological disagreement, coercion by external actors, financial incentive.</p>
+<p><strong>Capabilities:</strong></p>
+<ul>
+<li>Legitimate access to the platform (role-based)</li>
+<li>Knowledge of internal processes and personnel</li>
+<li>Ability to exfiltrate data gradually over time</li>
+<li>Ability to sabotage data or operations</li>
+</ul>
+<p><strong>Likelihood:</strong> Moderate. Campaigns are high-turnover, emotionally charged environments with large volunteer bases and varying levels of vetting.</p>
+<hr>
+<h2 id="assets-to-protect" tabindex="-1"><a class="heading-anchor" href="#assets-to-protect" aria-hidden="true">#</a> Assets to Protect</h2>
+<h3 id="critical-assets-compromise-causes-direct-harm-to-people" tabindex="-1"><a class="heading-anchor" href="#critical-assets-compromise-causes-direct-harm-to-people" aria-hidden="true">#</a> Critical Assets (compromise causes direct harm to people)</h3>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Risk if compromised</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supporter/volunteer identity and contact info</td>
+<td>Targeting, harassment, arrest in hostile political environments</td>
+</tr>
+<tr>
+<td>Voter contact data with political sentiment</td>
+<td>Reveals who supports the opposition — dangerous under authoritarian regimes</td>
+</tr>
+<tr>
+<td>Canvassing notes and field data</td>
+<td>Detailed records of who said what to whom at their home address</td>
+</tr>
+<tr>
+<td>Candidate private communications</td>
+<td>Blackmail, political manipulation, media leaks</td>
+</tr>
+<tr>
+<td>Donor identity and contribution history</td>
+<td>Financial targeting, political retaliation, extortion</td>
+</tr>
+</tbody>
+</table>
+<h3 id="high-value-assets-compromise-causes-operational-damage" tabindex="-1"><a class="heading-anchor" href="#high-value-assets-compromise-causes-operational-damage" aria-hidden="true">#</a> High-Value Assets (compromise causes operational damage)</h3>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Risk if compromised</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campaign strategy and internal analytics</td>
+<td>Competitive advantage lost to opponents</td>
+</tr>
+<tr>
+<td>Voter file and segmentation data</td>
+<td>Months of organizing work stolen</td>
+</tr>
+<tr>
+<td>Financial records and payment processor credentials</td>
+<td>Fraud, fund theft, compliance violations</td>
+</tr>
+<tr>
+<td>Platform credentials and access tokens</td>
+<td>Full system compromise, impersonation</td>
+</tr>
+<tr>
+<td>Audit logs</td>
+<td>Cover tracks after a breach, undermine trust</td>
+</tr>
+</tbody>
+</table>
+<h3 id="infrastructure-assets" tabindex="-1"><a class="heading-anchor" href="#infrastructure-assets" aria-hidden="true">#</a> Infrastructure Assets</h3>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Risk if compromised</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application servers and databases</td>
+<td>Full data breach, service disruption</td>
+</tr>
+<tr>
+<td>Backup systems</td>
+<td>Data destruction (ransomware), historical data theft</td>
+</tr>
+<tr>
+<td>Deployment pipelines</td>
+<td>Supply chain attack, malicious code injection</td>
+</tr>
+<tr>
+<td>DNS and domain control</td>
+<td>Phishing, traffic interception, service hijacking</td>
+</tr>
+<tr>
+<td>SMS/email sending infrastructure</td>
+<td>Impersonation, misinformation campaigns</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="security-principles" tabindex="-1"><a class="heading-anchor" href="#security-principles" aria-hidden="true">#</a> Security Principles</h2>
+<ol>
+<li><strong>Assume breach.</strong> Design every layer assuming the layer above it has been compromised. Defense in depth, not perimeter security.</li>
+<li><strong>Minimize blast radius.</strong> Single-tenant architecture helps here — compromising one tenant should not expose another.</li>
+<li><strong>Minimize data collection.</strong> Don't collect data you don't need. Every field stored is a field that can be stolen.</li>
+<li><strong>Encrypt everything.</strong> At rest, in transit, no exceptions.</li>
+<li><strong>Audit everything.</strong> Full audit logging (decided in <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>) is a security control, not just a compliance feature.</li>
+<li><strong>Default to private.</strong> Decided in <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — private by default, opt-in to visibility.</li>
+<li><strong>Sovereign data, sovereign infrastructure.</strong> Tenant data should stay within jurisdictions the tenant controls.</li>
+<li><strong>No single point of compromise.</strong> No single credential, key, or person should be able to expose the entire platform.</li>
+</ol>
+<hr>
+<h2 id="encryption" tabindex="-1"><a class="heading-anchor" href="#encryption" aria-hidden="true">#</a> Encryption</h2>
+<h3 id="in-transit" tabindex="-1"><a class="heading-anchor" href="#in-transit" aria-hidden="true">#</a> In Transit</h3>
+<p><strong>DECIDED:</strong> TLS 1.2+ with TLS 1.3 preferred. Clients that support 1.3 negotiate it automatically; older devices fall back to 1.2 with weak cipher suites disabled. Balances security with device accessibility in the global south.</p>
+<p>All network communication must be encrypted:</p>
+<ul>
+<li>Client ↔ server: HTTPS with HSTS, certificate pinning in mobile clients</li>
+<li>Server ↔ server: mutual TLS for internal service communication</li>
+<li>Server ↔ third-party APIs: TLS with certificate validation</li>
+</ul>
+<h3 id="at-rest" tabindex="-1"><a class="heading-anchor" href="#at-rest" aria-hidden="true">#</a> At Rest</h3>
+<p>All stored data must be encrypted at rest:</p>
+<ul>
+<li>Database encryption (transparent data encryption or filesystem-level)</li>
+<li>Backup encryption with separate key management</li>
+<li>Local device storage encryption for offline-capable features (canvassing app data on the volunteer's phone)</li>
+</ul>
+<p><strong>DECIDED:</strong> Yes. High-sensitivity fields receive application-level encryption on top of storage-level encryption. Defense in depth — a database compromise alone does not expose the most sensitive data.</p>
+<p><strong>Fields requiring application-level encryption:</strong></p>
+<ul>
+<li>Political sentiment scores and support ratings</li>
+<li>Canvassing notes and field interaction records</li>
+<li>Donor identity and contribution details</li>
+<li>Candidate private communications</li>
+<li>National ID / voter ID numbers</li>
+</ul>
+<!-- REVISIT: The specific implementation (envelope encryption, searchable encryption, or decrypt-on-read) should be addressed in the architecture spec. Tradeoffs between query capability and security will need to be evaluated per field. -->
+<h3 id="end-to-end-encryption" tabindex="-1"><a class="heading-anchor" href="#end-to-end-encryption" aria-hidden="true">#</a> End-to-End Encryption</h3>
+<p><strong>DECIDED:</strong> End-to-end encryption by default for internal messaging, with optional tenant-controlled key escrow.</p>
+<ul>
+<li><strong>Default:</strong> All internal messaging (staff-to-staff, candidate-to-campaign-manager) is E2E encrypted. GreenGrass cannot read message content and has nothing to hand over if compelled.</li>
+<li><strong>Opt-in escrow:</strong> Tenants can choose to enable server-side key escrow for their org. This enables message search, easier device recovery, and message history continuity — at the cost of GreenGrass (and potentially a legal demand) being able to access content.</li>
+<li><strong>Transparent:</strong> The choice is surfaced clearly to users. If escrow is enabled, the messaging UI should indicate that messages are not E2E encrypted in that org.</li>
+<li><strong>Per-tenant, not per-user:</strong> This is an org-level setting, not an individual choice. The Org Admin decides the tradeoff for their organization.</li>
+</ul>
+<!-- REVISIT: Key management UX, device recovery flow for E2E mode, and the escrow mechanism need detailed design in the architecture spec. -->
+<hr>
+<h2 id="data-sovereignty-residency" tabindex="-1"><a class="heading-anchor" href="#data-sovereignty-residency" aria-hidden="true">#</a> Data Sovereignty &amp; Residency</h2>
+<h3 id="the-problem" tabindex="-1"><a class="heading-anchor" href="#the-problem" aria-hidden="true">#</a> The Problem</h3>
+<p>GreenGrass operates across multiple countries. Each country has different laws about:</p>
+<ul>
+<li>Where data can be stored</li>
+<li>Who can compel access to data (courts, intelligence services, police)</li>
+<li>What data protection rights citizens have</li>
+<li>Whether political data has special protections</li>
+</ul>
+<p>A campaign in Country A should not have its data stored in or accessible from Country B, especially if Country B has an adversarial relationship with the campaign's political movement.</p>
+<h3 id="data-residency" tabindex="-1"><a class="heading-anchor" href="#data-residency" aria-hidden="true">#</a> Data Residency</h3>
+<p><strong>DECIDED:</strong> Per-country data residency as standard, with a self-hosted option.</p>
+<p><strong>Per-country residency (managed):</strong></p>
+<ul>
+<li>Each tenant's data is stored within their country or a country they explicitly choose at provisioning time.</li>
+<li>GreenGrass manages the infrastructure — deployment, updates, monitoring, support.</li>
+<li>Requires GreenGrass to establish hosting presence in each target country, either through local cloud providers or in-country data centers.</li>
+<li>The single-tenant architecture makes this architecturally natural — each tenant is already isolated, so placing that isolation in a specific country is an operational question, not an architectural one.</li>
+</ul>
+<p><strong>Self-hosted option:</strong></p>
+<ul>
+<li>For the most security-sensitive tenants, GreenGrass provides the software for deployment on the tenant's own infrastructure.</li>
+<li>The tenant controls physical and network security, data residency, and access.</li>
+<li>GreenGrass provides update packages, documentation, and support — but does not have access to the tenant's instance unless explicitly granted.</li>
+<li>Self-hosted tenants are responsible for their own backups, monitoring, and infrastructure maintenance.</li>
+</ul>
+<!-- REVISIT: The self-hosted option has significant implications for update delivery, version fragmentation, and support cost. Needs detailed treatment in the architecture spec. Also, the per-country hosting strategy needs a rollout plan — which countries first, which cloud providers, cost modeling. -->
+<h3 id="legal-jurisdiction" tabindex="-1"><a class="heading-anchor" href="#legal-jurisdiction" aria-hidden="true">#</a> Legal Jurisdiction</h3>
+<p><strong>DECIDED:</strong> Incorporate in a privacy-strong jurisdiction. Architectural inability to comply where possible. Transparency measures.</p>
+<p><strong>Incorporation:</strong></p>
+<ul>
+<li>GreenGrass will incorporate in a jurisdiction with strong, stable privacy and data protection laws — candidates include Estonia and Switzerland.</li>
+<li>The jurisdiction should provide: robust data protection regulation, political stability, no history of extralegal data compulsion, and a legal framework that supports refusing foreign government data demands.</li>
+</ul>
+<!-- REVISIT: Final incorporation decision requires legal counsel. Key factors: mutual legal assistance treaties (MLATs) the jurisdiction participates in, whether the jurisdiction can be pressured by larger powers, tax implications, and practical considerations for operating a global business. -->
+<p><strong>Data compulsion response:</strong></p>
+<ul>
+<li>Where possible, GreenGrass should be <strong>architecturally unable to comply</strong> with data demands — if the tenant holds their own encryption keys (see BYOK decision below), GreenGrass cannot decrypt tenant data even under court order.</li>
+<li>For managed tenants where GreenGrass holds keys, the company will challenge overbroad or politically motivated demands using the full legal protections of its incorporation jurisdiction.</li>
+<li>GreenGrass will not voluntarily cooperate with data demands from governments that are not the jurisdiction of incorporation, absent a valid legal process recognized by that jurisdiction.</li>
+</ul>
+<p><strong>Transparency:</strong></p>
+<ul>
+<li><strong>Warrant canary:</strong> GreenGrass will maintain a publicly posted, regularly updated statement confirming it has not received secret government demands for data. If the statement disappears, users can draw their own conclusions.</li>
+<li><strong>Transparency report:</strong> Regular public reporting of all government data requests received, how they were handled, and how many were complied with, challenged, or refused. Published at minimum annually.</li>
+</ul>
+<hr>
+<h2 id="infrastructure-security" tabindex="-1"><a class="heading-anchor" href="#infrastructure-security" aria-hidden="true">#</a> Infrastructure Security</h2>
+<h3 id="single-tenant-isolation" tabindex="-1"><a class="heading-anchor" href="#single-tenant-isolation" aria-hidden="true">#</a> Single-Tenant Isolation</h3>
+<p>The single-tenant architecture (decided in the product description) is a security advantage:</p>
+<ul>
+<li><strong>No cross-tenant data leakage</strong> — each tenant has its own database, application instance, and resources</li>
+<li><strong>Compromising one tenant doesn't expose others</strong> — blast radius is limited to one organization</li>
+<li><strong>Tenant-specific security policies</strong> — each tenant can have different encryption keys, data residency, and access controls</li>
+</ul>
+<p><strong>DECIDED:</strong> Tiered isolation based on tenant risk profile and needs.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Isolation level</th>
+<th>For whom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard</td>
+<td>Separate containers, shared cluster</td>
+<td>Small campaigns, advocacy orgs, low-threat environments</td>
+</tr>
+<tr>
+<td>Enhanced</td>
+<td>Separate cluster</td>
+<td>Mid-size campaigns, elevated threat environments, tenants handling large voter files</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>Separate cloud account</td>
+<td>High-risk campaigns under active state surveillance, large parties, tenants requiring auditability of infrastructure access</td>
+</tr>
+<tr>
+<td>Self-hosted</td>
+<td>Tenant's own infrastructure</td>
+<td>Tenants who require full physical and administrative control</td>
+</tr>
+</tbody>
+</table>
+<p>Tenants select their tier at provisioning time. Tier upgrades are supported without data migration downtime (the single-tenant architecture means moving a tenant is operationally straightforward, even if not trivial).</p>
+<!-- REVISIT: Pricing implications per tier, and whether certain threat assessments should trigger a mandatory minimum tier, need to be addressed in the business model and onboarding specs. -->
+<h3 id="network-security" tabindex="-1"><a class="heading-anchor" href="#network-security" aria-hidden="true">#</a> Network Security</h3>
+<ul>
+<li>Network segmentation between tenants</li>
+<li>No direct tenant-to-tenant communication (alliance sharing goes through the platform layer)</li>
+<li>Intrusion detection and monitoring</li>
+<li>DDoS protection (campaigns are high-profile targets during election periods)</li>
+</ul>
+<h3 id="secrets-management" tabindex="-1"><a class="heading-anchor" href="#secrets-management" aria-hidden="true">#</a> Secrets Management</h3>
+<ul>
+<li>No secrets in code, configuration files, or environment variables</li>
+<li>Centralized secrets management (e.g., HashiCorp Vault or cloud-native equivalent)</li>
+<li>Automatic secret rotation</li>
+<li>Separate encryption keys per tenant</li>
+</ul>
+<p><strong>DECIDED:</strong> BYOK by default. GreenGrass-managed keys as opt-in.</p>
+<ul>
+<li><strong>Default:</strong> Tenants generate and hold their own encryption keys. GreenGrass cannot decrypt tenant data. This is the strongest trust model — GreenGrass cannot be compelled to expose data it cannot read.</li>
+<li><strong>Opt-in managed keys:</strong> Tenants who explicitly choose convenience over sovereignty can opt into GreenGrass-managed keys. This enables GreenGrass support to assist with data recovery and simplifies operations for less technical orgs.</li>
+<li><strong>The choice is transparent:</strong> Tenants are clearly informed during onboarding what each option means. BYOK is presented as the recommended default, not a power-user feature.</li>
+<li><strong>Key management UX:</strong> The burden of key management on tenants is a UX problem to solve, not a reason to centralize control. The platform must provide guided key generation, secure backup flows, and clear recovery documentation.</li>
+<li><strong>Key loss:</strong> If a BYOK tenant loses their key, the data is unrecoverable. This is a feature, not a bug — it means the data is equally unrecoverable by anyone else. The onboarding flow must make this consequence unmistakably clear.</li>
+</ul>
+<!-- REVISIT: Key backup UX, key rotation procedures, and multi-party key recovery (e.g., Shamir's secret sharing across multiple org admins) should be designed in the architecture spec. -->
+<hr>
+<h2 id="application-security" tabindex="-1"><a class="heading-anchor" href="#application-security" aria-hidden="true">#</a> Application Security</h2>
+<h3 id="authentication-security" tabindex="-1"><a class="heading-anchor" href="#authentication-security" aria-hidden="true">#</a> Authentication Security</h3>
+<p>(See <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> for auth method decisions — passkeys primary, no social login)</p>
+<ul>
+<li>Rate limiting on all auth endpoints</li>
+<li>Account lockout after failed attempts (with notification to the user and their trusted contacts)</li>
+<li>Credential stuffing protection</li>
+<li>Session token security (secure, httpOnly, sameSite cookies; short-lived access tokens with refresh rotation)</li>
+</ul>
+<h3 id="authorization-security" tabindex="-1"><a class="heading-anchor" href="#authorization-security" aria-hidden="true">#</a> Authorization Security</h3>
+<ul>
+<li>Server-side authorization checks on every request (never trust client-side role checks)</li>
+<li>Principle of least privilege across all role templates</li>
+<li>Scope enforcement at the data query layer, not just the API layer</li>
+<li>Authorization decisions logged in the audit trail</li>
+</ul>
+<h3 id="input-validation-injection-prevention" tabindex="-1"><a class="heading-anchor" href="#input-validation-injection-prevention" aria-hidden="true">#</a> Input Validation &amp; Injection Prevention</h3>
+<ul>
+<li>All user input validated and sanitized server-side</li>
+<li>Parameterized queries (no string concatenation in database queries)</li>
+<li>Content Security Policy headers</li>
+<li>XSS protection on all rendered content</li>
+<li>File upload validation and sandboxing</li>
+</ul>
+<h3 id="api-security" tabindex="-1"><a class="heading-anchor" href="#api-security" aria-hidden="true">#</a> API Security</h3>
+<ul>
+<li>Authentication required on all API endpoints</li>
+<li>Rate limiting per user, per tenant, and globally</li>
+<li>Request size limits</li>
+<li>API versioning to prevent compatibility-related security issues</li>
+<li>No sensitive data in URLs or query parameters</li>
+</ul>
+<h3 id="dependency-security" tabindex="-1"><a class="heading-anchor" href="#dependency-security" aria-hidden="true">#</a> Dependency Security</h3>
+<ul>
+<li>Automated dependency scanning for known vulnerabilities</li>
+<li>Minimal dependency footprint — every dependency is an attack surface</li>
+<li>Lock files for reproducible builds</li>
+<li>Supply chain verification (signed packages where available)</li>
+</ul>
+<hr>
+<h2 id="operational-security" tabindex="-1"><a class="heading-anchor" href="#operational-security" aria-hidden="true">#</a> Operational Security</h2>
+<h3 id="greengrass-team-access" tabindex="-1"><a class="heading-anchor" href="#greengrass-team-access" aria-hidden="true">#</a> GreenGrass Team Access</h3>
+<ul>
+<li>Platform Admin access requires strong authentication (passkey + second factor)</li>
+<li>All Platform Admin actions logged in a separate, immutable audit trail</li>
+<li>Access to production systems requires justification and is time-bound</li>
+<li>No standing access to tenant data — read-only access granted per-incident, logged, and auto-revoked</li>
+<li>Background checks for team members with infrastructure access</li>
+</ul>
+<p><strong>DECIDED:</strong> Silent access. Platform Admin can read tenant data for support and debugging without tenant notification. All access is logged in the immutable Platform Admin audit trail. Standard operational approach — keeps support fast and unblocked during incidents.</p>
+<h3 id="incident-response" tabindex="-1"><a class="heading-anchor" href="#incident-response" aria-hidden="true">#</a> Incident Response</h3>
+<p><strong>DECIDED:</strong> Fast notification, err on the side of speed over completeness.</p>
+<p><strong>Notification:</strong></p>
+<ul>
+<li>Affected tenants are notified as quickly as possible — within hours, not days. If people's safety may be at risk, waiting 72 hours to craft a polished disclosure is unacceptable.</li>
+<li>Initial notification can be incomplete (&quot;we have detected a breach affecting your tenant, here is what we know so far, here is what we are doing&quot;) followed by detailed updates as the investigation progresses.</li>
+<li>Notification goes to all Org Admins and Deputies of affected tenants through multiple channels (in-app, email, SMS) to ensure it's received even if one channel is compromised.</li>
+</ul>
+<p><strong>Tenant isolation:</strong></p>
+<ul>
+<li>Compromised tenants are isolated immediately to prevent further data exposure. Campaign disruption is a serious cost, but ongoing data exfiltration is worse.</li>
+<li>The Org Admin is informed of the isolation and given a timeline for restoration.</li>
+</ul>
+<p><strong>External forensics:</strong></p>
+<ul>
+<li>GreenGrass maintains a pre-arranged relationship with at least one external security firm for incident forensics. In-house capability is not sufficient for a serious breach — external expertise and credibility matter.</li>
+</ul>
+<!-- REVISIT: A full incident response plan (severity tiers, escalation procedures, communication templates, post-incident review process) should be developed as a standalone operational document. -->
+<h3 id="vulnerability-disclosure" tabindex="-1"><a class="heading-anchor" href="#vulnerability-disclosure" aria-hidden="true">#</a> Vulnerability Disclosure</h3>
+<p><strong>DECIDED:</strong> Both. Responsible disclosure policy from day one, bug bounty program once the platform is mature.</p>
+<ul>
+<li><strong>Disclosure policy (day one):</strong> Published security contact, PGP key for encrypted reporting, clear responsible disclosure guidelines, commitment to not pursue legal action against good-faith researchers, and a defined response timeline.</li>
+<li><strong>Bug bounty (post-pilot):</strong> Paid program for verified vulnerabilities, tiered by severity. Launched once the platform is stable enough to handle the volume of reports. Attracts active security testing from the research community, which is especially valuable for an open-source political platform.</li>
+</ul>
+<hr>
+<h2 id="device-endpoint-security" tabindex="-1"><a class="heading-anchor" href="#device-endpoint-security" aria-hidden="true">#</a> Device &amp; Endpoint Security</h2>
+<h3 id="volunteer-devices" tabindex="-1"><a class="heading-anchor" href="#volunteer-devices" aria-hidden="true">#</a> Volunteer Devices</h3>
+<p>Volunteers use their personal phones for canvassing. GreenGrass cannot control these devices.</p>
+<p><strong>Protections:</strong></p>
+<ul>
+<li>Offline data stored on-device must be encrypted</li>
+<li>Field mode session expires at shift end (decided in <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>)</li>
+<li>Remote session revocation (decided in <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>)</li>
+<li>No sensitive data cached beyond what's needed for the current shift</li>
+<li>Data wiped from device on session end/revocation</li>
+</ul>
+<p><strong>DECIDED:</strong> Warn but don't block.</p>
+<ul>
+<li>The platform detects indicators of device compromise (jailbreak, root, known spyware signatures) and surfaces a warning to the user: &quot;Your device may be compromised. Avoid using it for sensitive campaign work.&quot;</li>
+<li>The warning is also surfaced to the user's Org Admin or Volunteer Coordinator so they can follow up.</li>
+<li><strong>Access is not blocked.</strong> Users on older, modified, or custom-ROM devices — common in the global south — are not locked out. The user decides what to do with the information.</li>
+<li>Detection is best-effort and clearly communicated as such — not a guarantee of security.</li>
+</ul>
+<h3 id="staff-devices" tabindex="-1"><a class="heading-anchor" href="#staff-devices" aria-hidden="true">#</a> Staff Devices</h3>
+<p><strong>DECIDED:</strong> Recommended guidelines by default, with opt-in enforcement via device attestation.</p>
+<ul>
+<li><strong>Default:</strong> All staff receive recommended device security guidelines during onboarding (enable screen lock, keep OS updated, enable device encryption). The platform surfaces gentle reminders if it detects missing protections, but does not block access.</li>
+<li><strong>Opt-in enforcement:</strong> Org Admins can enable device attestation for their tenant, either org-wide or per-role. When enabled, the platform checks device state (OS version, screen lock, encryption) and refuses access if minimum standards aren't met.</li>
+<li><strong>The choice belongs to the org.</strong> A campaign operating in a high-threat environment can enforce strict device requirements. A small advocacy org using whatever devices people have can stick with guidelines. The platform supports both without imposing either.</li>
+</ul>
+<hr>
+<h2 id="anti-surveillance-considerations" tabindex="-1"><a class="heading-anchor" href="#anti-surveillance-considerations" aria-hidden="true">#</a> Anti-Surveillance Considerations</h2>
+<h3 id="metadata-protection" tabindex="-1"><a class="heading-anchor" href="#metadata-protection" aria-hidden="true">#</a> Metadata Protection</h3>
+<p>Even if content is encrypted, metadata reveals patterns:</p>
+<ul>
+<li>Who logs in when (activity patterns reveal organizing cycles)</li>
+<li>Who communicates with whom (social graph of the movement)</li>
+<li>Geographic patterns (where canvassing happens reveals strategy)</li>
+<li>Donation timing and frequency</li>
+</ul>
+<p><strong>DECIDED:</strong> Tiered metadata protection. Moderate by default, aggressive available for high-risk tenants.</p>
+<p><strong>Moderate (default):</strong></p>
+<ul>
+<li>Minimize metadata retention periods — purge detailed access logs on a defined schedule, retain only aggregates</li>
+<li>Strip identifying information from analytics where possible (aggregate trends, not individual activity timelines)</li>
+<li>Avoid logging unnecessary metadata (don't record which specific records a user viewed if you only need to know they logged in)</li>
+<li>Separate metadata storage from content storage so a breach of one doesn't automatically expose both</li>
+</ul>
+<p><strong>Aggressive (opt-in for high-risk tenants):</strong></p>
+<ul>
+<li>Traffic padding to mask real usage patterns</li>
+<li>Timing obfuscation on requests to prevent activity correlation</li>
+<li>Minimal server-side logging — log only what's strictly necessary for security and operations</li>
+<li>Tor-compatible access (see traffic analysis decision below)</li>
+</ul>
+<!-- REVISIT: The moderate retention schedule (how long before metadata is purged/aggregated) needs to be defined in the architecture spec. Must balance security with the full audit logging requirement — audit logs and metadata logs serve different purposes and may have different retention rules. -->
+<h3 id="traffic-analysis-resistance" tabindex="-1"><a class="heading-anchor" href="#traffic-analysis-resistance" aria-hidden="true">#</a> Traffic Analysis Resistance</h3>
+<p><strong>DECIDED:</strong> Both domain fronting and Tor access available, neither required. Part of the aggressive metadata protection tier.</p>
+<ul>
+<li><strong>Domain fronting / CDN delivery:</strong> Traffic appears to go to a generic CDN, making it harder for network-level surveillance to identify GreenGrass usage. Available for tenants on the aggressive metadata tier.</li>
+<li><strong>Tor-compatible access:</strong> Users can access the platform through Tor for maximum anonymity. Slower, may be blocked in some countries, but available for those who need it.</li>
+<li><strong>Standard access is always supported.</strong> The platform works normally over standard HTTPS. Domain fronting and Tor are additional options, not requirements.</li>
+<li><strong>Bundled with aggressive tier:</strong> These features are available to tenants that opt into aggressive metadata protection, keeping the security model coherent — tenants who need traffic analysis resistance likely need the other aggressive-tier protections too.</li>
+</ul>
+<h3 id="physical-security-considerations" tabindex="-1"><a class="heading-anchor" href="#physical-security-considerations" aria-hidden="true">#</a> Physical Security Considerations</h3>
+<p>In some contexts, devices may be physically seized at checkpoints, protests, or raids.</p>
+<p><strong>Protections:</strong></p>
+<ul>
+<li>Quick-lock mechanism (panic button that immediately locks the app and requires re-authentication)</li>
+<li>Configurable data retention on-device (option to keep no data locally)</li>
+<li>Duress mode (a secondary passkey that logs in to a sanitized/decoy view of the app)</li>
+</ul>
+<p><strong>DECIDED:</strong> In scope, part of the aggressive metadata protection tier.</p>
+<ul>
+<li>A secondary passkey logs into a sanitized view of the app — appears functional but contains no sensitive data. The real data remains hidden and inaccessible.</li>
+<li>The duress login is indistinguishable from a normal login to an observer. No visual cues, no different loading behavior, no telltale differences in the UI.</li>
+<li>A duress login triggers a silent alert to the user's trusted contacts and Org Admin, so the organization knows a coercion event may be occurring.</li>
+<li><strong>Available only on the aggressive tier.</strong> Tenants operating in stable political environments don't need the complexity. Tenants in hostile environments can enable it.</li>
+</ul>
+<!-- REVISIT: The decoy view needs careful design — it must look realistic enough to withstand casual inspection. Should it show plausible fake data, or an empty "new account" state? Needs UX design input. Also, the silent alert mechanism must be robust against network monitoring — the alert itself can't be the thing that gives away the duress. -->
+<hr>
+<h2 id="open-source-security-model" tabindex="-1"><a class="heading-anchor" href="#open-source-security-model" aria-hidden="true">#</a> Open Source Security Model</h2>
+<p>The product description states GreenGrass is open source &quot;except where security or technical concerns make that approach unworkable.&quot;</p>
+<p><strong>DECIDED:</strong> Open source the application, keep operational security configurations private.</p>
+<p><strong>Open source:</strong></p>
+<ul>
+<li>Application code (server, client, mobile)</li>
+<li>Data models and APIs</li>
+<li>Encryption implementations</li>
+<li>Client apps</li>
+<li>Authentication and authorization logic</li>
+</ul>
+<p>Public auditability builds trust and invites security review. For a political platform where trust is paramount, users and their technical advisors must be able to verify the code is sound.</p>
+<p><strong>Closed source:</strong></p>
+<ul>
+<li>Security monitoring and intrusion detection configurations</li>
+<li>Anti-surveillance implementation details (where revealing the method compromises its effectiveness)</li>
+<li>Tenant provisioning and infrastructure automation</li>
+<li>Operational runbooks and incident response tooling</li>
+</ul>
+<p>The principle: people should be able to verify <em>what the software does</em>. They don't need to know <em>what tripwires are set</em> to catch attackers.</p>
+<hr>
+<h2 id="compliance-regulatory" tabindex="-1"><a class="heading-anchor" href="#compliance-regulatory" aria-hidden="true">#</a> Compliance &amp; Regulatory</h2>
+<p>This section is a placeholder — it depends heavily on target countries and will be expanded in a dedicated compliance spec.</p>
+<p><strong>Key areas to address per jurisdiction:</strong></p>
+<ul>
+<li>Data protection laws (GDPR equivalents)</li>
+<li>Campaign finance reporting requirements</li>
+<li>Political data handling regulations</li>
+<li>Cross-border data transfer restrictions</li>
+<li>Lawful interception obligations</li>
+<li>Encryption restrictions (some countries restrict strong encryption)</li>
+</ul>
+<!-- REVISIT: This needs a dedicated compliance spec per target country/region. -->
+<hr>
+<h2 id="security-roadmap" tabindex="-1"><a class="heading-anchor" href="#security-roadmap" aria-hidden="true">#</a> Security Roadmap</h2>
+<p>Security cannot be bolted on — it must be built in from the start. But not every measure needs to ship in v1.</p>
+<h3 id="must-have-for-mvp" tabindex="-1"><a class="heading-anchor" href="#must-have-for-mvp" aria-hidden="true">#</a> Must have for MVP</h3>
+<ul>
+<li>TLS 1.2+ with 1.3 preferred, everywhere</li>
+<li>Storage-level encryption at rest</li>
+<li>Application-level encryption for high-sensitivity fields</li>
+<li>BYOK by default, managed keys as opt-in</li>
+<li>Passkey auth with fallbacks</li>
+<li>Single-tenant isolation (standard tier: container-level)</li>
+<li>Full audit logging</li>
+<li>Server-side authorization on every request</li>
+<li>Input validation and injection prevention</li>
+<li>Secrets management with per-tenant keys</li>
+<li>Encrypted on-device storage for offline features</li>
+<li>Remote session revocation</li>
+<li>Incident response plan with external forensics relationship</li>
+<li>Responsible disclosure policy</li>
+<li>Warn-but-don't-block device compromise detection</li>
+<li>Recommended device security guidelines</li>
+</ul>
+<h3 id="should-have-for-pilot" tabindex="-1"><a class="heading-anchor" href="#should-have-for-pilot" aria-hidden="true">#</a> Should have for pilot</h3>
+<ul>
+<li>Enhanced and maximum isolation tiers</li>
+<li>Per-country data residency (initial target countries)</li>
+<li>E2E encryption for messaging with opt-in key escrow</li>
+<li>Moderate metadata protection (default tier)</li>
+<li>DDoS protection</li>
+<li>Automated dependency scanning</li>
+<li>Bug bounty program</li>
+<li>Opt-in device attestation enforcement</li>
+<li>Warrant canary and transparency report</li>
+</ul>
+<h3 id="future-aggressive-tier" tabindex="-1"><a class="heading-anchor" href="#future-aggressive-tier" aria-hidden="true">#</a> Future / aggressive tier</h3>
+<ul>
+<li>Aggressive metadata protection tier</li>
+<li>Traffic analysis resistance (domain fronting, Tor-compatible access)</li>
+<li>Duress mode (decoy login)</li>
+<li>Self-hosted deployment option</li>
+<li>Per-country compliance implementations</li>
+</ul>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#why-this-document-matters"># Why This Document Matters</a></li><li class="toc-2"><a href="#threat-actors"># Threat Actors</a></li><li class="toc-3"><a href="#tier-1-state-actors"># Tier 1: State Actors</a></li><li class="toc-3"><a href="#tier-2-non-state-geopolitical-actors"># Tier 2: Non-State Geopolitical Actors</a></li><li class="toc-3"><a href="#tier-3-political-opponents"># Tier 3: Political Opponents</a></li><li class="toc-3"><a href="#tier-4-criminal-actors"># Tier 4: Criminal Actors</a></li><li class="toc-3"><a href="#tier-5-insider-threats"># Tier 5: Insider Threats</a></li><li class="toc-2"><a href="#assets-to-protect"># Assets to Protect</a></li><li class="toc-3"><a href="#critical-assets-compromise-causes-direct-harm-to-people"># Critical Assets (compromise causes direct harm to people)</a></li><li class="toc-3"><a href="#high-value-assets-compromise-causes-operational-damage"># High-Value Assets (compromise causes operational damage)</a></li><li class="toc-3"><a href="#infrastructure-assets"># Infrastructure Assets</a></li><li class="toc-2"><a href="#security-principles"># Security Principles</a></li><li class="toc-2"><a href="#encryption"># Encryption</a></li><li class="toc-3"><a href="#in-transit"># In Transit</a></li><li class="toc-3"><a href="#at-rest"># At Rest</a></li><li class="toc-3"><a href="#end-to-end-encryption"># End-to-End Encryption</a></li><li class="toc-2"><a href="#data-sovereignty-residency"># Data Sovereignty &amp;amp; Residency</a></li><li class="toc-3"><a href="#the-problem"># The Problem</a></li><li class="toc-3"><a href="#data-residency"># Data Residency</a></li><li class="toc-3"><a href="#legal-jurisdiction"># Legal Jurisdiction</a></li><li class="toc-2"><a href="#infrastructure-security"># Infrastructure Security</a></li><li class="toc-3"><a href="#single-tenant-isolation"># Single-Tenant Isolation</a></li><li class="toc-3"><a href="#network-security"># Network Security</a></li><li class="toc-3"><a href="#secrets-management"># Secrets Management</a></li><li class="toc-2"><a href="#application-security"># Application Security</a></li><li class="toc-3"><a href="#authentication-security"># Authentication Security</a></li><li class="toc-3"><a href="#authorization-security"># Authorization Security</a></li><li class="toc-3"><a href="#input-validation-injection-prevention"># Input Validation &amp;amp; Injection Prevention</a></li><li class="toc-3"><a href="#api-security"># API Security</a></li><li class="toc-3"><a href="#dependency-security"># Dependency Security</a></li><li class="toc-2"><a href="#operational-security"># Operational Security</a></li><li class="toc-3"><a href="#greengrass-team-access"># GreenGrass Team Access</a></li><li class="toc-3"><a href="#incident-response"># Incident Response</a></li><li class="toc-3"><a href="#vulnerability-disclosure"># Vulnerability Disclosure</a></li><li class="toc-2"><a href="#device-endpoint-security"># Device &amp;amp; Endpoint Security</a></li><li class="toc-3"><a href="#volunteer-devices"># Volunteer Devices</a></li><li class="toc-3"><a href="#staff-devices"># Staff Devices</a></li><li class="toc-2"><a href="#anti-surveillance-considerations"># Anti-Surveillance Considerations</a></li><li class="toc-3"><a href="#metadata-protection"># Metadata Protection</a></li><li class="toc-3"><a href="#traffic-analysis-resistance"># Traffic Analysis Resistance</a></li><li class="toc-3"><a href="#physical-security-considerations"># Physical Security Considerations</a></li><li class="toc-2"><a href="#open-source-security-model"># Open Source Security Model</a></li><li class="toc-2"><a href="#compliance-regulatory"># Compliance &amp;amp; Regulatory</a></li><li class="toc-2"><a href="#security-roadmap"># Security Roadmap</a></li><li class="toc-3"><a href="#must-have-for-mvp"># Must have for MVP</a></li><li class="toc-3"><a href="#should-have-for-pilot"># Should have for pilot</a></li><li class="toc-3"><a href="#future-aggressive-tier"># Future / aggressive tier</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

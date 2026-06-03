@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADR-016: Cross-Cutting Resolutions · GreenGrass</title>
+<meta name="description" content="ADR-016: Cross-Cutting Resolutions — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../spec/product.html">Project: GreenGrass</a></li><li><a href="../spec/users.html">Users &amp; Roles</a></li><li><a href="../spec/workflows.html">Core Workflows</a></li><li><a href="../spec/geography.html">Target Geography</a></li><li><a href="../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../spec/integrations.html">External Integrations</a></li><li><a href="../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="./002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="./003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="./004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="./005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="./006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="./007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="./008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="./009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="./010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="./011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="./012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="./013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="./014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="./015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="./016-cross-cutting-resolutions.html" aria-current="page" class="active">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="./ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Decisions</nav>
+    <article class="prose">
+<h1 id="adr-016-cross-cutting-resolutions" tabindex="-1"><a class="heading-anchor" href="#adr-016-cross-cutting-resolutions" aria-hidden="true">#</a> ADR-016: Cross-Cutting Resolutions</h1>
+<p><strong>Status:</strong> Accepted
+<strong>Date:</strong> 2026-03-04
+<strong>Sources:</strong> <code>design/ux/04-wireframes/audit.md</code> (Appendix A: Consolidated Open Questions)</p>
+<h2 id="context" tabindex="-1"><a class="heading-anchor" href="#context" aria-hidden="true">#</a> Context</h2>
+<p>The wireframe audit identified 89 open questions across 21 documents. Among these, 2 contradictions and 3 overlap clusters span multiple feature areas and cannot be resolved within a single document. This ADR resolves the cross-cutting concerns first, establishing policies that individual feature-area resolutions build on.</p>
+<h3 id="contradictions" tabindex="-1"><a class="heading-anchor" href="#contradictions" aria-hidden="true">#</a> Contradictions</h3>
+<ol>
+<li><strong>Settings delegation:</strong> ADR-011 and <code>settings.md</code> established &quot;All settings OA-only, no delegation.&quot; Open question #52 asks whether specific categories can be delegated to non-OA roles.</li>
+<li><strong>Frequency caps vs. cross-channel orchestration:</strong> <code>communications.md</code> decided on org-wide frequency caps per channel. Open question #21 asks about preventing same-topic messages across different channels on the same day.</li>
+</ol>
+<h3 id="overlap-clusters" tabindex="-1"><a class="heading-anchor" href="#overlap-clusters" aria-hidden="true">#</a> Overlap clusters</h3>
+<ol>
+<li><strong>Paid event tickets (#27) + fundraising refunds (#31):</strong> Paid events overlap with the fundraising pipeline. Ticket revenue needs a clear home.</li>
+<li><strong>Data retention (#14, #51, #84):</strong> Message retention, GOTV data retention, and import rollback windows were asked independently but share the same underlying policy question.</li>
+<li><strong>Cross-channel coordination (#21) + pledge reminder channels (#32):</strong> Both require a cross-channel orchestration model.</li>
+</ol>
+<hr>
+<h2 id="decision" tabindex="-1"><a class="heading-anchor" href="#decision" aria-hidden="true">#</a> Decision</h2>
+<h3 id="1-settings-delegation-oa-only-for-v1" tabindex="-1"><a class="heading-anchor" href="#1-settings-delegation-oa-only-for-v1" aria-hidden="true">#</a> 1. Settings Delegation — OA-Only for v1</h3>
+<p>Settings remain OA-only in v1. No delegation mechanism.</p>
+<p><strong>Rationale:</strong> Security-sensitive context demands a single point of responsibility. The existing additive-only overrides pattern (ADR-011) provides the foundation for delegation in a future version. v1 organizations will be small enough that the OA bottleneck is manageable. Adding delegation later is additive; removing it later would break workflows.</p>
+<p><strong>Closes:</strong> Open question #52.</p>
+<hr>
+<h3 id="2-two-layer-channel-orchestration" tabindex="-1"><a class="heading-anchor" href="#2-two-layer-channel-orchestration" aria-hidden="true">#</a> 2. Two-Layer Channel Orchestration</h3>
+<p>Communications are governed by two complementary mechanisms:</p>
+<p><strong>Layer 1 — Per-channel frequency caps (existing decision)</strong>
+Org-wide ceilings on contacts per channel per time period. Example: max 2 emails/week, max 1 SMS/day. Configured by OA in communications settings.</p>
+<p><strong>Layer 2 — Cross-channel quiet window (new)</strong>
+After contacting a person on <em>any</em> channel about a specific topic, same-topic messages on other channels are suppressed for a configurable window (default: 24 hours). Different topics on different channels are allowed, up to each channel's per-channel cap.</p>
+<p>The system enforces both layers at send time. A message that passes the per-channel cap may still be deferred by the cross-channel quiet window.</p>
+<p><strong>Rationale:</strong> Per-channel caps and cross-channel orchestration solve different problems. Caps prevent over-messaging on a single channel. The quiet window prevents the same person from being contacted about the same thing via email, then SMS, then WhatsApp in the same day. Both are needed; neither subsumes the other.</p>
+<p><strong>Closes:</strong> Open questions #21 and #32.</p>
+<hr>
+<h3 id="3-ticket-revenue-through-the-fundraising-pipeline" tabindex="-1"><a class="heading-anchor" href="#3-ticket-revenue-through-the-fundraising-pipeline" aria-hidden="true">#</a> 3. Ticket Revenue Through the Fundraising Pipeline</h3>
+<p>Paid event tickets are processed through the fundraising pipeline. A ticket purchase is a donation record with event metadata (event ID, ticket type, quantity).</p>
+<ul>
+<li><strong>Event system</strong> handles: registration, attendance tracking, check-in, capacity</li>
+<li><strong>Fundraising system</strong> handles: payment processing, receipt generation, compliance tracking, refunds</li>
+<li><strong>Refund policy</strong> is unified: governed by payment processor policy plus an org-configurable maximum window (default: 90 days)</li>
+</ul>
+<p>Event screens display ticket revenue as a metric but link to the fundraising system for financial details. There is no separate payment pipeline for events.</p>
+<p><strong>Rationale:</strong> In most jurisdictions, political event tickets are legally treated as contributions. Separate payment pipelines multiply integration complexity, compliance surface, and reconciliation work. A single pipeline means one set of compliance rules, one receipt generator, one reconciliation workflow.</p>
+<p><strong>Closes:</strong> Open questions #27 and #31.</p>
+<hr>
+<h3 id="4-tiered-data-retention-policy" tabindex="-1"><a class="heading-anchor" href="#4-tiered-data-retention-policy" aria-hidden="true">#</a> 4. Tiered Data Retention Policy</h3>
+<p>Data retention is governed by a unified policy with four tiers. Each tier defines what is stored, how long it is kept, and whether it can be deleted.</p>
+<h4 id="tier-definitions" tabindex="-1"><a class="heading-anchor" href="#tier-definitions" aria-hidden="true">#</a> Tier definitions</h4>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>What is stored</th>
+<th>Default retention</th>
+<th>Minimum</th>
+<th>Maximum</th>
+<th>Deletable?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Operational</strong></td>
+<td>Full content: message bodies, attachments, canvass responses, GOTV operational data, shift logs</td>
+<td>2 years</td>
+<td>90 days</td>
+<td>5 years</td>
+<td>Yes, after minimum period</td>
+</tr>
+<tr>
+<td><strong>Compliance</strong></td>
+<td>Financial records: donation details, receipts, tax documents, compliance filings</td>
+<td>Per local law</td>
+<td>5 years</td>
+<td>10 years</td>
+<td>No, until legal minimum expires</td>
+</tr>
+<tr>
+<td><strong>Audit trail</strong></td>
+<td>Action metadata only (see below)</td>
+<td>Indefinite</td>
+<td>—</td>
+<td>—</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Import rollback</strong></td>
+<td>Undo capability for data imports</td>
+<td>30 days</td>
+<td>7 days</td>
+<td>90 days</td>
+<td>Auto-expires</td>
+</tr>
+</tbody>
+</table>
+<h4 id="critical-distinction-audit-trail-stores-metadata-not-content" tabindex="-1"><a class="heading-anchor" href="#critical-distinction-audit-trail-stores-metadata-not-content" aria-hidden="true">#</a> Critical distinction: audit trail stores metadata, not content</h4>
+<p>The audit trail records <strong>that an action happened</strong> — who did what, when, to what entity. It does <strong>not</strong> store the content of the action.</p>
+<p><strong>Example — a message is sent, then purged after the retention window:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>What exists before purge</th>
+<th>What exists after purge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operational</td>
+<td>Full message: body, attachments, thread context</td>
+<td><strong>Deleted.</strong> Message body and attachments are gone.</td>
+</tr>
+<tr>
+<td>Audit trail</td>
+<td>Log entry: &quot;Staff A sent SMS to Contact B on 2026-03-04 at 14:32 UTC&quot;</td>
+<td><strong>Preserved.</strong> The log entry remains indefinitely.</td>
+</tr>
+</tbody>
+</table>
+<p>The audit trail is a <strong>skeleton</strong> — it proves actions happened but does not retain their payload. This distinction is critical for three reasons:</p>
+<ol>
+<li><strong>Privacy compliance:</strong> When a supporter requests data deletion, their message content is purged from the operational tier. The audit trail retains only the metadata record that communication occurred — no personal content.</li>
+<li><strong>Storage:</strong> Indefinite retention of metadata-only records is feasible. Indefinite retention of full message bodies, attachments, and canvass audio recordings is not.</li>
+<li><strong>Legal exposure:</strong> If compelled to produce records, the organization hands over metadata (who/what/when) — not full communication content that may have been legitimately purged.</li>
+</ol>
+<h4 id="configuration" tabindex="-1"><a class="heading-anchor" href="#configuration" aria-hidden="true">#</a> Configuration</h4>
+<ul>
+<li>The OA configures retention periods within the bounds defined above</li>
+<li>The system enforces minimums — an OA cannot set message retention below 90 days</li>
+<li>Compliance tier minimums are derived from the tenant's configured jurisdiction(s)</li>
+<li>Import rollback windows auto-expire — no manual cleanup needed</li>
+</ul>
+<p><strong>Closes:</strong> Open questions #14, #51, and #84.</p>
+<hr>
+<hr>
+<h2 id="category-resolutions" tabindex="-1"><a class="heading-anchor" href="#category-resolutions" aria-hidden="true">#</a> Category Resolutions</h2>
+<p>The following sections resolve feature-specific open questions, grouped by category.</p>
+<h3 id="navigation-layout-5-questions-15" tabindex="-1"><a class="heading-anchor" href="#navigation-layout-5-questions-15" aria-hidden="true">#</a> Navigation &amp; Layout (5 questions: #1–#5)</h3>
+<h4 id="1-sidebar-section-collapse-persistence-persist-across-sessions" tabindex="-1"><a class="heading-anchor" href="#1-sidebar-section-collapse-persistence-persist-across-sessions" aria-hidden="true">#</a> #1: Sidebar section collapse persistence → Persist across sessions</h4>
+<p>Collapsed/expanded state of sidebar sections persists across sessions. Stored in localStorage (works offline), synced to server when connectivity is available so the state follows the user across devices.</p>
+<p>Users develop muscle memory for their sidebar layout. Resetting on login forces pointless re-configuration. localStorage is trivial on low-end devices.</p>
+<h4 id="2-detail-panel-memory-reset-on-navigation-restore-on-browser-backforward" tabindex="-1"><a class="heading-anchor" href="#2-detail-panel-memory-reset-on-navigation-restore-on-browser-backforward" aria-hidden="true">#</a> #2: Detail panel memory → Reset on navigation, restore on browser back/forward</h4>
+<p>When a user navigates to a different feature area and returns, the detail panel resets to closed. The previous panel context is stale — data may have changed, the user's task has shifted. Closed is the predictable default.</p>
+<p>Browser back/forward restores panel state via the History API. That's an explicit &quot;go back to where I was&quot; action and should honor the user's intent.</p>
+<h4 id="3-notification-count-cap-cap-at-99" tabindex="-1"><a class="heading-anchor" href="#3-notification-count-cap-cap-at-99" aria-hidden="true">#</a> #3: Notification count cap → Cap at 99+</h4>
+<p>The notification badge caps at &quot;99+&quot;. The exact unread count is visible inside the notification drawer.</p>
+<p>Numbers above 99 don't change user behavior — they'll open the drawer either way. Large numbers don't fit in a badge cleanly, especially on low-end screens. This follows established convention (iOS, Android, WhatsApp).</p>
+<h4 id="4-dashboard-personalization-no-for-v1" tabindex="-1"><a class="heading-anchor" href="#4-dashboard-personalization-no-for-v1" aria-hidden="true">#</a> #4: Dashboard personalization → No for v1</h4>
+<p>Dashboards use fixed layouts, filtered by role. No rearranging or hiding sections in v1.</p>
+<p>The dashboards are already curated per role (candidate gets a simplified view; campaign manager gets operational detail). Personalization adds drag-and-drop state management, per-user sync, and support complexity where every user's dashboard looks different. Revisit in v2 if users request it.</p>
+<h4 id="5-dashboard-refresh-interval-tiered-by-urgency-with-mandatory-freshness-indicator" tabindex="-1"><a class="heading-anchor" href="#5-dashboard-refresh-interval-tiered-by-urgency-with-mandatory-freshness-indicator" aria-hidden="true">#</a> #5: Dashboard refresh interval → Tiered by urgency, with mandatory freshness indicator</h4>
+<p><strong>Refresh intervals:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Dashboard type</th>
+<th>Auto-refresh interval</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operational (GOTV war room, field ops)</td>
+<td>30 seconds</td>
+<td>Time-critical during active operations</td>
+</tr>
+<tr>
+<td>Campaign (fundraising, communications, events)</td>
+<td>5 minutes</td>
+<td>Data changes throughout the day, not second-by-second</td>
+</tr>
+<tr>
+<td>Administrative (compliance, data quality, settings)</td>
+<td>15 minutes</td>
+<td>Slow-moving data</td>
+</tr>
+<tr>
+<td>Candidate</td>
+<td>15 minutes</td>
+<td>Curated summary, not operational</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Refresh behavior:</strong></p>
+<ul>
+<li><strong>Manual refresh button is mandatory</strong> on every dashboard. Always visible, always accessible. Users must never have to guess whether they're seeing current data or wait for the next auto-refresh cycle.</li>
+<li>Auto-refresh pauses when the browser tab is not visible (saves bandwidth on low-connectivity networks).</li>
+<li>Immediate refresh on reconnect after an offline period.</li>
+<li>Uses polling, not WebSockets — simpler, degrades gracefully on intermittent connections.</li>
+</ul>
+<p><strong>Data freshness indicator is mandatory</strong> on every dashboard. The dashboard must always communicate the state of its data:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Indicator</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Current</strong></td>
+<td>Subtle timestamp: &quot;Updated 30s ago&quot;</td>
+<td>Low-profile; does not demand attention</td>
+</tr>
+<tr>
+<td><strong>Refreshing</strong></td>
+<td>Spinner or progress bar replacing the timestamp</td>
+<td>Visible confirmation that new data is loading</td>
+</tr>
+<tr>
+<td><strong>Stale</strong></td>
+<td>Warning badge: &quot;Data is 5+ minutes old&quot; with amber styling</td>
+<td>Appears when data age exceeds 2× the dashboard's refresh interval</td>
+</tr>
+<tr>
+<td><strong>Disconnected</strong></td>
+<td>Persistent banner: &quot;Offline — showing cached data from [timestamp]&quot; with red/amber styling</td>
+<td>Cannot be dismissed while disconnected</td>
+</tr>
+</tbody>
+</table>
+<p>On <strong>Operational dashboards</strong> (GOTV war room, field ops), the freshness indicator is high-visibility ambient information — always prominent, not tucked into a corner. Staff making time-sensitive decisions during election day operations must never mistake stale data for current data. The indicator should use color, position, and size to ensure it is noticed without active attention.</p>
+<p>On <strong>all other dashboards</strong>, the freshness indicator follows the same state model but can use a more compact presentation (e.g., a timestamp near the page header that transitions to a warning state when stale or disconnected).</p>
+<h3 id="field-operations-8-questions-613" tabindex="-1"><a class="heading-anchor" href="#field-operations-8-questions-613" aria-hidden="true">#</a> Field Operations (8 questions: #6–#13)</h3>
+<h4 id="6-walk-list-sorting-route-optimized-by-default-with-field-director-override" tabindex="-1"><a class="heading-anchor" href="#6-walk-list-sorting-route-optimized-by-default-with-field-director-override" aria-hidden="true">#</a> #6: Walk list sorting → Route-optimized by default, with Field Director override</h4>
+<p>Walk lists are sorted by optimized walking route by default (already specified in <a href="http://field-mode.md" target="_blank" rel="noopener noreferrer">field-mode.md</a> wireframe). Route optimization means more doors per hour — the primary constraint for volunteers on foot. Priority scoring is better handled at the turf assignment level (give high-priority turfs to your best volunteers) rather than within walk list ordering.</p>
+<p><strong>Override:</strong> The Field Director can toggle a specific walk list to priority-sorted. This is useful for GOTV chase lists where reaching specific people matters more than routing efficiency.</p>
+<h4 id="7-door-card-skip-reasons-3-not-home-deprioritize-refused-immediate-stop" tabindex="-1"><a class="heading-anchor" href="#7-door-card-skip-reasons-3-not-home-deprioritize-refused-immediate-stop" aria-hidden="true">#</a> #7: Door card skip reasons → 3× Not Home = deprioritize; Refused = immediate stop</h4>
+<table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th style="text-align:center">Counts toward limit?</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Not Home</td>
+<td style="text-align:center">Yes</td>
+<td>After 3×, contact moves to phone/SMS attempt queue and drops from future walk lists</td>
+</tr>
+<tr>
+<td>Refused</td>
+<td style="text-align:center">Immediate</td>
+<td>1× = contact marked as refused, removed from all future canvassing for this campaign</td>
+</tr>
+<tr>
+<td>Come Back Later</td>
+<td style="text-align:center">No</td>
+<td>Re-queued within the same shift or next shift; intentional deferral</td>
+</tr>
+</tbody>
+</table>
+<p>The threshold (default: 3) is configurable by the Field Director per campaign. The system surfaces contacts approaching the limit in the results review (CANV-013) so the Field Director can decide on escalation.</p>
+<h4 id="8-map-offline-tile-size-assigned-turf-500m-buffer-at-street-level-zoom" tabindex="-1"><a class="heading-anchor" href="#8-map-offline-tile-size-assigned-turf-500m-buffer-at-street-level-zoom" aria-hidden="true">#</a> #8: Map offline tile size → Assigned turf + 500m buffer at street-level zoom</h4>
+<p>The system pre-caches map tiles for the volunteer's assigned turf plus a 500m buffer around the turf boundary, at street-level zoom (typically zoom 16–17 in standard tile schemes).</p>
+<p>The wireframe already uses a simplified schematic view (not satellite imagery), which reduces tile requirements significantly. The pre-shift check screen validates &quot;Map tiles cached ✓&quot; — volunteers know before leaving whether their maps are ready. If zooming beyond cached area: grey placeholder with &quot;Map not available offline&quot; (already specified in wireframe).</p>
+<p>Exact tile area in MB depends on tile provider and region density — this is an implementation detail. The UX contract is: your assigned turf is always available offline.</p>
+<h4 id="9-script-versioning-in-field-active-shifts-are-version-locked-urgent-updates-on-next-door" tabindex="-1"><a class="heading-anchor" href="#9-script-versioning-in-field-active-shifts-are-version-locked-urgent-updates-on-next-door" aria-hidden="true">#</a> #9: Script versioning in-field → Active shifts are version-locked; urgent updates on next door</h4>
+<p>When a shift starts, the current script version is loaded and locked for that shift. Volunteers mid-canvass do not have their script change under them.</p>
+<p>If the Field Director updates a script mid-day, volunteers already in-field keep their version until their current shift ends.</p>
+<p><strong>Urgent update override:</strong> The Field Director can push an update flagged as &quot;urgent.&quot; This appears as a notification on the volunteer's next door card — never during the current interaction. The volunteer sees: &quot;Script updated — tap to review changes before continuing.&quot; On new shift start, the latest script version is always loaded.</p>
+<p>Script version history is visible to the Field Director in the script builder.</p>
+<h4 id="10-cross-campaign-script-reuse-copy-as-template-not-linked" tabindex="-1"><a class="heading-anchor" href="#10-cross-campaign-script-reuse-copy-as-template-not-linked" aria-hidden="true">#</a> #10: Cross-campaign script reuse → Copy-as-template, not linked</h4>
+<p>&quot;Save as Template&quot; copies a script into a shared template library. Creating a new campaign script offers &quot;Start from template&quot; or &quot;Start blank.&quot;</p>
+<p>Once copied, the campaign script is independent — editing it does not affect the template or other campaigns. Templates are org-wide; any Field Director can use them.</p>
+<p>This is the standard copy-not-link pattern: prevents accidental cross-campaign contamination while enabling reuse.</p>
+<h4 id="11-turf-auto-generation-constraints-configurable-defaults-with-mandatory-preview" tabindex="-1"><a class="heading-anchor" href="#11-turf-auto-generation-constraints-configurable-defaults-with-mandatory-preview" aria-hidden="true">#</a> #11: Turf auto-generation constraints → Configurable defaults with mandatory preview</h4>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Default</th>
+<th>Min</th>
+<th>Max</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contacts per turf</td>
+<td>50</td>
+<td>10</td>
+<td>150</td>
+<td>50 ≈ a 2-hour canvass shift at ~2.5 min/door</td>
+</tr>
+<tr>
+<td>Estimated walk time</td>
+<td>2 hours</td>
+<td>30 min</td>
+<td>4 hours</td>
+<td>Volunteer fatigue; shift length</td>
+</tr>
+<tr>
+<td>Buffer between turfs</td>
+<td>0 (no overlap)</td>
+<td>—</td>
+<td>—</td>
+<td>Prevents double-canvassing</td>
+</tr>
+</tbody>
+</table>
+<p>Geographic constraints: don't split turfs across major roads, rivers, or railways. Respect administrative boundaries (wards, precincts) when available. Below 10 contacts, merge with adjacent turf.</p>
+<p>Auto-generation always produces a <strong>preview</strong> — the Field Director reviews proposed turfs on the map and adjusts boundaries before committing. No auto-generation result goes live without human approval.</p>
+<h4 id="12-walk-list-reassignment-mid-shift-yes-completed-doors-stay-new-assignee-picks-up" tabindex="-1"><a class="heading-anchor" href="#12-walk-list-reassignment-mid-shift-yes-completed-doors-stay-new-assignee-picks-up" aria-hidden="true">#</a> #12: Walk list reassignment mid-shift → Yes; completed doors stay, new assignee picks up</h4>
+<p>Walk lists can be reassigned mid-shift (no-show volunteers, volunteer fatigue, shifting priorities).</p>
+<ul>
+<li>Completed doors remain completed regardless of reassignment</li>
+<li>The new assignee's walk list starts from the first uncompleted door</li>
+<li>If the original volunteer has unsynced data when reassignment happens, it merges on next sync — no data loss</li>
+<li><strong>Conflict resolution:</strong> if both old and new volunteer canvassed the same door (race condition during reassignment), the system keeps the chronologically latest interaction and flags the conflict for Field Director review in CANV-013</li>
+</ul>
+<h4 id="13-canvassing-results-data-retention-already-resolved-adr-016-4" tabindex="-1"><a class="heading-anchor" href="#13-canvassing-results-data-retention-already-resolved-adr-016-4" aria-hidden="true">#</a> #13: Canvassing results data retention → Already resolved (ADR-016 §4)</h4>
+<p>Individual canvass interaction records (door responses, timestamps, volunteer notes) fall under the operational tier of the tiered data retention policy: default 2 years, configurable 90 days–5 years.</p>
+<h3 id="messaging-communications-8-questions-1520-2223" tabindex="-1"><a class="heading-anchor" href="#messaging-communications-8-questions-1520-2223" aria-hidden="true">#</a> Messaging &amp; Communications (8 questions: #15–#20, #22–#23)</h3>
+<p><em>Questions #14 and #21 were resolved in the cross-cutting section above.</em></p>
+<h4 id="15-message-search-vs-e2e-encryption-search-available-only-with-key-escrow" tabindex="-1"><a class="heading-anchor" href="#15-message-search-vs-e2e-encryption-search-available-only-with-key-escrow" aria-hidden="true">#</a> #15: Message search vs. E2E encryption → Search available only with key escrow</h4>
+<p>ADR-008 established that orgs can opt into server-side key escrow (disabling E2E encryption). Message search behavior follows directly:</p>
+<table>
+<thead>
+<tr>
+<th>Encryption mode</th>
+<th>Search capability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E2E encrypted (default)</td>
+<td>Metadata only: sender, timestamp, conversation name. Server cannot read content.</td>
+</tr>
+<tr>
+<td>Key escrow enabled</td>
+<td>Full-text search of message content. Server has access via escrow key.</td>
+</tr>
+<tr>
+<td>Both modes</td>
+<td>Client-side local search of messages already cached on the device.</td>
+</tr>
+</tbody>
+</table>
+<p>The UI makes this tradeoff explicit. E2E conversations show &quot;Search limited to message metadata&quot; with a brief explanation of why. This is not a limitation to fix — it's a direct consequence of the security model the org chose.</p>
+<h4 id="16-read-receipts-opt-out-per-user-visible-by-default" tabindex="-1"><a class="heading-anchor" href="#16-read-receipts-opt-out-per-user-visible-by-default" aria-hidden="true">#</a> #16: Read receipts → Opt-out per user, visible by default</h4>
+<p>Read receipts are on by default (standard messaging convention). Any user can disable them in profile settings. Disabling is symmetric: it hides the user's read status from senders <em>and</em> hides other people's read status from that user.</p>
+<p>In group conversations, read receipts show as a subtle count (&quot;Read by 4&quot;) rather than listing individual names, to avoid social pressure dynamics.</p>
+<p><strong>Security consideration:</strong> In duress mode, read receipts are automatically disabled to prevent activity tracking.</p>
+<h4 id="17-email-builder-conditional-content-no-for-v1-merge-fields-only" tabindex="-1"><a class="heading-anchor" href="#17-email-builder-conditional-content-no-for-v1-merge-fields-only" aria-hidden="true">#</a> #17: Email builder conditional content → No for v1; merge fields only</h4>
+<p>Conditional content blocks (show paragraph A if donor, paragraph B if volunteer) require conditional logic UI, per-variant preview, and a testing matrix. This is significant builder complexity.</p>
+<p>v1 supports: merge fields (<code>{{first_name}}</code>, <code>{{org_name}}</code>) and segment-based sends (send different campaigns to different segments). This covers the large majority of personalization needs without conditional logic in the template itself. Conditional content blocks can be added to the email builder in a future version.</p>
+<h4 id="18-whatsapp-template-approval-status-yes-visible-in-composer" tabindex="-1"><a class="heading-anchor" href="#18-whatsapp-template-approval-status-yes-visible-in-composer" aria-hidden="true">#</a> #18: WhatsApp template approval status → Yes, visible in composer</h4>
+<p>WhatsApp Business API requires pre-approved message templates. The composer shows template approval status inline:</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Display</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approved</td>
+<td>Green badge</td>
+<td>Ready to send</td>
+</tr>
+<tr>
+<td>Pending</td>
+<td>Amber badge</td>
+<td>Cannot send; shows estimated review time</td>
+</tr>
+<tr>
+<td>Rejected</td>
+<td>Red badge with reason</td>
+<td>Cannot send; shows Meta's rejection reason and edit link</td>
+</tr>
+</tbody>
+</table>
+<p>This prevents the frustrating workflow of composing a message, hitting send, and discovering it was rejected by Meta.</p>
+<h4 id="19-sms-ab-testing-defer-to-v2" tabindex="-1"><a class="heading-anchor" href="#19-sms-ab-testing-defer-to-v2" aria-hidden="true">#</a> #19: SMS A/B testing → Defer to v2</h4>
+<p>SMS messages are shorter and more expensive than email. Campaign SMS lists in the target context (global south grassroots) are typically smaller than email lists. A/B testing requires statistical significance — with smaller audiences and higher per-message cost, the math rarely works.</p>
+<p>Focus A/B testing on email (COMM-008) where volumes support it. SMS A/B testing can be revisited if tenant SMS volumes grow to support it.</p>
+<h4 id="20-drip-sequence-builder-simple-linear-rules-for-v1-visual-flow-builder-is-a-v2-tentpole" tabindex="-1"><a class="heading-anchor" href="#20-drip-sequence-builder-simple-linear-rules-for-v1-visual-flow-builder-is-a-v2-tentpole" aria-hidden="true">#</a> #20: Drip sequence builder → Simple linear rules for v1; visual flow builder is a v2 tentpole</h4>
+<p>v1 drip sequences use a linear rule format:</p>
+<pre><code>Trigger event → wait N days → send message → wait N days → send message
+</code></pre>
+<p>No branching logic. Linear sequences cover the core use cases: welcome series, pledge reminders, event follow-ups.</p>
+<p><strong>v2 tentpole feature: Visual Flow Builder.</strong> A node-graph flow builder with branching logic (if opened → path A, if not → path B), visual drag-and-drop, and multi-channel orchestration within a single flow. This is a flagship v2 capability — it transforms the communications system from a message sender into a journey orchestrator. It should be designed and scoped as a major feature, not bolted on incrementally.</p>
+<h4 id="22-social-post-approval-workflow-configurable-default-all-posts" tabindex="-1"><a class="heading-anchor" href="#22-social-post-approval-workflow-configurable-default-all-posts" aria-hidden="true">#</a> #22: Social post approval workflow → Configurable; default all posts</h4>
+<p>In a political campaign context, any social media post can become a crisis. Default: all posts require approval before publishing. The OA can relax this to &quot;only flagged posts&quot; if the org has established trust with its social media staff.</p>
+<p>The approval screen shows the post as it will appear on each platform (side-by-side preview, already designed in SOCIAL-003).</p>
+<h4 id="23-content-library-file-upload-for-v1-shared-asset-library-is-a-v2-tentpole" tabindex="-1"><a class="heading-anchor" href="#23-content-library-file-upload-for-v1-shared-asset-library-is-a-v2-tentpole" aria-hidden="true">#</a> #23: Content library → File upload for v1; shared asset library is a v2 tentpole</h4>
+<p>v1: each campaign/post has direct file upload. A &quot;recent uploads&quot; panel shows the last 20 files uploaded across the org, providing lightweight reuse without dedicated asset management.</p>
+<p><strong>v2 tentpole feature: Shared Content Library.</strong> A centralized asset management system with tagging, search, usage tracking, rights management, brand-approved asset collections, and cross-feature reuse (an image uploaded for a social post is findable when building an email campaign or event page). Like the visual flow builder, this is a flagship v2 capability that should be designed holistically, not as an afterthought.</p>
+<h3 id="social-media-2-questions-2425" tabindex="-1"><a class="heading-anchor" href="#social-media-2-questions-2425" aria-hidden="true">#</a> Social Media (2 questions: #24–#25)</h3>
+<h4 id="24-cross-posting-analytics-1-post-with-per-platform-breakdown" tabindex="-1"><a class="heading-anchor" href="#24-cross-posting-analytics-1-post-with-per-platform-breakdown" aria-hidden="true">#</a> #24: Cross-posting analytics → 1 post with per-platform breakdown</h4>
+<p>The mental model established in SOCIAL-001 is &quot;one message, multiple channels.&quot; Analytics mirror this: a single cross-posted item shows aggregate reach/engagement at the top, with a per-platform breakdown below (impressions, clicks, engagement by platform). This reinforces the composer's unified model and lets comms staff compare platform performance for the same content.</p>
+<h4 id="25-tiktok-video-creation-external-only-upload-finished-videos" tabindex="-1"><a class="heading-anchor" href="#25-tiktok-video-creation-external-only-upload-finished-videos" aria-hidden="true">#</a> #25: TikTok video creation → External only; upload finished videos</h4>
+<p>In-platform video editing is massive scope — timeline editors, effects, transitions, music licensing. TikTok content creation is best done in TikTok's own tools or dedicated video apps. GreenGrass handles: upload, scheduling, caption writing, approval workflow, and analytics. The composer accepts video file upload and shows a preview thumbnail.</p>
+<h3 id="events-4-questions-26-2830" tabindex="-1"><a class="heading-anchor" href="#events-4-questions-26-2830" aria-hidden="true">#</a> Events (4 questions: #26, #28–#30)</h3>
+<p><em>Question #27 was resolved in the cross-cutting section above.</em></p>
+<h4 id="26-multi-day-events-single-event-with-multiple-date-slots" tabindex="-1"><a class="heading-anchor" href="#26-multi-day-events-single-event-with-multiple-date-slots" aria-hidden="true">#</a> #26: Multi-day events → Single event with multiple date slots</h4>
+<p>A multi-day conference or training is conceptually one event — one registration, one attendee list, one post-event survey. The event detail screen (EVT-002) supports multiple date/time slots within a single event record. Each slot can have its own location, capacity, and check-in list. This avoids fragmenting attendee data across linked events and matches how organizers think about multi-day gatherings.</p>
+<h4 id="28-recurring-events-auto-create-instances-with-editcancel-one-or-all" tabindex="-1"><a class="heading-anchor" href="#28-recurring-events-auto-create-instances-with-editcancel-one-or-all" aria-hidden="true">#</a> #28: Recurring events → Auto-create instances with edit/cancel-one-or-all</h4>
+<p>When creating a recurring event (weekly canvass training, monthly town hall), the system auto-generates instances based on the recurrence rule. Each instance has its own attendee list and check-in data.</p>
+<p><strong>Editing</strong> an instance offers: &quot;Edit this event only&quot; or &quot;Edit this and all future events&quot; — the standard calendar pattern.</p>
+<p><strong>Cancelling</strong> an instance offers the same pattern: &quot;Cancel this event only&quot; or &quot;Cancel this and all future events.&quot; Cancelling one instance does not affect others. Cancelled instances remain visible in the calendar (greyed out, marked &quot;Cancelled&quot;) so staff can see what was planned. Attendees who had RSVPed to a cancelled instance receive a cancellation notification.</p>
+<h4 id="29-in-event-broadcast-staff-only-via-app-attendees-via-sms" tabindex="-1"><a class="heading-anchor" href="#29-in-event-broadcast-staff-only-via-app-attendees-via-sms" aria-hidden="true">#</a> #29: In-event broadcast → Staff-only via app; attendees via SMS</h4>
+<p>In-event broadcasts serve two distinct audiences with different channels:</p>
+<p><strong>Staff broadcast (in-app):</strong> During an event, Event Managers can send a push notification to all event staff (e.g., &quot;Move check-in to Door 2,&quot; &quot;Speaker running 15 min late&quot;). This uses the existing notification system — one-way announcement, not a conversation. Available only to staff with the Event Manager role.</p>
+<p><strong>Attendee broadcast (SMS):</strong> Most attendees will not have the app installed. For attendee-facing announcements (e.g., &quot;Session 2 moved to Room B&quot;), Event Managers can send an SMS to all checked-in attendees who provided a phone number at registration or RSVP. This uses the communications system's SMS capability, subject to the org's SMS consent model. Limited to checked-in attendees to prevent messaging no-shows.</p>
+<p>The event detail screen provides two distinct broadcast actions: &quot;Notify Staff&quot; (in-app) and &quot;Message Attendees&quot; (SMS), making the audience and channel explicit.</p>
+<h4 id="30-multi-staff-offline-check-in-last-write-wins-with-duplicate-detection" tabindex="-1"><a class="heading-anchor" href="#30-multi-staff-offline-check-in-last-write-wins-with-duplicate-detection" aria-hidden="true">#</a> #30: Multi-staff offline check-in → Last-write-wins with duplicate detection</h4>
+<p>When multiple staff check in attendees offline simultaneously (large venue, multiple entry points), each device maintains its own check-in list. On sync, the system merges: if two devices checked in the same person, the earliest timestamp wins and the duplicate is logged. No attendee appears double-checked-in.</p>
+<p>The check-in screen shows a sync status indicator (following the dashboard freshness pattern from #5) so staff know whether they're seeing the full picture or working from a local-only view.</p>
+<h3 id="fundraising-4-questions-3336" tabindex="-1"><a class="heading-anchor" href="#fundraising-4-questions-3336" aria-hidden="true">#</a> Fundraising (4 questions: #33–#36)</h3>
+<p><em>Questions #31 and #32 were resolved in the cross-cutting section above.</em></p>
+<h4 id="33-cash-photo-requirements-required-above-configurable-threshold-default-100-usd-equivalent" tabindex="-1"><a class="heading-anchor" href="#33-cash-photo-requirements-required-above-configurable-threshold-default-100-usd-equivalent" aria-hidden="true">#</a> #33: Cash photo requirements → Required above configurable threshold (default $100 USD equivalent)</h4>
+<p>Below threshold: photo optional but encouraged. Above threshold: camera capture mandatory before the cash donation record can be saved. The photo is attached to the donation record for audit trail purposes.</p>
+<p>The threshold is org-configurable (default: equivalent of $100 USD in local currency). This balances audit rigor with field friction — small donations (market stall collections, door-to-door) shouldn't require fumbling with a camera, but larger cash amounts need documentation.</p>
+<h4 id="34-ab-test-variant-count-2-variants-for-v1" tabindex="-1"><a class="heading-anchor" href="#34-ab-test-variant-count-2-variants-for-v1" aria-hidden="true">#</a> #34: A/B test variant count → 2 variants for v1</h4>
+<p>A/B only (not A/B/C/D). Two variants are sufficient for most fundraising page tests (different headlines, different ask amounts, different images). More variants require larger audiences for statistical significance — the same math problem as SMS A/B testing (#19). The test results screen (already designed as separate from setup per design decision) shows a clean head-to-head comparison. Support for additional variants can be added later without changing the data model.</p>
+<h4 id="35-alliance-split-dispute-resolution-escalation-to-alliance-lead-configurable-timeout" tabindex="-1"><a class="heading-anchor" href="#35-alliance-split-dispute-resolution-escalation-to-alliance-lead-configurable-timeout" aria-hidden="true">#</a> #35: Alliance split dispute resolution → Escalation to alliance lead + configurable timeout</h4>
+<p>If a member org rejects a proposed fundraising split, the rejection includes a required reason. The alliance lead (or committee, per the governance model from <a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a>) receives the rejection and mediates.</p>
+<p>If no resolution within a configurable timeout (default: 14 days), the split reverts to the alliance's default split ratio. No formal arbitration system — that's organizational governance, not software.</p>
+<h4 id="36-dashboard-data-freshness-for-fundraising-covered-by-5" tabindex="-1"><a class="heading-anchor" href="#36-dashboard-data-freshness-for-fundraising-covered-by-5" aria-hidden="true">#</a> #36: Dashboard data freshness for fundraising → Covered by #5</h4>
+<p>Fundraising dashboards fall under the &quot;Campaign&quot; tier from #5: 5-minute auto-refresh, mandatory freshness indicator, manual refresh button. During active fundraising pushes (e.g., end-of-quarter deadline), the Campaign Manager uses the manual refresh button for on-demand totals.</p>
+<h3 id="activism-5-questions-3741" tabindex="-1"><a class="heading-anchor" href="#activism-5-questions-3741" aria-hidden="true">#</a> Activism (5 questions: #37–#41)</h3>
+<h4 id="37-multi-target-campaigns-yes-one-campaign-multiple-targets-one-letter-per-target" tabindex="-1"><a class="heading-anchor" href="#37-multi-target-campaigns-yes-one-campaign-multiple-targets-one-letter-per-target" aria-hidden="true">#</a> #37: Multi-target campaigns → Yes; one campaign, multiple targets, one letter per target</h4>
+<p>A campaign like &quot;Tell your representatives to vote for X&quot; may target multiple legislators. The supporter sees a single action page. The system generates a unique AI message for each target (using the generation model already designed in ACT-005). The supporter reviews and approves each letter before sending.</p>
+<p>The campaign dashboard shows per-target response rates so staff can see which targets are receiving the most constituent pressure.</p>
+<h4 id="38-ai-model-choice-bring-your-own-model-byom-provider-agnostic" tabindex="-1"><a class="heading-anchor" href="#38-ai-model-choice-bring-your-own-model-byom-provider-agnostic" aria-hidden="true">#</a> #38: AI model choice → Bring Your Own Model (BYOM), provider-agnostic</h4>
+<p>Organizations increasingly have their own AI environments — enterprise agreements, compliance constraints on data residency, models fine-tuned on their messaging and tone, context from their broader workflows. The platform should plug into that existing infrastructure, not replace it.</p>
+<ul>
+<li><strong>BYOM configuration:</strong> The OA configures their AI provider in settings, following the same pattern as BYOK for encryption. The org provides an API endpoint and credentials. The platform's AI features (message generation, concierge, etc.) route through the org's configured provider.</li>
+<li><strong>Platform default:</strong> Orgs without their own AI infrastructure get a platform-managed model. This ensures all AI features work out of the box for smaller orgs.</li>
+<li><strong>Provider-agnostic interface:</strong> The platform defines what it needs from the model (text generation with language support), not which specific model it is. An abstraction layer handles provider-specific API differences.</li>
+<li><strong>Continuity of context:</strong> Using the org's own AI environment means the models that staff use in their other work — with their tone, terminology, and institutional context — are the same models powering GreenGrass features.</li>
+</ul>
+<p>This connects to the existing BYOK pattern: orgs that care about controlling their infrastructure can do so; orgs that don't get sensible defaults.</p>
+<h4 id="39-printable-letters-yes-download-as-pdf-on-the-supporter-action-page" tabindex="-1"><a class="heading-anchor" href="#39-printable-letters-yes-download-as-pdf-on-the-supporter-action-page" aria-hidden="true">#</a> #39: Printable letters → Yes; &quot;Download as PDF&quot; on the supporter action page</h4>
+<p>Some targets (local government offices, regulatory bodies) accept physical letters. After the supporter approves their AI-generated message, they can either send via email or download a formatted PDF for printing and mailing. The PDF includes the target's mailing address, a formatted letter body, and the supporter's name.</p>
+<p>This is a low-cost addition — it's the same content rendered to a different output format.</p>
+<h4 id="40-comment-submission-verification-manual-verification-by-staff-delivery-tracking" tabindex="-1"><a class="heading-anchor" href="#40-comment-submission-verification-manual-verification-by-staff-delivery-tracking" aria-hidden="true">#</a> #40: Comment submission verification → Manual verification by staff + delivery tracking</h4>
+<p>Before launching a regulatory comment campaign, staff must verify the submission endpoint (email address or web form URL) and mark it as verified in the campaign setup. The system does not auto-verify — regulatory submission processes vary too widely across jurisdictions.</p>
+<p>After supporters submit, the campaign tracks delivery status: Sent, Delivered (email delivery confirmation), Bounced. Bounced submissions are flagged for staff review. No guarantee of acceptance by the regulatory body — that is outside the platform's control.</p>
+<h4 id="41-supporter-identity-verification-optional-per-campaign-default-self-reported" tabindex="-1"><a class="heading-anchor" href="#41-supporter-identity-verification-optional-per-campaign-default-self-reported" aria-hidden="true">#</a> #41: Supporter identity verification → Optional per campaign; default self-reported</h4>
+<p>Some campaigns require constituency validation (only constituents of District 5 should write to the District 5 representative). The campaign creator can enable constituency verification, which adds an address or postal code field to the action page and validates against the target's constituency boundaries.</p>
+<p>Default: off (self-reported name and email only), because every additional field reduces participation. When enabled, the system is transparent: &quot;We verify your address to ensure your message reaches the correct representative.&quot;</p>
+<hr>
+<h2 id="v2-tentpole-features" tabindex="-1"><a class="heading-anchor" href="#v2-tentpole-features" aria-hidden="true">#</a> v2 Tentpole Features</h2>
+<p>Features explicitly deferred from v1 and designated as major v2 capabilities:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Source</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Visual Flow Builder</strong></td>
+<td>#20</td>
+<td>Node-graph drip sequence builder with branching logic, multi-channel orchestration, drag-and-drop</td>
+</tr>
+<tr>
+<td><strong>Shared Content Library</strong></td>
+<td>#23</td>
+<td>Centralized asset management with tagging, search, usage tracking, rights management, cross-feature reuse</td>
+</tr>
+<tr>
+<td><strong>Settings Delegation</strong></td>
+<td>#52</td>
+<td>Controlled delegation of low-risk settings categories to non-OA roles</td>
+</tr>
+</tbody>
+</table>
+<h3 id="press-media-5-questions-4246" tabindex="-1"><a class="heading-anchor" href="#press-media-5-questions-4246" aria-hidden="true">#</a> Press &amp; Media (5 questions: #42–#46)</h3>
+<h4 id="42-embargo-enforcement-trust-based-tracking-with-audit-trail" tabindex="-1"><a class="heading-anchor" href="#42-embargo-enforcement-trust-based-tracking-with-audit-trail" aria-hidden="true">#</a> #42: Embargo enforcement → Trust-based tracking with audit trail</h4>
+<p>Technical enforcement (blocking access before embargo time) is fragile — the content has already been shared with journalists via email. The platform tracks: which journalists received embargoed material, when, and whether the embargo was honored.</p>
+<p>The press release screen shows embargo status (Active / Lifted / Broken) and a journalist-by-journalist timeline. If a journalist breaks an embargo, staff can flag it on their contact record — this informs future decisions about who gets early access. The system is a tracking tool, not a DRM system.</p>
+<h4 id="43-crisis-communications-urgent-flag-with-streamlined-workflow-not-a-separate-mode" tabindex="-1"><a class="heading-anchor" href="#43-crisis-communications-urgent-flag-with-streamlined-workflow-not-a-separate-mode" aria-hidden="true">#</a> #43: Crisis communications → Urgent flag with streamlined workflow, not a separate mode</h4>
+<p>A dedicated &quot;crisis mode&quot; implies a binary state that must be entered and exited — adding ceremony when speed matters most. Instead: any press release or statement can be flagged &quot;Urgent,&quot; which:</p>
+<ul>
+<li>Triggers a streamlined approval workflow (fewer required approvers, shorter timeouts)</li>
+<li>Pushes it to the top of the comms team's queue</li>
+<li>Sends immediate notification to designated crisis contacts</li>
+</ul>
+<p>The statement builder (already designed as streamlined per design decision) is the crisis tool. It doesn't need a separate mode.</p>
+<h4 id="44-coverage-sentiment-manual-only-for-v1" tabindex="-1"><a class="heading-anchor" href="#44-coverage-sentiment-manual-only-for-v1" aria-hidden="true">#</a> #44: Coverage sentiment → Manual only for v1</h4>
+<p>Automated sentiment analysis of headlines requires NLP that performs poorly on multilingual global south media (limited training data, cultural context, sarcasm). Manual sentiment tagging (Positive / Neutral / Negative / Mixed) by press staff who actually read the coverage is more accurate.</p>
+<p>The coverage log screen shows a sentiment distribution chart. Auto-suggest can be explored in a future version if the BYOM AI infrastructure (#38) makes multilingual sentiment feasible.</p>
+<h4 id="45-public-endorsement-display-three-locations" tabindex="-1"><a class="heading-anchor" href="#45-public-endorsement-display-three-locations" aria-hidden="true">#</a> #45: Public endorsement display → Three locations</h4>
+<ol>
+<li><strong>Endorsement pipeline Kanban (PRESS-011)</strong> — the management view for press staff tracking endorsement status</li>
+<li><strong>Candidate dashboard (DASH-002)</strong> — a summary count and recent endorsements card, since endorsements are high-impact metrics for candidates</li>
+<li><strong>Public endorsement page (PUB-004 or dedicated section)</strong> — a public-facing list, optionally gated by the OA, for press kits and supporter-facing communications</li>
+</ol>
+<h4 id="46-multi-language-press-releases-single-release-with-language-variants" tabindex="-1"><a class="heading-anchor" href="#46-multi-language-press-releases-single-release-with-language-variants" aria-hidden="true">#</a> #46: Multi-language press releases → Single release with language variants</h4>
+<p>One press release record with multiple language versions, managed as tabs within the press release editor (PRESS-003). All language variants share the same embargo, distribution list, and metadata. Each variant can have its own journalist distribution sublist (francophone journalists get the French version).</p>
+<p>This keeps the press release as a single logical entity while supporting multilingual distribution.</p>
+<h3 id="gotv-election-day-4-questions-4750" tabindex="-1"><a class="heading-anchor" href="#gotv-election-day-4-questions-4750" aria-hidden="true">#</a> GOTV &amp; Election Day (4 questions: #47–#50)</h3>
+<p><em>Question #51 was resolved in the cross-cutting section above.</em></p>
+<h4 id="47-official-election-data-feeds-abstraction-layer-with-manual-fallback" tabindex="-1"><a class="heading-anchor" href="#47-official-election-data-feeds-abstraction-layer-with-manual-fallback" aria-hidden="true">#</a> #47: Official election data feeds → Abstraction layer with manual fallback</h4>
+<p>Electoral authority APIs vary wildly by country and are often nonexistent in the global south. The platform defines a standard election data schema (polling locations, candidate lists, district boundaries, results) and provides two ingestion paths:</p>
+<ol>
+<li><strong>API connector</strong> for jurisdictions that offer machine-readable feeds, configured per-tenant</li>
+<li><strong>Manual import</strong> via CSV/spreadsheet for everywhere else</li>
+</ol>
+<p>No specific electoral authority integration is promised in v1. The value is the standard schema and the manual import workflow. API connectors can be added per-jurisdiction as demand warrants.</p>
+<h4 id="48-alliance-ride-sharing-yes-opt-in-per-alliance" tabindex="-1"><a class="heading-anchor" href="#48-alliance-ride-sharing-yes-opt-in-per-alliance" aria-hidden="true">#</a> #48: Alliance ride sharing → Yes, opt-in per alliance</h4>
+<p>Alliance members can contribute drivers to a shared pool for election day rides-to-polls. The alliance lead enables this in GOTV settings.</p>
+<ul>
+<li>Each member org's drivers remain visible to that org</li>
+<li>Ride requests can be routed to any available driver in the shared pool</li>
+<li><strong>Driver assignment priority:</strong> same-org first, then alliance pool</li>
+<li>Each org sees only rides fulfilled by their own drivers in their own reporting</li>
+<li>The alliance dashboard shows aggregate metrics</li>
+</ul>
+<h4 id="49-reallocation-algorithm-rule-based-for-v1" tabindex="-1"><a class="heading-anchor" href="#49-reallocation-algorithm-rule-based-for-v1" aria-hidden="true">#</a> #49: Reallocation algorithm → Rule-based for v1</h4>
+<p>The reallocation suggestions (already governed by human-in-the-loop per design decision) use simple rules: if a polling location's volunteer coverage drops below a configurable threshold, suggest reallocation from over-staffed locations.</p>
+<p>Rules are transparent and auditable — staff can see exactly why a suggestion was made. Predictive models (ML-based turnout prediction, optimal allocation) require training data that doesn't exist for most global south elections. Rule-based is correct for v1; predictive can be explored via the BYOM infrastructure (#38) in future versions.</p>
+<h4 id="50-results-entry-security-multi-layer-verification-without-blocking-speed" tabindex="-1"><a class="heading-anchor" href="#50-results-entry-security-multi-layer-verification-without-blocking-speed" aria-hidden="true">#</a> #50: Results entry security → Multi-layer verification without blocking speed</h4>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Mechanism</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity</td>
+<td>Only registered poll watchers (GOTV-012) can submit results</td>
+<td>Prevents anonymous submissions</td>
+</tr>
+<tr>
+<td>Geolocation</td>
+<td>Optional GPS stamp on submission (watcher must be near polling location)</td>
+<td>Deters remote fabrication; optional because GPS may be unavailable indoors</td>
+</tr>
+<tr>
+<td>Photo evidence</td>
+<td>Camera capture of official results board/tally sheet attached to submission</td>
+<td>Primary verification artifact</td>
+</tr>
+<tr>
+<td>Cross-check</td>
+<td>Side-by-side comparison when multiple watchers submit from same location</td>
+<td>Flags discrepancies for war room review</td>
+</tr>
+<tr>
+<td>Audit trail</td>
+<td>All submissions immutable with timestamp, submitter ID, device info</td>
+<td>Non-deletable per retention policy</td>
+</tr>
+</tbody>
+</table>
+<p>No single layer is blocking — a poll watcher with no GPS signal can still submit. But the layers compound: a fraudulent entry would need a registered watcher, at the right location, with a convincing photo, that matches other watchers' submissions. The war room dashboard highlights discrepancies for human review.</p>
+<h3 id="settings-administration-4-questions-5356" tabindex="-1"><a class="heading-anchor" href="#settings-administration-4-questions-5356" aria-hidden="true">#</a> Settings &amp; Administration (4 questions: #53–#56)</h3>
+<p><em>Question #52 was resolved in the cross-cutting section above.</em></p>
+<h4 id="53-two-oa-approval-yes-for-destructive-operations-only" tabindex="-1"><a class="heading-anchor" href="#53-two-oa-approval-yes-for-destructive-operations-only" aria-hidden="true">#</a> #53: Two-OA approval → Yes, for destructive operations only</h4>
+<p>Destructive operations require confirmation from a second OA:</p>
+<ul>
+<li>Deleting the organization</li>
+<li>Revoking all API keys</li>
+<li>Changing the security tier downward</li>
+<li>Removing the last integration of a critical type (payment processor, SMS provider)</li>
+</ul>
+<p>Routine settings changes (updating org name, adjusting frequency caps, editing role templates) do not require two-OA approval.</p>
+<p><strong>Single-OA fallback:</strong> If the org has only one OA, destructive operations require a 48-hour cooling-off period with email confirmation instead. This prevents accidental or coerced catastrophic changes without adding friction to daily administration.</p>
+<h4 id="54-settings-importexport-export-only-for-v1" tabindex="-1"><a class="heading-anchor" href="#54-settings-importexport-export-only-for-v1" aria-hidden="true">#</a> #54: Settings import/export → Export-only for v1</h4>
+<p>OAs can export their settings as a JSON snapshot for documentation, backup, or sharing with consultants.</p>
+<p>Cross-tenant import (apply Org A's settings to Org B) is deferred — it requires validating that the target tenant has the same integrations, payment processors, and compliance jurisdiction. A settings snapshot is useful as a reference even without automated import.</p>
+<h4 id="55-api-rate-limits-plan-level-defaults-with-per-key-overrides" tabindex="-1"><a class="heading-anchor" href="#55-api-rate-limits-plan-level-defaults-with-per-key-overrides" aria-hidden="true">#</a> #55: API rate limits → Plan-level defaults with per-key overrides</h4>
+<p>Each pricing plan defines default rate limits. OAs can adjust limits per API key within the plan's ceiling — e.g., give the voter file sync key a higher limit than the reporting key.</p>
+<p>The API settings screen (SET-017) shows current usage against limits per key. Rate limit headers are included in all API responses per standard convention (<code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining</code>, <code>X-RateLimit-Reset</code>).</p>
+<h4 id="56-integration-health-monitoring-proactive-health-checks-with-alert-escalation" tabindex="-1"><a class="heading-anchor" href="#56-integration-health-monitoring-proactive-health-checks-with-alert-escalation" aria-hidden="true">#</a> #56: Integration health monitoring → Proactive health checks with alert escalation</h4>
+<p>The integration hub (SET-012) shows real-time status per integration: Connected (green), Degraded (amber), Failed (red). The system runs periodic health checks (API ping, token validity, last successful sync timestamp).</p>
+<p><strong>Alert escalation:</strong></p>
+<ol>
+<li>In-app notification to OA after first failure</li>
+<li>Email alert after 3 consecutive failures</li>
+<li>Dashboard warning banner if a critical integration (payment processor, SMS provider) is down</li>
+</ol>
+<p>The integration detail screen shows a health timeline (last 30 days) so the OA can distinguish intermittent issues from sustained failures.</p>
+<h3 id="authentication-security-4-questions-5760" tabindex="-1"><a class="heading-anchor" href="#authentication-security-4-questions-5760" aria-hidden="true">#</a> Authentication &amp; Security (4 questions: #57–#60)</h3>
+<h4 id="57-passkey-sync-allow-cloud-synced-passkeys" tabindex="-1"><a class="heading-anchor" href="#57-passkey-sync-allow-cloud-synced-passkeys" aria-hidden="true">#</a> #57: Passkey sync → Allow cloud-synced passkeys</h4>
+<p>Device-bound-only passkeys (hardware security keys) are more secure but create a severe usability problem: lose your phone, lose access. In the target context (global south, low-end devices, devices shared within families), device loss and replacement is common.</p>
+<p>Cloud-synced passkeys (iCloud Keychain, Google Password Manager) provide the phishing resistance of WebAuthn with practical recoverability. The security tier setting can restrict to device-bound only for orgs at Maximum security tier.</p>
+<h4 id="58-totp-fallback-yes-opt-in-at-enhanced-and-maximum-security-tiers" tabindex="-1"><a class="heading-anchor" href="#58-totp-fallback-yes-opt-in-at-enhanced-and-maximum-security-tiers" aria-hidden="true">#</a> #58: TOTP fallback → Yes, opt-in at Enhanced and Maximum security tiers</h4>
+<p>Passkey authentication requires a brief network round-trip. In areas with intermittent connectivity, this can fail. TOTP (Google Authenticator, etc.) works entirely offline after initial setup.</p>
+<p>OAs at Enhanced or Maximum security tier can enable TOTP as a fallback authentication method. Standard tier relies on passkey + trusted contact recovery only (simpler setup for smaller orgs).</p>
+<h4 id="59-oa-recovery-with-no-trusted-contacts-platform-assisted-with-identity-verification" tabindex="-1"><a class="heading-anchor" href="#59-oa-recovery-with-no-trusted-contacts-platform-assisted-with-identity-verification" aria-hidden="true">#</a> #59: OA recovery with no trusted contacts → Platform-assisted with identity verification</h4>
+<p>This is the &quot;bootstrap problem&quot; — the first OA has no peers to vouch for them.</p>
+<p><strong>Resolution:</strong> The OA contacts GreenGrass support, who verify identity through the original org registration channel (email used at signup, payment method on file). After verification, support initiates a <strong>72-hour cooling-off recovery</strong> (longer than the standard 24-hour because there is no peer verification). During cooling-off, all org email contacts receive a notification.</p>
+<p>This is intentionally slow and visible — it's the highest-risk recovery path.</p>
+<h4 id="60-low-end-device-passkey-support-android-9-ios-16-chrome-109" tabindex="-1"><a class="heading-anchor" href="#60-low-end-device-passkey-support-android-9-ios-16-chrome-109" aria-hidden="true">#</a> #60: Low-end device passkey support → Android 9+ / iOS 16+ / Chrome 109+</h4>
+<p>This covers the large majority of devices in active use in the global south (Android 9 is from 2018). Devices below this threshold fall back to magic link authentication (email-based, no WebAuthn).</p>
+<p>The login screen auto-detects WebAuthn support and shows the appropriate flow — no user decision needed.</p>
+<h3 id="user-profile-3-questions-6163" tabindex="-1"><a class="heading-anchor" href="#user-profile-3-questions-6163" aria-hidden="true">#</a> User Profile (3 questions: #61–#63)</h3>
+<h4 id="61-profile-photo-privacy-internal-only-by-default" tabindex="-1"><a class="heading-anchor" href="#61-profile-photo-privacy-internal-only-by-default" aria-hidden="true">#</a> #61: Profile photo privacy → Internal-only by default</h4>
+<p>Profile photos appear in internal messaging, staff directories, and assignment screens. They are not shown in supporter-facing contexts (portal, emails, public pages) unless the staff member explicitly enables &quot;Show my photo to supporters&quot; in profile settings.</p>
+<p>Default: off. This protects staff identity in security-sensitive contexts.</p>
+<h4 id="62-notification-sounds-os-default-only" tabindex="-1"><a class="heading-anchor" href="#62-notification-sounds-os-default-only" aria-hidden="true">#</a> #62: Notification sounds → OS default only</h4>
+<p>Custom notification sounds require audio file management, per-device sync, and add no meaningful value. The platform uses the device's default notification sound. Users who want custom sounds can configure them at the OS level for the GreenGrass app.</p>
+<p>Profile settings offer: sounds on/off, vibration on/off.</p>
+<h4 id="63-multi-tenant-notifications-yes-with-org-badge-configurable-per-org" tabindex="-1"><a class="heading-anchor" href="#63-multi-tenant-notifications-yes-with-org-badge-configurable-per-org" aria-hidden="true">#</a> #63: Multi-tenant notifications → Yes, with org badge; configurable per org</h4>
+<p>Staff who work with multiple organizations (consultants, alliance coordinators) need to see notifications from non-active orgs — otherwise they'd miss time-sensitive messages.</p>
+<p>Each notification shows an org badge (org avatar + name). Users can mute notifications per org in profile settings. Active org notifications are always shown; non-active org notifications are grouped in a separate section of the notification drawer.</p>
+<h3 id="support-help-4-questions-6467" tabindex="-1"><a class="heading-anchor" href="#support-help-4-questions-6467" aria-hidden="true">#</a> Support &amp; Help (4 questions: #64–#67)</h3>
+<h4 id="64-ai-concierge-language-detect-from-question-default-to-configured" tabindex="-1"><a class="heading-anchor" href="#64-ai-concierge-language-detect-from-question-default-to-configured" aria-hidden="true">#</a> #64: AI concierge language → Detect from question, default to configured</h4>
+<p>If the user types in French, respond in French — even if their profile language is English. Language detection provides a more natural experience for multilingual users who switch between languages.</p>
+<p>If detection confidence is low (very short query, mixed languages), fall back to the user's configured profile language. The concierge always offers &quot;Switch to [configured language]&quot; as a quick action.</p>
+<h4 id="65-training-completion-gating-yes-for-safety-critical-training-only" tabindex="-1"><a class="heading-anchor" href="#65-training-completion-gating-yes-for-safety-critical-training-only" aria-hidden="true">#</a> #65: Training completion gating → Yes, for safety-critical training only</h4>
+<p>The OA marks specific training modules as &quot;required before field deployment&quot; (e.g., security protocols, de-escalation, voter interaction guidelines). Volunteers who haven't completed required modules cannot be assigned to shifts — the assignment screen shows &quot;Training incomplete&quot; with a link to the outstanding module.</p>
+<p>Non-required training (platform tutorials, best practices) is encouraged but not gated.</p>
+<h4 id="66-external-content-in-knowledge-base-yes-with-clear-visual-distinction" tabindex="-1"><a class="heading-anchor" href="#66-external-content-in-knowledge-base-yes-with-clear-visual-distinction" aria-hidden="true">#</a> #66: External content in knowledge base → Yes, with clear visual distinction</h4>
+<p>Knowledge base articles can link to external resources (partner org guides, government election authority pages, third-party training videos). External links are visually distinct (icon + &quot;External link&quot; label) and open in a new tab.</p>
+<p>The help system does not embed or cache external content — it's a link, not a mirror. This prevents stale cached copies while letting orgs curate resources beyond what's in the platform KB.</p>
+<h4 id="67-ai-hallucination-prevention-kb-grounded-with-explicit-i-dont-know" tabindex="-1"><a class="heading-anchor" href="#67-ai-hallucination-prevention-kb-grounded-with-explicit-i-dont-know" aria-hidden="true">#</a> #67: AI hallucination prevention → KB-grounded with explicit &quot;I don't know&quot;</h4>
+<p>The AI concierge is grounded strictly in the org's knowledge base and GreenGrass platform documentation. If a question can't be answered from these sources, the concierge says &quot;I don't have information about that&quot; and offers to connect the user with support or search the KB.</p>
+<p>No broader reasoning or external knowledge. This is a political platform — a hallucinated answer about election law or compliance could have real consequences.</p>
+<h3 id="public-pages-4-questions-6871" tabindex="-1"><a class="heading-anchor" href="#public-pages-4-questions-6871" aria-hidden="true">#</a> Public Pages (4 questions: #68–#71)</h3>
+<h4 id="68-custom-domains-yes-v1" tabindex="-1"><a class="heading-anchor" href="#68-custom-domains-yes-v1" aria-hidden="true">#</a> #68: Custom domains → Yes, v1</h4>
+<p>Orgs can map a custom domain (e.g., <code>join.partyname.org</code>) to their public pages. The platform handles SSL certificate provisioning (Let's Encrypt). Configuration in SET-012 (integrations). Default: pages served under a GreenGrass subdomain (<code>partyname.greengrass.app</code>).</p>
+<p>Custom domains are critical for brand credibility — supporters clicking a donation link need to see the org's domain, not the platform's.</p>
+<h4 id="69-page-analytics-built-in-lightweight-analytics-no-third-party-tracking" tabindex="-1"><a class="heading-anchor" href="#69-page-analytics-built-in-lightweight-analytics-no-third-party-tracking" aria-hidden="true">#</a> #69: Page analytics → Built-in lightweight analytics; no third-party tracking</h4>
+<p>Public pages track: views, unique visitors, conversion rate (form submissions / views), referral source (UTM parameters). Displayed on the public pages dashboard.</p>
+<p>No third-party analytics (Google Analytics, Meta Pixel) in v1 — these raise privacy concerns and add cookie consent complexity in GDPR/LGPD jurisdictions. OAs who need deeper analytics can add external scripts via a custom code injection field (advanced setting, off by default).</p>
+<h4 id="70-volunteer-signup-ab-testing-defer-to-v2" tabindex="-1"><a class="heading-anchor" href="#70-volunteer-signup-ab-testing-defer-to-v2" aria-hidden="true">#</a> #70: Volunteer signup A/B testing → Defer to v2</h4>
+<p>A/B testing on public pages requires traffic splitting, variant serving, and statistical analysis. The fundraising A/B testing infrastructure (#34) is scoped to donation pages. Extending it to volunteer signup pages is additive work. For v1, orgs manually iterate on their signup page copy. When the A/B testing infrastructure matures, extending it to public pages is straightforward.</p>
+<h4 id="71-open-graph-images-auto-generated-with-manual-override" tabindex="-1"><a class="heading-anchor" href="#71-open-graph-images-auto-generated-with-manual-override" aria-hidden="true">#</a> #71: Open Graph images → Auto-generated with manual override</h4>
+<p>The platform auto-generates OG images from the page title + org logo + brand colors (simple template composition, not AI). OAs can override with a manually uploaded image per page.</p>
+<p>Auto-generation ensures every shared link has a preview image (critical for social media sharing) without requiring design effort for every page.</p>
+<h3 id="onboarding-3-questions-7274" tabindex="-1"><a class="heading-anchor" href="#onboarding-3-questions-7274" aria-hidden="true">#</a> Onboarding (3 questions: #72–#74)</h3>
+<h4 id="72-wizard-skip-behavior-required-core-3-steps-optional-extensions" tabindex="-1"><a class="heading-anchor" href="#72-wizard-skip-behavior-required-core-3-steps-optional-extensions" aria-hidden="true">#</a> #72: Wizard skip behavior → Required core (3 steps), optional extensions</h4>
+<p>Three steps are unskippable: org name + admin account + security tier selection. The platform can't function without them.</p>
+<p>All other wizard steps (payment processor, compliance config, WhatsApp, SMS, voter file import) show a &quot;Skip for now&quot; option that adds them to the post-wizard checklist.</p>
+<p><strong>Minimum viable path:</strong> 3 steps to a working org with basic features, then progressive setup via checklist.</p>
+<h4 id="73-wizard-resume-yes-auto-save-after-each-completed-step" tabindex="-1"><a class="heading-anchor" href="#73-wizard-resume-yes-auto-save-after-each-completed-step" aria-hidden="true">#</a> #73: Wizard resume → Yes, auto-save after each completed step</h4>
+<p>If the wizard is abandoned (browser closed, session timeout), the next login resumes from the last completed step. Completed steps show as done with a checkmark; the current step is pre-populated with any entered data. No data loss on abandonment. The wizard state persists until the wizard is completed or the OA explicitly restarts it.</p>
+<h4 id="74-post-wizard-checklist-persistent-until-required-items-complete-then-dismissible" tabindex="-1"><a class="heading-anchor" href="#74-post-wizard-checklist-persistent-until-required-items-complete-then-dismissible" aria-hidden="true">#</a> #74: Post-wizard checklist → Persistent until required items complete, then dismissible</h4>
+<p>The checklist shows on the dashboard after the wizard. Required items (those skipped during the wizard) cannot be individually dismissed — the checklist stays until they're done. Optional items (&quot;Invite your first team member,&quot; &quot;Create your first event&quot;) can be individually dismissed.</p>
+<p>Once all required items are complete, the entire checklist becomes dismissible with a &quot;Got it, hide checklist&quot; action.</p>
+<h3 id="supporter-portal-3-questions-7577" tabindex="-1"><a class="heading-anchor" href="#supporter-portal-3-questions-7577" aria-hidden="true">#</a> Supporter Portal (3 questions: #75–#77)</h3>
+<h4 id="75-authentication-tiers-already-decided-magic-link-full-account" tabindex="-1"><a class="heading-anchor" href="#75-authentication-tiers-already-decided-magic-link-full-account" aria-hidden="true">#</a> #75: Authentication tiers → Already decided (magic link + full account)</h4>
+<p>Magic link for basic access (view donation history, download receipts). Full account (with passkey) for management actions (update payment method, change communication preferences). This was recorded in the <a href="http://supporter-portal.md" target="_blank" rel="noopener noreferrer">supporter-portal.md</a> design decisions table. Confirmed here as canonical.</p>
+<h4 id="76-portal-branding-logo-colors-and-content-not-layout" tabindex="-1"><a class="heading-anchor" href="#76-portal-branding-logo-colors-and-content-not-layout" aria-hidden="true">#</a> #76: Portal branding → Logo, colors, and content; not layout</h4>
+<p>The supporter portal uses the org's logo, primary/secondary brand colors, and custom welcome text. The layout, navigation structure, and component design are fixed (platform-controlled).</p>
+<p>This ensures consistent UX across orgs while giving each org brand identity. CSS-level customization (custom fonts, layout overrides) is not supported — it creates support burden and breaks accessibility guarantees.</p>
+<h4 id="77-mobile-portal-responsive-web-not-a-separate-app" tabindex="-1"><a class="heading-anchor" href="#77-mobile-portal-responsive-web-not-a-separate-app" aria-hidden="true">#</a> #77: Mobile portal → Responsive web, not a separate app</h4>
+<p>The supporter portal is a responsive web application that works on phone browsers. No native app for supporters — the install barrier would kill adoption. The portal is already designed mobile-first (per the public pages design decision).</p>
+<p>PWA capabilities (add to home screen, offline receipt viewing) can be added incrementally without requiring an app store presence.</p>
+<h3 id="alliance-5-questions-7882" tabindex="-1"><a class="heading-anchor" href="#alliance-5-questions-7882" aria-hidden="true">#</a> Alliance (5 questions: #78–#82)</h3>
+<h4 id="78-cross-alliance-data-visibility-contact-existence-shared-interaction-details-private" tabindex="-1"><a class="heading-anchor" href="#78-cross-alliance-data-visibility-contact-existence-shared-interaction-details-private" aria-hidden="true">#</a> #78: Cross-alliance data visibility → Contact existence shared; interaction details private</h4>
+<p><strong>Shared by default:</strong> Contact existence (prevents duplicate outreach) and aggregate campaign metrics (total doors knocked, total raised).</p>
+<p><strong>Private by default:</strong> Individual interaction records, internal notes, supporter communication history.</p>
+<p>The alliance sharing configuration screen (already designed with by-category and by-org views) controls these boundaries. OAs can loosen sharing per category.</p>
+<h4 id="79-alliance-hierarchy-flat-for-v1" tabindex="-1"><a class="heading-anchor" href="#79-alliance-hierarchy-flat-for-v1" aria-hidden="true">#</a> #79: Alliance hierarchy → Flat for v1</h4>
+<p>An alliance is a single-level group of member orgs. No sub-alliances, no nested hierarchies. Hierarchical alliances add significant complexity to governance, data sharing rules, and dashboard aggregation.</p>
+<p>Flat alliances cover the primary use case: coalition partners coordinating for an election. If sub-alliances are needed, they can be modeled as separate alliances with overlapping membership.</p>
+<h4 id="80-joint-campaign-data-ownership-lead-org-retains-members-keep-their-own-data" tabindex="-1"><a class="heading-anchor" href="#80-joint-campaign-data-ownership-lead-org-retains-members-keep-their-own-data" aria-hidden="true">#</a> #80: Joint campaign data ownership → Lead org retains; members keep their own data</h4>
+<p>When a joint campaign ends:</p>
+<ul>
+<li>The <strong>lead org</strong> (or committee, per governance model) retains the joint campaign record, aggregate results, and shared assets</li>
+<li>Each <strong>member org</strong> retains full access to interactions their own volunteers conducted and contacts they brought into the campaign</li>
+<li><strong>Shared contacts</strong> (contacted by multiple orgs) remain in each org's CRM independently — no forced deduplication across org boundaries</li>
+</ul>
+<p>No member org loses access to data their people generated.</p>
+<h4 id="81-alliance-dashboard-permissions-aggregate-only-per-member-opt-in" tabindex="-1"><a class="heading-anchor" href="#81-alliance-dashboard-permissions-aggregate-only-per-member-opt-in" aria-hidden="true">#</a> #81: Alliance dashboard permissions → Aggregate only; per-member opt-in</h4>
+<p>The alliance dashboard shows aggregate metrics (total doors, total raised, total events) across all members. Individual member performance is visible only to the alliance lead and to each member for their own data.</p>
+<p>The alliance lead can enable per-member visibility if all members consent (configured in alliance settings, requires opt-in from each member OA).</p>
+<h4 id="82-affiliation-request-sla-30-day-timeout-with-reminders" tabindex="-1"><a class="heading-anchor" href="#82-affiliation-request-sla-30-day-timeout-with-reminders" aria-hidden="true">#</a> #82: Affiliation request SLA → 30-day timeout with reminders</h4>
+<p>An affiliation request that goes unanswered for 30 days auto-expires. The system sends reminders at 7, 14, and 21 days to the target org's OA. After expiry, the requesting org can re-send. No auto-approval — silence means no.</p>
+<p>The requesting org sees request status (Pending / Accepted / Declined / Expired) in their alliance screen.</p>
+<h3 id="crm-data-4-questions-83-8587" tabindex="-1"><a class="heading-anchor" href="#crm-data-4-questions-83-8587" aria-hidden="true">#</a> CRM &amp; Data (4 questions: #83, #85–#87)</h3>
+<p><em>Question #84 was resolved in the cross-cutting section above.</em></p>
+<h4 id="83-dedup-confidence-threshold-three-tiers-by-match-confidence" tabindex="-1"><a class="heading-anchor" href="#83-dedup-confidence-threshold-three-tiers-by-match-confidence" aria-hidden="true">#</a> #83: Dedup confidence threshold → Three tiers by match confidence</h4>
+<table>
+<thead>
+<tr>
+<th>Confidence</th>
+<th>Action</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>95%+ (exact)</td>
+<td>Auto-merge with audit log</td>
+<td>Same email address, same phone number</td>
+</tr>
+<tr>
+<td>70–94% (likely)</td>
+<td>Surface in dedup review queue for manual merge</td>
+<td>Similar name + same postal code</td>
+</tr>
+<tr>
+<td>Below 70%</td>
+<td>Ignore unless manually searched</td>
+<td>Same last name only</td>
+</tr>
+</tbody>
+</table>
+<p>Thresholds are org-configurable. The dedup review screen (already designed as side-by-side comparison) handles the manual review tier. Auto-merged records are logged in the audit trail with the match reason, and can be unmerged within the import rollback window.</p>
+<h4 id="85-segment-refresh-on-access-daily-background-refresh" tabindex="-1"><a class="heading-anchor" href="#85-segment-refresh-on-access-daily-background-refresh" aria-hidden="true">#</a> #85: Segment refresh → On access + daily background refresh</h4>
+<p>Dynamic segments recalculate when a user views the segment (ensuring current data) and once daily in a background job (ensuring campaign targeting is fresh).</p>
+<p>The segment list shows &quot;Last refreshed: [timestamp]&quot; per segment. Large segments (50k+ contacts) may take seconds to recalculate — the UI shows a loading state rather than stale data. Manual refresh is available via a refresh button on the segment detail screen.</p>
+<h4 id="86-data-export-audit-reason-required-for-bulk-exports-100-records" tabindex="-1"><a class="heading-anchor" href="#86-data-export-audit-reason-required-for-bulk-exports-100-records" aria-hidden="true">#</a> #86: Data export audit → Reason required for bulk exports (100+ records)</h4>
+<p>Exporting more than 100 records requires the user to select a reason from a predefined list: Compliance reporting / Campaign operations / Data migration / Alliance sharing / Other + free text. The reason is logged in the audit trail alongside the export metadata (who, when, how many records, which fields).</p>
+<p>Individual record views and small exports (&lt;100 records) do not require a reason — that would add friction to normal CRM usage.</p>
+<h4 id="87-tag-taxonomy-flat-with-optional-prefix-convention" tabindex="-1"><a class="heading-anchor" href="#87-tag-taxonomy-flat-with-optional-prefix-convention" aria-hidden="true">#</a> #87: Tag taxonomy → Flat with optional prefix convention</h4>
+<p>Tags are flat strings. No enforced hierarchy, no parent-child relationships. Orgs that want hierarchy use a naming convention: <code>region:north</code>, <code>region:south</code>, <code>issue:education</code>, <code>issue:healthcare</code>.</p>
+<p>The tag picker supports prefix filtering (type &quot;region:&quot; to see all region tags). This gives the flexibility of hierarchy without the complexity of a tree data structure.</p>
+<h3 id="cross-cutting-2-questions-8889" tabindex="-1"><a class="heading-anchor" href="#cross-cutting-2-questions-8889" aria-hidden="true">#</a> Cross-Cutting (2 questions: #88–#89)</h3>
+<h4 id="88-dashboards-real-time-vs-polling-polling-for-v1-covered-by-5" tabindex="-1"><a class="heading-anchor" href="#88-dashboards-real-time-vs-polling-polling-for-v1-covered-by-5" aria-hidden="true">#</a> #88: Dashboards real-time vs. polling → Polling for v1 (covered by #5)</h4>
+<p>All dashboards use polling at tiered intervals (30s–15min per dashboard type). WebSockets add infrastructure complexity (connection management, reconnection logic, load balancer configuration) without proportional UX benefit given the refresh intervals.</p>
+<p>The mandatory freshness indicator (#5) makes the polling model transparent to users. WebSockets can be evaluated for v2 if operational dashboards need sub-second updates.</p>
+<h4 id="89-dashboard-widget-library-fixed-widget-vocabulary-for-v1" tabindex="-1"><a class="heading-anchor" href="#89-dashboard-widget-library-fixed-widget-vocabulary-for-v1" aria-hidden="true">#</a> #89: Dashboard widget library → Fixed widget vocabulary for v1</h4>
+<p>All dashboards draw from a standard set of widget types:</p>
+<ul>
+<li>Metric card (single number + trend)</li>
+<li>Bar chart</li>
+<li>Line chart</li>
+<li>Table</li>
+<li>Map</li>
+<li>Status list</li>
+<li>Progress bar</li>
+<li>Alert banner</li>
+</ul>
+<p>No custom widget builder or user-defined visualizations. This ensures visual consistency, simplifies implementation, and keeps dashboards predictable. The widget set can be extended as dashboard needs mature.</p>
+<hr>
+<h2 id="consequences" tabindex="-1"><a class="heading-anchor" href="#consequences" aria-hidden="true">#</a> Consequences</h2>
+<ul>
+<li><strong>All 89 open questions resolved</strong></li>
+<li><strong>Both contradictions resolved:</strong> settings delegation deferred; frequency caps and cross-channel orchestration made complementary</li>
+<li><strong>New system capabilities required:</strong>
+<ul>
+<li>Cross-channel quiet window (Layer 2 orchestration)</li>
+<li>Dashboard freshness indicator component</li>
+<li>Script template library</li>
+<li>WhatsApp template approval status display in composer</li>
+<li>BYOM (Bring Your Own Model) AI provider abstraction layer and settings screen</li>
+<li>PDF letter generation for activism campaigns</li>
+<li>Standard election data schema with API connector + CSV import paths</li>
+<li>Multi-layer results entry verification (identity, geolocation, photo, cross-check)</li>
+<li>Two-OA approval flow for destructive settings operations</li>
+<li>Integration health monitoring with alert escalation</li>
+<li>Platform-assisted OA recovery path (72-hour cooling-off)</li>
+<li>Training completion gating for shift assignment</li>
+<li>Custom domain support with SSL provisioning</li>
+<li>Auto-generated Open Graph images</li>
+<li>Three-tier dedup confidence engine (auto-merge / review queue / ignore)</li>
+</ul>
+</li>
+<li><strong>v2 tentpole features identified:</strong> Visual Flow Builder, Shared Content Library, Settings Delegation, Public Page A/B Testing</li>
+<li><strong>Event + fundraising integration tightened:</strong> implementation must support donation records with event metadata</li>
+<li><strong>Data retention is a platform-level concern:</strong> must be implemented as infrastructure, not per-feature</li>
+<li><strong>No open questions remain.</strong> The wireframe audit's Appendix A is fully resolved. All resolutions are recorded in this ADR with traceable section references.</li>
+</ul>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#context"># Context</a></li><li class="toc-3"><a href="#contradictions"># Contradictions</a></li><li class="toc-3"><a href="#overlap-clusters"># Overlap clusters</a></li><li class="toc-2"><a href="#decision"># Decision</a></li><li class="toc-3"><a href="#1-settings-delegation-oa-only-for-v1"># 1. Settings Delegation — OA-Only for v1</a></li><li class="toc-3"><a href="#2-two-layer-channel-orchestration"># 2. Two-Layer Channel Orchestration</a></li><li class="toc-3"><a href="#3-ticket-revenue-through-the-fundraising-pipeline"># 3. Ticket Revenue Through the Fundraising Pipeline</a></li><li class="toc-3"><a href="#4-tiered-data-retention-policy"># 4. Tiered Data Retention Policy</a></li><li class="toc-2"><a href="#category-resolutions"># Category Resolutions</a></li><li class="toc-3"><a href="#navigation-layout-5-questions-15"># Navigation &amp;amp; Layout (5 questions: #1–#5)</a></li><li class="toc-3"><a href="#field-operations-8-questions-613"># Field Operations (8 questions: #6–#13)</a></li><li class="toc-3"><a href="#messaging-communications-8-questions-1520-2223"># Messaging &amp;amp; Communications (8 questions: #15–#20, #22–#23)</a></li><li class="toc-3"><a href="#social-media-2-questions-2425"># Social Media (2 questions: #24–#25)</a></li><li class="toc-3"><a href="#events-4-questions-26-2830"># Events (4 questions: #26, #28–#30)</a></li><li class="toc-3"><a href="#fundraising-4-questions-3336"># Fundraising (4 questions: #33–#36)</a></li><li class="toc-3"><a href="#activism-5-questions-3741"># Activism (5 questions: #37–#41)</a></li><li class="toc-2"><a href="#v2-tentpole-features"># v2 Tentpole Features</a></li><li class="toc-3"><a href="#press-media-5-questions-4246"># Press &amp;amp; Media (5 questions: #42–#46)</a></li><li class="toc-3"><a href="#gotv-election-day-4-questions-4750"># GOTV &amp;amp; Election Day (4 questions: #47–#50)</a></li><li class="toc-3"><a href="#settings-administration-4-questions-5356"># Settings &amp;amp; Administration (4 questions: #53–#56)</a></li><li class="toc-3"><a href="#authentication-security-4-questions-5760"># Authentication &amp;amp; Security (4 questions: #57–#60)</a></li><li class="toc-3"><a href="#user-profile-3-questions-6163"># User Profile (3 questions: #61–#63)</a></li><li class="toc-3"><a href="#support-help-4-questions-6467"># Support &amp;amp; Help (4 questions: #64–#67)</a></li><li class="toc-3"><a href="#public-pages-4-questions-6871"># Public Pages (4 questions: #68–#71)</a></li><li class="toc-3"><a href="#onboarding-3-questions-7274"># Onboarding (3 questions: #72–#74)</a></li><li class="toc-3"><a href="#supporter-portal-3-questions-7577"># Supporter Portal (3 questions: #75–#77)</a></li><li class="toc-3"><a href="#alliance-5-questions-7882"># Alliance (5 questions: #78–#82)</a></li><li class="toc-3"><a href="#crm-data-4-questions-83-8587"># CRM &amp;amp; Data (4 questions: #83, #85–#87)</a></li><li class="toc-3"><a href="#cross-cutting-2-questions-8889"># Cross-Cutting (2 questions: #88–#89)</a></li><li class="toc-2"><a href="#consequences"># Consequences</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

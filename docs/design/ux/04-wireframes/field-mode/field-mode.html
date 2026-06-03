@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Mode Wireframes · GreenGrass</title>
+<meta name="description" content="Field Mode Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="./field-mode.html" aria-current="page" class="active">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="field-mode-wireframes" tabindex="-1"><a class="heading-anchor" href="#field-mode-wireframes" aria-hidden="true">#</a> Field Mode Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Field mode is the highest-risk UX in the system. A volunteer on a low-end Android phone with intermittent connectivity, walking door-to-door, possibly in poor lighting, one-handed. Large touch targets, minimal navigation decisions, zero distraction. This document wireframes every screen in the field mode flow.</p>
+<p>Field mode is a <strong>full-screen takeover</strong> — no sidebar, no tabs, no notifications. The volunteer's world is the walk list until the shift ends.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CANV-007</td>
+<td>Shift Start</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#shift-start-flow">Shift Start Flow</a></td>
+</tr>
+<tr>
+<td>CANV-008</td>
+<td>Walk List View</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#walk-list-view">Walk List View</a></td>
+</tr>
+<tr>
+<td>CANV-009</td>
+<td>Map View</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#map-view">Map View</a></td>
+</tr>
+<tr>
+<td>CANV-010</td>
+<td>Door Card</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#door-card--canvassing">Door Card — Canvassing</a></td>
+</tr>
+<tr>
+<td>CANV-011</td>
+<td>Interaction Form</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#door-card--canvassing">Door Card — Canvassing</a></td>
+</tr>
+<tr>
+<td>CANV-012</td>
+<td>Shift End / Debrief</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#shift-end-flow">Shift End Flow</a></td>
+</tr>
+<tr>
+<td>PHONE-004</td>
+<td>Call Interface BYOP</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#phone-banking-variant">Phone Banking Variant</a></td>
+</tr>
+<tr>
+<td>PHONE-005</td>
+<td>Call Interface Integrated</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#phone-banking-variant">Phone Banking Variant</a></td>
+</tr>
+<tr>
+<td>PHONE-006</td>
+<td>Call Result Form</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#phone-banking-variant">Phone Banking Variant</a></td>
+</tr>
+<tr>
+<td>VREG-004</td>
+<td>Voter Registration Form</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#voter-registration-variant">Voter Registration Variant</a></td>
+</tr>
+<tr>
+<td>VREG-005</td>
+<td>Eligibility Check</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#voter-registration-variant">Voter Registration Variant</a></td>
+</tr>
+<tr>
+<td>GOTV-008</td>
+<td>GOTV Door Card</td>
+<td>V, TL, FiD</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#gotv-door-card-variant">GOTV Door Card Variant</a></td>
+</tr>
+<tr>
+<td>GOTV-009</td>
+<td>GOTV Walk List</td>
+<td>V, TL, FiD</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="#gotv-door-card-variant">GOTV Door Card Variant</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<!-- CANV-007 -->
+<h2 id="shift-start-flow" tabindex="-1"><a class="heading-anchor" href="#shift-start-flow" aria-hidden="true">#</a> Shift Start Flow</h2>
+<h3 id="screen-1-shift-selection" tabindex="-1"><a class="heading-anchor" href="#screen-1-shift-selection" aria-hidden="true">#</a> Screen 1: Shift Selection</h3>
+<p>Before entering field mode, the volunteer selects which shift to start. This screen is in the normal mobile shell.</p>
+<pre><code>┌──────────────────────────────┐
+│  ≡  My Shifts         🔍  ●  │
+├──────────────────────────────┤
+│                              │
+│  Ready to Start              │
+│  ┌──────────────────────────┐│
+│  │  📋 Northside Canvass    ││
+│  │  Today, 2:00 PM          ││
+│  │  47 doors assigned       ││
+│  │  Turf: Calle Sol area    ││
+│  │                          ││
+│  │  ┌────────────────────┐  ││
+│  │  │   ▶  Start Shift   │  ││
+│  │  └────────────────────┘  ││
+│  └──────────────────────────┘│
+│                              │
+│  Upcoming                    │
+│  ┌──────────────────────────┐│
+│  │  📞 Phone Bank Wave 3    ││
+│  │  Sat, March 8, 10:00 AM  ││
+│  │  25 calls assigned       ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  📋      📅      💬    [▶ GO]│
+│ Shifts  Events  Msgs  Start  │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="screen-2-pre-shift-check" tabindex="-1"><a class="heading-anchor" href="#screen-2-pre-shift-check" aria-hidden="true">#</a> Screen 2: Pre-Shift Check</h3>
+<p>After tapping &quot;Start Shift,&quot; the app prepares for field mode. This is the transition screen.</p>
+<pre><code>┌──────────────────────────────┐
+│                              │
+│  Preparing Your Shift        │
+│  ─────────────────────       │
+│                              │
+│  Northside Canvass           │
+│  47 doors · Calle Sol area   │
+│                              │
+│  ✓ Walk list downloaded      │
+│  ✓ Map tiles cached          │
+│  ✓ Script loaded             │
+│  ↻ Syncing latest data...    │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Reminders:                  │
+│  • Introduce yourself first  │
+│  • Respect &quot;No Soliciting&quot;   │
+│  • Mark &quot;Not Home&quot; if no     │
+│    answer after 30 seconds   │
+│  • Use the 🔒 lock button   │
+│    if you feel unsafe        │
+│                              │
+│                              │
+│  ┌──────────────────────────┐│
+│  │   ▶  Enter Field Mode    ││
+│  └──────────────────────────┘│
+│                              │
+│  [Cancel — back to shifts]   │
+│                              │
+└──────────────────────────────┘
+</code></pre>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Walk list, map tiles, and script download in parallel</li>
+<li>Each checkmark appears as the download completes</li>
+<li>&quot;Enter Field Mode&quot; button is disabled until all required data is ready</li>
+<li>If offline: shows cached data age (&quot;Walk list from 2 hours ago&quot;) with warning</li>
+<li>Cancel returns to the normal shifts screen</li>
+</ul>
+<hr>
+<!-- CANV-008 -->
+<h2 id="walk-list-view" tabindex="-1"><a class="heading-anchor" href="#walk-list-view" aria-hidden="true">#</a> Walk List View</h2>
+<p>The primary navigation view in field mode. Shows all assigned doors in order.</p>
+<h3 id="default-list-view" tabindex="-1"><a class="heading-anchor" href="#default-list-view" aria-hidden="true">#</a> Default — List View</h3>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 30s ago     ●REC 0:12│
+├──────────────────────────────┤
+│                              │
+│  Northside Canvass           │
+│  0 of 47 complete            │
+│  ░░░░░░░░░░░░░░░░░░░░░░░░░  │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  1. Ana Martínez     →   ││
+│  │     742 Calle Sol, Apt 3 ││
+│  │     ◦ Not yet visited    ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  2. Carlos Rivera    →   ││
+│  │     744 Calle Sol        ││
+│  │     ◦ Not yet visited    ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  3. Elena Torres     →   ││
+│  │     748 Calle Sol, Apt 1 ││
+│  │     ◦ Not yet visited    ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  4. José Delgado     →   ││
+│  │     750 Calle Sol        ││
+│  │     ◦ Not yet visited    ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  5. María Santos     →   ││
+│  │     752 Calle Sol        ││
+│  │     ◦ Not yet visited    ││
+│  └──────────────────────────┘│
+│          ↓ scroll             │
+│                              │
+├──────────────────────────────┤
+│  [📍 Map View]    [End Shift]│
+│                         [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="walk-list-in-progress" tabindex="-1"><a class="heading-anchor" href="#walk-list-in-progress" aria-hidden="true">#</a> Walk List — In Progress</h3>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 2m ago      ●REC 1:23│
+├──────────────────────────────┤
+│                              │
+│  Northside Canvass           │
+│  12 of 47 complete           │
+│  ▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░  │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ✓ 12. Pedro Colón      ││
+│  │     738 Calle Sol        ││
+│  │     Score: 2 · 3 min ago ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │ ▶ 13. Ana Martínez  →   ││
+│  │     742 Calle Sol, Apt 3 ││
+│  │     ◦ Next up            ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  14. Carlos Rivera   →   ││
+│  │     744 Calle Sol        ││
+│  │     ◦ Not yet visited    ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  15. Elena Torres    →   ││
+│  │     748 Calle Sol, Apt 1 ││
+│  │     ◦ Not yet visited    ││
+│  └──────────────────────────┘│
+│          ↓ scroll             │
+│                              │
+├──────────────────────────────┤
+│  [📍 Map View]    [End Shift]│
+│                         [🔒] │
+└──────────────────────────────┘
+
+Status indicators:
+  ✓  = Completed (green, with score and timestamp)
+  ▶  = Next up (highlighted, primary color left border)
+  ◦  = Not yet visited (neutral)
+  ✕  = Skipped / Not home (grey, with reason)
+  ●  = Currently at (if navigated to door card)
+</code></pre>
+<h3 id="walk-list-with-stale-data-warning" tabindex="-1"><a class="heading-anchor" href="#walk-list-with-stale-data-warning" aria-hidden="true">#</a> Walk List — With Stale Data Warning</h3>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 12 min ago  ●REC 1:23│  ← amber, growing urgency
+├──────────────────────────────┤
+│  ┌──────────────────────────┐│
+│  │  ⚠ Data may be outdated. ││
+│  │  Another volunteer may   ││
+│  │  have visited some doors.││
+│  │  [Sync now]              ││
+│  └──────────────────────────┘│
+│                              │
+│  Northside Canvass           │
+│  12 of 47 complete           │
+│  ...                         │
+</code></pre>
+<hr>
+<!-- CANV-010, CANV-011 -->
+<h2 id="door-card-canvassing" tabindex="-1"><a class="heading-anchor" href="#door-card-canvassing" aria-hidden="true">#</a> Door Card — Canvassing</h2>
+<p>The core interaction screen. One door at a time.</p>
+<h3 id="door-card-initial-view" tabindex="-1"><a class="heading-anchor" href="#door-card-initial-view" aria-hidden="true">#</a> Door Card — Initial View</h3>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 2m ago      ●REC 1:23│
+├──────────────────────────────┤
+│                              │
+│  Ana Martínez                │
+│  742 Calle Sol, Apt 3       │
+│  ─────────────────────       │
+│                              │
+│  Age: 34 · F                 │
+│  Registered: ✓ (PNP)        │
+│  Previous: Canvassed Jan 12  │
+│  Last Score: 3 (Lean Supp.)  │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Script                  ││
+│  │  ─────                   ││
+│  │  &quot;Hi, I'm [your name]   ││
+│  │  with Partido Verde.     ││
+│  │  Do you plan to support  ││
+│  │  us in the upcoming      ││
+│  │  election?&quot;              ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │    1 — Strong Support    ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    2 — Lean Support      ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    3 — Undecided         ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    4 — Lean Oppose       ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    5 — Strong Oppose     ││
+│  └──────────────────────────┘│
+│                              │
+│  ─────────────────────       │
+│  ┌──────────────────────────┐│
+│  │    ✕ Not Home            ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    ⊘ Refused             ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    ⟳ Come Back Later     ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  [◀ Prev]   13 of 47  [Next ▶]│
+├──────────────────────────────┤
+│  [End Shift]            [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="door-card-response-selected-follow-up-questions" tabindex="-1"><a class="heading-anchor" href="#door-card-response-selected-follow-up-questions" aria-hidden="true">#</a> Door Card — Response Selected (Follow-up Questions)</h3>
+<p>After the volunteer taps a support score, follow-up questions appear:</p>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 2m ago      ●REC 1:25│
+├──────────────────────────────┤
+│                              │
+│  Ana Martínez           ✓ 2  │
+│  742 Calle Sol, Apt 3       │
+│  ─────────────────────       │
+│                              │
+│  Response: 2 — Lean Support  │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Issues (select all that     │
+│  apply):                     │
+│                              │
+│  ┌─────────┐ ┌─────────┐    │
+│  │☑ Environ│ │☐ Economy│    │
+│  └─────────┘ └─────────┘    │
+│  ┌─────────┐ ┌─────────┐    │
+│  │☐ Educ.  │ │☑ Health │    │
+│  └─────────┘ └─────────┘    │
+│  ┌─────────┐ ┌─────────┐    │
+│  │☐ Housing│ │☐ Safety │    │
+│  └─────────┘ └─────────┘    │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Volunteer interest?         │
+│  ┌──────────────────────────┐│
+│  │  ☉ Yes — interested      ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ○ No                    ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ○ Didn't ask            ││
+│  └──────────────────────────┘│
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Notes (optional):           │
+│  ┌──────────────────────────┐│
+│  │ Has a yard sign from     ││
+│  │ last election. Very      ││
+│  │ friendly.                ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ✓ Save &amp; Next →         ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  [◀ Prev]   13 of 47  [Next ▶]│
+├──────────────────────────────┤
+│  [End Shift]            [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="door-card-not-home-quick-result" tabindex="-1"><a class="heading-anchor" href="#door-card-not-home-quick-result" aria-hidden="true">#</a> Door Card — &quot;Not Home&quot; Quick Result</h3>
+<p>If &quot;Not Home&quot; is tapped, the interaction is minimal:</p>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 2m ago      ●REC 1:26│
+├──────────────────────────────┤
+│                              │
+│  Ana Martínez           ✕    │
+│  742 Calle Sol, Apt 3       │
+│  ─────────────────────       │
+│                              │
+│  Result: Not Home            │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Leave literature?       ││
+│  │  ☉ Yes  ○ No  ○ N/A     ││
+│  └──────────────────────────┘│
+│                              │
+│  Saved. Moving to next door. │
+│                              │
+│  ─────── auto-advance 3s ── │
+│                              │
+├──────────────────────────────┤
+│  [◀ Prev]   13 of 47  [Next ▶]│
+├──────────────────────────────┤
+│  [End Shift]            [🔒] │
+└──────────────────────────────┘
+
+Auto-advances to next door after 3 seconds.
+Tapping anywhere cancels auto-advance (stays on this door).
+</code></pre>
+<hr>
+<!-- CANV-009 -->
+<h2 id="map-view" tabindex="-1"><a class="heading-anchor" href="#map-view" aria-hidden="true">#</a> Map View</h2>
+<p>Toggle between list and map using the [📍 Map View] / [← List View] buttons.</p>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 30s ago     ●REC 1:30│
+├──────────────────────────────┤
+│                              │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  │  ┌───┐    ┌───┐         ││
+│  │  │🟢│────│🟢│          ││
+│  │  └───┘    └───┘         ││
+│  │    │        │            ││
+│  │  ┌───┐    ┌───┐         ││
+│  │  │🟢│    │🔵│←(you)    ││
+│  │  └───┘    └───┘         ││
+│  │    │        │            ││
+│  │  ┌───┐    ┌───┐         ││
+│  │  │⚪│────│⚪│          ││
+│  │  └───┘    └───┘         ││
+│  │    │        │            ││
+│  │  ┌───┐    ┌───┐         ││
+│  │  │⚪│────│⚪│          ││
+│  │  └───┘    └───┘         ││
+│  │                          ││
+│  └──────────────────────────┘│
+│                              │
+│  🟢 Completed  🔵 Current    │
+│  ⚪ Remaining  🔴 Skipped    │
+│                              │
+│  Next: 14. Carlos Rivera     │
+│  744 Calle Sol · ~120m       │
+│                              │
+│  [← List View]   [Navigate ▶]│
+│                              │
+├──────────────────────────────┤
+│  [End Shift]            [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="map-interactions" tabindex="-1"><a class="heading-anchor" href="#map-interactions" aria-hidden="true">#</a> Map Interactions</h3>
+<ul>
+<li><strong>Tap a pin:</strong> Shows that door's name and address in a tooltip. Tap again to jump to their door card.</li>
+<li><strong>Pinch to zoom:</strong> Standard map zoom behavior.</li>
+<li><strong>&quot;Navigate&quot; button:</strong> Opens the device's native maps app with walking directions to the next door.</li>
+<li><strong>Current location:</strong> Blue dot showing the volunteer's GPS position (if permission granted).</li>
+<li><strong>Offline tiles:</strong> Pre-cached. If zooming beyond cached area, shows grey placeholder with &quot;Map not available offline&quot; message.</li>
+</ul>
+<hr>
+<!-- PHONE-004, PHONE-005, PHONE-006 -->
+<h2 id="phone-banking-variant" tabindex="-1"><a class="heading-anchor" href="#phone-banking-variant" aria-hidden="true">#</a> Phone Banking Variant</h2>
+<p>Phone banking uses the same field mode shell but with a call-specific card.</p>
+<h3 id="call-card" tabindex="-1"><a class="heading-anchor" href="#call-card" aria-hidden="true">#</a> Call Card</h3>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 1m ago      ●REC 0:45│
+├──────────────────────────────┤
+│                              │
+│  Phone Bank Wave 3           │
+│  8 of 25 complete            │
+│  ▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░  │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Carlos Rivera               │
+│  📞 +1 787-555-0142         │
+│                              │
+│  Age: 42 · M                 │
+│  Registered: ✓               │
+│  Previous: Called Feb 15      │
+│  Last Score: 3 (Undecided)   │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  📞 Call Now              ││
+│  └──────────────────────────┘│
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Script:                     │
+│  &quot;Hi Carlos, I'm calling     │
+│  from Partido Verde...&quot;      │
+│                              │
+│  ─────────────────────       │
+│  After the call:             │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ✓ Answered — Record     ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ✕ No Answer             ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  📱 Voicemail            ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ⊘ Wrong Number          ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  🚫 Do Not Call          ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  [◀ Prev]    9 of 25  [Next ▶]│
+├──────────────────────────────┤
+│  [End Session]          [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="phone-bank-after-answered" tabindex="-1"><a class="heading-anchor" href="#phone-bank-after-answered" aria-hidden="true">#</a> Phone Bank — After &quot;Answered&quot;</h3>
+<p>Same follow-up flow as canvassing (support score → issues → notes → save &amp; next).</p>
+<hr>
+<!-- VREG-004, VREG-005 -->
+<h2 id="voter-registration-variant" tabindex="-1"><a class="heading-anchor" href="#voter-registration-variant" aria-hidden="true">#</a> Voter Registration Variant</h2>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 5m ago      ●REC 0:22│
+├──────────────────────────────┤
+│                              │
+│  Voter Registration Drive    │
+│  3 of ? registered today     │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  New Registration            │
+│                              │
+│  First Name *                │
+│  ┌──────────────────────────┐│
+│  │ María                    ││
+│  └──────────────────────────┘│
+│                              │
+│  Last Name *                 │
+│  ┌──────────────────────────┐│
+│  │ Fernández                ││
+│  └──────────────────────────┘│
+│                              │
+│  Date of Birth *             │
+│  ┌──────────────────────────┐│
+│  │ 03/15/1990              ││
+│  └──────────────────────────┘│
+│                              │
+│  Address *                   │
+│  ┌──────────────────────────┐│
+│  │ 156 Calle Luna           ││
+│  └──────────────────────────┘│
+│                              │
+│  Municipality *              │
+│  ┌──────────────────────────┐│
+│  │ San Juan              ▾  ││
+│  └──────────────────────────┘│
+│                              │
+│  ID Number *                 │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  └──────────────────────────┘│
+│                              │
+│  ☐ Consent to contact       │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ✓ Register &amp; Next       ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  [End Session]          [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="eligibility-check-pre-form" tabindex="-1"><a class="heading-anchor" href="#eligibility-check-pre-form" aria-hidden="true">#</a> Eligibility Check (Pre-Form)</h3>
+<p>Some jurisdictions require an eligibility check before registration:</p>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 5m ago      ●REC 0:20│
+├──────────────────────────────┤
+│                              │
+│  Eligibility Check           │
+│  ─────────────────────       │
+│                              │
+│  Before registering, confirm:│
+│                              │
+│  ☑ Is the person 18 or older │
+│    (or will be by election   │
+│    day)?                     │
+│                              │
+│  ☑ Is the person a resident  │
+│    of this municipality?     │
+│                              │
+│  ☐ Is the person a citizen   │
+│    (where applicable)?       │
+│                              │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ✓ Eligible — Continue   ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ✕ Not Eligible          ││
+│  └──────────────────────────┘│
+│                              │
+│  &quot;Not Eligible&quot; records the  │
+│  reason and skips the form.  │
+│                              │
+├──────────────────────────────┤
+│  [End Session]          [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<!-- GOTV-008, GOTV-009 -->
+<h2 id="gotv-door-card-variant" tabindex="-1"><a class="heading-anchor" href="#gotv-door-card-variant" aria-hidden="true">#</a> GOTV Door Card Variant</h2>
+<p>On election day, the door card is simplified — no lengthy surveys, just turnout confirmation.</p>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 1m ago      ●REC 3:12│
+├──────────────────────────────┤
+│                              │
+│  ████ ELECTION DAY ████      │
+│                              │
+│  Ana Martínez                │
+│  742 Calle Sol, Apt 3       │
+│  ─────────────────────       │
+│                              │
+│  Support: 2 (Lean Support)   │
+│  Voting location: Esc. Muñoz │
+│  Polls close: 4h 23m        │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Has this person voted?      │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ✓ Confirmed Voted       ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ~ Likely Voted          ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ✕ Not Yet Voted         ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ✕ Not Home              ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  🚗 Needs a Ride         ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  [◀ Prev]   27 of 85  [Next ▶]│
+├──────────────────────────────┤
+│  [End Shift]            [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="gotv-needs-a-ride-flow" tabindex="-1"><a class="heading-anchor" href="#gotv-needs-a-ride-flow" aria-hidden="true">#</a> GOTV — &quot;Needs a Ride&quot; Flow</h3>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 1m ago      ●REC 3:14│
+├──────────────────────────────┤
+│                              │
+│  Ride Request                │
+│  ─────────────────────       │
+│                              │
+│  For: Ana Martínez           │
+│  From: 742 Calle Sol, Apt 3 │
+│  To: Esc. Muñoz (poll site)  │
+│                              │
+│  When?                       │
+│  ┌──────────────────────────┐│
+│  │  ☉ Now (ASAP)            ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ○ Scheduled: [time ▾]   ││
+│  └──────────────────────────┘│
+│                              │
+│  Special needs?              │
+│  ┌──────────────────────────┐│
+│  │  ☐ Wheelchair accessible ││
+│  │  ☐ Multiple passengers   ││
+│  │  ☐ Other: __________     ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ✓ Submit Ride Request   ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  ← Back to Door Card     ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  [End Shift]            [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<!-- CANV-012 -->
+<h2 id="shift-end-flow" tabindex="-1"><a class="heading-anchor" href="#shift-end-flow" aria-hidden="true">#</a> Shift End Flow</h2>
+<h3 id="end-shift-confirmation" tabindex="-1"><a class="heading-anchor" href="#end-shift-confirmation" aria-hidden="true">#</a> End Shift Confirmation</h3>
+<pre><code>┌──────────────────────────────┐
+│                              │
+│  End Shift?                  │
+│  ─────────────────────       │
+│                              │
+│  Northside Canvass           │
+│  Duration: 2h 50m            │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Summary                 ││
+│  │  Completed:  32 of 47    ││
+│  │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░  ││
+│  │                          ││
+│  │  Contacts:   24          ││
+│  │  Not Home:    8          ││
+│  │  Remaining:  15          ││
+│  └──────────────────────────┘│
+│                              │
+│  Pending sync: 5 interactions│
+│                              │
+│  ⚠ 15 doors remaining. They │
+│  will be released back to    │
+│  the assignment pool.        │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  End Shift &amp; Sync        ││
+│  └──────────────────────────┘│
+│                              │
+│  [Continue Canvassing]       │
+│                              │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="syncing-screen" tabindex="-1"><a class="heading-anchor" href="#syncing-screen" aria-hidden="true">#</a> Syncing Screen</h3>
+<pre><code>┌──────────────────────────────┐
+│                              │
+│  Syncing Your Shift          │
+│  ─────────────────────       │
+│                              │
+│  ↻  Uploading interactions   │
+│     5 of 5                   │
+│     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ │
+│                              │
+│  ✓  Walk list released       │
+│  ✓  Hours logged (2h 50m)   │
+│  ↻  Syncing...               │
+│                              │
+│                              │
+│  Do not close the app.       │
+│                              │
+│                              │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="debrief-screen" tabindex="-1"><a class="heading-anchor" href="#debrief-screen" aria-hidden="true">#</a> Debrief Screen</h3>
+<pre><code>┌──────────────────────────────┐
+│                              │
+│  Shift Complete  ✓           │
+│  ─────────────────────       │
+│                              │
+│  Great work! Here's your     │
+│  shift summary:              │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Duration     2h 50m     ││
+│  │  Doors        32         ││
+│  │  Contacts     24         ││
+│  │  Contact Rate 75%        ││
+│  │  ─────────────────       ││
+│  │  Strong Supp.  8  (33%)  ││
+│  │  Lean Supp.   11  (46%)  ││
+│  │  Undecided     3  (13%)  ││
+│  │  Lean Oppose   1   (4%)  ││
+│  │  Strong Opp.   1   (4%)  ││
+│  │  ─────────────────       ││
+│  │  Not Home      8         ││
+│  └──────────────────────────┘│
+│                              │
+│  How did it go? (optional)   │
+│  ┌──────────────────────────┐│
+│  │ Good area. Friendly      ││
+│  │ neighborhood. One dog    ││
+│  │ situation at #750.       ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Done                    ││
+│  └──────────────────────────┘│
+│                              │
+└──────────────────────────────┘
+
+Tapping &quot;Done&quot; returns to the normal mobile shell (My Shifts screen).
+</code></pre>
+<hr>
+<h2 id="crash-recovery" tabindex="-1"><a class="heading-anchor" href="#crash-recovery" aria-hidden="true">#</a> Crash Recovery</h2>
+<p>If the app crashes or the device dies during field mode:</p>
+<pre><code>┌──────────────────────────────┐
+│                              │
+│  Resume Shift?               │
+│  ─────────────────────       │
+│                              │
+│  Your last session ended     │
+│  unexpectedly.               │
+│                              │
+│  Northside Canvass           │
+│  32 of 47 complete           │
+│  Last door: #13 Ana Martínez │
+│  Time: 2h 50m                │
+│                              │
+│  All completed interactions  │
+│  were saved locally.         │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ▶ Resume Shift          ││
+│  └──────────────────────────┘│
+│                              │
+│  [End Shift Instead]         │
+│                              │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="empty-states" tabindex="-1"><a class="heading-anchor" href="#empty-states" aria-hidden="true">#</a> Empty States</h2>
+<p><strong>Walk list empty (no assigned contacts).</strong> This should not occur under normal conditions — shifts are only created with contacts assigned. Defensively, if it does happen: display a message (&quot;No doors assigned to this shift. Contact your team lead.&quot;) with a single action to exit field mode. Do not show an empty walk list.</p>
+<p><strong>No connectivity on shift start (cannot download walk list).</strong> If the device is offline and no cached walk list exists for this shift, the &quot;Enter Field Mode&quot; button remains disabled. The pre-shift check screen shows a clear error: &quot;Walk list unavailable. Connect to the internet to download your assignment.&quot; If a stale cached version exists, offer it with an age warning (&quot;Walk list from 6 hours ago — some doors may have been reassigned&quot;) and allow the volunteer to proceed.</p>
+<hr>
+<h2 id="touch-target-specifications" tabindex="-1"><a class="heading-anchor" href="#touch-target-specifications" aria-hidden="true">#</a> Touch Target Specifications</h2>
+<p>All interactive elements in field mode use larger targets than the standard app:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Standard App</th>
+<th>Field Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Response buttons</td>
+<td>44px height</td>
+<td>56px height</td>
+</tr>
+<tr>
+<td>Navigation (Prev/Next)</td>
+<td>44px</td>
+<td>48px</td>
+</tr>
+<tr>
+<td>Issue checkboxes</td>
+<td>24px checkbox</td>
+<td>44px tap area</td>
+</tr>
+<tr>
+<td>Notes text area</td>
+<td>Standard</td>
+<td>120px minimum height</td>
+</tr>
+<tr>
+<td>Lock button</td>
+<td>44px</td>
+<td>48px, always visible</td>
+</tr>
+<tr>
+<td>&quot;Save &amp; Next&quot;</td>
+<td>44px</td>
+<td>56px, full width</td>
+</tr>
+</tbody>
+</table>
+<h3 id="why-larger" tabindex="-1"><a class="heading-anchor" href="#why-larger" aria-hidden="true">#</a> Why Larger</h3>
+<p>Field mode users are often:</p>
+<ul>
+<li>Walking (moving target)</li>
+<li>One-handed (other hand holding materials)</li>
+<li>In poor lighting (evening canvassing)</li>
+<li>Wearing gloves (cold weather canvassing)</li>
+<li>On low-end phones (smaller screens, less responsive touch)</li>
+</ul>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li><strong>High contrast:</strong> Field mode defaults to slightly higher contrast than the standard app (better outdoor visibility)</li>
+<li><strong>Large text:</strong> All text is at minimum 16px. Voter names are 20px. Response buttons use 18px labels.</li>
+<li><strong>No gesture-only actions:</strong> Every swipe action has a button alternative.</li>
+<li><strong>Screen reader:</strong> Walk list items announce: &quot;Door 13 of 47. Ana Martínez, 742 Calle Sol Apartment 3. Not yet visited.&quot;</li>
+<li><strong>Reduced motion:</strong> Auto-advance after &quot;Not Home&quot; is disabled in reduced motion mode (manual advance only).</li>
+</ul>
+<hr>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Touch targets: 48px minimum, 56px for primary actions in field mode</td>
+<td>Volunteers operate in challenging conditions — walking, one-handed, gloved hands, outdoor lighting, low-end devices with less responsive touch screens.</td>
+</tr>
+<tr>
+<td>Crash recovery via auto-save on every interaction</td>
+<td>Field volunteers cannot afford to lose data. Every completed door interaction is persisted to local storage immediately, independent of sync status.</td>
+</tr>
+<tr>
+<td>GOTV door card is distinct from the canvassing door card</td>
+<td>GOTV has a binary goal (voted / not voted) rather than a scored survey. A simplified card reduces cognitive load on election day when speed is critical.</td>
+</tr>
+<tr>
+<td>Field mode as full-screen takeover replacing the nav shell</td>
+<td>Eliminates distractions and accidental navigation. The volunteer's context is a single linear workflow — the walk list — until the shift ends.</td>
+</tr>
+<tr>
+<td>Walk list sorted by optimized route by default</td>
+<td>Volunteers should not have to think about routing. The system pre-computes a walking-efficient order to minimize backtracking across the turf.</td>
+</tr>
+<tr>
+<td>Phone banking uses the same field mode shell</td>
+<td>Provides a consistent volunteer experience across activity types. Training once on the field mode UX covers canvassing, phone banking, voter registration, and GOTV.</td>
+</tr>
+<tr>
+<td>&quot;Not Home&quot; as a quick action with auto-advance</td>
+<td>&quot;Not Home&quot; is the most common canvassing outcome. It needs the fastest possible path — one tap, minimal follow-up (just the literature question), then auto-advance to the next door.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Voice input for notes.</strong> Should field mode support voice-to-text for the notes field? Typing while standing is difficult. Voice input would be faster but adds Capacitor native dependency and may not work well in noisy environments.</p>
+</li>
+<li>
+<p><strong>Photo capture.</strong> Should field mode allow photo capture (e.g., photographing a &quot;No Soliciting&quot; sign, documenting a blocked address)? Adds evidence capability but raises privacy concerns.</p>
+</li>
+<li>
+<p><strong>Skip behavior.</strong> When a volunteer taps &quot;Next&quot; without recording a response, should the door be marked as &quot;Skipped&quot; automatically, or should a confirmation prompt appear? Auto-skip is faster but risks accidental data loss.</p>
+</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#shift-start-flow"># Shift Start Flow</a></li><li class="toc-3"><a href="#screen-1-shift-selection"># Screen 1: Shift Selection</a></li><li class="toc-3"><a href="#screen-2-pre-shift-check"># Screen 2: Pre-Shift Check</a></li><li class="toc-2"><a href="#walk-list-view"># Walk List View</a></li><li class="toc-3"><a href="#default-list-view"># Default — List View</a></li><li class="toc-3"><a href="#walk-list-in-progress"># Walk List — In Progress</a></li><li class="toc-3"><a href="#walk-list-with-stale-data-warning"># Walk List — With Stale Data Warning</a></li><li class="toc-2"><a href="#door-card-canvassing"># Door Card — Canvassing</a></li><li class="toc-3"><a href="#door-card-initial-view"># Door Card — Initial View</a></li><li class="toc-3"><a href="#door-card-response-selected-follow-up-questions"># Door Card — Response Selected (Follow-up Questions)</a></li><li class="toc-3"><a href="#door-card-not-home-quick-result"># Door Card — &amp;quot;Not Home&amp;quot; Quick Result</a></li><li class="toc-2"><a href="#map-view"># Map View</a></li><li class="toc-3"><a href="#map-interactions"># Map Interactions</a></li><li class="toc-2"><a href="#phone-banking-variant"># Phone Banking Variant</a></li><li class="toc-3"><a href="#call-card"># Call Card</a></li><li class="toc-3"><a href="#phone-bank-after-answered"># Phone Bank — After &amp;quot;Answered&amp;quot;</a></li><li class="toc-2"><a href="#voter-registration-variant"># Voter Registration Variant</a></li><li class="toc-3"><a href="#eligibility-check-pre-form"># Eligibility Check (Pre-Form)</a></li><li class="toc-2"><a href="#gotv-door-card-variant"># GOTV Door Card Variant</a></li><li class="toc-3"><a href="#gotv-needs-a-ride-flow"># GOTV — &amp;quot;Needs a Ride&amp;quot; Flow</a></li><li class="toc-2"><a href="#shift-end-flow"># Shift End Flow</a></li><li class="toc-3"><a href="#end-shift-confirmation"># End Shift Confirmation</a></li><li class="toc-3"><a href="#syncing-screen"># Syncing Screen</a></li><li class="toc-3"><a href="#debrief-screen"># Debrief Screen</a></li><li class="toc-2"><a href="#crash-recovery"># Crash Recovery</a></li><li class="toc-2"><a href="#empty-states"># Empty States</a></li><li class="toc-2"><a href="#touch-target-specifications"># Touch Target Specifications</a></li><li class="toc-3"><a href="#why-larger"># Why Larger</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

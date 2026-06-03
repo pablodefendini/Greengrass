@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Press, Media &amp; Public Communications · GreenGrass</title>
+<meta name="description" content="Press, Media &amp; Public Communications — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html">Core Workflows</a></li><li><a href="./geography.html">Target Geography</a></li><li><a href="./security.html">Security &amp; Threat Model</a></li><li><a href="./compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html">External Integrations</a></li><li><a href="./support.html">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="./press.html" aria-current="page" class="active">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="press-media-public-communications" tabindex="-1"><a class="heading-anchor" href="#press-media-public-communications" aria-hidden="true">#</a> Press, Media &amp; Public Communications</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document specifies GreenGrass's press and media capabilities — how campaigns manage relationships with journalists, distribute press materials, track media coverage, manage public-facing content, and coordinate social media presence.</p>
+<p>Campaigns live and die by earned media. For resource-constrained campaigns in the global south, earned media is often the most cost-effective way to reach voters — far more so than paid advertising. A well-timed press release, a viral social media post, or a favorable news story can have more impact than weeks of door-knocking. The platform must make press operations accessible to campaigns that may not have a dedicated press secretary.</p>
+<p>This spec builds on: <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> (social media integration, activism delivery events), <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> (Communications Director role, public profiles, Contact record type), <a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> (candidate approval requests for press content), <a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> (public-facing content disclaimers), and <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a> (social media adapter architecture).</p>
+<h2 id="press-media-philosophy" tabindex="-1"><a class="heading-anchor" href="#press-media-philosophy" aria-hidden="true">#</a> Press &amp; Media Philosophy</h2>
+<ol>
+<li><strong>Earned media is a force multiplier.</strong> For campaigns with limited budgets, press coverage is the highest-ROI communication channel. The platform should make press operations as streamlined as canvassing or fundraising.</li>
+<li><strong>Relationships, not blasts.</strong> Effective press work is about relationships with specific journalists, not mass emails. The CRM's contact management should support media relationships as a first-class concern.</li>
+<li><strong>Compliance-aware public communications.</strong> Every public-facing piece of content — press releases, social media posts, public statements — must carry appropriate disclaimers per jurisdiction (<a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a>). The platform enforces this automatically.</li>
+<li><strong>Candidate-controlled public voice.</strong> Nothing goes public without the candidate's awareness. The approval workflow (<a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a>) ensures the candidate reviews public-facing content before distribution.</li>
+</ol>
+<h2 id="media-contact-management" tabindex="-1"><a class="heading-anchor" href="#media-contact-management" aria-hidden="true">#</a> Media Contact Management</h2>
+<h3 id="media-contacts-as-crm-records" tabindex="-1"><a class="heading-anchor" href="#media-contacts-as-crm-records" aria-hidden="true">#</a> Media Contacts as CRM Records</h3>
+<p>Media contacts use the existing Contact record type (users.md:291-294) with media-specific fields:</p>
+<ul>
+<li><strong>Outlet</strong> — the publication, station, or platform the journalist works for</li>
+<li><strong>Beat</strong> — what the journalist covers (politics, local government, education, labor, etc.)</li>
+<li><strong>Coverage area</strong> — geographic scope of their coverage (national, state/province, city, district)</li>
+<li><strong>Contact method preferences</strong> — how they prefer to receive pitches (email, phone, WhatsApp, Signal)</li>
+<li><strong>Language</strong> — language(s) they work in</li>
+<li><strong>Relationship status</strong> — cold, warm, established, close (informal tracking for the press team)</li>
+<li><strong>Notes</strong> — free-text relationship notes (encrypted per data model)</li>
+<li><strong>Last contact date</strong> — auto-populated from communication history</li>
+</ul>
+<h3 id="media-lists" tabindex="-1"><a class="heading-anchor" href="#media-lists" aria-hidden="true">#</a> Media Lists</h3>
+<p>Curated lists of journalists for targeted outreach:</p>
+<ul>
+<li><strong>List creation</strong> — staff create named media lists (e.g., &quot;Political reporters — San Juan,&quot; &quot;National education beat,&quot; &quot;Friendly columnists&quot;)</li>
+<li><strong>Dynamic lists</strong> — lists can be defined by criteria (beat + coverage area + language) and auto-update as contacts are added/modified</li>
+<li><strong>Static lists</strong> — manually curated lists for specific purposes (e.g., &quot;Debate night press pool&quot;)</li>
+<li><strong>List sharing</strong> — media lists are org-level resources, visible to all staff with press permissions</li>
+</ul>
+<h3 id="media-interaction-tracking" tabindex="-1"><a class="heading-anchor" href="#media-interaction-tracking" aria-hidden="true">#</a> Media Interaction Tracking</h3>
+<p>Every interaction with a media contact is logged:</p>
+<ul>
+<li><strong>Pitch sent</strong> — what was pitched, when, through which channel, by whom</li>
+<li><strong>Response received</strong> — journalist's response (interested, passed, needs more info, no response)</li>
+<li><strong>Interview scheduled</strong> — date, time, format (in-person, phone, video), topic, interviewee (candidate or spokesperson)</li>
+<li><strong>Coverage resulted</strong> — link to the resulting article/segment, sentiment (positive, neutral, negative, mixed)</li>
+<li><strong>Follow-up needed</strong> — reminder to follow up with a journalist after an event, announcement, or pitch</li>
+</ul>
+<p>This creates a complete picture of the campaign's media relationships and helps new press staff get up to speed quickly (critical given campaign staff turnover).</p>
+<h2 id="press-content" tabindex="-1"><a class="heading-anchor" href="#press-content" aria-hidden="true">#</a> Press Content</h2>
+<h3 id="press-releases" tabindex="-1"><a class="heading-anchor" href="#press-releases" aria-hidden="true">#</a> Press Releases</h3>
+<ul>
+<li><strong>Press release builder</strong> — structured template with: headline, subhead, dateline, body, quote blocks (attributed to named individuals), boilerplate (org description), contact information</li>
+<li><strong>Compliance integration</strong> — disclaimer text automatically appended based on jurisdiction (<a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a>). Press releases for political campaigns typically require &quot;paid for by&quot; or equivalent attribution.</li>
+<li><strong>Approval workflow</strong> — press releases route through the candidate approval flow (<a href="http://messaging.md:124" target="_blank" rel="noopener noreferrer">messaging.md:124</a>). Candidate can approve, reject, or comment. Approval tracked for audit.</li>
+<li><strong>Distribution</strong> — send the approved release to selected media lists via email. Personalization supported (journalist's name, outlet-specific notes).</li>
+<li><strong>Embargo support</strong> — mark a release as embargoed until a specific date/time. Embargo notice included in the distribution. Platform tracks who received the embargoed release.</li>
+<li><strong>Versioning</strong> — press releases maintain version history. If a release is updated after distribution (correction, update), the platform can send an updated version noting changes.</li>
+</ul>
+<h3 id="media-advisories" tabindex="-1"><a class="heading-anchor" href="#media-advisories" aria-hidden="true">#</a> Media Advisories</h3>
+<p>Shorter-form notices alerting media to upcoming events:</p>
+<ul>
+<li><strong>Advisory template</strong> — who, what, when, where, why format. Simpler than a full press release.</li>
+<li><strong>Event integration</strong> — advisories can be created directly from a platform event (<a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>). Event details auto-populate the advisory fields.</li>
+<li><strong>Distribution</strong> — same media list distribution as press releases.</li>
+</ul>
+<h3 id="statements" tabindex="-1"><a class="heading-anchor" href="#statements" aria-hidden="true">#</a> Statements</h3>
+<p>Official campaign statements in response to events:</p>
+<ul>
+<li><strong>Statement template</strong> — attributed to a named individual (candidate, spokesperson, org leader). Shorter and more reactive than a press release.</li>
+<li><strong>Rapid approval</strong> — statements often need to go out quickly. The approval workflow supports priority flagging for time-sensitive content.</li>
+<li><strong>Distribution</strong> — to media lists and/or posted to public profiles and social media.</li>
+</ul>
+<h3 id="media-kit" tabindex="-1"><a class="heading-anchor" href="#media-kit" aria-hidden="true">#</a> Media Kit</h3>
+<p>A persistent collection of campaign materials for journalist reference:</p>
+<ul>
+<li><strong>Components:</strong> candidate bio, high-resolution photos (headshot, action shots), org description/boilerplate, key policy positions, fact sheets, campaign logo and branding assets</li>
+<li><strong>Hosting</strong> — media kit hosted on the campaign's public-facing page (see Public Profiles below). Downloadable as a ZIP or browsable online.</li>
+<li><strong>Access tracking</strong> — optionally track which journalists access the media kit (requires the journalist to provide their email or click a tracked link).</li>
+</ul>
+<p><strong>DECIDED: Configurable per asset.</strong> Campaign controls access at the individual asset level. Candidate bio and boilerplate can be fully public, while high-resolution photos or internal fact sheets can be gated (journalist provides email to access). Gated access auto-creates media contact records in the CRM. Maximizes flexibility — campaigns balance accessibility with intelligence-gathering based on their needs.</p>
+<h2 id="media-coverage-tracking" tabindex="-1"><a class="heading-anchor" href="#media-coverage-tracking" aria-hidden="true">#</a> Media Coverage Tracking</h2>
+<h3 id="coverage-logging" tabindex="-1"><a class="heading-anchor" href="#coverage-logging" aria-hidden="true">#</a> Coverage Logging</h3>
+<p>When a media contact's interaction results in coverage:</p>
+<ul>
+<li><strong>Coverage entry</strong> — staff log coverage with: outlet, journalist, date published, headline, URL (if online), format (article, TV segment, radio, podcast, social media mention), sentiment (positive, neutral, negative, mixed), topic/issue tags, reach estimate (if known)</li>
+<li><strong>Coverage linked to pitch</strong> — coverage entries link back to the pitch or interaction that generated them, completing the pitch-to-coverage pipeline</li>
+<li><strong>Coverage linked to press release</strong> — if coverage resulted from a specific release, the link is tracked</li>
+</ul>
+<p><strong>DECIDED: Deferred — but flagged as a strategic opportunity.</strong> Manual logging only for now. Automated media monitoring is deferred not because it's unimportant, but because it deserves serious investment rather than a bolt-on integration. Existing media monitoring services (Meltwater, Cision, etc.) are expensive, Western-focused, and poorly cover regional and local media in the global south. This is a significant market gap. A GreenGrass-native media monitoring capability — especially one that covers local-language media across target countries — could be a major differentiator. Revisit as a dedicated product initiative, not an afterthought.</p>
+<h3 id="coverage-analytics" tabindex="-1"><a class="heading-anchor" href="#coverage-analytics" aria-hidden="true">#</a> Coverage Analytics</h3>
+<ul>
+<li><strong>Coverage volume</strong> — total coverage over time, by outlet, by sentiment</li>
+<li><strong>Pitch-to-coverage rate</strong> — percentage of pitches that resulted in coverage</li>
+<li><strong>Journalist responsiveness</strong> — which journalists are most responsive to the campaign's pitches</li>
+<li><strong>Topic analysis</strong> — which campaign issues/topics generate the most coverage</li>
+<li><strong>Reach estimates</strong> — aggregate estimated reach across all coverage (where outlet reach data is available)</li>
+</ul>
+<h2 id="public-facing-content" tabindex="-1"><a class="heading-anchor" href="#public-facing-content" aria-hidden="true">#</a> Public-Facing Content</h2>
+<h3 id="public-profiles" tabindex="-1"><a class="heading-anchor" href="#public-profiles" aria-hidden="true">#</a> Public Profiles</h3>
+<p>Per <a href="http://product.md" target="_blank" rel="noopener noreferrer">product.md</a>: public-facing profiles for candidates, organizations, and (optionally) other users.</p>
+<h4 id="candidate-profile" tabindex="-1"><a class="heading-anchor" href="#candidate-profile" aria-hidden="true">#</a> Candidate Profile</h4>
+<ul>
+<li><strong>Content:</strong> name, photo, bio, policy positions, endorsements, campaign contact information, social media links</li>
+<li><strong>Multi-language:</strong> profile content available in the org's configured languages (<a href="http://geography.md" target="_blank" rel="noopener noreferrer">geography.md</a>)</li>
+<li><strong>Disclaimer:</strong> jurisdiction-required disclaimer automatically displayed</li>
+<li><strong>Donation integration</strong> — embedded donation form or prominent donate button linking to the campaign's donation page (<a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a>)</li>
+<li><strong>Events</strong> — upcoming public events displayed on the profile (from the event system, <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>)</li>
+</ul>
+<h4 id="organization-profile" tabindex="-1"><a class="heading-anchor" href="#organization-profile" aria-hidden="true">#</a> Organization Profile</h4>
+<ul>
+<li><strong>Content:</strong> org name, logo, mission statement, leadership, contact information, social media links</li>
+<li><strong>Alliance display</strong> — if the org is part of an alliance, option to display alliance membership and link to allied orgs' profiles</li>
+<li><strong>Donation integration</strong> — same as candidate profile</li>
+</ul>
+<h4 id="profile-hosting" tabindex="-1"><a class="heading-anchor" href="#profile-hosting" aria-hidden="true">#</a> Profile Hosting</h4>
+<p><strong>DECIDED: Both — platform-hosted default + API access.</strong> Platform-hosted profiles work out of the box at the tenant's subdomain or custom domain, with a template-based profile builder. API access is available for campaigns that want to render profile content on their own website with full design control. The platform-hosted version is always available as a fallback, ensuring every campaign has a public presence regardless of technical capability.</p>
+<h3 id="social-media-management" tabindex="-1"><a class="heading-anchor" href="#social-media-management" aria-hidden="true">#</a> Social Media Management</h3>
+<p>Per <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> (486-488) and <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a> (632-643), social media management is in scope with the following capabilities:</p>
+<h4 id="post-creation-scheduling" tabindex="-1"><a class="heading-anchor" href="#post-creation-scheduling" aria-hidden="true">#</a> Post Creation &amp; Scheduling</h4>
+<ul>
+<li><strong>Multi-platform composer</strong> — create posts for multiple platforms from a single interface. Platform-specific preview shows how the post will appear on each platform (character limits, media formats, link previews).</li>
+<li><strong>Scheduling</strong> — schedule posts for future publication. Calendar view shows all scheduled and published posts.</li>
+<li><strong>Media attachment</strong> — attach images, video, links. Platform-specific formatting (e.g., Instagram requires images, Twitter/X has character limits).</li>
+<li><strong>Compliance integration</strong> — disclaimer requirements for political advertising on social media vary by platform and jurisdiction. The platform warns if a post may need a disclaimer and helps add it in the platform-appropriate format.</li>
+</ul>
+<h4 id="supported-platforms" tabindex="-1"><a class="heading-anchor" href="#supported-platforms" aria-hidden="true">#</a> Supported Platforms</h4>
+<p>Per <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a>, a modular adapter architecture supports per-platform integration:</p>
+<ul>
+<li><strong>Launch platforms:</strong> Facebook, Instagram, Twitter/X</li>
+<li><strong>Future platforms:</strong> TikTok, LinkedIn, YouTube (added by writing new adapters)</li>
+<li><strong>Per-country priorities:</strong> WhatsApp Status (Brazil), LINE (Thailand), platform preferences vary by market</li>
+</ul>
+<p><strong>DECIDED: Both — OAuth + copy-paste fallback.</strong> Direct OAuth connection where available and approved by the social media platform. Copy-paste fallback with media download for platforms where API access is unavailable or restricted for political content. The copy-paste path is a critical safety net given the trend of social media platforms increasingly restricting API access for political content — the platform must never be in a position where a third-party API policy change breaks a campaign's ability to post.</p>
+<h4 id="post-approval-workflow" tabindex="-1"><a class="heading-anchor" href="#post-approval-workflow" aria-hidden="true">#</a> Post Approval Workflow</h4>
+<ul>
+<li><strong>Draft → Review → Approve → Schedule/Publish</strong> — social media posts follow the same candidate approval workflow as press releases (<a href="http://messaging.md:124" target="_blank" rel="noopener noreferrer">messaging.md:124</a>).</li>
+<li><strong>Batch approval</strong> — candidate can review and approve multiple scheduled posts in one session.</li>
+<li><strong>Emergency bypass</strong> — Org Admin or Communications Director can publish without candidate approval for time-sensitive responses (logged for audit, candidate notified after the fact).</li>
+</ul>
+<h4 id="analytics" tabindex="-1"><a class="heading-anchor" href="#analytics" aria-hidden="true">#</a> Analytics</h4>
+<ul>
+<li><strong>Per-post metrics</strong> — engagement (likes, shares, comments, clicks), reach, impressions. Pulled from platform APIs where available.</li>
+<li><strong>Cross-platform dashboard</strong> — aggregate social media performance across all platforms.</li>
+<li><strong>Content performance</strong> — which types of content (policy, personal, attack, event promotion) perform best on which platforms.</li>
+<li><strong>Audience growth</strong> — follower/subscriber trends over time per platform.</li>
+</ul>
+<h3 id="endorsement-management" tabindex="-1"><a class="heading-anchor" href="#endorsement-management" aria-hidden="true">#</a> Endorsement Management</h3>
+<p>Endorsements are a significant public communications asset for campaigns.</p>
+<ul>
+<li><strong>Endorsement records</strong> — track endorsements with: endorser name, title/position, organization (if applicable), date received, public/private status, endorsement text (quote), photo</li>
+<li><strong>Endorser as Contact</strong> — endorsers are tracked as Contact records in the CRM (users.md:291-294), linking the endorsement to the broader relationship</li>
+<li><strong>Public display</strong> — approved endorsements can be displayed on the candidate's public profile, organized by category (elected officials, organizations, community leaders, individuals)</li>
+<li><strong>Endorsement announcement</strong> — when a new endorsement is received, the platform can generate a press release from a template (endorser quote, candidate response quote, boilerplate) and a social media post</li>
+</ul>
+<p><strong>DECIDED: Full pipeline.</strong> Endorsements tracked as a pipeline: identified → approached → considering → committed → public. Gives campaigns a clear view of their endorsement strategy, progress, and gaps. Each stage can have notes, assigned staff, and target dates. When an endorsement moves to &quot;public,&quot; it triggers the announcement workflow (press release template + social media post generation).</p>
+<h2 id="spokesperson-management" tabindex="-1"><a class="heading-anchor" href="#spokesperson-management" aria-hidden="true">#</a> Spokesperson Management</h2>
+<h3 id="designated-spokespersons" tabindex="-1"><a class="heading-anchor" href="#designated-spokespersons" aria-hidden="true">#</a> Designated Spokespersons</h3>
+<ul>
+<li><strong>Spokesperson designation</strong> — Org Admin can designate which staff members are authorized to speak to the press on behalf of the campaign. This is a permission flag, not a separate role.</li>
+<li><strong>Topic assignment</strong> — spokespersons can be assigned topic areas (e.g., &quot;policy questions → Policy Director,&quot; &quot;fundraising questions → Finance Director,&quot; &quot;all other → Campaign Manager&quot;)</li>
+<li><strong>Contact routing</strong> — when a journalist contacts the campaign through the platform (via public profile contact form or media kit), the inquiry is routed to the appropriate spokesperson based on topic</li>
+</ul>
+<h3 id="talking-points" tabindex="-1"><a class="heading-anchor" href="#talking-points" aria-hidden="true">#</a> Talking Points</h3>
+<ul>
+<li><strong>Talking points library</strong> — a managed collection of approved talking points organized by topic. Staff and the candidate can reference these when preparing for interviews or writing content.</li>
+<li><strong>Version control</strong> — talking points are versioned. When a position evolves, the old version is archived and the new version is published. Staff always see the current approved language.</li>
+<li><strong>Distribution</strong> — talking points can be pushed to designated staff via the internal messaging system (<a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a>) when updated.</li>
+<li><strong>Candidate briefing integration</strong> — talking points feed into the candidate briefing messages (<a href="http://messaging.md:123" target="_blank" rel="noopener noreferrer">messaging.md:123</a>). Before an interview or press event, the candidate receives relevant talking points.</li>
+</ul>
+<h2 id="press-events" tabindex="-1"><a class="heading-anchor" href="#press-events" aria-hidden="true">#</a> Press Events</h2>
+<h3 id="press-conference-media-event-management" tabindex="-1"><a class="heading-anchor" href="#press-conference-media-event-management" aria-hidden="true">#</a> Press Conference / Media Event Management</h3>
+<ul>
+<li><strong>Event creation</strong> — press conferences and media events use the existing event system (<a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) with press-specific fields: media advisory sent (yes/no/date), press pool invited (which media list), expected coverage format (TV, print, photo op)</li>
+<li><strong>Media RSVP tracking</strong> — track which journalists have confirmed attendance</li>
+<li><strong>Post-event</strong> — log resulting coverage, link to coverage entries</li>
+</ul>
+<h3 id="interview-scheduling" tabindex="-1"><a class="heading-anchor" href="#interview-scheduling" aria-hidden="true">#</a> Interview Scheduling</h3>
+<ul>
+<li><strong>Interview requests</strong> — log incoming interview requests with: journalist, outlet, topic, requested format, requested date/time, requested interviewee</li>
+<li><strong>Interview prep</strong> — platform surfaces relevant talking points for the interview topic and recent coverage from the requesting outlet</li>
+<li><strong>Interview tracking</strong> — after the interview, log outcome (aired/published, killed, pending) and link to resulting coverage</li>
+</ul>
+<h2 id="jurisdiction-specific-considerations" tabindex="-1"><a class="heading-anchor" href="#jurisdiction-specific-considerations" aria-hidden="true">#</a> Jurisdiction-Specific Considerations</h2>
+<h3 id="political-advertising-disclaimers-on-social-media" tabindex="-1"><a class="heading-anchor" href="#political-advertising-disclaimers-on-social-media" aria-hidden="true">#</a> Political Advertising Disclaimers on Social Media</h3>
+<p>Per <a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a>, public-facing content requires jurisdiction-specific disclaimers:</p>
+<ul>
+<li><strong>US/Puerto Rico</strong> — &quot;Paid for by [committee name]&quot; on all political advertising, including social media ads. Organic posts may also need disclaimers depending on jurisdiction and content.</li>
+<li><strong>Brazil</strong> — TSE requires political advertising identification. Social media posts during campaign period must comply with TSE rules.</li>
+<li><strong>Thailand</strong> — ECT regulations on political advertising. Campaign period restrictions apply to social media.</li>
+<li><strong>India</strong> — ECI Model Code of Conduct restricts certain communications during election periods. Social media posts may require pre-certification for paid content.</li>
+<li><strong>Lebanon</strong> — less formal requirements, but electoral law restricts certain campaign communications during the silence period.</li>
+</ul>
+<p>The platform automatically warns when a post may need a disclaimer and helps apply it in the platform-appropriate format (e.g., text overlay for images, first line of caption for text posts).</p>
+<h3 id="media-landscape-differences" tabindex="-1"><a class="heading-anchor" href="#media-landscape-differences" aria-hidden="true">#</a> Media Landscape Differences</h3>
+<ul>
+<li><strong>Puerto Rico</strong> — bilingual media market (Spanish/English). Strong local TV and radio. Digital media growing. US national media occasionally covers PR elections.</li>
+<li><strong>Brazil</strong> — massive social media market. WhatsApp is the dominant communication channel (including for news sharing). TV remains influential. TSE mandates free TV/radio time for campaigns (horário eleitoral).</li>
+<li><strong>Thailand</strong> — LINE is a major platform alongside Facebook. Government influence on traditional media. Independent online media is significant. Lèse-majesté laws affect what can be said publicly (<a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a>).</li>
+<li><strong>India</strong> — massive and fragmented media market. WhatsApp and YouTube are dominant digital channels. Regional language media is critical. ECI monitoring of social media during elections.</li>
+<li><strong>Lebanon</strong> — confessional media landscape (outlets aligned with political/religious groups). WhatsApp is dominant for messaging. Social media is the primary channel for reaching younger voters. Arabic, French, and English media markets.</li>
+</ul>
+<h2 id="technical-requirements" tabindex="-1"><a class="heading-anchor" href="#technical-requirements" aria-hidden="true">#</a> Technical Requirements</h2>
+<h3 id="social-media-adapter-architecture" tabindex="-1"><a class="heading-anchor" href="#social-media-adapter-architecture" aria-hidden="true">#</a> Social Media Adapter Architecture</h3>
+<p>Per <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a> (632-643):</p>
+<pre><code>Tenant App → Post Scheduler → Platform Adapter → Social Media API
+</code></pre>
+<ul>
+<li>One adapter per platform</li>
+<li>Common interface: <code>publish(post)</code>, <code>schedule(post, time)</code>, <code>getAnalytics(post_id)</code>, <code>getAudience()</code></li>
+<li>Adapters handle platform-specific quirks (character limits, media formats, API rate limits, authentication)</li>
+<li>New platforms added by writing new adapters — no core changes</li>
+<li>Rate limiting per platform API requirements</li>
+<li>Token refresh and re-authentication handling</li>
+</ul>
+<h3 id="public-profile-rendering" tabindex="-1"><a class="heading-anchor" href="#public-profile-rendering" aria-hidden="true">#</a> Public Profile Rendering</h3>
+<ul>
+<li><strong>Server-side rendered</strong> — public profiles are server-side rendered for SEO and fast load times</li>
+<li><strong>Mobile-responsive</strong> — profiles render well on all devices</li>
+<li><strong>Multi-language</strong> — profiles serve content in the visitor's preferred language (with manual override, per <a href="http://geography.md" target="_blank" rel="noopener noreferrer">geography.md</a>)</li>
+<li><strong>Performance</strong> — public profiles must load quickly even on slow connections (critical for target markets). Optimize images, minimize JavaScript.</li>
+<li><strong>Accessibility</strong> — public profiles meet WCAG 2.1 AA standards</li>
+</ul>
+<h3 id="media-asset-management" tabindex="-1"><a class="heading-anchor" href="#media-asset-management" aria-hidden="true">#</a> Media Asset Management</h3>
+<ul>
+<li><strong>Image storage</strong> — high-resolution images stored in object storage (<a href="http://system.md:81" target="_blank" rel="noopener noreferrer">system.md:81</a>). Multiple resolutions generated for different use cases (thumbnail, web, print-quality).</li>
+<li><strong>Brand assets</strong> — logo, color palette, fonts stored as org-level assets. Available across all content creation tools (press releases, social media posts, public profiles, email templates).</li>
+<li><strong>Asset library</strong> — searchable library of approved media assets (photos, graphics, video clips). Staff can browse and use approved assets when creating content.</li>
+<li><strong>Usage rights tracking</strong> — optional field to track usage rights for media assets (photographer credit, license type, expiration date).</li>
+</ul>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Paid social media advertising</strong> — should the platform support creating and managing paid social media ads (Facebook Ads, Google Ads, etc.)? This is a significant product area with complex compliance requirements (political advertising transparency laws). May be better served by specialized tools.</p>
+</li>
+<li>
+<p><strong>Press clipping service integration</strong> — should the platform integrate with press clipping/media monitoring services (Meltwater, Cision, etc.)? These are expensive and primarily serve large campaigns. May not be relevant for the target market.</p>
+</li>
+<li>
+<p><strong>Crisis communications</strong> — should the platform have a dedicated crisis communications workflow (rapid response template, war room mode for comms, stakeholder notification sequence)? Or is the existing messaging + press release + social media infrastructure sufficient?</p>
+</li>
+<li>
+<p><strong>Earned media valuation</strong> — should coverage tracking include earned media value estimates (the equivalent advertising cost of the coverage received)? Common in PR but methodologically questionable.</p>
+</li>
+<li>
+<p><strong>Brazil horário eleitoral</strong> — Brazil's mandatory free TV/radio time for political campaigns is a unique media requirement. Should the platform support scheduling and tracking content for this format, or is it out of scope?</p>
+</li>
+</ol>
+<!-- REVISIT: Social media platform API access for political content is increasingly restricted (Meta, Twitter/X). The adapter architecture must gracefully handle API access changes, rate limit reductions, and platform policy changes. The copy-paste fallback is a critical safety net. -->
+<!-- REVISIT: Social media disclaimer requirements are evolving rapidly across jurisdictions. The compliance integration for social media needs to be easily updatable as laws change. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#press-media-philosophy"># Press &amp;amp; Media Philosophy</a></li><li class="toc-2"><a href="#media-contact-management"># Media Contact Management</a></li><li class="toc-3"><a href="#media-contacts-as-crm-records"># Media Contacts as CRM Records</a></li><li class="toc-3"><a href="#media-lists"># Media Lists</a></li><li class="toc-3"><a href="#media-interaction-tracking"># Media Interaction Tracking</a></li><li class="toc-2"><a href="#press-content"># Press Content</a></li><li class="toc-3"><a href="#press-releases"># Press Releases</a></li><li class="toc-3"><a href="#media-advisories"># Media Advisories</a></li><li class="toc-3"><a href="#statements"># Statements</a></li><li class="toc-3"><a href="#media-kit"># Media Kit</a></li><li class="toc-2"><a href="#media-coverage-tracking"># Media Coverage Tracking</a></li><li class="toc-3"><a href="#coverage-logging"># Coverage Logging</a></li><li class="toc-3"><a href="#coverage-analytics"># Coverage Analytics</a></li><li class="toc-2"><a href="#public-facing-content"># Public-Facing Content</a></li><li class="toc-3"><a href="#public-profiles"># Public Profiles</a></li><li class="toc-3"><a href="#social-media-management"># Social Media Management</a></li><li class="toc-3"><a href="#endorsement-management"># Endorsement Management</a></li><li class="toc-2"><a href="#spokesperson-management"># Spokesperson Management</a></li><li class="toc-3"><a href="#designated-spokespersons"># Designated Spokespersons</a></li><li class="toc-3"><a href="#talking-points"># Talking Points</a></li><li class="toc-2"><a href="#press-events"># Press Events</a></li><li class="toc-3"><a href="#press-conference-media-event-management"># Press Conference / Media Event Management</a></li><li class="toc-3"><a href="#interview-scheduling"># Interview Scheduling</a></li><li class="toc-2"><a href="#jurisdiction-specific-considerations"># Jurisdiction-Specific Considerations</a></li><li class="toc-3"><a href="#political-advertising-disclaimers-on-social-media"># Political Advertising Disclaimers on Social Media</a></li><li class="toc-3"><a href="#media-landscape-differences"># Media Landscape Differences</a></li><li class="toc-2"><a href="#technical-requirements"># Technical Requirements</a></li><li class="toc-3"><a href="#social-media-adapter-architecture"># Social Media Adapter Architecture</a></li><li class="toc-3"><a href="#public-profile-rendering"># Public Profile Rendering</a></li><li class="toc-3"><a href="#media-asset-management"># Media Asset Management</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

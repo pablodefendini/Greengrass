@@ -1,0 +1,2416 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screen Inventory · GreenGrass</title>
+<meta name="description" content="Screen Inventory — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="./navigation-model.html">Navigation Model</a></li><li><a href="./screen-inventory.html" aria-current="page" class="active">Screen Inventory</a></li><li><a href="./persona-views.html">Persona Views</a></li><li><a href="./url-structure.html">URL Structure</a></li><li><a href="../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="screen-inventory" tabindex="-1"><a class="heading-anchor" href="#screen-inventory" aria-hidden="true">#</a> Screen Inventory</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>A comprehensive catalog of every distinct screen in the platform, organized by feature area. Each entry identifies which personas can access the screen, whether it works offline, and whether it's mobile-optimized.</p>
+<p>This inventory is derived from the 12 spec documents and the navigation model. It serves as the master reference for wireframing, route planning, and implementation scoping.</p>
+<h2 id="reading-the-table" tabindex="-1"><a class="heading-anchor" href="#reading-the-table" aria-hidden="true">#</a> Reading the Table</h2>
+<ul>
+<li><strong>Screen ID</strong> — unique identifier for cross-referencing (format: <code>AREA-NNN</code>)</li>
+<li><strong>Screen</strong> — human-readable screen name</li>
+<li><strong>Personas</strong> — who can access this screen (abbreviated: OA=Org Admin, CD=Communications Director, FD=Finance Director, FiD=Field Director, VC=Volunteer Coordinator, DM=Data Manager, V=Volunteer, TL=Team Lead, C=Candidate, S=Supporter)</li>
+<li><strong>Offline</strong> — whether the screen works without connectivity (Yes, Partial, No)</li>
+<li><strong>Mobile</strong> — whether the screen is designed for mobile use (Primary=mobile-first, Yes=works on mobile, Desktop=desktop-preferred)</li>
+<li><strong>Spec ref</strong> — source spec document and relevant section</li>
+</ul>
+<h2 id="1-dashboards" tabindex="-1"><a class="heading-anchor" href="#1-dashboards" aria-hidden="true">#</a> 1. Dashboards</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DASH-001</td>
+<td>Campaign Overview Dashboard</td>
+<td>OA, C</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — reporting</td>
+</tr>
+<tr>
+<td>DASH-002</td>
+<td>Field Operations Dashboard</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — reporting</td>
+</tr>
+<tr>
+<td>DASH-003</td>
+<td>Fundraising Dashboard</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — reporting</td>
+</tr>
+<tr>
+<td>DASH-004</td>
+<td>Communications Dashboard</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — reporting</td>
+</tr>
+<tr>
+<td>DASH-005</td>
+<td>Volunteer Dashboard</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — reporting</td>
+</tr>
+<tr>
+<td>DASH-006</td>
+<td>Data Quality Dashboard</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — reporting</td>
+</tr>
+<tr>
+<td>DASH-007</td>
+<td>Compliance Dashboard</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> — infrastructure</td>
+</tr>
+<tr>
+<td>DASH-008</td>
+<td>GOTV War Room Dashboard</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — turnout dashboard</td>
+</tr>
+<tr>
+<td>DASH-009</td>
+<td>Team Lead Dashboard</td>
+<td>TL</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>DASH-010</td>
+<td>Candidate Dashboard</td>
+<td>C</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — candidate persona</td>
+</tr>
+<tr>
+<td>DASH-011</td>
+<td>Alliance Dashboard</td>
+<td>OA</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — alliance coordination</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-crm-people" tabindex="-1"><a class="heading-anchor" href="#2-crm-people" aria-hidden="true">#</a> 2. CRM / People</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRM-001</td>
+<td>Contact List</td>
+<td>OA, CD, FD, FiD, VC, DM</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — CRM records</td>
+</tr>
+<tr>
+<td>CRM-002</td>
+<td>Contact Detail</td>
+<td>OA, CD, FD, FiD, VC, DM</td>
+<td>Partial</td>
+<td>Yes</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — CRM records</td>
+</tr>
+<tr>
+<td>CRM-003</td>
+<td>Contact Create/Edit</td>
+<td>OA, CD, FD, FiD, VC, DM</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — CRM records</td>
+</tr>
+<tr>
+<td>CRM-004</td>
+<td>Segment Builder</td>
+<td>OA, CD, FD, FiD, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — communications</td>
+</tr>
+<tr>
+<td>CRM-005</td>
+<td>Segment List</td>
+<td>OA, CD, FD, FiD, DM</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — communications</td>
+</tr>
+<tr>
+<td>CRM-006</td>
+<td>Dedup Review Queue</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — deduplication</td>
+</tr>
+<tr>
+<td>CRM-007</td>
+<td>Dedup Side-by-Side Comparison</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — deduplication</td>
+</tr>
+<tr>
+<td>CRM-008</td>
+<td>Data Import Wizard — File Upload</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — voter file import</td>
+</tr>
+<tr>
+<td>CRM-009</td>
+<td>Data Import Wizard — Column Mapping</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — voter file import</td>
+</tr>
+<tr>
+<td>CRM-010</td>
+<td>Data Import Wizard — Dedup Preview</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — voter file import</td>
+</tr>
+<tr>
+<td>CRM-011</td>
+<td>Data Import Wizard — Confirmation</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — voter file import</td>
+</tr>
+<tr>
+<td>CRM-012</td>
+<td>Data Import History</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — voter file import</td>
+</tr>
+<tr>
+<td>CRM-013</td>
+<td>Data Export</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — data import/export</td>
+</tr>
+<tr>
+<td>CRM-014</td>
+<td>Data Quality Report</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — data import/export</td>
+</tr>
+<tr>
+<td>CRM-015</td>
+<td>Tag Management</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — CRM records</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-canvassing" tabindex="-1"><a class="heading-anchor" href="#3-canvassing" aria-hidden="true">#</a> 3. Canvassing</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CANV-001</td>
+<td>Canvassing Campaign List</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>CANV-002</td>
+<td>Canvassing Campaign Create/Edit</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>CANV-003</td>
+<td>Script Builder</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>CANV-004</td>
+<td>Turf Management Map</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — GIS/mapping</td>
+</tr>
+<tr>
+<td>CANV-005</td>
+<td>Turf Auto-Generation</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — GIS/mapping</td>
+</tr>
+<tr>
+<td>CANV-006</td>
+<td>Walk List Management</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>CANV-007</td>
+<td>Field Mode — Shift Start</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>CANV-008</td>
+<td>Field Mode — Walk List View</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>CANV-009</td>
+<td>Field Mode — Map View</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — offline maps</td>
+</tr>
+<tr>
+<td>CANV-010</td>
+<td>Field Mode — Door Card</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>CANV-011</td>
+<td>Field Mode — Interaction Form</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>CANV-012</td>
+<td>Field Mode — Shift End / Debrief</td>
+<td>V, TL</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>CANV-013</td>
+<td>Canvassing Results Review</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — canvassing</td>
+</tr>
+<tr>
+<td>CANV-014</td>
+<td>Canvassing Progress Map</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — reporting</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-phone-banking" tabindex="-1"><a class="heading-anchor" href="#4-phone-banking" aria-hidden="true">#</a> 4. Phone Banking</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PHONE-001</td>
+<td>Phone Bank Campaign List</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — phone banking</td>
+</tr>
+<tr>
+<td>PHONE-002</td>
+<td>Phone Bank Campaign Create/Edit</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — phone banking</td>
+</tr>
+<tr>
+<td>PHONE-003</td>
+<td>Phone Bank Script Builder</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — phone banking</td>
+</tr>
+<tr>
+<td>PHONE-004</td>
+<td>Phone Bank — Call Interface (BYOP)</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — phone banking</td>
+</tr>
+<tr>
+<td>PHONE-005</td>
+<td>Phone Bank — Call Interface (Integrated)</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — telephony</td>
+</tr>
+<tr>
+<td>PHONE-006</td>
+<td>Phone Bank — Call Result Form</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — phone banking</td>
+</tr>
+<tr>
+<td>PHONE-007</td>
+<td>Phone Bank Progress Dashboard</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — phone banking</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-voter-registration" tabindex="-1"><a class="heading-anchor" href="#5-voter-registration" aria-hidden="true">#</a> 5. Voter Registration</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VREG-001</td>
+<td>Voter Reg Drive List</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — voter registration</td>
+</tr>
+<tr>
+<td>VREG-002</td>
+<td>Voter Reg Drive Create/Edit</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — voter registration</td>
+</tr>
+<tr>
+<td>VREG-003</td>
+<td>Voter Reg Jurisdiction Template Selector</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — voter registration</td>
+</tr>
+<tr>
+<td>VREG-004</td>
+<td>Field Mode — Voter Registration Form</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — voter registration</td>
+</tr>
+<tr>
+<td>VREG-005</td>
+<td>Field Mode — Eligibility Check</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — voter registration</td>
+</tr>
+<tr>
+<td>VREG-006</td>
+<td>Voter Reg Results Review</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — voter registration</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-fundraising" tabindex="-1"><a class="heading-anchor" href="#6-fundraising" aria-hidden="true">#</a> 6. Fundraising</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FUND-001</td>
+<td>Donation List</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donation types</td>
+</tr>
+<tr>
+<td>FUND-002</td>
+<td>Donation Detail</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donation types</td>
+</tr>
+<tr>
+<td>FUND-003</td>
+<td>Donation Form Builder</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donation forms</td>
+</tr>
+<tr>
+<td>FUND-004</td>
+<td>Donation Form Preview</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donation forms</td>
+</tr>
+<tr>
+<td>FUND-005</td>
+<td>Donation Form — Public (Hosted)</td>
+<td>S, Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donation forms</td>
+</tr>
+<tr>
+<td>FUND-006</td>
+<td>Donation Form — Embed Config</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donation forms</td>
+</tr>
+<tr>
+<td>FUND-007</td>
+<td>Recurring Donation Management</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — recurring</td>
+</tr>
+<tr>
+<td>FUND-008</td>
+<td>Pledge Management</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — pledges</td>
+</tr>
+<tr>
+<td>FUND-009</td>
+<td>Refund Processing</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — refunds</td>
+</tr>
+<tr>
+<td>FUND-010</td>
+<td>Cash Donation Recording</td>
+<td>OA, FD, V</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — cash handling</td>
+</tr>
+<tr>
+<td>FUND-011</td>
+<td>Cash Reconciliation</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — cash handling</td>
+</tr>
+<tr>
+<td>FUND-012</td>
+<td>Compliance Flag Review</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — fraud prevention</td>
+</tr>
+<tr>
+<td>FUND-013</td>
+<td>A/B Test Setup</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — A/B testing</td>
+</tr>
+<tr>
+<td>FUND-014</td>
+<td>A/B Test Results</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — A/B testing</td>
+</tr>
+<tr>
+<td>FUND-015</td>
+<td>Alliance Split Configuration</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — alliance fundraising</td>
+</tr>
+<tr>
+<td>FUND-016</td>
+<td>Alliance Fundraising Report</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — alliance fundraising</td>
+</tr>
+<tr>
+<td>FUND-017</td>
+<td>Payment Processor Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — processors</td>
+</tr>
+<tr>
+<td>FUND-018</td>
+<td>Fundraising Campaign List</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — analytics</td>
+</tr>
+<tr>
+<td>FUND-019</td>
+<td>Fundraising Campaign Create/Edit</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — analytics</td>
+</tr>
+<tr>
+<td>FUND-020</td>
+<td>Year-End Statement Generator</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donor experience</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-communications" tabindex="-1"><a class="heading-anchor" href="#7-communications" aria-hidden="true">#</a> 7. Communications</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COMM-001</td>
+<td>Email Campaign List</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — communications</td>
+</tr>
+<tr>
+<td>COMM-002</td>
+<td>Email Campaign Builder</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — communications</td>
+</tr>
+<tr>
+<td>COMM-003</td>
+<td>Email Template Builder</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — communications</td>
+</tr>
+<tr>
+<td>COMM-004</td>
+<td>Email Template Library</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — communications</td>
+</tr>
+<tr>
+<td>COMM-005</td>
+<td>SMS/WhatsApp Composer</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — communications</td>
+</tr>
+<tr>
+<td>COMM-006</td>
+<td>Communication Analytics</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — reporting</td>
+</tr>
+<tr>
+<td>COMM-007</td>
+<td>Consent Management</td>
+<td>OA, CD, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> — consent</td>
+</tr>
+<tr>
+<td>COMM-008</td>
+<td>Communication Preferences (Staff)</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> — consent</td>
+</tr>
+<tr>
+<td>COMM-009</td>
+<td>Unsubscribe Management</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> — consent</td>
+</tr>
+<tr>
+<td>COMM-010</td>
+<td>Email Sending Domain Config</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — email</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-social-media" tabindex="-1"><a class="heading-anchor" href="#8-social-media" aria-hidden="true">#</a> 8. Social Media</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SOCIAL-001</td>
+<td>Social Media Dashboard</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — social media</td>
+</tr>
+<tr>
+<td>SOCIAL-002</td>
+<td>Post Composer (Multi-platform)</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — post creation</td>
+</tr>
+<tr>
+<td>SOCIAL-003</td>
+<td>Post Calendar / Schedule</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — scheduling</td>
+</tr>
+<tr>
+<td>SOCIAL-004</td>
+<td>Post Analytics</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — analytics</td>
+</tr>
+<tr>
+<td>SOCIAL-005</td>
+<td>Social Account Connection</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — OAuth/fallback</td>
+</tr>
+<tr>
+<td>SOCIAL-006</td>
+<td>Platform-Specific Preview</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — post creation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-events" tabindex="-1"><a class="heading-anchor" href="#9-events" aria-hidden="true">#</a> 9. Events</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EVT-001</td>
+<td>Event List</td>
+<td>OA, VC, V, TL, S</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>EVT-002</td>
+<td>Event Create/Edit</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>EVT-003</td>
+<td>Event Detail</td>
+<td>OA, VC, V, TL, S</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>EVT-004</td>
+<td>Event RSVP Management</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>EVT-005</td>
+<td>Event Check-in Tool</td>
+<td>OA, VC, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>EVT-006</td>
+<td>Event RSVP Form (Public)</td>
+<td>S, Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>EVT-007</td>
+<td>Event Page (Public)</td>
+<td>Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>EVT-008</td>
+<td>Event Metrics</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>EVT-009</td>
+<td>Virtual Event Setup</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>EVT-010</td>
+<td>Post-Event Survey Builder</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-activism" tabindex="-1"><a class="heading-anchor" href="#10-activism" aria-hidden="true">#</a> 10. Activism</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT-001</td>
+<td>Activism Campaign List</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+<tr>
+<td>ACT-002</td>
+<td>Letter/Email Action Setup</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+<tr>
+<td>ACT-003</td>
+<td>Petition Setup</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+<tr>
+<td>ACT-004</td>
+<td>Public Comment Campaign Setup</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+<tr>
+<td>ACT-005</td>
+<td>Action Page (Public)</td>
+<td>S, Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+<tr>
+<td>ACT-006</td>
+<td>Petition Page (Public)</td>
+<td>S, Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+<tr>
+<td>ACT-007</td>
+<td>AI Message Generation Preview</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+<tr>
+<td>ACT-008</td>
+<td>Activism Campaign Analytics</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+<tr>
+<td>ACT-009</td>
+<td>Delivery Event Documentation</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-press-media" tabindex="-1"><a class="heading-anchor" href="#11-press-media" aria-hidden="true">#</a> 11. Press &amp; Media</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PRESS-001</td>
+<td>Media Contact List</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — media contacts</td>
+</tr>
+<tr>
+<td>PRESS-002</td>
+<td>Media Contact Detail</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — media contacts</td>
+</tr>
+<tr>
+<td>PRESS-003</td>
+<td>Media List Management</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — media lists</td>
+</tr>
+<tr>
+<td>PRESS-004</td>
+<td>Press Release Builder</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — press releases</td>
+</tr>
+<tr>
+<td>PRESS-005</td>
+<td>Press Release Preview</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — press releases</td>
+</tr>
+<tr>
+<td>PRESS-006</td>
+<td>Press Release Distribution</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — press releases</td>
+</tr>
+<tr>
+<td>PRESS-007</td>
+<td>Media Advisory Builder</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — advisories</td>
+</tr>
+<tr>
+<td>PRESS-008</td>
+<td>Statement Builder</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — statements</td>
+</tr>
+<tr>
+<td>PRESS-009</td>
+<td>Media Kit Management</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — media kit</td>
+</tr>
+<tr>
+<td>PRESS-010</td>
+<td>Coverage Log</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — coverage tracking</td>
+</tr>
+<tr>
+<td>PRESS-011</td>
+<td>Coverage Analytics</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — coverage analytics</td>
+</tr>
+<tr>
+<td>PRESS-012</td>
+<td>Endorsement Pipeline</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — endorsements</td>
+</tr>
+<tr>
+<td>PRESS-013</td>
+<td>Endorsement Detail</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — endorsements</td>
+</tr>
+<tr>
+<td>PRESS-014</td>
+<td>Talking Points Library</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — spokesperson</td>
+</tr>
+<tr>
+<td>PRESS-015</td>
+<td>Interview Schedule</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — press events</td>
+</tr>
+<tr>
+<td>PRESS-016</td>
+<td>Spokesperson Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — spokesperson</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-gotv-election-day" tabindex="-1"><a class="heading-anchor" href="#12-gotv-election-day" aria-hidden="true">#</a> 12. GOTV &amp; Election Day</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GOTV-001</td>
+<td>GOTV Universe Builder</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — universe definition</td>
+</tr>
+<tr>
+<td>GOTV-002</td>
+<td>Early Voting Data Upload</td>
+<td>OA, FiD, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — early voting</td>
+</tr>
+<tr>
+<td>GOTV-003</td>
+<td>Volunteer Staging Setup</td>
+<td>OA, FiD, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — staging</td>
+</tr>
+<tr>
+<td>GOTV-004</td>
+<td>GOTV Turf Cutting</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — turf cutting</td>
+</tr>
+<tr>
+<td>GOTV-005</td>
+<td>Election Day Comms Plan</td>
+<td>OA, FiD, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — comms plan</td>
+</tr>
+<tr>
+<td>GOTV-006</td>
+<td>Poll Watcher Registry</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — poll watcher prep</td>
+</tr>
+<tr>
+<td>GOTV-007</td>
+<td>Poll Watcher Credential Tracking</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — poll watcher prep</td>
+</tr>
+<tr>
+<td>GOTV-008</td>
+<td>Field Mode — GOTV Door Card</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — GOTV canvassing</td>
+</tr>
+<tr>
+<td>GOTV-009</td>
+<td>Field Mode — GOTV Walk List</td>
+<td>V, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — GOTV canvassing</td>
+</tr>
+<tr>
+<td>GOTV-010</td>
+<td>Chase Call Interface</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — chase calls</td>
+</tr>
+<tr>
+<td>GOTV-011</td>
+<td>Ride Request Form</td>
+<td>V, TL, S</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — rides to polls</td>
+</tr>
+<tr>
+<td>GOTV-012</td>
+<td>Ride Coordination — Dispatcher View</td>
+<td>OA, FiD, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — rides to polls</td>
+</tr>
+<tr>
+<td>GOTV-013</td>
+<td>Ride Coordination — Driver View</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — rides to polls</td>
+</tr>
+<tr>
+<td>GOTV-014</td>
+<td>Poll Watcher Check-in</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — poll watching</td>
+</tr>
+<tr>
+<td>GOTV-015</td>
+<td>Poll Watcher Issue Report Form</td>
+<td>V</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — issue reporting</td>
+</tr>
+<tr>
+<td>GOTV-016</td>
+<td>Poll Watcher Issue Queue</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — issue escalation</td>
+</tr>
+<tr>
+<td>GOTV-017</td>
+<td>Turnout Dashboard — Map View</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — turnout tracking</td>
+</tr>
+<tr>
+<td>GOTV-018</td>
+<td>Turnout Dashboard — Segment View</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — turnout tracking</td>
+</tr>
+<tr>
+<td>GOTV-019</td>
+<td>Reallocation Suggestions</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — dynamic reallocation</td>
+</tr>
+<tr>
+<td>GOTV-020</td>
+<td>Election Night Results Entry</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — results tracking</td>
+</tr>
+<tr>
+<td>GOTV-021</td>
+<td>Election Night Results Dashboard</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — results tracking</td>
+</tr>
+<tr>
+<td>GOTV-022</td>
+<td>Post-Election Analysis</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — post-election</td>
+</tr>
+<tr>
+<td>GOTV-023</td>
+<td>Staging Location Check-in</td>
+<td>TL</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — volunteer staging</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-messaging" tabindex="-1"><a class="heading-anchor" href="#13-messaging" aria-hidden="true">#</a> 13. Messaging</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSG-001</td>
+<td>Message List (Inbox)</td>
+<td>All authenticated</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — DMs</td>
+</tr>
+<tr>
+<td>MSG-002</td>
+<td>Conversation View (DM)</td>
+<td>All authenticated</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — DMs</td>
+</tr>
+<tr>
+<td>MSG-003</td>
+<td>Conversation View (Group)</td>
+<td>All authenticated</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — groups</td>
+</tr>
+<tr>
+<td>MSG-004</td>
+<td>Thread View</td>
+<td>All authenticated</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — threading</td>
+</tr>
+<tr>
+<td>MSG-005</td>
+<td>Group Create/Edit</td>
+<td>OA, CD, FD, FiD, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — groups</td>
+</tr>
+<tr>
+<td>MSG-006</td>
+<td>Broadcast Composer</td>
+<td>OA, CD, FiD, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — broadcasts</td>
+</tr>
+<tr>
+<td>MSG-007</td>
+<td>War Room Channel</td>
+<td>OA, FiD, CD, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — war room</td>
+</tr>
+<tr>
+<td>MSG-008</td>
+<td>Contextual Thread (Event)</td>
+<td>OA, VC, TL</td>
+<td>Partial</td>
+<td>Yes</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — contextual</td>
+</tr>
+<tr>
+<td>MSG-009</td>
+<td>Contextual Thread (Shift)</td>
+<td>OA, FiD, VC, TL</td>
+<td>Partial</td>
+<td>Yes</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — contextual</td>
+</tr>
+<tr>
+<td>MSG-010</td>
+<td>Contextual Thread (Issue)</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — contextual</td>
+</tr>
+<tr>
+<td>MSG-011</td>
+<td>Contextual Thread (Donation Flag)</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — contextual</td>
+</tr>
+<tr>
+<td>MSG-012</td>
+<td>Candidate Briefing View</td>
+<td>C</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — candidate</td>
+</tr>
+<tr>
+<td>MSG-013</td>
+<td>Candidate Approval Queue</td>
+<td>C</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — candidate</td>
+</tr>
+<tr>
+<td>MSG-014</td>
+<td>Alliance Channel</td>
+<td>OA</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — alliance</td>
+</tr>
+</tbody>
+</table>
+<h2 id="14-settings-administration" tabindex="-1"><a class="heading-anchor" href="#14-settings-administration" aria-hidden="true">#</a> 14. Settings &amp; Administration</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SET-001</td>
+<td>Org Profile &amp; Branding</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — onboarding</td>
+</tr>
+<tr>
+<td>SET-002</td>
+<td>Role Template Editor</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — permissions</td>
+</tr>
+<tr>
+<td>SET-003</td>
+<td>Permission Override Panel</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — permissions</td>
+</tr>
+<tr>
+<td>SET-004</td>
+<td>Staff Management List</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — staff</td>
+</tr>
+<tr>
+<td>SET-005</td>
+<td>Staff Invite Flow</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — onboarding</td>
+</tr>
+<tr>
+<td>SET-006</td>
+<td>Geographic Scope Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — scoping</td>
+</tr>
+<tr>
+<td>SET-007</td>
+<td>Campaign Period Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> — campaign periods</td>
+</tr>
+<tr>
+<td>SET-008</td>
+<td>Compliance Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> — per-tenant config</td>
+</tr>
+<tr>
+<td>SET-009</td>
+<td>Contribution Limits Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> — campaign finance</td>
+</tr>
+<tr>
+<td>SET-010</td>
+<td>Disclaimer Text Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> — disclaimers</td>
+</tr>
+<tr>
+<td>SET-011</td>
+<td>Data Retention Policy</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> — retention</td>
+</tr>
+<tr>
+<td>SET-012</td>
+<td>Integration Settings Hub</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a></td>
+</tr>
+<tr>
+<td>SET-013</td>
+<td>WhatsApp Business Setup</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — WhatsApp</td>
+</tr>
+<tr>
+<td>SET-014</td>
+<td>SMS Provider Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — SMS</td>
+</tr>
+<tr>
+<td>SET-015</td>
+<td>Email Domain Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — email</td>
+</tr>
+<tr>
+<td>SET-016</td>
+<td>Social Media Account Connections</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — social media</td>
+</tr>
+<tr>
+<td>SET-017</td>
+<td>Billing &amp; Subscription</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — pricing</td>
+</tr>
+<tr>
+<td>SET-018</td>
+<td>Audit Trail Viewer</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — audit</td>
+</tr>
+<tr>
+<td>SET-019</td>
+<td>Security Settings</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — tier config</td>
+</tr>
+<tr>
+<td>SET-020</td>
+<td>Encryption Key Management</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — BYOK</td>
+</tr>
+<tr>
+<td>SET-021</td>
+<td>API Key Management</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — public API</td>
+</tr>
+<tr>
+<td>SET-022</td>
+<td>Webhook Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — webhooks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="15-onboarding-wizards" tabindex="-1"><a class="heading-anchor" href="#15-onboarding-wizards" aria-hidden="true">#</a> 15. Onboarding Wizards</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIZ-001</td>
+<td>Org Setup Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — onboarding wizards</td>
+</tr>
+<tr>
+<td>WIZ-002</td>
+<td>Payment Processor Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — onboarding wizards</td>
+</tr>
+<tr>
+<td>WIZ-003</td>
+<td>BYOK Key Generation Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — onboarding wizards</td>
+</tr>
+<tr>
+<td>WIZ-004</td>
+<td>Compliance Configuration Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — onboarding wizards</td>
+</tr>
+<tr>
+<td>WIZ-005</td>
+<td>WhatsApp Business Setup Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — onboarding wizards</td>
+</tr>
+<tr>
+<td>WIZ-006</td>
+<td>SMS Number Setup Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — onboarding wizards</td>
+</tr>
+<tr>
+<td>WIZ-007</td>
+<td>Voter File Import Wizard</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — onboarding wizards</td>
+</tr>
+<tr>
+<td>WIZ-008</td>
+<td>Volunteer Onboarding Wizard</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — onboarding wizards</td>
+</tr>
+</tbody>
+</table>
+<h2 id="16-support-help" tabindex="-1"><a class="heading-anchor" href="#16-support-help" aria-hidden="true">#</a> 16. Support &amp; Help</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HELP-001</td>
+<td>Knowledge Base Browser</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — knowledge base</td>
+</tr>
+<tr>
+<td>HELP-002</td>
+<td>Knowledge Base Article</td>
+<td>All authenticated</td>
+<td>Partial</td>
+<td>Yes</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — knowledge base</td>
+</tr>
+<tr>
+<td>HELP-003</td>
+<td>AI Concierge Chat</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — concierge</td>
+</tr>
+<tr>
+<td>HELP-004</td>
+<td>Training Module List</td>
+<td>V, TL</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — training</td>
+</tr>
+<tr>
+<td>HELP-005</td>
+<td>Training Module Content</td>
+<td>V, TL</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — training</td>
+</tr>
+<tr>
+<td>HELP-006</td>
+<td>Training Quiz</td>
+<td>V, TL</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — training</td>
+</tr>
+<tr>
+<td>HELP-007</td>
+<td>Certification Status</td>
+<td>V, TL, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — training</td>
+</tr>
+<tr>
+<td>HELP-008</td>
+<td>Training Content Editor</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://support.md" target="_blank" rel="noopener noreferrer">support.md</a> — training</td>
+</tr>
+</tbody>
+</table>
+<h2 id="17-supporter-portal" tabindex="-1"><a class="heading-anchor" href="#17-supporter-portal" aria-hidden="true">#</a> 17. Supporter Portal</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUP-001</td>
+<td>Supporter Home</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donor portal</td>
+</tr>
+<tr>
+<td>SUP-002</td>
+<td>Donation History</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donor portal</td>
+</tr>
+<tr>
+<td>SUP-003</td>
+<td>Donation Receipt View</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — receipts</td>
+</tr>
+<tr>
+<td>SUP-004</td>
+<td>Recurring Donation Management</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donor portal</td>
+</tr>
+<tr>
+<td>SUP-005</td>
+<td>Payment Method Update</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — donor portal</td>
+</tr>
+<tr>
+<td>SUP-006</td>
+<td>Supporter Profile</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — supporter</td>
+</tr>
+<tr>
+<td>SUP-007</td>
+<td>Communication Preferences</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a> — consent</td>
+</tr>
+<tr>
+<td>SUP-008</td>
+<td>My Events</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>SUP-009</td>
+<td>Year-End Statement Download</td>
+<td>S</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — statements</td>
+</tr>
+</tbody>
+</table>
+<h2 id="18-alliance" tabindex="-1"><a class="heading-anchor" href="#18-alliance" aria-hidden="true">#</a> 18. Alliance</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALLY-001</td>
+<td>Alliance Dashboard</td>
+<td>OA</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — alliance</td>
+</tr>
+<tr>
+<td>ALLY-002</td>
+<td>Alliance Member List</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — alliance</td>
+</tr>
+<tr>
+<td>ALLY-003</td>
+<td>Affiliation Request Form</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — alliance</td>
+</tr>
+<tr>
+<td>ALLY-004</td>
+<td>Affiliation Request Queue</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — alliance</td>
+</tr>
+<tr>
+<td>ALLY-005</td>
+<td>Sharing Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — alliance</td>
+</tr>
+<tr>
+<td>ALLY-006</td>
+<td>Joint Campaign Setup</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — alliance</td>
+</tr>
+<tr>
+<td>ALLY-007</td>
+<td>Shared Analytics</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — alliance</td>
+</tr>
+<tr>
+<td>ALLY-008</td>
+<td>GOTV Alliance Coordination</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td><a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> — alliance GOTV</td>
+</tr>
+</tbody>
+</table>
+<h2 id="19-public-pages-no-auth-required" tabindex="-1"><a class="heading-anchor" href="#19-public-pages-no-auth-required" aria-hidden="true">#</a> 19. Public Pages (No Auth Required)</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUB-001</td>
+<td>Candidate Profile Page</td>
+<td>Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — public profiles</td>
+</tr>
+<tr>
+<td>PUB-002</td>
+<td>Organization Profile Page</td>
+<td>Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — public profiles</td>
+</tr>
+<tr>
+<td>PUB-003</td>
+<td>Donation Form (Hosted)</td>
+<td>Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> — forms</td>
+</tr>
+<tr>
+<td>PUB-004</td>
+<td>Event Page</td>
+<td>Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — events</td>
+</tr>
+<tr>
+<td>PUB-005</td>
+<td>Action Page (Letter/Email)</td>
+<td>Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+<tr>
+<td>PUB-006</td>
+<td>Petition Page</td>
+<td>Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — activism</td>
+</tr>
+<tr>
+<td>PUB-007</td>
+<td>Volunteer Signup Page</td>
+<td>Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> — volunteer onboarding</td>
+</tr>
+<tr>
+<td>PUB-008</td>
+<td>Media Kit Page</td>
+<td>Public</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://press.md" target="_blank" rel="noopener noreferrer">press.md</a> — media kit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="20-authentication" tabindex="-1"><a class="heading-anchor" href="#20-authentication" aria-hidden="true">#</a> 20. Authentication</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AUTH-001</td>
+<td>Login (Passkey)</td>
+<td>All</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — auth</td>
+</tr>
+<tr>
+<td>AUTH-002</td>
+<td>Login Fallback (Magic Link / SMS OTP)</td>
+<td>All</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — auth</td>
+</tr>
+<tr>
+<td>AUTH-003</td>
+<td>Account Recovery (Trusted Contact)</td>
+<td>All</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — recovery</td>
+</tr>
+<tr>
+<td>AUTH-004</td>
+<td>Passkey Registration</td>
+<td>All</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — auth</td>
+</tr>
+<tr>
+<td>AUTH-005</td>
+<td>Trusted Contact Setup</td>
+<td>All</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — recovery</td>
+</tr>
+<tr>
+<td>AUTH-006</td>
+<td>Device Authorization</td>
+<td>All</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — multi-device</td>
+</tr>
+<tr>
+<td>AUTH-007</td>
+<td>Session Expired / Re-authenticate</td>
+<td>All</td>
+<td>No</td>
+<td>Primary</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — sessions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="21-user-profile-preferences" tabindex="-1"><a class="heading-anchor" href="#21-user-profile-preferences" aria-hidden="true">#</a> 21. User Profile &amp; Preferences</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Spec ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PROF-001</td>
+<td>Personal Profile</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — profiles</td>
+</tr>
+<tr>
+<td>PROF-002</td>
+<td>Notification Preferences</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a> — notifications</td>
+</tr>
+<tr>
+<td>PROF-003</td>
+<td>Security Settings (Personal)</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> — passkeys</td>
+</tr>
+<tr>
+<td>PROF-004</td>
+<td>Language Preference</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://geography.md" target="_blank" rel="noopener noreferrer">geography.md</a> — localization</td>
+</tr>
+<tr>
+<td>PROF-005</td>
+<td>Tenant Switcher</td>
+<td>Multi-tenant users</td>
+<td>No</td>
+<td>Yes</td>
+<td><a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> — federation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary" tabindex="-1"><a class="heading-anchor" href="#summary" aria-hidden="true">#</a> Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Feature Area</th>
+<th>Screen Count</th>
+<th>Offline Screens</th>
+<th>Mobile-Primary Screens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dashboards</td>
+<td>11</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>CRM / People</td>
+<td>15</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Canvassing</td>
+<td>14</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Phone Banking</td>
+<td>7</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Voter Registration</td>
+<td>6</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Fundraising</td>
+<td>20</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Communications</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Social Media</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Events</td>
+<td>10</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Activism</td>
+<td>9</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Press &amp; Media</td>
+<td>16</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>GOTV / Election Day</td>
+<td>23</td>
+<td>3</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Messaging</td>
+<td>14</td>
+<td>7</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Settings &amp; Admin</td>
+<td>22</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Onboarding Wizards</td>
+<td>8</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Support &amp; Help</td>
+<td>8</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Supporter Portal</td>
+<td>9</td>
+<td>0</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Alliance</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Public Pages</td>
+<td>8</td>
+<td>0</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>7</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>User Profile</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>236</strong></td>
+<td><strong>24</strong></td>
+<td><strong>53</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The platform has approximately <strong>236 distinct screens</strong>, of which <strong>24 work offline</strong> and <strong>53 are mobile-primary</strong> (designed primarily for phone use). The remaining screens work on mobile but are designed desktop-first (complex configuration, data tables, builders).</p>
+<!-- REVISIT: This inventory will grow as implementation reveals sub-screens and modal flows not captured at this level of analysis. The screen IDs provide a stable reference system for additions. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#reading-the-table"># Reading the Table</a></li><li class="toc-2"><a href="#1-dashboards"># 1. Dashboards</a></li><li class="toc-2"><a href="#2-crm-people"># 2. CRM / People</a></li><li class="toc-2"><a href="#3-canvassing"># 3. Canvassing</a></li><li class="toc-2"><a href="#4-phone-banking"># 4. Phone Banking</a></li><li class="toc-2"><a href="#5-voter-registration"># 5. Voter Registration</a></li><li class="toc-2"><a href="#6-fundraising"># 6. Fundraising</a></li><li class="toc-2"><a href="#7-communications"># 7. Communications</a></li><li class="toc-2"><a href="#8-social-media"># 8. Social Media</a></li><li class="toc-2"><a href="#9-events"># 9. Events</a></li><li class="toc-2"><a href="#10-activism"># 10. Activism</a></li><li class="toc-2"><a href="#11-press-media"># 11. Press &amp;amp; Media</a></li><li class="toc-2"><a href="#12-gotv-election-day"># 12. GOTV &amp;amp; Election Day</a></li><li class="toc-2"><a href="#13-messaging"># 13. Messaging</a></li><li class="toc-2"><a href="#14-settings-administration"># 14. Settings &amp;amp; Administration</a></li><li class="toc-2"><a href="#15-onboarding-wizards"># 15. Onboarding Wizards</a></li><li class="toc-2"><a href="#16-support-help"># 16. Support &amp;amp; Help</a></li><li class="toc-2"><a href="#17-supporter-portal"># 17. Supporter Portal</a></li><li class="toc-2"><a href="#18-alliance"># 18. Alliance</a></li><li class="toc-2"><a href="#19-public-pages-no-auth-required"># 19. Public Pages (No Auth Required)</a></li><li class="toc-2"><a href="#20-authentication"># 20. Authentication</a></li><li class="toc-2"><a href="#21-user-profile-preferences"># 21. User Profile &amp;amp; Preferences</a></li><li class="toc-2"><a href="#summary"># Summary</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

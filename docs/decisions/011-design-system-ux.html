@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADR-011: Design System &amp; UX Foundations · GreenGrass</title>
+<meta name="description" content="ADR-011: Design System &amp; UX Foundations — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../spec/product.html">Project: GreenGrass</a></li><li><a href="../spec/users.html">Users &amp; Roles</a></li><li><a href="../spec/workflows.html">Core Workflows</a></li><li><a href="../spec/geography.html">Target Geography</a></li><li><a href="../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../spec/integrations.html">External Integrations</a></li><li><a href="../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="./002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="./003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="./004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="./005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="./006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="./007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="./008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="./009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="./010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="./011-design-system-ux.html" aria-current="page" class="active">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="./012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="./013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="./014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="./015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="./016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="./ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Decisions</nav>
+    <article class="prose">
+<h1 id="adr-011-design-system-ux-foundations" tabindex="-1"><a class="heading-anchor" href="#adr-011-design-system-ux-foundations" aria-hidden="true">#</a> ADR-011: Design System &amp; UX Foundations</h1>
+<p><strong>Status:</strong> Accepted
+<strong>Date:</strong> 2026-03-03
+<strong>Sources:</strong> <code>design/ux/01-information-architecture/navigation-model.md</code>, <code>design/ux/03-design-system/foundations.md</code>, <code>design/ux/03-design-system/theming-strategy.md</code>, <code>design/ux/03-design-system/responsive-strategy.md</code></p>
+<h2 id="context" tabindex="-1"><a class="heading-anchor" href="#context" aria-hidden="true">#</a> Context</h2>
+<p>GreenGrass must run on low-end Android phones over 3G connections in the global south, while also providing a full desktop experience for campaign staff managing complex operations. The design system must support per-tenant branding (political campaigns need their colors and logos), RTL text direction, accessibility requirements, and a field mode interface optimized for one-handed walking use. Every design decision impacts performance, and performance is a survival requirement — a 10-second load on 3G means the volunteer at the door gives up.</p>
+<h2 id="decision" tabindex="-1"><a class="heading-anchor" href="#decision" aria-hidden="true">#</a> Decision</h2>
+<h3 id="desktop-hybrid-top-bar-sidebar-navigation" tabindex="-1"><a class="heading-anchor" href="#desktop-hybrid-top-bar-sidebar-navigation" aria-hidden="true">#</a> Desktop: hybrid top bar + sidebar navigation</h3>
+<p>Desktop uses a top bar for context (tenant identity, global search, sync status, notifications, profile) and a collapsible sidebar for role-adaptive feature navigation. The sidebar shows different items based on the user's role template — restricted features are absent, not greyed out. Sidebar sections are independently collapsible with persistent state per user.</p>
+<p>Mobile uses a bottom tab bar (4-5 role-adaptive tabs) with full-screen content and back/menu navigation in the top bar. Field mode is a full-screen takeover with no sidebar or tabs — just previous/next navigation, position indicator, and end shift + panic button.</p>
+<p><strong>Alternatives considered:</strong> Top bar only (no sidebar) was rejected because campaign platforms have too many feature areas for horizontal navigation alone. Bottom tab + hamburger menu was rejected for desktop because it hides navigation behind an extra click. Same navigation on all devices was rejected because phone, tablet, and desktop have fundamentally different interaction patterns.</p>
+<h3 id="system-font-stack-no-custom-fonts" tabindex="-1"><a class="heading-anchor" href="#system-font-stack-no-custom-fonts" aria-hidden="true">#</a> System font stack, no custom fonts</h3>
+<p>The platform uses <code>system-ui</code> with fallbacks to platform-specific fonts: Roboto (Android), San Francisco (iOS), Noto Sans (Unicode coverage). No custom web fonts are loaded. This provides zero font loading delay, best possible script coverage across Latin, Thai, Devanagari, and Arabic, and consistent rendering on each platform.</p>
+<p><strong>Alternatives considered:</strong> Custom web fonts (Inter, etc.) were considered and initially used, then rejected because they add load time on slow connections, require fallback handling, and don't provide as reliable coverage for Thai, Devanagari, and Arabic scripts as system fonts.</p>
+<h3 id="per-tenant-color-logo-customization-only" tabindex="-1"><a class="heading-anchor" href="#per-tenant-color-logo-customization-only" aria-hidden="true">#</a> Per-tenant color + logo customization only</h3>
+<p>Tenants can customize their primary color, logo, and favicon. Font, layout, component styles, and spacing are fixed. This prevents spacing/alignment breaks from tenant customization and reduces the testing matrix to color variants only.</p>
+<h3 id="automatic-derivative-color-generation-from-primary-color" tabindex="-1"><a class="heading-anchor" href="#automatic-derivative-color-generation-from-primary-color" aria-hidden="true">#</a> Automatic derivative color generation from primary color</h3>
+<p>The tenant's primary color automatically generates hover (10% darker), active (20% darker), subtle background (95% lighter), and on-primary text (white or black, whichever provides 4.5:1 contrast). If the brand color is too close to status colors (red/amber/green), the system warns during configuration. The color generation uses perceptual color algorithms (OKLCH preferred over HSL).</p>
+<h3 id="8px-base-spacing-unit-with-geometric-scale" tabindex="-1"><a class="heading-anchor" href="#8px-base-spacing-unit-with-geometric-scale" aria-hidden="true">#</a> 8px base spacing unit with geometric scale</h3>
+<p>All spacing uses a geometric scale anchored at 8px: 0, 1px, 2px, 4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px, 96px. Mobile margins are 16px; desktop margins are 32-64px. Consistent spacing creates visual rhythm and eliminates ad-hoc pixel values.</p>
+<h3 id="mobile-first-css-with-aggressive-code-splitting" tabindex="-1"><a class="heading-anchor" href="#mobile-first-css-with-aggressive-code-splitting" aria-hidden="true">#</a> Mobile-first CSS with aggressive code splitting</h3>
+<p>Base styles target the smallest viewport; enhancements are added via media queries. Breakpoints: 640px (large phones), 768px (tablets), 1024px (small laptops), 1280px (laptops), 1536px (large monitors). Code splitting is both route-based and feature-based — maps, charts, form builders, admin tools, and field mode are loaded only when needed.</p>
+<h3 id="performance-budgets-targeting-3g" tabindex="-1"><a class="heading-anchor" href="#performance-budgets-targeting-3g" aria-hidden="true">#</a> Performance budgets targeting 3G</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Budget</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial JS</td>
+<td>&lt;150KB gzipped</td>
+</tr>
+<tr>
+<td>CSS</td>
+<td>&lt;30KB</td>
+</tr>
+<tr>
+<td>First Contentful Paint</td>
+<td>&lt;2s on 3G</td>
+</tr>
+<tr>
+<td>Time to Interactive</td>
+<td>&lt;4s on 3G</td>
+</tr>
+<tr>
+<td>Per-route chunk</td>
+<td>&lt;50KB</td>
+</tr>
+<tr>
+<td>Web fonts</td>
+<td>0KB (system fonts)</td>
+</tr>
+</tbody>
+</table>
+<p>Images use WebP with PNG fallback, <code>srcset</code> for responsive sizing, lazy loading for avatars, and pre-cached tiles for maps. SVG for logos.</p>
+<p>The design system uses CSS custom properties (design tokens) for all visual values — never raw values. This enables per-tenant theming at runtime without code changes. The token architecture has three layers: primitive palette (raw colors, unused directly), semantic tokens (describe purpose: <code>--color-surface-primary</code>, <code>--color-text-secondary</code>), and theme overrides (per-tenant customization). Dark mode remaps surface/text/border tokens. Accessibility themes (high contrast, large text, reduced motion) are applied as data attributes.</p>
+<h2 id="consequences" tabindex="-1"><a class="heading-anchor" href="#consequences" aria-hidden="true">#</a> Consequences</h2>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>System fonts provide zero loading delay and the best script coverage — critical for multilingual, low-bandwidth contexts</li>
+<li>Per-tenant color-only customization keeps the testing matrix manageable while still allowing campaign branding</li>
+<li>Automatic derivative color generation ensures accessibility without requiring design expertise from campaign staff</li>
+<li>Performance budgets targeting 3G ensure the platform works on the actual networks and devices volunteers use</li>
+<li>Design token architecture enables runtime theming, dark mode, and accessibility themes through a single mechanism</li>
+</ul>
+<p><strong>Costs:</strong></p>
+<ul>
+<li>System font stack means the platform's typography varies slightly across operating systems</li>
+<li>Color-only customization may frustrate campaigns with strong brand identities that extend beyond color</li>
+<li>Aggressive code splitting requires careful dependency management to avoid waterfall loading</li>
+<li>150KB JS budget is extremely tight and will require ongoing vigilance as features are added</li>
+</ul>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>Every component must work across all breakpoints, in both LTR and RTL, with both light and dark themes</li>
+<li>Field mode touch targets (56px minimum) require separate layout treatment from standard mode (44px)</li>
+<li><code>prefers-reduced-motion</code> must be respected — all motion is functional only, no decorative animations</li>
+<li>Testing must prioritize budget Android devices (360x640) as the critical target</li>
+</ul>
+<p><strong>Related ADRs:</strong> <a href="./010-internationalization-localization.html">ADR-010</a> (RTL support via logical properties, multilingual font coverage), <a href="./006-field-operations-gotv.html">ADR-006</a> (field mode interface, touch targets), <a href="./001-platform-architecture.html">ADR-001</a> (mobile-first design)</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#context"># Context</a></li><li class="toc-2"><a href="#decision"># Decision</a></li><li class="toc-3"><a href="#desktop-hybrid-top-bar-sidebar-navigation"># Desktop: hybrid top bar + sidebar navigation</a></li><li class="toc-3"><a href="#system-font-stack-no-custom-fonts"># System font stack, no custom fonts</a></li><li class="toc-3"><a href="#per-tenant-color-logo-customization-only"># Per-tenant color + logo customization only</a></li><li class="toc-3"><a href="#automatic-derivative-color-generation-from-primary-color"># Automatic derivative color generation from primary color</a></li><li class="toc-3"><a href="#8px-base-spacing-unit-with-geometric-scale"># 8px base spacing unit with geometric scale</a></li><li class="toc-3"><a href="#mobile-first-css-with-aggressive-code-splitting"># Mobile-first CSS with aggressive code splitting</a></li><li class="toc-3"><a href="#performance-budgets-targeting-3g"># Performance budgets targeting 3G</a></li><li class="toc-2"><a href="#consequences"># Consequences</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

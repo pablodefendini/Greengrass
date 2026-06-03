@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notification Patterns · GreenGrass</title>
+<meta name="description" content="Notification Patterns — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="./pattern-catalog.html">Pattern Catalog</a></li><li><a href="./offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="./notification-patterns.html" aria-current="page" class="active">Notification Patterns</a></li><li><a href="./search-patterns.html">Search Patterns</a></li><li><a href="./settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="./security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="notification-patterns" tabindex="-1"><a class="heading-anchor" href="#notification-patterns" aria-hidden="true">#</a> Notification Patterns</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document defines how the platform delivers notifications to users — the notification center, delivery channels, priority levels, grouping, and persona-specific behavior. Notifications are the connective tissue of the platform — they tell users what happened, what needs attention, and what's coming up.</p>
+<p>The design constraint: notifications must be useful without being overwhelming. A Volunteer Coordinator during a busy event weekend might receive 50 notifications in an hour (volunteer signups, shift cancellations, check-in confirmations). An Org Admin during election day might receive 200. The system must surface what matters and suppress what doesn't.</p>
+<h2 id="notification-anatomy" tabindex="-1"><a class="heading-anchor" href="#notification-anatomy" aria-hidden="true">#</a> Notification Anatomy</h2>
+<p>Every notification has a consistent structure:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  [Icon]  Source · Time                      [⋯]     │
+│                                                      │
+│  Title (bold, concise — what happened)               │
+│  Body (1-2 lines — context and detail)               │
+│                                                      │
+│  [Primary Action]  [Secondary Action]                │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="fields" tabindex="-1"><a class="heading-anchor" href="#fields" aria-hidden="true">#</a> Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Icon</strong></td>
+<td>Visual identifier for the notification source</td>
+<td>💬 Messages, 🚨 Compliance, 📋 Shifts</td>
+</tr>
+<tr>
+<td><strong>Source</strong></td>
+<td>Feature area that generated the notification</td>
+<td>&quot;Fundraising,&quot; &quot;GOTV,&quot; &quot;Messaging&quot;</td>
+</tr>
+<tr>
+<td><strong>Time</strong></td>
+<td>Relative timestamp</td>
+<td>&quot;2 min ago,&quot; &quot;1 hour ago,&quot; &quot;Yesterday&quot;</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>What happened — concise, actionable</td>
+<td>&quot;New donation: $250 from Ana Martínez&quot;</td>
+</tr>
+<tr>
+<td><strong>Body</strong></td>
+<td>Context — enough to decide whether to act now</td>
+<td>&quot;Recurring · First donation in this campaign&quot;</td>
+</tr>
+<tr>
+<td><strong>Primary action</strong></td>
+<td>The most likely action</td>
+<td>&quot;View Donation&quot;</td>
+</tr>
+<tr>
+<td><strong>Secondary action</strong></td>
+<td>Alternative action</td>
+<td>&quot;Dismiss&quot;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="notification-center" tabindex="-1"><a class="heading-anchor" href="#notification-center" aria-hidden="true">#</a> Notification Center</h2>
+<h3 id="access" tabindex="-1"><a class="heading-anchor" href="#access" aria-hidden="true">#</a> Access</h3>
+<ul>
+<li><strong>Desktop:</strong> Bell icon in the header bar. Badge count shows unread notifications. Click opens a drawer from the right edge.</li>
+<li><strong>Mobile:</strong> Bell icon in the top bar. Tap opens a full-screen notification view.</li>
+</ul>
+<h3 id="layout" tabindex="-1"><a class="heading-anchor" href="#layout" aria-hidden="true">#</a> Layout</h3>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Notifications (12 unread)        [Mark all read]    │
+├──────────────────────────────────────────────────────┤
+│  [All]  [Messages]  [Shifts]  [Alerts]  [Other]     │  ← Filter tabs
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  TODAY                                                │
+│  ┌────────────────────────────────────────────────┐   │
+│  │  🚨 Compliance · 15 min ago                    │   │
+│  │  Contribution limit approaching                │   │
+│  │  John Smith: $2,700 of $2,900 limit used       │   │
+│  │  [Review]  [Dismiss]                           │   │
+│  └────────────────────────────────────────────────┘   │
+│  ┌────────────────────────────────────────────────┐   │
+│  │  📋 Shifts · 1 hour ago                        │   │
+│  │  Shift cancellation: Maria Lopez               │   │
+│  │  Tomorrow 2pm-6pm · Turf 12 · No replacement   │   │
+│  │  [Find Replacement]  [Dismiss]                 │   │
+│  └────────────────────────────────────────────────┘   │
+│                                                       │
+│  YESTERDAY                                            │
+│  ...                                                  │
+│                                                       │
+│  [Notification Preferences]                           │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="grouping" tabindex="-1"><a class="heading-anchor" href="#grouping" aria-hidden="true">#</a> Grouping</h3>
+<p>Notifications are grouped by time (Today, Yesterday, This Week, Older) and can be filtered by source category:</p>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Includes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All</td>
+<td>Everything</td>
+</tr>
+<tr>
+<td>Messages</td>
+<td>DMs, group messages, broadcasts, contextual threads</td>
+</tr>
+<tr>
+<td>Shifts</td>
+<td>Shift assignments, cancellations, reminders, check-in alerts</td>
+</tr>
+<tr>
+<td>Alerts</td>
+<td>Compliance flags, security alerts, sync errors, system issues</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>Event RSVPs, donation notifications, training completions, etc.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="behaviors" tabindex="-1"><a class="heading-anchor" href="#behaviors" aria-hidden="true">#</a> Behaviors</h3>
+<ul>
+<li><strong>Unread indicator</strong> — unread notifications have a colored left border or background tint. Read notifications are visually muted.</li>
+<li><strong>Mark as read</strong> — clicking a notification marks it as read. &quot;Mark all read&quot; button at the top.</li>
+<li><strong>Dismiss</strong> — removes the notification from the center. Does not affect the underlying event.</li>
+<li><strong>Deep link</strong> — tapping a notification navigates to the relevant screen (the donation detail, the shift management page, the conversation, etc.).</li>
+<li><strong>Persistent critical notifications</strong> — notifications marked as critical (compliance deadlines, security alerts) cannot be dismissed, only resolved by acting on them.</li>
+<li><strong>Badge count</strong> — shows on the bell icon. On mobile, also appears on the relevant bottom tab (Messages tab shows unread message count, Shifts tab shows pending shift notifications).</li>
+</ul>
+<hr>
+<h2 id="priority-levels" tabindex="-1"><a class="heading-anchor" href="#priority-levels" aria-hidden="true">#</a> Priority Levels</h2>
+<h3 id="definitions" tabindex="-1"><a class="heading-anchor" href="#definitions" aria-hidden="true">#</a> Definitions</h3>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Visual Treatment</th>
+<th>Persistence</th>
+<th>Sound/Vibration</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Critical</strong></td>
+<td>Red accent, cannot dismiss</td>
+<td>Until resolved</td>
+<td>Yes (unless muted)</td>
+<td>Security breach, payment processor down, compliance violation</td>
+</tr>
+<tr>
+<td><strong>High</strong></td>
+<td>Amber accent, prominent</td>
+<td>7 days</td>
+<td>Yes (unless muted)</td>
+<td>Compliance flag, shift cancellation with no replacement, GOTV escalation</td>
+</tr>
+<tr>
+<td><strong>Normal</strong></td>
+<td>Standard</td>
+<td>30 days</td>
+<td>Push notification (configurable)</td>
+<td>New donation, volunteer signup, message received, event RSVP</td>
+</tr>
+<tr>
+<td><strong>Low</strong></td>
+<td>Subtle, may be grouped</td>
+<td>7 days</td>
+<td>None</td>
+<td>Training completion, data import finished, weekly summary</td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-configurable-priority" tabindex="-1"><a class="heading-anchor" href="#user-configurable-priority" aria-hidden="true">#</a> User-Configurable Priority</h3>
+<p>Per the decision in <code>messaging.md</code>, users can configure notification priority for each source. The platform provides sensible defaults per persona, and users can adjust:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Notification Preferences                             │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  Messages                                             │
+│    Direct messages    [● High  ▾]  [Push ✓] [Email ✓]│
+│    Group messages     [● Normal ▾] [Push ✓] [Email ☐]│
+│    Broadcasts         [● Normal ▾] [Push ☐] [Email ✓]│
+│                                                       │
+│  Shifts                                               │
+│    Shift reminders    [● High  ▾]  [Push ✓] [Email ✓]│
+│    Cancellations      [● High  ▾]  [Push ✓] [Email ✓]│
+│    New assignments    [● Normal ▾] [Push ✓] [Email ☐]│
+│                                                       │
+│  Fundraising                                          │
+│    New donations      [● Normal ▾] [Push ☐] [Email ✓]│
+│    Compliance flags   [● Critical] [Push ✓] [Email ✓]│  ← Cannot change
+│    ...                                                │
+│                                                       │
+│  [Reset to Defaults]                                  │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Non-configurable:</strong> Some notifications are always critical and cannot be downgraded: security alerts, compliance violations, system errors. These are marked &quot;Cannot change&quot; in the preferences.</p>
+<hr>
+<h2 id="delivery-channels" tabindex="-1"><a class="heading-anchor" href="#delivery-channels" aria-hidden="true">#</a> Delivery Channels</h2>
+<p>Notifications reach users through multiple channels. Which channels are available depends on the notification source and user preferences.</p>
+<h3 id="channel-matrix" tabindex="-1"><a class="heading-anchor" href="#channel-matrix" aria-hidden="true">#</a> Channel Matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Latency</th>
+<th>Use Case</th>
+<th>Available To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>In-app</strong></td>
+<td>Immediate</td>
+<td>All notifications</td>
+<td>All users</td>
+</tr>
+<tr>
+<td><strong>Push</strong></td>
+<td>Immediate</td>
+<td>Time-sensitive notifications</td>
+<td>Mobile users with app installed</td>
+</tr>
+<tr>
+<td><strong>Email</strong></td>
+<td>Minutes</td>
+<td>Summaries, detailed content, receipts</td>
+<td>All users with email</td>
+</tr>
+<tr>
+<td><strong>SMS</strong></td>
+<td>Immediate</td>
+<td>Critical-only alerts for users without app</td>
+<td>Opt-in only, critical events</td>
+</tr>
+</tbody>
+</table>
+<h3 id="channel-selection-logic" tabindex="-1"><a class="heading-anchor" href="#channel-selection-logic" aria-hidden="true">#</a> Channel Selection Logic</h3>
+<ol>
+<li><strong>In-app</strong> — always delivered. This is the canonical notification.</li>
+<li><strong>Push</strong> — delivered if the user has push enabled and the notification priority is &gt;= their configured threshold for that source.</li>
+<li><strong>Email</strong> — delivered if the user has email notifications enabled for that source. Emails may be batched (see Digests below).</li>
+<li><strong>SMS</strong> — delivered only for critical notifications when the user has opted in to SMS alerts. Used as a last-resort channel for users who may not have the app open (e.g., Org Admin during a security incident).</li>
+</ol>
+<h3 id="duplicate-prevention" tabindex="-1"><a class="heading-anchor" href="#duplicate-prevention" aria-hidden="true">#</a> Duplicate Prevention</h3>
+<p>If a user sees a notification via push and then opens the app, the in-app notification should already be marked as &quot;seen&quot; (not necessarily &quot;read&quot; — they saw the push but may not have acted on it). This prevents the notification center from showing notifications the user already dismissed via push.</p>
+<hr>
+<h2 id="persona-specific-defaults" tabindex="-1"><a class="heading-anchor" href="#persona-specific-defaults" aria-hidden="true">#</a> Persona-Specific Defaults</h2>
+<p>Each persona has notification defaults tuned to their role and typical usage pattern.</p>
+<h3 id="org-admin" tabindex="-1"><a class="heading-anchor" href="#org-admin" aria-hidden="true">#</a> Org Admin</h3>
+<p>Sees the broadest set of notifications — system health, compliance, and cross-functional alerts.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Default Priority</th>
+<th>Default Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Security alerts</td>
+<td>Critical</td>
+<td>In-app, Push, Email, SMS</td>
+</tr>
+<tr>
+<td>Compliance flags</td>
+<td>Critical</td>
+<td>In-app, Push, Email</td>
+</tr>
+<tr>
+<td>System issues (sync, integrations)</td>
+<td>High</td>
+<td>In-app, Push, Email</td>
+</tr>
+<tr>
+<td>Billing</td>
+<td>High</td>
+<td>In-app, Email</td>
+</tr>
+<tr>
+<td>Staff activity (new hires, role changes)</td>
+<td>Normal</td>
+<td>In-app, Email</td>
+</tr>
+<tr>
+<td>Alliance requests</td>
+<td>Normal</td>
+<td>In-app, Email</td>
+</tr>
+</tbody>
+</table>
+<h3 id="communications-director" tabindex="-1"><a class="heading-anchor" href="#communications-director" aria-hidden="true">#</a> Communications Director</h3>
+<p>Focused on content delivery and engagement.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Default Priority</th>
+<th>Default Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Email delivery failures</td>
+<td>High</td>
+<td>In-app, Push, Email</td>
+</tr>
+<tr>
+<td>Content approval responses</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Campaign performance alerts</td>
+<td>Normal</td>
+<td>In-app, Email</td>
+</tr>
+<tr>
+<td>Press coverage</td>
+<td>Normal</td>
+<td>In-app</td>
+</tr>
+</tbody>
+</table>
+<h3 id="finance-director" tabindex="-1"><a class="heading-anchor" href="#finance-director" aria-hidden="true">#</a> Finance Director</h3>
+<p>Focused on money and compliance.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Default Priority</th>
+<th>Default Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compliance flags</td>
+<td>Critical</td>
+<td>In-app, Push, Email</td>
+</tr>
+<tr>
+<td>Payment processor issues</td>
+<td>Critical</td>
+<td>In-app, Push, Email</td>
+</tr>
+<tr>
+<td>Large donations (above threshold)</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Recurring donation failures</td>
+<td>High</td>
+<td>In-app, Email</td>
+</tr>
+<tr>
+<td>Daily donation summary</td>
+<td>Low</td>
+<td>Email</td>
+</tr>
+</tbody>
+</table>
+<h3 id="field-director" tabindex="-1"><a class="heading-anchor" href="#field-director" aria-hidden="true">#</a> Field Director</h3>
+<p>Focused on operations and GOTV.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Default Priority</th>
+<th>Default Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GOTV escalations</td>
+<td>Critical</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Active operation alerts</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Canvassing progress milestones</td>
+<td>Normal</td>
+<td>In-app</td>
+</tr>
+<tr>
+<td>Poll watcher issues</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+</tbody>
+</table>
+<h3 id="volunteer-coordinator" tabindex="-1"><a class="heading-anchor" href="#volunteer-coordinator" aria-hidden="true">#</a> Volunteer Coordinator</h3>
+<p>Focused on people.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Default Priority</th>
+<th>Default Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shift cancellations</td>
+<td>High</td>
+<td>In-app, Push, Email</td>
+</tr>
+<tr>
+<td>New volunteer signups</td>
+<td>Normal</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>No-show alerts</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Training completions</td>
+<td>Low</td>
+<td>In-app</td>
+</tr>
+<tr>
+<td>Event check-in milestones</td>
+<td>Normal</td>
+<td>In-app</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-manager" tabindex="-1"><a class="heading-anchor" href="#data-manager" aria-hidden="true">#</a> Data Manager</h3>
+<p>Focused on data operations.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Default Priority</th>
+<th>Default Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Import completion</td>
+<td>Normal</td>
+<td>In-app, Email</td>
+</tr>
+<tr>
+<td>Dedup queue updates</td>
+<td>Normal</td>
+<td>In-app</td>
+</tr>
+<tr>
+<td>Data quality alerts</td>
+<td>High</td>
+<td>In-app, Email</td>
+</tr>
+</tbody>
+</table>
+<h3 id="volunteer" tabindex="-1"><a class="heading-anchor" href="#volunteer" aria-hidden="true">#</a> Volunteer</h3>
+<p>Minimal, action-oriented notifications.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Default Priority</th>
+<th>Default Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shift reminders</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Assignment changes</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Messages from Team Lead</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Training assignments</td>
+<td>Normal</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Event reminders</td>
+<td>Normal</td>
+<td>In-app, Push</td>
+</tr>
+</tbody>
+</table>
+<h3 id="team-lead" tabindex="-1"><a class="heading-anchor" href="#team-lead" aria-hidden="true">#</a> Team Lead</h3>
+<p>Everything a Volunteer gets, plus team management.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Default Priority</th>
+<th>Default Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Team member issues</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Team no-shows</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>War room escalation requests (GOTV)</td>
+<td>Critical</td>
+<td>In-app, Push</td>
+</tr>
+</tbody>
+</table>
+<h3 id="candidate" tabindex="-1"><a class="heading-anchor" href="#candidate" aria-hidden="true">#</a> Candidate</h3>
+<p>Curated, important-only.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Default Priority</th>
+<th>Default Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approval requests</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Briefings from staff</td>
+<td>High</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Key staff messages</td>
+<td>Normal</td>
+<td>In-app, Push</td>
+</tr>
+<tr>
+<td>Campaign milestone summaries</td>
+<td>Low</td>
+<td>In-app</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supporter" tabindex="-1"><a class="heading-anchor" href="#supporter" aria-hidden="true">#</a> Supporter</h3>
+<p>Minimal, transactional.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Default Priority</th>
+<th>Default Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Donation receipts</td>
+<td>Normal</td>
+<td>Email</td>
+</tr>
+<tr>
+<td>Recurring donation status changes</td>
+<td>High</td>
+<td>Email, Push (if opted in)</td>
+</tr>
+<tr>
+<td>Event reminders</td>
+<td>Normal</td>
+<td>Email, Push (if opted in)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="email-digests" tabindex="-1"><a class="heading-anchor" href="#email-digests" aria-hidden="true">#</a> Email Digests</h2>
+<p>For notifications that don't require immediate attention, the platform offers email digests that batch notifications into periodic summaries.</p>
+<h3 id="digest-options" tabindex="-1"><a class="heading-anchor" href="#digest-options" aria-hidden="true">#</a> Digest Options</h3>
+<table>
+<thead>
+<tr>
+<th>Frequency</th>
+<th>Content</th>
+<th>Default Recipients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Real-time</strong></td>
+<td>Each notification sent immediately</td>
+<td>Security alerts, compliance flags</td>
+</tr>
+<tr>
+<td><strong>Hourly</strong></td>
+<td>Summary of notifications from the past hour</td>
+<td>Not default — user opt-in</td>
+</tr>
+<tr>
+<td><strong>Daily</strong></td>
+<td>End-of-day summary</td>
+<td>Finance Director (donation summary), Volunteer Coordinator (daily volunteer activity)</td>
+</tr>
+<tr>
+<td><strong>Weekly</strong></td>
+<td>Weekly metrics and highlights</td>
+<td>Candidate (campaign progress), Org Admin (weekly overview)</td>
+</tr>
+</tbody>
+</table>
+<p>Users configure their digest preferences in notification settings. Digest emails are well-formatted summaries, not just lists of notifications — they include context, trends, and direct links to the relevant screens.</p>
+<hr>
+<h2 id="election-day-notification-behavior" tabindex="-1"><a class="heading-anchor" href="#election-day-notification-behavior" aria-hidden="true">#</a> Election Day Notification Behavior</h2>
+<p>When GOTV/election day mode is activated, the notification system shifts:</p>
+<h3 id="changes" tabindex="-1"><a class="heading-anchor" href="#changes" aria-hidden="true">#</a> Changes</h3>
+<ul>
+<li><strong>GOTV notifications elevated.</strong> All GOTV-related notifications (turnout updates, escalations, resource reallocation suggestions, ride requests, poll watcher issues) are promoted to high priority regardless of user configuration.</li>
+<li><strong>Non-GOTV notifications suppressed.</strong> Normal operational notifications (new volunteer signups, data imports, routine messages) are batched into a post-election digest. They don't disappear — they're deferred.</li>
+<li><strong>War room feed.</strong> War room staff see a continuous notification feed integrated into the war room dashboard. This is a live feed, not the standard notification center — it auto-scrolls with new events.</li>
+<li><strong>Escalation notifications are modal.</strong> Critical GOTV escalations (poll watcher safety issue, major turnout anomaly) appear as modal dialogs that require acknowledgment — they can't be missed by scrolling past.</li>
+</ul>
+<h3 id="post-election" tabindex="-1"><a class="heading-anchor" href="#post-election" aria-hidden="true">#</a> Post-Election</h3>
+<p>After election day mode deactivates, deferred notifications are delivered as a digest email (&quot;Here's what happened while you were in election day mode&quot;). The notification center returns to normal behavior.</p>
+<hr>
+<h2 id="notification-related-ui-elements" tabindex="-1"><a class="heading-anchor" href="#notification-related-ui-elements" aria-hidden="true">#</a> Notification-Related UI Elements</h2>
+<h3 id="badge-counts" tabindex="-1"><a class="heading-anchor" href="#badge-counts" aria-hidden="true">#</a> Badge Counts</h3>
+<p>Badge counts appear on:</p>
+<ul>
+<li><strong>Bell icon</strong> (header bar) — total unread count</li>
+<li><strong>Mobile bottom tabs</strong> — per-tab counts where relevant:
+<ul>
+<li>Messages tab: unread message count</li>
+<li>Shifts tab: pending shift notifications</li>
+<li>Approvals tab (Candidate): pending approval count</li>
+</ul>
+</li>
+<li><strong>Sidebar items</strong> (desktop) — subtle count badges on relevant nav items</li>
+</ul>
+<h3 id="toast-notifications" tabindex="-1"><a class="heading-anchor" href="#toast-notifications" aria-hidden="true">#</a> Toast Notifications</h3>
+<p>Transient notifications for immediate feedback (not persisted in the notification center):</p>
+<pre><code>┌──────────────────────────────────────┐
+│  ✓  Contact saved                    │  ← Success toast (3 seconds)
+└──────────────────────────────────────┘
+
+┌──────────────────────────────────────┐
+│  ⚠  Save failed · Retry             │  ← Error toast (persistent until action)
+└──────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>Success toasts</strong> — appear briefly (3 seconds), auto-dismiss. Confirm that an action completed.</li>
+<li><strong>Error toasts</strong> — persist until dismissed or retried. Include a retry action for recoverable errors.</li>
+<li><strong>Position</strong> — bottom-center on desktop, top-center on mobile (avoid bottom tab bar conflict).</li>
+</ul>
+<h3 id="notification-sounds" tabindex="-1"><a class="heading-anchor" href="#notification-sounds" aria-hidden="true">#</a> Notification Sounds</h3>
+<ul>
+<li><strong>Critical notifications</strong> — system alert sound (respects device mute settings)</li>
+<li><strong>High notifications</strong> — subtle notification sound</li>
+<li><strong>Normal/Low</strong> — no sound (push vibration only, if enabled)</li>
+<li><strong>Field mode</strong> — all sounds suppressed except critical (volunteer shouldn't be distracted while canvassing)</li>
+</ul>
+<hr>
+<h2 id="do-not-disturb" tabindex="-1"><a class="heading-anchor" href="#do-not-disturb" aria-hidden="true">#</a> Do Not Disturb</h2>
+<p>Users can enable Do Not Disturb mode:</p>
+<ul>
+<li><strong>Manual toggle</strong> — accessible from the user menu</li>
+<li><strong>Scheduled</strong> — set hours (e.g., 10pm-7am)</li>
+<li><strong>During shifts</strong> — automatically enabled during active field mode shifts (only critical and shift-related notifications come through)</li>
+</ul>
+<p>When DND is active:</p>
+<ul>
+<li>Push notifications are silenced</li>
+<li>In-app notifications still accumulate (visible when the user checks)</li>
+<li>Critical notifications break through DND (security, compliance)</li>
+<li>A &quot;DND active&quot; indicator appears subtly in the header</li>
+</ul>
+<hr>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Notification lifespan.</strong> How long should notifications persist in the notification center? Currently proposed: 30 days for normal, 7 days for low, until resolved for critical. Is 30 days too long?</p>
+</li>
+<li>
+<p><strong>Cross-device notification sync.</strong> If a user dismisses a notification on their phone, should it also be dismissed on their desktop? (Yes, probably — notifications should sync across devices.)</p>
+</li>
+<li>
+<p><strong>Notification analytics.</strong> Should the platform track notification engagement rates (what percentage of notifications are opened, acted on, dismissed)? This data could inform future priority defaults and digest timing.</p>
+</li>
+</ol>
+<!-- REVISIT: The exact notification sources per persona will grow as features are implemented. This document defines the patterns and defaults; the implementation will add specific notification types as each feature is built. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#notification-anatomy"># Notification Anatomy</a></li><li class="toc-3"><a href="#fields"># Fields</a></li><li class="toc-2"><a href="#notification-center"># Notification Center</a></li><li class="toc-3"><a href="#access"># Access</a></li><li class="toc-3"><a href="#layout"># Layout</a></li><li class="toc-3"><a href="#grouping"># Grouping</a></li><li class="toc-3"><a href="#behaviors"># Behaviors</a></li><li class="toc-2"><a href="#priority-levels"># Priority Levels</a></li><li class="toc-3"><a href="#definitions"># Definitions</a></li><li class="toc-3"><a href="#user-configurable-priority"># User-Configurable Priority</a></li><li class="toc-2"><a href="#delivery-channels"># Delivery Channels</a></li><li class="toc-3"><a href="#channel-matrix"># Channel Matrix</a></li><li class="toc-3"><a href="#channel-selection-logic"># Channel Selection Logic</a></li><li class="toc-3"><a href="#duplicate-prevention"># Duplicate Prevention</a></li><li class="toc-2"><a href="#persona-specific-defaults"># Persona-Specific Defaults</a></li><li class="toc-3"><a href="#org-admin"># Org Admin</a></li><li class="toc-3"><a href="#communications-director"># Communications Director</a></li><li class="toc-3"><a href="#finance-director"># Finance Director</a></li><li class="toc-3"><a href="#field-director"># Field Director</a></li><li class="toc-3"><a href="#volunteer-coordinator"># Volunteer Coordinator</a></li><li class="toc-3"><a href="#data-manager"># Data Manager</a></li><li class="toc-3"><a href="#volunteer"># Volunteer</a></li><li class="toc-3"><a href="#team-lead"># Team Lead</a></li><li class="toc-3"><a href="#candidate"># Candidate</a></li><li class="toc-3"><a href="#supporter"># Supporter</a></li><li class="toc-2"><a href="#email-digests"># Email Digests</a></li><li class="toc-3"><a href="#digest-options"># Digest Options</a></li><li class="toc-2"><a href="#election-day-notification-behavior"># Election Day Notification Behavior</a></li><li class="toc-3"><a href="#changes"># Changes</a></li><li class="toc-3"><a href="#post-election"># Post-Election</a></li><li class="toc-2"><a href="#notification-related-ui-elements"># Notification-Related UI Elements</a></li><li class="toc-3"><a href="#badge-counts"># Badge Counts</a></li><li class="toc-3"><a href="#toast-notifications"># Toast Notifications</a></li><li class="toc-3"><a href="#notification-sounds"># Notification Sounds</a></li><li class="toc-2"><a href="#do-not-disturb"># Do Not Disturb</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offline &amp; Sync Patterns · GreenGrass</title>
+<meta name="description" content="Offline &amp; Sync Patterns — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="./pattern-catalog.html">Pattern Catalog</a></li><li><a href="./offline-sync-patterns.html" aria-current="page" class="active">Offline &amp; Sync Patterns</a></li><li><a href="./notification-patterns.html">Notification Patterns</a></li><li><a href="./search-patterns.html">Search Patterns</a></li><li><a href="./settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="./security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="offline-sync-patterns" tabindex="-1"><a class="heading-anchor" href="#offline-sync-patterns" aria-hidden="true">#</a> Offline &amp; Sync Patterns</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document defines how the platform communicates connectivity status, data freshness, sync progress, and conflict resolution to users. Offline support is a first-class feature, not a degraded fallback — these patterns must make offline operation feel natural and trustworthy.</p>
+<p>The design target: a volunteer canvassing door-to-door with intermittent connectivity should never wonder &quot;is my data current?&quot; or &quot;did my work get saved?&quot; The UI must answer both questions at a glance, every moment.</p>
+<h2 id="connectivity-states" tabindex="-1"><a class="heading-anchor" href="#connectivity-states" aria-hidden="true">#</a> Connectivity States</h2>
+<p>The platform recognizes five connectivity states. The UI treatment differs by context (standard app vs. field mode).</p>
+<h3 id="state-definitions" tabindex="-1"><a class="heading-anchor" href="#state-definitions" aria-hidden="true">#</a> State Definitions</h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Condition</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Connected</strong></td>
+<td>Real-time connection to server. Sync active.</td>
+<td>Normal operation</td>
+</tr>
+<tr>
+<td><strong>Connected (stale)</strong></td>
+<td>Connection exists but last successful sync &gt;5 min ago</td>
+<td>Transitional — usually resolves quickly</td>
+</tr>
+<tr>
+<td><strong>Syncing</strong></td>
+<td>Actively syncing data (push or pull)</td>
+<td>Brief — seconds to ~1 minute</td>
+</tr>
+<tr>
+<td><strong>Offline</strong></td>
+<td>No server connection. Local-only operation.</td>
+<td>Minutes to hours</td>
+</tr>
+<tr>
+<td><strong>Sync error</strong></td>
+<td>Connection exists but sync is failing</td>
+<td>Until resolved or retried</td>
+</tr>
+</tbody>
+</table>
+<h3 id="standard-app-indicator" tabindex="-1"><a class="heading-anchor" href="#standard-app-indicator" aria-hidden="true">#</a> Standard App Indicator</h3>
+<p>In the header bar, a compact indicator shows current state:</p>
+<pre><code>Connected:       [●]                       (green dot, no text — unobtrusive default)
+Stale:           [● Last sync: 8 min ago]  (amber dot + timestamp)
+Syncing:         [↻]                       (animated sync icon, brief)
+Offline:         [◌ Offline]               (grey dot + label, persistent)
+Sync error:      [⚠ Sync failed · Retry]  (red icon + action link)
+</code></pre>
+<p>Tapping the indicator in any state opens a sync detail panel showing:</p>
+<ul>
+<li>Time of last successful sync</li>
+<li>Number of pending local changes (queued for upload)</li>
+<li>Current sync progress (if syncing)</li>
+<li>Error details (if error state)</li>
+<li>&quot;Sync now&quot; manual trigger</li>
+</ul>
+<h3 id="field-mode-indicator" tabindex="-1"><a class="heading-anchor" href="#field-mode-indicator" aria-hidden="true">#</a> Field Mode Indicator</h3>
+<p>In field mode, the sync indicator is larger and more prominent — stale data during canvassing is operationally dangerous (you might knock a door that was already knocked by another volunteer).</p>
+<pre><code>Connected:       [● Synced 30s ago]        (green, with timestamp always visible)
+Stale:           [● Synced 12 min ago]     (amber, growing urgency as time passes)
+Syncing:         [↻ Syncing...]            (animated, full-width bar)
+Offline:         [◌ Offline · 47 min]      (grey, with elapsed offline time)
+Sync error:      [⚠ Sync failed · Retry]  (red, full-width bar, impossible to miss)
+</code></pre>
+<p><strong>Why the timestamp is always visible in field mode:</strong> In the standard app, &quot;connected&quot; needs no annotation — the user trusts that the app is live. In field mode, the volunteer needs to know <em>how</em> live. &quot;Synced 30 seconds ago&quot; vs. &quot;synced 12 minutes ago&quot; is the difference between a reliable walk list and one that might have stale assignments.</p>
+<hr>
+<h2 id="data-freshness" tabindex="-1"><a class="heading-anchor" href="#data-freshness" aria-hidden="true">#</a> Data Freshness</h2>
+<h3 id="freshness-indicators-on-records" tabindex="-1"><a class="heading-anchor" href="#freshness-indicators-on-records" aria-hidden="true">#</a> Freshness Indicators on Records</h3>
+<p>When viewing records that may be stale (cached from a previous sync), the UI shows a freshness indicator:</p>
+<pre><code>┌────────────────────────────────────────┐
+│  Ana Martínez                          │
+│  Last updated: 2 hours ago  [↻ Refresh]│
+│                                        │
+│  Phone: (787) 555-0123                 │
+│  Address: Calle Sol 45, San Juan       │
+│  Support score: 4                      │
+│  Last contact: Jan 15 (canvassing)     │
+└────────────────────────────────────────┘
+</code></pre>
+<p><strong>Rules:</strong></p>
+<ul>
+<li>Records updated within the last sync cycle: no freshness indicator (current)</li>
+<li>Records &gt;1 hour since last update: subtle timestamp (&quot;Last updated: 2 hours ago&quot;)</li>
+<li>Records &gt;24 hours since last update: amber indicator (&quot;Data may be outdated&quot;)</li>
+<li>Records &gt;7 days since last update: prominent warning (&quot;Stale data — sync required&quot;)</li>
+</ul>
+<h3 id="freshness-in-field-mode" tabindex="-1"><a class="heading-anchor" href="#freshness-in-field-mode" aria-hidden="true">#</a> Freshness in Field Mode</h3>
+<p>Walk list records in field mode show freshness differently — assignment status matters more than record age:</p>
+<ul>
+<li><strong>Assigned to you, synced recently:</strong> No indicator (trust the assignment)</li>
+<li><strong>Assigned to you, but another volunteer may have visited since last sync:</strong> Amber badge (&quot;May have been visited — check before knocking&quot;)</li>
+<li><strong>Re-assigned since your last sync:</strong> Red badge (&quot;Removed from your list — skip&quot;) — with the actual update applied on next sync</li>
+</ul>
+<hr>
+<h2 id="pending-changes-queue" tabindex="-1"><a class="heading-anchor" href="#pending-changes-queue" aria-hidden="true">#</a> Pending Changes Queue</h2>
+<p>When the user makes changes offline (recording a canvassing interaction, composing a message, updating a contact), changes are saved locally and queued for sync.</p>
+<h3 id="queue-indicator" tabindex="-1"><a class="heading-anchor" href="#queue-indicator" aria-hidden="true">#</a> Queue Indicator</h3>
+<p>The sync detail panel shows pending changes:</p>
+<pre><code>┌──────────────────────────────────────┐
+│  Pending Changes (7)                 │
+│                                      │
+│  3 canvassing interactions           │
+│  2 contact updates                   │
+│  1 message (queued)                  │
+│  1 event check-in                    │
+│                                      │
+│  These changes will upload when      │
+│  you're back online.                 │
+│                                      │
+│  [Sync Now]  (greyed out if offline) │
+└──────────────────────────────────────┘
+</code></pre>
+<h3 id="change-status-icons" tabindex="-1"><a class="heading-anchor" href="#change-status-icons" aria-hidden="true">#</a> Change Status Icons</h3>
+<p>Each pending change shows its status:</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>◌</td>
+<td>Pending</td>
+<td>Saved locally, waiting for connectivity</td>
+</tr>
+<tr>
+<td>↻</td>
+<td>Uploading</td>
+<td>Currently being sent to server</td>
+</tr>
+<tr>
+<td>✓</td>
+<td>Synced</td>
+<td>Successfully uploaded</td>
+</tr>
+<tr>
+<td>⚠</td>
+<td>Conflict</td>
+<td>Server has a newer version — needs resolution</td>
+</tr>
+<tr>
+<td>✗</td>
+<td>Failed</td>
+<td>Upload failed — will retry</td>
+</tr>
+</tbody>
+</table>
+<h3 id="in-context-indicators" tabindex="-1"><a class="heading-anchor" href="#in-context-indicators" aria-hidden="true">#</a> In-Context Indicators</h3>
+<p>Records with pending local changes show a subtle indicator in list and detail views:</p>
+<pre><code>│  Ana Martínez        ◌ Edited locally  │
+</code></pre>
+<p>This tells the user: &quot;Your changes are saved on this device but haven't reached the server yet.&quot; It's informational, not alarming — local changes are the normal state during offline operation.</p>
+<hr>
+<h2 id="sync-behavior" tabindex="-1"><a class="heading-anchor" href="#sync-behavior" aria-hidden="true">#</a> Sync Behavior</h2>
+<h3 id="automatic-sync" tabindex="-1"><a class="heading-anchor" href="#automatic-sync" aria-hidden="true">#</a> Automatic Sync</h3>
+<p>When connectivity is available, the app syncs automatically:</p>
+<ul>
+<li><strong>On app launch:</strong> Full sync of any changes since last session</li>
+<li><strong>In background:</strong> Incremental sync every 60 seconds (standard app) or 30 seconds (field mode)</li>
+<li><strong>On significant action:</strong> Immediate sync attempt after creating/updating a record (if online)</li>
+<li><strong>On connectivity restore:</strong> Full sync when transitioning from offline to online</li>
+</ul>
+<h3 id="manual-sync" tabindex="-1"><a class="heading-anchor" href="#manual-sync" aria-hidden="true">#</a> Manual Sync</h3>
+<p>A &quot;Sync Now&quot; action is available:</p>
+<ul>
+<li>In the sync detail panel (tap the sync indicator)</li>
+<li>In field mode, as a button in the field header</li>
+<li>Pull-to-refresh on list views triggers a sync</li>
+</ul>
+<h3 id="sync-progress" tabindex="-1"><a class="heading-anchor" href="#sync-progress" aria-hidden="true">#</a> Sync Progress</h3>
+<p>During a sync with significant data (initial sync, post-offline bulk sync), show progress:</p>
+<pre><code>┌──────────────────────────────────────┐
+│  Syncing...                          │
+│  ████████████░░░░░░  67%             │
+│  Uploading 5 of 7 changes           │
+│  Downloading updated walk list       │
+└──────────────────────────────────────┘
+</code></pre>
+<p>For routine incremental syncs (small, fast), no progress indicator — just the brief animated sync icon in the header.</p>
+<hr>
+<h2 id="conflict-resolution" tabindex="-1"><a class="heading-anchor" href="#conflict-resolution" aria-hidden="true">#</a> Conflict Resolution</h2>
+<p>Conflicts occur when the same record is modified both locally and on the server before a sync. The event sourcing architecture (from <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a>) handles most conflicts automatically, but some require user attention.</p>
+<h3 id="automatic-resolution" tabindex="-1"><a class="heading-anchor" href="#automatic-resolution" aria-hidden="true">#</a> Automatic Resolution</h3>
+<p>The server resolves most conflicts using domain-specific rules:</p>
+<ul>
+<li><strong>Last-write-wins</strong> for simple fields (phone number, address, status)</li>
+<li><strong>Additive merge</strong> for interaction history (canvassing responses are never lost — both versions are kept)</li>
+<li><strong>Server-wins</strong> for assignment changes (if a turf is re-assigned, the server's assignment takes priority)</li>
+<li><strong>Client-wins</strong> for in-progress field work (if a volunteer is mid-shift, their local data takes priority until the shift ends)</li>
+</ul>
+<h3 id="user-facing-conflicts" tabindex="-1"><a class="heading-anchor" href="#user-facing-conflicts" aria-hidden="true">#</a> User-Facing Conflicts</h3>
+<p>Rare, but possible. When automatic resolution isn't sufficient, the user sees a conflict notification:</p>
+<pre><code>┌──────────────────────────────────────┐
+│  ⚠ Sync Conflict                    │
+│                                      │
+│  Contact: Ana Martínez               │
+│  Phone number was updated by another │
+│  user while you were offline.        │
+│                                      │
+│  Your version:  (787) 555-0123       │
+│  Server version: (787) 555-0456      │
+│                                      │
+│  [Keep Mine]  [Keep Theirs]  [Both]  │
+└──────────────────────────────────────┘
+</code></pre>
+<p><strong>Rules for conflict presentation:</strong></p>
+<ul>
+<li>Show only conflicts the user can meaningfully resolve (don't surface system-level conflicts)</li>
+<li>Default to the safer option (if in doubt, keep both versions and let a human sort it out)</li>
+<li>Conflicts queue in the notification system and persist until resolved</li>
+<li>Never block the user from continuing to work while conflicts are pending</li>
+</ul>
+<hr>
+<h2 id="offline-available-features" tabindex="-1"><a class="heading-anchor" href="#offline-available-features" aria-hidden="true">#</a> Offline-Available Features</h2>
+<h3 id="feature-availability-matrix" tabindex="-1"><a class="heading-anchor" href="#feature-availability-matrix" aria-hidden="true">#</a> Feature Availability Matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Online</th>
+<th>Offline</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Field mode (canvassing)</td>
+<td>Full</td>
+<td>Full</td>
+<td>Walk list pre-downloaded on shift start</td>
+</tr>
+<tr>
+<td>Field mode (voter registration)</td>
+<td>Full</td>
+<td>Full</td>
+<td>Forms work locally, queue submission</td>
+</tr>
+<tr>
+<td>Field mode (GOTV door knocking)</td>
+<td>Full</td>
+<td>Full</td>
+<td>Same as canvassing</td>
+</tr>
+<tr>
+<td>Event check-in</td>
+<td>Full</td>
+<td>Full</td>
+<td>Attendee list pre-downloaded</td>
+</tr>
+<tr>
+<td>Read messages</td>
+<td>Full</td>
+<td>Cached</td>
+<td>Shows previously synced messages</td>
+</tr>
+<tr>
+<td>Compose messages</td>
+<td>Full</td>
+<td>Queue</td>
+<td>Composed locally, sent on sync</td>
+</tr>
+<tr>
+<td>View contacts</td>
+<td>Full</td>
+<td>Cached</td>
+<td>Read-only, previously synced contacts</td>
+</tr>
+<tr>
+<td>View shifts</td>
+<td>Full</td>
+<td>Cached</td>
+<td>Previously synced shift schedule</td>
+</tr>
+<tr>
+<td>Training modules</td>
+<td>Full</td>
+<td>Cached</td>
+<td>Previously viewed modules available</td>
+</tr>
+<tr>
+<td>Ride request</td>
+<td>Full</td>
+<td>Queue</td>
+<td>Request created locally, submitted on sync</td>
+</tr>
+<tr>
+<td>Poll watcher issue report</td>
+<td>Full</td>
+<td>Queue</td>
+<td>Report queued locally</td>
+</tr>
+<tr>
+<td>Cash donation recording</td>
+<td>Full</td>
+<td>Queue</td>
+<td>Recorded locally with receipt</td>
+</tr>
+<tr>
+<td>Dashboards</td>
+<td>Full</td>
+<td>Unavailable</td>
+<td>Requires server-side aggregation</td>
+</tr>
+<tr>
+<td>Settings &amp; config</td>
+<td>Full</td>
+<td>Unavailable</td>
+<td>Requires server validation</td>
+</tr>
+<tr>
+<td>Builders (email, form, etc.)</td>
+<td>Full</td>
+<td>Unavailable</td>
+<td>Complex server-side dependencies</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>Full</td>
+<td>Limited</td>
+<td>Can search cached local data only</td>
+</tr>
+<tr>
+<td>Phone banking</td>
+<td>Full</td>
+<td>Unavailable</td>
+<td>Requires call connectivity</td>
+</tr>
+<tr>
+<td>Data import/export</td>
+<td>Full</td>
+<td>Unavailable</td>
+<td>File handling requires server</td>
+</tr>
+<tr>
+<td>Social media posting</td>
+<td>Full</td>
+<td>Unavailable</td>
+<td>Requires API connectivity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="offline-feature-presentation" tabindex="-1"><a class="heading-anchor" href="#offline-feature-presentation" aria-hidden="true">#</a> Offline Feature Presentation</h3>
+<p>Per the navigation model (<a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a>), offline-unavailable features are <strong>greyed out with an offline badge</strong> — not hidden. Tapping a greyed-out item shows:</p>
+<pre><code>┌──────────────────────────────────────┐
+│  ◌  This feature requires a          │
+│     connection                        │
+│                                      │
+│  You're currently offline. This      │
+│  feature will be available when       │
+│  you reconnect.                       │
+│                                      │
+│  You can still:                       │
+│  • View cached contacts              │
+│  • Read synced messages              │
+│  • Continue your canvassing shift     │
+│                                      │
+│  [Dismiss]                            │
+└──────────────────────────────────────┘
+</code></pre>
+<p>The &quot;You can still&quot; section redirects attention to what's available — never leave the user at a dead end.</p>
+<hr>
+<h2 id="pre-loading-and-caching" tabindex="-1"><a class="heading-anchor" href="#pre-loading-and-caching" aria-hidden="true">#</a> Pre-Loading and Caching</h2>
+<h3 id="shift-pre-load" tabindex="-1"><a class="heading-anchor" href="#shift-pre-load" aria-hidden="true">#</a> Shift Pre-Load</h3>
+<p>When a volunteer taps &quot;Start Shift,&quot; the app downloads everything needed for the shift before entering field mode:</p>
+<ol>
+<li>Walk list (voter records for assigned turf)</li>
+<li>Map tiles for the turf area</li>
+<li>Script and response options</li>
+<li>Team roster (for team leads)</li>
+</ol>
+<p>Progress shown as:</p>
+<pre><code>┌──────────────────────────────────────┐
+│  Preparing your shift...             │
+│                                      │
+│  ✓ Walk list (47 doors)              │
+│  ✓ Map tiles                         │
+│  ↻ Script and forms...               │
+│  ○ Team roster                       │
+│                                      │
+│  ████████████████░░░  82%            │
+│                                      │
+│  [Cancel]                             │
+└──────────────────────────────────────┘
+</code></pre>
+<p><strong>If connectivity drops during pre-load:</strong> The pre-load resumes when connectivity returns. If the volunteer can't wait, they can start the shift with whatever data has been downloaded (with a warning about incomplete data).</p>
+<h3 id="background-caching" tabindex="-1"><a class="heading-anchor" href="#background-caching" aria-hidden="true">#</a> Background Caching</h3>
+<p>The app proactively caches data the user is likely to need:</p>
+<ul>
+<li><strong>Messages:</strong> Last 100 conversations, synced incrementally</li>
+<li><strong>Contacts:</strong> Recently viewed contacts (last 50)</li>
+<li><strong>Shifts:</strong> Upcoming 7 days of shift schedule</li>
+<li><strong>Training:</strong> Previously started modules</li>
+<li><strong>Events:</strong> Upcoming events the user has RSVP'd to</li>
+</ul>
+<p>Cache is managed automatically — older cached data is evicted when storage limits are reached. The user never manages cache manually.</p>
+<h3 id="map-tile-caching" tabindex="-1"><a class="heading-anchor" href="#map-tile-caching" aria-hidden="true">#</a> Map Tile Caching</h3>
+<p>Map tiles for offline use are cached in two ways:</p>
+<ul>
+<li><strong>Automatic:</strong> When a shift is pre-loaded, tiles for the turf area are downloaded</li>
+<li><strong>Proactive:</strong> If the volunteer has Wi-Fi, tiles for all their upcoming turfs are pre-downloaded in the background</li>
+</ul>
+<p>Tile cache size is bounded (configurable, default ~200MB) to avoid filling the device storage on low-end phones.</p>
+<hr>
+<h2 id="sync-timing-and-battery" tabindex="-1"><a class="heading-anchor" href="#sync-timing-and-battery" aria-hidden="true">#</a> Sync Timing and Battery</h2>
+<h3 id="battery-awareness" tabindex="-1"><a class="heading-anchor" href="#battery-awareness" aria-hidden="true">#</a> Battery Awareness</h3>
+<p>On mobile, the sync frequency adapts to battery level:</p>
+<ul>
+<li><strong>&gt;50% battery:</strong> Normal sync interval (30s field mode, 60s standard)</li>
+<li><strong>20-50% battery:</strong> Reduced sync interval (60s field mode, 120s standard)</li>
+<li><strong>&lt;20% battery:</strong> Minimal sync (manual only, or every 5 minutes for critical field mode data)</li>
+</ul>
+<p>The user is never notified about battery-adaptive sync — it happens silently. The only visible effect is that the &quot;Last synced&quot; timestamp updates less frequently on low battery.</p>
+<h3 id="data-usage-awareness" tabindex="-1"><a class="heading-anchor" href="#data-usage-awareness" aria-hidden="true">#</a> Data Usage Awareness</h3>
+<p>For users on metered connections (common in the target geographies):</p>
+<ul>
+<li>Initial sync and shift pre-load show estimated data size (&quot;This will use approximately 15 MB&quot;)</li>
+<li>Background sync uses minimal bandwidth (only diffs, compressed)</li>
+<li>Map tile downloads are optional and show size warnings on metered connections</li>
+</ul>
+<hr>
+<h2 id="shift-lifecycle-and-sync" tabindex="-1"><a class="heading-anchor" href="#shift-lifecycle-and-sync" aria-hidden="true">#</a> Shift Lifecycle and Sync</h2>
+<p>A canvassing shift has a specific sync lifecycle:</p>
+<ol>
+<li><strong>Pre-shift:</strong> Full download of walk list, map tiles, script. Sync status: &quot;Ready.&quot;</li>
+<li><strong>During shift:</strong> Each completed interaction saved locally immediately. Background sync pushes completed interactions every 30 seconds when connected. If offline, interactions accumulate locally.</li>
+<li><strong>Shift pause:</strong> If the volunteer pauses (takes a break), sync continues in background. Resume picks up where they left off.</li>
+<li><strong>Shift end:</strong> Volunteer taps &quot;End Shift.&quot; App attempts a final sync of all remaining data. If offline, shows: &quot;You have X unsaved interactions. They'll upload when you're back online. You can close the app safely.&quot;</li>
+<li><strong>Post-shift:</strong> Debrief prompt (hours, notes, issues). Synced when possible. The shift is &quot;closed&quot; locally even if the debrief hasn't synced yet.</li>
+<li><strong>Abnormal exit:</strong> App crash or device off. On next launch, the shift resumes at the last saved position. No data loss — each interaction is persisted locally the moment it's recorded.</li>
+</ol>
+<hr>
+<h2 id="error-recovery" tabindex="-1"><a class="heading-anchor" href="#error-recovery" aria-hidden="true">#</a> Error Recovery</h2>
+<h3 id="sync-retry-strategy" tabindex="-1"><a class="heading-anchor" href="#sync-retry-strategy" aria-hidden="true">#</a> Sync Retry Strategy</h3>
+<p>Failed syncs retry with exponential backoff:</p>
+<ul>
+<li>First retry: immediately</li>
+<li>Second retry: 30 seconds</li>
+<li>Third retry: 2 minutes</li>
+<li>Subsequent retries: every 5 minutes</li>
+<li>After 10 failures: stop auto-retry, show persistent error with manual &quot;Retry&quot; button</li>
+</ul>
+<h3 id="data-integrity-safeguards" tabindex="-1"><a class="heading-anchor" href="#data-integrity-safeguards" aria-hidden="true">#</a> Data Integrity Safeguards</h3>
+<ul>
+<li><strong>Local data is never deleted until confirmed synced.</strong> The app keeps local copies of all interactions until the server acknowledges receipt.</li>
+<li><strong>Sync receipts.</strong> The server returns a receipt for each synced event. Only after receipt confirmation is the local copy marked as synced.</li>
+<li><strong>Idempotent sync.</strong> If the same event is sent twice (e.g., after a timeout where the server received it but the client didn't get the acknowledgment), the server deduplicates. No double-counting of interactions.</li>
+</ul>
+<hr>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Sync notification on reconnect.</strong> When a user comes back online after extended offline use, should the app show a notification summarizing what synced? (&quot;You're back online. 23 interactions uploaded, walk list updated with 3 changes.&quot;) This is useful but could be noisy.</p>
+</li>
+<li>
+<p><strong>Conflict frequency monitoring.</strong> Should the platform track conflict rates per turf/team to identify operational issues? High conflict rates might indicate overlapping assignments or stale data distribution — problems that need human intervention, not just UX patterns.</p>
+</li>
+<li>
+<p><strong>Offline duration limits.</strong> Should there be a maximum offline duration after which the walk list is considered too stale to use? If a volunteer hasn't synced in 24 hours, their walk list might be completely wrong. Should the app warn or block?</p>
+</li>
+</ol>
+<!-- REVISIT: The exact data sizes for pre-loading (walk list + map tiles + script) need to be measured against real data volumes once the data model is implemented. The 200MB tile cache limit and the shift pre-load estimates are placeholder values. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#connectivity-states"># Connectivity States</a></li><li class="toc-3"><a href="#state-definitions"># State Definitions</a></li><li class="toc-3"><a href="#standard-app-indicator"># Standard App Indicator</a></li><li class="toc-3"><a href="#field-mode-indicator"># Field Mode Indicator</a></li><li class="toc-2"><a href="#data-freshness"># Data Freshness</a></li><li class="toc-3"><a href="#freshness-indicators-on-records"># Freshness Indicators on Records</a></li><li class="toc-3"><a href="#freshness-in-field-mode"># Freshness in Field Mode</a></li><li class="toc-2"><a href="#pending-changes-queue"># Pending Changes Queue</a></li><li class="toc-3"><a href="#queue-indicator"># Queue Indicator</a></li><li class="toc-3"><a href="#change-status-icons"># Change Status Icons</a></li><li class="toc-3"><a href="#in-context-indicators"># In-Context Indicators</a></li><li class="toc-2"><a href="#sync-behavior"># Sync Behavior</a></li><li class="toc-3"><a href="#automatic-sync"># Automatic Sync</a></li><li class="toc-3"><a href="#manual-sync"># Manual Sync</a></li><li class="toc-3"><a href="#sync-progress"># Sync Progress</a></li><li class="toc-2"><a href="#conflict-resolution"># Conflict Resolution</a></li><li class="toc-3"><a href="#automatic-resolution"># Automatic Resolution</a></li><li class="toc-3"><a href="#user-facing-conflicts"># User-Facing Conflicts</a></li><li class="toc-2"><a href="#offline-available-features"># Offline-Available Features</a></li><li class="toc-3"><a href="#feature-availability-matrix"># Feature Availability Matrix</a></li><li class="toc-3"><a href="#offline-feature-presentation"># Offline Feature Presentation</a></li><li class="toc-2"><a href="#pre-loading-and-caching"># Pre-Loading and Caching</a></li><li class="toc-3"><a href="#shift-pre-load"># Shift Pre-Load</a></li><li class="toc-3"><a href="#background-caching"># Background Caching</a></li><li class="toc-3"><a href="#map-tile-caching"># Map Tile Caching</a></li><li class="toc-2"><a href="#sync-timing-and-battery"># Sync Timing and Battery</a></li><li class="toc-3"><a href="#battery-awareness"># Battery Awareness</a></li><li class="toc-3"><a href="#data-usage-awareness"># Data Usage Awareness</a></li><li class="toc-2"><a href="#shift-lifecycle-and-sync"># Shift Lifecycle and Sync</a></li><li class="toc-2"><a href="#error-recovery"># Error Recovery</a></li><li class="toc-3"><a href="#sync-retry-strategy"># Sync Retry Strategy</a></li><li class="toc-3"><a href="#data-integrity-safeguards"># Data Integrity Safeguards</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Profile Wireframes · GreenGrass</title>
+<meta name="description" content="User Profile Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="./profile.html" aria-current="page" class="active">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="user-profile-wireframes" tabindex="-1"><a class="heading-anchor" href="#user-profile-wireframes" aria-hidden="true">#</a> User Profile Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Profile screens are the user's personal control panel — name, avatar, language, notification preferences, and security settings. Unlike Settings (SET-*, OA-only), profile screens are accessible to every authenticated user and affect only their own experience.</p>
+<p>The core UX challenge: these screens serve 10 different personas with very different needs. A volunteer needs language preference and notification toggle. An Org Admin needs device management and trusted contact configuration. The profile must be simple for the simple case and deep for the complex case.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PROF-001</td>
+<td>Personal Profile</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>/profile</code></td>
+</tr>
+<tr>
+<td>PROF-002</td>
+<td>Notification Preferences</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>/profile/notifications</code></td>
+</tr>
+<tr>
+<td>PROF-003</td>
+<td>Security Settings (Personal)</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>/profile/security</code></td>
+</tr>
+<tr>
+<td>PROF-004</td>
+<td>Language Preference</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>/profile/language</code></td>
+</tr>
+<tr>
+<td>PROF-005</td>
+<td>Tenant Switcher</td>
+<td>Multi-tenant users</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>/profile/switch-tenant</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="profile-navigation-context" tabindex="-1"><a class="heading-anchor" href="#profile-navigation-context" aria-hidden="true">#</a> Profile Navigation Context</h2>
+<p>Profile screens are accessed from the user menu (avatar/name dropdown in the top bar).</p>
+<pre><code>User Menu (top-right dropdown)
+  My Profile      → PROF-001
+  Notifications   → PROF-002
+  Security        → PROF-003
+  Language        → PROF-004
+  Switch Org      → PROF-005 (if multi-tenant)
+  ─────────────
+  Sign Out
+</code></pre>
+<hr>
+<h2 id="prof-001-personal-profile" tabindex="-1"><a class="heading-anchor" href="#prof-001-personal-profile" aria-hidden="true">#</a> PROF-001: Personal Profile</h2>
+<p>User's own profile and account information.</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  My Profile                                                      [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Profile ───────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  ┌──────────┐  Name *                                                 │ │
+│  │  │          │  ┌──────────────────────────────────────────────────┐    │ │
+│  │  │ [avatar] │  │ Ana López                                       │    │ │
+│  │  │          │  └──────────────────────────────────────────────────┘    │ │
+│  │  │  [Edit]  │                                                         │ │
+│  │  └──────────┘  Email                                                  │ │
+│  │                ana@partido.org  (managed by your admin)               │ │
+│  │                                                                        │ │
+│  │  Phone (optional)                                                      │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ +1 (787) 555-0198                                              │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Preferences ───────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Display Language              Timezone                                │ │
+│  │  [Español (PR) ▾]             [America/Puerto_Rico (AST) ▾]           │ │
+│  │  [Change Language →]                                                   │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Account ───────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Role: Field Director                                                  │ │
+│  │  Organization: Partido Verde de Puerto Rico                            │ │
+│  │  Member since: Jan 15, 2026                                            │ │
+│  │                                                                        │ │
+│  │  Last login: Mar 3, 2:30 PM from Chrome on macOS                      │ │
+│  │  This device: Chrome on macOS (current)                                │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  [Save]                                                                      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<p>Same sections stacked vertically. Avatar centered at top.</p>
+<h3 id="interaction" tabindex="-1"><a class="heading-anchor" href="#interaction" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Avatar upload</strong>: crop to square, supports camera capture or gallery. Resized to 120×120px</li>
+<li><strong>Email</strong>: read-only — managed by Org Admin. User cannot change their email</li>
+<li><strong>Phone</strong>: optional. Used for SMS login fallback and notifications</li>
+<li><strong>Language link</strong>: navigates to PROF-004 for full language selection</li>
+<li><strong>Role/Org</strong>: read-only informational. Shows the user's current role and organization</li>
+<li><strong>Last login</strong>: security awareness — helps users notice if someone else has accessed their account</li>
+</ul>
+<hr>
+<h2 id="prof-002-notification-preferences" tabindex="-1"><a class="heading-anchor" href="#prof-002-notification-preferences" aria-hidden="true">#</a> PROF-002: Notification Preferences</h2>
+<p>Per-channel, per-feature notification configuration.</p>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Notification Preferences                                        [Save]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Delivery Channels ────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Notification Type       In-App   Push    Email    SMS                │ │
+│  │  ─────────────────────   ──────   ──────  ──────   ────               │ │
+│  │                                                                        │ │
+│  │  ▾ Messages                                                            │ │
+│  │  Direct messages         ☑        ☑       □        □                  │ │
+│  │  Group messages          ☑        □       □        □                  │ │
+│  │  Mentions (@you)         ☑        ☑       ☑        □                  │ │
+│  │                                                                        │ │
+│  │  ▾ Approvals                                                           │ │
+│  │  Approval requests       ☑        ☑       ☑        □                  │ │
+│  │  Approval decisions      ☑        □       ☑        □                  │ │
+│  │                                                                        │ │
+│  │  ▾ Assignments                                                         │ │
+│  │  New shift assigned      ☑        ☑       ☑        ☑                  │ │
+│  │  Shift reminder          ☑        ☑       □        ☑                  │ │
+│  │  Event reminder          ☑        ☑       ☑        □                  │ │
+│  │                                                                        │ │
+│  │  ▸ Compliance (collapsed)                                              │ │
+│  │  ▸ System (collapsed)                                                  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Quiet Hours ───────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  ☑ Enable quiet hours (suppress push + SMS notifications)             │ │
+│  │                                                                        │ │
+│  │  From: [10:00 PM ▾]     To: [7:00 AM ▾]                              │ │
+│  │                                                                        │ │
+│  │  ⓘ In-app notifications still accumulate silently.                     │ │
+│  │    Election day (GOTV) notifications override quiet hours.             │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Email Digest ──────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  ○ Real-time (each notification sends an email immediately)            │ │
+│  │  ● Daily digest (one summary email per day at 8:00 AM)                │ │
+│  │  ○ Weekly digest (one summary email per week on Monday)                │ │
+│  │  ○ No email notifications                                             │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  [Test Notification]                                             [Save]      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h3>
+<p>Same matrix but only shows In-App and Push columns (most relevant for mobile). SMS and Email accessible via expand.</p>
+<h3 id="interaction-1" tabindex="-1"><a class="heading-anchor" href="#interaction-1" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Channel × Type matrix</strong>: checkboxes for each combination. In-App is always on (can't disable)</li>
+<li><strong>Collapsible sections</strong>: feature areas expand/collapse. Most relevant sections expanded by default based on the user's role</li>
+<li><strong>Quiet hours</strong>: suppresses push and SMS during configured window. In-app notifications still accumulate. GOTV overrides quiet hours (election day)</li>
+<li><strong>Email digest</strong>: controls email notification batching. Daily digest reduces email volume</li>
+<li><strong>[Test Notification]</strong>: sends a test notification through all enabled channels — confirms everything is connected</li>
+<li><strong>Persona-adaptive</strong>: Volunteer sees fewer notification types (messages, shifts, events). Org Admin sees everything</li>
+</ul>
+<hr>
+<h2 id="prof-003-security-settings-personal" tabindex="-1"><a class="heading-anchor" href="#prof-003-security-settings-personal" aria-hidden="true">#</a> PROF-003: Security Settings (Personal)</h2>
+<p>Personal device management, passkey review, and trusted contact configuration.</p>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Security Settings                                                           │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Your Devices ──────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Device                  Last Active       Status                     │ │
+│  │  ─────────────────────   ──────────────    ──────                     │ │
+│  │  Chrome on macOS         Now               ● This device              │ │
+│  │  Safari on iPhone        Mar 3, 10:15 AM   ● Active     [Remove]     │ │
+│  │  Chrome on Android       Feb 28, 4:00 PM   ● Active     [Remove]     │ │
+│  │                                                                        │ │
+│  │  [+ Add Device]                                                        │ │
+│  │                                                                        │ │
+│  │  ⓘ Removing a device revokes its passkey. The device will need to      │ │
+│  │    be re-authorized to access your account.                            │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Trusted Contacts ─────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  These people can help you recover your account if you lose            │ │
+│  │  access to all your devices.                                           │ │
+│  │                                                                        │ │
+│  │  1. Jorge Rivera · jorge@partido.org               [Remove]            │ │
+│  │  2. Carlos Méndez · carlos@partido.org             [Remove]            │ │
+│  │                                                                        │ │
+│  │  [+ Add Contact]                                                       │ │
+│  │                                                                        │ │
+│  │  Recovery requires 2 of your trusted contacts to approve.              │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Security Summary ─────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Authentication: Passkey (biometric)                     ✓             │ │
+│  │  Connection: Encrypted (TLS 1.3)                         ✓             │ │
+│  │  Data: Encrypted at rest                                 ✓             │ │
+│  │  Trusted contacts: 2 configured                          ✓             │ │
+│  │  Duress passkey: Not configured                          ○             │ │
+│  │                                                                        │ │
+│  │  [Set Up Duress Passkey]  (Maximum security tier only)                │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-2" tabindex="-1"><a class="heading-anchor" href="#interaction-2" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Device removal</strong>: requires re-authentication (AUTH-007 re-auth variant). Confirmation: &quot;Remove Chrome on Android? This device will be signed out immediately.&quot;</li>
+<li><strong>[+ Add Device]</strong>: navigates to AUTH-006 (Device Authorization)</li>
+<li><strong>Trusted contacts</strong>: same interface as AUTH-005, accessible for ongoing management</li>
+<li><strong>Security summary</strong>: at-a-glance view of the user's security posture. ✓ = configured, ○ = not configured</li>
+<li><strong>Duress passkey</strong>: only shown for Maximum security tier tenants. Links to a setup flow where the user creates an alternative passkey that triggers sanitized data mode</li>
+<li><strong>Sensitive actions</strong>: all actions on this screen (device removal, trusted contact changes) require re-authentication</li>
+</ul>
+<hr>
+<h2 id="prof-004-language-preference" tabindex="-1"><a class="heading-anchor" href="#prof-004-language-preference" aria-hidden="true">#</a> PROF-004: Language Preference</h2>
+<p>Simple language switcher.</p>
+<h3 id="mobile-2" tabindex="-1"><a class="heading-anchor" href="#mobile-2" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│  ← Profile                │
+│                            │
+│  Language / Idioma          │
+│                            │
+│  Select your display       │
+│  language.                 │
+│                            │
+│  ● Español (Puerto Rico)   │
+│  ○ English (US)            │
+│                            │
+│                            │
+│  ⓘ Available languages are │
+│  configured by your        │
+│  organization. Content     │
+│  (help articles, training) │
+│  may not be fully          │
+│  translated in all         │
+│  languages.                │
+│                            │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-3" tabindex="-1"><a class="heading-anchor" href="#interaction-3" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Instant apply</strong>: selecting a language applies it immediately — no save button needed. The entire UI re-renders in the selected language (SvelteKit reactivity)</li>
+<li><strong>RTL auto-flip</strong>: selecting an RTL language (Arabic, Hebrew) flips the entire layout direction via CSS logical properties</li>
+<li><strong>Tenant-controlled</strong>: only languages enabled by the Org Admin (SET-001) appear. Users can't add languages</li>
+<li><strong>Persistent</strong>: saved to user profile server-side. Follows the user across devices</li>
+<li><strong>Bilingual header</strong>: title shown in both the current language and the selected language (&quot;Language / Idioma&quot;) to ensure the user can find this screen regardless of the current language setting</li>
+</ul>
+<hr>
+<h2 id="prof-005-tenant-switcher" tabindex="-1"><a class="heading-anchor" href="#prof-005-tenant-switcher" aria-hidden="true">#</a> PROF-005: Tenant Switcher</h2>
+<p>For users who belong to multiple organizations (e.g., alliance staff, consultants).</p>
+<h3 id="mobile-3" tabindex="-1"><a class="heading-anchor" href="#mobile-3" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│  ← Profile                │
+│                            │
+│  Switch Organization       │
+│                            │
+│  ┌────────────────────────┐│
+│  │ [logo]                 ││
+│  │ Partido Verde de PR    ││
+│  │ Role: Field Director   ││
+│  │ Last active: Now       ││
+│  │             ● Current  ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ [logo]                 ││
+│  │ Alianza Verde Nacional ││
+│  │ Role: Alliance Coord.  ││
+│  │ Last active: Mar 1     ││
+│  │             [Switch]   ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ [logo]                 ││
+│  │ Verde Bayamón          ││
+│  │ Role: Consultant       ││
+│  │ Last active: Feb 15    ││
+│  │             [Switch]   ││
+│  └────────────────────────┘│
+│                            │
+│  ─────────────────────     │
+│                            │
+│  [+ Join Another Org]      │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-4" tabindex="-1"><a class="heading-anchor" href="#interaction-4" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Switch</strong>: navigates to the home screen of the selected organization. Full context switch — sidebar, data, branding all change to the new org</li>
+<li><strong>Current</strong>: indicated with ● badge. Can't switch to the org you're already in</li>
+<li><strong>Role per org</strong>: user may have different roles in different organizations. Displayed for awareness</li>
+<li><strong>[+ Join Another Org]</strong>: opens a flow to request membership in another org (sends an affiliation request). Uncommon — most multi-tenant users are added by OA invitation</li>
+<li><strong>Visual separation</strong>: each org card shows the org's own logo and branding, previewing what the user will see after switching</li>
+</ul>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PROF-002 (no notification options)</td>
+<td>Your organization hasn't configured notification channels yet.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>PROF-003 (no devices)</td>
+<td>No other devices are connected to your account.</td>
+<td>+ Add Device</td>
+</tr>
+<tr>
+<td>PROF-003 (no trusted contacts)</td>
+<td>Set up trusted contacts so you can recover your account if you lose your device.</td>
+<td>+ Add Contact</td>
+</tr>
+<tr>
+<td>PROF-005 (single org)</td>
+<td>You're a member of one organization. This screen is for users with multiple org memberships.</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Avatar upload includes alt text auto-generated from user name</li>
+<li>Notification matrix uses labeled checkboxes (not toggle-only)</li>
+<li>Language selection applies immediately with aria-live announcement</li>
+<li>Device list has keyboard-accessible remove buttons with confirmation</li>
+<li>Trusted contact removal has explicit confirmation dialog</li>
+<li>Security summary uses text labels alongside ✓/○ indicators</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Email not user-editable</td>
+<td>Managed by Org Admin only</td>
+<td>Email is the account identifier and is used for dedup, invitations, and audit. Changing it has security and compliance implications</td>
+</tr>
+<tr>
+<td>Instant language switch</td>
+<td>No save/confirm — applies immediately</td>
+<td>Users should experience the language before committing. Undo is trivial (select another language)</td>
+</tr>
+<tr>
+<td>Quiet hours with GOTV override</td>
+<td>Election day notifications bypass quiet hours</td>
+<td>GOTV operations are time-critical. A missed notification on election day could mean lost votes</td>
+</tr>
+<tr>
+<td>Security summary as checklist</td>
+<td>Green check / empty circle visual</td>
+<td>Quick scan to see if anything needs attention. More approachable than a dense security settings form</td>
+</tr>
+<tr>
+<td>Tenant switcher in profile</td>
+<td>Not a top-level nav element</td>
+<td>Multi-tenant is uncommon. Making it prominent would add complexity for the 95% of users with one org</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li><strong>Profile photo privacy</strong> — should the user's avatar be visible to supporters (e.g., in public event pages, press releases)? Or is it internal-only? Political campaign staff may have safety concerns about public visibility</li>
+<li><strong>Notification sound</strong> — should users be able to choose notification sounds, or is the default OS sound sufficient? Custom sounds could help differentiate GreenGrass notifications from other apps</li>
+<li><strong>Multi-tenant notifications</strong> — when a user belongs to multiple orgs, should notifications from non-active orgs be shown? Or only the currently active org? Cross-org notification routing is complex</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#profile-navigation-context"># Profile Navigation Context</a></li><li class="toc-2"><a href="#prof-001-personal-profile"># PROF-001: Personal Profile</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#interaction"># Interaction</a></li><li class="toc-2"><a href="#prof-002-notification-preferences"># PROF-002: Notification Preferences</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-3"><a href="#mobile-1"># Mobile</a></li><li class="toc-3"><a href="#interaction-1"># Interaction</a></li><li class="toc-2"><a href="#prof-003-security-settings-personal"># PROF-003: Security Settings (Personal)</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-3"><a href="#interaction-2"># Interaction</a></li><li class="toc-2"><a href="#prof-004-language-preference"># PROF-004: Language Preference</a></li><li class="toc-3"><a href="#mobile-2"># Mobile</a></li><li class="toc-3"><a href="#interaction-3"># Interaction</a></li><li class="toc-2"><a href="#prof-005-tenant-switcher"># PROF-005: Tenant Switcher</a></li><li class="toc-3"><a href="#mobile-3"># Mobile</a></li><li class="toc-3"><a href="#interaction-4"># Interaction</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

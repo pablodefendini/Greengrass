@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authentication Wireframes · GreenGrass</title>
+<meta name="description" content="Authentication Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="./auth.html" aria-current="page" class="active">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li><li><a href="../../../../diary/09-the-documentation-website.html">Diary Entry 9: The Documentation Website</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="authentication-wireframes" tabindex="-1"><a class="heading-anchor" href="#authentication-wireframes" aria-hidden="true">#</a> Authentication Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Authentication is the gateway to the platform — and the first line of defense for election integrity data. GreenGrass uses passkey-first authentication: no passwords, no password resets, no password-based attacks. The primary flow is biometric passkey (face/fingerprint), completing login in under 3 seconds.</p>
+<p>The core UX challenge: passkeys are unfamiliar to many users, especially volunteers in the global south using older Android devices. The auth flow must guide users who've never seen passkey enrollment while remaining instant for experienced users. Fallbacks (magic link, SMS OTP) must exist but never become the default path.</p>
+<p>Security-specific flows (account recovery via trusted contacts, duress passkey, device authorization) are rare but high-stakes — the UX must be clear under stress.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AUTH-001</td>
+<td>Login (Passkey)</td>
+<td>All</td>
+<td>No</td>
+<td>Primary</td>
+<td><code>/login</code></td>
+</tr>
+<tr>
+<td>AUTH-002</td>
+<td>Login Fallback (Magic Link / SMS OTP)</td>
+<td>All</td>
+<td>No</td>
+<td>Primary</td>
+<td><code>/login/fallback</code></td>
+</tr>
+<tr>
+<td>AUTH-003</td>
+<td>Account Recovery (Trusted Contact)</td>
+<td>All</td>
+<td>No</td>
+<td>Primary</td>
+<td><code>/recover</code></td>
+</tr>
+<tr>
+<td>AUTH-004</td>
+<td>Passkey Registration</td>
+<td>All</td>
+<td>No</td>
+<td>Primary</td>
+<td><code>/register</code></td>
+</tr>
+<tr>
+<td>AUTH-005</td>
+<td>Trusted Contact Setup</td>
+<td>All</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>/register/trusted-contacts</code></td>
+</tr>
+<tr>
+<td>AUTH-006</td>
+<td>Device Authorization</td>
+<td>All</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>/authorize-device</code></td>
+</tr>
+<tr>
+<td>AUTH-007</td>
+<td>Session Expired / Re-authenticate</td>
+<td>All</td>
+<td>No</td>
+<td>Primary</td>
+<td><code>/session-expired</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="auth-navigation-context" tabindex="-1"><a class="heading-anchor" href="#auth-navigation-context" aria-hidden="true">#</a> Auth Navigation Context</h2>
+<p>Auth screens live in the <code>(auth)</code> layout group — no sidebar, no navigation chrome. Minimal branding (tenant logo + name). Centered card layout.</p>
+<hr>
+<h2 id="auth-001-login-passkey" tabindex="-1"><a class="heading-anchor" href="#auth-001-login-passkey" aria-hidden="true">#</a> AUTH-001: Login (Passkey)</h2>
+<p>The primary login screen. Passkey-first with a single CTA. Designed to complete login in under 3 seconds for returning users.</p>
+<h3 id="mobile-primary" tabindex="-1"><a class="heading-anchor" href="#mobile-primary" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│                            │
+│                            │
+│        [Org Logo]          │
+│                            │
+│     Partido Verde de       │
+│     Puerto Rico            │
+│                            │
+│                            │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │   Sign In with         ││
+│  │   Passkey              ││
+│  │                        ││
+│  └────────────────────────┘│
+│    48px tall, full-width   │
+│    Primary color button    │
+│                            │
+│                            │
+│                            │
+│  Use a different method    │
+│                            │
+│                            │
+│                            │
+│                            │
+│                            │
+│                            │
+│                            │
+│                            │
+│                            │
+│  Having trouble signing in?│
+│  Contact your admin.       │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                     ┌──────────────────────────────┐                         │
+│                     │                              │                         │
+│                     │        [Org Logo]             │                         │
+│                     │                              │                         │
+│                     │   Partido Verde de            │                         │
+│                     │   Puerto Rico                 │                         │
+│                     │                              │                         │
+│                     │                              │                         │
+│                     │  ┌──────────────────────────┐│                         │
+│                     │  │                          ││                         │
+│                     │  │  Sign In with Passkey    ││                         │
+│                     │  │                          ││                         │
+│                     │  └──────────────────────────┘│                         │
+│                     │                              │                         │
+│                     │  Use a different method      │                         │
+│                     │                              │                         │
+│                     │                              │                         │
+│                     │  Having trouble signing in?  │                         │
+│                     │  Contact your admin.         │                         │
+│                     │                              │                         │
+│                     └──────────────────────────────┘                         │
+│                                                                              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<p>Centered card on a neutral background. Tenant branding (logo + colors) applied to the card and button.</p>
+<h3 id="flow" tabindex="-1"><a class="heading-anchor" href="#flow" aria-hidden="true">#</a> Flow</h3>
+<ol>
+<li>User opens app or navigates to platform URL</li>
+<li>If existing session → skip to app (no login screen)</li>
+<li>If no session → AUTH-001 appears</li>
+<li>User taps &quot;Sign In with Passkey&quot;</li>
+<li>Device biometric prompt appears (face/fingerprint)</li>
+<li>On success → redirect to home screen (persona-appropriate dashboard)</li>
+<li>On biometric failure → device shows retry. After 3 failures, show &quot;Use a different method&quot;</li>
+</ol>
+<h3 id="states" tabindex="-1"><a class="heading-anchor" href="#states" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Default</strong>: single button, ready to tap</li>
+<li><strong>Biometric prompt</strong>: native OS overlay (Face ID, fingerprint, Windows Hello). GreenGrass UI dims behind it</li>
+<li><strong>Success</strong>: brief checkmark animation → redirect</li>
+<li><strong>Error</strong> (no passkey found): &quot;No passkey found on this device. Set up a passkey or use a different method.&quot; [Set Up Passkey] [Use Different Method]</li>
+<li><strong>Error</strong> (server): &quot;Unable to connect. Check your internet connection and try again.&quot; [Try Again]</li>
+</ul>
+<h3 id="interaction" tabindex="-1"><a class="heading-anchor" href="#interaction" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>&quot;Use a different method&quot;</strong>: navigates to AUTH-002 (magic link / SMS OTP)</li>
+<li><strong>&quot;Having trouble?&quot;</strong>: link to admin contact — not a self-service password reset (there are no passwords)</li>
+<li><strong>Auto-detect</strong>: if the device has no passkey registered for this tenant, skip the biometric and show the &quot;No passkey found&quot; state immediately</li>
+<li><strong>No email/password fields</strong>: deliberate — passkey-first design eliminates phishing attack surface</li>
+</ul>
+<hr>
+<h2 id="auth-002-login-fallback-magic-link-sms-otp" tabindex="-1"><a class="heading-anchor" href="#auth-002-login-fallback-magic-link-sms-otp" aria-hidden="true">#</a> AUTH-002: Login Fallback (Magic Link / SMS OTP)</h2>
+<p>Alternative login for devices without passkey support or when the user prefers a different method.</p>
+<h3 id="mobile-primary-1" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-1" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│  ← Back                   │
+│                            │
+│        [Org Logo]          │
+│                            │
+│  Sign in with...           │
+│                            │
+│  ┌────────────────────────┐│
+│  │ ✉ Magic Link          ││
+│  │                        ││
+│  │ We'll email you a      ││
+│  │ one-time login link.   ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ 📱 SMS Code            ││
+│  │                        ││
+│  │ We'll text you a       ││
+│  │ one-time code.         ││
+│  └────────────────────────┘│
+│                            │
+│                            │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="magic-link-flow" tabindex="-1"><a class="heading-anchor" href="#magic-link-flow" aria-hidden="true">#</a> Magic Link Flow</h3>
+<pre><code>┌────────────────────────────┐      ┌────────────────────────────┐
+│                            │      │                            │
+│  ← Back                   │      │                            │
+│                            │      │  ✉ Check your email        │
+│  ✉ Magic Link             │      │                            │
+│                            │      │  We sent a login link to   │
+│  Your Email                │      │  a****z@partido.org        │
+│  ┌────────────────────────┐│      │                            │
+│  │ ana@partido.org        ││      │  The link expires in       │
+│  └────────────────────────┘│      │  15 minutes.               │
+│                            │      │                            │
+│  ┌────────────────────────┐│      │  Didn't receive it?        │
+│  │    Send Login Link     ││      │  [Resend]  (available      │
+│  └────────────────────────┘│      │   after 60 seconds)        │
+│                            │      │                            │
+│                            │      │  [Try a different method]  │
+│                            │      │                            │
+└────────────────────────────┘      └────────────────────────────┘
+</code></pre>
+<h3 id="sms-otp-flow" tabindex="-1"><a class="heading-anchor" href="#sms-otp-flow" aria-hidden="true">#</a> SMS OTP Flow</h3>
+<pre><code>┌────────────────────────────┐      ┌────────────────────────────┐
+│                            │      │                            │
+│  ← Back                   │      │  📱 Enter your code         │
+│                            │      │                            │
+│  📱 SMS Code               │      │  We sent a 6-digit code   │
+│                            │      │  to +1 (787) ***-0198      │
+│  Your Phone Number         │      │                            │
+│  ┌────────────────────────┐│      │  ┌──┐ ┌──┐ ┌──┐ ┌──┐ ┌──┐ ┌──┐│
+│  │ +1 (787) 555-0198     ││      │  │  │ │  │ │  │ │  │ │  │ │  ││
+│  └────────────────────────┘│      │  └──┘ └──┘ └──┘ └──┘ └──┘ └──┘│
+│                            │      │                            │
+│  ┌────────────────────────┐│      │  Code expires in 10 min    │
+│  │      Send Code         ││      │                            │
+│  └────────────────────────┘│      │  [Resend Code]             │
+│                            │      │  [Try a different method]  │
+│                            │      │                            │
+└────────────────────────────┘      └────────────────────────────┘
+</code></pre>
+<h3 id="interaction-1" tabindex="-1"><a class="heading-anchor" href="#interaction-1" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Magic link</strong>: email contains a one-time URL. Tapping the link logs the user in immediately. Link expires in 15 minutes. Resend available after 60 seconds</li>
+<li><strong>SMS OTP</strong>: 6-digit numeric code. Auto-focuses first digit field. Auto-submits when all 6 digits entered. Expires in 10 minutes</li>
+<li><strong>Rate limiting</strong>: max 3 magic link/OTP requests per 15-minute window. After limit: &quot;Too many attempts. Please wait 15 minutes or contact your admin.&quot;</li>
+<li><strong>Email masking</strong>: shows partial email (a****z@partido.org) for privacy on shared devices</li>
+<li><strong>Phone masking</strong>: shows last 4 digits only</li>
+<li><strong>After successful fallback login</strong>: prompt to register a passkey (&quot;Set up passkey for faster login next time?&quot;) — nudges toward the primary auth method</li>
+</ul>
+<hr>
+<h2 id="auth-003-account-recovery-trusted-contact" tabindex="-1"><a class="heading-anchor" href="#auth-003-account-recovery-trusted-contact" aria-hidden="true">#</a> AUTH-003: Account Recovery (Trusted Contact)</h2>
+<p>Recovery flow when a user loses all device access. Their trusted contacts verify their identity and approve recovery.</p>
+<h3 id="mobile-primary-2" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-2" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│        [Org Logo]          │
+│                            │
+│  Account Recovery          │
+│                            │
+│  Lost access to your       │
+│  device? Your trusted      │
+│  contacts can help you     │
+│  recover your account.     │
+│                            │
+│  Your Email                │
+│  ┌────────────────────────┐│
+│  │ ana@partido.org        ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │  Start Recovery        ││
+│  └────────────────────────┘│
+│                            │
+│  ─────────────────────     │
+│                            │
+│  How it works:             │
+│  1. We notify your trusted │
+│     contacts               │
+│  2. They verify it's you   │
+│  3. After approval, you    │
+│     can set up a new       │
+│     passkey                │
+│                            │
+│  This takes at least       │
+│  24 hours for security.    │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="recovery-status-screen" tabindex="-1"><a class="heading-anchor" href="#recovery-status-screen" aria-hidden="true">#</a> Recovery Status Screen</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│  Recovery In Progress      │
+│                            │
+│  We've notified your       │
+│  trusted contacts.         │
+│                            │
+│  Approvals needed: 2 of 3  │
+│                            │
+│  Contact 1  ● Approved     │
+│  Contact 2  ◐ Pending      │
+│  Contact 3  ◐ Pending      │
+│                            │
+│  Cooling-off period:       │
+│  23h 14m remaining         │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  We'll email you at        │
+│  a****z@partido.org when   │
+│  recovery is approved.     │
+│                            │
+│  ⓘ The 24-hour wait        │
+│  protects against          │
+│  unauthorized recovery     │
+│  attempts. Your trusted    │
+│  contacts can cancel the   │
+│  request if it wasn't you. │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="trusted-contact-approval-what-the-contact-sees" tabindex="-1"><a class="heading-anchor" href="#trusted-contact-approval-what-the-contact-sees" aria-hidden="true">#</a> Trusted Contact Approval (what the contact sees)</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│  Recovery Request          │
+│                            │
+│  Ana López is trying to    │
+│  recover their GreenGrass  │
+│  account.                  │
+│                            │
+│  Request details:          │
+│  · From: New device        │
+│  · Location: San Juan, PR  │
+│  · Time: Mar 3, 2:30 PM   │
+│                            │
+│  Do you confirm this is    │
+│  Ana López?                │
+│                            │
+│  ┌────────────────────────┐│
+│  │  Yes, Approve Recovery ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │  No, This Isn't Them   ││
+│  └────────────────────────┘│
+│                            │
+│  ⓘ If you're unsure,       │
+│  contact Ana directly      │
+│  before approving.         │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-2" tabindex="-1"><a class="heading-anchor" href="#interaction-2" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>24-hour cooling-off</strong>: mandatory wait after request is submitted. Gives time for trusted contacts to verify and for the real account owner to notice an unauthorized attempt</li>
+<li><strong>2 of 3 approval</strong>: configurable (N of M). Default is 2 of 3 trusted contacts must approve</li>
+<li><strong>After approval + cooling-off</strong>: user receives email with a recovery link → navigates to AUTH-004 to register a new passkey</li>
+<li><strong>Old passkeys invalidated</strong>: all previous passkeys are revoked on successful recovery</li>
+<li><strong>&quot;No, This Isn't Them&quot;</strong>: cancels the recovery request immediately and alerts the Org Admin</li>
+<li><strong>Audit logged</strong>: all recovery requests (successful and denied) are logged in the audit trail</li>
+</ul>
+<hr>
+<h2 id="auth-004-passkey-registration" tabindex="-1"><a class="heading-anchor" href="#auth-004-passkey-registration" aria-hidden="true">#</a> AUTH-004: Passkey Registration</h2>
+<p>New passkey enrollment — either during initial account setup (from invitation) or after account recovery.</p>
+<h3 id="mobile-primary-3" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-3" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│        [Org Logo]          │
+│                            │
+│  Set Up Your Passkey       │
+│                            │
+│  A passkey lets you sign   │
+│  in with your fingerprint  │
+│  or face — no password     │
+│  needed.                   │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │   [Illustration:       ││
+│  │    fingerprint or      ││
+│  │    face icon with      ││
+│  │    phone]              ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │  Create Passkey        ││
+│  │                        ││
+│  └────────────────────────┘│
+│    48px tall, full-width   │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  What's a passkey?         │
+│  Your passkey is stored    │
+│  securely on this device.  │
+│  Only your fingerprint or  │
+│  face can use it. It can't │
+│  be stolen or phished.     │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="after-passkey-created" tabindex="-1"><a class="heading-anchor" href="#after-passkey-created" aria-hidden="true">#</a> After Passkey Created</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│         ✓                  │
+│                            │
+│  Passkey Created!          │
+│                            │
+│  You can now sign in with  │
+│  your fingerprint or face. │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Next: Set up trusted      │
+│  contacts so you can       │
+│  recover your account if   │
+│  you lose this device.     │
+│                            │
+│  ┌────────────────────────┐│
+│  │  Set Up Trusted        ││
+│  │  Contacts              ││
+│  └────────────────────────┘│
+│                            │
+│  [Skip for now]            │
+│  (You can do this later    │
+│   in your profile)         │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-3" tabindex="-1"><a class="heading-anchor" href="#interaction-3" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>&quot;Create Passkey&quot;</strong>: triggers the device's native passkey/WebAuthn enrollment. OS handles the biometric capture</li>
+<li><strong>Guided explanation</strong>: the &quot;What's a passkey?&quot; section demystifies the concept for users unfamiliar with passkeys</li>
+<li><strong>Post-creation</strong>: prompts trusted contact setup (AUTH-005). Skip allowed but gently discouraged — &quot;You can do this later&quot; is smaller text</li>
+<li><strong>Duress passkey</strong> (Maximum security tier): after regular passkey, an additional prompt: &quot;Set up a safety passkey? This alternative login shows a sanitized version of the app if you're under duress.&quot; Optional, only shown for Maximum-tier tenants</li>
+<li><strong>Device compatibility</strong>: if the device doesn't support passkeys (very old browser/OS), show a message explaining minimum requirements and offering magic link as a permanent alternative</li>
+</ul>
+<hr>
+<h2 id="auth-005-trusted-contact-setup" tabindex="-1"><a class="heading-anchor" href="#auth-005-trusted-contact-setup" aria-hidden="true">#</a> AUTH-005: Trusted Contact Setup</h2>
+<p>Add trusted contacts who can help recover the account if the user loses device access.</p>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│  Trusted Contacts          │
+│                            │
+│  If you lose your device,  │
+│  these people can verify   │
+│  your identity and help    │
+│  you recover your account. │
+│                            │
+│  Choose 2-3 people you     │
+│  trust who also use        │
+│  GreenGrass.               │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  ┌────────────────────────┐│
+│  │ 1. Jorge Rivera        ││
+│  │    Org Admin            ││
+│  │    jorge@partido.org   ││
+│  │                   [×]  ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ 2. Carlos Méndez       ││
+│  │    Comms Director       ││
+│  │    carlos@partido.org  ││
+│  │                   [×]  ││
+│  └────────────────────────┘│
+│                            │
+│  [+ Add Contact]           │
+│  Search by name or email   │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  ⓘ Your contacts will be   │
+│  notified that you've      │
+│  added them. They can see  │
+│  only that you trust them  │
+│  for recovery — nothing    │
+│  else about your account.  │
+│                            │
+│  ┌────────────────────────┐│
+│  │       Save             ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-4" tabindex="-1"><a class="heading-anchor" href="#interaction-4" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Contact search</strong>: [+ Add Contact] opens a search that looks up existing GreenGrass users in the same org by name or email</li>
+<li><strong>Minimum 2, maximum 5</strong>: recommended 2-3. Minimum of 2 required for the recovery protocol to work (2-of-3)</li>
+<li><strong>Notification</strong>: contacts receive a brief notification: &quot;Ana López added you as a trusted contact for account recovery.&quot; No action needed from them until a recovery is requested</li>
+<li><strong>Remove</strong>: [×] removes a contact. Minimum enforcement — if removing would drop below 2, show warning</li>
+<li><strong>Also accessible from</strong>: PROF-003 (Personal Security Settings) after initial setup</li>
+</ul>
+<hr>
+<h2 id="auth-006-device-authorization" tabindex="-1"><a class="heading-anchor" href="#auth-006-device-authorization" aria-hidden="true">#</a> AUTH-006: Device Authorization</h2>
+<p>Adding a new device to an existing account.</p>
+<h3 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│  Add This Device           │
+│                            │
+│  To add this device to     │
+│  your account, scan the    │
+│  QR code from a device     │
+│  you're already signed     │
+│  in on.                    │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │     [QR Code]          ││
+│  │                        ││
+│  │   Scan this from your  ││
+│  │   other device         ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Code expires in 5:00      │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Don't have your other     │
+│  device?                   │
+│                            │
+│  [Use magic link instead]  │
+│  [Recover your account]    │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="from-existing-device-initiating-the-add" tabindex="-1"><a class="heading-anchor" href="#from-existing-device-initiating-the-add" aria-hidden="true">#</a> From Existing Device (initiating the add)</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│  Authorize New Device      │
+│                            │
+│  A new device is requesting│
+│  access to your account:   │
+│                            │
+│  Device: Chrome on Android │
+│  Location: San Juan, PR    │
+│  Time: Mar 3, 2:45 PM      │
+│                            │
+│  Is this you?              │
+│                            │
+│  ┌────────────────────────┐│
+│  │  Yes, Authorize        ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │  No, Deny              ││
+│  └────────────────────────┘│
+│                            │
+│  ⓘ If you didn't request   │
+│  this, deny and notify     │
+│  your admin immediately.   │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-5" tabindex="-1"><a class="heading-anchor" href="#interaction-5" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>QR code</strong>: time-limited (5 minutes). New device displays QR, existing device scans it from within the GreenGrass app</li>
+<li><strong>Alternative</strong>: if QR scanning isn't possible, a short alphanumeric code can be entered manually on the existing device</li>
+<li><strong>After authorization</strong>: new device registers its own passkey (AUTH-004 flow). Existing passkeys remain valid</li>
+<li><strong>Device naming</strong>: auto-generated from user agent (&quot;Chrome on Android&quot;), editable by user in PROF-003</li>
+<li><strong>Deny</strong>: blocks the request, logs the attempt, optionally notifies the Org Admin</li>
+</ul>
+<hr>
+<h2 id="auth-007-session-expired-re-authenticate" tabindex="-1"><a class="heading-anchor" href="#auth-007-session-expired-re-authenticate" aria-hidden="true">#</a> AUTH-007: Session Expired / Re-authenticate</h2>
+<p>Shown when the session times out or when a sensitive action requires re-authentication.</p>
+<h3 id="mobile-primary-4" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-4" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│                            │
+│                            │
+│         🔒                 │
+│                            │
+│  Session Expired           │
+│                            │
+│  For your security, your   │
+│  session has timed out.    │
+│  Verify your identity to   │
+│  continue.                 │
+│                            │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │  Verify with Passkey   ││
+│  │                        ││
+│  └────────────────────────┘│
+│    48px tall, full-width   │
+│                            │
+│  [Use a different method]  │
+│                            │
+│                            │
+│  ⓘ Your work has been      │
+│  saved locally. Nothing    │
+│  is lost.                  │
+│                            │
+│                            │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="re-auth-for-sensitive-action-variant" tabindex="-1"><a class="heading-anchor" href="#re-auth-for-sensitive-action-variant" aria-hidden="true">#</a> Re-auth for Sensitive Action Variant</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│         🔒                 │
+│                            │
+│  Confirm Your Identity     │
+│                            │
+│  This action requires      │
+│  verification:             │
+│                            │
+│  &quot;Export all contact data&quot;  │
+│                            │
+│  ┌────────────────────────┐│
+│  │  Verify with Passkey   ││
+│  └────────────────────────┘│
+│                            │
+│  [Cancel]                  │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-6" tabindex="-1"><a class="heading-anchor" href="#interaction-6" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Data preservation</strong>: any unsaved work is preserved in local storage. After re-auth, user returns to the exact screen they were on with their data intact</li>
+<li><strong>Quick re-auth</strong>: biometric passkey verification takes ~2 seconds. Minimal disruption</li>
+<li><strong>Fallback</strong>: &quot;Use a different method&quot; → AUTH-002 (magic link / SMS OTP)</li>
+<li><strong>Sensitive action trigger</strong>: certain actions (data export, permission changes, passkey management) require re-auth regardless of session age. The action description is shown so the user understands why</li>
+<li><strong>No data on timeout screen</strong>: the expired screen shows no org data — just the re-auth prompt. Protects against shoulder-surfing on shared/public devices</li>
+</ul>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<p>Auth screens don't have traditional empty states, but error/edge case states are critical:</p>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Edge Case</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AUTH-001 (no passkey)</td>
+<td>Device has no registered passkey</td>
+<td>No passkey found on this device. Set up a passkey or use a different method.</td>
+</tr>
+<tr>
+<td>AUTH-001 (no connection)</td>
+<td>Offline</td>
+<td>Unable to connect. Check your internet connection and try again.</td>
+</tr>
+<tr>
+<td>AUTH-002 (rate limited)</td>
+<td>Too many login attempts</td>
+<td>Too many attempts. Please wait 15 minutes or contact your admin.</td>
+</tr>
+<tr>
+<td>AUTH-003 (no trusted contacts)</td>
+<td>User never set up trusted contacts</td>
+<td>No trusted contacts configured. Contact your organization's admin for manual account recovery.</td>
+</tr>
+<tr>
+<td>AUTH-004 (incompatible device)</td>
+<td>Device doesn't support passkeys</td>
+<td>This device doesn't support passkeys. You can use magic link or SMS to sign in. Minimum requirements: [browser versions].</td>
+</tr>
+<tr>
+<td>AUTH-006 (expired QR)</td>
+<td>QR code timed out</td>
+<td>This code has expired. Generate a new one to continue.</td>
+</tr>
+<tr>
+<td>AUTH-007 (re-auth failed)</td>
+<td>Biometric fails repeatedly</td>
+<td>Unable to verify your identity. Use an alternative method or contact your admin.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Login button is the only interactive element on AUTH-001 — zero cognitive load</li>
+<li>Biometric prompts are handled by the OS (already accessible)</li>
+<li>OTP input fields support paste (users copying from SMS)</li>
+<li>QR code has text alternative (manual alphanumeric code)</li>
+<li>All error messages are descriptive (not just &quot;authentication failed&quot;)</li>
+<li>Recovery status uses text labels alongside status icons (● Approved, ◐ Pending)</li>
+<li>Session expired screen has no auto-redirect timer — user controls when to re-auth</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Passkey-first (no passwords)</td>
+<td>Single passkey button on login screen</td>
+<td>Eliminates phishing, credential stuffing, and password reuse attacks. The most common attack vector in political campaigns is credential-based</td>
+</tr>
+<tr>
+<td>24-hour recovery cooling-off</td>
+<td>Mandatory wait period before recovery completes</td>
+<td>Gives the real account owner time to notice and cancel an unauthorized recovery attempt. Critical for election security</td>
+</tr>
+<tr>
+<td>Trusted contacts (not admin recovery)</td>
+<td>Recovery requires peer approval, not admin override</td>
+<td>No single person can unilaterally access another user's account. Distributes trust. Admin-only recovery creates a target</td>
+</tr>
+<tr>
+<td>No &quot;forgot password&quot;</td>
+<td>Passkey + trusted contact recovery only</td>
+<td>There is no password to forget. Recovery through trusted contacts is more secure than email-based password reset</td>
+</tr>
+<tr>
+<td>Data preservation on timeout</td>
+<td>Local storage persists unsaved work</td>
+<td>Volunteers in the field may be mid-form when their session expires. Losing their work would be unacceptable</td>
+</tr>
+<tr>
+<td>Duress passkey optional</td>
+<td>Only shown for Maximum security tier</td>
+<td>Duress mode is a complex concept. Only organizations with genuine security threats should be prompted to configure it</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li><strong>Passkey cross-device sync</strong> — should the platform support passkeys synced via iCloud Keychain / Google Password Manager, or require device-bound passkeys only? Synced passkeys are more convenient but reduce security isolation</li>
+<li><strong>SMS OTP in low-connectivity areas</strong> — SMS delivery can be unreliable in rural areas. Should the platform support TOTP (app-based codes) as an additional fallback?</li>
+<li><strong>Account recovery for the Org Admin</strong> — if the only OA loses device access and has no trusted contacts configured, how is recovery handled? Platform-level support intervention may be necessary</li>
+<li><strong>Passkey enrollment for low-end devices</strong> — some Android devices in the target regions may not support WebAuthn. What is the minimum device/OS requirement, and what is the permanent fallback for unsupported devices?</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#auth-navigation-context"># Auth Navigation Context</a></li><li class="toc-2"><a href="#auth-001-login-passkey"># AUTH-001: Login (Passkey)</a></li><li class="toc-3"><a href="#mobile-primary"># Mobile (Primary)</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#flow"># Flow</a></li><li class="toc-3"><a href="#states"># States</a></li><li class="toc-3"><a href="#interaction"># Interaction</a></li><li class="toc-2"><a href="#auth-002-login-fallback-magic-link-sms-otp"># AUTH-002: Login Fallback (Magic Link / SMS OTP)</a></li><li class="toc-3"><a href="#mobile-primary-1"># Mobile (Primary)</a></li><li class="toc-3"><a href="#magic-link-flow"># Magic Link Flow</a></li><li class="toc-3"><a href="#sms-otp-flow"># SMS OTP Flow</a></li><li class="toc-3"><a href="#interaction-1"># Interaction</a></li><li class="toc-2"><a href="#auth-003-account-recovery-trusted-contact"># AUTH-003: Account Recovery (Trusted Contact)</a></li><li class="toc-3"><a href="#mobile-primary-2"># Mobile (Primary)</a></li><li class="toc-3"><a href="#recovery-status-screen"># Recovery Status Screen</a></li><li class="toc-3"><a href="#trusted-contact-approval-what-the-contact-sees"># Trusted Contact Approval (what the contact sees)</a></li><li class="toc-3"><a href="#interaction-2"># Interaction</a></li><li class="toc-2"><a href="#auth-004-passkey-registration"># AUTH-004: Passkey Registration</a></li><li class="toc-3"><a href="#mobile-primary-3"># Mobile (Primary)</a></li><li class="toc-3"><a href="#after-passkey-created"># After Passkey Created</a></li><li class="toc-3"><a href="#interaction-3"># Interaction</a></li><li class="toc-2"><a href="#auth-005-trusted-contact-setup"># AUTH-005: Trusted Contact Setup</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#interaction-4"># Interaction</a></li><li class="toc-2"><a href="#auth-006-device-authorization"># AUTH-006: Device Authorization</a></li><li class="toc-3"><a href="#mobile-1"># Mobile</a></li><li class="toc-3"><a href="#from-existing-device-initiating-the-add"># From Existing Device (initiating the add)</a></li><li class="toc-3"><a href="#interaction-5"># Interaction</a></li><li class="toc-2"><a href="#auth-007-session-expired-re-authenticate"># AUTH-007: Session Expired / Re-authenticate</a></li><li class="toc-3"><a href="#mobile-primary-4"># Mobile (Primary)</a></li><li class="toc-3"><a href="#re-auth-for-sensitive-action-variant"># Re-auth for Sensitive Action Variant</a></li><li class="toc-3"><a href="#interaction-6"># Interaction</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>
