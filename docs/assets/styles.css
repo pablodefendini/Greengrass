@@ -291,7 +291,7 @@ a:hover { text-decoration: underline; }
 /* Prose                                                                   */
 /* ----------------------------------------------------------------------- */
 .prose > :first-child { margin-top: 0; }
-.prose h1, .prose h2, .prose h3, .prose h4 { line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; scroll-margin-top: calc(var(--header-h) + var(--space-4)); }
+.prose h1, .prose h2, .prose h3, .prose h4 { position: relative; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; scroll-margin-top: calc(var(--header-h) + var(--space-4)); }
 .prose h1 { font-size: 32px; margin: 0 0 var(--space-6); }
 .prose h2 { font-size: 24px; margin: var(--space-10) 0 var(--space-4); padding-bottom: var(--space-2); border-bottom: 1px solid var(--color-border); }
 .prose h3 { font-size: 19px; margin: var(--space-8) 0 var(--space-3); }
@@ -309,7 +309,7 @@ a:hover { text-decoration: underline; }
 }
 .prose blockquote > :last-child { margin-bottom: 0; }
 
-.heading-anchor { color: var(--color-text-tertiary); margin-inline-end: var(--space-2); opacity: 0; text-decoration: none; font-weight: 400; }
+.heading-anchor { position: absolute; right: 100%; margin-inline-end: var(--space-2); color: var(--color-text-tertiary); opacity: 0; text-decoration: none; font-weight: 400; }
 .prose h1:hover .heading-anchor, .prose h2:hover .heading-anchor,
 .prose h3:hover .heading-anchor, .prose h4:hover .heading-anchor { opacity: 1; }
 
