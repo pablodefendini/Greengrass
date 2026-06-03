@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support &amp; Help Wireframes · GreenGrass</title>
+<meta name="description" content="Support &amp; Help Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="./help.html" aria-current="page" class="active">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="support-help-wireframes" tabindex="-1"><a class="heading-anchor" href="#support-help-wireframes" aria-hidden="true">#</a> Support &amp; Help Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Help screens provide self-service support — searchable knowledge base, AI-powered concierge, and structured training for volunteers. These screens exist to reduce support burden while ensuring every user (from tech-savvy Org Admins to first-time volunteers) can learn the platform independently.</p>
+<p>The core UX challenge: help content must be role-filtered (a volunteer doesn't need articles about compliance configuration), multilingual (matching the tenant's configured languages), and partially offline (volunteers in low-connectivity areas need cached training materials). The AI concierge adds a conversational interface but must know its limits and escalate when appropriate.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HELP-001</td>
+<td>Knowledge Base Browser</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>/help</code></td>
+</tr>
+<tr>
+<td>HELP-002</td>
+<td>Knowledge Base Article</td>
+<td>All authenticated</td>
+<td>Partial</td>
+<td>Yes</td>
+<td><code>/help/[slug]</code></td>
+</tr>
+<tr>
+<td>HELP-003</td>
+<td>AI Concierge Chat</td>
+<td>All authenticated</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>/help/chat</code></td>
+</tr>
+<tr>
+<td>HELP-004</td>
+<td>Training Module List</td>
+<td>V, TL (learner); VC (admin)</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><code>/training</code></td>
+</tr>
+<tr>
+<td>HELP-005</td>
+<td>Training Module Content</td>
+<td>V, TL</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><code>/training/[moduleId]</code></td>
+</tr>
+<tr>
+<td>HELP-006</td>
+<td>Training Quiz</td>
+<td>V, TL</td>
+<td>Partial</td>
+<td>Primary</td>
+<td><code>/training/[moduleId]/quiz</code></td>
+</tr>
+<tr>
+<td>HELP-007</td>
+<td>Certification Status</td>
+<td>V, TL (learner); VC (admin)</td>
+<td>No</td>
+<td>Yes</td>
+<td><code>/training/certifications</code></td>
+</tr>
+<tr>
+<td>HELP-008</td>
+<td>Training Content Editor</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td><code>/volunteers/training</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="help-navigation-context" tabindex="-1"><a class="heading-anchor" href="#help-navigation-context" aria-hidden="true">#</a> Help Navigation Context</h2>
+<pre><code>Help (accessible from sidebar footer + user menu)
+  Knowledge Base    → HELP-001
+  AI Concierge      → HELP-003
+
+Training (within Volunteer section of sidebar)
+  My Training       → HELP-004 (volunteer view)
+  Modules           → HELP-004 (admin view)
+  Certifications    → HELP-007
+  Content Editor    → HELP-008 (admin view)
+</code></pre>
+<hr>
+<h2 id="help-001-knowledge-base-browser" tabindex="-1"><a class="heading-anchor" href="#help-001-knowledge-base-browser" aria-hidden="true">#</a> HELP-001: Knowledge Base Browser</h2>
+<p>Searchable, role-filtered knowledge base. The main entry point for self-service help.</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Help Center                                                                 │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────────┐│
+│  │  🔍 Search help articles...                                             ││
+│  └──────────────────────────────────────────────────────────────────────────┘│
+│                                                                              │
+│  ┌──────────────────────┐  ┌────────────────────────────────────────────────┐│
+│  │ Categories           │  │                                                ││
+│  │ ─────────────        │  │  Getting Started                               ││
+│  │                      │  │  ──────────────────                            ││
+│  │ ● Getting Started    │  │                                                ││
+│  │   People &amp; CRM       │  │  ┌────────────────────────────────────────────┐││
+│  │   Field Operations   │  │  │ Setting up your organization               │││
+│  │   Fundraising        │  │  │ Learn how to configure your org profile,   │││
+│  │   Communications     │  │  │ invite staff, and set up your first...     │││
+│  │   Events             │  │  │ 5 min read · Getting Started               │││
+│  │   GOTV               │  │  └────────────────────────────────────────────┘││
+│  │   Volunteers         │  │                                                ││
+│  │   Alliance           │  │  ┌────────────────────────────────────────────┐││
+│  │   Settings           │  │  │ Understanding roles and permissions        │││
+│  │   Security           │  │  │ How role templates work, what each role    │││
+│  │                      │  │  │ can access, and how to customize...        │││
+│  │ ─────────────        │  │  │ 3 min read · Getting Started              │││
+│  │                      │  │  └────────────────────────────────────────────┘││
+│  │ Popular Articles     │  │                                                ││
+│  │ ─────────────        │  │  ┌────────────────────────────────────────────┐││
+│  │ · How to start a     │  │  │ Navigating the platform                   │││
+│  │   canvassing shift   │  │  │ A tour of the sidebar, top bar, and how   │││
+│  │ · Adding contacts    │  │  │ to find what you need in GreenGrass...     │││
+│  │ · Setting up events  │  │  │ 4 min read · Getting Started              │││
+│  │ · GOTV overview      │  │  └────────────────────────────────────────────┘││
+│  │                      │  │                                                ││
+│  └──────────────────────┘  │  [Show all 8 articles in Getting Started →]   ││
+│                             │                                                ││
+│                             └────────────────────────────────────────────────┘│
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────────┐│
+│  │ Can't find what you need?  [Ask AI Concierge →]                         ││
+│  └──────────────────────────────────────────────────────────────────────────┘│
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  Help Center               │
+├────────────────────────────┤
+│                            │
+│  ┌────────────────────────┐│
+│  │ 🔍 Search articles...  ││
+│  └────────────────────────┘│
+│                            │
+│  Categories                │
+│  ┌────────────────────────┐│
+│  │ Getting Started     →  ││
+│  │ People &amp; CRM        →  ││
+│  │ Field Operations    →  ││
+│  │ Fundraising         →  ││
+│  │ Communications      →  ││
+│  │ Events              →  ││
+│  │ GOTV                →  ││
+│  │ Volunteers          →  ││
+│  └────────────────────────┘│
+│                            │
+│  Popular                   │
+│  · How to start a shift    │
+│  · Adding contacts         │
+│  · Setting up events       │
+│                            │
+│  ─────────────────────     │
+│  [Ask AI Concierge 💬]     │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction" tabindex="-1"><a class="heading-anchor" href="#interaction" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Search</strong>: full-text search across all articles. Results ranked by relevance, filtered by user's role</li>
+<li><strong>Role filtering</strong>: articles tagged by persona. A Volunteer sees volunteer-relevant articles prioritized; admin articles are still accessible but lower in results</li>
+<li><strong>Categories</strong>: match the sidebar structure (People, Field Ops, Fundraising, etc.) for intuitive mapping</li>
+<li><strong>Popular articles</strong>: dynamically ranked by view count within the tenant</li>
+<li><strong>[Ask AI Concierge →]</strong>: navigates to HELP-003</li>
+</ul>
+<hr>
+<h2 id="help-002-knowledge-base-article" tabindex="-1"><a class="heading-anchor" href="#help-002-knowledge-base-article" aria-hidden="true">#</a> HELP-002: Knowledge Base Article</h2>
+<p>Individual article view with formatted content.</p>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Help Center                                         [Share] [Print]       │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────────────────────────┐  ┌────────────────────────────────────┐│
+│  │                                  │  │ On This Page                       ││
+│  │  Setting Up Your Organization    │  │ ──────────────                     ││
+│  │  ══════════════════════════════  │  │                                    ││
+│  │                                  │  │ · Before you begin                 ││
+│  │  Getting Started · 5 min read    │  │ · Step 1: Org profile              ││
+│  │  Last updated: Feb 15, 2026      │  │ · Step 2: Invite staff             ││
+│  │  For: Org Admin                  │  │ · Step 3: Configure settings       ││
+│  │                                  │  │ · Next steps                       ││
+│  │  ────────────────────────────    │  │                                    ││
+│  │                                  │  │ ─────────────────────              ││
+│  │  ## Before You Begin             │  │                                    ││
+│  │                                  │  │ Related Articles                   ││
+│  │  Before setting up your org,     │  │ · Understanding roles              ││
+│  │  make sure you have:             │  │ · Compliance configuration         ││
+│  │                                  │  │ · Integration setup                ││
+│  │  - Your organization's logo      │  │                                    ││
+│  │  - Brand colors (hex codes)      │  │ ─────────────────────              ││
+│  │  - List of staff to invite       │  │                                    ││
+│  │                                  │  │ [Ask AI Concierge →]              ││
+│  │  ## Step 1: Organization Profile │  │                                    ││
+│  │                                  │  │                                    ││
+│  │  Navigate to **Settings &gt; Org    │  │                                    ││
+│  │  Profile** (or click [here]).    │  │                                    ││
+│  │                                  │  │                                    ││
+│  │  [Screenshot of SET-001]         │  │                                    ││
+│  │                                  │  │                                    ││
+│  │  Fill in your organization       │  │                                    ││
+│  │  name, upload your logo...       │  │                                    ││
+│  │                                  │  │                                    ││
+│  │  ...                             │  │                                    ││
+│  │                                  │  │                                    ││
+│  │  ────────────────────────────    │  │                                    ││
+│  │                                  │  │                                    ││
+│  │  Was this helpful?               │  │                                    ││
+│  │  [👍 Yes]  [👎 No]              │  │                                    ││
+│  │                                  │  │                                    ││
+│  │  ← Previous Article              │  │                                    ││
+│  │    Next Article →                │  │                                    ││
+│  │                                  │  │                                    ││
+│  └──────────────────────────────────┘  └────────────────────────────────────┘│
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h3>
+<p>Single column — article content full-width. Table of contents as a collapsible header. Related articles at bottom.</p>
+<h3 id="interaction-1" tabindex="-1"><a class="heading-anchor" href="#interaction-1" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Table of contents</strong>: sticky sidebar (desktop) or collapsible top section (mobile). Click to jump to section</li>
+<li><strong>Formatted content</strong>: headings, lists, code blocks, screenshots, inline links to platform screens</li>
+<li><strong>Related articles</strong>: manually curated by content editors. Shown in sidebar (desktop) or at bottom (mobile)</li>
+<li><strong>Feedback</strong>: &quot;Was this helpful?&quot; with thumbs up/down. Aggregated to identify articles needing improvement</li>
+<li><strong>Previous/Next</strong>: sequential navigation within the category</li>
+<li><strong>Partial offline</strong>: articles can be cached for offline reading. Cached articles show &quot;Cached&quot; badge. Images may not be available offline</li>
+<li><strong>[Share]</strong>: copies article URL. [Print]: opens print-friendly view</li>
+<li><strong>Deep links</strong>: articles can link directly to settings screens or features — &quot;Navigate to Settings &gt; Org Profile&quot; is a clickable link</li>
+</ul>
+<hr>
+<h2 id="help-003-ai-concierge-chat" tabindex="-1"><a class="heading-anchor" href="#help-003-ai-concierge-chat" aria-hidden="true">#</a> HELP-003: AI Concierge Chat</h2>
+<p>Conversational AI assistant that answers platform questions, provides guidance, and knows the user's context.</p>
+<h3 id="desktop-side-panel" tabindex="-1"><a class="heading-anchor" href="#desktop-side-panel" aria-hidden="true">#</a> Desktop (Side Panel)</h3>
+<pre><code>                                    ┌──────────────────────────────────┐
+                                    │ AI Concierge                [×]  │
+                                    ├──────────────────────────────────┤
+                                    │                                  │
+                                    │  👋 Hi Ana! I'm the GreenGrass  │
+                                    │  assistant. Ask me anything      │
+                                    │  about the platform.             │
+                                    │                                  │
+                                    │  ─────────────────────────────   │
+                                    │                                  │
+                                    │  You: How do I set up a          │
+                                    │  canvassing campaign?            │
+                                    │                                  │
+                                    │  ─────────────────────────────   │
+                                    │                                  │
+                                    │  🤖 To set up a canvassing      │
+                                    │  campaign:                       │
+                                    │                                  │
+                                    │  1. Go to **Field Operations     │
+                                    │     &gt; Canvassing** in the        │
+                                    │     sidebar                      │
+                                    │  2. Click **+ New Campaign**     │
+                                    │  3. Fill in the campaign          │
+                                    │     details (name, dates,        │
+                                    │     script, target area)         │
+                                    │                                  │
+                                    │  📎 Related article:             │
+                                    │  [Creating Your First            │
+                                    │   Canvassing Campaign →]         │
+                                    │                                  │
+                                    │  Would you like help with        │
+                                    │  any of these steps?             │
+                                    │                                  │
+                                    │  ─────────────────────────────   │
+                                    │                                  │
+                                    │  You: What fields are required   │
+                                    │  for the script?                 │
+                                    │                                  │
+                                    │  ─────────────────────────────   │
+                                    │                                  │
+                                    │  🤖 The Script Builder requires: │
+                                    │                                  │
+                                    │  - **Introduction** (what the    │
+                                    │    canvasser says at the door)   │
+                                    │  - At least one **question**     │
+                                    │    with response options         │
+                                    │  - **Thank you** message         │
+                                    │                                  │
+                                    │  Optional:                       │
+                                    │  - Follow-up questions           │
+                                    │  - Score mapping                 │
+                                    │  - Branching logic               │
+                                    │                                  │
+                                    │  [Open Script Builder →]         │
+                                    │                                  │
+                                    │  ┌──────────────────────────┐   │
+                                    │  │ Ask a question...        │   │
+                                    │  │                     [→]  │   │
+                                    │  └──────────────────────────┘   │
+                                    │                                  │
+                                    └──────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-full-screen" tabindex="-1"><a class="heading-anchor" href="#mobile-full-screen" aria-hidden="true">#</a> Mobile (Full Screen)</h3>
+<pre><code>┌────────────────────────────┐
+│  ← AI Concierge            │
+├────────────────────────────┤
+│                            │
+│  👋 Hi Ana! Ask me         │
+│  anything about GreenGrass.│
+│                            │
+│  ──────────────────────    │
+│                            │
+│  You: How do I set up a    │
+│  canvassing campaign?      │
+│                            │
+│  ──────────────────────    │
+│                            │
+│  🤖 To set up a canvassing │
+│  campaign:                 │
+│                            │
+│  1. Go to Field Operations │
+│     &gt; Canvassing           │
+│  2. Click + New Campaign   │
+│  3. Fill in details...     │
+│                            │
+│  📎 [Creating Your First   │
+│   Canvassing Campaign →]   │
+│                            │
+│  ──────────────────────    │
+│                            │
+│  ┌────────────────────────┐│
+│  │ Ask a question...      ││
+│  │                   [→]  ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-2" tabindex="-1"><a class="heading-anchor" href="#interaction-2" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Context-aware</strong>: the concierge knows which screen the user is on and can provide screen-specific guidance</li>
+<li><strong>Article links</strong>: responses include links to relevant knowledge base articles for deeper reading</li>
+<li><strong>Action links</strong>: responses can include direct links to platform features (&quot;Open Script Builder →&quot;)</li>
+<li><strong>Chat history</strong>: persisted across sessions. User can continue a previous conversation</li>
+<li><strong>Escalation</strong>: for questions the AI can't answer: &quot;I'm not sure about that. Would you like me to create a support request?&quot; (Premium tier only — standard tier shows &quot;Contact your admin&quot;)</li>
+<li><strong>Desktop</strong>: slides in as a right-side panel over the current content. [×] to dismiss</li>
+<li><strong>Mobile</strong>: full-screen chat view, accessed from sidebar footer or help center</li>
+<li><strong>Role-aware</strong>: responses adapted to the user's role. A volunteer asking about &quot;campaigns&quot; gets canvassing campaign guidance; an admin gets campaign creation guidance</li>
+</ul>
+<hr>
+<h2 id="help-004-training-module-list" tabindex="-1"><a class="heading-anchor" href="#help-004-training-module-list" aria-hidden="true">#</a> HELP-004: Training Module List</h2>
+<p>Training modules for volunteers (learner view) and module management for Volunteer Coordinators (admin view).</p>
+<h3 id="mobile-volunteer-view-primary" tabindex="-1"><a class="heading-anchor" href="#mobile-volunteer-view-primary" aria-hidden="true">#</a> Mobile — Volunteer View (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  My Training                │
+├────────────────────────────┤
+│                            │
+│  Required                  │
+│  ──────────                │
+│                            │
+│  ┌────────────────────────┐│
+│  │ 📋 Platform Basics     ││
+│  │    4 lessons · 15 min  ││
+│  │    ████████████░░ 75%  ││
+│  │    [Continue →]        ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ 🚪 Canvassing Training ││
+│  │    6 lessons · 25 min  ││
+│  │    ░░░░░░░░░░░░ Not    ││
+│  │    started              ││
+│  │    [Start →]           ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ 🛡 Safety &amp; De-escal.  ││
+│  │    3 lessons · 10 min  ││
+│  │    ████████████████ ✓  ││
+│  │    Completed Mar 1     ││
+│  └────────────────────────┘│
+│                            │
+│  Recommended               │
+│  ────────────              │
+│                            │
+│  ┌────────────────────────┐│
+│  │ 📞 Phone Banking Tips  ││
+│  │    3 lessons · 12 min  ││
+│  │    [Start →]           ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="desktop-admin-view-volunteer-coordinator" tabindex="-1"><a class="heading-anchor" href="#desktop-admin-view-volunteer-coordinator" aria-hidden="true">#</a> Desktop — Admin View (Volunteer Coordinator)</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Training Modules                                          [+ Create Module] │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Module               Lessons  Required   Completed   Avg Score        │  │
+│  │ ────────────────────  ───────  ────────   ─────────   ─────────        │  │
+│  │ Platform Basics       4        ☑         42/48 (88%) 92%              │  │
+│  │ Canvassing Training   6        ☑         28/48 (58%) 87%              │  │
+│  │ Safety &amp; De-escal.    3        ☑         45/48 (94%) 95%              │  │
+│  │ Phone Banking Tips    3        □          12/48 (25%) 89%              │  │
+│  │ GOTV Orientation      4        □          0/48 (0%)   —               │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                      │
+│  │ Total Modules│  │ Avg Complete │  │ Volunteers   │                      │
+│  │ 5            │  │ 53%          │  │ 48           │                      │
+│  └──────────────┘  └──────────────┘  └──────────────┘                      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-3" tabindex="-1"><a class="heading-anchor" href="#interaction-3" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Volunteer view</strong>: shows assigned modules split into Required (must complete before shifts) and Recommended. Progress bar and status for each</li>
+<li><strong>Admin view</strong>: shows all modules with completion rates across all volunteers. Click module to edit (HELP-008) or view details</li>
+<li><strong>Offline caching</strong>: modules marked for offline include a download indicator. Cached content available without connectivity</li>
+<li><strong>[Continue →]</strong>: resumes the module at the last completed lesson</li>
+<li><strong>[Start →]</strong>: begins from lesson 1</li>
+</ul>
+<hr>
+<h2 id="help-005-training-module-content" tabindex="-1"><a class="heading-anchor" href="#help-005-training-module-content" aria-hidden="true">#</a> HELP-005: Training Module Content</h2>
+<p>Individual training module — lessons with text, images, and video.</p>
+<h3 id="mobile-primary" tabindex="-1"><a class="heading-anchor" href="#mobile-primary" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  ← Canvassing Training     │
+│  Lesson 2 of 6             │
+├────────────────────────────┤
+│                            │
+│  The Door Approach         │
+│  ══════════════════        │
+│                            │
+│  When a voter opens the    │
+│  door, you have about 10   │
+│  seconds to make a good    │
+│  impression. Here's how:   │
+│                            │
+│  1. Smile and introduce    │
+│     yourself by first name │
+│                            │
+│  2. Say who you're with:   │
+│     &quot;I'm volunteering with │
+│     Partido Verde&quot;         │
+│                            │
+│  3. State your purpose:    │
+│     &quot;We're talking to      │
+│     neighbors about the    │
+│     upcoming election&quot;     │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │   [Video: Door         ││
+│  │    approach demo]      ││
+│  │   ▶ 2:30               ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Key Points                │
+│  ──────────                │
+│  · Be warm but brief       │
+│  · Don't block the doorway │
+│  · If they say &quot;not        │
+│    interested,&quot; thank them │
+│    and move on             │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  ┌────────────────────────┐│
+│  │  ← Previous            ││
+│  │       Next Lesson →    ││
+│  └────────────────────────┘│
+│                            │
+│  ● ● ○ ○ ○ ○  (lesson     │
+│                 progress)  │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-4" tabindex="-1"><a class="heading-anchor" href="#interaction-4" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Sequential</strong>: lessons in order. Previous/Next navigation. Progress dots at bottom</li>
+<li><strong>Video</strong>: play-on-demand (not autoplay). Supports subtitles in tenant languages</li>
+<li><strong>Completion tracking</strong>: lesson marked complete when the user reaches the bottom (scroll-based) or clicks &quot;Next&quot;</li>
+<li><strong>Offline</strong>: text and images cached. Videos may not be available offline (too large). Offline indicator: &quot;Video available when connected&quot;</li>
+<li><strong>Bookmarking</strong>: user's progress saved — returning to the module resumes at the last position</li>
+</ul>
+<hr>
+<h2 id="help-006-training-quiz" tabindex="-1"><a class="heading-anchor" href="#help-006-training-quiz" aria-hidden="true">#</a> HELP-006: Training Quiz</h2>
+<p>Knowledge check after completing a training module.</p>
+<h3 id="mobile-primary-1" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-1" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  Quiz: Canvassing Training │
+│  Question 3 of 5           │
+├────────────────────────────┤
+│                            │
+│  A voter says &quot;I'm not     │
+│  interested.&quot; What should  │
+│  you do?                   │
+│                            │
+│  ○ Explain why they should │
+│    listen                  │
+│                            │
+│  ● Thank them and move to  │
+│    the next door           │
+│                            │
+│  ○ Ask them why they're    │
+│    not interested          │
+│                            │
+│  ○ Leave campaign          │
+│    literature and leave    │
+│                            │
+│                            │
+│  ┌────────────────────────┐│
+│  │    Next Question →     ││
+│  └────────────────────────┘│
+│                            │
+│  ● ● ● ○ ○  (progress)    │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="results-screen" tabindex="-1"><a class="heading-anchor" href="#results-screen" aria-hidden="true">#</a> Results Screen</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│         ✓                  │
+│                            │
+│  Quiz Complete!            │
+│                            │
+│  Score: 4 / 5 (80%)        │
+│  Pass threshold: 70%       │
+│  Result: Passed ✓          │
+│                            │
+│  Question Review:          │
+│  1. ✓  Introduction basics │
+│  2. ✓  Door approach       │
+│  3. ✓  Handling &quot;not       │
+│        interested&quot;         │
+│  4. ✕  Recording responses │
+│  5. ✓  Safety protocols    │
+│                            │
+│  [View Correct Answers]    │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  ┌────────────────────────┐│
+│  │  Back to Training      ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-5" tabindex="-1"><a class="heading-anchor" href="#interaction-5" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Question types</strong>: multiple choice, true/false, short-answer</li>
+<li><strong>One question at a time</strong>: reduces cognitive load on mobile</li>
+<li><strong>Progress</strong>: dots showing position in quiz</li>
+<li><strong>Pass/fail</strong>: configurable threshold per module (default 70%). Failed quiz can be retaken</li>
+<li><strong>Review</strong>: after submission, shows which questions were right/wrong with correct answers</li>
+<li><strong>Offline</strong>: quiz can be taken offline. Results sync when connected</li>
+<li><strong>No time limit</strong>: volunteers may have intermittent attention (between door knocks, etc.)</li>
+</ul>
+<hr>
+<h2 id="help-007-certification-status" tabindex="-1"><a class="heading-anchor" href="#help-007-certification-status" aria-hidden="true">#</a> HELP-007: Certification Status</h2>
+<p>Track training completion and certification status.</p>
+<h3 id="mobile-volunteer-view" tabindex="-1"><a class="heading-anchor" href="#mobile-volunteer-view" aria-hidden="true">#</a> Mobile — Volunteer View</h3>
+<pre><code>┌────────────────────────────┐
+│  My Certifications          │
+├────────────────────────────┤
+│                            │
+│  ┌────────────────────────┐│
+│  │ ✓ Platform Basics      ││
+│  │   Completed Mar 1      ││
+│  │   Score: 92%            ││
+│  │   No expiration         ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ ✓ Safety &amp; De-escal.   ││
+│  │   Completed Mar 1      ││
+│  │   Score: 95%            ││
+│  │   Expires: Mar 2027    ││
+│  │   [Renew Early]        ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ ◐ Canvassing Training  ││
+│  │   In Progress (75%)    ││
+│  │   [Continue →]         ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ ○ GOTV Orientation     ││
+│  │   Not Started           ││
+│  │   [Start →]            ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="desktop-admin-view-volunteer-coordinator-1" tabindex="-1"><a class="heading-anchor" href="#desktop-admin-view-volunteer-coordinator-1" aria-hidden="true">#</a> Desktop — Admin View (Volunteer Coordinator)</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Volunteer Certifications                                    [Export CSV]     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Search...]   Module: [All ▾]   Status: [All ▾]                            │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Volunteer        Platform  Canvassing  Safety   Phone    GOTV        │  │
+│  │ ──────────────   ────────  ──────────  ──────   ──────   ──────      │  │
+│  │ Ana López        ✓ 92%    ✓ 87%       ✓ 95%    ✓ 89%    ○           │  │
+│  │ Carlos Méndez    ✓ 88%    ◐ 50%       ✓ 90%    ○        ○           │  │
+│  │ María Santos     ✓ 95%    ✓ 91%       ✓ 100%   ○        ○           │  │
+│  │ Luis Torres      ✓ 78%    ○           ✓ 85%    ○        ○           │  │
+│  │ Rosa Delgado     ◐ 25%    ○           ○        ○        ○           │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                      │
+│  │ Fully Cert.  │  │ In Progress  │  │ Need Renewal │                      │
+│  │ 3 of 48      │  │ 12           │  │ 2            │                      │
+│  └──────────────┘  └──────────────┘  └──────────────┘                      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-6" tabindex="-1"><a class="heading-anchor" href="#interaction-6" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Volunteer view</strong>: personal certification cards with status (✓ Completed, ◐ In Progress, ○ Not Started), score, expiration</li>
+<li><strong>Admin view</strong>: cross-tab matrix showing all volunteers × all modules. Quick scan for certification gaps</li>
+<li><strong>Expiration</strong>: some certifications expire (e.g., safety training). [Renew Early] opens the module for retake</li>
+<li><strong>Renewal reminders</strong>: system sends notification 30 days before expiration</li>
+<li><strong>[Export CSV]</strong>: admin can export certification data for compliance or reporting</li>
+</ul>
+<hr>
+<h2 id="help-008-training-content-editor" tabindex="-1"><a class="heading-anchor" href="#help-008-training-content-editor" aria-hidden="true">#</a> HELP-008: Training Content Editor</h2>
+<p>Admin screen for creating and editing training modules.</p>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Training Modules            Edit: Canvassing Training                     │
+│                                                 [Save Draft]  [Publish]      │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Module Settings ───────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Title *                              Required?                        │ │
+│  │  ┌────────────────────────────┐      ☑ Yes                            │ │
+│  │  │ Canvassing Training        │                                        │ │
+│  │  └────────────────────────────┘      Pass Threshold                   │ │
+│  │                                       [70 ▾] %                         │ │
+│  │  Description                                                           │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Essential training for door-to-door canvassing volunteers...    │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Certification Expiry: [12 months ▾]  (○ No expiry)                   │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Lessons ───────────────────────────────────────────────────────── [+] ┐ │
+│  │                                                                        │ │
+│  │  1. Introduction to Canvassing                           [Edit] [×]   │ │
+│  │  2. The Door Approach                                    [Edit] [×]   │ │
+│  │  3. Recording Responses                                  [Edit] [×]   │ │
+│  │  4. Handling Difficult Situations                        [Edit] [×]   │ │
+│  │  5. Safety Protocols                                     [Edit] [×]   │ │
+│  │  6. Wrap-Up &amp; Next Steps                                 [Edit] [×]   │ │
+│  │                                                                        │ │
+│  │  [+ Add Lesson]      Drag to reorder                                  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Quiz Questions ────────────────────────────────────────────────── [+] ┐ │
+│  │                                                                        │ │
+│  │  1. Multiple Choice: &quot;What should you say when...?&quot;      [Edit] [×]   │ │
+│  │  2. True/False: &quot;You should block the doorway...&quot;        [Edit] [×]   │ │
+│  │  3. Multiple Choice: &quot;A voter says 'not interested'...&quot;  [Edit] [×]   │ │
+│  │  4. Multiple Choice: &quot;How do you record a response...&quot;   [Edit] [×]   │ │
+│  │  5. Multiple Choice: &quot;If you feel unsafe, you should...&quot; [Edit] [×]   │ │
+│  │                                                                        │ │
+│  │  [+ Add Question]                                                      │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Assignment ────────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Assign to:                                                            │ │
+│  │  ● All volunteers                                                     │ │
+│  │  ○ Specific volunteers (select from list)                              │ │
+│  │  ○ Volunteers in specific roles (Team Lead, etc.)                      │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  [Preview Module]                           [Save Draft]  [Publish]          │
+│                                                                              │
+│  Version 3 · Last edited by María Santos, Mar 2, 2026                       │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="lesson-editor-on-edit-click-modal-or-side-panel" tabindex="-1"><a class="heading-anchor" href="#lesson-editor-on-edit-click-modal-or-side-panel" aria-hidden="true">#</a> Lesson Editor (on [Edit] click — modal or side panel)</h3>
+<p>Rich text editor with: headings, bold/italic, lists, images (upload), video embeds (URL), callout boxes (tip/warning). Content authored in the org's primary language. Translation support for additional languages (separate editing pass per language).</p>
+<h3 id="interaction-7" tabindex="-1"><a class="heading-anchor" href="#interaction-7" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Lesson ordering</strong>: drag-to-reorder. Sequence determines learner progression</li>
+<li><strong>Quiz question editor</strong>: question text, answer options, correct answer indicator, optional explanation</li>
+<li><strong>Assignment</strong>: who must take this module. &quot;All volunteers&quot; is default. Can restrict to specific roles or individuals</li>
+<li><strong>[Preview Module]</strong>: opens the module as a volunteer would see it (HELP-005 view)</li>
+<li><strong>Versioning</strong>: version history with diff. Allows rollback to previous versions</li>
+<li><strong>Save Draft vs Publish</strong>: draft is only visible to admins. Publish makes it available to assigned volunteers</li>
+</ul>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HELP-001 (no articles)</td>
+<td>Help articles are being prepared. In the meantime, try the AI Concierge for answers.</td>
+<td>[Ask AI Concierge →]</td>
+</tr>
+<tr>
+<td>HELP-001 (no search results)</td>
+<td>No articles match your search. Try different keywords or ask the AI Concierge.</td>
+<td>[Ask AI Concierge →]</td>
+</tr>
+<tr>
+<td>HELP-004 Volunteer (no training)</td>
+<td>No training modules have been assigned to you yet.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>HELP-004 Admin (no modules)</td>
+<td>Create training modules to onboard and certify your volunteers.</td>
+<td>+ Create Module</td>
+</tr>
+<tr>
+<td>HELP-007 Admin (no volunteers)</td>
+<td>Certification tracking will appear once volunteers start training modules.</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Knowledge base articles use proper heading hierarchy (h2, h3, h4) for screen reader navigation</li>
+<li>AI concierge chat supports keyboard-only interaction</li>
+<li>Training video includes subtitles in tenant languages</li>
+<li>Quiz questions use proper radio button groups with clear labels</li>
+<li>Progress indicators use both visual (dots/bars) and text (Lesson 2 of 6)</li>
+<li>Certification status uses text alongside icons (✓ Completed, ◐ In Progress, ○ Not Started)</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role-filtered help content</td>
+<td>Articles tagged by persona, prioritized in search</td>
+<td>A volunteer searching &quot;campaign&quot; needs canvassing help, not campaign compliance settings. Role filtering reduces noise</td>
+</tr>
+<tr>
+<td>AI concierge as side panel (desktop)</td>
+<td>Overlays current screen, not a separate page</td>
+<td>User can reference the current screen while asking questions. Context preservation is key</td>
+</tr>
+<tr>
+<td>Training modules with offline caching</td>
+<td>Text/images cached, video online-only</td>
+<td>Volunteers may take training in low-connectivity areas. Video is too large to cache reliably, but text content must be available</td>
+</tr>
+<tr>
+<td>Quiz as separate step (not inline)</td>
+<td>Dedicated quiz screen after completing lessons</td>
+<td>Clear separation between learning and assessment. Prevents users from just scrolling to the quiz without reading content</td>
+</tr>
+<tr>
+<td>Certification expiration</td>
+<td>Configurable per module (optional)</td>
+<td>Safety training should be renewed periodically. Platform basics don't need renewal. Org-configurable flexibility</td>
+</tr>
+<tr>
+<td>Feedback on articles</td>
+<td>Simple thumbs up/down</td>
+<td>Low-friction feedback signal. Detailed feedback would require too much effort from users who are already stuck</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li><strong>AI concierge language</strong> — should the concierge respond in the user's configured language, or should it detect the language of the question? Multilingual users may ask in one language and expect responses in another</li>
+<li><strong>Training completion gating</strong> — should volunteers be blocked from starting shifts until required training is complete? Or should it be advisory only? Blocking improves training compliance but may prevent understaffed campaigns from operating</li>
+<li><strong>External content</strong> — should the knowledge base support linking to external resources (YouTube videos, partner org guides) or should all content be authored within GreenGrass? External links risk broken links and content drift</li>
+<li><strong>Concierge hallucination</strong> — how do we prevent the AI concierge from giving incorrect guidance? Should responses be grounded only in knowledge base articles, or should it also reason about the platform's general structure?</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#help-navigation-context"># Help Navigation Context</a></li><li class="toc-2"><a href="#help-001-knowledge-base-browser"># HELP-001: Knowledge Base Browser</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#interaction"># Interaction</a></li><li class="toc-2"><a href="#help-002-knowledge-base-article"># HELP-002: Knowledge Base Article</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-3"><a href="#mobile-1"># Mobile</a></li><li class="toc-3"><a href="#interaction-1"># Interaction</a></li><li class="toc-2"><a href="#help-003-ai-concierge-chat"># HELP-003: AI Concierge Chat</a></li><li class="toc-3"><a href="#desktop-side-panel"># Desktop (Side Panel)</a></li><li class="toc-3"><a href="#mobile-full-screen"># Mobile (Full Screen)</a></li><li class="toc-3"><a href="#interaction-2"># Interaction</a></li><li class="toc-2"><a href="#help-004-training-module-list"># HELP-004: Training Module List</a></li><li class="toc-3"><a href="#mobile-volunteer-view-primary"># Mobile — Volunteer View (Primary)</a></li><li class="toc-3"><a href="#desktop-admin-view-volunteer-coordinator"># Desktop — Admin View (Volunteer Coordinator)</a></li><li class="toc-3"><a href="#interaction-3"># Interaction</a></li><li class="toc-2"><a href="#help-005-training-module-content"># HELP-005: Training Module Content</a></li><li class="toc-3"><a href="#mobile-primary"># Mobile (Primary)</a></li><li class="toc-3"><a href="#interaction-4"># Interaction</a></li><li class="toc-2"><a href="#help-006-training-quiz"># HELP-006: Training Quiz</a></li><li class="toc-3"><a href="#mobile-primary-1"># Mobile (Primary)</a></li><li class="toc-3"><a href="#results-screen"># Results Screen</a></li><li class="toc-3"><a href="#interaction-5"># Interaction</a></li><li class="toc-2"><a href="#help-007-certification-status"># HELP-007: Certification Status</a></li><li class="toc-3"><a href="#mobile-volunteer-view"># Mobile — Volunteer View</a></li><li class="toc-3"><a href="#desktop-admin-view-volunteer-coordinator-1"># Desktop — Admin View (Volunteer Coordinator)</a></li><li class="toc-3"><a href="#interaction-6"># Interaction</a></li><li class="toc-2"><a href="#help-008-training-content-editor"># HELP-008: Training Content Editor</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-3"><a href="#lesson-editor-on-edit-click-modal-or-side-panel"># Lesson Editor (on [Edit] click — modal or side panel)</a></li><li class="toc-3"><a href="#interaction-7"># Interaction</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onboarding Wireframes · GreenGrass</title>
+<meta name="description" content="Onboarding Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="./onboarding.html" aria-current="page" class="active">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="onboarding-wireframes" tabindex="-1"><a class="heading-anchor" href="#onboarding-wireframes" aria-hidden="true">#</a> Onboarding Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>First impressions. These wizards are the first screens new users see. They must be clear, confidence-building, and completable in one session. This document wireframes the two most critical onboarding flows: Org Setup (Org Admin's first experience) and Volunteer Onboarding (the highest-volume user type).</p>
+<p>The other 6 wizards (Payment Processor, BYOK Key Generation, Compliance Configuration, WhatsApp Setup, SMS Setup, Voter File Import) follow the same shell and interaction patterns — they differ in content, not structure.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIZ-001</td>
+<td>Org Setup Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Yes</td>
+<td>Org Setup Wizard</td>
+</tr>
+<tr>
+<td>WIZ-002</td>
+<td>Payment Processor Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Payment Processor Wizard</td>
+</tr>
+<tr>
+<td>WIZ-003</td>
+<td>BYOK Key Generation Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>BYOK Key Generation</td>
+</tr>
+<tr>
+<td>WIZ-004</td>
+<td>Compliance Configuration Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Compliance Configuration Wizard</td>
+</tr>
+<tr>
+<td>WIZ-005</td>
+<td>WhatsApp Business Setup Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>WhatsApp Business Setup Wizard</td>
+</tr>
+<tr>
+<td>WIZ-006</td>
+<td>SMS Number Setup Wizard</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>SMS Number Setup Wizard</td>
+</tr>
+<tr>
+<td>WIZ-007</td>
+<td>Voter File Import Wizard</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Voter File Import Wizard</td>
+</tr>
+<tr>
+<td>WIZ-008</td>
+<td>Volunteer Onboarding Wizard</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td>Volunteer Onboarding</td>
+</tr>
+</tbody>
+</table>
+<p>All wizards are online-only. They require server connectivity for account creation, configuration saves, and integration setup.</p>
+<h2 id="onboarding-navigation-context" tabindex="-1"><a class="heading-anchor" href="#onboarding-navigation-context" aria-hidden="true">#</a> Onboarding Navigation Context</h2>
+<p>Wizards use the wizard shell (defined in <code>navigation-shell.md</code>) and are not part of the standard sidebar navigation. Users reach wizards through:</p>
+<ul>
+<li><strong>WIZ-001 (Org Setup):</strong> Automatically triggered on first login after tenant provisioning</li>
+<li><strong>WIZ-008 (Volunteer Onboarding):</strong> Triggered on first login after invitation acceptance</li>
+<li><strong>WIZ-002 through WIZ-007:</strong> Accessible from the &quot;Getting Started&quot; checklist on the dashboard, or from the corresponding Settings screen via a &quot;Run setup wizard&quot; link</li>
+</ul>
+<hr>
+<h2 id="wizard-shell-reference" tabindex="-1"><a class="heading-anchor" href="#wizard-shell-reference" aria-hidden="true">#</a> Wizard Shell Reference</h2>
+<p>All wizards share the shell defined in <code>navigation-shell.md</code>. Key elements:</p>
+<ul>
+<li>Header: Logo + &quot;Step N of M&quot; + [Save &amp; Exit]</li>
+<li>Progress bar: filled circles for complete, active circle for current, empty for future</li>
+<li>Content: step-specific</li>
+<li>Footer: [← Back] + [Next →]</li>
+<li>Mobile: compressed progress bar, step labels hidden (just dots)</li>
+</ul>
+<hr>
+<h2 id="org-setup-wizard" tabindex="-1"><a class="heading-anchor" href="#org-setup-wizard" aria-hidden="true">#</a> Org Setup Wizard</h2>
+<p>Triggered on first login after tenant provisioning. 5 steps. ~10 minutes.</p>
+<h3 id="step-1-welcome-authentication" tabindex="-1"><a class="heading-anchor" href="#step-1-welcome-authentication" aria-hidden="true">#</a> Step 1: Welcome &amp; Authentication</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 GreenGrass                                              [Save &amp; Exit]      │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  ●─── ○─── ○─── ○─── ○                                                        │
+│  Auth    Org    Team   Config  Review                                           │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Welcome to GreenGrass                                                          │
+│  ─────────────────────                                                          │
+│                                                                                 │
+│  Let's set up your organization. This takes about 10 minutes.                   │
+│  You can save and come back at any time.                                        │
+│                                                                                 │
+│  First, let's secure your account.                                              │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────┐                   │
+│  │                                                          │                   │
+│  │  Create a Passkey                                        │                   │
+│  │  ──────────────────                                      │                   │
+│  │                                                          │                   │
+│  │  A passkey is the most secure way to log in. It uses     │                   │
+│  │  your device's fingerprint, face, or PIN — no password   │                   │
+│  │  to remember or type.                                    │                   │
+│  │                                                          │                   │
+│  │  ┌────────────────────────────────────┐                  │                   │
+│  │  │  🔐  Create Passkey               │                  │                   │
+│  │  └────────────────────────────────────┘                  │                   │
+│  │                                                          │                   │
+│  │  Your device will prompt you for biometric confirmation. │                   │
+│  │                                                          │                   │
+│  └──────────────────────────────────────────────────────────┘                   │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────┐                   │
+│  │  Set Up Recovery                                         │                   │
+│  │  ──────────────                                          │                   │
+│  │                                                          │                   │
+│  │  If you lose access to your device, a trusted contact    │                   │
+│  │  can help you recover your account.                      │                   │
+│  │                                                          │                   │
+│  │  Trusted Contact Name *                                  │                   │
+│  │  ┌──────────────────────────────────────┐                │                   │
+│  │  │                                      │                │                   │
+│  │  └──────────────────────────────────────┘                │                   │
+│  │                                                          │                   │
+│  │  Trusted Contact Email *                                 │                   │
+│  │  ┌──────────────────────────────────────┐                │                   │
+│  │  │                                      │                │                   │
+│  │  └──────────────────────────────────────┘                │                   │
+│  │                                                          │                   │
+│  │  ⓘ This person won't have access to your account.       │                   │
+│  │  They can only initiate a recovery process that you      │                   │
+│  │  must complete from a trusted device.                    │                   │
+│  │                                                          │                   │
+│  └──────────────────────────────────────────────────────────┘                   │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                        [Next →] │
+└─────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="step-2-organization-profile" tabindex="-1"><a class="heading-anchor" href="#step-2-organization-profile" aria-hidden="true">#</a> Step 2: Organization Profile</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 GreenGrass                                              [Save &amp; Exit]      │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  ✓─── ●─── ○─── ○─── ○                                                        │
+│  Auth    Org    Team   Config  Review                                           │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Tell Us About Your Organization                                                │
+│  ───────────────────────────────                                                │
+│                                                                                 │
+│  Organization Name *                                                            │
+│  ┌────────────────────────────────────────────────────┐                         │
+│  │ Partido Verde de Puerto Rico                       │                         │
+│  └────────────────────────────────────────────────────┘                         │
+│                                                                                 │
+│  Type *                                                                         │
+│  ┌────────────────────────────────────────────────────┐                         │
+│  │ Political Party                                 ▾  │                         │
+│  └────────────────────────────────────────────────────┘                         │
+│  Options: Political Party, Campaign Committee, PAC/527, Nonprofit, Coalition    │
+│                                                                                 │
+│  Country/Jurisdiction *                                                         │
+│  ┌────────────────────────────────────────────────────┐                         │
+│  │ Puerto Rico (US)                                ▾  │                         │
+│  └────────────────────────────────────────────────────┘                         │
+│  ⓘ This determines your compliance templates, currency, and default language.  │
+│                                                                                 │
+│  Logo                                                                           │
+│  ┌────────────────────────────────────────────────────┐                         │
+│  │  [Drag logo here or click to browse]                │                         │
+│  │  SVG or PNG. Max 2MB. Square or horizontal.        │                         │
+│  └────────────────────────────────────────────────────┘                         │
+│                                                                                 │
+│  Languages *                                                                    │
+│  ☑ Español                                                                      │
+│  ☑ English                                                                      │
+│  ☐ Add more...                                                                  │
+│  ⓘ Your platform will be available in these languages. You can add more later.  │
+│                                                                                 │
+│  Website (optional)                                                             │
+│  ┌────────────────────────────────────────────────────┐                         │
+│  │ https://                                           │                         │
+│  └────────────────────────────────────────────────────┘                         │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  [← Back]                                                          [Next →]    │
+└─────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="step-3-invite-your-team" tabindex="-1"><a class="heading-anchor" href="#step-3-invite-your-team" aria-hidden="true">#</a> Step 3: Invite Your Team</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 GreenGrass                                              [Save &amp; Exit]      │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  ✓─── ✓─── ●─── ○─── ○                                                        │
+│  Auth    Org    Team   Config  Review                                           │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Invite Your Team                                                               │
+│  ────────────────                                                               │
+│                                                                                 │
+│  Invite the staff who will help run your campaign. You can always               │
+│  add more people later.                                                         │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │  Email *                         Role *                          │           │
+│  │  ┌──────────────────────┐       ┌────────────────────┐          │           │
+│  │  │ maria@partido.pr     │       │ Comms Director  ▾  │          │           │
+│  │  └──────────────────────┘       └────────────────────┘          │           │
+│  │                                                                  │           │
+│  │  ┌──────────────────────┐       ┌────────────────────┐          │           │
+│  │  │ carlos@partido.pr    │       │ Field Director  ▾  │          │           │
+│  │  └──────────────────────┘       └────────────────────┘          │           │
+│  │                                                                  │           │
+│  │  ┌──────────────────────┐       ┌────────────────────┐          │           │
+│  │  │ elena@partido.pr     │       │ Finance Director▾  │          │           │
+│  │  └──────────────────────┘       └────────────────────┘          │           │
+│  │                                                                  │           │
+│  │  [+ Add another person]                                          │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+│  ⓘ Each person will receive an email invitation to set up their account.       │
+│  They'll create a passkey and configure their own recovery contact.             │
+│                                                                                 │
+│  Available roles:                                                               │
+│  • **Org Admin** — full access to everything                                    │
+│  • **Communications Director** — email, SMS, social media, press               │
+│  • **Finance Director** — donations, compliance, payment processors            │
+│  • **Field Director** — canvassing, phone banking, GOTV                        │
+│  • **Volunteer Coordinator** — volunteer roster, shifts, events                │
+│  • **Data Manager** — contacts, imports, dedup, data quality                   │
+│                                                                                 │
+│  [Skip — I'll invite later]                                                    │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  [← Back]                                                          [Next →]    │
+└─────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="step-4-initial-configuration" tabindex="-1"><a class="heading-anchor" href="#step-4-initial-configuration" aria-hidden="true">#</a> Step 4: Initial Configuration</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 GreenGrass                                              [Save &amp; Exit]      │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  ✓─── ✓─── ✓─── ●─── ○                                                        │
+│  Auth    Org    Team   Config  Review                                           │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Configure Your Platform                                                        │
+│  ───────────────────────                                                        │
+│                                                                                 │
+│  Based on your jurisdiction (Puerto Rico), we've pre-configured                 │
+│  recommended settings. Review and adjust as needed.                             │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │  Data Security                                                   │           │
+│  │  ──────────────                                                  │           │
+│  │                                                                  │           │
+│  │  ☉ Platform-managed encryption (Recommended)                     │           │
+│  │    GreenGrass manages your encryption keys. Simpler setup.       │           │
+│  │    You can switch to BYOK later.                                 │           │
+│  │                                                                  │           │
+│  │  ○ Bring Your Own Key (BYOK)                                     │           │
+│  │    You generate and manage your own encryption keys.             │           │
+│  │    Maximum security. Requires careful key management.            │           │
+│  │    [Learn more about BYOK →]                                     │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │  Compliance (Pre-configured for Puerto Rico)          [Edit ▾]  │           │
+│  │  ──────────────────────────────────────                          │           │
+│  │                                                                  │           │
+│  │  Individual contribution limit:    $5,800                        │           │
+│  │  PAC contribution limit:           $5,000                        │           │
+│  │  Campaign period enforcement:      Hard (recommended)            │           │
+│  │  Foreign donor blocking:           Enabled                       │           │
+│  │  Audit retention:                  10 years                      │           │
+│  │                                                                  │           │
+│  │  ⓘ These are based on Puerto Rico election law. You can fine-   │           │
+│  │  tune these in Settings &gt; Compliance after setup.                │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │  Payment Processing                                              │           │
+│  │  ──────────────────                                              │           │
+│  │                                                                  │           │
+│  │  ☉ Set up now → launches Payment Processor wizard after review   │           │
+│  │  ○ Skip for now — set up later in Settings                       │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  [← Back]                                                          [Next →]    │
+└─────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="step-5-review-launch" tabindex="-1"><a class="heading-anchor" href="#step-5-review-launch" aria-hidden="true">#</a> Step 5: Review &amp; Launch</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 GreenGrass                                              [Save &amp; Exit]      │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  ✓─── ✓─── ✓─── ✓─── ●                                                        │
+│  Auth    Org    Team   Config  Review                                           │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Review &amp; Launch                                                                │
+│  ──────────────                                                                 │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │  Organization                                           [Edit]  │           │
+│  │  ────────────                                                    │           │
+│  │  Name: Partido Verde de Puerto Rico                              │           │
+│  │  Type: Political Party                                           │           │
+│  │  Jurisdiction: Puerto Rico (US)                                  │           │
+│  │  Languages: Español, English                                     │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │  Team                                                   [Edit]  │           │
+│  │  ────                                                            │           │
+│  │  3 invitations ready to send:                                    │           │
+│  │  • maria@partido.pr — Communications Director                   │           │
+│  │  • carlos@partido.pr — Field Director                           │           │
+│  │  • elena@partido.pr — Finance Director                          │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │  Configuration                                          [Edit]  │           │
+│  │  ─────────────                                                   │           │
+│  │  Encryption: Platform-managed                                    │           │
+│  │  Compliance: Puerto Rico defaults                                │           │
+│  │  Payment: Set up after launch                                    │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+│                                                                                 │
+│  ┌────────────────────────────────────────────────────────────────┐             │
+│  │                                                                │             │
+│  │  🚀  Launch Your Platform                                      │             │
+│  │                                                                │             │
+│  │  This will:                                                    │             │
+│  │  • Create your organization workspace                         │             │
+│  │  • Send invitations to your team                              │             │
+│  │  • Apply compliance and security settings                     │             │
+│  │                                                                │             │
+│  │  ┌──────────────────────────────────────────┐                  │             │
+│  │  │  ▶  Launch Partido Verde                 │                  │             │
+│  │  └──────────────────────────────────────────┘                  │             │
+│  │                                                                │             │
+│  └────────────────────────────────────────────────────────────────┘             │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  [← Back]                                                                      │
+└─────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="post-launch-getting-started-checklist" tabindex="-1"><a class="heading-anchor" href="#post-launch-getting-started-checklist" aria-hidden="true">#</a> Post-Launch: Getting Started Checklist</h3>
+<p>After the wizard completes, the Org Admin lands on their dashboard with a &quot;Getting Started&quot; card:</p>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Campaign Overview                                                           │
+│  ─────────────────────────────────────────────────────────────────────────── │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Getting Started                                          [Dismiss] │   │
+│  │  ────────────────                                                    │   │
+│  │                                                                      │   │
+│  │  ✓ Create your organization                                          │   │
+│  │  ✓ Invite your team                                                  │   │
+│  │  ○ Set up a donation form → [Get started]                            │   │
+│  │  ○ Import your contacts → [Get started]                              │   │
+│  │  ○ Create your first canvassing campaign → [Get started]             │   │
+│  │  ○ Upload your brand assets (logo, colors) → [Get started]           │   │
+│  │                                                                      │   │
+│  │  4 of 6 remaining                                                    │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  (rest of dashboard — mostly empty states at this point)                     │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="volunteer-onboarding" tabindex="-1"><a class="heading-anchor" href="#volunteer-onboarding" aria-hidden="true">#</a> Volunteer Onboarding</h2>
+<p>Triggered on a volunteer's first login after accepting an invitation. 4 steps. ~5 minutes. Mobile-first.</p>
+<h3 id="step-1-secure-your-account" tabindex="-1"><a class="heading-anchor" href="#step-1-secure-your-account" aria-hidden="true">#</a> Step 1: Secure Your Account</h3>
+<pre><code>┌──────────────────────────────┐
+│  🌿     Step 1 of 4  [Save] │
+├──────────────────────────────┤
+│  ●━━━━━○━━━━━○━━━━━○        │
+├──────────────────────────────┤
+│                              │
+│  Welcome!                    │
+│  ──────────                  │
+│                              │
+│  Thanks for joining          │
+│  Partido Verde.              │
+│                              │
+│  Let's set up your account   │
+│  so you can get started.     │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Create a Passkey            │
+│                              │
+│  Use your fingerprint or     │
+│  face to log in — no         │
+│  password needed.            │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  🔐  Create Passkey      ││
+│  └──────────────────────────┘│
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Recovery Contact            │
+│                              │
+│  Someone who can help you    │
+│  get back in if you lose     │
+│  your phone.                 │
+│                              │
+│  Name *                      │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  └──────────────────────────┘│
+│  Email *                     │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│                     [Next →]  │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="step-2-quick-tour" tabindex="-1"><a class="heading-anchor" href="#step-2-quick-tour" aria-hidden="true">#</a> Step 2: Quick Tour</h3>
+<pre><code>┌──────────────────────────────┐
+│  🌿     Step 2 of 4  [Save] │
+├──────────────────────────────┤
+│  ✓━━━━━●━━━━━○━━━━━○        │
+├──────────────────────────────┤
+│                              │
+│  Here's How It Works         │
+│  ─────────────────           │
+│                              │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  │  ┌────────────────────┐  ││
+│  │  │  📋 My Shifts      │  ││
+│  │  │  See your upcoming │  ││
+│  │  │  canvassing and    │  ││
+│  │  │  phone bank shifts │  ││
+│  │  └────────────────────┘  ││
+│  │                          ││
+│  │  ● ○ ○ ○                 ││
+│  └──────────────────────────┘│
+│                              │
+│  Your Shifts tab shows       │
+│  everything assigned to you. │
+│  Tap &quot;Start Shift&quot; when      │
+│  you arrive at your turf.    │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  ┌─────────┐ ┌─────────┐    │
+│  │ ← Prev  │ │ Next →  │    │
+│  └─────────┘ └─────────┘    │
+│                              │
+│  4 quick slides:             │
+│  1. My Shifts                │
+│  2. Field Mode               │
+│  3. Messages                 │
+│  4. Events                   │
+│                              │
+├──────────────────────────────┤
+│                     [Next →]  │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="step-3-required-training" tabindex="-1"><a class="heading-anchor" href="#step-3-required-training" aria-hidden="true">#</a> Step 3: Required Training</h3>
+<pre><code>┌──────────────────────────────┐
+│  🌿     Step 3 of 4  [Save] │
+├──────────────────────────────┤
+│  ✓━━━━━✓━━━━━●━━━━━○        │
+├──────────────────────────────┤
+│                              │
+│  Complete Your Training      │
+│  ──────────────────          │
+│                              │
+│  Your organization requires  │
+│  these modules before your   │
+│  first shift.                │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ✓ Canvassing 101       ││
+│  │    12 min · Complete     ││
+│  ├──────────────────────────┤│
+│  │  ▶ Safety Protocol       ││
+│  │    8 min · Start →       ││
+│  ├──────────────────────────┤│
+│  │  ◌ Data Privacy          ││
+│  │    5 min · Locked        ││
+│  │    (complete Safety first)││
+│  └──────────────────────────┘│
+│                              │
+│  Each module has a short     │
+│  quiz at the end. You need   │
+│  80% to pass.                │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Progress: 1 of 3 complete   │
+│  ▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░  │
+│                              │
+│  ⓘ Can't finish now? Save   │
+│  and come back later. Your   │
+│  progress is saved.          │
+│                              │
+├──────────────────────────────┤
+│  [← Back]            [Next →] │
+│  (Next requires all modules) │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="step-4-ready-to-go" tabindex="-1"><a class="heading-anchor" href="#step-4-ready-to-go" aria-hidden="true">#</a> Step 4: Ready to Go</h3>
+<pre><code>┌──────────────────────────────┐
+│  🌿     Step 4 of 4         │
+├──────────────────────────────┤
+│  ✓━━━━━✓━━━━━✓━━━━━●        │
+├──────────────────────────────┤
+│                              │
+│  You're All Set!             │
+│  ──────────────              │
+│                              │
+│        ✓                     │
+│                              │
+│  Account secured             │
+│  Training complete           │
+│  Ready for your first shift  │
+│                              │
+│  ─────────────────────       │
+│                              │
+│  Your first shift:           │
+│  ┌──────────────────────────┐│
+│  │  📋 Northside Canvass    ││
+│  │  Tomorrow, 2:00 PM       ││
+│  │  47 doors assigned       ││
+│  │  Turf: Calle Sol area    ││
+│  └──────────────────────────┘│
+│                              │
+│  Tips:                       │
+│  • Arrive at staging 10 min  │
+│    early                     │
+│  • Make sure your phone is   │
+│    charged                   │
+│  • Download maps before you  │
+│    leave (tap &quot;Start Shift&quot;  │
+│    with Wi-Fi)               │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ▶ Go to My Shifts       ││
+│  └──────────────────────────┘│
+│                              │
+│  [Explore the app first]     │
+│                              │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="byok-key-generation-wizard" tabindex="-1"><a class="heading-anchor" href="#byok-key-generation-wizard" aria-hidden="true">#</a> BYOK Key Generation Wizard</h2>
+<p>The highest-stakes wizard. Generates cryptographic keys that can never be recovered if lost. 5 steps.</p>
+<h3 id="step-1-understand-the-stakes" tabindex="-1"><a class="heading-anchor" href="#step-1-understand-the-stakes" aria-hidden="true">#</a> Step 1: Understand the Stakes</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 GreenGrass                                              [Save &amp; Exit]      │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  ●─── ○─── ○─── ○─── ○                                                        │
+│  Understand  Generate  Backup  Verify  Complete                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Bring Your Own Key (BYOK)                                                      │
+│  ─────────────────────────                                                      │
+│                                                                                 │
+│  ⚠ Please read this carefully.                                                 │
+│                                                                                 │
+│  BYOK means your organization controls its own encryption keys.                │
+│  GreenGrass cannot access your data without your key.                          │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │                                                                  │           │
+│  │  What this means:                                                │           │
+│  │                                                                  │           │
+│  │  ✓  Maximum data sovereignty — even GreenGrass can't read       │           │
+│  │     your encrypted data                                          │           │
+│  │                                                                  │           │
+│  │  ✓  Protection against compelled disclosure — GreenGrass        │           │
+│  │     can truthfully say it cannot decrypt your data               │           │
+│  │                                                                  │           │
+│  │  ⚠  If you lose your key, your data is permanently              │           │
+│  │     unrecoverable. GreenGrass cannot help.                       │           │
+│  │                                                                  │           │
+│  │  ⚠  You are responsible for backing up and protecting            │           │
+│  │     your key material                                            │           │
+│  │                                                                  │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+│  ☐ I understand that losing my key means permanent data loss                   │
+│  ☐ I understand that GreenGrass cannot recover my key                          │
+│  ☐ I have a plan for securely storing backup material                          │
+│                                                                                 │
+│  All three acknowledgments required to proceed.                                │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                        [Next →] │
+│                                                  (disabled until all checked)   │
+└─────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="step-3-secure-backup-most-critical-step" tabindex="-1"><a class="heading-anchor" href="#step-3-secure-backup-most-critical-step" aria-hidden="true">#</a> Step 3: Secure Backup (Most Critical Step)</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 GreenGrass                                              [Save &amp; Exit]      │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  ✓─── ✓─── ●─── ○─── ○                                                        │
+│  Understand  Generate  Backup  Verify  Complete                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Back Up Your Key                                                               │
+│  ────────────────                                                               │
+│                                                                                 │
+│  Your key has been generated. Now you must back it up securely.                │
+│  Choose your backup method:                                                    │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │  ☉ Shamir's Secret Sharing (Recommended)                        │           │
+│  │  ──────────────────────────────────                              │           │
+│  │  Your key is split into multiple parts. Any 3 of 5 parts        │           │
+│  │  can reconstruct it. Give parts to trusted people — no single    │           │
+│  │  person (including you) has the full key.                        │           │
+│  │                                                                  │           │
+│  │  Number of shares: [5 ▾]                                         │           │
+│  │  Required to reconstruct: [3 ▾]                                  │           │
+│  │                                                                  │           │
+│  │  Share holders:                                                  │           │
+│  │  1. [You (Org Admin)          ] — kept by you                   │           │
+│  │  2. [María Santos             ] — board member                  │           │
+│  │  3. [Carlos Rivera            ] — legal counsel                 │           │
+│  │  4. [Elena Torres             ] — co-founder                    │           │
+│  │  5. [Secure safe deposit box  ] — physical storage              │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │  ○ Download encrypted backup file                                │           │
+│  │  Single file, protected by a passphrase you choose.              │           │
+│  │  Store offline (USB drive, printed paper).                       │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────┐           │
+│  │  ○ Manual key export                                             │           │
+│  │  Copy the raw key material. For advanced users who have their    │           │
+│  │  own key management infrastructure.                              │           │
+│  └──────────────────────────────────────────────────────────────────┘           │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  [← Back]                                                          [Next →]    │
+└─────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="wiz-002-payment-processor-wizard" tabindex="-1"><a class="heading-anchor" href="#wiz-002-payment-processor-wizard" aria-hidden="true">#</a> WIZ-002: Payment Processor Wizard</h2>
+<p>Guides the Org Admin through connecting a payment processor for the first time. Accessed from the post-setup &quot;Getting Started&quot; checklist or from Settings → Payment Processors → &quot;Run setup wizard.&quot;</p>
+<h3 id="wizard-structure" tabindex="-1"><a class="heading-anchor" href="#wizard-structure" aria-hidden="true">#</a> Wizard Structure</h3>
+<p>3 steps. ~5 minutes. Desktop-preferred.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Title</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Choose Processor</td>
+<td>Selection cards for supported payment processors (Stripe, PayPal, local processors). Each card shows: supported currencies, supported payment methods, fee structure, and geographic availability.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Connect Account</td>
+<td>Processor-specific OAuth flow or API credential entry. For Stripe: &quot;Connect with Stripe&quot; button opens Stripe Connect. For manual processors: API key + secret fields. Test connection button with success/failure indicator.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Configure &amp; Test</td>
+<td>Default currency selection, donation form currency options, receipt email sender configuration. &quot;Send test transaction&quot; button (processes and immediately refunds $1.00). Success screen with processor status confirmed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relationship-to-set-017" tabindex="-1"><a class="heading-anchor" href="#relationship-to-set-017" aria-hidden="true">#</a> Relationship to SET-017</h3>
+<p>This wizard wraps the same configuration as SET-017 (Payment Processor Configuration) in a guided flow. Differences:</p>
+<ul>
+<li>Wizard explains <em>why</em> each setting matters (first-time context)</li>
+<li>Wizard includes the test transaction step (skippable in settings)</li>
+<li>Settings screen allows editing existing configuration; wizard creates new</li>
+</ul>
+<h3 id="design-notes" tabindex="-1"><a class="heading-anchor" href="#design-notes" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>Test transaction is the confidence moment — the Org Admin sees real money flow through the system</li>
+<li>Processor selection shows geographic relevance: processors available in the org's configured jurisdiction are highlighted</li>
+<li>OAuth flows open in a popup window; wizard polls for completion</li>
+</ul>
+<hr>
+<h2 id="wiz-004-compliance-configuration-wizard" tabindex="-1"><a class="heading-anchor" href="#wiz-004-compliance-configuration-wizard" aria-hidden="true">#</a> WIZ-004: Compliance Configuration Wizard</h2>
+<p>Guides the Org Admin through jurisdiction-specific compliance setup. Accessed from the &quot;Getting Started&quot; checklist or from Settings → Compliance → &quot;Run setup wizard.&quot;</p>
+<h3 id="wizard-structure-1" tabindex="-1"><a class="heading-anchor" href="#wizard-structure-1" aria-hidden="true">#</a> Wizard Structure</h3>
+<p>4 steps. ~10 minutes. Desktop-preferred.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Title</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Select Jurisdiction</td>
+<td>Country and sub-jurisdiction selection (e.g., Puerto Rico → Municipal race). This determines which compliance rules are available and which are mandatory.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Campaign Finance Rules</td>
+<td>Contribution limits per donor type, reporting period, and election date. Jurisdiction-required rules are pre-checked and locked. Optional rules can be toggled. Enforcement behavior selection per rule: Block (prevent the donation) / Warn (allow but flag) / Flag (log for review).</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Data Protection</td>
+<td>Data retention policies, consent requirements, data subject request handling. Framework selection if multiple apply (e.g., GDPR + local law).</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Review &amp; Activate</td>
+<td>Summary of all configured rules with counts: &quot;12 rules active, 3 blocked, 5 flagged, 4 warn-only.&quot; [Activate Compliance Engine] button.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relationship-to-set-008-set-009" tabindex="-1"><a class="heading-anchor" href="#relationship-to-set-008-set-009" aria-hidden="true">#</a> Relationship to SET-008 / SET-009</h3>
+<p>This wizard combines SET-008 (Compliance Configuration) and SET-009 (Contribution Limits) into a guided flow. Differences:</p>
+<ul>
+<li>Wizard explains what each rule does in plain language (not just toggle labels)</li>
+<li>Wizard enforces a review step before activation</li>
+<li>Settings screens allow individual rule changes; wizard sets the baseline</li>
+</ul>
+<h3 id="design-notes-1" tabindex="-1"><a class="heading-anchor" href="#design-notes-1" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>Jurisdiction-required rules shown with a lock icon and &quot;Required by [jurisdiction]&quot; label — cannot be unchecked</li>
+<li>Plain-language descriptions are critical: &quot;Individual donors cannot give more than $5,000 per election cycle&quot; instead of &quot;LIMIT_INDIVIDUAL_PER_CYCLE = 5000&quot;</li>
+<li>The wizard is the most common path to compliance setup; settings is for ongoing adjustments</li>
+</ul>
+<hr>
+<h2 id="wiz-005-whatsapp-business-setup-wizard" tabindex="-1"><a class="heading-anchor" href="#wiz-005-whatsapp-business-setup-wizard" aria-hidden="true">#</a> WIZ-005: WhatsApp Business Setup Wizard</h2>
+<p>Guides the Org Admin through connecting WhatsApp Business API. Accessed from the &quot;Getting Started&quot; checklist or from Settings → WhatsApp → &quot;Run setup wizard.&quot;</p>
+<h3 id="wizard-structure-2" tabindex="-1"><a class="heading-anchor" href="#wizard-structure-2" aria-hidden="true">#</a> Wizard Structure</h3>
+<p>3 steps. ~15 minutes (includes Meta verification). Desktop-preferred.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Title</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Prerequisites</td>
+<td>Checklist of requirements: verified Meta Business account, phone number not registered with personal WhatsApp, business display name. Links to Meta's verification process if not complete. &quot;I've completed these steps&quot; checkbox to proceed.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Connect Account</td>
+<td>Phone number entry, API token from Meta Business Manager, business display name. Test connection button. If connection fails: specific error message with resolution steps.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Configure Templates</td>
+<td>Create or import message templates for approval. Template categories: transactional (event reminders, donation receipts), marketing (campaign updates). Preview of how templates render on WhatsApp. Submit templates for Meta approval. Status tracking: Pending / Approved / Rejected.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relationship-to-set-013" tabindex="-1"><a class="heading-anchor" href="#relationship-to-set-013" aria-hidden="true">#</a> Relationship to SET-013</h3>
+<p>This wizard wraps SET-013 (WhatsApp Business Setup) in a guided flow. Differences:</p>
+<ul>
+<li>Wizard includes the prerequisites checklist (settings assumes you're already verified)</li>
+<li>Wizard guides template creation with examples relevant to political campaigns</li>
+<li>Settings screen allows ongoing template management; wizard creates initial set</li>
+</ul>
+<h3 id="design-notes-2" tabindex="-1"><a class="heading-anchor" href="#design-notes-2" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>Meta verification can take days — the wizard saves progress and shows &quot;Return when your Meta account is verified&quot;</li>
+<li>Template approval status is tracked with auto-refresh; the wizard can be revisited to check</li>
+<li>Example templates provided: event reminder, donation thank you, GOTV reminder</li>
+</ul>
+<hr>
+<h2 id="wiz-006-sms-number-setup-wizard" tabindex="-1"><a class="heading-anchor" href="#wiz-006-sms-number-setup-wizard" aria-hidden="true">#</a> WIZ-006: SMS Number Setup Wizard</h2>
+<p>Guides the Org Admin through configuring SMS messaging capability. Accessed from the &quot;Getting Started&quot; checklist or from Settings → SMS → &quot;Run setup wizard.&quot;</p>
+<h3 id="wizard-structure-3" tabindex="-1"><a class="heading-anchor" href="#wizard-structure-3" aria-hidden="true">#</a> Wizard Structure</h3>
+<p>3 steps. ~5 minutes. Desktop-preferred.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Title</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Choose Provider</td>
+<td>Selection cards for supported SMS providers (Twilio, Vonage, local carriers). Each card shows: supported countries, pricing model, features (MMS support, delivery receipts).</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Connect &amp; Verify</td>
+<td>Provider API credentials, phone number selection or porting. Test SMS button: sends a verification code to the Org Admin's phone. Enter code to confirm the number works.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Configure Defaults</td>
+<td>Default sender name/number, opt-out keyword handling (STOP/UNSUBSCRIBE), quiet hours configuration, rate limiting. Preview of how messages appear on recipient's phone.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relationship-to-set-014" tabindex="-1"><a class="heading-anchor" href="#relationship-to-set-014" aria-hidden="true">#</a> Relationship to SET-014</h3>
+<p>This wizard wraps SET-014 (SMS Provider Configuration) in a guided flow. Differences:</p>
+<ul>
+<li>Wizard includes provider comparison and selection</li>
+<li>Wizard tests the number with a real SMS to the admin's phone</li>
+<li>Settings screen allows changing credentials and configuration; wizard sets up from scratch</li>
+</ul>
+<h3 id="design-notes-3" tabindex="-1"><a class="heading-anchor" href="#design-notes-3" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>Phone number selection: show available numbers with area code matching the org's geographic scope</li>
+<li>Opt-out compliance: wizard requires configuring STOP keyword handling before proceeding (legal requirement in many jurisdictions)</li>
+<li>Test SMS provides immediate validation that the configuration works</li>
+</ul>
+<hr>
+<h2 id="wiz-007-voter-file-import-wizard" tabindex="-1"><a class="heading-anchor" href="#wiz-007-voter-file-import-wizard" aria-hidden="true">#</a> WIZ-007: Voter File Import Wizard</h2>
+<p>Guides the Org Admin or Data Manager through importing their first voter file. Accessed from the &quot;Getting Started&quot; checklist or from CRM → Import.</p>
+<h3 id="wizard-structure-4" tabindex="-1"><a class="heading-anchor" href="#wizard-structure-4" aria-hidden="true">#</a> Wizard Structure</h3>
+<p>5 steps. ~15–30 minutes (depends on file size). Desktop-preferred.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Title</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Prepare Your File</td>
+<td>File format requirements (CSV, Excel), column expectations, sample file download. Drag-and-drop upload zone. File validation: row count, detected columns, encoding check.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Map Columns</td>
+<td>Two-column mapping: source columns (left) → GreenGrass fields (right). Auto-detection of common column names. Unmapped columns shown with &quot;Skip&quot; option. Required fields highlighted if unmapped.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Configure Matching</td>
+<td>Duplicate detection settings: match key selection (Voter ID preferred, name + DOB fallback). Match sensitivity slider (strict to loose). Preview of estimated matches.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Preview &amp; Validate</td>
+<td>Data quality preview: N records parsed, N valid, N with issues. Sample of problematic rows with specific errors. Option to download error report. &quot;Proceed with valid records&quot; or &quot;Fix and re-upload.&quot;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Import &amp; Confirm</td>
+<td>Import progress bar (for large files). Results summary: created, updated, skipped, errors. Link to dedup queue if potential duplicates found. [Go to Contacts →] button.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relationship-to-crm-008-through-crm-011" tabindex="-1"><a class="heading-anchor" href="#relationship-to-crm-008-through-crm-011" aria-hidden="true">#</a> Relationship to CRM-008 through CRM-011</h3>
+<p>This wizard closely mirrors the 4-step Data Import Wizard (CRM-008 through CRM-011) with two additions:</p>
+<ul>
+<li>Step 1 includes &quot;Prepare Your File&quot; guidance (the Data Import Wizard assumes you know the format)</li>
+<li>The wizard provides more hand-holding text explaining what each step does and why</li>
+</ul>
+<p>For subsequent imports, users should use the standard Data Import flow (CRM-008) directly — the wizard is for the first-time experience.</p>
+<h3 id="design-notes-4" tabindex="-1"><a class="heading-anchor" href="#design-notes-4" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>Auto-detection of column names is the key usability feature — reduces manual mapping for well-formatted files</li>
+<li>Progress bar during import is essential for large voter files (10K+ rows can take minutes)</li>
+<li>Error preview must be actionable: show the exact row and field that failed, not just a count</li>
+</ul>
+<hr>
+<h2 id="wizard-design-notes" tabindex="-1"><a class="heading-anchor" href="#wizard-design-notes" aria-hidden="true">#</a> Wizard Design Notes</h2>
+<h3 id="mobile-adaptation" tabindex="-1"><a class="heading-anchor" href="#mobile-adaptation" aria-hidden="true">#</a> Mobile Adaptation</h3>
+<p>All wizard steps adapt to mobile by:</p>
+<ul>
+<li>Removing the step label text (just dots in progress bar)</li>
+<li>Single-column layout</li>
+<li>Bottom sheet for dropdowns/selects</li>
+<li>&quot;Save &amp; Exit&quot; shortened to [Save]</li>
+<li>Full-width buttons</li>
+<li>Content scrolls; progress bar and navigation are fixed</li>
+</ul>
+<h3 id="error-handling" tabindex="-1"><a class="heading-anchor" href="#error-handling" aria-hidden="true">#</a> Error Handling</h3>
+<ul>
+<li><strong>Validation errors:</strong> Inline, below the field, red text. Field border turns red. Error icon appears.</li>
+<li><strong>Server errors:</strong> Full-width alert banner at top of content area: &quot;Something went wrong. Your progress is saved — try again.&quot;</li>
+<li><strong>Network errors:</strong> &quot;You appear to be offline. Your progress is saved locally and will sync when you reconnect.&quot;</li>
+</ul>
+<h3 id="skip-behavior" tabindex="-1"><a class="heading-anchor" href="#skip-behavior" aria-hidden="true">#</a> Skip Behavior</h3>
+<ul>
+<li>Steps that can be skipped have an explicit &quot;Skip&quot; or &quot;Skip for now&quot; link</li>
+<li>Skipped steps show as &quot;⊘ Skipped&quot; in the progress indicator (not ✓)</li>
+<li>Skipped steps can be returned to from the review screen or later from Settings</li>
+<li>Required steps (auth, compliance acknowledgments) cannot be skipped</li>
+</ul>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Wizard progress indicator announces current step to screen readers: &quot;Step 2 of 5: Organization Profile&quot;</li>
+<li>All form fields have associated <code>&lt;label&gt;</code> elements (not just placeholder text)</li>
+<li>Error messages are linked to their fields via <code>aria-describedby</code></li>
+<li>Focus moves to the first field of each step when advancing</li>
+<li>&quot;Save &amp; Exit&quot; is always reachable via keyboard (not hidden behind scroll)</li>
+<li>BYOK key generation uses large, clear text for security-critical information</li>
+<li>Shamir share display uses monospace font at 16px minimum for readability</li>
+<li>Skip links are visible and focusable (not hidden from keyboard users)</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wizard shell (not inline settings)</td>
+<td>Dedicated wizard layout with progress bar</td>
+<td>Focused experience for first-time setup; prevents distraction</td>
+</tr>
+<tr>
+<td>BYOK as separate wizard</td>
+<td>Not part of org setup</td>
+<td>Security ceremony deserves focused, undistracted attention</td>
+</tr>
+<tr>
+<td>Post-wizard checklist</td>
+<td>Persistent &quot;Getting Started&quot; on dashboard</td>
+<td>Guides first-time setup without blocking platform access</td>
+</tr>
+<tr>
+<td>Skippable steps with visual indicator</td>
+<td>&quot;⊘ Skipped&quot; shown in progress bar</td>
+<td>Users can defer without losing track of what's incomplete</td>
+</tr>
+<tr>
+<td>Volunteer onboarding mobile-first</td>
+<td>Primary mobile, adapted up</td>
+<td>Most volunteers onboard from their phones</td>
+</tr>
+<tr>
+<td>Error preservation on network loss</td>
+<td>Progress saved locally, syncs on reconnect</td>
+<td>Prevents data loss in low-connectivity environments</td>
+</tr>
+<tr>
+<td>5-step org setup</td>
+<td>Grouped by concern: auth → profile → team → config → review</td>
+<td>Manageable chunks; each step has a clear outcome</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Org setup wizard length.</strong> 5 steps may feel short for the amount of configuration needed, or too long if the Org Admin wants to explore. Should additional configuration (branding, communication channels, donor portal) be in the wizard or deferred to the &quot;Getting Started&quot; checklist?</p>
+</li>
+<li>
+<p><strong>Volunteer training enforcement.</strong> Should the volunteer onboarding wizard hard-block first shift access until training is complete, or allow the Volunteer Coordinator to override (&quot;they'll finish training later&quot;)? Hard block is safer; override is more practical for last-minute volunteers.</p>
+</li>
+<li>
+<p><strong>Wizard analytics.</strong> Should the platform track where users abandon wizards (step-by-step completion rates)? Useful for UX optimization but adds tracking infrastructure.</p>
+</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#onboarding-navigation-context"># Onboarding Navigation Context</a></li><li class="toc-2"><a href="#wizard-shell-reference"># Wizard Shell Reference</a></li><li class="toc-2"><a href="#org-setup-wizard"># Org Setup Wizard</a></li><li class="toc-3"><a href="#step-1-welcome-authentication"># Step 1: Welcome &amp;amp; Authentication</a></li><li class="toc-3"><a href="#step-2-organization-profile"># Step 2: Organization Profile</a></li><li class="toc-3"><a href="#step-3-invite-your-team"># Step 3: Invite Your Team</a></li><li class="toc-3"><a href="#step-4-initial-configuration"># Step 4: Initial Configuration</a></li><li class="toc-3"><a href="#step-5-review-launch"># Step 5: Review &amp;amp; Launch</a></li><li class="toc-3"><a href="#post-launch-getting-started-checklist"># Post-Launch: Getting Started Checklist</a></li><li class="toc-2"><a href="#volunteer-onboarding"># Volunteer Onboarding</a></li><li class="toc-3"><a href="#step-1-secure-your-account"># Step 1: Secure Your Account</a></li><li class="toc-3"><a href="#step-2-quick-tour"># Step 2: Quick Tour</a></li><li class="toc-3"><a href="#step-3-required-training"># Step 3: Required Training</a></li><li class="toc-3"><a href="#step-4-ready-to-go"># Step 4: Ready to Go</a></li><li class="toc-2"><a href="#byok-key-generation-wizard"># BYOK Key Generation Wizard</a></li><li class="toc-3"><a href="#step-1-understand-the-stakes"># Step 1: Understand the Stakes</a></li><li class="toc-3"><a href="#step-3-secure-backup-most-critical-step"># Step 3: Secure Backup (Most Critical Step)</a></li><li class="toc-2"><a href="#wiz-002-payment-processor-wizard"># WIZ-002: Payment Processor Wizard</a></li><li class="toc-3"><a href="#wizard-structure"># Wizard Structure</a></li><li class="toc-3"><a href="#relationship-to-set-017"># Relationship to SET-017</a></li><li class="toc-3"><a href="#design-notes"># Design Notes</a></li><li class="toc-2"><a href="#wiz-004-compliance-configuration-wizard"># WIZ-004: Compliance Configuration Wizard</a></li><li class="toc-3"><a href="#wizard-structure-1"># Wizard Structure</a></li><li class="toc-3"><a href="#relationship-to-set-008-set-009"># Relationship to SET-008 / SET-009</a></li><li class="toc-3"><a href="#design-notes-1"># Design Notes</a></li><li class="toc-2"><a href="#wiz-005-whatsapp-business-setup-wizard"># WIZ-005: WhatsApp Business Setup Wizard</a></li><li class="toc-3"><a href="#wizard-structure-2"># Wizard Structure</a></li><li class="toc-3"><a href="#relationship-to-set-013"># Relationship to SET-013</a></li><li class="toc-3"><a href="#design-notes-2"># Design Notes</a></li><li class="toc-2"><a href="#wiz-006-sms-number-setup-wizard"># WIZ-006: SMS Number Setup Wizard</a></li><li class="toc-3"><a href="#wizard-structure-3"># Wizard Structure</a></li><li class="toc-3"><a href="#relationship-to-set-014"># Relationship to SET-014</a></li><li class="toc-3"><a href="#design-notes-3"># Design Notes</a></li><li class="toc-2"><a href="#wiz-007-voter-file-import-wizard"># WIZ-007: Voter File Import Wizard</a></li><li class="toc-3"><a href="#wizard-structure-4"># Wizard Structure</a></li><li class="toc-3"><a href="#relationship-to-crm-008-through-crm-011"># Relationship to CRM-008 through CRM-011</a></li><li class="toc-3"><a href="#design-notes-4"># Design Notes</a></li><li class="toc-2"><a href="#wizard-design-notes"># Wizard Design Notes</a></li><li class="toc-3"><a href="#mobile-adaptation"># Mobile Adaptation</a></li><li class="toc-3"><a href="#error-handling"># Error Handling</a></li><li class="toc-3"><a href="#skip-behavior"># Skip Behavior</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

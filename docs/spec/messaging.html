@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internal Communications &amp; Notifications · GreenGrass</title>
+<meta name="description" content="Internal Communications &amp; Notifications — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html">Core Workflows</a></li><li><a href="./geography.html">Target Geography</a></li><li><a href="./security.html">Security &amp; Threat Model</a></li><li><a href="./compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html">External Integrations</a></li><li><a href="./support.html">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html" aria-current="page" class="active">Internal Communications &amp; Notifications</a></li><li><a href="./press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="internal-communications-notifications" tabindex="-1"><a class="heading-anchor" href="#internal-communications-notifications" aria-hidden="true">#</a> Internal Communications &amp; Notifications</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document specifies GreenGrass's internal communication system — how staff, candidates, and volunteers communicate with each other within the platform. This is distinct from external communications (email campaigns, SMS blasts, WhatsApp outreach to voters), which are specified in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>.</p>
+<p>Internal communications emerged as a gap across multiple specs: <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> identified it as needing its own spec pass, <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> decided E2E encryption by default with opt-in key escrow, <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> defined candidate-to-staff messaging as a core capability, and <a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a> revealed the need for real-time war room coordination.</p>
+<p>Political campaigns have unique communication requirements: messages may contain sensitive strategic information, staff turnover is high, security threats are real, and the pace of communication varies wildly (quiet between elections, frantic during GOTV). The communication system must handle all of this.</p>
+<h2 id="communication-philosophy" tabindex="-1"><a class="heading-anchor" href="#communication-philosophy" aria-hidden="true">#</a> Communication Philosophy</h2>
+<ol>
+<li><strong>Security by default.</strong> E2E encryption for all internal messages (decided in <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a>). The platform cannot read message content unless the tenant explicitly enables key escrow.</li>
+<li><strong>Campaign-shaped, not enterprise-shaped.</strong> Campaigns aren't companies. Communication patterns are flat, fast, and contextual — not hierarchical approval chains. The system should feel more like Signal than Outlook.</li>
+<li><strong>Context-rich.</strong> Messages about a voter, a donation, a turf, or an event should link to those objects. Communication and action happen in the same place.</li>
+<li><strong>Offline-tolerant.</strong> Messages queue when offline and deliver when reconnected. No message loss.</li>
+<li><strong>Noise-controlled.</strong> Election day generates hundreds of events. The notification system must help users focus, not drown them.</li>
+</ol>
+<h2 id="message-types" tabindex="-1"><a class="heading-anchor" href="#message-types" aria-hidden="true">#</a> Message Types</h2>
+<h3 id="direct-messages" tabindex="-1"><a class="heading-anchor" href="#direct-messages" aria-hidden="true">#</a> Direct Messages</h3>
+<p>One-to-one conversations between any two users within the same org.</p>
+<ul>
+<li><strong>Staff-to-staff</strong> — the most common case. Field Director to Volunteer Coordinator, Communications Director to Org Admin, etc.</li>
+<li><strong>Candidate-to-staff</strong> — candidates communicate with their key staff through the same messaging interface. Per <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>, the candidate's interface is curated — they see a simplified view, but messaging is full-featured.</li>
+<li><strong>Staff-to-volunteer</strong> — Team Leads and staff can message individual volunteers (e.g., schedule changes, assignment updates, check-ins).</li>
+</ul>
+<h3 id="group-conversations" tabindex="-1"><a class="heading-anchor" href="#group-conversations" aria-hidden="true">#</a> Group Conversations</h3>
+<p>Multi-person conversations for team coordination.</p>
+<ul>
+<li><strong>Ad-hoc groups</strong> — any user can create a group conversation and add members. No formal structure required.</li>
+<li><strong>Persistent groups</strong> — groups that persist across the campaign (e.g., &quot;Leadership Team,&quot; &quot;Field Staff,&quot; &quot;Finance Team&quot;). Created by staff, membership managed by the group creator or org admins.</li>
+<li><strong>Team-linked groups</strong> — automatically created when a Team (per <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> team structure) is created. All team members are included. Team Lead manages membership.</li>
+</ul>
+<p><strong>DECIDED: Optional threading.</strong> Messages appear in a flat chronological stream by default, but any message can be replied to as a thread. Threads keep side conversations from cluttering the main stream while maintaining the simplicity of a group chat for small groups. Balances the campaign's need for speed (flat chat) with scale (threading when groups get large during GOTV).</p>
+<h3 id="broadcasts" tabindex="-1"><a class="heading-anchor" href="#broadcasts" aria-hidden="true">#</a> Broadcasts</h3>
+<p>One-to-many messages from staff to large groups.</p>
+<ul>
+<li><strong>Org-wide announcements</strong> — Org Admin or designated staff can send a message to all staff, all volunteers, or the entire org. Read-only — recipients cannot reply to the broadcast itself (but can start a DM with the sender).</li>
+<li><strong>Role-based broadcasts</strong> — send to everyone with a specific role (e.g., all Team Leads, all Field staff).</li>
+<li><strong>Geographic broadcasts</strong> — send to all staff/volunteers assigned to a specific geographic area (precinct, district, region).</li>
+<li><strong>Shift broadcasts</strong> — send to all volunteers assigned to a specific shift or event.</li>
+</ul>
+<p>Broadcasts are not E2E encrypted — they use server-side encryption (the tenant's envelope key) since they target large groups and individual key exchange is impractical. This is disclosed in the UI.</p>
+<h3 id="contextual-messages" tabindex="-1"><a class="heading-anchor" href="#contextual-messages" aria-hidden="true">#</a> Contextual Messages</h3>
+<p>Messages attached to specific platform objects, enabling communication in context.</p>
+<ul>
+<li><strong>Voter/contact notes</strong> — already specified in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> (canvassing notes). These are data, not messages, and are encrypted per the data model.</li>
+<li><strong>Event comments</strong> — staff can discuss an event (logistics, issues) in a message thread attached to the event.</li>
+<li><strong>Shift comments</strong> — Team Leads and staff can communicate about a specific shift (volunteer no-shows, supply issues) in a thread attached to the shift.</li>
+<li><strong>Issue threads</strong> — poll watcher issues (<a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a>) have their own comment threads for escalation discussion.</li>
+<li><strong>Donation flags</strong> — compliance-flagged donations (<a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a>) can have discussion threads for review.</li>
+</ul>
+<p><strong>DECIDED: Inherit from org setting.</strong> Contextual messages follow the org's encryption mode. If the org has key escrow enabled, contextual messages use server-side encryption (searchable, accessible to anyone with permission on the parent object). If E2E is the org's mode, contextual messages are also E2E (with the trade-off that server-side search is unavailable and access requires per-participant key exchange).</p>
+<h2 id="notifications" tabindex="-1"><a class="heading-anchor" href="#notifications" aria-hidden="true">#</a> Notifications</h2>
+<h3 id="notification-sources" tabindex="-1"><a class="heading-anchor" href="#notification-sources" aria-hidden="true">#</a> Notification Sources</h3>
+<p>The platform generates notifications from many subsystems:</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Messaging</strong></td>
+<td>New DM, new group message, @mention, broadcast received</td>
+</tr>
+<tr>
+<td><strong>Assignments</strong></td>
+<td>New shift assignment, turf reassignment, staging location change</td>
+</tr>
+<tr>
+<td><strong>GOTV</strong></td>
+<td>Reallocation suggestion, ride request, poll watcher issue escalation</td>
+</tr>
+<tr>
+<td><strong>Fundraising</strong></td>
+<td>Compliance flag on donation, recurring donation failure, refund request</td>
+</tr>
+<tr>
+<td><strong>Compliance</strong></td>
+<td>Approaching contribution limit, consent expiration, reporting deadline, data subject request</td>
+</tr>
+<tr>
+<td><strong>Volunteer</strong></td>
+<td>New volunteer signup, training completion, certification expiration</td>
+</tr>
+<tr>
+<td><strong>Events</strong></td>
+<td>Event RSVP, event reminder, event cancellation</td>
+</tr>
+<tr>
+<td><strong>System</strong></td>
+<td>Security alert, sync failure, update notification, breach notification</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notification-channels" tabindex="-1"><a class="heading-anchor" href="#notification-channels" aria-hidden="true">#</a> Notification Channels</h3>
+<p>Notifications can be delivered through multiple channels:</p>
+<ul>
+<li><strong>In-app</strong> — badge counts, notification drawer, toast/banner for urgent items. Always available.</li>
+<li><strong>Push notification</strong> — mobile push via Capacitor. Requires device permission.</li>
+<li><strong>Email digest</strong> — configurable summary of notifications (immediate, hourly, daily, or off). For users who aren't in the app constantly.</li>
+<li><strong>SMS</strong> — reserved for critical alerts only (security breaches, urgent GOTV escalations). Opt-in.</li>
+</ul>
+<h3 id="notification-priority" tabindex="-1"><a class="heading-anchor" href="#notification-priority" aria-hidden="true">#</a> Notification Priority</h3>
+<p><strong>DECIDED: User-configurable priority.</strong> Users set per-source notification preferences: which delivery channel (in-app, push, email, SMS), what priority level, and mute/unmute. Full user control over their notification experience. Security alerts and breach notifications are the sole exception — these are always delivered at critical priority and cannot be muted.</p>
+<h3 id="do-not-disturb-quiet-hours" tabindex="-1"><a class="heading-anchor" href="#do-not-disturb-quiet-hours" aria-hidden="true">#</a> Do Not Disturb &amp; Quiet Hours</h3>
+<ul>
+<li><strong>Do Not Disturb mode</strong> — suppresses all non-critical notifications. Only security alerts and emergency-severity poll watcher issues break through.</li>
+<li><strong>Quiet hours</strong> — configurable per user. No notifications delivered during quiet hours except critical alerts. Queued notifications delivered when quiet hours end.</li>
+<li><strong>Election day override</strong> — during active GOTV operations, quiet hours are suspended for GOTV-related notifications (with user consent during election day setup).</li>
+</ul>
+<h2 id="candidate-communication" tabindex="-1"><a class="heading-anchor" href="#candidate-communication" aria-hidden="true">#</a> Candidate Communication</h2>
+<p>The candidate persona (<a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>) has unique communication needs:</p>
+<h3 id="curated-interface" tabindex="-1"><a class="heading-anchor" href="#curated-interface" aria-hidden="true">#</a> Curated Interface</h3>
+<ul>
+<li>The candidate sees messaging as a primary feature — it's one of the main things they use the platform for.</li>
+<li>Their message list shows conversations with key staff (Campaign Manager, Communications Director, Finance Director) prominently.</li>
+<li>Group conversations they're part of (e.g., &quot;Leadership Team&quot;) are easily accessible.</li>
+<li>They don't see the full organizational chat landscape — only conversations they're part of.</li>
+</ul>
+<h3 id="candidate-specific-patterns" tabindex="-1"><a class="heading-anchor" href="#candidate-specific-patterns" aria-hidden="true">#</a> Candidate-Specific Patterns</h3>
+<ul>
+<li><strong>Briefing messages</strong> — staff can send structured briefings (talking points, schedule updates, polling data summaries) that appear distinctly from casual conversation. These are formatted messages with a specific template, not free-text chat.</li>
+<li><strong>Approval requests</strong> — staff can send items for candidate approval (press release draft, social media post, fundraising email). The candidate can approve, reject, or comment. Tracked for audit.</li>
+<li><strong>Schedule integration</strong> — messages can reference calendar events. &quot;Your 3pm event at [location] has been moved to 4pm&quot; with a link to the event.</li>
+</ul>
+<h2 id="alliance-communication" tabindex="-1"><a class="heading-anchor" href="#alliance-communication" aria-hidden="true">#</a> Alliance Communication</h2>
+<p>Alliances (<a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) need cross-org communication:</p>
+<ul>
+<li><strong>Alliance coordination channel</strong> — a shared group conversation that includes designated representatives from each member org. Operates at the federation layer.</li>
+<li><strong>Cross-org DMs</strong> — alliance staff can send direct messages to staff at other member orgs (subject to alliance sharing rules).</li>
+<li><strong>Alliance broadcasts</strong> — the alliance coordinator can send announcements to all member orgs.</li>
+</ul>
+<p><strong>DECIDED: Per-org key negotiation.</strong> Alliance messages use an independently generated alliance group key, distributed to each member org encrypted with that org's public key. Key rotation occurs on every alliance membership change (org joins or leaves), ensuring forward secrecy (new members can't read historical messages) and post-compromise security (departing members can't read future messages). The cryptographic ceremony of key rotation reinforces the significance of alliance membership changes and provides a natural UX anchor for the join/leave experience. More complex than federation-layer encryption, but consistent with the sovereignty model — no new trust boundary is introduced.</p>
+<h2 id="war-room-communication" tabindex="-1"><a class="heading-anchor" href="#war-room-communication" aria-hidden="true">#</a> War Room Communication</h2>
+<p>Election day war rooms (<a href="http://gotv.md" target="_blank" rel="noopener noreferrer">gotv.md</a>) have specialized communication needs:</p>
+<h3 id="war-room-channel" tabindex="-1"><a class="heading-anchor" href="#war-room-channel" aria-hidden="true">#</a> War Room Channel</h3>
+<ul>
+<li><strong>Dedicated war room channel</strong> — automatically created when GOTV operations are activated for an election. Includes all war room staff (Org Admin, Field Directors, Rides Coordinator, Communications Director, legal team contacts).</li>
+<li><strong>Structured updates</strong> — the channel receives automated updates: turnout milestones, reallocation suggestions, ride request backlog alerts, poll watcher escalations.</li>
+<li><strong>Pinned information</strong> — key reference info pinned at the top: poll closing times, emergency contacts, legal hotline numbers, escalation procedures.</li>
+</ul>
+<h3 id="field-communication-during-gotv" tabindex="-1"><a class="heading-anchor" href="#field-communication-during-gotv" aria-hidden="true">#</a> Field Communication During GOTV</h3>
+<ul>
+<li><strong>Team Lead → War Room</strong> — Team Leads can escalate issues from the field directly to the war room channel.</li>
+<li><strong>War Room → Field</strong> — war room staff can broadcast to all active field volunteers (e.g., &quot;All canvassers: shift to evening turfs now&quot;).</li>
+<li><strong>Ride coordination messages</strong> — ride requests and driver assignments generate notifications in the rides coordination thread.</li>
+</ul>
+<h2 id="technical-requirements" tabindex="-1"><a class="heading-anchor" href="#technical-requirements" aria-hidden="true">#</a> Technical Requirements</h2>
+<h3 id="e2e-encryption-implementation" tabindex="-1"><a class="heading-anchor" href="#e2e-encryption-implementation" aria-hidden="true">#</a> E2E Encryption Implementation</h3>
+<p>Per <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> and <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a> decisions:</p>
+<ul>
+<li><strong>Protocol:</strong> Signal Protocol (Double Ratchet) or equivalent. Well-audited, widely implemented, handles multi-device gracefully.</li>
+<li><strong>Key generation:</strong> each user generates a public/private key pair during onboarding (system.md:467-470). Private keys never leave the device.</li>
+<li><strong>Multi-device:</strong> users may have multiple devices (phone + desktop). Key distribution across devices uses the established pattern (new device must be authorized from an existing device or through trusted contact recovery).</li>
+<li><strong>Group encryption:</strong> Sender Keys protocol for group messages (each sender has a key shared with all group members — efficient for groups, one encryption operation per send regardless of group size).</li>
+<li><strong>Key escrow (opt-in):</strong> when the tenant enables key escrow, a copy of the user's private key is encrypted with the tenant's envelope key and stored server-side. Enables server-side search and device recovery without trusted contacts.</li>
+</ul>
+<h3 id="message-storage" tabindex="-1"><a class="heading-anchor" href="#message-storage" aria-hidden="true">#</a> Message Storage</h3>
+<ul>
+<li><strong>On-device:</strong> messages stored in the local encrypted database (SQLCipher). Available offline.</li>
+<li><strong>Server-side (E2E mode):</strong> server stores encrypted message blobs. Cannot read content. Stores metadata (sender, recipient, timestamp, message ID) for delivery routing.</li>
+<li><strong>Server-side (escrow mode):</strong> server can decrypt and index messages for search. Same retention policy as other tenant data.</li>
+<li><strong>Retention:</strong> messages follow the tenant's configured data retention policy. When retention expires, messages are deleted from server storage. On-device copies remain until the user clears them or the device is wiped.</li>
+</ul>
+<h3 id="message-delivery" tabindex="-1"><a class="heading-anchor" href="#message-delivery" aria-hidden="true">#</a> Message Delivery</h3>
+<ul>
+<li><strong>Online delivery:</strong> messages delivered via WebSocket connection in real-time.</li>
+<li><strong>Offline queuing:</strong> if the recipient is offline, messages are queued server-side and delivered on next connection. Queue follows the same sync protocol as other data (<a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a> event sourcing).</li>
+<li><strong>Delivery receipts:</strong> sender sees when message is delivered to the server and when it's received by the recipient's device. Displayed as checkmarks (single = sent, double = delivered).</li>
+</ul>
+<p><strong>DECIDED: No read receipts.</strong> The platform does not track or display when a message is read. Delivery receipts only (sent to server, delivered to device). Privacy-first, consistent with the security-focused messaging philosophy.</p>
+<h3 id="search" tabindex="-1"><a class="heading-anchor" href="#search" aria-hidden="true">#</a> Search</h3>
+<ul>
+<li><strong>E2E mode (no escrow):</strong> search is client-side only. The app searches the local message database on the device. Limited to messages that have been synced to that device. No server-side search.</li>
+<li><strong>Escrow mode:</strong> full server-side search across all messages. Search results respect the user's access — you can only search messages in conversations you're part of.</li>
+<li><strong>Contextual messages:</strong> if using server-side encryption (per decision above), always searchable server-side.</li>
+</ul>
+<h3 id="offline-behavior" tabindex="-1"><a class="heading-anchor" href="#offline-behavior" aria-hidden="true">#</a> Offline Behavior</h3>
+<ul>
+<li><strong>Reading:</strong> all synced messages are available offline. Users can read their full message history.</li>
+<li><strong>Composing:</strong> users can compose and send messages while offline. Messages queue locally and send when connectivity is restored.</li>
+<li><strong>Receiving:</strong> messages sent while the user is offline are queued and delivered on reconnection. No message loss.</li>
+<li><strong>Group sync:</strong> when returning online, the app syncs missed group messages in chronological order.</li>
+</ul>
+<h3 id="media-file-sharing" tabindex="-1"><a class="heading-anchor" href="#media-file-sharing" aria-hidden="true">#</a> Media &amp; File Sharing</h3>
+<ul>
+<li><strong>Supported media:</strong> images, short video clips, voice messages, PDF documents.</li>
+<li><strong>Size limits:</strong> configurable per tenant (default: 25MB per attachment).</li>
+<li><strong>Storage:</strong> media attachments stored encrypted (E2E in non-escrow mode, envelope key in escrow mode). Media counts against the tenant's storage quota.</li>
+<li><strong>Thumbnails:</strong> for images, an encrypted thumbnail is generated for preview. In E2E mode, the thumbnail is encrypted with the same key as the full image.</li>
+</ul>
+<p><strong>DECIDED: Voice messages scoped to field contexts.</strong> Voice messages are available in field-related conversations — Team Lead channels, shift threads, GOTV war room, and field broadcast contexts — where field staff can't easily type (walking between doors, driving). Not available as a general messaging feature across all conversations. Automatic transcription (for search and accessibility) deferred to when AI infrastructure is in place.</p>
+<h2 id="moderation-safety" tabindex="-1"><a class="heading-anchor" href="#moderation-safety" aria-hidden="true">#</a> Moderation &amp; Safety</h2>
+<h3 id="content-policies" tabindex="-1"><a class="heading-anchor" href="#content-policies" aria-hidden="true">#</a> Content Policies</h3>
+<ul>
+<li>GreenGrass does not moderate the content of internal messages — these are private communications within a political organization. The tenant (Org Admin) is responsible for their org's communication standards.</li>
+<li><strong>Exception:</strong> the platform scans for known CSAM hashes (legally required in most jurisdictions) and blocks such content. This scanning operates on content hashes, not content reading, and works even in E2E mode.</li>
+</ul>
+<h3 id="abuse-reporting" tabindex="-1"><a class="heading-anchor" href="#abuse-reporting" aria-hidden="true">#</a> Abuse Reporting</h3>
+<ul>
+<li>Users can report a message or conversation to the Org Admin. The report includes the message content (the reporting user provides it — the platform doesn't break E2E to extract it).</li>
+<li>Org Admins can remove users from group conversations and disable messaging for specific users.</li>
+<li>There is no platform-level (GreenGrass) moderation of internal messages. Tenant autonomy applies.</li>
+</ul>
+<h3 id="message-deletion" tabindex="-1"><a class="heading-anchor" href="#message-deletion" aria-hidden="true">#</a> Message Deletion</h3>
+<ul>
+<li><strong>Sender can delete</strong> — a sender can delete their own message. In E2E mode, this sends a deletion request to all recipients' devices (best-effort — if a device is offline, the message may persist until the device syncs the deletion).
+<strong>DECIDED: No disappearing messages.</strong> All messages persist until manually deleted by the sender or until the tenant's data retention policy expires. Simpler, and avoids potential compliance issues with jurisdictions that may require message retention for campaign communications.</li>
+</ul>
+<h2 id="gotv-specific-communication-modes" tabindex="-1"><a class="heading-anchor" href="#gotv-specific-communication-modes" aria-hidden="true">#</a> GOTV-Specific Communication Modes</h2>
+<h3 id="election-day-mode" tabindex="-1"><a class="heading-anchor" href="#election-day-mode" aria-hidden="true">#</a> Election Day Mode</h3>
+<p>When GOTV operations are activated:</p>
+<ul>
+<li><strong>Notification priority shifts</strong> — GOTV-related notifications (turnout updates, reallocation suggestions, ride requests, poll watcher escalations) are elevated to high priority.</li>
+<li><strong>War room channel becomes primary</strong> — the war room channel is pinned to the top of every war room member's message list.</li>
+<li><strong>Field broadcast capability</strong> — war room staff gain a one-tap broadcast button to reach all active field volunteers.</li>
+<li><strong>Automated status updates</strong> — the system posts periodic turnout summaries to the war room channel (e.g., every 30 minutes).</li>
+</ul>
+<h3 id="post-election-wind-down" tabindex="-1"><a class="heading-anchor" href="#post-election-wind-down" aria-hidden="true">#</a> Post-Election Wind-Down</h3>
+<ul>
+<li>Election day mode deactivates after polls close (or manually by Org Admin).</li>
+<li>War room channel persists for post-election coordination but loses its priority status.</li>
+<li>Notification priorities return to normal.</li>
+<li>Election day message history is preserved per retention policy.</li>
+</ul>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Voice and video calls</strong> — should the platform support voice/video calls between users (not phone banking to voters, which is covered in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>)? This would add significant complexity but could replace the need for external tools like Signal or WhatsApp for internal coordination. Could potentially leverage the Jitsi integration (<a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a>) for this.</p>
+</li>
+<li>
+<p><strong>Message reactions</strong> — should users be able to react to messages with emoji? Low-effort acknowledgment without a full reply. Common in modern messaging. Minimal implementation cost but adds UI complexity.</p>
+</li>
+<li>
+<p><strong>Message forwarding</strong> — should users be able to forward a message from one conversation to another? Useful for sharing information across teams. Privacy implications — the original sender may not have intended the message for a wider audience.</p>
+</li>
+<li>
+<p><strong>Bot/automation messages</strong> — should automated systems be able to post messages to channels (e.g., &quot;New volunteer signup: [name]&quot; posted to the #volunteers channel)? Useful for awareness but can become noisy.</p>
+</li>
+<li>
+<p><strong>External messaging bridge</strong> — some campaign staff may prefer to use existing tools (Signal, WhatsApp, Telegram) for internal communication. Should the platform offer a bridge that mirrors internal messages to external platforms? Significant security and compliance implications.</p>
+</li>
+</ol>
+<!-- REVISIT: The Signal Protocol implementation needs careful security audit before launch. Consider using an established library (libsignal) rather than implementing from scratch. -->
+<!-- REVISIT: Storage costs for media attachments in E2E mode need analysis. E2E encrypted media cannot be deduplicated server-side, which increases storage costs compared to server-side encryption. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#communication-philosophy"># Communication Philosophy</a></li><li class="toc-2"><a href="#message-types"># Message Types</a></li><li class="toc-3"><a href="#direct-messages"># Direct Messages</a></li><li class="toc-3"><a href="#group-conversations"># Group Conversations</a></li><li class="toc-3"><a href="#broadcasts"># Broadcasts</a></li><li class="toc-3"><a href="#contextual-messages"># Contextual Messages</a></li><li class="toc-2"><a href="#notifications"># Notifications</a></li><li class="toc-3"><a href="#notification-sources"># Notification Sources</a></li><li class="toc-3"><a href="#notification-channels"># Notification Channels</a></li><li class="toc-3"><a href="#notification-priority"># Notification Priority</a></li><li class="toc-3"><a href="#do-not-disturb-quiet-hours"># Do Not Disturb &amp;amp; Quiet Hours</a></li><li class="toc-2"><a href="#candidate-communication"># Candidate Communication</a></li><li class="toc-3"><a href="#curated-interface"># Curated Interface</a></li><li class="toc-3"><a href="#candidate-specific-patterns"># Candidate-Specific Patterns</a></li><li class="toc-2"><a href="#alliance-communication"># Alliance Communication</a></li><li class="toc-2"><a href="#war-room-communication"># War Room Communication</a></li><li class="toc-3"><a href="#war-room-channel"># War Room Channel</a></li><li class="toc-3"><a href="#field-communication-during-gotv"># Field Communication During GOTV</a></li><li class="toc-2"><a href="#technical-requirements"># Technical Requirements</a></li><li class="toc-3"><a href="#e2e-encryption-implementation"># E2E Encryption Implementation</a></li><li class="toc-3"><a href="#message-storage"># Message Storage</a></li><li class="toc-3"><a href="#message-delivery"># Message Delivery</a></li><li class="toc-3"><a href="#search"># Search</a></li><li class="toc-3"><a href="#offline-behavior"># Offline Behavior</a></li><li class="toc-3"><a href="#media-file-sharing"># Media &amp;amp; File Sharing</a></li><li class="toc-2"><a href="#moderation-safety"># Moderation &amp;amp; Safety</a></li><li class="toc-3"><a href="#content-policies"># Content Policies</a></li><li class="toc-3"><a href="#abuse-reporting"># Abuse Reporting</a></li><li class="toc-3"><a href="#message-deletion"># Message Deletion</a></li><li class="toc-2"><a href="#gotv-specific-communication-modes"># GOTV-Specific Communication Modes</a></li><li class="toc-3"><a href="#election-day-mode"># Election Day Mode</a></li><li class="toc-3"><a href="#post-election-wind-down"># Post-Election Wind-Down</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Out The Vote &amp; Election Day Operations · GreenGrass</title>
+<meta name="description" content="Get Out The Vote &amp; Election Day Operations — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html">Core Workflows</a></li><li><a href="./geography.html">Target Geography</a></li><li><a href="./security.html">Security &amp; Threat Model</a></li><li><a href="./compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html">External Integrations</a></li><li><a href="./support.html">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html" aria-current="page" class="active">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="./press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="get-out-the-vote-election-day-operations" tabindex="-1"><a class="heading-anchor" href="#get-out-the-vote-election-day-operations" aria-hidden="true">#</a> Get Out The Vote &amp; Election Day Operations</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document specifies GreenGrass's GOTV and election day capabilities. Election day is the single most operationally intense day of any campaign — everything the platform has done (canvassing, voter registration, fundraising, communications, training) converges into a few hours of high-stakes execution.</p>
+<p>GOTV operations are distinct from regular canvassing (<a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) in several ways:</p>
+<ul>
+<li><strong>Time pressure.</strong> Polls close at a fixed time. Every minute matters.</li>
+<li><strong>Real-time coordination.</strong> The campaign needs a live picture of who has voted and who hasn't, updated continuously.</li>
+<li><strong>Multiple simultaneous operations.</strong> Door knocking, phone banking, rides to polls, poll watching, and war room coordination all happen in parallel.</li>
+<li><strong>Higher stakes for failure.</strong> A sync delay during canvassing means a follow-up happens tomorrow. A sync delay on election day means a voter doesn't get contacted before polls close.</li>
+</ul>
+<p>This spec builds on: <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a> (canvassing, phone banking, shift lifecycle), <a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> (mapping, SMS, telephony), <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a> (roles, permissions, geographic scoping), and <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a> (real-time analytics, offline sync, event sourcing).</p>
+<h2 id="gotv-philosophy" tabindex="-1"><a class="heading-anchor" href="#gotv-philosophy" aria-hidden="true">#</a> GOTV Philosophy</h2>
+<ol>
+<li><strong>Every contact is a turnout contact.</strong> On election day, the only question is &quot;have you voted yet?&quot; Everything else — persuasion, registration, issue education — is over.</li>
+<li><strong>Real-time or useless.</strong> Stale data on election day is worse than no data. The system must prioritize sync speed and freshness.</li>
+<li><strong>Offline-capable but online-optimized.</strong> Election day operations benefit enormously from connectivity (live turnout tracking, dynamic reassignment). Offline capability is the safety net, not the default mode.</li>
+<li><strong>Scalable to chaos.</strong> Election day generates peak load — every volunteer is active, every voter is being tracked, every operation is running simultaneously. The system must handle this gracefully.</li>
+</ol>
+<h2 id="pre-election-day-preparation" tabindex="-1"><a class="heading-anchor" href="#pre-election-day-preparation" aria-hidden="true">#</a> Pre-Election Day Preparation</h2>
+<h3 id="gotv-universe-definition" tabindex="-1"><a class="heading-anchor" href="#gotv-universe-definition" aria-hidden="true">#</a> GOTV Universe Definition</h3>
+<p>Before election day, the campaign defines its GOTV universe — the list of voters to target for turnout.</p>
+<ul>
+<li><strong>Universe criteria:</strong> based on canvassing data, support scores, voter history, demographics, geographic targeting</li>
+<li><strong>Typical GOTV universe:</strong> voters identified as supporters (through canvassing or other voter ID) who haven't yet voted (where early voting data is available)</li>
+<li><strong>Universe segments:</strong> campaigns typically prioritize contacts — strong supporters first, then lean supporters, then uncontacted but likely supporters</li>
+</ul>
+<p><strong>DECIDED: Automated universe builder.</strong> The platform generates the GOTV universe automatically based on configurable criteria (support score thresholds, voting history filters, geographic filters). Campaign staff review, adjust, add/remove segments, and finalize. Reduces manual work and ensures consistency while preserving staff control over the final universe.</p>
+<h3 id="early-voting-absentee-tracking" tabindex="-1"><a class="heading-anchor" href="#early-voting-absentee-tracking" aria-hidden="true">#</a> Early Voting &amp; Absentee Tracking</h3>
+<p>Many jurisdictions allow voting before election day. The platform must track who has already voted to avoid wasting GOTV resources on people who don't need a reminder.</p>
+<p><strong>DECIDED: Both — API feed where available, manual upload as universal fallback.</strong> Real-time or daily feeds from jurisdictions that provide them (some US states), with automatic removal of early/absentee voters from the GOTV universe. Manual upload of early voting lists as the universal fallback. Consistent with the voter file import strategy (<a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a>) and the API-ready but manual-first pattern.</p>
+<h3 id="volunteer-staging" tabindex="-1"><a class="heading-anchor" href="#volunteer-staging" aria-hidden="true">#</a> Volunteer Staging</h3>
+<p>Election day requires large numbers of volunteers deployed simultaneously. The platform must support staging logistics.</p>
+<ul>
+<li><strong>Staging locations</strong> — physical locations where volunteers gather before deploying to their assignments (campaign offices, community centers, churches, etc.)</li>
+<li><strong>Staging location management:</strong> create locations with address, capacity, contact person, hours of operation</li>
+<li><strong>Volunteer assignment to staging locations</strong> — each volunteer knows where to report</li>
+<li><strong>Check-in at staging location</strong> — Team Lead checks in volunteers, verifies they have the app and their assignments are loaded</li>
+<li><strong>Supply tracking</strong> — optional tracking of supplies distributed at staging (literature, signs, water, etc.)</li>
+</ul>
+<h3 id="gotv-turf-cutting" tabindex="-1"><a class="heading-anchor" href="#gotv-turf-cutting" aria-hidden="true">#</a> GOTV Turf Cutting</h3>
+<p>Election day turfs are different from canvassing turfs:</p>
+<ul>
+<li><strong>Smaller and tighter</strong> — election day turfs are designed to be completed in 1-2 hours, not a full shift</li>
+<li><strong>Density-optimized</strong> — prioritized by supporter density, not geographic coverage</li>
+<li><strong>Dynamic</strong> — turfs may be re-cut during the day based on turnout data (see Real-Time Operations below)</li>
+<li><strong>Multiple passes</strong> — the same turf may be assigned to different volunteers for morning, afternoon, and evening passes</li>
+</ul>
+<p>The existing turf management tools (<a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a> — drawing, auto-generation, assignment, walk list optimization, coverage visualization) apply here with election-day-specific parameters.</p>
+<h3 id="poll-watcher-preparation" tabindex="-1"><a class="heading-anchor" href="#poll-watcher-preparation" aria-hidden="true">#</a> Poll Watcher Preparation</h3>
+<p>Poll watchers (election observers) monitor voting locations for irregularities. This is a legally defined role in most jurisdictions.</p>
+<ul>
+<li><strong>Poll watcher registration</strong> — many jurisdictions require pre-registration of poll watchers with electoral authorities. Platform tracks which watchers are registered for which locations.</li>
+<li><strong>Poll watcher training</strong> — jurisdiction-specific training on what watchers can and cannot do, what to look for, how to report issues. Delivered through the training module (<a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>).</li>
+<li><strong>Polling location assignment</strong> — assign watchers to specific polling locations, with backup assignments in case of no-shows.</li>
+<li><strong>Credential management</strong> — track poll watcher credentials/certificates issued by electoral authorities.</li>
+</ul>
+<h3 id="election-day-communication-plan" tabindex="-1"><a class="heading-anchor" href="#election-day-communication-plan" aria-hidden="true">#</a> Election Day Communication Plan</h3>
+<p>Pre-configure the election day communication sequence:</p>
+<ul>
+<li><strong>Morning reminder</strong> — &quot;Today is election day. Polls are open [hours]. Your polling location is [location].&quot; Sent to the full GOTV universe via configured channels (SMS, WhatsApp, email).</li>
+<li><strong>Midday follow-up</strong> — sent to voters who haven't been confirmed as voted yet. &quot;Have you voted yet? Polls close at [time].&quot;</li>
+<li><strong>Afternoon push</strong> — more urgent messaging to remaining unvoted supporters. &quot;Polls close in [X] hours.&quot;</li>
+<li><strong>Final push</strong> — last-chance messaging. &quot;Polls close in 1 hour. If you need a ride, [contact info].&quot;</li>
+</ul>
+<p><strong>DECIDED: Configurable per wave.</strong> Campaign chooses fully automated or manual-trigger per communication wave. Morning reminder might be fully automated, while the final push might require manual trigger after reviewing real-time turnout data. Each wave in the sequence is independently configured as auto-send or manual-trigger.</p>
+<h2 id="election-day-operations" tabindex="-1"><a class="heading-anchor" href="#election-day-operations" aria-hidden="true">#</a> Election Day Operations</h2>
+<h3 id="gotv-canvassing-door-knocking" tabindex="-1"><a class="heading-anchor" href="#gotv-canvassing-door-knocking" aria-hidden="true">#</a> GOTV Canvassing (Door Knocking)</h3>
+<p>Election day door knocking uses the same canvassing infrastructure (<a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) with key differences:</p>
+<ul>
+<li><strong>Script is simpler</strong> — &quot;Have you voted today? Do you need a ride to the polls?&quot; No persuasion, no issue discussion.</li>
+<li><strong>Outcomes are binary</strong> — voted, hasn't voted yet (needs follow-up), not home, can't/won't vote</li>
+<li><strong>Speed matters</strong> — shorter interactions, faster movement between doors</li>
+<li><strong>Dynamic walk lists</strong> — as turnout data comes in, voters confirmed as having voted are removed from active walk lists</li>
+</ul>
+<h4 id="gotv-walk-list-refresh" tabindex="-1"><a class="heading-anchor" href="#gotv-walk-list-refresh" aria-hidden="true">#</a> GOTV Walk List Refresh</h4>
+<p><strong>DECIDED: Hybrid — push when connected, pull as fallback.</strong> Server pushes walk list updates to devices in real-time when connected. Volunteers can pull-to-refresh as a fallback for intermittent connectivity. Stale entries are marked visually with a freshness indicator showing time since last sync. Consistent with the platform's offline-capable-but-online-optimized philosophy.</p>
+<h3 id="chase-calls-phone-banking" tabindex="-1"><a class="heading-anchor" href="#chase-calls-phone-banking" aria-hidden="true">#</a> Chase Calls (Phone Banking)</h3>
+<p>Election day phone banking targets voters who haven't voted yet, using the same phone banking infrastructure (<a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>, <a href="http://integrations.md" target="_blank" rel="noopener noreferrer">integrations.md</a>) with election-day modifications:</p>
+<ul>
+<li><strong>Script:</strong> &quot;Hi, this is [name] with [campaign]. Have you voted today? Polls are open until [time] at [location]. Can we help with anything — a ride, directions?&quot;</li>
+<li><strong>Call list:</strong> drawn from GOTV universe, filtered to remove voters already confirmed as voted</li>
+<li><strong>Call list refresh:</strong> same dynamic updating as walk lists — voters confirmed as voted are removed</li>
+<li><strong>Outcome tracking:</strong> voted, will vote later (schedule callback), needs ride (trigger ride request), not voting, no answer</li>
+<li><strong>Ride trigger:</strong> if a voter needs a ride, the phone banker can create a ride request directly from the call interface (see Rides to Polls below)</li>
+</ul>
+<h3 id="rides-to-polls" tabindex="-1"><a class="heading-anchor" href="#rides-to-polls" aria-hidden="true">#</a> Rides to Polls</h3>
+<p>Transportation to polling locations is a critical GOTV service, especially in areas with limited public transit, for elderly voters, and for voters with disabilities.</p>
+<h4 id="ride-request-flow" tabindex="-1"><a class="heading-anchor" href="#ride-request-flow" aria-hidden="true">#</a> Ride Request Flow</h4>
+<ol>
+<li><strong>Request created</strong> — by phone banker (from call), door knocker (from canvass), voter self-service (via campaign text line or web form), or staff (manually)</li>
+<li><strong>Request contains:</strong> voter name, pickup address, phone number, accessibility needs (wheelchair, walker, etc.), preferred time, polling location (auto-assigned based on voter's registered address)</li>
+<li><strong>Request enters queue</strong> — visible to Rides Coordinator (a staff role or Team Lead sub-assignment)</li>
+<li><strong>Driver assigned</strong> — from pool of volunteer drivers. Assignment considers: proximity, vehicle capacity, accessibility, time window.</li>
+<li><strong>Driver notified</strong> — receives pickup details via app or SMS</li>
+<li><strong>Pickup confirmed</strong> — driver confirms when voter is picked up</li>
+<li><strong>Drop-off confirmed</strong> — driver confirms when voter is dropped at polling location</li>
+<li><strong>Voter marked</strong> — voter's ride status updated in GOTV tracker</li>
+</ol>
+<h4 id="driver-management" tabindex="-1"><a class="heading-anchor" href="#driver-management" aria-hidden="true">#</a> Driver Management</h4>
+<ul>
+<li><strong>Driver registration</strong> — volunteers sign up as drivers with: vehicle type, capacity, accessibility features, availability window, geographic area</li>
+<li><strong>Driver queue</strong> — available drivers visible to Rides Coordinator, sorted by proximity to pending requests</li>
+<li><strong>Round-trip tracking</strong> — system tracks driver availability (available, en route to pickup, transporting, returning)</li>
+<li><strong>Multi-passenger runs</strong> — drivers can be assigned multiple pickups in sequence if addresses are clustered</li>
+</ul>
+<p><strong>DECIDED: Both available — campaign chooses mode.</strong> Dispatcher mode for campaigns that want full manual control (Rides Coordinator matches requests to drivers on a map). Auto-assignment with override for campaigns that want the platform to match based on proximity, vehicle compatibility, and time window, with Coordinator override. Campaign selects mode based on volunteer capacity and operational complexity.</p>
+<h3 id="poll-watching" tabindex="-1"><a class="heading-anchor" href="#poll-watching" aria-hidden="true">#</a> Poll Watching</h3>
+<p>Poll watchers monitor polling locations and report issues in real-time.</p>
+<h4 id="watcher-check-in" tabindex="-1"><a class="heading-anchor" href="#watcher-check-in" aria-hidden="true">#</a> Watcher Check-In</h4>
+<ul>
+<li>Watcher arrives at assigned polling location, checks in via app</li>
+<li>Platform confirms: correct location, watcher is registered for this location, credentials valid</li>
+<li>Watcher status: checked in, active, issue reported, shift ended</li>
+</ul>
+<h4 id="issue-reporting" tabindex="-1"><a class="heading-anchor" href="#issue-reporting" aria-hidden="true">#</a> Issue Reporting</h4>
+<p>Watchers report issues through a structured form:</p>
+<ul>
+<li><strong>Issue categories:</strong> long wait times, voter intimidation, machine malfunction, accessibility problems, electioneering within restricted zone, missing/incorrect voter rolls, poll worker conduct, other</li>
+<li><strong>Severity:</strong> informational, concerning, urgent, emergency</li>
+<li><strong>Details:</strong> free-text description, optional photo/video</li>
+<li><strong>Location:</strong> automatically tagged to the watcher's assigned polling location</li>
+<li><strong>Timestamp:</strong> automatic</li>
+</ul>
+<h4 id="issue-escalation" tabindex="-1"><a class="heading-anchor" href="#issue-escalation" aria-hidden="true">#</a> Issue Escalation</h4>
+<p><strong>DECIDED: Configurable escalation rules.</strong> Campaign defines escalation routing per issue severity and category. Small campaigns route everything to one person. Large campaigns use tiered escalation (routine issues to regional coordinators, urgent/emergency to war room and legal). Escalation rules are configured during election day preparation.</p>
+<h4 id="election-protection-integration" tabindex="-1"><a class="heading-anchor" href="#election-protection-integration" aria-hidden="true">#</a> Election Protection Integration</h4>
+<p>For campaigns that participate in election protection efforts (nonpartisan voter protection hotlines, legal observer networks):</p>
+<ul>
+<li><strong>Hotline number display</strong> — configurable election protection hotline number displayed prominently in the poll watcher interface and in GOTV messaging to voters</li>
+<li><strong>Issue forwarding</strong> — option to forward poll watcher issue reports to external election protection organizations (with appropriate data sharing consent)</li>
+<li><strong>Legal team alerts</strong> — urgent issues can trigger alerts to the campaign's legal team via the platform's notification system</li>
+</ul>
+<h3 id="real-time-voter-turnout-tracking" tabindex="-1"><a class="heading-anchor" href="#real-time-voter-turnout-tracking" aria-hidden="true">#</a> Real-Time Voter Turnout Tracking</h3>
+<p>The central nervous system of election day operations: a live view of which targeted voters have and haven't voted.</p>
+<h4 id="data-sources-for-turnout-tracking" tabindex="-1"><a class="heading-anchor" href="#data-sources-for-turnout-tracking" aria-hidden="true">#</a> Data Sources for Turnout Tracking</h4>
+<p>Turnout data can come from multiple sources:</p>
+<ol>
+<li><strong>Official early/absentee voting data</strong> — uploaded or synced pre-election day</li>
+<li><strong>Door knock confirmations</strong> — canvassers report &quot;voter says they already voted&quot;</li>
+<li><strong>Phone call confirmations</strong> — phone bankers confirm voter has voted</li>
+<li><strong>Poll watcher observations</strong> — watchers at polling locations can confirm specific voters (where legal and practical)</li>
+<li><strong>Official election day turnout data</strong> — some jurisdictions release periodic turnout updates during the day</li>
+<li><strong>Voter self-report</strong> — voters responding to campaign texts/messages confirming they voted</li>
+</ol>
+<p><strong>DECIDED: Confidence-weighted confirmations.</strong> Different turnout data sources receive different confidence levels:</p>
+<ul>
+<li><strong>Confirmed</strong> — official election data (early voting files, election day turnout feeds). Voter removed from GOTV contact lists.</li>
+<li><strong>Likely voted</strong> — canvasser report, phone banker report, poll watcher observation, voter self-report. Voter deprioritized in contact lists (moved to bottom) but not fully removed.
+Source is always tracked in the audit trail for post-election model validation.</li>
+</ul>
+<h4 id="turnout-dashboard" tabindex="-1"><a class="heading-anchor" href="#turnout-dashboard" aria-hidden="true">#</a> Turnout Dashboard</h4>
+<p>The election day dashboard is the war room's primary interface:</p>
+<ul>
+<li><strong>Overall turnout</strong> — percentage of GOTV universe that has voted, with real-time updates</li>
+<li><strong>Turnout by geography</strong> — map view showing turnout rates by precinct/turf, color-coded (red = low turnout, green = high)</li>
+<li><strong>Turnout by segment</strong> — breakdown by supporter strength, demographics, geography</li>
+<li><strong>Outstanding contacts</strong> — count of supporters who haven't voted and haven't been contacted today</li>
+<li><strong>Operation status</strong> — active door knockers, active phone bankers, pending ride requests, poll watcher coverage</li>
+<li><strong>Time remaining</strong> — countdown to poll closing, with projected final turnout at current rate</li>
+<li><strong>Alerts</strong> — poll watcher issues, sync delays, ride request backlog, communication delivery problems</li>
+</ul>
+<h3 id="dynamic-resource-reallocation" tabindex="-1"><a class="heading-anchor" href="#dynamic-resource-reallocation" aria-hidden="true">#</a> Dynamic Resource Reallocation</h3>
+<p>As the day progresses, the campaign needs to shift resources to where they're most needed.</p>
+<ul>
+<li><strong>Identify low-turnout areas</strong> — dashboard highlights precincts/turfs where targeted supporters are below expected turnout</li>
+<li><strong>Reassign canvassers</strong> — shift door knockers from high-turnout areas (where the work is done) to low-turnout areas</li>
+<li><strong>Redirect phone banking</strong> — prioritize call lists for low-turnout precincts</li>
+<li><strong>Surge ride coordination</strong> — if a geographic area has many ride requests, reassign drivers</li>
+</ul>
+<p><strong>DECIDED: Automatic suggestions + human approval in war room.</strong> The platform analyzes real-time turnout data and generates reallocation suggestions (e.g., &quot;Precinct 7 is at 35% turnout with 3 hours left — consider shifting 2 canvassers from Precinct 12 which is at 78%&quot;). Suggestions surface in the war room dashboard. War room staff approve, reject, or modify each suggestion. Data-driven decision support, human-controlled execution.</p>
+<h2 id="alliance-gotv-coordination" tabindex="-1"><a class="heading-anchor" href="#alliance-gotv-coordination" aria-hidden="true">#</a> Alliance GOTV Coordination</h2>
+<p>Alliances running joint GOTV operations (decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>) need additional coordination:</p>
+<ul>
+<li><strong>Shared GOTV universe</strong> — alliance-level universe combining member orgs' supporter data, deduped, with &quot;don't re-knock&quot; enforcement across orgs</li>
+<li><strong>Coordinated turf assignment</strong> — no overlap between member orgs' canvassing turfs</li>
+<li><strong>Shared turnout dashboard</strong> — alliance-level view of turnout across all member orgs' territories</li>
+<li><strong>Cross-org ride coordination</strong> — ride requests from any member org's contacts can be fulfilled by any member org's drivers</li>
+<li><strong>Unified communications</strong> — option for alliance-level election day messaging alongside org-level messages (with consent per <a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a>)</li>
+</ul>
+<h2 id="post-election-day" tabindex="-1"><a class="heading-anchor" href="#post-election-day" aria-hidden="true">#</a> Post-Election Day</h2>
+<h3 id="immediate-election-night" tabindex="-1"><a class="heading-anchor" href="#immediate-election-night" aria-hidden="true">#</a> Immediate (Election Night)</h3>
+<ul>
+<li><strong>Results tracking</strong> — as official results come in, platform can display them alongside the campaign's internal data (turnout, support scores) for analysis</li>
+<li><strong>Results data entry</strong> — for jurisdictions where results are posted physically at polling locations, poll watchers can enter results into the platform for faster campaign-internal tallying</li>
+</ul>
+<p><strong>DECIDED: Full results dashboard with emphasis on poll watcher data entry.</strong> Platform provides:</p>
+<ul>
+<li><strong>Poll watcher results entry</strong> — structured form for the campaign's own poll watchers/staff to enter results from their assigned polling locations as they're posted. This is the primary data input — the campaign's own eyes on the ground.</li>
+<li><strong>Results aggregation dashboard</strong> — real-time display of entered results alongside campaign internal data (turnout rates, support scores) for election night war room analysis.</li>
+<li><strong>Official results integration</strong> — where official sources provide machine-readable results (election commission APIs, media feeds), the platform can ingest them. But poll watcher data entry provides the fastest, most trusted early picture.</li>
+</ul>
+<h3 id="post-election-analysis-days-after" tabindex="-1"><a class="heading-anchor" href="#post-election-analysis-days-after" aria-hidden="true">#</a> Post-Election Analysis (Days After)</h3>
+<ul>
+<li><strong>Turnout analysis</strong> — compare actual turnout against targets, by precinct, by segment</li>
+<li><strong>Operation effectiveness</strong> — canvasser contact rates, phone bank conversion, ride completion rates</li>
+<li><strong>Model validation</strong> — compare support scores against actual results to improve future voter ID</li>
+<li><strong>Volunteer performance</strong> — shifts completed, contacts made, issues reported (for volunteer recognition, not punishment)</li>
+<li><strong>Resource allocation review</strong> — where were resources over/under-deployed relative to need</li>
+</ul>
+<h3 id="data-cleanup" tabindex="-1"><a class="heading-anchor" href="#data-cleanup" aria-hidden="true">#</a> Data Cleanup</h3>
+<ul>
+<li><strong>Voter file updates</strong> — mark voters who moved, deceased, or otherwise need status updates based on election day data</li>
+<li><strong>Volunteer debrief data</strong> — collect volunteer feedback on what worked and what didn't</li>
+<li><strong>Archive election day data</strong> — election day operations data archived per audit retention policy (10 years, per <a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a>)</li>
+</ul>
+<h2 id="jurisdiction-specific-considerations" tabindex="-1"><a class="heading-anchor" href="#jurisdiction-specific-considerations" aria-hidden="true">#</a> Jurisdiction-Specific Considerations</h2>
+<h3 id="puerto-rico-alpha" tabindex="-1"><a class="heading-anchor" href="#puerto-rico-alpha" aria-hidden="true">#</a> Puerto Rico (Alpha)</h3>
+<ul>
+<li>US election law applies. GOTV operations are well-established in US political culture.</li>
+<li>CEE manages elections. Polling locations are public information.</li>
+<li>Early voting and absentee voting are available.</li>
+<li>Bilingual GOTV messaging (Spanish/English).</li>
+</ul>
+<h3 id="brazil-pilot-1" tabindex="-1"><a class="heading-anchor" href="#brazil-pilot-1" aria-hidden="true">#</a> Brazil (Pilot 1)</h3>
+<ul>
+<li>Voting is mandatory in Brazil. GOTV focus shifts from &quot;convince to vote&quot; to &quot;convince to vote for us&quot; — turnout is already high.</li>
+<li>Electronic voting machines — results are fast.</li>
+<li>TSE restrictions on election day campaigning — platform must enforce campaign period rules.</li>
+<li>Section 16 of Electoral Code restricts certain GOTV activities on election day itself.</li>
+</ul>
+<h3 id="thailand-pilot-2" tabindex="-1"><a class="heading-anchor" href="#thailand-pilot-2" aria-hidden="true">#</a> Thailand (Pilot 2)</h3>
+<ul>
+<li>Thai election law restricts campaign activities in the 24-48 hours before polling day (&quot;quiet period&quot;). Platform must enforce this.</li>
+<li>Alcohol sales banned during election period — not a platform concern but relevant for event planning.</li>
+<li>Military intervention history — GOTV operations must consider security tier (aggressive).</li>
+</ul>
+<h3 id="india-pilot-3" tabindex="-1"><a class="heading-anchor" href="#india-pilot-3" aria-hidden="true">#</a> India (Pilot 3)</h3>
+<ul>
+<li>Massive scale — hundreds of millions of voters across multiple phases (Indian elections happen over weeks, not one day).</li>
+<li>Multi-phase elections mean GOTV happens repeatedly for different constituencies on different days.</li>
+<li>Booth-level management is critical — Indian campaigns organize at the polling booth level.</li>
+<li>ECI's Model Code of Conduct restricts election day activities.</li>
+</ul>
+<h3 id="lebanon-pilot-4" tabindex="-1"><a class="heading-anchor" href="#lebanon-pilot-4" aria-hidden="true">#</a> Lebanon (Pilot 4)</h3>
+<ul>
+<li>Confessional seat system means GOTV targets specific communities.</li>
+<li>Transportation to polls is a major logistical challenge given infrastructure instability.</li>
+<li>Multiple security concerns — GOTV operations in different areas may face different threat levels.</li>
+<li>Cash-based economy means ride reimbursements may need cash tracking (per <a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a> cash chain-of-custody).</li>
+</ul>
+<h2 id="technical-requirements" tabindex="-1"><a class="heading-anchor" href="#technical-requirements" aria-hidden="true">#</a> Technical Requirements</h2>
+<h3 id="sync-priority-on-election-day" tabindex="-1"><a class="heading-anchor" href="#sync-priority-on-election-day" aria-hidden="true">#</a> Sync Priority on Election Day</h3>
+<p>The event sourcing sync protocol (<a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a>) must be tuned for election day:</p>
+<ul>
+<li><strong>Voter status updates have highest sync priority</strong> — &quot;voter has voted&quot; events must propagate to all clients as fast as possible</li>
+<li><strong>Sync frequency increases</strong> — during election day operations, sync interval drops from normal cadence to near-real-time (every 30 seconds when connected)</li>
+<li><strong>Conflict resolution favors recency</strong> — if two sources report conflicting voter status, the most recent report wins</li>
+<li><strong>Bandwidth optimization</strong> — sync payloads during GOTV should be minimal (status changes only, not full records)</li>
+</ul>
+<h3 id="load-handling" tabindex="-1"><a class="heading-anchor" href="#load-handling" aria-hidden="true">#</a> Load Handling</h3>
+<p>Election day represents peak platform load:</p>
+<ul>
+<li>Every active volunteer is using the app simultaneously</li>
+<li>Turnout dashboard is being refreshed continuously by war room staff</li>
+<li>Communications are being sent to the full GOTV universe in waves</li>
+<li>Ride requests are flowing in continuously</li>
+<li>Poll watcher reports are streaming in</li>
+</ul>
+<p>The system must:</p>
+<ul>
+<li>Handle 10x normal concurrent user load</li>
+<li>Dashboard updates within 30 seconds of underlying data change</li>
+<li>Communication sends complete within configured time windows (not delayed by queue backlog)</li>
+<li>Sync lag under 2 minutes even at peak load</li>
+</ul>
+<h3 id="offline-resilience" tabindex="-1"><a class="heading-anchor" href="#offline-resilience" aria-hidden="true">#</a> Offline Resilience</h3>
+<p>If connectivity is lost during election day:</p>
+<ul>
+<li>Canvassers continue working from cached walk lists (same as regular canvassing)</li>
+<li>Phone bankers cannot operate (requires connectivity for calls)</li>
+<li>Ride requests queue locally and send when connected</li>
+<li>Poll watcher issue reports queue locally and send when connected</li>
+<li><strong>Critical difference from regular canvassing:</strong> on election day, stale walk lists waste time on voters who've already voted. Volunteers should be strongly prompted to reconnect and refresh.</li>
+</ul>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Ballot tracking</strong> — some US jurisdictions support ballot tracking (voters can check if their mail ballot was received/counted). Should the platform integrate with ballot tracking systems?</p>
+</li>
+<li>
+<p><strong>Exit polling</strong> — should the platform support informal exit polling (asking voters leaving polling locations how they voted)? Legally complex in many jurisdictions.</p>
+</li>
+<li>
+<p><strong>Multi-phase election support</strong> — India's elections happen across weeks with different states voting on different days. The GOTV system needs to handle multiple election days for a single campaign. How does this affect universe management, volunteer scheduling, and turnout tracking?</p>
+</li>
+<li>
+<p><strong>Gamification exception</strong> — gamification is generally out of scope (per <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>), but election day volunteer motivation is uniquely important. Should the dashboard show volunteer leaderboards or completion progress for election day only?</p>
+</li>
+</ol>
+<!-- REVISIT: Election day load testing methodology should be defined during implementation planning. The 10x load assumption needs validation against actual volunteer numbers for target campaign sizes. -->
+<!-- REVISIT: Quiet period enforcement (Thailand, India MCC) needs integration with the campaign period enforcement system (compliance.md). Election day and quiet period are a subset of campaign period restrictions. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#gotv-philosophy"># GOTV Philosophy</a></li><li class="toc-2"><a href="#pre-election-day-preparation"># Pre-Election Day Preparation</a></li><li class="toc-3"><a href="#gotv-universe-definition"># GOTV Universe Definition</a></li><li class="toc-3"><a href="#early-voting-absentee-tracking"># Early Voting &amp;amp; Absentee Tracking</a></li><li class="toc-3"><a href="#volunteer-staging"># Volunteer Staging</a></li><li class="toc-3"><a href="#gotv-turf-cutting"># GOTV Turf Cutting</a></li><li class="toc-3"><a href="#poll-watcher-preparation"># Poll Watcher Preparation</a></li><li class="toc-3"><a href="#election-day-communication-plan"># Election Day Communication Plan</a></li><li class="toc-2"><a href="#election-day-operations"># Election Day Operations</a></li><li class="toc-3"><a href="#gotv-canvassing-door-knocking"># GOTV Canvassing (Door Knocking)</a></li><li class="toc-3"><a href="#chase-calls-phone-banking"># Chase Calls (Phone Banking)</a></li><li class="toc-3"><a href="#rides-to-polls"># Rides to Polls</a></li><li class="toc-3"><a href="#poll-watching"># Poll Watching</a></li><li class="toc-3"><a href="#real-time-voter-turnout-tracking"># Real-Time Voter Turnout Tracking</a></li><li class="toc-3"><a href="#dynamic-resource-reallocation"># Dynamic Resource Reallocation</a></li><li class="toc-2"><a href="#alliance-gotv-coordination"># Alliance GOTV Coordination</a></li><li class="toc-2"><a href="#post-election-day"># Post-Election Day</a></li><li class="toc-3"><a href="#immediate-election-night"># Immediate (Election Night)</a></li><li class="toc-3"><a href="#post-election-analysis-days-after"># Post-Election Analysis (Days After)</a></li><li class="toc-3"><a href="#data-cleanup"># Data Cleanup</a></li><li class="toc-2"><a href="#jurisdiction-specific-considerations"># Jurisdiction-Specific Considerations</a></li><li class="toc-3"><a href="#puerto-rico-alpha"># Puerto Rico (Alpha)</a></li><li class="toc-3"><a href="#brazil-pilot-1"># Brazil (Pilot 1)</a></li><li class="toc-3"><a href="#thailand-pilot-2"># Thailand (Pilot 2)</a></li><li class="toc-3"><a href="#india-pilot-3"># India (Pilot 3)</a></li><li class="toc-3"><a href="#lebanon-pilot-4"># Lebanon (Pilot 4)</a></li><li class="toc-2"><a href="#technical-requirements"># Technical Requirements</a></li><li class="toc-3"><a href="#sync-priority-on-election-day"># Sync Priority on Election Day</a></li><li class="toc-3"><a href="#load-handling"># Load Handling</a></li><li class="toc-3"><a href="#offline-resilience"># Offline Resilience</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

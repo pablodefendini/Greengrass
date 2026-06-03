@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events Wireframes · GreenGrass</title>
+<meta name="description" content="Events Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="./events.html" aria-current="page" class="active">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="events-wireframes" tabindex="-1"><a class="heading-anchor" href="#events-wireframes" aria-hidden="true">#</a> Events Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Events are the campaign's in-person and virtual touchpoints — rallies, town halls, fundraisers, trainings, canvass launches, phone banks, and virtual meetings. These wireframes cover the full event lifecycle: creation, promotion, RSVP management, day-of check-in, and post-event follow-up.</p>
+<p>The core UX challenge: events serve wildly different personas. The Volunteer Coordinator creates and manages events on desktop. Supporters RSVP on their phones through a public page. Team Leads check people in at a venue with spotty wifi. The check-in tool must work offline, on a cheap phone, held in one hand while greeting someone with the other.</p>
+<p>Public-facing event pages (EVT-006, EVT-007) and supporter event history (SUP-008) are wireframed in <code>supporter/supporter-portal.md</code>. This document covers admin-side screens plus the check-in tool.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EVT-001</td>
+<td>Event List</td>
+<td>OA, VC, V, TL, S</td>
+<td>No</td>
+<td>Yes</td>
+<td>Events</td>
+</tr>
+<tr>
+<td>EVT-002</td>
+<td>Event Create/Edit</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Events</td>
+</tr>
+<tr>
+<td>EVT-003</td>
+<td>Event Detail</td>
+<td>OA, VC, V, TL, S</td>
+<td>No</td>
+<td>Yes</td>
+<td>Events</td>
+</tr>
+<tr>
+<td>EVT-004</td>
+<td>Event RSVP Management</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td>RSVPs</td>
+</tr>
+<tr>
+<td>EVT-005</td>
+<td>Event Check-in Tool</td>
+<td>OA, VC, TL</td>
+<td>Yes</td>
+<td>Primary</td>
+<td>Check-in</td>
+</tr>
+<tr>
+<td>EVT-006</td>
+<td>Event RSVP Form (Public)</td>
+<td>S, Public</td>
+<td>No</td>
+<td>Primary</td>
+<td>Public (cross-ref)</td>
+</tr>
+<tr>
+<td>EVT-007</td>
+<td>Event Page (Public)</td>
+<td>Public</td>
+<td>No</td>
+<td>Primary</td>
+<td>Public (cross-ref)</td>
+</tr>
+<tr>
+<td>EVT-008</td>
+<td>Event Metrics</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<td>EVT-009</td>
+<td>Virtual Event Setup</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Events</td>
+</tr>
+<tr>
+<td>EVT-010</td>
+<td>Post-Event Survey Builder</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Post-Event</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events-navigation-context" tabindex="-1"><a class="heading-anchor" href="#events-navigation-context" aria-hidden="true">#</a> Events Navigation Context</h2>
+<pre><code>EVENTS (Volunteer Coordinator sidebar)
+  Events              → EVT-001
+  Check-in            → EVT-005 (selection)
+  Post-Event          → EVT-010 (selection)
+
+EVENTS (Volunteer / Team Lead sidebar)
+  Events              → EVT-001 (view-only, filtered to their RSVPs)
+</code></pre>
+<hr>
+<h2 id="evt-001-event-list" tabindex="-1"><a class="heading-anchor" href="#evt-001-event-list" aria-hidden="true">#</a> EVT-001: Event List</h2>
+<p>Browse upcoming and past events. Persona-adaptive — the Volunteer Coordinator sees all events with management actions; Volunteers see events they've RSVP'd to or can attend.</p>
+<h3 id="desktop-admin-view-oa-vc" tabindex="-1"><a class="heading-anchor" href="#desktop-admin-view-oa-vc" aria-hidden="true">#</a> Desktop — Admin View (OA, VC)</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Events                                                    [+ New Event]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Upcoming]  [Past]  [Draft]  [All]                                         │
+│                                                                              │
+│  🔍 Search events...                                                        │
+│  Filters: [Type ▾]  [Date Range ▾]  [Status ▾]                             │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  Rally at Plaza del Mercado                                          │   │
+│  │  📅 Mar 5, 2026 · 6:00 PM — 9:00 PM                                 │   │
+│  │  📍 Plaza del Mercado, San Juan                                      │   │
+│  │  Type: Rally                                                         │   │
+│  │  👥 142 RSVPs · Capacity: 500 · ☑ Public                            │   │
+│  │                                                              [Edit]  │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │                                                                      │   │
+│  │  Town Hall: Healthcare Access                                        │   │
+│  │  📅 Mar 12, 2026 · 7:00 PM — 9:00 PM                                │   │
+│  │  📍 Centro Comunal, Bayamón                                          │   │
+│  │  Type: Town Hall                                                     │   │
+│  │  👥 67 RSVPs · Capacity: 150 · ☑ Public                             │   │
+│  │                                                              [Edit]  │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │                                                                      │   │
+│  │  Volunteer Training — March                                          │   │
+│  │  📅 Mar 8, 2026 · 10:00 AM — 12:00 PM                               │   │
+│  │  🖥 Virtual (Zoom)                                                   │   │
+│  │  Type: Training                                                      │   │
+│  │  👥 28 RSVPs · Capacity: 50 · 🔒 Invite-only                       │   │
+│  │                                                              [Edit]  │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │                                                                      │   │
+│  │  Spring Fundraiser Dinner                                    ✎ Draft │   │
+│  │  📅 Apr 10, 2026 · 7:00 PM — 10:00 PM                               │   │
+│  │  📍 Hotel El Convento, San Juan                                      │   │
+│  │  Type: Fundraiser                                                    │   │
+│  │  👥 0 RSVPs · Capacity: 200                                         │   │
+│  │                                                              [Edit]  │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Showing 1-4 of 12                                                           │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-volunteersupporter-view" tabindex="-1"><a class="heading-anchor" href="#mobile-volunteersupporter-view" aria-hidden="true">#</a> Mobile — Volunteer/Supporter View</h3>
+<pre><code>┌────────────────────────────┐
+│  Events                    │
+├────────────────────────────┤
+│                            │
+│  [Upcoming] [My RSVPs]     │
+│                            │
+│  THIS WEEK                 │
+│                            │
+│  ┌──────────────────────┐  │
+│  │ Rally at Plaza del   │  │
+│  │ Mercado              │  │
+│  │ 📅 Mar 5 · 6:00 PM   │  │
+│  │ 📍 San Juan           │  │
+│  │ 👥 142 going          │  │
+│  │ ✓ You're going       │  │
+│  ├──────────────────────┤  │
+│  │ Volunteer Training   │  │
+│  │ 📅 Mar 8 · 10:00 AM  │  │
+│  │ 🖥 Virtual (Zoom)    │  │
+│  │ 👥 28 going           │  │
+│  │ [RSVP]               │  │
+│  └──────────────────────┘  │
+│                            │
+│  NEXT WEEK                 │
+│                            │
+│  ┌──────────────────────┐  │
+│  │ Town Hall: Health..  │  │
+│  │ 📅 Mar 12 · 7:00 PM  │  │
+│  │ 📍 Bayamón            │  │
+│  │ 👥 67 going           │  │
+│  │ [RSVP]               │  │
+│  └──────────────────────┘  │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="event-types" tabindex="-1"><a class="heading-anchor" href="#event-types" aria-hidden="true">#</a> Event Types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Icon</th>
+<th>Typical context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rally</td>
+<td>📢</td>
+<td>Large public gathering, outdoor</td>
+</tr>
+<tr>
+<td>Town Hall</td>
+<td>🏛</td>
+<td>Public policy discussion, Q&amp;A</td>
+</tr>
+<tr>
+<td>Fundraiser</td>
+<td>💰</td>
+<td>Dinner, gala, fundraising event</td>
+</tr>
+<tr>
+<td>Training</td>
+<td>📚</td>
+<td>Volunteer training, onboarding</td>
+</tr>
+<tr>
+<td>Canvass Launch</td>
+<td>🚶</td>
+<td>Starting point for canvassing shift</td>
+</tr>
+<tr>
+<td>Phone Bank</td>
+<td>📞</td>
+<td>Group phone bank session</td>
+</tr>
+<tr>
+<td>Virtual</td>
+<td>🖥</td>
+<td>Online meeting via external provider</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>📌</td>
+<td>General event</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction" tabindex="-1"><a class="heading-anchor" href="#interaction" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Row click</strong> → opens EVT-003 Event Detail</li>
+<li><strong>&quot;+ New Event&quot;</strong> → opens EVT-002 Create</li>
+<li><strong>Status tabs</strong>: Upcoming (future + today), Past (ended), Draft (not published), All</li>
+<li><strong>Volunteer/Supporter view</strong>: no Edit buttons, no Draft tab, &quot;My RSVPs&quot; tab filters to events they've RSVP'd to, inline RSVP button on cards</li>
+<li><strong>Capacity indicator</strong>: when near capacity (&gt;80%), shows amber &quot;Filling up&quot; badge. When full: &quot;Waitlist&quot; badge</li>
+</ul>
+<h3 id="states" tabindex="-1"><a class="heading-anchor" href="#states" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty (Admin)</strong>: &quot;No events yet. Events help you organize rallies, trainings, fundraisers, and more.&quot; [Create Event]</li>
+<li><strong>Empty (Volunteer)</strong>: &quot;No upcoming events. Check back soon for new events in your area.&quot;</li>
+</ul>
+<hr>
+<h2 id="evt-002-event-createedit" tabindex="-1"><a class="heading-anchor" href="#evt-002-event-createedit" aria-hidden="true">#</a> EVT-002: Event Create/Edit</h2>
+<p>Create or edit an event. Sections expand progressively — required fields first, optional details below.</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Events    New Event                            [Save Draft]  [Publish]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  DETAILS                                                                     │
+│  ───────                                                                     │
+│                                                                              │
+│  Event name *                                                                │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Rally at Plaza del Mercado                                          │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Event type *                                                                │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Rally                                                          [▾]  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Date *                         Start time *        End time *               │
+│  ┌────────────────────┐        ┌──────────┐        ┌──────────┐            │
+│  │ Mar 5, 2026        │        │ 6:00 PM  │        │ 9:00 PM  │            │
+│  └────────────────────┘        └──────────┘        └──────────┘            │
+│                                                                              │
+│  ☐ Multi-day event                                                           │
+│                                                                              │
+│  Description *                                                               │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Join us for a community rally featuring live music, speakers,       │   │
+│  │ food vendors, and a celebration of our campaign progress.           │   │
+│  │                                                                      │   │
+│  │ Featured speakers:                                                   │   │
+│  │ • Ana Martínez, Candidate for District 5                            │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  Rich text editor (bold, italic, lists, links)                               │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  LOCATION                                                                    │
+│  ────────                                                                    │
+│                                                                              │
+│  ● In-person   ○ Virtual   ○ Hybrid                                         │
+│                                                                              │
+│  Venue name *                                                                │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Plaza del Mercado                                                   │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Address *                                                                   │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Calle Dos Hermanos, San Juan, PR 00907                              │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  [Map preview showing pin at venue address]                         │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  ▸ RSVP SETTINGS                                                             │
+│  ▸ PROMOTION                                                                 │
+│  ▸ STAFF &amp; ROLES                                                             │
+│  ▸ MEDIA                                                                     │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="collapsed-sections" tabindex="-1"><a class="heading-anchor" href="#collapsed-sections" aria-hidden="true">#</a> Collapsed Sections</h3>
+<p><strong>RSVP SETTINGS:</strong></p>
+<pre><code>│  RSVP type                                                                   │
+│  ● Open (anyone can RSVP)                                                    │
+│  ○ Invite-only (only invited contacts can RSVP)                              │
+│  ○ Approval-required (RSVPs go to review queue)                              │
+│                                                                              │
+│  Capacity                                                                    │
+│  ┌──────────┐  ☐ Enable waitlist when full                                  │
+│  │ 500      │                                                                │
+│  └──────────┘                                                                │
+│                                                                              │
+│  RSVP fields (in addition to name and email):                                │
+│  ☐ Phone number                                                              │
+│  ☐ Number of guests (max: [ 4 ])                                            │
+│  ☐ Dietary restrictions (text field)                                         │
+│  ☐ Custom question: ┌──────────────────────────────────┐                    │
+│                      │                                  │                    │
+│                      └──────────────────────────────────┘                    │
+│                                                                              │
+│  Reminders                                                                   │
+│  ☑ 24 hours before (Email)                                                   │
+│  ☑ 2 hours before (SMS, if phone provided)                                   │
+│  ☐ 1 week before                                                             │
+</code></pre>
+<p><strong>PROMOTION:</strong></p>
+<pre><code>│  Public event page                                                           │
+│  ☑ Create a public event page (shareable link)                               │
+│  URL: greengrass.io/partido-verde/events/rally-plaza-mercado                 │
+│  [Copy Link]                                                                 │
+│                                                                              │
+│  Hero image                                                                  │
+│  ┌─────────────────────────────────┐                                        │
+│  │    📷 Upload Image              │                                        │
+│  │    Recommended: 1200 × 628px    │                                        │
+│  └─────────────────────────────────┘                                        │
+│                                                                              │
+│  Calendar export                                                             │
+│  ☑ Show &quot;Add to Calendar&quot; button on event page (iCal, Google Calendar)       │
+│                                                                              │
+│  ▸ Send invitations (opens segment selector + channel picker)                │
+│  ▸ Share on social media (opens SOCIAL-002 pre-filled)                       │
+</code></pre>
+<p><strong>STAFF &amp; ROLES:</strong></p>
+<pre><code>│  Event manager *        ┌──────────────────────────────────────┐            │
+│                         │ Ana Reyes (You)                 [▾]  │            │
+│                         └──────────────────────────────────────┘            │
+│                                                                              │
+│  Check-in staff                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Ana Reyes, Jorge Vega, + Search team members...                     │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  These staff can access the check-in tool (EVT-005) for this event.         │
+│                                                                              │
+│  Fundraising                                                                 │
+│  ☐ Enable cash donation collection at this event                             │
+│    Links to FUND-010 Cash Donation Recording                                 │
+</code></pre>
+<p><strong>MEDIA:</strong></p>
+<pre><code>│  Additional images (gallery)                                                 │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐                  │
+│  │ + Upload │  │          │  │          │  │          │                  │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘                  │
+│                                                                              │
+│  Post-event photos (available after event)                                   │
+│  ☐ Allow attendees to upload photos (via portal)                             │
+</code></pre>
+<h3 id="virtual-location-variant" tabindex="-1"><a class="heading-anchor" href="#virtual-location-variant" aria-hidden="true">#</a> Virtual Location Variant</h3>
+<p>When &quot;Virtual&quot; is selected, the location section changes:</p>
+<pre><code>│  LOCATION                                                                    │
+│  ────────                                                                    │
+│                                                                              │
+│  ○ In-person   ● Virtual   ○ Hybrid                                         │
+│                                                                              │
+│  Video platform *                                                            │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Zoom                                                           [▾]  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  Options: Zoom, Google Meet, Jitsi, Microsoft Teams, Custom URL              │
+│                                                                              │
+│  Meeting link *                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ https://zoom.us/j/1234567890?pwd=abc123                             │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ☑ Generate unique link per registrant (enables attendance tracking)         │
+│  ⓘ Each registrant receives a personalized link. When they join,             │
+│    attendance is automatically recorded.                                     │
+│                                                                              │
+│  [Configure Virtual Event Settings →]  (→ EVT-009)                           │
+</code></pre>
+<h3 id="interaction-1" tabindex="-1"><a class="heading-anchor" href="#interaction-1" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Save Draft</strong>: saves without publishing. Event not visible to attendees</li>
+<li><strong>Publish</strong>: makes event live. If public page is enabled, page goes live. If invitations are configured, sends them</li>
+<li><strong>Edit published event</strong>: changes apply immediately. If date/time changes, option to notify existing RSVPs</li>
+<li><strong>Delete</strong> (overflow menu): confirmation dialog. If RSVPs exist, warning: &quot;47 people have RSVP'd. They will be notified of cancellation.&quot; Option to send cancellation message</li>
+<li><strong>Map preview</strong>: auto-generated from address. Validates address on blur</li>
+</ul>
+<hr>
+<h2 id="evt-003-event-detail" tabindex="-1"><a class="heading-anchor" href="#evt-003-event-detail" aria-hidden="true">#</a> EVT-003: Event Detail</h2>
+<p>The hub for a specific event. Shows all information, RSVPs, and actions. Persona-adaptive.</p>
+<h3 id="desktop-admin-view" tabindex="-1"><a class="heading-anchor" href="#desktop-admin-view" aria-hidden="true">#</a> Desktop — Admin View</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Events    Rally at Plaza del Mercado          [Edit]  [Check-in →]  [⋮]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  [Hero image]                                                        │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  📅 March 5, 2026 · 6:00 PM — 9:00 PM                                      │
+│  📍 Plaza del Mercado, Calle Dos Hermanos, San Juan PR                      │
+│  Type: Rally · ☑ Public                                                     │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Join us for a community rally featuring live music, speakers,              │
+│  food vendors, and a celebration of our campaign progress.                  │
+│                                                                              │
+│  Featured speakers:                                                          │
+│  · Ana Martínez, Candidate for District 5                                   │
+│  · Dr. Elena Torres, Healthcare Policy Director                             │
+│  · Carlos Rivera, Community Organizer                                       │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  RSVPs                                                         [Manage →]   │
+│  ─────                                                                       │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │ RSVPs        │  │ Checked In   │  │ Capacity     │  │ Waitlisted   │   │
+│  │ 142          │  │ —            │  │ 500          │  │ 0            │   │
+│  │              │  │ (event not   │  │ 28% filled   │  │              │   │
+│  │              │  │  started)    │  │              │  │              │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│                                                                              │
+│  Recent RSVPs:                                                               │
+│  María García · Carlos Ruiz · Lucía Fernández · +139 more                   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Staff                                                                       │
+│  ─────                                                                       │
+│  Manager: Ana Reyes                                                          │
+│  Check-in: Ana Reyes, Jorge Vega                                            │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Links                                                                       │
+│  ─────                                                                       │
+│  Public page: greengrass.io/partido-verde/events/rally-plaza   [Copy]       │
+│  RSVP form: greengrass.io/.../rally-plaza/rsvp                 [Copy]       │
+│  [Add to Calendar]                                                           │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  ▸ Discussion (3 messages)                                                   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  [Map showing venue location]                                        │   │
+│  │  [Get Directions →]                                                  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-volunteersupporter-view-1" tabindex="-1"><a class="heading-anchor" href="#mobile-volunteersupporter-view-1" aria-hidden="true">#</a> Mobile — Volunteer/Supporter View</h3>
+<pre><code>┌────────────────────────────┐
+│  ← Events             [⋮]  │
+├────────────────────────────┤
+│                            │
+│  ┌──────────────────────┐  │
+│  │  [Hero image]        │  │
+│  └──────────────────────┘  │
+│                            │
+│  Rally at Plaza del        │
+│  Mercado                   │
+│                            │
+│  📅 Mar 5 · 6 – 9 PM      │
+│  📍 Plaza del Mercado,     │
+│     San Juan               │
+│  👥 142 going               │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Join us for a community   │
+│  rally featuring live      │
+│  music, speakers...        │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  ✓ You're going            │
+│  [Cancel RSVP]             │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  [Add to Calendar]         │
+│  [Get Directions →]        │
+│  [Share Event]             │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  ┌──────────────────────┐  │
+│  │  [Map]               │  │
+│  └──────────────────────┘  │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="post-event-variant" tabindex="-1"><a class="heading-anchor" href="#post-event-variant" aria-hidden="true">#</a> Post-Event Variant</h3>
+<p>After the event ends, the detail view shifts to show outcomes:</p>
+<pre><code>│  RSVPs &amp; Attendance                                                          │
+│  ──────────────────                                                          │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │ RSVPs        │  │ Checked In   │  │ Walk-ins     │  │ Show Rate    │   │
+│  │ 142          │  │ 118          │  │ 23           │  │ 83%          │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│                                                                              │
+│  [View Metrics →]  [Send Follow-up →]  [Survey Results →]                   │
+</code></pre>
+<h3 id="interaction-2" tabindex="-1"><a class="heading-anchor" href="#interaction-2" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>&quot;Check-in →&quot;</strong> (admin): opens EVT-005 for this event</li>
+<li><strong>&quot;Manage →&quot;</strong> (RSVPs): opens EVT-004</li>
+<li><strong>Discussion</strong>: collapsible thread (uses Contextual Thread pattern). Auto-includes event staff. Other attendees don't see this thread</li>
+<li><strong>Overflow menu</strong> (⋮): Edit, Duplicate, Cancel Event, Export RSVPs, View Metrics</li>
+<li><strong>Volunteer/Supporter view</strong>: no Edit, no Staff section, no Discussion. Shows RSVP status and action buttons</li>
+<li><strong>&quot;Share Event&quot;</strong>: native share sheet on mobile (URL + event name)</li>
+</ul>
+<hr>
+<h2 id="evt-004-event-rsvp-management" tabindex="-1"><a class="heading-anchor" href="#evt-004-event-rsvp-management" aria-hidden="true">#</a> EVT-004: Event RSVP Management</h2>
+<p>Full RSVP list with management actions. Answers &quot;who's coming, and who do I need to follow up with?&quot;</p>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Rally at Plaza del Mercado    RSVPs (142)        [Export]  [+ Add RSVP]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [All (142)]  [Confirmed (128)]  [Waitlisted (0)]  [Cancelled (14)]        │
+│                                                                              │
+│  🔍 Search by name or email...                                              │
+│                                                                              │
+│  ☐  Name                Email                  RSVP Date   Guests  Status   │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  ☐  María García        maria@email.com        Mar 1       +1      ✓ Conf   │
+│  ☐  Carlos Ruiz         carlos@email.com       Mar 1       —       ✓ Conf   │
+│  ☐  Lucía Fernández     lucia@email.com        Mar 2       +2      ✓ Conf   │
+│  ☐  Pedro Martínez      pedro@email.com        Mar 2       —       ✓ Conf   │
+│  ☐  Ana Vega            ana@email.com          Mar 3       —       ✗ Canc   │
+│  ☐  Raj Patel           raj@email.com          Mar 3       +1      ✓ Conf   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Total attending (including guests): 162                                     │
+│                                                                              │
+│  Bulk actions: [Send Message]  [Export Selected]  [Cancel RSVPs]            │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="approval-required-variant" tabindex="-1"><a class="heading-anchor" href="#approval-required-variant" aria-hidden="true">#</a> Approval-Required Variant</h3>
+<p>When the event uses approval-required RSVPs, an additional tab and workflow appears:</p>
+<pre><code>│  [All (142)]  [Pending (8)]  [Approved (128)]  [Declined (6)]              │
+│                                                                              │
+│  ─── Pending Approval ───                                                    │
+│                                                                              │
+│  ☐  Jorge Torres        jorge@email.com        Mar 3       —       ◷ Pend   │
+│      [✓ Approve]  [✗ Decline]                                               │
+│  ☐  Lisa Chen           lisa@email.com         Mar 3       +1      ◷ Pend   │
+│      [✓ Approve]  [✗ Decline]                                               │
+│                                                                              │
+│  [Approve All Pending (8)]                                                   │
+</code></pre>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  ← RSVPs (142)       [⋮]  │
+├────────────────────────────┤
+│                            │
+│  [All] [Conf.] [Waitl.] ▾ │
+│                            │
+│  🔍 Search...              │
+│                            │
+│  ┌──────────────────────┐  │
+│  │ María García    ✓    │  │
+│  │ maria@email.com      │  │
+│  │ Mar 1 · +1 guest     │  │
+│  ├──────────────────────┤  │
+│  │ Carlos Ruiz     ✓    │  │
+│  │ carlos@email.com     │  │
+│  │ Mar 1                │  │
+│  ├──────────────────────┤  │
+│  │ Ana Vega        ✗    │  │
+│  │ ana@email.com        │  │
+│  │ Mar 3 · Cancelled    │  │
+│  └──────────────────────┘  │
+│                            │
+│  162 total (incl. guests)  │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-3" tabindex="-1"><a class="heading-anchor" href="#interaction-3" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>&quot;+ Add RSVP&quot;</strong>: manually add a contact (search CRM or enter name + email). For walk-ins registered before the event</li>
+<li><strong>Export</strong>: CSV with all RSVP data. Includes guest counts, custom question responses</li>
+<li><strong>&quot;Send Message&quot;</strong>: compose a message to selected or all RSVPs (opens COMM-005 pre-filled with this audience)</li>
+<li><strong>Row click</strong>: opens contact record (CRM-002) in detail panel</li>
+<li><strong>Guest count</strong>: shows total attending including guest +N counts</li>
+<li><strong>Cancelled tab</strong>: shows cancellations with date/time for tracking drop-off patterns</li>
+</ul>
+<h3 id="states-1" tabindex="-1"><a class="heading-anchor" href="#states-1" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No RSVPs yet. Share the event link to start collecting RSVPs.&quot; [Copy Event Link]</li>
+</ul>
+<hr>
+<h2 id="evt-005-event-check-in-tool" tabindex="-1"><a class="heading-anchor" href="#evt-005-event-check-in-tool" aria-hidden="true">#</a> EVT-005: Event Check-in Tool</h2>
+<p>Mobile-first check-in for event day. Works offline. Uses the Check-in Tool pattern.</p>
+<h3 id="mobile-primary" tabindex="-1"><a class="heading-anchor" href="#mobile-primary" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  Check-in                  │
+│  Rally at Plaza del Merc.  │
+├────────────────────────────┤
+│                            │
+│  ┌──────────────────────┐  │
+│  │  118 of 142 ✓        │  │
+│  │  ████████████████░░░ │  │
+│  │  83% checked in       │  │
+│  └──────────────────────┘  │
+│                            │
+│  ┌──────────────────────┐  │
+│  │ 🔍 Search name...    │  │
+│  └──────────────────────┘  │
+│                            │
+│  ┌──────────────────────┐  │
+│  │ ☐ Diallo, Amina      │  │
+│  ├──────────────────────┤  │
+│  │ ☐ Fernández, Lucía   │  │
+│  │   +2 guests          │  │
+│  ├──────────────────────┤  │
+│  │ ✓ García, María      │  │
+│  │   +1 guest  6:12 PM  │  │
+│  ├──────────────────────┤  │
+│  │ ✓ Martínez, Pedro    │  │
+│  │   6:05 PM            │  │
+│  ├──────────────────────┤  │
+│  │ ☐ Patel, Raj         │  │
+│  │   +1 guest           │  │
+│  ├──────────────────────┤  │
+│  │ ✓ Ruiz, Carlos       │  │
+│  │   6:01 PM            │  │
+│  └──────────────────────┘  │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  [📷 Scan QR Code]        │
+│                            │
+│  [+ Walk-in]               │
+│                            │
+│  ─────────────────────     │
+│  ◌ Offline — will sync     │
+│    when connected          │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="qr-scan-mode" tabindex="-1"><a class="heading-anchor" href="#qr-scan-mode" aria-hidden="true">#</a> QR Scan Mode</h3>
+<pre><code>┌────────────────────────────┐
+│  ← Check-in    118 of 142 │
+├────────────────────────────┤
+│                            │
+│  ┌──────────────────────┐  │
+│  │                      │  │
+│  │                      │  │
+│  │    [Camera view]     │  │
+│  │                      │  │
+│  │    ┌────────────┐    │  │
+│  │    │            │    │  │
+│  │    │  QR frame  │    │  │
+│  │    │            │    │  │
+│  │    └────────────┘    │  │
+│  │                      │  │
+│  │                      │  │
+│  └──────────────────────┘  │
+│                            │
+│  Point camera at RSVP      │
+│  QR code                   │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  ┌──────────────────────┐  │
+│  │  ✓ María García      │  │
+│  │    Checked in 6:12 PM│  │
+│  │                 [Undo]│  │
+│  └──────────────────────┘  │
+│                            │
+│  [Switch to List View]     │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="walk-in-registration" tabindex="-1"><a class="heading-anchor" href="#walk-in-registration" aria-hidden="true">#</a> Walk-in Registration</h3>
+<pre><code>┌────────────────────────────┐
+│  ← Check-in    Walk-in     │
+├────────────────────────────┤
+│                            │
+│  Name *                    │
+│  ┌──────────────────────┐  │
+│  │                      │  │
+│  └──────────────────────┘  │
+│                            │
+│  Email                     │
+│  ┌──────────────────────┐  │
+│  │                      │  │
+│  └──────────────────────┘  │
+│                            │
+│  Phone                     │
+│  ┌──────────────────────┐  │
+│  │                      │  │
+│  └──────────────────────┘  │
+│                            │
+│  ☐ Opt in to future        │
+│    event notifications     │
+│                            │
+│  [Register &amp; Check In]     │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-4" tabindex="-1"><a class="heading-anchor" href="#interaction-4" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Tap to check in</strong>: tapping an unchecked name marks them as checked in with timestamp. Brief haptic feedback (on capable devices). Checkmark animates in</li>
+<li><strong>Undo</strong>: checked-in names show &quot;Undo&quot; for 10 seconds after check-in. After that, undo requires long-press → confirmation</li>
+<li><strong>QR scan</strong>: uses device camera (Capacitor Camera API). Scans attendee QR code (included in RSVP confirmation email). Auto-checks in on successful scan. Shows name confirmation briefly</li>
+<li><strong>Search</strong>: type-ahead, first-letter jump. Essential for large events</li>
+<li><strong>Walk-in</strong>: registers a new attendee not on the RSVP list. Creates or matches CRM contact. Checked in immediately</li>
+<li><strong>Guest check-in</strong>: tapping a name with guests shows &quot;+N guests&quot; — tap again to confirm guest count arriving (may be fewer than RSVP'd)</li>
+<li><strong>Offline</strong>: full RSVP list downloaded before event. All check-ins stored locally. Sync indicator shows status. Multiple staff can check in simultaneously — conflicts resolved by timestamp</li>
+<li><strong>Counter</strong>: always visible. Updates in real time</li>
+</ul>
+<h3 id="touch-target-specs" tabindex="-1"><a class="heading-anchor" href="#touch-target-specs" aria-hidden="true">#</a> Touch Target Specs</h3>
+<ul>
+<li>Name rows: 56px minimum height, full-width tap area</li>
+<li>Checkbox area: 48px × 48px minimum</li>
+<li>QR scan button: 56px height, full-width</li>
+<li>Walk-in button: 48px height</li>
+</ul>
+<h3 id="states-2" tabindex="-1"><a class="heading-anchor" href="#states-2" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty (no RSVPs)</strong>: &quot;No RSVPs for this event yet. You can still use Walk-in to register attendees.&quot;</li>
+<li><strong>All checked in</strong>: &quot;All 142 RSVPs checked in! 🎉&quot; (counter shows 142 of 142)</li>
+<li><strong>Sync complete</strong>: &quot;All check-in data synced&quot; (green indicator)</li>
+</ul>
+<hr>
+<h2 id="evt-006-evt-007-public-event-pages" tabindex="-1"><a class="heading-anchor" href="#evt-006-evt-007-public-event-pages" aria-hidden="true">#</a> EVT-006 &amp; EVT-007: Public Event Pages</h2>
+<blockquote>
+<p><strong>Cross-reference:</strong> The public event RSVP form (EVT-006) and public event page (EVT-007) are wireframed in <code>supporter/supporter-portal.md</code>. They use the <code>(public)</code> layout group — no app shell, no login required, tenant-branded.</p>
+</blockquote>
+<p>EVT-006 is the RSVP form embedded within or linked from the public event page. EVT-007 is the full public event page with description, location map, share buttons, and RSVP form.</p>
+<hr>
+<h2 id="evt-008-event-metrics" tabindex="-1"><a class="heading-anchor" href="#evt-008-event-metrics" aria-hidden="true">#</a> EVT-008: Event Metrics</h2>
+<p>Post-event analytics. Answers &quot;how did the event go?&quot; and &quot;how does it compare to our other events?&quot;</p>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Events    Rally at Plaza del Mercado — Metrics               [Export]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Event Summary                                                               │
+│  ─────────────                                                               │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │ RSVPs        │  │ Attended     │  │ Walk-ins     │  │ Show Rate    │   │
+│  │ 142          │  │ 118          │  │ 23           │  │ 83%          │   │
+│  │              │  │              │  │              │  │ (avg: 72%)   │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Attendance Breakdown                                                        │
+│  ─────────────────────                                                       │
+│                                                                              │
+│  RSVP'd and attended:        118  (83%)                                      │
+│  RSVP'd, did not attend:     24   (17%)                                      │
+│  Walk-ins:                   23                                              │
+│  Total attendance:           141                                             │
+│  Total including guests:     162                                             │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  RSVP Source                                                                 │
+│  ───────────                                                                 │
+│                                                                              │
+│  Source              RSVPs    % of Total                                      │
+│  ─────────────────────────────────────────                                   │
+│  Public event page   82       57.7%                                          │
+│  Email invitation    38       26.8%                                          │
+│  SMS invitation      12       8.5%                                           │
+│  Social media link   7        4.9%                                           │
+│  Direct / other      3        2.1%                                           │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Check-in Timeline                                                           │
+│  ─────────────────                                                           │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  25 ┤              ╱╲                                                │   │
+│  │     │            ╱    ╲                                              │   │
+│  │  20 ┤          ╱        ╲                                            │   │
+│  │     │        ╱            ╲                                          │   │
+│  │  15 ┤      ╱                ╲                                        │   │
+│  │     │    ╱                    ╲         ╱╲                           │   │
+│  │  10 ┤  ╱                        ╲     ╱    ╲                         │   │
+│  │     │╱                            ╲  ╱      ╲                       │   │
+│  │   5 ┤                              ╲╱        ╲──                    │   │
+│  │     │                                                                │   │
+│  │   0 ┼──────────────────────────────────────────────                  │   │
+│  │      5:30  6:00  6:30  7:00  7:30  8:00  8:30                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  Peak arrival: 6:00 – 6:15 PM (28 check-ins)                                │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Fundraising (if applicable)                                                 │
+│  ───────────────────────────                                                 │
+│  Cash collected at event: $480 (6 donations)                                 │
+│  Online donations during event: $350 (4 donations)                           │
+│  [View Donations →]                                                          │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  CRM Impact                                                                  │
+│  ──────────                                                                  │
+│  New contacts created (walk-ins):  18                                        │
+│  Existing contacts updated:        123                                       │
+│  Event attendance tagged:          141 contacts                              │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Post-Event Actions                                                          │
+│  ──────────────────                                                          │
+│  [Send Thank-You to Attendees]  [Send Follow-up to No-Shows]               │
+│  [Send Survey]  [View Survey Results]                                        │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Comparison to Similar Events                                                │
+│  ────────────────────────────                                                │
+│  Event                   RSVPs  Attended  Show%   Walk-ins                   │
+│  Rally — Plaza (this)    142    118       83%     23                          │
+│  Rally — Bayamón Feb     98     72        73%     15                          │
+│  Rally — Ponce Jan       120    89        74%     12                          │
+│  Average (rallies)       120    93        72%     17                          │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-5" tabindex="-1"><a class="heading-anchor" href="#interaction-5" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Export</strong>: PDF report for stakeholder sharing. Includes all sections</li>
+<li><strong>&quot;Send Thank-You&quot;</strong>: opens COMM-005 or COMM-002 pre-filled with attendee list</li>
+<li><strong>&quot;Send Follow-up to No-Shows&quot;</strong>: sends to RSVPs who didn't check in. Pre-filled message template</li>
+<li><strong>&quot;Send Survey&quot;</strong>: opens EVT-010 survey builder or sends previously configured survey</li>
+<li><strong>Check-in timeline chart</strong>: shows arrival pattern. Useful for planning event start time and logistics</li>
+<li><strong>Comparison table</strong>: auto-populated with events of the same type. Helps track trends</li>
+</ul>
+<h3 id="states-3" tabindex="-1"><a class="heading-anchor" href="#states-3" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Pre-event</strong>: metrics screen shows RSVP data only. Attendance sections say &quot;Available after event&quot;</li>
+<li><strong>No survey</strong>: &quot;Send Survey&quot; button instead of &quot;View Survey Results&quot;</li>
+</ul>
+<hr>
+<h2 id="evt-009-virtual-event-setup" tabindex="-1"><a class="heading-anchor" href="#evt-009-virtual-event-setup" aria-hidden="true">#</a> EVT-009: Virtual Event Setup</h2>
+<p>Additional configuration for virtual events. Extends EVT-002 with video platform integration details.</p>
+<h3 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Edit Event    Virtual Event Settings                                     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Video Platform                                                              │
+│  ──────────────                                                              │
+│                                                                              │
+│  Platform *                                                                  │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Zoom                                                           [▾]  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  Options: Zoom, Google Meet, Jitsi, Microsoft Teams, Custom URL              │
+│                                                                              │
+│  Meeting link *                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ https://zoom.us/j/1234567890?pwd=abc123                             │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Meeting password (if separate from link)                                    │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ ••••••                                                              │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Attendance Tracking                                                         │
+│  ────────────────────                                                        │
+│                                                                              │
+│  ☑ Generate unique join link per registrant                                  │
+│  ⓘ Each registrant receives a personalized link in their RSVP confirmation. │
+│    When they join, attendance is automatically recorded.                      │
+│                                                                              │
+│  ☐ Require registration before joining                                       │
+│  ⓘ If enabled, the meeting link is hidden until the user RSVPs.             │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Reminder Settings                                                           │
+│  ─────────────────                                                           │
+│                                                                              │
+│  ☑ Include join link in reminders                                            │
+│  ☑ Send &quot;starting now&quot; notification at event time                            │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Recording                                                                   │
+│  ─────────                                                                   │
+│                                                                              │
+│  ☐ Share recording link with attendees after event                           │
+│  ☐ Share recording link with no-show RSVPs                                   │
+│                                                                              │
+│  Recording URL (add after event):                                            │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  [Save]                                                                      │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-6" tabindex="-1"><a class="heading-anchor" href="#interaction-6" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li>Accessed from EVT-002's &quot;Configure Virtual Event Settings →&quot; link</li>
+<li><strong>Unique link generation</strong>: when enabled, the system appends a tracking parameter to the meeting URL per registrant</li>
+<li><strong>Recording URL</strong>: added post-event. When saved with recording checkboxes enabled, triggers automated follow-up emails with recording link</li>
+<li><strong>Platform selection</strong>: determines which integration is used for attendance tracking</li>
+</ul>
+<hr>
+<h2 id="evt-010-post-event-survey-builder" tabindex="-1"><a class="heading-anchor" href="#evt-010-post-event-survey-builder" aria-hidden="true">#</a> EVT-010: Post-Event Survey Builder</h2>
+<p>Create surveys to send to attendees after an event. Simple form builder optimized for event feedback.</p>
+<h3 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Event Metrics    Post-Event Survey                [Preview]  [Send ▾]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Event: Rally at Plaza del Mercado                                           │
+│  Audience: 141 attendees (118 RSVP + 23 walk-ins)                           │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Survey Questions                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  1. How would you rate the event overall? *            [Rating ▾]           │
+│     ☆ ☆ ☆ ☆ ☆ (1–5 stars)                                                  │
+│     [✗ Remove]  [⇅ Drag to reorder]                                        │
+│                                                                              │
+│  2. What did you enjoy most?                           [Multi-select ▾]     │
+│     ☐ Speakers    ☐ Music    ☐ Food                                         │
+│     ☐ Networking  ☐ Information  ☐ Atmosphere                               │
+│     [+ Add option]                                                           │
+│     [✗ Remove]  [⇅]                                                        │
+│                                                                              │
+│  3. How likely are you to attend future events? *      [Rating ▾]           │
+│     1 ──────●────── 10                                                       │
+│     (1 = Not at all, 10 = Definitely)                                        │
+│     [✗ Remove]  [⇅]                                                        │
+│                                                                              │
+│  4. Would you like to volunteer with us?               [Single select ▾]    │
+│     ○ Yes, sign me up!                                                       │
+│     ○ Maybe, tell me more                                                    │
+│     ○ Not right now                                                          │
+│     [✗ Remove]  [⇅]                                                        │
+│                                                                              │
+│  5. Any other feedback?                                [Free text ▾]        │
+│     ┌──────────────────────────────────────────────────┐                    │
+│     │ (Long text response area)                        │                    │
+│     └──────────────────────────────────────────────────┘                    │
+│     [✗ Remove]  [⇅]                                                        │
+│                                                                              │
+│  [+ Add Question]                                                            │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Question types: Rating (stars), Rating (scale), Single select,              │
+│  Multi-select, Free text, Yes/No                                             │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Delivery                                                                    │
+│  ────────                                                                    │
+│  Send to: ● All attendees (141)  ○ RSVP attendees only (118)               │
+│  Channel: ● Email  ○ SMS (link to survey)                                   │
+│                                                                              │
+│  Message:                                                                    │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Thank you for attending Rally at Plaza del Mercado! We'd love       │   │
+│  │ your feedback to help make future events even better.               │   │
+│  │                                                                      │   │
+│  │ [Take the Survey — 2 minutes]                                       │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="survey-results-view" tabindex="-1"><a class="heading-anchor" href="#survey-results-view" aria-hidden="true">#</a> Survey Results View</h3>
+<p>After responses come in, the survey shows aggregate results:</p>
+<pre><code>│  Survey Results — 47 responses (33% response rate)                           │
+│  ──────────────                                                              │
+│                                                                              │
+│  1. Overall rating                    Avg: 4.3 / 5.0 ★                      │
+│     ★★★★★  18 (38%)  ██████████████████████████████████████                │
+│     ★★★★☆  21 (45%)  ████████████████████████████████████████████          │
+│     ★★★☆☆   6 (13%)  █████████████                                         │
+│     ★★☆☆☆   2 (4%)   ████                                                  │
+│     ★☆☆☆☆   0 (0%)                                                         │
+│                                                                              │
+│  2. What did you enjoy most?                                                 │
+│     Speakers         31 (66%)  ████████████████████████████████████          │
+│     Atmosphere       28 (60%)  ██████████████████████████████████            │
+│     Networking       22 (47%)  ██████████████████████████                    │
+│     Music            19 (40%)  ██████████████████████                        │
+│     Food             15 (32%)  █████████████████                             │
+│     Information      12 (26%)  ██████████████                                │
+│                                                                              │
+│  3. Likelihood to attend future events    Avg: 8.2 / 10                     │
+│     ███████████████████████████████████████████████████████████████████ 8.2  │
+│                                                                              │
+│  4. Would you like to volunteer?                                             │
+│     Yes, sign me up!     12 (26%)  → [View contacts →]                      │
+│     Maybe, tell me more  18 (38%)  → [View contacts →]                      │
+│     Not right now        17 (36%)                                            │
+│                                                                              │
+│  5. Other feedback — 23 responses  [View All →]                              │
+│     &quot;Great energy! Would love to see more community...&quot;                      │
+│     &quot;The speakers were inspiring. Please have more events...&quot;               │
+│     &quot;Parking was difficult — consider a shuttle next time&quot;                   │
+│                                                                              │
+│  [Export Results]                                                             │
+</code></pre>
+<h3 id="interaction-7" tabindex="-1"><a class="heading-anchor" href="#interaction-7" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Question types</strong>: dropdown to change type. Each type renders appropriate input controls</li>
+<li><strong>Drag to reorder</strong>: questions can be reordered via drag handle</li>
+<li><strong>&quot;+ Add Question&quot;</strong>: appends a new question with type selector</li>
+<li><strong>Required toggle</strong>: asterisk (*) marks required questions</li>
+<li><strong>Preview</strong>: opens survey as respondent will see it (mobile-optimized)</li>
+<li><strong>Send dropdown</strong>: &quot;Send Now&quot;, &quot;Schedule&quot;, &quot;Save Draft&quot;</li>
+<li><strong>Results</strong>: &quot;View contacts →&quot; on volunteer-interest responses links to CRM-001 filtered to those contacts</li>
+<li><strong>Export</strong>: CSV with all individual responses (anonymized option available)</li>
+</ul>
+<h3 id="states-4" tabindex="-1"><a class="heading-anchor" href="#states-4" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty (no questions)</strong>: default template pre-loads 3 questions (overall rating, enjoyment, future attendance)</li>
+<li><strong>No responses yet</strong>: &quot;Survey sent to 141 attendees. No responses yet.&quot;</li>
+</ul>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EVT-001 (Admin)</td>
+<td>No events yet. Events help you organize rallies, trainings, fundraisers, and more.</td>
+<td>Create Event</td>
+</tr>
+<tr>
+<td>EVT-001 (Volunteer)</td>
+<td>No upcoming events. Check back soon for new events in your area.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>EVT-004 RSVPs</td>
+<td>No RSVPs for this event yet. Share the event link to start collecting RSVPs.</td>
+<td>Copy Event Link</td>
+</tr>
+<tr>
+<td>EVT-005 Check-in (no RSVPs)</td>
+<td>No RSVPs for this event yet. You can still use Walk-in to register attendees.</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Check-in tool uses 56px minimum row height for one-handed tap operation</li>
+<li>Check-in confirmation uses haptic feedback + visual checkmark + timestamp text (not just color change)</li>
+<li>QR scan mode has a manual fallback (name search) for accessibility</li>
+<li>Event cards use semantic structure: event name as heading, date/location as supporting text</li>
+<li>RSVP status communicated via icon + text (✓ Confirmed, ✗ Cancelled, ◷ Pending)</li>
+<li>Survey star ratings are keyboard-accessible with arrow keys</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Check-in as full-screen tool</td>
+<td>Dedicated check-in mode, not embedded in event detail</td>
+<td>Check-in is a high-focus task at a busy venue. The tool needs maximum screen real estate and minimal distractions</td>
+</tr>
+<tr>
+<td>Check-in offline-first</td>
+<td>RSVP list pre-downloaded, all check-ins local until sync</td>
+<td>Events happen in parks, community centers, rural areas. Connectivity is unreliable. Data loss is unacceptable</td>
+</tr>
+<tr>
+<td>Walk-in as separate flow</td>
+<td>Distinct &quot;Walk-in&quot; button, not a modification of the RSVP list</td>
+<td>Walk-ins need a quick registration form. Mixing them into the RSVP flow would slow check-in for pre-registered attendees</td>
+</tr>
+<tr>
+<td>Survey as lightweight builder</td>
+<td>Simple question-type builder, not a full form engine</td>
+<td>Post-event surveys should be 2-minute affairs. A complex builder encourages over-long surveys that get low response rates</td>
+</tr>
+<tr>
+<td>Virtual as extension, not separate</td>
+<td>Virtual settings extend EVT-002, share the same event model</td>
+<td>Hybrid events need both physical and virtual details. A unified model prevents duplicate event management</td>
+</tr>
+<tr>
+<td>Metrics comparison table</td>
+<td>Auto-populated with same-type events</td>
+<td>Showing trends helps the VC improve over time. &quot;Was this rally better than our last rally?&quot; is a natural question</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li><strong>Multi-day events</strong> — should multi-day events be a single event with multiple date entries, or separate linked events? Single-event with date range is simpler but doesn't support per-day RSVPs</li>
+<li><strong>Ticket types / pricing</strong> — should events support paid tickets (e.g., fundraiser dinner at $100/seat)? This overlaps with fundraising and adds payment integration to the event flow</li>
+<li><strong>Recurring events</strong> — should there be a &quot;recurring event&quot; feature (e.g., weekly phone bank) that auto-creates event instances? Or is manual duplication sufficient for v1?</li>
+<li><strong>Attendee messaging during event</strong> — should there be an in-event broadcast capability (push notification to attendees: &quot;Session starting in 5 minutes in Room B&quot;)? Could be useful for large multi-track events but adds complexity</li>
+<li><strong>Check-in for multiple staff simultaneously</strong> — when multiple staff check in attendees at the same event offline, how are conflicts resolved? Current plan: last-write-wins by timestamp, but dual-check-in of the same person should show a warning on sync</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#events-navigation-context"># Events Navigation Context</a></li><li class="toc-2"><a href="#evt-001-event-list"># EVT-001: Event List</a></li><li class="toc-3"><a href="#desktop-admin-view-oa-vc"># Desktop — Admin View (OA, VC)</a></li><li class="toc-3"><a href="#mobile-volunteersupporter-view"># Mobile — Volunteer/Supporter View</a></li><li class="toc-3"><a href="#event-types"># Event Types</a></li><li class="toc-3"><a href="#interaction"># Interaction</a></li><li class="toc-3"><a href="#states"># States</a></li><li class="toc-2"><a href="#evt-002-event-createedit"># EVT-002: Event Create/Edit</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#collapsed-sections"># Collapsed Sections</a></li><li class="toc-3"><a href="#virtual-location-variant"># Virtual Location Variant</a></li><li class="toc-3"><a href="#interaction-1"># Interaction</a></li><li class="toc-2"><a href="#evt-003-event-detail"># EVT-003: Event Detail</a></li><li class="toc-3"><a href="#desktop-admin-view"># Desktop — Admin View</a></li><li class="toc-3"><a href="#mobile-volunteersupporter-view-1"># Mobile — Volunteer/Supporter View</a></li><li class="toc-3"><a href="#post-event-variant"># Post-Event Variant</a></li><li class="toc-3"><a href="#interaction-2"># Interaction</a></li><li class="toc-2"><a href="#evt-004-event-rsvp-management"># EVT-004: Event RSVP Management</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-3"><a href="#approval-required-variant"># Approval-Required Variant</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#interaction-3"># Interaction</a></li><li class="toc-3"><a href="#states-1"># States</a></li><li class="toc-2"><a href="#evt-005-event-check-in-tool"># EVT-005: Event Check-in Tool</a></li><li class="toc-3"><a href="#mobile-primary"># Mobile (Primary)</a></li><li class="toc-3"><a href="#qr-scan-mode"># QR Scan Mode</a></li><li class="toc-3"><a href="#walk-in-registration"># Walk-in Registration</a></li><li class="toc-3"><a href="#interaction-4"># Interaction</a></li><li class="toc-3"><a href="#touch-target-specs"># Touch Target Specs</a></li><li class="toc-3"><a href="#states-2"># States</a></li><li class="toc-2"><a href="#evt-006-evt-007-public-event-pages"># EVT-006 &amp;amp; EVT-007: Public Event Pages</a></li><li class="toc-2"><a href="#evt-008-event-metrics"># EVT-008: Event Metrics</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-3"><a href="#interaction-5"># Interaction</a></li><li class="toc-3"><a href="#states-3"># States</a></li><li class="toc-2"><a href="#evt-009-virtual-event-setup"># EVT-009: Virtual Event Setup</a></li><li class="toc-3"><a href="#desktop-3"># Desktop</a></li><li class="toc-3"><a href="#interaction-6"># Interaction</a></li><li class="toc-2"><a href="#evt-010-post-event-survey-builder"># EVT-010: Post-Event Survey Builder</a></li><li class="toc-3"><a href="#desktop-4"># Desktop</a></li><li class="toc-3"><a href="#survey-results-view"># Survey Results View</a></li><li class="toc-3"><a href="#interaction-7"># Interaction</a></li><li class="toc-3"><a href="#states-4"># States</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

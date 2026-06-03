@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>External Integrations · GreenGrass</title>
+<meta name="description" content="External Integrations — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html">Core Workflows</a></li><li><a href="./geography.html">Target Geography</a></li><li><a href="./security.html">Security &amp; Threat Model</a></li><li><a href="./compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html" aria-current="page" class="active">External Integrations</a></li><li><a href="./support.html">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="./press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="external-integrations" tabindex="-1"><a class="heading-anchor" href="#external-integrations" aria-hidden="true">#</a> External Integrations</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document specifies GreenGrass's external integration strategy — the specific services, data sources, and third-party systems the platform connects to. It builds on the integration hub architecture defined in <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a> (adapter pattern, common interfaces, per-tenant configuration) and resolves the remaining gaps around electoral data sources, GIS/mapping, SMS gateways, telephony, and monitoring.</p>
+<p>Every external integration follows the same pattern: a common interface with per-provider adapters, tenant-configurable credentials, rate limiting, error handling, and audit trail logging. This document specifies <em>what</em> we integrate with and <em>how</em>, not the adapter architecture itself (that's in <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a>).</p>
+<h2 id="integration-principles" tabindex="-1"><a class="heading-anchor" href="#integration-principles" aria-hidden="true">#</a> Integration Principles</h2>
+<ol>
+<li><strong>No vendor lock-in.</strong> Every integration is an adapter behind a common interface. Swapping providers requires writing a new adapter, not re-architecting.</li>
+<li><strong>Per-country flexibility.</strong> Different countries need different providers. The platform supports multiple active adapters per integration category, selected per tenant or per country.</li>
+<li><strong>Tenant owns their credentials.</strong> Tenants bring their own API keys and accounts for external services. GreenGrass facilitates the connection but doesn't intermediate (consistent with direct merchant decision in <a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a>).</li>
+<li><strong>Offline-first where applicable.</strong> Integrations that support field operations (mapping, data sync) must degrade gracefully without connectivity.</li>
+<li><strong>Audit everything.</strong> All data flowing through integrations is logged in the audit trail.</li>
+</ol>
+<h2 id="electoral-data-voter-files" tabindex="-1"><a class="heading-anchor" href="#electoral-data-voter-files" aria-hidden="true">#</a> Electoral Data &amp; Voter Files</h2>
+<h3 id="electoral-boundary-data" tabindex="-1"><a class="heading-anchor" href="#electoral-boundary-data" aria-hidden="true">#</a> Electoral Boundary Data</h3>
+<p>Electoral boundaries (districts, precincts, constituencies, voting stations) are foundational for canvassing, GOTV, and voter targeting. Each country has a completely different administrative geography.</p>
+<h4 id="per-country-data-sources" tabindex="-1"><a class="heading-anchor" href="#per-country-data-sources" aria-hidden="true">#</a> Per-Country Data Sources</h4>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Source</th>
+<th>Data format</th>
+<th>Update frequency</th>
+<th>Access method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puerto Rico</td>
+<td>US Census Bureau (TIGER/Line), PR State Elections Commission (CEE)</td>
+<td>Shapefiles, GeoJSON</td>
+<td>After redistricting (every 10 years for Census, per-cycle for CEE)</td>
+<td>Public download</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>IBGE (Instituto Brasileiro de Geografia e Estatística), TSE</td>
+<td>Shapefiles, CSV</td>
+<td>Per election cycle</td>
+<td>Public download</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>Election Commission of Thailand (ECT)</td>
+<td>Varies — may require manual digitization</td>
+<td>Per election cycle</td>
+<td>Government publication, potentially limited digital access</td>
+</tr>
+<tr>
+<td>India</td>
+<td>Election Commission of India (ECI), Survey of India</td>
+<td>Shapefiles, KML</td>
+<td>Per delimitation exercise</td>
+<td>Partially public, some data requires official request</td>
+</tr>
+<tr>
+<td>Lebanon</td>
+<td>Ministry of Interior, Central Administration of Statistics</td>
+<td>Limited digital availability</td>
+<td>Infrequent — last major boundary revision with 2017 Electoral Law</td>
+<td>May require manual digitization from official maps</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DECIDED: Hybrid — GreenGrass-maintained for target countries + tenant import for others.</strong> GreenGrass acquires, cleans, and maintains curated electoral boundary datasets for all five target countries, updated each election cycle. Tenants in other countries import their own data using the platform's import tools (GeoJSON, Shapefile, KML). Community contribution model lets tenants share imported datasets back to GreenGrass for inclusion in the curated library. Long-term goal: GreenGrass becomes a trusted single source of truth for electoral boundary data, especially in the global south where this data is fragmented and hard to access.</p>
+<h4 id="boundary-data-format" tabindex="-1"><a class="heading-anchor" href="#boundary-data-format" aria-hidden="true">#</a> Boundary Data Format</h4>
+<ul>
+<li><strong>Internal storage:</strong> GeoJSON (standard, well-supported, human-readable)</li>
+<li><strong>Import support:</strong> GeoJSON, Shapefiles (.shp), KML/KMZ, TopoJSON</li>
+<li><strong>Export support:</strong> GeoJSON, Shapefiles</li>
+<li><strong>Coordinate system:</strong> WGS 84 (EPSG:4326) — standard GPS coordinates, universal</li>
+</ul>
+<h4 id="boundary-hierarchy" tabindex="-1"><a class="heading-anchor" href="#boundary-hierarchy" aria-hidden="true">#</a> Boundary Hierarchy</h4>
+<p>Each country has a different administrative hierarchy. The platform's configurable geographic hierarchy (<a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a>) must map to:</p>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Hierarchy (top → bottom)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puerto Rico</td>
+<td>Island → Senatorial District → Representative District → Municipality → Ward (Barrio) → Precinct</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>State (Estado) → Municipality (Município) → Electoral Zone (Zona Eleitoral) → Electoral Section (Seção Eleitoral)</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>Province (Changwat) → District (Amphoe) → Sub-district (Tambon) → Constituency</td>
+</tr>
+<tr>
+<td>India</td>
+<td>State → Parliamentary Constituency → Assembly Constituency → Polling Station (Booth)</td>
+</tr>
+<tr>
+<td>Lebanon</td>
+<td>Governorate (Muhafazah) → District (Qada) → Constituency (per 2017 law)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="voter-file-integration" tabindex="-1"><a class="heading-anchor" href="#voter-file-integration" aria-hidden="true">#</a> Voter File Integration</h3>
+<p>Voter files (official voter registration records) are a core data source for campaigns. Access, format, and legality vary dramatically by country.</p>
+<h4 id="per-country-voter-file-access" tabindex="-1"><a class="heading-anchor" href="#per-country-voter-file-access" aria-hidden="true">#</a> Per-Country Voter File Access</h4>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Voter file availability</th>
+<th>Format</th>
+<th>Access method</th>
+<th>Legal constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puerto Rico</td>
+<td>Available from CEE</td>
+<td>CSV/database export</td>
+<td>Official request or public records</td>
+<td>US voter file regulations apply</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>TSE provides voter data (limited)</td>
+<td>CSV</td>
+<td>TSE open data portal (limited fields)</td>
+<td>LGPD restricts use of personal data</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>ECT maintains rolls</td>
+<td>Varies</td>
+<td>Limited public access</td>
+<td>PDPA restrictions on political data</td>
+</tr>
+<tr>
+<td>India</td>
+<td>ECI provides electoral rolls</td>
+<td>PDF (!) and limited digital formats</td>
+<td>State-level access, downloadable from ECI website</td>
+<td>Some states restrict bulk access</td>
+</tr>
+<tr>
+<td>Lebanon</td>
+<td>Ministry of Interior maintains rolls</td>
+<td>Limited digital availability</td>
+<td>Political parties receive updated rolls before elections</td>
+<td>Confessional registration data is politically sensitive</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DECIDED: Both — API sync + structured import with smart mapping.</strong> API sync when available (future-proofing for modernizing electoral commissions). File upload with smart mapping as the universal fallback — configurable column mapper, encoding detection, field suggestions, dedup preview. The smart mapping import interface is a UX priority — voter files are messy and most campaign staff aren't data engineers. Making this flow intuitive is critical.</p>
+<h4 id="voter-file-data-handling" tabindex="-1"><a class="heading-anchor" href="#voter-file-data-handling" aria-hidden="true">#</a> Voter File Data Handling</h4>
+<ul>
+<li>All imported voter data is subject to the same encryption and access controls as other CRM data</li>
+<li>Political data classification applies (all data treated as sensitive per <a href="http://compliance.md" target="_blank" rel="noopener noreferrer">compliance.md</a>)</li>
+<li>Import creates audit trail entries (who imported, when, how many records, source file hash)</li>
+<li>Dedup runs automatically against existing records using composite matching (phone primary, per <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>)</li>
+<li>Imported records tagged with source and import date for provenance tracking</li>
+</ul>
+<h3 id="electoral-commission-integration" tabindex="-1"><a class="heading-anchor" href="#electoral-commission-integration" aria-hidden="true">#</a> Electoral Commission Integration</h3>
+<p>Direct API integration with electoral commissions is rare but valuable where available.</p>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>API availability</th>
+<th>Potential integrations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puerto Rico</td>
+<td>FEC API (federal), CEE (limited)</td>
+<td>FEC filing verification, campaign registration status</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>TSE APIs (DivulgaCandContas, Candidaturas)</td>
+<td>Real-time campaign finance disclosure, candidate registration data</td>
+</tr>
+<tr>
+<td>India</td>
+<td>ECI limited APIs</td>
+<td>Electoral roll lookup (limited), election schedule</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>ECT — no known public API</td>
+<td>Manual data exchange</td>
+</tr>
+<tr>
+<td>Lebanon</td>
+<td>SCE — no known public API</td>
+<td>Manual data exchange</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DECIDED: API-ready but manual-first.</strong> Design the integration points (adapter slots) for all electoral commission APIs, but implement manual workflows (file upload/download) for all countries initially. Build API integrations only when a specific pilot demands it (e.g., TSE's real-time disclosure for Brazil may force the issue). No speculative API integrations for commissions whose APIs we haven't validated.</p>
+<h2 id="gis-mapping" tabindex="-1"><a class="heading-anchor" href="#gis-mapping" aria-hidden="true">#</a> GIS &amp; Mapping</h2>
+<h3 id="mapping-provider" tabindex="-1"><a class="heading-anchor" href="#mapping-provider" aria-hidden="true">#</a> Mapping Provider</h3>
+<p>The platform needs mapping capabilities for: canvassing turf visualization, walk list routing, voter geographic distribution, event location display, and geographic analytics.</p>
+<p><strong>DECIDED: Hybrid, OSM default.</strong> Self-hosted OSM tiles (via OpenMapTiles or Protomaps) as the default for all map display — free, sovereign, no third party sees canvassing patterns. Commercial services available as fallback where OSM tile quality or coverage is insufficient for a specific region. Tile infrastructure self-hosted in each country's K8s cluster.</p>
+<h3 id="offline-maps" tabindex="-1"><a class="heading-anchor" href="#offline-maps" aria-hidden="true">#</a> Offline Maps</h3>
+<p>Field operations (canvassing, voter registration drives) must work without connectivity. The mapping layer must support:</p>
+<ul>
+<li><strong>Pre-downloaded map tiles</strong> for assigned turf areas — downloaded at shift start, used offline</li>
+<li><strong>Offline geocoding</strong> — basic address-to-coordinate resolution without network (limited accuracy acceptable)</li>
+<li><strong>Offline routing</strong> — basic turn-by-turn or walking directions within downloaded area</li>
+<li><strong>Sync on reconnect</strong> — any location data captured offline syncs when connectivity returns</li>
+</ul>
+<h3 id="geocoding" tabindex="-1"><a class="heading-anchor" href="#geocoding" aria-hidden="true">#</a> Geocoding</h3>
+<p>Converting addresses to coordinates (and vice versa) is needed for voter file processing, canvassing assignment, and geographic analytics.</p>
+<p><strong>DECIDED: Hybrid, self-hosted default.</strong> Self-hosted Pelias or Nominatim for bulk operations (voter file processing, batch geocoding) — data stays sovereign for heavy workloads. Commercial geocoding (provider TBD at implementation) for real-time UX (address autocomplete on forms, single-address lookup) where self-hosted accuracy falls short. Same sovereignty-first pattern as mapping.</p>
+<h3 id="turf-management" tabindex="-1"><a class="heading-anchor" href="#turf-management" aria-hidden="true">#</a> Turf Management</h3>
+<p>Turf (geographic areas assigned to canvassing teams) is a core platform concept. The mapping integration must support:</p>
+<ul>
+<li><strong>Drawing turfs</strong> on a map — staff draw boundaries by clicking/tapping on a map</li>
+<li><strong>Auto-generated turfs</strong> — platform suggests turf boundaries based on voter density, walking distance, and geographic features</li>
+<li><strong>Turf assignment</strong> — assign turfs to volunteers/teams, track coverage</li>
+<li><strong>Walk list optimization</strong> — generate efficient walking routes within a turf</li>
+<li><strong>Coverage visualization</strong> — heat maps showing canvassed vs. uncanvassed areas</li>
+</ul>
+<p><strong>DECIDED: Built-in routing.</strong> Self-hosted open-source routing engine (OSRM, Valhalla, or GraphHopper — specific choice at implementation time). Routes pre-calculated at shift start and cached on device for fully offline use. Consistent with the sovereignty-first, offline-first pattern across all GIS integrations.</p>
+<h2 id="sms-messaging-gateways" tabindex="-1"><a class="heading-anchor" href="#sms-messaging-gateways" aria-hidden="true">#</a> SMS &amp; Messaging Gateways</h2>
+<h3 id="sms-provider-strategy" tabindex="-1"><a class="heading-anchor" href="#sms-provider-strategy" aria-hidden="true">#</a> SMS Provider Strategy</h3>
+<p>Already decided in <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a>: provider-agnostic adapter layer with per-country providers. This section specifies the per-country strategy.</p>
+<p><strong>DECIDED: Hybrid — global provider as fallback + local providers where advantageous.</strong> Same pattern as payments, mapping, and geocoding. Global provider (Twilio, Vonage, or MessageBird) as baseline/fallback. Local providers in countries where they offer significant advantages in deliverability or pricing. Adapter pattern makes this transparent to the application.</p>
+<h4 id="per-country-sms-landscape" tabindex="-1"><a class="heading-anchor" href="#per-country-sms-landscape" aria-hidden="true">#</a> Per-Country SMS Landscape</h4>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Local providers</th>
+<th>Global provider coverage</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puerto Rico</td>
+<td>US providers work</td>
+<td>Twilio, Vonage — full US coverage</td>
+<td>Standard US SMS infrastructure. TCPA compliance critical.</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>Zenvia, Infobip (regional), Twilio</td>
+<td>Good global coverage</td>
+<td>High SMS volume culture. Short codes common. Regulatory approval needed for A2P messaging.</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>AIS, DTAC, TrueMove (carrier-direct or via aggregators)</td>
+<td>Twilio available but pricier</td>
+<td>Thai number required for domestic messaging. Local aggregators have better rates.</td>
+</tr>
+<tr>
+<td>India</td>
+<td>Kaleyra, MSG91, Gupshup, Twilio</td>
+<td>Twilio available</td>
+<td>DLT registration required for A2P SMS. Sender ID registration mandatory. Template-based messaging. Very high volume, very low cost.</td>
+</tr>
+<tr>
+<td>Lebanon</td>
+<td>Alfa, Touch (two carriers, both state-influenced)</td>
+<td>Limited global provider coverage</td>
+<td>Unreliable infrastructure. SMS delivery can be inconsistent. WhatsApp often more reliable than SMS.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="whatsapp-business-api" tabindex="-1"><a class="heading-anchor" href="#whatsapp-business-api" aria-hidden="true">#</a> WhatsApp Business API</h3>
+<p>Already decided: TSE-aware channel management for Brazil. WhatsApp integration via Business API requires:</p>
+<ul>
+<li><strong>Business verification</strong> through Meta</li>
+<li><strong>Template messages</strong> — pre-approved message templates for outbound messaging (required by WhatsApp policy)</li>
+<li><strong>Session messaging</strong> — free-form replies within 24-hour window after user-initiated contact</li>
+<li><strong>Per-tenant WhatsApp Business Account</strong> — each tenant needs their own verified business account (consistent with direct-merchant pattern)</li>
+</ul>
+<p><strong>DECIDED: Direct Meta API with onboarding concierge.</strong> Each tenant registers directly with Meta — no intermediary markup, tenant owns the relationship. Meta's verification process is complex, so GreenGrass provides an onboarding concierge service (human or AI-assisted) to guide tenants through verification, business account setup, and template approval. One-time onboarding friction is better than permanent per-message BSP markup.</p>
+<h3 id="number-provisioning" tabindex="-1"><a class="heading-anchor" href="#number-provisioning" aria-hidden="true">#</a> Number Provisioning</h3>
+<p>SMS requires sender numbers (long codes, short codes, or toll-free numbers depending on country and use case).</p>
+<p><strong>DECIDED: Tenant-provisioned with GreenGrass guidance.</strong> Tenants own their numbers. GreenGrass provides country-specific setup guides, recommended number types (long code vs. short code vs. toll-free), and compliance checklists (India DLT registration, US 10DLC registration, Brazil A2P approval, etc.). Consistent with the direct-merchant pattern across all integrations.</p>
+<h2 id="telephony-phone-banking" tabindex="-1"><a class="heading-anchor" href="#telephony-phone-banking" aria-hidden="true">#</a> Telephony (Phone Banking)</h2>
+<h3 id="provider-strategy" tabindex="-1"><a class="heading-anchor" href="#provider-strategy" aria-hidden="true">#</a> Provider Strategy</h3>
+<p>Already decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>: BYOP for MVP, hybrid integration for pilot. The hybrid integration needs a telephony provider.</p>
+<p><strong>DECIDED: Hybrid — global baseline + local providers where cost-effective.</strong> Same pattern as SMS, payments, mapping. Global provider (Twilio Voice or equivalent) as baseline, local VoIP providers where they offer significant cost advantages for high-volume calling.</p>
+<h3 id="phone-banking-features-pilot-phase" tabindex="-1"><a class="heading-anchor" href="#phone-banking-features-pilot-phase" aria-hidden="true">#</a> Phone Banking Features (Pilot Phase)</h3>
+<p>When the platform transitions from BYOP to integrated telephony:</p>
+<ul>
+<li><strong>Click-to-call</strong> — volunteer clicks a contact in the platform, call initiates through the provider</li>
+<li><strong>Call logging</strong> — call duration, outcome (answered, voicemail, no answer, wrong number), and notes recorded automatically</li>
+<li><strong>Number masking</strong> — volunteer's personal number is not visible to the person being called (critical privacy feature missing from BYOP)</li>
+<li><strong>Preview dialer</strong> — volunteer sees contact info before the call initiates (not a predictive/auto-dialer — those have TCPA implications in the US)</li>
+<li><strong>Call scripts</strong> — script displayed alongside the call interface, with branching based on responses</li>
+<li><strong>Do-not-call list</strong> — platform enforces DNC lists (federal, state, per-campaign opt-outs)</li>
+</ul>
+<h2 id="video-event-platform-integration" tabindex="-1"><a class="heading-anchor" href="#video-event-platform-integration" aria-hidden="true">#</a> Video &amp; Event Platform Integration</h2>
+<p>Already decided in <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>: external integration with registration bridge.</p>
+<h3 id="supported-platforms" tabindex="-1"><a class="heading-anchor" href="#supported-platforms" aria-hidden="true">#</a> Supported Platforms</h3>
+<p><strong>DECIDED: Zoom + Jitsi.</strong> Zoom for mainstream use (dominant market share), Jitsi for tenants who want open-source and self-hosted video (aligns with platform sovereignty values). Two adapters cover the vast majority of use cases. Additional platforms can be added via the adapter pattern if demand warrants it.</p>
+<h3 id="integration-capabilities" tabindex="-1"><a class="heading-anchor" href="#integration-capabilities" aria-hidden="true">#</a> Integration Capabilities</h3>
+<p>Regardless of platform:</p>
+<ul>
+<li><strong>Event creation</strong> — staff creates event in GreenGrass, meeting is automatically created on the video platform</li>
+<li><strong>Unique join links</strong> — each registrant receives a unique link for attendance tracking</li>
+<li><strong>Attendance sync</strong> — who actually joined, duration of participation, synced back to CRM</li>
+<li><strong>Recording link</strong> — if the event is recorded, link is stored in the event record and can be shared with registrants who missed it</li>
+<li><strong>Calendar integration</strong> — event details pushed to registrants' calendars (iCal/ICS format, universal)</li>
+</ul>
+<h2 id="calendar-integration" tabindex="-1"><a class="heading-anchor" href="#calendar-integration" aria-hidden="true">#</a> Calendar Integration</h2>
+<p>Events created in GreenGrass should integrate with external calendar systems.</p>
+<ul>
+<li><strong>ICS/iCal export</strong> — every event generates an .ics file. Attached to event confirmation emails. Works with any calendar app.</li>
+<li><strong>Google Calendar, Apple Calendar, Outlook</strong> — deep links to &quot;Add to Calendar&quot; for these platforms in event confirmations</li>
+<li><strong>No inbound calendar sync</strong> — GreenGrass is the source of truth for campaign events. External calendar integrations are outbound only (push events out, don't pull events in).</li>
+</ul>
+<h2 id="data-importexport" tabindex="-1"><a class="heading-anchor" href="#data-importexport" aria-hidden="true">#</a> Data Import/Export</h2>
+<h3 id="import-formats" tabindex="-1"><a class="heading-anchor" href="#import-formats" aria-hidden="true">#</a> Import Formats</h3>
+<p>The platform must handle messy real-world data files from diverse sources.</p>
+<p><strong>Supported import formats:</strong></p>
+<ul>
+<li>CSV (with configurable delimiter, encoding detection including UTF-8, Latin-1, Windows-1252)</li>
+<li>Excel (.xlsx, .xls)</li>
+<li>JSON</li>
+<li>vCard (.vcf) — for contact imports</li>
+<li>GeoJSON, Shapefile, KML — for geographic data</li>
+</ul>
+<h3 id="import-pipeline" tabindex="-1"><a class="heading-anchor" href="#import-pipeline" aria-hidden="true">#</a> Import Pipeline</h3>
+<ol>
+<li><strong>Upload</strong> — user uploads file or provides URL</li>
+<li><strong>Format detection</strong> — platform auto-detects file format and encoding</li>
+<li><strong>Column mapping</strong> — interactive column mapper with smart suggestions (e.g., &quot;this column looks like phone numbers&quot;)</li>
+<li><strong>Preview</strong> — sample of mapped records shown for validation</li>
+<li><strong>Dedup preview</strong> — platform identifies potential duplicates against existing records, shows proposed merges</li>
+<li><strong>Confirmation</strong> — user confirms mapping and dedup decisions</li>
+<li><strong>Import</strong> — records created/merged, import logged in audit trail</li>
+<li><strong>Post-import report</strong> — summary: records created, merged, skipped (with reasons), errors</li>
+</ol>
+<h3 id="export-formats" tabindex="-1"><a class="heading-anchor" href="#export-formats" aria-hidden="true">#</a> Export Formats</h3>
+<p><strong>Supported export formats:</strong></p>
+<ul>
+<li>CSV (UTF-8)</li>
+<li>Excel (.xlsx)</li>
+<li>JSON</li>
+<li>GeoJSON (for geographic data)</li>
+<li>PDF (for reports)</li>
+</ul>
+<p><strong>Export capabilities:</strong></p>
+<ul>
+<li>Full tenant data export (contractual right per <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>)</li>
+<li>Per-entity exports (contacts, donations, events, interactions)</li>
+<li>Filtered exports (by tag, segment, date range, geography)</li>
+<li>Scheduled exports (recurring export to webhook URL or file storage)</li>
+<li>Compliance report exports (per jurisdiction format)</li>
+</ul>
+<h3 id="migration-from-other-platforms" tabindex="-1"><a class="heading-anchor" href="#migration-from-other-platforms" aria-hidden="true">#</a> Migration from Other Platforms</h3>
+<p>Campaigns switching to GreenGrass from other tools (NationBuilder, NGP VAN, Action Network, CiviCRM, etc.) need migration support.</p>
+<p><strong>DECIDED: Migration guides + generic import.</strong> Detailed documentation for migrating from common campaign platforms (NationBuilder, NGP VAN, Action Network, CiviCRM) — what to export, how to map fields, what to watch out for. Plus the generic smart-mapping import tools. If a particular source platform becomes a dominant migration path, a dedicated importer can be built later.</p>
+<h2 id="monitoring-observability" tabindex="-1"><a class="heading-anchor" href="#monitoring-observability" aria-hidden="true">#</a> Monitoring &amp; Observability</h2>
+<h3 id="platform-monitoring" tabindex="-1"><a class="heading-anchor" href="#platform-monitoring" aria-hidden="true">#</a> Platform Monitoring</h3>
+<p>GreenGrass itself needs monitoring for operational health.</p>
+<h4 id="infrastructure-monitoring" tabindex="-1"><a class="heading-anchor" href="#infrastructure-monitoring" aria-hidden="true">#</a> Infrastructure Monitoring</h4>
+<ul>
+<li><strong>Metrics:</strong> CPU, memory, disk, network across all Kubernetes clusters</li>
+<li><strong>Container orchestration:</strong> Kubernetes metrics (pod health, deployment status, resource utilization)</li>
+<li><strong>Database:</strong> PostgreSQL metrics (connections, query latency, replication lag, storage)</li>
+<li><strong>Message queue:</strong> NATS JetStream metrics (consumer lag, message throughput, storage)</li>
+</ul>
+<p><strong>DECIDED: Prometheus + Grafana.</strong> Industry-standard open-source monitoring. Self-hosted, no vendor dependency, works identically for cloud-hosted and self-hosted deployments. Prometheus for metrics collection and alerting, Grafana for dashboards. Consistent with platform sovereignty values.</p>
+<h4 id="application-monitoring" tabindex="-1"><a class="heading-anchor" href="#application-monitoring" aria-hidden="true">#</a> Application Monitoring</h4>
+<ul>
+<li><strong>Request tracing:</strong> distributed tracing across services (OpenTelemetry)</li>
+<li><strong>Error tracking:</strong> structured error logging with context (Sentry or self-hosted equivalent)</li>
+<li><strong>Application metrics:</strong> request latency, error rates, endpoint usage, active users</li>
+<li><strong>Business metrics:</strong> active tenants, donation volume, message delivery rates, sync latency</li>
+</ul>
+<h4 id="alerting" tabindex="-1"><a class="heading-anchor" href="#alerting" aria-hidden="true">#</a> Alerting</h4>
+<ul>
+<li><strong>Infrastructure alerts:</strong> resource exhaustion, pod failures, database issues, replication lag</li>
+<li><strong>Application alerts:</strong> elevated error rates, latency spikes, failed payment processing, sync failures</li>
+<li><strong>Security alerts:</strong> authentication anomalies, unusual data access patterns, failed encryption operations</li>
+<li><strong>Compliance alerts:</strong> approaching retention limits, consent processing failures, missed reporting deadlines</li>
+</ul>
+<p><strong>DECIDED: Start simple, upgrade when needed.</strong> Email + Slack/Matrix webhook alerts for alpha and early pilots. Adopt PagerDuty/Opsgenie when the ops team grows and formal on-call rotation becomes necessary. No premature vendor commitments.</p>
+<h3 id="uptime-monitoring" tabindex="-1"><a class="heading-anchor" href="#uptime-monitoring" aria-hidden="true">#</a> Uptime Monitoring</h3>
+<ul>
+<li><strong>External health checks</strong> — independent uptime monitoring from outside the infrastructure (e.g., UptimeRobot, Pingdom, or self-hosted alternative)</li>
+<li><strong>Public status page</strong> — tenant-facing status page showing platform health (per-country, per-service)</li>
+</ul>
+<p><strong>DECIDED: Self-hosted status page.</strong> Open-source (Upptime, Cachet, or Gatus — specific choice at implementation time). Fully controlled, no vendor dependency. Consistent with platform sovereignty values.</p>
+<h3 id="logging" tabindex="-1"><a class="heading-anchor" href="#logging" aria-hidden="true">#</a> Logging</h3>
+<ul>
+<li><strong>Structured logging</strong> — JSON-formatted logs with correlation IDs across services</li>
+<li><strong>Centralized log aggregation</strong> — all logs collected in a single searchable system</li>
+</ul>
+<p><strong>DECIDED: Loki + Grafana.</strong> Grafana Loki for log aggregation, Grafana for querying. Lightweight, integrates with Prometheus/Grafana monitoring stack for a unified observability experience — metrics, logs, and dashboards in one ecosystem. Labels-based indexing keeps resource usage low.</p>
+<h2 id="third-party-integration-via-public-api" tabindex="-1"><a class="heading-anchor" href="#third-party-integration-via-public-api" aria-hidden="true">#</a> Third-Party Integration via Public API</h2>
+<p>Already decided in <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a>: REST + webhooks from day one. The public API enables tenants and third parties to build their own integrations.</p>
+<h3 id="webhook-events" tabindex="-1"><a class="heading-anchor" href="#webhook-events" aria-hidden="true">#</a> Webhook Events</h3>
+<p>The platform emits webhook events for key actions. Tenants configure webhook endpoints per event type.</p>
+<p><strong>Webhook event categories:</strong></p>
+<ul>
+<li><strong>CRM:</strong> contact created/updated/merged, tag applied/removed, segment membership changed</li>
+<li><strong>Donations:</strong> donation received, recurring donation created/cancelled/failed, refund processed, pledge created/fulfilled/lapsed</li>
+<li><strong>Communications:</strong> message sent/delivered/bounced/opened/clicked, consent granted/revoked</li>
+<li><strong>Events:</strong> event created, RSVP received, attendance recorded</li>
+<li><strong>Canvassing:</strong> interaction recorded, turf assigned, shift started/ended</li>
+<li><strong>Compliance:</strong> contribution limit approaching, foreign donation flagged, data subject request received</li>
+<li><strong>System:</strong> data import completed, export ready, sync completed</li>
+</ul>
+<h3 id="api-rate-limiting" tabindex="-1"><a class="heading-anchor" href="#api-rate-limiting" aria-hidden="true">#</a> API Rate Limiting</h3>
+<ul>
+<li>Per-tenant, per-API-key rate limits</li>
+<li>Configurable by subscription tier</li>
+<li>Rate limit headers in responses (X-RateLimit-Remaining, X-RateLimit-Reset)</li>
+<li>Webhook retry with exponential backoff on delivery failure</li>
+</ul>
+<h3 id="developer-documentation" tabindex="-1"><a class="heading-anchor" href="#developer-documentation" aria-hidden="true">#</a> Developer Documentation</h3>
+<ul>
+<li><strong>API reference</strong> — auto-generated from OpenAPI spec, interactive (Swagger UI or similar)</li>
+<li><strong>Webhook documentation</strong> — event schemas, delivery guarantees, retry behavior</li>
+<li><strong>SDKs</strong> — JavaScript/TypeScript SDK (first-class), Python SDK (community or first-class based on demand)</li>
+<li><strong>Sandbox environment</strong> — per-tenant test environment with seed data for integration development</li>
+</ul>
+<h2 id="integration-roadmap" tabindex="-1"><a class="heading-anchor" href="#integration-roadmap" aria-hidden="true">#</a> Integration Roadmap</h2>
+<h3 id="alpha-puerto-rico" tabindex="-1"><a class="heading-anchor" href="#alpha-puerto-rico" aria-hidden="true">#</a> Alpha (Puerto Rico)</h3>
+<p><strong>Required integrations:</strong></p>
+<ul>
+<li>Payment: credit card processor (Stripe or equivalent), ATH Movil adapter</li>
+<li>SMS: US provider (Twilio or equivalent) with TCPA compliance</li>
+<li>Email: managed service for alpha (Postmark or SES), self-hosted MTA in progress</li>
+<li>Mapping: chosen provider with offline tile support</li>
+<li>Geocoding: for voter file processing and address validation</li>
+<li>Data import: CSV/Excel with column mapping for voter files</li>
+<li>FEC API: for compliance report filing (if building FEC reporting for alpha)</li>
+<li>Public API: REST + webhooks operational</li>
+</ul>
+<h3 id="pilot-1-brazil" tabindex="-1"><a class="heading-anchor" href="#pilot-1-brazil" aria-hidden="true">#</a> Pilot 1 (Brazil)</h3>
+<p><strong>Additional integrations:</strong></p>
+<ul>
+<li>Payment: PIX adapter (local processor), Boleto adapter</li>
+<li>SMS: Brazilian provider or Twilio with Brazil number</li>
+<li>WhatsApp: Business API integration (critical for Brazil)</li>
+<li>TSE APIs: DivulgaCandContas for campaign finance disclosure</li>
+<li>Mapping: Brazil-specific tile coverage verification</li>
+<li>Geocoding: Brazilian address format support</li>
+</ul>
+<h3 id="pilot-2-thailand" tabindex="-1"><a class="heading-anchor" href="#pilot-2-thailand" aria-hidden="true">#</a> Pilot 2 (Thailand)</h3>
+<p><strong>Additional integrations:</strong></p>
+<ul>
+<li>Payment: PromptPay adapter, TrueMoney adapter</li>
+<li>SMS: Thai provider for domestic messaging</li>
+<li>WhatsApp: Business API (WhatsApp popular in Thailand too)</li>
+<li>Mapping: Thai address format and script support</li>
+<li>Line messaging: consider Line integration (popular in Thailand)</li>
+</ul>
+<h3 id="pilot-3-india" tabindex="-1"><a class="heading-anchor" href="#pilot-3-india" aria-hidden="true">#</a> Pilot 3 (India)</h3>
+<p><strong>Additional integrations:</strong></p>
+<ul>
+<li>Payment: UPI adapter (Razorpay or Cashfree), Paytm/PhonePe adapters</li>
+<li>SMS: Indian provider with DLT registration, template-based messaging</li>
+<li>WhatsApp: Business API (WhatsApp dominant in India)</li>
+<li>ECI data: electoral roll import tools, constituency boundary data</li>
+<li>Mapping: India-specific geocoding (Plus Codes may be useful for areas without formal addresses)</li>
+</ul>
+<h3 id="pilot-4-lebanon" tabindex="-1"><a class="heading-anchor" href="#pilot-4-lebanon" aria-hidden="true">#</a> Pilot 4 (Lebanon)</h3>
+<p><strong>Additional integrations:</strong></p>
+<ul>
+<li>Payment: OMT manual recording interface, bank transfer tracking</li>
+<li>SMS: Lebanese carrier integration (limited reliability)</li>
+<li>WhatsApp: Business API (primary messaging channel given SMS unreliability)</li>
+<li>Mapping: offline-heavy — infrastructure instability means offline maps are essential, not optional</li>
+<li>Cash tracking: full chain-of-custody integration (per <a href="http://fundraising.md" target="_blank" rel="noopener noreferrer">fundraising.md</a>)</li>
+</ul>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Line messaging integration for Thailand</strong> — Line is more popular than WhatsApp in Thailand. Should we add a Line adapter? Likely yes, but needs research into Line's Business API capabilities and political messaging restrictions.</p>
+</li>
+<li>
+<p><strong>India Plus Codes</strong> — Google's Plus Codes address areas without formal street addresses. Useful for rural India canvassing. Worth integrating as a supplementary geocoding/addressing system?</p>
+</li>
+<li>
+<p><strong>Electoral commission relationship management</strong> — for countries where we want API access or official data, who manages the relationship? GreenGrass corporate? Local counsel? The tenant?</p>
+</li>
+<li>
+<p><strong>Self-hosted monitoring for self-hosted tenants</strong> — tenants who self-host GreenGrass need monitoring too. Do we include the monitoring stack in the self-hosted package, or expect them to bring their own?</p>
+</li>
+</ol>
+<!-- REVISIT: Each integration adapter needs its own technical specification during implementation — API contracts, authentication flows, error handling, rate limit strategies, webhook formats. These are implementation details that belong in engineering docs, not this spec. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#integration-principles"># Integration Principles</a></li><li class="toc-2"><a href="#electoral-data-voter-files"># Electoral Data &amp;amp; Voter Files</a></li><li class="toc-3"><a href="#electoral-boundary-data"># Electoral Boundary Data</a></li><li class="toc-3"><a href="#voter-file-integration"># Voter File Integration</a></li><li class="toc-3"><a href="#electoral-commission-integration"># Electoral Commission Integration</a></li><li class="toc-2"><a href="#gis-mapping"># GIS &amp;amp; Mapping</a></li><li class="toc-3"><a href="#mapping-provider"># Mapping Provider</a></li><li class="toc-3"><a href="#offline-maps"># Offline Maps</a></li><li class="toc-3"><a href="#geocoding"># Geocoding</a></li><li class="toc-3"><a href="#turf-management"># Turf Management</a></li><li class="toc-2"><a href="#sms-messaging-gateways"># SMS &amp;amp; Messaging Gateways</a></li><li class="toc-3"><a href="#sms-provider-strategy"># SMS Provider Strategy</a></li><li class="toc-3"><a href="#whatsapp-business-api"># WhatsApp Business API</a></li><li class="toc-3"><a href="#number-provisioning"># Number Provisioning</a></li><li class="toc-2"><a href="#telephony-phone-banking"># Telephony (Phone Banking)</a></li><li class="toc-3"><a href="#provider-strategy"># Provider Strategy</a></li><li class="toc-3"><a href="#phone-banking-features-pilot-phase"># Phone Banking Features (Pilot Phase)</a></li><li class="toc-2"><a href="#video-event-platform-integration"># Video &amp;amp; Event Platform Integration</a></li><li class="toc-3"><a href="#supported-platforms"># Supported Platforms</a></li><li class="toc-3"><a href="#integration-capabilities"># Integration Capabilities</a></li><li class="toc-2"><a href="#calendar-integration"># Calendar Integration</a></li><li class="toc-2"><a href="#data-importexport"># Data Import/Export</a></li><li class="toc-3"><a href="#import-formats"># Import Formats</a></li><li class="toc-3"><a href="#import-pipeline"># Import Pipeline</a></li><li class="toc-3"><a href="#export-formats"># Export Formats</a></li><li class="toc-3"><a href="#migration-from-other-platforms"># Migration from Other Platforms</a></li><li class="toc-2"><a href="#monitoring-observability"># Monitoring &amp;amp; Observability</a></li><li class="toc-3"><a href="#platform-monitoring"># Platform Monitoring</a></li><li class="toc-3"><a href="#uptime-monitoring"># Uptime Monitoring</a></li><li class="toc-3"><a href="#logging"># Logging</a></li><li class="toc-2"><a href="#third-party-integration-via-public-api"># Third-Party Integration via Public API</a></li><li class="toc-3"><a href="#webhook-events"># Webhook Events</a></li><li class="toc-3"><a href="#api-rate-limiting"># API Rate Limiting</a></li><li class="toc-3"><a href="#developer-documentation"># Developer Documentation</a></li><li class="toc-2"><a href="#integration-roadmap"># Integration Roadmap</a></li><li class="toc-3"><a href="#alpha-puerto-rico"># Alpha (Puerto Rico)</a></li><li class="toc-3"><a href="#pilot-1-brazil"># Pilot 1 (Brazil)</a></li><li class="toc-3"><a href="#pilot-2-thailand"># Pilot 2 (Thailand)</a></li><li class="toc-3"><a href="#pilot-3-india"># Pilot 3 (India)</a></li><li class="toc-3"><a href="#pilot-4-lebanon"># Pilot 4 (Lebanon)</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

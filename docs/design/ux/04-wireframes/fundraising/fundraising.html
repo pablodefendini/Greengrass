@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fundraising Wireframes · GreenGrass</title>
+<meta name="description" content="Fundraising Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="./fundraising.html" aria-current="page" class="active">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="fundraising-wireframes" tabindex="-1"><a class="heading-anchor" href="#fundraising-wireframes" aria-hidden="true">#</a> Fundraising Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Fundraising is the financial engine of the platform. These wireframes cover the admin-side screens used by the Finance Director and Org Admin to manage donations, build forms, track pledges, process refunds, handle cash, monitor compliance, run A/B tests, configure alliance splits, and manage payment processors.</p>
+<p>The core UX challenge: fundraising touches money, compliance, and cross-org allocation — every screen must balance power with auditability. Actions are logged, amounts are precise, and destructive operations (refunds, cancellations) require explicit confirmation.</p>
+<p>The supporter-facing donation experience (public donation form, portal home, donation history, recurring management, receipts, year-end statements) is wireframed in <code>supporter/supporter-portal.md</code>. This document covers admin-side screens only, with cross-references where the two overlap.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FUND-001</td>
+<td>Donation List</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Donations</td>
+</tr>
+<tr>
+<td>FUND-002</td>
+<td>Donation Detail</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Donations</td>
+</tr>
+<tr>
+<td>FUND-003</td>
+<td>Donation Form Builder</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Forms</td>
+</tr>
+<tr>
+<td>FUND-004</td>
+<td>Donation Form Preview</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Forms</td>
+</tr>
+<tr>
+<td>FUND-005</td>
+<td>Donation Form — Public (Hosted)</td>
+<td>S, Public</td>
+<td>No</td>
+<td>Primary</td>
+<td>Forms (cross-ref)</td>
+</tr>
+<tr>
+<td>FUND-006</td>
+<td>Donation Form — Embed Config</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Forms</td>
+</tr>
+<tr>
+<td>FUND-007</td>
+<td>Recurring Donation Management</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Recurring</td>
+</tr>
+<tr>
+<td>FUND-008</td>
+<td>Pledge Management</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Pledges</td>
+</tr>
+<tr>
+<td>FUND-009</td>
+<td>Refund Processing</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Refunds</td>
+</tr>
+<tr>
+<td>FUND-010</td>
+<td>Cash Donation Recording</td>
+<td>OA, FD, V</td>
+<td>Partial</td>
+<td>Primary</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td>FUND-011</td>
+<td>Cash Reconciliation</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Cash</td>
+</tr>
+<tr>
+<td>FUND-012</td>
+<td>Compliance Flag Review</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Compliance</td>
+</tr>
+<tr>
+<td>FUND-013</td>
+<td>A/B Test Setup</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>A/B Testing</td>
+</tr>
+<tr>
+<td>FUND-014</td>
+<td>A/B Test Results</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>A/B Testing</td>
+</tr>
+<tr>
+<td>FUND-015</td>
+<td>Alliance Split Configuration</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Alliance</td>
+</tr>
+<tr>
+<td>FUND-016</td>
+<td>Alliance Fundraising Report</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Alliance</td>
+</tr>
+<tr>
+<td>FUND-017</td>
+<td>Payment Processor Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Settings</td>
+</tr>
+<tr>
+<td>FUND-018</td>
+<td>Fundraising Campaign List</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Campaigns</td>
+</tr>
+<tr>
+<td>FUND-019</td>
+<td>Fundraising Campaign Create/Edit</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Campaigns</td>
+</tr>
+<tr>
+<td>FUND-020</td>
+<td>Year-End Statement Generator</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Statements</td>
+</tr>
+</tbody>
+</table>
+<h2 id="finance-director-navigation-context" tabindex="-1"><a class="heading-anchor" href="#finance-director-navigation-context" aria-hidden="true">#</a> Finance Director Navigation Context</h2>
+<p>The Finance Director's sidebar organizes fundraising into a flat structure under a single &quot;Fundraising&quot; section:</p>
+<pre><code>OVERVIEW
+  Dashboard           → DASH-003
+
+FUNDRAISING
+  Donations           → FUND-001
+  Forms               → form list (within FUND-003)
+  Campaigns           → FUND-018
+  Recurring           → FUND-007
+  Pledges             → FUND-008
+  Refunds             → FUND-009
+  Cash                → FUND-010 list / FUND-011
+  Compliance Flags    → FUND-012
+  A/B Tests           → FUND-013 list / FUND-014
+  Alliance Splits     → FUND-015
+  Payment Processors  → FUND-017
+  Statements          → FUND-020
+
+PEOPLE
+  Donors              → CRM-001 (filtered to donor tag)
+  Segments            → CRM-005
+
+MESSAGING
+  Messages            → messaging screens
+</code></pre>
+<hr>
+<h2 id="fund-001-donation-list" tabindex="-1"><a class="heading-anchor" href="#fund-001-donation-list" aria-hidden="true">#</a> FUND-001: Donation List</h2>
+<p>The primary browse screen for all donations. Answers &quot;what money came in?&quot; with filtering, search, and export.</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Donations                                    [Export ▾]  [+ Record Cash]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Summary Bar                                                                 │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐       │
+│  │ Today       │  │ This Week   │  │ This Month  │  │ This Year   │       │
+│  │ $2,340      │  │ $14,780     │  │ $52,100     │  │ $347,200    │       │
+│  │ 18 gifts    │  │ 96 gifts    │  │ 412 gifts   │  │ 2,847 gifts │       │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘       │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ 🔍 Search by donor name, email, or transaction ID...                │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Filters:  [Type ▾]  [Status ▾]  [Method ▾]  [Amount ▾]  [Date Range ▾]   │
+│            [Campaign ▾]  [Source ▾]                                          │
+│                                                                              │
+│  ☐  Donor               Amount    Type       Method     Date       Status   │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  ☐  María García        $100.00   One-time   Card       Mar 3      ✓ Comp   │
+│  ☐  Anonymous           $50.00    Recurring  Card       Mar 3      ✓ Comp   │
+│  ☐  Carlos Ruiz         $250.00   One-time   Transfer   Mar 2      ◷ Pend   │
+│  ☐  Lucía Fernández     $25.00    Recurring  Card       Mar 2      ✓ Comp   │
+│  ☐  Pedro Martínez      $500.00   Pledge     Cash       Mar 2      ✓ Comp   │
+│  ☐  Anonymous           $75.00    One-time   M-Pesa     Mar 1      ✓ Comp   │
+│  ☐  ⚠ Raj Patel         $1,000    One-time   Card       Mar 1      ⚑ Flag   │
+│  ☐  Amina Diallo        $30.00    Recurring  Card       Mar 1      ✓ Comp   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Showing 1-50 of 2,847   ◀ 1  2  3  ... 57 ▶                               │
+│                                                                              │
+│  Bulk actions: [Mark Reviewed]  [Export Selected]                            │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  Donations            [⋮]  │
+├────────────────────────────┤
+│                            │
+│  Today $2,340 · 18 gifts   │
+│                            │
+│  🔍 Search...              │
+│  [Filters ▾]               │
+│                            │
+│  ┌──────────────────────┐  │
+│  │ María García         │  │
+│  │ $100 · One-time      │  │
+│  │ Card · Mar 3    ✓    │  │
+│  ├──────────────────────┤  │
+│  │ Anonymous            │  │
+│  │ $50 · Recurring      │  │
+│  │ Card · Mar 3    ✓    │  │
+│  ├──────────────────────┤  │
+│  │ Carlos Ruiz          │  │
+│  │ $250 · One-time      │  │
+│  │ Transfer · Mar 2  ◷  │  │
+│  ├──────────────────────┤  │
+│  │ ⚠ Raj Patel          │  │
+│  │ $1,000 · One-time    │  │
+│  │ Card · Mar 1    ⚑    │  │
+│  └──────────────────────┘  │
+│                            │
+│  Load more...              │
+└────────────────────────────┘
+</code></pre>
+<h3 id="filter-options" tabindex="-1"><a class="heading-anchor" href="#filter-options" aria-hidden="true">#</a> Filter Options</h3>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>One-time, Recurring, Pledge fulfillment, Cash</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Completed, Pending, Failed, Refunded, Flagged</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>Card, Bank transfer, M-Pesa, Cash, Other</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Custom range (min–max)</td>
+</tr>
+<tr>
+<td>Date Range</td>
+<td>Today, This week, This month, Custom</td>
+</tr>
+<tr>
+<td>Campaign</td>
+<td>All campaigns + &quot;No campaign&quot;</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>Online form, Phone bank, Canvassing, Event, Direct, Import</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction" tabindex="-1"><a class="heading-anchor" href="#interaction" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Row click</strong> → opens FUND-002 Donation Detail</li>
+<li><strong>Flagged row</strong> (⚑): highlighted with warning background, flag icon. Click → detail with compliance info</li>
+<li><strong>Export dropdown</strong>: CSV, Excel, PDF. Respects current filters. Audit-logged</li>
+<li><strong>&quot;+ Record Cash&quot;</strong> → opens FUND-010 Cash Donation Recording</li>
+<li><strong>Bulk actions</strong>: appear when checkboxes are selected</li>
+<li><strong>Summary bar</strong>: updates in real time as filters change</li>
+</ul>
+<h3 id="states" tabindex="-1"><a class="heading-anchor" href="#states" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No donations yet. Create a donation form to start accepting contributions.&quot; [Create Form]</li>
+<li><strong>Filtered empty</strong>: &quot;No donations match these filters.&quot; [Clear Filters]</li>
+<li><strong>Loading</strong>: Skeleton rows with shimmer</li>
+</ul>
+<hr>
+<h2 id="fund-002-donation-detail" tabindex="-1"><a class="heading-anchor" href="#fund-002-donation-detail" aria-hidden="true">#</a> FUND-002: Donation Detail</h2>
+<p>Full record view of a single donation. Answers &quot;what happened with this gift?&quot; — the complete transaction lifecycle.</p>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Donations    Donation #TXN-2024-00847                    [Refund]  [⋮]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌────────────────────────────────┬──────────────────────────────────────┐   │
+│  │                                │                                      │   │
+│  │  Donation Summary              │  Donor                               │   │
+│  │  ──────────────────            │  ──────                              │   │
+│  │                                │                                      │   │
+│  │  Amount          $100.00       │  María García                        │   │
+│  │  Processing fee  −$3.20        │  maria.garcia@email.com              │   │
+│  │  Net amount      $96.80        │  +1 (787) 555-0142                   │   │
+│  │                                │                                      │   │
+│  │  Type            One-time      │  123 Calle Sol, San Juan PR          │   │
+│  │  Method          Visa ••4821   │                                      │   │
+│  │  Status          ✓ Completed   │  Donor since: Jan 2024               │   │
+│  │  Date            Mar 3, 2026   │  Total given: $1,450 (12 gifts)      │   │
+│  │  Time            2:34 PM AST   │                                      │   │
+│  │                                │  [View Contact →]                    │   │
+│  │  Campaign        Spring Drive  │                                      │   │
+│  │  Source          Online form   │                                      │   │
+│  │  Form            Main website  │                                      │   │
+│  │  Designation     General fund  │                                      │   │
+│  │                                │                                      │   │
+│  │  Fee covered     Yes (+$3.20)  │                                      │   │
+│  │  Currency        USD           │                                      │   │
+│  │  Processor ref   ch_3Mx...     │                                      │   │
+│  │                                │                                      │   │
+│  └────────────────────────────────┴──────────────────────────────────────┘   │
+│                                                                              │
+│  Compliance                                                                  │
+│  ──────────                                                                  │
+│  Employer: Acme Corp    Occupation: Software Engineer                        │
+│  Contribution limit check: ✓ Within limits ($1,450 of $5,000 max)           │
+│  Flags: None                                                                 │
+│                                                                              │
+│  ──────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Audit Trail                                                                 │
+│  ───────────                                                                 │
+│  Mar 3, 2:34 PM   Donation received via online form                         │
+│  Mar 3, 2:34 PM   Payment processed (Stripe: ch_3Mx...)                     │
+│  Mar 3, 2:34 PM   Receipt emailed to maria.garcia@email.com                 │
+│  Mar 3, 2:35 PM   Contact record updated (CRM-002 #4782)                   │
+│  Mar 3, 2:35 PM   Thank-you email queued                                    │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  ← Donations          [⋮]  │
+├────────────────────────────┤
+│                            │
+│  $100.00                   │
+│  ✓ Completed · Mar 3       │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  María García              │
+│  maria.garcia@email.com    │
+│  [View Contact →]          │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Type       One-time       │
+│  Method     Visa ••4821    │
+│  Net        $96.80         │
+│  Campaign   Spring Drive   │
+│  Source     Online form    │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Compliance                │
+│  Within limits             │
+│  ($1,450 of $5,000 max)   │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  ▸ Audit Trail (5 events)  │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  [Refund This Donation]    │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="flagged-donation-variant" tabindex="-1"><a class="heading-anchor" href="#flagged-donation-variant" aria-hidden="true">#</a> Flagged Donation Variant</h3>
+<p>When a donation has compliance flags, the detail view adds a prominent flag section:</p>
+<pre><code>│  ⚠ Compliance Flags                                                         │
+│  ────────────────────                                                        │
+│                                                                              │
+│  ⚠ Velocity alert: 3 donations from this donor in 24 hours                  │
+│    Total in window: $2,750                                                   │
+│    Previous: $1,000 (Mar 1, 1:12 PM), $750 (Mar 1, 6:45 PM)               │
+│                                                                              │
+│  Actions:  [✓ Approve — Mark Reviewed]  [↩ Refund]  [⚑ Escalate]           │
+│                                                                              │
+│  Notes                                                                       │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Add a note about this review decision...                            │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  Required before Approve or Refund                                           │
+</code></pre>
+<h3 id="interaction-1" tabindex="-1"><a class="heading-anchor" href="#interaction-1" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Refund button</strong> → opens FUND-009 Refund Processing pre-filled with this donation</li>
+<li><strong>&quot;View Contact&quot;</strong> → navigates to CRM-002 for the donor</li>
+<li><strong>Flagged actions</strong> require a note before Approve or Refund</li>
+<li><strong>Audit trail</strong>: read-only, auto-generated, includes all system events</li>
+<li><strong>Overflow menu</strong> (⋮): Resend receipt, Download receipt PDF, View in processor dashboard (external link)</li>
+</ul>
+<h3 id="multi-currency-variant" tabindex="-1"><a class="heading-anchor" href="#multi-currency-variant" aria-hidden="true">#</a> Multi-Currency Variant</h3>
+<p>When the donation was in a non-settlement currency, the summary shows both:</p>
+<pre><code>│  Amount          KES 12,500       │
+│  (Converted)     $96.15 @ 130.01 │
+│  Processing fee  −$3.08           │
+│  Net amount      $93.07           │
+│  Currency        KES → USD        │
+│  Rate locked     Mar 3, 2:34 PM  │
+</code></pre>
+<hr>
+<h2 id="fund-003-donation-form-builder" tabindex="-1"><a class="heading-anchor" href="#fund-003-donation-form-builder" aria-hidden="true">#</a> FUND-003: Donation Form Builder</h2>
+<p>Split-pane builder for creating and editing donation forms. The form builder configures what donors see on the public hosted page (FUND-005) or embedded widget (FUND-006).</p>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Forms    Edit: Spring Campaign Form                [Preview]  [Publish]  │
+├────────────────────────────────┬─────────────────────────────────────────────┤
+│                                │                                             │
+│  FORM SETTINGS                 │  Live Preview                               │
+│  ─────────────                 │  ─────────────                              │
+│                                │                                             │
+│  Form name *                   │  ┌───────────────────────────────────────┐  │
+│  ┌──────────────────────────┐  │  │                                       │  │
+│  │ Spring Campaign Form     │  │  │  🌿 Partido Verde                     │  │
+│  └──────────────────────────┘  │  │                                       │  │
+│                                │  │  Support our Spring Campaign           │  │
+│  Internal description          │  │                                       │  │
+│  ┌──────────────────────────┐  │  │  Your contribution makes a            │  │
+│  │ Primary form for spring  │  │  │  difference in our community.         │  │
+│  └──────────────────────────┘  │  │                                       │  │
+│                                │  │  ┌─────┐ ┌─────┐ ┌──────┐ ┌─────┐   │  │
+│  ▾ AMOUNTS                     │  │  │ $25 │ │ $50 │ │[$100]│ │$250 │   │  │
+│  ──────────                    │  │  └─────┘ └─────┘ └──────┘ └─────┘   │  │
+│                                │  │  ┌─────┐ ┌───────┐                   │  │
+│  Suggested amounts *           │  │  │$500 │ │ Other │                   │  │
+│  ┌──────────────────────────┐  │  │  └─────┘ └───────┘                   │  │
+│  │ 25, 50, 100, 250, 500   │  │  │                                       │  │
+│  └──────────────────────────┘  │  │  ☐ Make this monthly                  │  │
+│                                │  │                                       │  │
+│  Default amount                │  │  ☐ I'd like to cover the              │  │
+│  ┌──────────────────────────┐  │  │    processing fee (+$3.20)            │  │
+│  │ 100                      │  │  │                                       │  │
+│  └──────────────────────────┘  │  │  First Name *    Last Name *          │  │
+│                                │  │  ┌──────────┐   ┌──────────┐         │  │
+│  Min / Max                     │  │  │          │   │          │         │  │
+│  ┌──────┐  ┌──────┐           │  │  └──────────┘   └──────────┘         │  │
+│  │ 5    │  │ 5000 │           │  │                                       │  │
+│  └──────┘  └──────┘           │  │  Email *                               │  │
+│                                │  │  ┌──────────────────────┐             │  │
+│  ☑ Allow custom amount         │  │  │                      │             │  │
+│  ☑ Show recurring option       │  │  └──────────────────────┘             │  │
+│  ☑ Show fee pass-through       │  │                                       │  │
+│                                │  │        [Donate $100]                   │  │
+│  ▾ DONOR FIELDS                │  │                                       │  │
+│  ──────────────                │  └───────────────────────────────────────┘  │
+│                                │                                             │
+│  Required:                     │  Device: [Desktop ▾]  Lang: [Español ▾]    │
+│  ☑ First name                  │                                             │
+│  ☑ Last name                   │                                             │
+│  ☑ Email                       │                                             │
+│  ☐ Phone                       │                                             │
+│                                │                                             │
+│  Conditional (if jurisdiction  │                                             │
+│  requires):                    │                                             │
+│  ☑ Address                     │                                             │
+│  ☑ Employer                    │                                             │
+│  ☑ Occupation                  │                                             │
+│                                │                                             │
+│  ▸ APPEARANCE                  │                                             │
+│  ▸ PAYMENT METHODS             │                                             │
+│  ▸ CONFIRMATION                │                                             │
+│  ▸ ADVANCED                    │                                             │
+│                                │                                             │
+└────────────────────────────────┴─────────────────────────────────────────────┘
+</code></pre>
+<h3 id="collapsed-sections-detail" tabindex="-1"><a class="heading-anchor" href="#collapsed-sections-detail" aria-hidden="true">#</a> Collapsed Sections Detail</h3>
+<p><strong>APPEARANCE:</strong></p>
+<ul>
+<li>Hero heading text (rich text)</li>
+<li>Body text (rich text)</li>
+<li>Hero image (upload or URL)</li>
+<li>Button text (default: &quot;Donate {amount}&quot;)</li>
+<li>Button color (defaults to tenant primary)</li>
+<li>Background color</li>
+<li>Language (multi-select from tenant's enabled languages)</li>
+</ul>
+<p><strong>PAYMENT METHODS:</strong></p>
+<ul>
+<li>Checkboxes per available method, determined by the configured processor(s)</li>
+<li>Card (always available if processor connected)</li>
+<li>Bank transfer (if processor supports)</li>
+<li>M-Pesa (if Kenya processor connected)</li>
+<li>Each method shows the processor it routes to</li>
+</ul>
+<p><strong>CONFIRMATION:</strong></p>
+<ul>
+<li>Thank-you page heading</li>
+<li>Thank-you page body text</li>
+<li>Redirect URL (optional — redirect after donation instead of showing thank-you page)</li>
+<li>Receipt email template (select from templates)</li>
+</ul>
+<p><strong>ADVANCED:</strong></p>
+<ul>
+<li>Campaign assignment (select fundraising campaign)</li>
+<li>Designation / fund (free text or select from org-defined list)</li>
+<li>UTM tracking (auto-captured from URL params)</li>
+<li>A/B test enrollment (link to FUND-013)</li>
+<li>Form slug (URL path for hosted version)</li>
+</ul>
+<h3 id="interaction-2" tabindex="-1"><a class="heading-anchor" href="#interaction-2" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Live preview</strong>: updates as settings change, no save required to see changes</li>
+<li><strong>Device toggle</strong>: switches preview between desktop and mobile widths</li>
+<li><strong>Language toggle</strong>: switches preview to show the form in selected language</li>
+<li><strong>Publish</strong>: if form is new, shows confirmation dialog with hosted URL. If existing, applies changes immediately with &quot;Changes published&quot; toast</li>
+<li><strong>Preview button</strong>: opens FUND-004 in new tab (full-page preview)</li>
+<li><strong>Saving</strong>: auto-saves draft. Explicit Publish required to make changes live</li>
+<li><strong>Validation</strong>: form name required, at least one suggested amount, at least one payment method</li>
+</ul>
+<h3 id="states-1" tabindex="-1"><a class="heading-anchor" href="#states-1" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>New form</strong>: all fields empty, preview shows placeholder</li>
+<li><strong>Published form</strong>: &quot;Published&quot; badge next to form name, last-published timestamp</li>
+<li><strong>Draft changes</strong>: &quot;Unpublished changes&quot; warning badge</li>
+</ul>
+<hr>
+<h2 id="fund-004-donation-form-preview" tabindex="-1"><a class="heading-anchor" href="#fund-004-donation-form-preview" aria-hidden="true">#</a> FUND-004: Donation Form Preview</h2>
+<p>Full-page preview of a donation form as donors will see it. Accessed from the builder's Preview button.</p>
+<h3 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ⚠ PREVIEW MODE — This form is not live    [← Back to Builder]  [Publish]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│                    (Full rendering of the public donation form               │
+│                     as it will appear to donors — identical                  │
+│                     to FUND-005 / supporter-portal.md public                │
+│                     donation page, but with preview banner)                  │
+│                                                                              │
+│                    Form interactions work (amount selection,                  │
+│                    field validation) but payment submission                   │
+│                    shows &quot;This is a preview&quot; instead of                       │
+│                    processing.                                               │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-3" tabindex="-1"><a class="heading-anchor" href="#interaction-3" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li>Form fields are interactive (validation fires, amounts toggle)</li>
+<li>Submit button shows &quot;Preview — no payment will be processed&quot; tooltip</li>
+<li><strong>&quot;Back to Builder&quot;</strong> returns to FUND-003</li>
+<li><strong>Publish</strong> publishes from preview context</li>
+<li>Mobile preview: accessible via the builder's device toggle or by opening the preview URL on a mobile device</li>
+</ul>
+<hr>
+<h2 id="fund-005-donation-form-public-hosted" tabindex="-1"><a class="heading-anchor" href="#fund-005-donation-form-public-hosted" aria-hidden="true">#</a> FUND-005: Donation Form — Public (Hosted)</h2>
+<p>The public-facing donation page. This is the donor's first touchpoint for web-based donations.</p>
+<blockquote>
+<p><strong>Cross-reference:</strong> The full wireframe for this screen is in <code>supporter/supporter-portal.md</code> — &quot;Public Donation Page (Pre-Auth)&quot;. It covers the tenant-branded donation form, amount selection, donor fields, payment method selection, and the confirmation/receipt flow.</p>
+</blockquote>
+<p>This screen lives at <code>/donate/:form-slug</code> and uses the <code>(public)</code> layout group (no app shell, no login required).</p>
+<hr>
+<h2 id="fund-006-donation-form-embed-config" tabindex="-1"><a class="heading-anchor" href="#fund-006-donation-form-embed-config" aria-hidden="true">#</a> FUND-006: Donation Form — Embed Config</h2>
+<p>Configuration screen for embedding a donation form on external websites. Generates HTML embed code and provides customization options.</p>
+<h3 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Forms    Embed: Spring Campaign Form                                     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Embed Options                                                               │
+│  ─────────────                                                               │
+│                                                                              │
+│  Embed type                                                                  │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐                │
+│  │  [● Inline]    │  │  ○ Modal       │  │  ○ Button      │                │
+│  │  Form renders  │  │  Opens in      │  │  &quot;Donate&quot; btn  │                │
+│  │  directly on   │  │  overlay when  │  │  opens modal   │                │
+│  │  the page      │  │  triggered     │  │  on click      │                │
+│  └────────────────┘  └────────────────┘  └────────────────┘                │
+│                                                                              │
+│  Appearance overrides                                                        │
+│  ☐ Hide header image                                                         │
+│  ☐ Hide header text (amount buttons only)                                    │
+│  ☐ Match host page background (transparent)                                  │
+│                                                                              │
+│  Allowed domains *                                                           │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ partidoverde.org, campaign2026.pr                                   │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  Security: embed will only render on these domains                           │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Embed Code                                                                  │
+│  ──────────                                                                  │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ &lt;script src=&quot;https://app.greengrass.io/embed/v1.js&quot;                 │   │
+│  │   data-form=&quot;spring-campaign&quot;                                       │   │
+│  │   data-type=&quot;inline&quot;                                                │   │
+│  │   data-tenant=&quot;partido-verde&quot;&gt;                                      │   │
+│  │ &lt;/script&gt;                                                           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  [Copy Code]                                                                 │
+│                                                                              │
+│  Preview                                                                     │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  (Rendered preview of the embed as it will appear on a host page)   │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-4" tabindex="-1"><a class="heading-anchor" href="#interaction-4" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Embed type</strong>: radio cards. Code snippet updates in real time as type changes</li>
+<li><strong>Copy Code</strong>: copies to clipboard with confirmation toast</li>
+<li><strong>Allowed domains</strong>: comma-separated. Embed script validates referrer at runtime</li>
+<li><strong>Preview</strong>: live rendering of the selected embed type</li>
+<li>Domain field required — empty domain list means embed won't render anywhere</li>
+</ul>
+<hr>
+<h2 id="fund-018-fundraising-campaign-list" tabindex="-1"><a class="heading-anchor" href="#fund-018-fundraising-campaign-list" aria-hidden="true">#</a> FUND-018: Fundraising Campaign List</h2>
+<p>Browse and manage fundraising campaigns. Campaigns are containers that group donation forms, track goals, and measure performance.</p>
+<h3 id="desktop-5" tabindex="-1"><a class="heading-anchor" href="#desktop-5" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Fundraising Campaigns                                    [+ New Campaign]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Active]  [Upcoming]  [Ended]  [All]                                       │
+│                                                                              │
+│  Campaign              Goal         Raised       Progress   Period           │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Spring Drive 2026     $50,000      $32,100      ████████░░ 64%             │
+│  Online + events       412 donors   $78 avg      Ends Apr 15                │
+│                                                                              │
+│  Monthly Sustainer     $5,000/mo    $4,200/mo    ████████░░ 84%             │
+│  Recurring focus       168 active   $25 avg      Ongoing                    │
+│                                                                              │
+│  Year-End Appeal       $25,000      $25,780      ██████████ 103% ✓          │
+│  Email + SMS           198 donors   $130 avg     Ended Dec 31               │
+│                                                                              │
+│  Launch Fund           $10,000      $1,200       █░░░░░░░░░ 12%             │
+│  Seed funding          15 donors    $80 avg      Starts Apr 1               │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Showing 1-4 of 4                                                            │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-2" tabindex="-1"><a class="heading-anchor" href="#mobile-2" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  Campaigns            [+]  │
+├────────────────────────────┤
+│                            │
+│  [Active] [Upcoming] [All] │
+│                            │
+│  ┌──────────────────────┐  │
+│  │ Spring Drive 2026    │  │
+│  │ $32,100 of $50,000   │  │
+│  │ ████████░░ 64%       │  │
+│  │ 412 donors · Apr 15  │  │
+│  ├──────────────────────┤  │
+│  │ Monthly Sustainer    │  │
+│  │ $4,200 of $5,000/mo  │  │
+│  │ ████████░░ 84%       │  │
+│  │ 168 active · Ongoing │  │
+│  ├──────────────────────┤  │
+│  │ Year-End Appeal  ✓   │  │
+│  │ $25,780 of $25,000   │  │
+│  │ ██████████ 103%      │  │
+│  │ 198 donors · Done    │  │
+│  └──────────────────────┘  │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-5" tabindex="-1"><a class="heading-anchor" href="#interaction-5" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Row click</strong> → opens FUND-019 Campaign Create/Edit in view mode</li>
+<li><strong>Status tabs</strong>: filter by campaign lifecycle. Counts shown in tab labels</li>
+<li><strong>Progress bar</strong>: green when on track (&gt;50% of goal with &gt;50% of time remaining), yellow when behind, full green with checkmark when goal met</li>
+<li><strong>&quot;+ New Campaign&quot;</strong> → opens FUND-019</li>
+</ul>
+<h3 id="states-2" tabindex="-1"><a class="heading-anchor" href="#states-2" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No fundraising campaigns yet. Campaigns help you set goals and track progress for fundraising drives.&quot; [Create Campaign]</li>
+</ul>
+<hr>
+<h2 id="fund-019-fundraising-campaign-createedit" tabindex="-1"><a class="heading-anchor" href="#fund-019-fundraising-campaign-createedit" aria-hidden="true">#</a> FUND-019: Fundraising Campaign Create/Edit</h2>
+<p>Create or configure a fundraising campaign.</p>
+<h3 id="desktop-6" tabindex="-1"><a class="heading-anchor" href="#desktop-6" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Campaigns    New Fundraising Campaign                          [Save]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Campaign Details                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  Campaign name *                                                             │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Spring Drive 2026                                                   │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Description                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Primary fundraising push for spring campaign activities...          │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Goal                                                                        │
+│  ┌────────────────┐  Currency ┌──────┐                                      │
+│  │ 50000          │           │ USD ▾│                                      │
+│  └────────────────┘           └──────┘                                      │
+│                                                                              │
+│  Period                                                                      │
+│  ┌────────────────┐  to  ┌────────────────┐   ☐ Ongoing (no end date)      │
+│  │ Mar 1, 2026    │      │ Apr 15, 2026   │                                 │
+│  └────────────────┘      └────────────────┘                                 │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  ▸ Donation Forms (2 linked)                                                 │
+│  ▸ Linked Communications (5 sends)                                           │
+│  ▸ Alliance Split                                                            │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Performance (read-only in edit mode)                                        │
+│  ─────────────                                                               │
+│  Total raised: $32,100 · 412 donors · Avg: $78 · Recurring: 23%            │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="collapsed-sections" tabindex="-1"><a class="heading-anchor" href="#collapsed-sections" aria-hidden="true">#</a> Collapsed Sections</h3>
+<p><strong>Donation Forms:</strong> List of linked forms with &quot;Link Form&quot; button. Each form shows its name, type (hosted/embedded), and donation count.</p>
+<p><strong>Linked Communications:</strong> Read-only list of email/SMS sends that reference this campaign's donation forms. Shows send date, channel, audience size, and donation attribution.</p>
+<p><strong>Alliance Split:</strong> If the org is in an alliance, option to enable alliance split for this campaign. Links to FUND-015 for configuration.</p>
+<h3 id="interaction-6" tabindex="-1"><a class="heading-anchor" href="#interaction-6" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Save</strong>: validates required fields, saves campaign</li>
+<li><strong>Delete</strong> (edit mode, overflow menu): confirmation dialog, only if no donations received. If donations exist, campaign can be archived but not deleted</li>
+<li><strong>Ongoing checkbox</strong>: disables end date field</li>
+<li><strong>Performance section</strong>: shown only in edit mode (existing campaign), read-only</li>
+</ul>
+<hr>
+<h2 id="fund-007-recurring-donation-management" tabindex="-1"><a class="heading-anchor" href="#fund-007-recurring-donation-management" aria-hidden="true">#</a> FUND-007: Recurring Donation Management</h2>
+<p>Admin view of all recurring donation schedules. Answers &quot;what's our recurring revenue health?&quot;</p>
+<h3 id="desktop-7" tabindex="-1"><a class="heading-anchor" href="#desktop-7" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Recurring Donations                                           [Export ▾]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Summary                                                                     │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │ Active       │  │ MRR          │  │ Avg Amount   │  │ Churn (30d)  │   │
+│  │ 168          │  │ $4,200       │  │ $25          │  │ 3.2%         │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│                                                                              │
+│  [Active]  [Paused]  [Failed]  [Cancelled]  [All]                           │
+│                                                                              │
+│  🔍 Search donor name or email...                                           │
+│  Filters: [Frequency ▾]  [Amount Range ▾]  [Payment Method ▾]              │
+│                                                                              │
+│  Donor               Amount    Frequency  Method      Next Charge  Status   │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Lucía Fernández     $25.00    Monthly    Visa ••41   Mar 15       Active   │
+│  Anonymous           $50.00    Monthly    MC ••82     Mar 12       Active   │
+│  Carlos Ruiz         $100.00   Quarterly  Transfer    Apr 1        Active   │
+│  Pedro Martínez      $10.00    Monthly    Visa ••63   —            Paused   │
+│  Amina Diallo        $30.00    Monthly    Visa ••17   Mar 8        ⚠ Retry  │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Showing 1-50 of 168                                                         │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="status-definitions" tabindex="-1"><a class="heading-anchor" href="#status-definitions" aria-hidden="true">#</a> Status Definitions</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Visual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Active</td>
+<td>Charges processing normally</td>
+<td>Green text</td>
+</tr>
+<tr>
+<td>Paused</td>
+<td>Donor paused (self-service or admin)</td>
+<td>Grey text, italic</td>
+</tr>
+<tr>
+<td>Retry</td>
+<td>Last charge failed, smart retry in progress (up to 4 attempts over 14 days)</td>
+<td>Warning icon, amber</td>
+</tr>
+<tr>
+<td>Failed</td>
+<td>All retry attempts exhausted</td>
+<td>Red text</td>
+</tr>
+<tr>
+<td>Cancelled</td>
+<td>Donor or admin cancelled</td>
+<td>Strikethrough</td>
+</tr>
+</tbody>
+</table>
+<h3 id="row-detail-panel" tabindex="-1"><a class="heading-anchor" href="#row-detail-panel" aria-hidden="true">#</a> Row Detail Panel</h3>
+<p>Clicking a row opens a right-side detail panel:</p>
+<pre><code>┌──────────────────────────────────────┐
+│  Lucía Fernández                     │
+│  lucia.fernandez@email.com           │
+│  [View Contact →]                    │
+│                                      │
+│  ──────────────────                  │
+│                                      │
+│  Schedule                            │
+│  Amount:     $25.00 / month          │
+│  Method:     Visa ••4821             │
+│  Started:    Jan 15, 2024            │
+│  Next:       Mar 15, 2026            │
+│  Total paid: $325 (13 charges)       │
+│                                      │
+│  ──────────────────                  │
+│                                      │
+│  Charge History                      │
+│  Feb 15  $25.00  ✓ Completed         │
+│  Jan 15  $25.00  ✓ Completed         │
+│  Dec 15  $25.00  ✓ Completed         │
+│  Nov 15  $25.00  ⚠ Retry → ✓        │
+│  ...                                 │
+│                                      │
+│  ──────────────────                  │
+│                                      │
+│  Admin Actions                       │
+│  [Pause]  [Cancel]                   │
+│  Both require confirmation dialog    │
+│                                      │
+└──────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-7" tabindex="-1"><a class="heading-anchor" href="#interaction-7" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Row click</strong> → opens detail panel (desktop) or navigates to detail (mobile)</li>
+<li><strong>Export</strong>: CSV with all recurring data, respects current filters</li>
+<li><strong>Admin Pause/Cancel</strong>: confirmation dialog with reason field. Logged to audit trail. Pause is reversible (Resume button appears). Cancel sends notification to donor</li>
+<li><strong>Retry status row</strong>: shows retry attempt count (&quot;Retry 2 of 4, next attempt Mar 9&quot;)</li>
+</ul>
+<h3 id="states-3" tabindex="-1"><a class="heading-anchor" href="#states-3" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No recurring donations yet. When donors choose recurring giving on your donation forms, they'll appear here.&quot;</li>
+</ul>
+<hr>
+<h2 id="fund-008-pledge-management" tabindex="-1"><a class="heading-anchor" href="#fund-008-pledge-management" aria-hidden="true">#</a> FUND-008: Pledge Management</h2>
+<p>Track pledges made during phone banking, canvassing, or events that haven't yet been fulfilled.</p>
+<h3 id="desktop-8" tabindex="-1"><a class="heading-anchor" href="#desktop-8" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Pledges                                          [Export]  [+ New Pledge]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Summary                                                                     │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │ Outstanding  │  │ Value        │  │ Fulfilled    │  │ Lapsed       │   │
+│  │ 47           │  │ $8,350       │  │ 62%          │  │ 12%          │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│                                                                              │
+│  [Pending]  [Reminded]  [Fulfilled]  [Lapsed]  [All]                        │
+│                                                                              │
+│  Donor               Amount    Source         Pledged     Status    Actions  │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  María García        $200      Phone bank     Feb 28      Pending   [⋮]     │
+│  Carlos Ruiz         $100      Canvassing     Feb 25      Reminded  [⋮]     │
+│  Raj Patel           $500      Event          Feb 20      Pending   [⋮]     │
+│  Amina Diallo        $50       Phone bank     Feb 15      Reminded  [⋮]     │
+│  Pedro Martínez      $150      Canvassing     Feb 10      Fulfilled [⋮]     │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Showing 1-47 of 47                                                          │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="pledge-lifecycle" tabindex="-1"><a class="heading-anchor" href="#pledge-lifecycle" aria-hidden="true">#</a> Pledge Lifecycle</h3>
+<pre><code>  Created ──→ Pending ──→ Reminded ──→ Fulfilled
+                │                         ↑
+                │    (donor pays)─────────┘
+                │
+                └──→ Lapsed (after configurable grace period)
+</code></pre>
+<h3 id="row-actions-menu-" tabindex="-1"><a class="heading-anchor" href="#row-actions-menu-" aria-hidden="true">#</a> Row Actions Menu (⋮)</h3>
+<ul>
+<li><strong>Send Reminder</strong>: triggers reminder via configured channel (email, SMS, WhatsApp). Button disabled if reminded within last 7 days</li>
+<li><strong>Record Fulfillment</strong>: links to a received donation, changes status to Fulfilled</li>
+<li><strong>Mark Lapsed</strong>: manual override, requires note</li>
+<li><strong>View Contact</strong>: navigates to CRM-002</li>
+</ul>
+<h3 id="creating-a-pledge-new-pledge" tabindex="-1"><a class="heading-anchor" href="#creating-a-pledge-new-pledge" aria-hidden="true">#</a> Creating a Pledge (+ New Pledge)</h3>
+<pre><code>┌──────────────────────────────────────────────────┐
+│  New Pledge                                [Save] │
+├──────────────────────────────────────────────────┤
+│                                                    │
+│  Donor *             [Search or create contact...] │
+│  Amount *            ┌────────────────────┐       │
+│                      │                    │       │
+│                      └────────────────────┘       │
+│  Source              [Phone bank ▾]                │
+│  Campaign            [Spring Drive ▾]              │
+│                                                    │
+│  Reminder schedule                                 │
+│  ○ Default (7 days, then 14, then 30)              │
+│  ○ Custom                                          │
+│                                                    │
+│  Notes                                             │
+│  ┌────────────────────────────────────────────┐   │
+│  │                                            │   │
+│  └────────────────────────────────────────────┘   │
+│                                                    │
+└──────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="states-4" tabindex="-1"><a class="heading-anchor" href="#states-4" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No pledges recorded yet. Pledges can be created here, or automatically during phone bank and canvassing shifts.&quot;</li>
+</ul>
+<hr>
+<h2 id="fund-009-refund-processing" tabindex="-1"><a class="heading-anchor" href="#fund-009-refund-processing" aria-hidden="true">#</a> FUND-009: Refund Processing</h2>
+<p>Initiate and track refunds. Only Finance Director and Org Admin can refund.</p>
+<h3 id="desktop-9" tabindex="-1"><a class="heading-anchor" href="#desktop-9" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Donations    Refund: Donation #TXN-2024-00847              [Process ▾]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Original Donation                                                           │
+│  ──────────────────                                                          │
+│  Donor:    María García                                                      │
+│  Amount:   $100.00                                                           │
+│  Date:     Mar 3, 2026                                                       │
+│  Method:   Visa ••4821                                                       │
+│  Status:   ✓ Completed                                                       │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Refund Details                                                              │
+│  ──────────────                                                              │
+│                                                                              │
+│  Refund type                                                                 │
+│  ● Full refund ($100.00)                                                     │
+│  ○ Partial refund  ┌────────────┐                                           │
+│                     │            │                                           │
+│                     └────────────┘                                           │
+│                                                                              │
+│  Reason *                                                                    │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Donor requested refund — duplicate donation                         │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ⓘ Refund will be processed to original payment method (Visa ••4821).       │
+│    Processing time: 5–10 business days.                                      │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  ⚠ Alliance Split Impact                                                     │
+│  This donation was split across the alliance:                                │
+│  · Partido Verde: $60.00 (60%)                                               │
+│  · Movimiento Ecologista: $40.00 (40%)                                       │
+│  Refund will reverse both allocations.                                       │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  ⓘ This refund does NOT automatically cancel a recurring donation.           │
+│    To cancel recurring, go to Recurring Donations.                           │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="process-button-dropdown" tabindex="-1"><a class="heading-anchor" href="#process-button-dropdown" aria-hidden="true">#</a> Process Button Dropdown</h3>
+<ul>
+<li><strong>Process Refund</strong>: submits to payment processor. Confirmation dialog: &quot;Refund $100.00 to Visa ••4821? This cannot be undone.&quot;</li>
+<li><strong>Save as Pending</strong>: saves refund request for review by another admin before processing</li>
+</ul>
+<h3 id="interaction-8" tabindex="-1"><a class="heading-anchor" href="#interaction-8" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li>Reached from FUND-002 &quot;Refund&quot; button (pre-fills donation data) or from FUND-001 bulk action</li>
+<li><strong>Reason field</strong>: required, logged to audit trail</li>
+<li><strong>Alliance split section</strong>: only shown if donation was split. Shows each org's portion and confirms reversal</li>
+<li><strong>Cash donation refund</strong>: shows &quot;Cash refunds must be handled manually. Record the refund here for audit purposes.&quot; with a &quot;Record Manual Refund&quot; button instead of processor submission</li>
+<li><strong>Partial refund</strong>: amount field appears, validated against original amount</li>
+</ul>
+<h3 id="refund-history-accessed-from-refunds-sidebar-item" tabindex="-1"><a class="heading-anchor" href="#refund-history-accessed-from-refunds-sidebar-item" aria-hidden="true">#</a> Refund History (accessed from Refunds sidebar item)</h3>
+<pre><code>│  Refunded Donations                                            [Export]     │
+│                                                                              │
+│  Donor               Original   Refunded   Type     Date       Reason       │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  María García        $100.00    $100.00    Full     Mar 3      Duplicate     │
+│  Carlos Ruiz         $250.00    $75.00     Partial  Feb 28     Overcharge    │
+</code></pre>
+<hr>
+<h2 id="fund-010-cash-donation-recording" tabindex="-1"><a class="heading-anchor" href="#fund-010-cash-donation-recording" aria-hidden="true">#</a> FUND-010: Cash Donation Recording</h2>
+<p>Mobile-first form for recording cash donations at events or in the field. Works offline.</p>
+<h3 id="mobile-primary" tabindex="-1"><a class="heading-anchor" href="#mobile-primary" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  ← Cash Donation           │
+├────────────────────────────┤
+│                            │
+│  Amount *                  │
+│  ┌──────────────────────┐  │
+│  │ $                    │  │
+│  └──────────────────────┘  │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Donor (optional)          │
+│                            │
+│  ○ Named donor             │
+│  ● Anonymous               │
+│                            │
+│  (If Named:)               │
+│  Name                      │
+│  ┌──────────────────────┐  │
+│  │                      │  │
+│  └──────────────────────┘  │
+│  Phone or Email            │
+│  ┌──────────────────────┐  │
+│  │                      │  │
+│  └──────────────────────┘  │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Event context             │
+│  ┌──────────────────────┐  │
+│  │ Rally — Plaza del... │  │
+│  └──────────────────────┘  │
+│                            │
+│  Receipt photo             │
+│  ┌──────────────────────┐  │
+│  │    📷 Take Photo     │  │
+│  │    or tap to upload   │  │
+│  └──────────────────────┘  │
+│                            │
+│  Notes                     │
+│  ┌──────────────────────┐  │
+│  │                      │  │
+│  └──────────────────────┘  │
+│                            │
+│  Collected by              │
+│  You (Ana Reyes)           │
+│                            │
+│         [Record Cash       │
+│          Donation]         │
+│                            │
+│  ◌ Offline — will sync     │
+│    when connected          │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="desktop-10" tabindex="-1"><a class="heading-anchor" href="#desktop-10" aria-hidden="true">#</a> Desktop</h3>
+<p>Same form rendered in a centered card (max-width 480px) within the app shell. Used when Finance Director records cash from the office.</p>
+<h3 id="interaction-9" tabindex="-1"><a class="heading-anchor" href="#interaction-9" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Amount</strong>: numeric keyboard on mobile, currency formatted</li>
+<li><strong>Named/Anonymous toggle</strong>: anonymous hides name and contact fields. Jurisdiction rules may require named donor above certain thresholds — warning shown if anonymous exceeds threshold</li>
+<li><strong>Receipt photo</strong>: uses device camera (Capacitor Camera API). Optional. Stored as attachment on the donation record</li>
+<li><strong>&quot;Collected by&quot;</strong>: auto-filled with current user, read-only. Chain of custody starts here</li>
+<li><strong>Offline</strong>: form saves locally, syncs when connected. Shows offline indicator</li>
+<li><strong>Submit confirmation</strong>: &quot;Cash donation of $[amount] recorded&quot; toast. Returns to previous screen or offers &quot;Record Another&quot;</li>
+</ul>
+<h3 id="volunteer-access" tabindex="-1"><a class="heading-anchor" href="#volunteer-access" aria-hidden="true">#</a> Volunteer Access</h3>
+<p>Volunteers see a simplified version: amount, named/anonymous, event context, photo. No notes, no campaign assignment. The donation enters the reconciliation queue (FUND-011) automatically.</p>
+<hr>
+<h2 id="fund-011-cash-reconciliation" tabindex="-1"><a class="heading-anchor" href="#fund-011-cash-reconciliation" aria-hidden="true">#</a> FUND-011: Cash Reconciliation</h2>
+<p>Finance Director matches recorded cash donations against bank deposits. Answers &quot;does the money we recorded match the money we deposited?&quot;</p>
+<h3 id="desktop-11" tabindex="-1"><a class="heading-anchor" href="#desktop-11" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Cash Reconciliation                                      [+ Record Batch]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Unreconciled: 12 records · $1,340         Reconciled this month: $4,200    │
+│                                                                              │
+│  ┌───────────────────────────────────┬──────────────────────────────────┐   │
+│  │                                   │                                  │   │
+│  │  Recorded Cash Donations          │  Bank Deposits                   │   │
+│  │  ─────────────────────            │  ─────────────                   │   │
+│  │                                   │                                  │   │
+│  │  ☐ Mar 3  $50   Ana Reyes        │  Mar 3  $480  Ref: DEP-0312     │   │
+│  │    Rally — Plaza del Sol          │  (No linked records yet)         │   │
+│  │                                   │                                  │   │
+│  │  ☐ Mar 3  $120  Ana Reyes        │  Mar 1  $860  Ref: DEP-0311     │   │
+│  │    Rally — Plaza del Sol          │  Linked: 6 records ✓            │   │
+│  │                                   │                                  │   │
+│  │  ☐ Mar 3  $75   Jorge Vega       │                                  │   │
+│  │    Rally — Plaza del Sol          │  [+ Add Deposit]                 │   │
+│  │                                   │                                  │   │
+│  │  ☑ Mar 2  $200  Miguel Torres    │                                  │   │
+│  │    Door-to-door collection        │                                  │   │
+│  │                                   │                                  │   │
+│  │  ☐ Mar 2  $150  Miguel Torres    │                                  │   │
+│  │    Door-to-door collection        │                                  │   │
+│  │                                   │                                  │   │
+│  │  ─────────────────────            │                                  │   │
+│  │  Selected: 1 · $200              │                                  │   │
+│  │  [Match to Deposit ▾]            │                                  │   │
+│  │                                   │                                  │   │
+│  └───────────────────────────────────┴──────────────────────────────────┘   │
+│                                                                              │
+│  ⚠ Discrepancies                                                             │
+│  ─────────────                                                               │
+│  DEP-0310 (Feb 28): Deposit $500, Linked records $475. Difference: $25      │
+│  [Add Adjustment]  [Add Note]                                                │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-10" tabindex="-1"><a class="heading-anchor" href="#interaction-10" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Two-column layout</strong>: recorded cash on the left, bank deposits on the right</li>
+<li><strong>Matching workflow</strong>: select one or more cash records (checkboxes) → click &quot;Match to Deposit&quot; → select or create a deposit → records linked</li>
+<li><strong>&quot;+ Add Deposit&quot;</strong>: manually enter bank deposit reference and amount</li>
+<li><strong>&quot;+ Record Batch&quot;</strong>: opens a form to record a batch of cash (e.g., &quot;Event envelope: $480, 6 individual records&quot;)</li>
+<li><strong>Discrepancies section</strong>: auto-calculated when linked records don't sum to deposit amount. Adjustments require a note (logged to audit trail)</li>
+<li><strong>Chain of custody</strong>: clicking a cash record shows the full chain (collector → handoff → deposit)</li>
+</ul>
+<h3 id="states-5" tabindex="-1"><a class="heading-anchor" href="#states-5" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty</strong>: &quot;No unreconciled cash donations. All recorded cash has been matched to bank deposits.&quot;</li>
+<li><strong>No deposits</strong>: right column shows &quot;No deposits recorded yet. Add your first bank deposit to start matching.&quot;</li>
+</ul>
+<hr>
+<h2 id="fund-012-compliance-flag-review" tabindex="-1"><a class="heading-anchor" href="#fund-012-compliance-flag-review" aria-hidden="true">#</a> FUND-012: Compliance Flag Review</h2>
+<p>Review donations flagged by automated fraud detection rules. Critical for campaign finance compliance.</p>
+<h3 id="desktop-12" tabindex="-1"><a class="heading-anchor" href="#desktop-12" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Compliance Flags                                     [Flag Settings ⚙]     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                      │
+│  │ ⚑ Open       │  │ ✓ Resolved   │  │ Total (30d)  │                      │
+│  │ 5            │  │ 23           │  │ 28           │                      │
+│  └──────────────┘  └──────────────┘  └──────────────┘                      │
+│                                                                              │
+│  [Open]  [Resolved]  [All]                                                  │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  ⚠ HIGH — Contribution Limit Approaching                            │   │
+│  │  Raj Patel — $1,000 donation on Mar 1                                │   │
+│  │  Total this cycle: $4,500 of $5,000 limit                           │   │
+│  │  Flagged: Mar 1, 2:34 PM                                            │   │
+│  │                                                                      │   │
+│  │  [✓ Approve]  [↩ Refund]  [View Donation →]                        │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │                                                                      │   │
+│  │  ⚠ HIGH — Velocity Alert                                            │   │
+│  │  Unknown Donor (card ••9182) — 3 donations in 24 hours              │   │
+│  │  Amounts: $200, $200, $200 = $600 total                             │   │
+│  │  Flagged: Mar 2, 8:15 AM                                            │   │
+│  │                                                                      │   │
+│  │  [✓ Approve]  [↩ Refund All]  [⛔ Block Card]  [View Donations →]  │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │                                                                      │   │
+│  │  ⚡ MEDIUM — Geographic Mismatch                                     │   │
+│  │  Lisa Chen — IP location (California) ≠ billing address (PR)        │   │
+│  │  $150 donation on Mar 2                                              │   │
+│  │  Flagged: Mar 2, 3:22 PM                                            │   │
+│  │                                                                      │   │
+│  │  [✓ Approve]  [↩ Refund]  [View Donation →]                        │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Note required before any action ────────────────────────────────────────   │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Review notes...                                                     │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="flag-types" tabindex="-1"><a class="heading-anchor" href="#flag-types" aria-hidden="true">#</a> Flag Types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Severity</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contribution limit approaching</td>
+<td>High</td>
+<td>Within 10% of jurisdiction max</td>
+</tr>
+<tr>
+<td>Contribution limit exceeded</td>
+<td>Critical</td>
+<td>Over jurisdiction max</td>
+</tr>
+<tr>
+<td>Velocity alert</td>
+<td>High</td>
+<td>Multiple donations from same source in short window</td>
+</tr>
+<tr>
+<td>Geographic mismatch</td>
+<td>Medium</td>
+<td>IP location ≠ billing address</td>
+</tr>
+<tr>
+<td>Info mismatch</td>
+<td>Medium</td>
+<td>Name/address variations across donations</td>
+</tr>
+<tr>
+<td>Known bad actor</td>
+<td>Critical</td>
+<td>Previously blocked donor/payment method</td>
+</tr>
+<tr>
+<td>Anonymous threshold</td>
+<td>High</td>
+<td>Anonymous donation exceeds jurisdiction limit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction-11" tabindex="-1"><a class="heading-anchor" href="#interaction-11" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Actions require note</strong>: the note field at the bottom must have content before Approve, Refund, or Block actions are enabled</li>
+<li><strong>Approve</strong>: marks flag as resolved, donation proceeds normally. Logged to audit trail</li>
+<li><strong>Refund</strong>: navigates to FUND-009 pre-filled. Flag resolved on refund completion</li>
+<li><strong>Block Card</strong>: adds payment method to block list. Confirmation dialog warns this affects future donations</li>
+<li><strong>Flag Settings</strong> (⚙): navigates to configuration screen for threshold values and automated rules</li>
+<li><strong>Severity sorting</strong>: Critical flags always sorted first, then High, then Medium</li>
+</ul>
+<h3 id="states-6" tabindex="-1"><a class="heading-anchor" href="#states-6" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>Empty (Open tab)</strong>: &quot;No open compliance flags. All flagged donations have been reviewed.&quot; ✓</li>
+<li><strong>Empty (All)</strong>: &quot;No compliance flags in the last 30 days. Your fraud detection rules are configured in Flag Settings.&quot;</li>
+</ul>
+<hr>
+<h2 id="fund-013-ab-test-setup" tabindex="-1"><a class="heading-anchor" href="#fund-013-ab-test-setup" aria-hidden="true">#</a> FUND-013: A/B Test Setup</h2>
+<p>Configure A/B tests for donation forms to optimize conversion.</p>
+<h3 id="desktop-13" tabindex="-1"><a class="heading-anchor" href="#desktop-13" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← A/B Tests    New A/B Test                                      [Start]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Test name *                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Spring form — suggested amounts test                                │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Base form *                                                                 │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Spring Campaign Form                                           [▾]  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Variants                                                                    │
+│  ─────────                                                                   │
+│                                                                              │
+│  ┌──────────────────────────────────┬──────────────────────────────────┐   │
+│  │  A — Control (50%)               │  B — Variant (50%)               │   │
+│  │  ─────────────                   │  ─────────────                   │   │
+│  │                                  │                                  │   │
+│  │  Amounts: $25, $50, $100,        │  Amounts: $50, $100, $250,       │   │
+│  │           $250, $500             │           $500, $1000            │   │
+│  │  Default: $100                   │  Default: $250                   │   │
+│  │                                  │                                  │   │
+│  │  (All other settings from        │  What to vary:                   │   │
+│  │   base form)                     │  ☑ Suggested amounts             │   │
+│  │                                  │  ☑ Default amount                │   │
+│  │                                  │  ☐ Button text                   │   │
+│  │                                  │  ☐ Header text                   │   │
+│  │                                  │  ☐ Hero image                    │   │
+│  │                                  │                                  │   │
+│  │                                  │  [Edit Variant →]                │   │
+│  └──────────────────────────────────┴──────────────────────────────────┘   │
+│                                                                              │
+│  Traffic split                                                               │
+│  A: [50]%    B: [50]%                                                        │
+│                                                                              │
+│  Minimum sample size                                                         │
+│  ┌────────┐ donations per variant before results are significant             │
+│  │ 100    │                                                                  │
+│  └────────┘                                                                  │
+│                                                                              │
+│  Auto-declare winner                                                         │
+│  ☑ Automatically switch to winning variant when significance reached         │
+│  Metric: ○ Conversion rate  ● Revenue per visitor  ○ Average donation        │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-12" tabindex="-1"><a class="heading-anchor" href="#interaction-12" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Base form</strong>: dropdown of published donation forms. Control variant inherits all settings</li>
+<li><strong>&quot;Edit Variant&quot;</strong>: opens a subset of the form builder (FUND-003) with only the varied fields editable</li>
+<li><strong>Traffic split</strong>: numeric fields, must sum to 100%. Slider alternative considered but numeric is more precise</li>
+<li><strong>Start</strong>: begins the test. Confirmation dialog: &quot;Start A/B test? Traffic to [form name] will be split between variants.&quot;</li>
+<li><strong>Running test</strong>: Start button changes to &quot;Stop Test&quot;. Variant settings become read-only. Traffic split can still be adjusted (e.g., to stop sending traffic to a losing variant)</li>
+</ul>
+<h3 id="ab-test-list-accessed-from-sidebar" tabindex="-1"><a class="heading-anchor" href="#ab-test-list-accessed-from-sidebar" aria-hidden="true">#</a> A/B Test List (accessed from sidebar)</h3>
+<pre><code>│  A/B Tests                                               [+ New Test]       │
+│                                                                              │
+│  Test                      Form              Status    Winner   Started      │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Amounts test              Spring Campaign    Running   —        Mar 1       │
+│  Button color test         Main Website       Done      B        Feb 1       │
+│  Header image test         Year-End           Done      A        Jan 15      │
+</code></pre>
+<hr>
+<h2 id="fund-014-ab-test-results" tabindex="-1"><a class="heading-anchor" href="#fund-014-ab-test-results" aria-hidden="true">#</a> FUND-014: A/B Test Results</h2>
+<p>Results dashboard for a running or completed A/B test.</p>
+<h3 id="desktop-14" tabindex="-1"><a class="heading-anchor" href="#desktop-14" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← A/B Tests    Amounts Test — Spring Campaign Form         [Stop Test]     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Status: Running · Started Mar 1 · 18 days                                  │
+│                                                                              │
+│  ┌──────────────────────────────────┬──────────────────────────────────┐   │
+│  │  A — Control                     │  B — Variant                     │   │
+│  │  ────────────                    │  ────────────                    │   │
+│  │                                  │                                  │   │
+│  │  Visitors      1,247             │  Visitors      1,253             │   │
+│  │  Donations     89                │  Donations     72                │   │
+│  │  Conv. rate    7.1%              │  Conv. rate    5.7%              │   │
+│  │  Revenue       $6,230            │  Revenue       $7,920     ★     │   │
+│  │  Avg donation  $70               │  Avg donation  $110       ★     │   │
+│  │  Rev/visitor   $5.00             │  Rev/visitor   $6.32      ★     │   │
+│  │                                  │                                  │   │
+│  └──────────────────────────────────┴──────────────────────────────────┘   │
+│                                                                              │
+│  Statistical Significance                                                    │
+│  ────────────────────────                                                    │
+│  Revenue per visitor:  B leads by 26%                                        │
+│  Confidence: 87% (target: 95%)                                               │
+│  Estimated samples needed: ~40 more donations per variant                    │
+│  ████████████████████░░░░ 87%                                               │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Daily Breakdown                                                             │
+│  ────────────────                                                            │
+│  Date       A visits  A conv  A rev    B visits  B conv  B rev               │
+│  Mar 18     68        5       $350     72        4       $440                │
+│  Mar 17     71        4       $280     65        3       $330                │
+│  Mar 16     74        6       $420     70        5       $550                │
+│  ...                                                                         │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  [Declare B Winner]  — applies variant B settings to the form permanently   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-13" tabindex="-1"><a class="heading-anchor" href="#interaction-13" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>★ indicators</strong>: mark the leading variant for each metric</li>
+<li><strong>Confidence bar</strong>: shows progress toward statistical significance</li>
+<li><strong>&quot;Declare Winner&quot;</strong>: confirmation dialog, applies winning variant's settings to the base form, ends the test. Button enabled when confidence &gt; 90% or manually at any time</li>
+<li><strong>&quot;Stop Test&quot;</strong>: ends test without declaring a winner. Traffic returns to 100% control</li>
+<li><strong>Completed test</strong>: shows final results with &quot;Winner: B&quot; badge, date declared, and impact summary</li>
+</ul>
+<hr>
+<h2 id="fund-015-alliance-split-configuration" tabindex="-1"><a class="heading-anchor" href="#fund-015-alliance-split-configuration" aria-hidden="true">#</a> FUND-015: Alliance Split Configuration</h2>
+<p>Configure how donations are split between alliance member organizations. Requires unanimous consent from all participating orgs.</p>
+<h3 id="desktop-15" tabindex="-1"><a class="heading-anchor" href="#desktop-15" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Alliance Fundraising Splits                              [+ New Split ▾]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ⓘ Split changes require approval from all member organizations.            │
+│                                                                              │
+│  Active Splits                                                               │
+│  ──────────────                                                              │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Spring Drive 2026                                          [Edit]   │   │
+│  │  Type: Percentage-based                                              │   │
+│  │                                                                      │   │
+│  │  Partido Verde              60%     ████████████░░░░░░░░            │   │
+│  │  Movimiento Ecologista      25%     █████░░░░░░░░░░░░░░            │   │
+│  │  Candidatura Torres         15%     ███░░░░░░░░░░░░░░░░            │   │
+│  │                                                                      │   │
+│  │  Applied to: Spring Campaign Form, Event Donation Form               │   │
+│  │  Disbursement: Immediate                                             │   │
+│  │  Status: ✓ Active — Approved by all 3 orgs                          │   │
+│  │                                                                      │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  General Alliance Fund                                      [Edit]   │   │
+│  │  Type: Fixed amount first, then percentage                           │   │
+│  │                                                                      │   │
+│  │  First $500 → Partido Verde (host org)                               │   │
+│  │  Remainder:                                                          │   │
+│  │  Partido Verde              40%     ████████░░░░░░░░░░░░            │   │
+│  │  Movimiento Ecologista      35%     ███████░░░░░░░░░░░░░            │   │
+│  │  Candidatura Torres         25%     █████░░░░░░░░░░░░░░░            │   │
+│  │                                                                      │   │
+│  │  Applied to: Main Website Form                                       │   │
+│  │  Disbursement: Monthly batch                                         │   │
+│  │  Status: ✓ Active — Approved by all 3 orgs                          │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Pending Approval                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Year-End Appeal Split                               [View Details]  │   │
+│  │  Proposed by: Movimiento Ecologista · Feb 28                        │   │
+│  │  Waiting on: Candidatura Torres                                      │   │
+│  │  ◷ Partido Verde ✓  Movimiento ✓  Torres ◷                         │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="new-split-edit-form" tabindex="-1"><a class="heading-anchor" href="#new-split-edit-form" aria-hidden="true">#</a> New Split / Edit Form</h3>
+<pre><code>│  Split Configuration                                                         │
+│  ───────────────────                                                         │
+│                                                                              │
+│  Name *          ┌──────────────────────────────────────┐                   │
+│                  │ Spring Drive 2026                     │                   │
+│                  └──────────────────────────────────────┘                   │
+│                                                                              │
+│  Split type                                                                  │
+│  ● Percentage-based (each org gets a fixed %)                                │
+│  ○ Fixed amount first (one org gets first $X, rest split %)                  │
+│  ○ Threshold-based (split changes at revenue thresholds)                     │
+│                                                                              │
+│  Allocations                                                                 │
+│  Partido Verde           [60]%  ████████████░░░░░░░░                        │
+│  Movimiento Ecologista   [25]%  █████░░░░░░░░░░░░░░                        │
+│  Candidatura Torres      [15]%  ███░░░░░░░░░░░░░░░░                        │
+│                          ─────                                               │
+│                          100%   ← must sum to 100                            │
+│                                                                              │
+│  Apply to forms                                                              │
+│  ☑ Spring Campaign Form                                                      │
+│  ☑ Event Donation Form                                                       │
+│  ☐ Main Website Form                                                         │
+│                                                                              │
+│  Disbursement                                                                │
+│  ● Immediate (each donation split at time of receipt)                        │
+│  ○ Monthly batch (split calculated and disbursed monthly)                    │
+│                                                                              │
+│  [Submit for Approval]                                                       │
+│  All 3 member organizations must approve before this split activates.        │
+</code></pre>
+<h3 id="interaction-14" tabindex="-1"><a class="heading-anchor" href="#interaction-14" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Percentage fields</strong>: must sum to 100%. Validation prevents save if sum ≠ 100</li>
+<li><strong>&quot;Submit for Approval&quot;</strong>: sends approval requests to all member org admins. Status changes to &quot;Pending Approval&quot;</li>
+<li><strong>Approval flow</strong>: each org admin sees the proposal in their notification center and on this screen. Must explicitly approve. Unanimous required</li>
+<li><strong>Edit existing</strong>: creates a new pending version. Current split remains active until new version is unanimously approved</li>
+</ul>
+<h3 id="states-7" tabindex="-1"><a class="heading-anchor" href="#states-7" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>No alliance</strong>: &quot;Your organization is not part of an alliance. Alliance fundraising splits allow coalition members to share donation revenue.&quot; [Learn More →]</li>
+<li><strong>Alliance, no splits</strong>: &quot;No fundraising splits configured. Create a split to share donation revenue across alliance members.&quot; [Create Split]</li>
+</ul>
+<hr>
+<h2 id="fund-016-alliance-fundraising-report" tabindex="-1"><a class="heading-anchor" href="#fund-016-alliance-fundraising-report" aria-hidden="true">#</a> FUND-016: Alliance Fundraising Report</h2>
+<p>Cross-org fundraising analytics for alliance members.</p>
+<h3 id="desktop-16" tabindex="-1"><a class="heading-anchor" href="#desktop-16" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Alliance Fundraising Report                    [Date Range ▾]  [Export ▾]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Coalición Verde — Fundraising Summary                                       │
+│  Period: Mar 1–31, 2026                                                      │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
+│  │ Total Raised │  │ Donations    │  │ Avg Gift     │  │ Splits Paid  │   │
+│  │ $82,400      │  │ 847          │  │ $97          │  │ $78,200      │   │
+│  │ across 3 orgs│  │ across 3 orgs│  │              │  │ of $82,400   │   │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘   │
+│                                                                              │
+│  Per-Organization Breakdown                                                  │
+│  ──────────────────────────                                                  │
+│                                                                              │
+│  Organization           Gross      Split Recv'd  Split Paid  Net Position   │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Partido Verde          $52,100    $8,200        $20,840     $39,460        │
+│  Movimiento Ecologista  $18,300    $10,600       $7,320      $21,580        │
+│  Candidatura Torres     $12,000    $9,400        $4,800      $16,600        │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  Alliance Total         $82,400                               $77,640       │
+│                                                                              │
+│  By Campaign                                                                 │
+│  ───────────                                                                 │
+│  Campaign              Total     PV Share    ME Share    CT Share            │
+│  Spring Drive          $52,100   $31,260     $13,025     $7,815             │
+│  General Fund          $18,300   $7,820      $6,405      $4,575             │
+│  Events                $12,000   $7,200      $3,000      $1,800             │
+│                                                                              │
+│  By Payment Method                                                           │
+│  ─────────────────                                                           │
+│  Method        Count    Amount     % of Total                                │
+│  Card          612      $64,800    78.6%                                     │
+│  Transfer      108      $12,400    15.0%                                     │
+│  Cash          94       $3,800     4.6%                                      │
+│  M-Pesa        33       $1,400     1.7%                                      │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Disbursement History                                                        │
+│  ─────────────────────                                                       │
+│  Date       Type       From → To                        Amount   Status      │
+│  Mar 15     Monthly    Partido Verde → Mov. Ecologista  $2,100   ✓ Sent     │
+│  Mar 15     Monthly    Partido Verde → Cand. Torres     $1,200   ✓ Sent     │
+│  Mar 1      Immediate  Mov. Ecologista → Partido Verde  $580     ✓ Sent     │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-15" tabindex="-1"><a class="heading-anchor" href="#interaction-15" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Date range</strong>: preset periods (This month, Last month, This quarter, This year, Custom)</li>
+<li><strong>Export</strong>: CSV or PDF. PDF version formatted for board reporting. Audit-logged</li>
+<li><strong>&quot;Across N orgs&quot; attribution</strong>: consistent with alliance visual pattern</li>
+<li><strong>Member org view</strong>: when a member org (not the alliance admin) views this report, they see only their own columns with alliance totals. They cannot see other orgs' individual gross amounts — only the split amounts relevant to them</li>
+</ul>
+<h3 id="states-8" tabindex="-1"><a class="heading-anchor" href="#states-8" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>No data</strong>: &quot;No alliance fundraising activity in this period.&quot; [Change Date Range]</li>
+</ul>
+<hr>
+<h2 id="fund-017-payment-processor-configuration" tabindex="-1"><a class="heading-anchor" href="#fund-017-payment-processor-configuration" aria-hidden="true">#</a> FUND-017: Payment Processor Configuration</h2>
+<p>Connect and manage payment processor accounts. OA-only screen.</p>
+<h3 id="desktop-17" tabindex="-1"><a class="heading-anchor" href="#desktop-17" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Payment Processors                                                         │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ⓘ Each payment method routes to a processor. Configure at least one        │
+│    processor to start accepting donations.                                   │
+│                                                                              │
+│  Connected Processors                                                        │
+│  ─────────────────────                                                       │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Stripe                                              [Test] [⚙]     │   │
+│  │  Connected: Jan 15, 2024                                            │   │
+│  │  Status: ✓ Live                                                     │   │
+│  │  Methods: Card (Visa, MC, Amex), Bank transfer (ACH)               │   │
+│  │  Last transaction: Mar 3, 2026 (2 min ago)                          │   │
+│  │  Success rate (30d): 98.2%                                          │   │
+│  ├──────────────────────────────────────────────────────────────────────┤   │
+│  │  M-Pesa (Safaricom)                                  [Test] [⚙]     │   │
+│  │  Connected: Feb 1, 2025                                             │   │
+│  │  Status: ✓ Live                                                     │   │
+│  │  Methods: M-Pesa mobile money                                       │   │
+│  │  Last transaction: Mar 2, 2026                                      │   │
+│  │  Success rate (30d): 96.7%                                          │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Add Processor                                                               │
+│  ─────────────                                                               │
+│                                                                              │
+│  Recommended for your jurisdiction (Puerto Rico):                            │
+│                                                                              │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐                │
+│  │  ATH Móvil     │  │  PayPal        │  │  Other         │                │
+│  │  Local PR      │  │  International │  │  Manual config │                │
+│  │  [Connect →]   │  │  [Connect →]   │  │  [Connect →]   │                │
+│  └────────────────┘  └────────────────┘  └────────────────┘                │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Settlement Currency: USD ▾                                                  │
+│  Multi-currency acceptance: ☑ Enabled (donors can pay in their currency)    │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="connect-flow-inline-expansion" tabindex="-1"><a class="heading-anchor" href="#connect-flow-inline-expansion" aria-hidden="true">#</a> Connect Flow (inline expansion)</h3>
+<p>Clicking &quot;Connect →&quot; expands a guided setup:</p>
+<pre><code>│  Connect Stripe                                                              │
+│  ──────────────                                                              │
+│                                                                              │
+│  Step 1 of 3: Enter API credentials                                          │
+│                                                                              │
+│  ⓘ Find these in your Stripe Dashboard → Developers → API Keys             │
+│                                                                              │
+│  Publishable key *                                                           │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ pk_live_...                                                         │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Secret key *                                                                │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ ••••••••••••••••                                                    │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  🔒 Encrypted in Vault. Never displayed again after saving.                 │
+│                                                                              │
+│  [Next: Verify Connection]                                                   │
+│                                                                              │
+│  Step 2: Verification (auto-runs)                                            │
+│  ✓ API connection valid                                                      │
+│  ✓ Account active and verified                                               │
+│  ✓ Available methods: Card (Visa, MC, Amex), ACH                            │
+│                                                                              │
+│  Step 3: Test Transaction                                                    │
+│  [Run Test Charge ($1.00)]  — charges and immediately refunds                │
+│  Result: ✓ Test charge successful, refund processed                          │
+│                                                                              │
+│  [Save &amp; Go Live]                                                            │
+</code></pre>
+<h3 id="interaction-16" tabindex="-1"><a class="heading-anchor" href="#interaction-16" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Credential entry</strong>: secret keys are write-only. After save, displayed as masked (••••). Cannot be viewed again, only replaced</li>
+<li><strong>Test button</strong> (on connected processor): runs a test charge and refund. Shows result inline</li>
+<li><strong>Settings gear</strong> (⚙): opens processor-specific settings (webhook URL, supported payment methods, fee configuration)</li>
+<li><strong>Disconnect</strong>: in settings gear menu. Confirmation dialog warns about impact on active forms. Cannot disconnect if it's the only processor</li>
+</ul>
+<h3 id="security-note" tabindex="-1"><a class="heading-anchor" href="#security-note" aria-hidden="true">#</a> Security Note</h3>
+<ul>
+<li>API credentials stored in Vault, encrypted at rest</li>
+<li>Only Org Admin can access this screen</li>
+<li>All credential changes logged to audit trail</li>
+</ul>
+<h3 id="states-9" tabindex="-1"><a class="heading-anchor" href="#states-9" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>No processors</strong>: &quot;Connect a payment processor to start accepting online donations. GreenGrass supports multiple processors — you can connect one for each payment method.&quot; [Get Started]</li>
+</ul>
+<hr>
+<h2 id="fund-020-year-end-statement-generator" tabindex="-1"><a class="heading-anchor" href="#fund-020-year-end-statement-generator" aria-hidden="true">#</a> FUND-020: Year-End Statement Generator</h2>
+<p>Generate and send consolidated year-end donation statements to donors.</p>
+<h3 id="desktop-18" tabindex="-1"><a class="heading-anchor" href="#desktop-18" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Year-End Statements                                                        │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Generate Statements                                                         │
+│  ───────────────────                                                         │
+│                                                                              │
+│  Fiscal year *                                                               │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ 2025                                                           [▾]  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Preview                                                                     │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Donors with donations in 2025:               412                    │   │
+│  │ Total donations:                             $347,200               │   │
+│  │ Donors with email addresses:                 398 (96.6%)            │   │
+│  │ Donors without email (manual handling):      14 (3.4%)              │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Statement includes:                                                         │
+│  ☑ All donations (one-time, recurring charges, fulfilled pledges)            │
+│  ☑ Per-campaign breakdown                                                    │
+│  ☑ Tax-deductibility statement (jurisdiction-specific)                       │
+│  ☑ Organization legal name and registration number                           │
+│  ☐ Include refunded donations (shown as net $0)                              │
+│                                                                              │
+│  Delivery                                                                    │
+│  ● Email to all donors with email addresses (398)                            │
+│  ○ Generate PDFs only (download as ZIP)                                      │
+│                                                                              │
+│  Email preview                                                               │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │ Subject: Your 2025 Donation Statement — Partido Verde               │   │
+│  │                                                                      │   │
+│  │ Dear {donor_name},                                                   │   │
+│  │                                                                      │   │
+│  │ Thank you for your generous support in 2025. Attached is your        │   │
+│  │ consolidated donation statement for tax purposes.                    │   │
+│  │                                                                      │   │
+│  │ Total contributions: {total_amount}                                  │   │
+│  │ Number of gifts: {gift_count}                                        │   │
+│  │                                                                      │   │
+│  │ [View Full Statement]                                                │   │
+│  │                                                                      │   │
+│  │ With gratitude,                                                      │   │
+│  │ Partido Verde de Puerto Rico                                         │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│  [Edit Email Template]                                                       │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  [Preview Sample Statement]  [Generate &amp; Send]                               │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Previous Generations                                                        │
+│  ─────────────────────                                                       │
+│  2025  Generated Jan 15, 2026  398 sent, 14 manual  [Download ZIP]          │
+│  2024  Generated Jan 12, 2025  312 sent, 8 manual   [Download ZIP]          │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-17" tabindex="-1"><a class="heading-anchor" href="#interaction-17" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>&quot;Preview Sample Statement&quot;</strong>: generates a PDF preview using a real donor record (most recent large donor), opens in new tab</li>
+<li><strong>&quot;Generate &amp; Send&quot;</strong>: confirmation dialog: &quot;Generate 398 statements and send via email? 14 donors without email will be available for manual download.&quot; Progress bar during generation. Background process — user can navigate away</li>
+<li><strong>&quot;Download ZIP&quot;</strong>: downloads all generated PDFs for the year</li>
+<li><strong>Fiscal year dropdown</strong>: lists years with donation activity</li>
+<li><strong>Email template</strong>: editable subject and body with merge fields. HTML preview</li>
+</ul>
+<h3 id="states-10" tabindex="-1"><a class="heading-anchor" href="#states-10" aria-hidden="true">#</a> States</h3>
+<ul>
+<li><strong>No donations</strong>: &quot;No donations recorded for the selected fiscal year.&quot; [Change Year]</li>
+</ul>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FUND-001 Donation List</td>
+<td>No donations yet. Create a donation form to start accepting contributions.</td>
+<td>Create Form</td>
+</tr>
+<tr>
+<td>FUND-007 Recurring</td>
+<td>No recurring donations yet. When donors choose recurring giving on your donation forms, they'll appear here.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>FUND-008 Pledges</td>
+<td>No pledges recorded yet. Pledges can be created here, or automatically during phone bank and canvassing shifts.</td>
+<td>Create Pledge</td>
+</tr>
+<tr>
+<td>FUND-012 Compliance</td>
+<td>No open compliance flags. All flagged donations have been reviewed. ✓</td>
+<td>—</td>
+</tr>
+<tr>
+<td>FUND-015 Splits (no alliance)</td>
+<td>Your organization is not part of an alliance.</td>
+<td>Learn More</td>
+</tr>
+<tr>
+<td>FUND-015 Splits (no splits)</td>
+<td>No fundraising splits configured. Create a split to share donation revenue across alliance members.</td>
+<td>Create Split</td>
+</tr>
+<tr>
+<td>FUND-017 Processors</td>
+<td>Connect a payment processor to start accepting online donations.</td>
+<td>Get Started</td>
+</tr>
+<tr>
+<td>FUND-018 Campaigns</td>
+<td>No fundraising campaigns yet. Campaigns help you set goals and track progress for fundraising drives.</td>
+<td>Create Campaign</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>All currency amounts use proper formatting with currency symbol and locale-appropriate separators</li>
+<li>Compliance flag severity levels are communicated via icon + text + color (not color alone)</li>
+<li>Donation status uses icon + text label (not just color)</li>
+<li>Form builder preview is not the only way to verify settings — settings panel shows all values textually</li>
+<li>Cash donation recording form uses large touch targets (48px min) for field use</li>
+<li>A/B test results use ★ text marker alongside visual indicators for leading variant</li>
+<li>Alliance split percentages shown as both numeric value and proportional bar</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Donation list summary bar</td>
+<td>Inline metric cards above the table</td>
+<td>Finance Director checks totals frequently — should be visible without scrolling</td>
+</tr>
+<tr>
+<td>Flagged donations in main list</td>
+<td>Warning row highlight + flag icon in status column</td>
+<td>Flags must be noticeable but not separate from normal donation flow</td>
+</tr>
+<tr>
+<td>Cash recording as mobile-first</td>
+<td>Full-screen centered form, camera integration</td>
+<td>Cash donations happen at events, in the field — phone is the primary device</td>
+</tr>
+<tr>
+<td>Reconciliation as two-column</td>
+<td>Cash records left, bank deposits right</td>
+<td>Mirrors the mental model of matching two lists — like a bookkeeper's desk</td>
+</tr>
+<tr>
+<td>A/B test as separate screens</td>
+<td>Setup and Results are distinct (FUND-013, FUND-014)</td>
+<td>Setup is a configuration task (edit mode), Results is an analytics task (read mode) — different mental modes</td>
+</tr>
+<tr>
+<td>Alliance split approval inline</td>
+<td>Approval status shown on the split card, not a separate queue</td>
+<td>Splits are few and infrequent — a dedicated queue would usually be empty</td>
+</tr>
+<tr>
+<td>Payment processor connect flow</td>
+<td>Inline stepped expansion, not a wizard</td>
+<td>Only 3 steps, simple enough for inline. Wizard overhead not warranted</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li><strong>Refund time limits</strong> — should there be a maximum age for refundable donations (e.g., 90 days)? Processor policies vary</li>
+<li><strong>Pledge reminder channels</strong> — should pledge reminders support all channels (email, SMS, WhatsApp) or just email? Channel availability varies by contact data quality</li>
+<li><strong>Cash photo requirements</strong> — should receipt photos be required above a certain cash amount? Balances audit needs against field friction</li>
+<li><strong>A/B test variant count</strong> — should we support more than 2 variants (A/B/C testing)? Increases complexity but some orgs may want it</li>
+<li><strong>Alliance split dispute resolution</strong> — what happens if a member org disputes a split calculation? Need a formal process beyond the approval flow</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#finance-director-navigation-context"># Finance Director Navigation Context</a></li><li class="toc-2"><a href="#fund-001-donation-list"># FUND-001: Donation List</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#filter-options"># Filter Options</a></li><li class="toc-3"><a href="#interaction"># Interaction</a></li><li class="toc-3"><a href="#states"># States</a></li><li class="toc-2"><a href="#fund-002-donation-detail"># FUND-002: Donation Detail</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-3"><a href="#mobile-1"># Mobile</a></li><li class="toc-3"><a href="#flagged-donation-variant"># Flagged Donation Variant</a></li><li class="toc-3"><a href="#interaction-1"># Interaction</a></li><li class="toc-3"><a href="#multi-currency-variant"># Multi-Currency Variant</a></li><li class="toc-2"><a href="#fund-003-donation-form-builder"># FUND-003: Donation Form Builder</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-3"><a href="#collapsed-sections-detail"># Collapsed Sections Detail</a></li><li class="toc-3"><a href="#interaction-2"># Interaction</a></li><li class="toc-3"><a href="#states-1"># States</a></li><li class="toc-2"><a href="#fund-004-donation-form-preview"># FUND-004: Donation Form Preview</a></li><li class="toc-3"><a href="#desktop-3"># Desktop</a></li><li class="toc-3"><a href="#interaction-3"># Interaction</a></li><li class="toc-2"><a href="#fund-005-donation-form-public-hosted"># FUND-005: Donation Form — Public (Hosted)</a></li><li class="toc-2"><a href="#fund-006-donation-form-embed-config"># FUND-006: Donation Form — Embed Config</a></li><li class="toc-3"><a href="#desktop-4"># Desktop</a></li><li class="toc-3"><a href="#interaction-4"># Interaction</a></li><li class="toc-2"><a href="#fund-018-fundraising-campaign-list"># FUND-018: Fundraising Campaign List</a></li><li class="toc-3"><a href="#desktop-5"># Desktop</a></li><li class="toc-3"><a href="#mobile-2"># Mobile</a></li><li class="toc-3"><a href="#interaction-5"># Interaction</a></li><li class="toc-3"><a href="#states-2"># States</a></li><li class="toc-2"><a href="#fund-019-fundraising-campaign-createedit"># FUND-019: Fundraising Campaign Create/Edit</a></li><li class="toc-3"><a href="#desktop-6"># Desktop</a></li><li class="toc-3"><a href="#collapsed-sections"># Collapsed Sections</a></li><li class="toc-3"><a href="#interaction-6"># Interaction</a></li><li class="toc-2"><a href="#fund-007-recurring-donation-management"># FUND-007: Recurring Donation Management</a></li><li class="toc-3"><a href="#desktop-7"># Desktop</a></li><li class="toc-3"><a href="#status-definitions"># Status Definitions</a></li><li class="toc-3"><a href="#row-detail-panel"># Row Detail Panel</a></li><li class="toc-3"><a href="#interaction-7"># Interaction</a></li><li class="toc-3"><a href="#states-3"># States</a></li><li class="toc-2"><a href="#fund-008-pledge-management"># FUND-008: Pledge Management</a></li><li class="toc-3"><a href="#desktop-8"># Desktop</a></li><li class="toc-3"><a href="#pledge-lifecycle"># Pledge Lifecycle</a></li><li class="toc-3"><a href="#row-actions-menu-"># Row Actions Menu (⋮)</a></li><li class="toc-3"><a href="#creating-a-pledge-new-pledge"># Creating a Pledge (+ New Pledge)</a></li><li class="toc-3"><a href="#states-4"># States</a></li><li class="toc-2"><a href="#fund-009-refund-processing"># FUND-009: Refund Processing</a></li><li class="toc-3"><a href="#desktop-9"># Desktop</a></li><li class="toc-3"><a href="#process-button-dropdown"># Process Button Dropdown</a></li><li class="toc-3"><a href="#interaction-8"># Interaction</a></li><li class="toc-3"><a href="#refund-history-accessed-from-refunds-sidebar-item"># Refund History (accessed from Refunds sidebar item)</a></li><li class="toc-2"><a href="#fund-010-cash-donation-recording"># FUND-010: Cash Donation Recording</a></li><li class="toc-3"><a href="#mobile-primary"># Mobile (Primary)</a></li><li class="toc-3"><a href="#desktop-10"># Desktop</a></li><li class="toc-3"><a href="#interaction-9"># Interaction</a></li><li class="toc-3"><a href="#volunteer-access"># Volunteer Access</a></li><li class="toc-2"><a href="#fund-011-cash-reconciliation"># FUND-011: Cash Reconciliation</a></li><li class="toc-3"><a href="#desktop-11"># Desktop</a></li><li class="toc-3"><a href="#interaction-10"># Interaction</a></li><li class="toc-3"><a href="#states-5"># States</a></li><li class="toc-2"><a href="#fund-012-compliance-flag-review"># FUND-012: Compliance Flag Review</a></li><li class="toc-3"><a href="#desktop-12"># Desktop</a></li><li class="toc-3"><a href="#flag-types"># Flag Types</a></li><li class="toc-3"><a href="#interaction-11"># Interaction</a></li><li class="toc-3"><a href="#states-6"># States</a></li><li class="toc-2"><a href="#fund-013-ab-test-setup"># FUND-013: A/B Test Setup</a></li><li class="toc-3"><a href="#desktop-13"># Desktop</a></li><li class="toc-3"><a href="#interaction-12"># Interaction</a></li><li class="toc-3"><a href="#ab-test-list-accessed-from-sidebar"># A/B Test List (accessed from sidebar)</a></li><li class="toc-2"><a href="#fund-014-ab-test-results"># FUND-014: A/B Test Results</a></li><li class="toc-3"><a href="#desktop-14"># Desktop</a></li><li class="toc-3"><a href="#interaction-13"># Interaction</a></li><li class="toc-2"><a href="#fund-015-alliance-split-configuration"># FUND-015: Alliance Split Configuration</a></li><li class="toc-3"><a href="#desktop-15"># Desktop</a></li><li class="toc-3"><a href="#new-split-edit-form"># New Split / Edit Form</a></li><li class="toc-3"><a href="#interaction-14"># Interaction</a></li><li class="toc-3"><a href="#states-7"># States</a></li><li class="toc-2"><a href="#fund-016-alliance-fundraising-report"># FUND-016: Alliance Fundraising Report</a></li><li class="toc-3"><a href="#desktop-16"># Desktop</a></li><li class="toc-3"><a href="#interaction-15"># Interaction</a></li><li class="toc-3"><a href="#states-8"># States</a></li><li class="toc-2"><a href="#fund-017-payment-processor-configuration"># FUND-017: Payment Processor Configuration</a></li><li class="toc-3"><a href="#desktop-17"># Desktop</a></li><li class="toc-3"><a href="#connect-flow-inline-expansion"># Connect Flow (inline expansion)</a></li><li class="toc-3"><a href="#interaction-16"># Interaction</a></li><li class="toc-3"><a href="#security-note"># Security Note</a></li><li class="toc-3"><a href="#states-9"># States</a></li><li class="toc-2"><a href="#fund-020-year-end-statement-generator"># FUND-020: Year-End Statement Generator</a></li><li class="toc-3"><a href="#desktop-18"># Desktop</a></li><li class="toc-3"><a href="#interaction-17"># Interaction</a></li><li class="toc-3"><a href="#states-10"># States</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

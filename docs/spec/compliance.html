@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compliance &amp; Legal Framework · GreenGrass</title>
+<meta name="description" content="Compliance &amp; Legal Framework — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html">Core Workflows</a></li><li><a href="./geography.html">Target Geography</a></li><li><a href="./security.html">Security &amp; Threat Model</a></li><li><a href="./compliance.html" aria-current="page" class="active">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html">External Integrations</a></li><li><a href="./support.html">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="./press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="compliance-legal-framework" tabindex="-1"><a class="heading-anchor" href="#compliance-legal-framework" aria-hidden="true">#</a> Compliance &amp; Legal Framework</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document defines GreenGrass's compliance strategy across all target jurisdictions. It consolidates compliance-related decisions made in other specs (<a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a>, <a href="http://geography.md" target="_blank" rel="noopener noreferrer">geography.md</a>, <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>, <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>) and fills gaps around election law, data protection, campaign finance, encryption restrictions, and operational compliance.</p>
+<p>GreenGrass operates at the intersection of political organizing, personal data processing, and financial transactions — three of the most heavily regulated domains in every jurisdiction we target. Compliance is not a layer we bolt on. It is structural.</p>
+<h2 id="compliance-philosophy" tabindex="-1"><a class="heading-anchor" href="#compliance-philosophy" aria-hidden="true">#</a> Compliance Philosophy</h2>
+<p><strong>Principled compliance, not minimal compliance.</strong></p>
+<p>GreenGrass's approach:</p>
+<ol>
+<li><strong>Design for the strictest jurisdiction first.</strong> Build to meet the highest standard among our target countries, then relax where local law permits, rather than building to the weakest standard and retrofitting.</li>
+<li><strong>Architectural compliance.</strong> Where possible, make non-compliance technically impossible (BYOK means we <em>cannot</em> hand over tenant data) rather than relying on policy promises.</li>
+<li><strong>Transparency by default.</strong> Warrant canary, annual transparency reports, open source application code, auditable consent records.</li>
+<li><strong>Local counsel is non-negotiable.</strong> Every country launch requires engagement with local legal experts. This document provides the framework; local counsel validates it.</li>
+<li><strong>Compliance as a feature for tenants.</strong> Campaign finance reporting, consent management, donor disclosure — these are things campaigns <em>need</em>. Build them well and compliance becomes a product advantage.</li>
+</ol>
+<h2 id="regulatory-landscape-by-country" tabindex="-1"><a class="heading-anchor" href="#regulatory-landscape-by-country" aria-hidden="true">#</a> Regulatory Landscape by Country</h2>
+<h3 id="puerto-rico-alpha" tabindex="-1"><a class="heading-anchor" href="#puerto-rico-alpha" aria-hidden="true">#</a> Puerto Rico (Alpha)</h3>
+<p><strong>Governing framework:</strong> US federal law + Puerto Rico local law.</p>
+<p><strong>Election law:</strong></p>
+<ul>
+<li>Federal Elections Commission (FEC) regulations for federal races</li>
+<li>Puerto Rico State Elections Commission (CEE) for local/territorial races</li>
+<li>Bipartisan Campaign Reform Act (BCRA) restrictions on fundraising and advertising</li>
+<li>Foreign national contribution ban (52 USC §30121) — strict prohibition on contributions from non-US persons</li>
+<li>Disclosure requirements for contributions above thresholds (currently $200 cumulative per election cycle for federal)</li>
+<li>Political advertising disclaimer requirements (&quot;Paid for by…&quot;)</li>
+</ul>
+<p><strong>Data protection:</strong></p>
+<ul>
+<li>No comprehensive US federal privacy law (as of 2025)</li>
+<li>Puerto Rico has limited local data protection provisions</li>
+<li>FTC Act Section 5 (unfair/deceptive practices) as de facto data protection floor</li>
+<li>State breach notification laws apply (Puerto Rico Act 111-2005)</li>
+<li>Children's Online Privacy Protection Act (COPPA) if platform touches users under 13</li>
+<li>CAN-SPAM Act for commercial email; Telephone Consumer Protection Act (TCPA) for calls/SMS</li>
+</ul>
+<p><strong>Campaign finance:</strong></p>
+<ul>
+<li>FEC reporting for federal races (quarterly/pre-election reports)</li>
+<li>Puerto Rico CEE reporting for local races</li>
+<li>Contribution limits (federal: per-election limits, indexed to inflation)</li>
+<li>PAC/Super PAC rules if alliances coordinate spending</li>
+<li>Employer/occupation disclosure required for contributions &gt;$200 (federal)</li>
+</ul>
+<p><strong>Key risks:</strong></p>
+<ul>
+<li>Dual federal/territorial regulatory regime creates complexity</li>
+<li>FEC enforcement has been inconsistent but rules are strict on paper</li>
+<li>TCPA violations carry statutory damages ($500-$1,500 per violation) — SMS/call consent is critical</li>
+</ul>
+<h3 id="brazil-pilot-1" tabindex="-1"><a class="heading-anchor" href="#brazil-pilot-1" aria-hidden="true">#</a> Brazil (Pilot 1)</h3>
+<p><strong>Governing framework:</strong> Brazilian Constitution + Lei das Eleições (Law 9.504/1997) + LGPD + TSE regulations.</p>
+<p><strong>Election law:</strong></p>
+<ul>
+<li>Tribunal Superior Eleitoral (TSE) regulates all elections</li>
+<li>Strict campaign period restrictions — campaigning only permitted during defined window</li>
+<li>Restrictions on mass messaging (WhatsApp bulk messaging banned by TSE since 2018)</li>
+<li>Candidates must register with TSE; campaign accounts are separate legal entities</li>
+<li>Political advertising restrictions on specific platforms and media</li>
+<li>Prohibition on paid political advertising on internet platforms (only organic content and boosting to the candidate's own page followers)</li>
+</ul>
+<p><strong>Data protection:</strong></p>
+<ul>
+<li>Lei Geral de Proteção de Dados (LGPD) — comprehensive data protection law modeled on GDPR</li>
+<li>Autoridade Nacional de Proteção de Dados (ANPD) as enforcement authority</li>
+<li>Legal basis required for processing: consent, legitimate interest, legal obligation, etc.</li>
+<li>Data subject rights: access, correction, deletion, portability, information about sharing</li>
+<li>Data Protection Impact Assessment (DPIA) likely required given political data sensitivity</li>
+<li>Data localization: LGPD has preferences but not strict requirements; cross-border transfer permitted with adequate safeguards</li>
+<li>Political opinion is sensitive data under LGPD — requires explicit consent or other specific legal basis</li>
+</ul>
+<p><strong>Campaign finance:</strong></p>
+<ul>
+<li>TSE tracks all campaign finances</li>
+<li>All donations processed through regulated campaign bank accounts</li>
+<li>Individual contribution limits (percentage of prior year gross income)</li>
+<li>Corporate donations banned (since 2015)</li>
+<li>Real-time disclosure through TSE's DivulgaCandContas system</li>
+<li>Strict accounting and receipt requirements</li>
+<li>Campaign spending caps set by TSE per race</li>
+</ul>
+<p><strong>Key risks:</strong></p>
+<ul>
+<li>TSE is active and technologically sophisticated — enforces digital campaign rules aggressively</li>
+<li>WhatsApp is dominant communication channel but TSE has restricted bulk political messaging</li>
+<li>LGPD classification of political opinion as sensitive data creates heightened obligations</li>
+<li>Campaign finance violations can result in candidacy annulment</li>
+</ul>
+<p><strong>DECIDED: TSE-aware channel management.</strong> Platform enforces TSE rules during campaign periods — message volume limits, content restrictions, no bulk sends — but permits broader use outside campaign windows. WhatsApp is too important in Brazil to disable entirely, and the TSE's restrictions are campaign-period-specific. The platform encodes TSE rules and enforces them contextually based on configured campaign period dates.</p>
+<h3 id="thailand-pilot-2" tabindex="-1"><a class="heading-anchor" href="#thailand-pilot-2" aria-hidden="true">#</a> Thailand (Pilot 2)</h3>
+<p><strong>Governing framework:</strong> Constitution of Thailand + Organic Act on Election of Members of the House of Representatives + PDPA + Computer Crime Act.</p>
+<p><strong>Election law:</strong></p>
+<ul>
+<li>Election Commission of Thailand (ECT) oversees elections</li>
+<li>Organic Act on Political Parties regulates party formation and funding</li>
+<li>Strict prohibitions on vote buying (broadly defined)</li>
+<li>Campaign period restrictions and spending caps</li>
+<li>Restrictions on political advertising — pre-approval required in some contexts</li>
+<li>Lèse-majesté law (Section 112 of Criminal Code) — criminal offense to defame the monarchy; affects all content on platform</li>
+<li>Computer Crime Act — broad provisions for content takedown and platform liability</li>
+</ul>
+<p><strong>Data protection:</strong></p>
+<ul>
+<li>Personal Data Protection Act (PDPA) B.E. 2562 — Thailand's comprehensive data protection law (effective June 2022)</li>
+<li>Modeled loosely on GDPR</li>
+<li>Consent required for sensitive data processing (political opinion is sensitive under PDPA)</li>
+<li>Data subject rights similar to LGPD/GDPR</li>
+<li>Cross-border transfer restrictions — adequate safeguards or consent required</li>
+<li>Data Protection Officer (DPO) required for large-scale sensitive data processing</li>
+</ul>
+<p><strong>Campaign finance:</strong></p>
+<ul>
+<li>Political party funding regulated by Organic Act</li>
+<li>Contribution limits and disclosure requirements</li>
+<li>State funding available for qualifying parties</li>
+<li>Spending caps per election</li>
+<li>ECT audit of party finances</li>
+</ul>
+<p><strong>Key risks:</strong></p>
+<ul>
+<li>Lèse-majesté law is a severe criminal offense — platform must prevent content that could be construed as violating it, but enforcement is politically selective</li>
+<li>Military intervention history — platform data could be seized during coup; aggressive security tier essential</li>
+<li>Computer Crime Act gives authorities broad takedown powers</li>
+<li>Political party dissolution is used as a political tool — party data must be preserved independently</li>
+</ul>
+<p><strong>DECIDED: Prominent user warnings + tenant responsibility.</strong> Platform displays clear, prominent warnings about lèse-majesté restrictions when content is created within Thai tenants. No automated content filtering — it's technically unreliable and creates a chilling effect. Tenant/user bears responsibility for their content. This respects user agency and avoids putting GreenGrass in the position of censoring political speech.</p>
+<h3 id="india-pilot-3" tabindex="-1"><a class="heading-anchor" href="#india-pilot-3" aria-hidden="true">#</a> India (Pilot 3)</h3>
+<p><strong>Governing framework:</strong> Constitution of India + Representation of the People Act (1950, 1951) + IT Act 2000 + Digital Personal Data Protection Act (DPDPA) 2023.</p>
+<p><strong>Election law:</strong></p>
+<ul>
+<li>Election Commission of India (ECI) — powerful independent body</li>
+<li>Model Code of Conduct (MCC) during election periods — extensive restrictions on what parties/candidates can say and do</li>
+<li>Voluntary Code of Ethics for social media platforms during elections (could apply to GreenGrass)</li>
+<li>ECI Voter Registration system (EPIC) — integration may be needed</li>
+<li>Pre-certification required for political advertisements on social media (since 2019)</li>
+<li>Paid political advertising must carry &quot;Paid for by&quot; disclaimers with specific formatting</li>
+</ul>
+<p><strong>Data protection:</strong></p>
+<ul>
+<li>Digital Personal Data Protection Act (DPDPA) 2023 — India's comprehensive data protection law</li>
+<li>Consent-based processing for personal data</li>
+<li>Data fiduciary obligations</li>
+<li>Data localization requirements for &quot;significant data fiduciaries&quot; — government can mandate local storage</li>
+<li>Right to erasure, correction, grievance redressal</li>
+<li>Data Protection Board of India as enforcement authority</li>
+<li>Exemptions for government — broad national security carve-outs</li>
+<li>Political data not explicitly classified as sensitive (unlike LGPD/PDPA) but treatment TBD under forthcoming rules</li>
+</ul>
+<p><strong>Campaign finance:</strong></p>
+<ul>
+<li>Electoral bonds system struck down by Supreme Court (2024) — new framework evolving</li>
+<li>Companies can donate to parties; individual limits exist</li>
+<li>Parties must file annual financial statements with ECI</li>
+<li>Cash donation limit (currently ₹2,000 per individual without identity disclosure)</li>
+<li>Foreign contributions to political parties prohibited under Foreign Contribution (Regulation) Act (FCRA)</li>
+<li>FCRA also restricts foreign funding of NGOs involved in political activity — GreenGrass's operational model may be scrutinized</li>
+</ul>
+<p><strong>Key risks:</strong></p>
+<ul>
+<li>Scale: 900M+ eligible voters, enormous data volumes, performance and storage challenges</li>
+<li>ECI's MCC creates extensive content and behavior restrictions during election periods</li>
+<li>FCRA could be used to scrutinize GreenGrass itself as a foreign entity providing services to Indian political organizations</li>
+<li>State-level variations in election rules add complexity</li>
+<li>IT Act intermediary guidelines require compliance with government takedown orders within tight timelines</li>
+<li>Data localization likely required given scale and sensitivity</li>
+</ul>
+<p><strong>DECIDED: Technology-only positioning.</strong> GreenGrass positions as a technology vendor (SaaS tool) selling at market rates, not a political service provider. This argues FCRA doesn't apply because it's a commercial transaction, not a foreign contribution. <strong>Requires formal legal opinion from Indian counsel before pilot launch</strong> — this interpretation has not been tested and FCRA risk is serious.</p>
+<h3 id="lebanon-pilot-4" tabindex="-1"><a class="heading-anchor" href="#lebanon-pilot-4" aria-hidden="true">#</a> Lebanon (Pilot 4)</h3>
+<p><strong>Governing framework:</strong> Lebanese Constitution + Electoral Law of 2017 (Law 44) + fragmented regulatory landscape.</p>
+<p><strong>Election law:</strong></p>
+<ul>
+<li>Supervisory Commission for Elections (SCE) oversees elections</li>
+<li>Confessional seat allocation system (Taif Agreement) — seats distributed among religious communities</li>
+<li>Electoral Law of 2017 introduced proportional representation</li>
+<li>Campaign spending caps per candidate</li>
+<li>Political advertising restrictions during official campaign period</li>
+<li>Foreign funding of campaigns prohibited</li>
+<li>Electoral lists (coalitions) are a formal legal construct with specific registration requirements</li>
+</ul>
+<p><strong>Data protection:</strong></p>
+<ul>
+<li>No comprehensive data protection law (as of 2025)</li>
+<li>Draft data protection law has been proposed but not enacted</li>
+<li>E-Transactions and Personal Data Law (Law 81/2018) provides limited digital protections</li>
+<li>Banking secrecy laws (Law of 3 September 1956) — historically strong but undermined by banking crisis</li>
+<li>No formal data protection authority</li>
+</ul>
+<p><strong>Campaign finance:</strong></p>
+<ul>
+<li>Campaign spending caps defined by Electoral Law of 2017</li>
+<li>Candidates must open dedicated campaign bank accounts</li>
+<li>Post-election financial disclosure required (within 60 days)</li>
+<li>SCE can audit campaign finances</li>
+<li>Banking system crisis severely complicates financial compliance — many transactions are cash-based</li>
+<li>OMT and similar money transfer services are workarounds for collapsed banking system</li>
+</ul>
+<p><strong>Key risks:</strong></p>
+<ul>
+<li>Most complex security environment among all target countries</li>
+<li>Multiple intelligence services (state and non-state) with surveillance capabilities</li>
+<li>Hezbollah's parallel governance structures — tenants on both sides of political spectrum</li>
+<li>No data protection law means no legal floor, but also no safe harbor</li>
+<li>Banking system collapse means cash-heavy workflows are the norm, not the exception</li>
+<li>Infrastructure instability (electricity, internet) affects always-on compliance monitoring</li>
+<li>Sectarian political system means data itself is politically sensitive (knowing someone's sect/district reveals political affiliation)</li>
+</ul>
+<p><strong>DECIDED: Apply GDPR as baseline.</strong> All Lebanese user data is treated as if GDPR applied. GDPR is the global gold standard, well-understood, and since we're already building for LGPD and PDPA (both GDPR-influenced), the implementation cost is marginal. This is documented as a contractual commitment to Lebanese tenants.</p>
+<h2 id="cross-cutting-compliance-requirements" tabindex="-1"><a class="heading-anchor" href="#cross-cutting-compliance-requirements" aria-hidden="true">#</a> Cross-Cutting Compliance Requirements</h2>
+<h3 id="data-protection-framework" tabindex="-1"><a class="heading-anchor" href="#data-protection-framework" aria-hidden="true">#</a> Data Protection Framework</h3>
+<p><strong>DECIDED: Treat all political data as sensitive everywhere.</strong> LGPD/GDPR-level sensitive-data protections applied globally regardless of local law. GreenGrass is a political organizing platform — all data on it is political by nature. One protection tier, no ambiguity, no per-jurisdiction classification logic to maintain.</p>
+<p><strong>Already decided (from <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a> and <a href="http://system.md" target="_blank" rel="noopener noreferrer">system.md</a>):</strong></p>
+<ul>
+<li>BYOK encryption by default — tenant holds master key</li>
+<li>Per-country data residency</li>
+<li>Application-level encryption for sensitive fields</li>
+<li>Full audit trail of all data access and mutations</li>
+<li>Federated identity with per-tenant data ownership</li>
+</ul>
+<p><strong>Requires further specification:</strong></p>
+<h4 id="data-subject-rights" tabindex="-1"><a class="heading-anchor" href="#data-subject-rights" aria-hidden="true">#</a> Data Subject Rights</h4>
+<p>All target jurisdictions (except Lebanon) grant individuals rights over their personal data. GreenGrass must support:</p>
+<table>
+<thead>
+<tr>
+<th>Right</th>
+<th>LGPD</th>
+<th>PDPA</th>
+<th>DPDPA</th>
+<th>FTC/State</th>
+<th>Platform implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Limited</td>
+<td>Self-service data export from supporter profile</td>
+</tr>
+<tr>
+<td>Correction</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Limited</td>
+<td>Self-service edit + request to tenant</td>
+</tr>
+<tr>
+<td>Deletion</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Limited</td>
+<td>Deletion request flow with compliance holds</td>
+</tr>
+<tr>
+<td>Portability</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Export in standard format (JSON/CSV)</td>
+</tr>
+<tr>
+<td>Objection to processing</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Opt-out mechanisms per processing purpose</td>
+</tr>
+<tr>
+<td>Withdraw consent</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>One-click withdrawal, immediate effect</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DECIDED: Tenant decides.</strong> Deletion requests are passed to the tenant admin with jurisdiction-specific guidance on their legal retention obligations. The tenant makes the call — GreenGrass provides the tools and the guidance but stays out of interpreting legal obligations on the tenant's behalf. The compliance dashboard surfaces pending deletion requests with SLA timers and relevant retention guidance notes.</p>
+<h4 id="data-processing-agreements" tabindex="-1"><a class="heading-anchor" href="#data-processing-agreements" aria-hidden="true">#</a> Data Processing Agreements</h4>
+<p>GreenGrass acts as a data processor on behalf of tenants (data controllers). Each tenant relationship requires:</p>
+<ul>
+<li><strong>Data Processing Agreement (DPA)</strong> — standard template covering: data categories processed, processing purposes, sub-processor list, security measures, breach notification obligations, audit rights</li>
+<li><strong>Sub-processor disclosure</strong> — GreenGrass must maintain and disclose a list of all sub-processors (hosting providers, email infrastructure, payment processors, AI service providers)</li>
+<li><strong>Data Protection Impact Assessment (DPIA)</strong> — required under LGPD and PDPA for large-scale processing of sensitive data. GreenGrass should provide a template DPIA that tenants can adapt.</li>
+</ul>
+<p><strong>DECIDED: Tenant handles all.</strong> Supporters contact the campaign/org directly. Tenant admins process requests using platform-provided self-service tools. Clean data-controller/data-processor separation — the relationship is between the supporter and the organization they engaged with. GreenGrass builds excellent tooling (data export, deletion workflows, correction forms, SLA tracking) but the tenant owns the interaction.</p>
+<h4 id="cross-border-data-transfers" tabindex="-1"><a class="heading-anchor" href="#cross-border-data-transfers" aria-hidden="true">#</a> Cross-Border Data Transfers</h4>
+<p>Per-country data residency (already decided) minimizes cross-border transfer issues. However, transfers still occur:</p>
+<ul>
+<li><strong>Platform identity data</strong> lives in incorporation jurisdiction → read replicas in each country</li>
+<li><strong>Tenant data</strong> stays in-country by default</li>
+<li><strong>Alliance data sharing</strong> may cross borders when alliance members are in different countries</li>
+</ul>
+<p>Safeguards required:</p>
+<ul>
+<li>Standard Contractual Clauses (SCCs) or equivalent for any cross-border transfer</li>
+<li>Transfer Impact Assessments where required (LGPD, PDPA)</li>
+<li>Explicit user consent for cross-border sharing in alliance contexts</li>
+</ul>
+<h3 id="election-law-compliance" tabindex="-1"><a class="heading-anchor" href="#election-law-compliance" aria-hidden="true">#</a> Election Law Compliance</h3>
+<h4 id="campaign-period-enforcement" tabindex="-1"><a class="heading-anchor" href="#campaign-period-enforcement" aria-hidden="true">#</a> Campaign Period Enforcement</h4>
+<p>Multiple jurisdictions restrict campaign activities to defined periods. The platform must support:</p>
+<ul>
+<li><strong>Campaign period configuration</strong> — per-tenant setting defining official campaign start/end dates</li>
+<li><strong>Channel restrictions during campaign period</strong> — per-jurisdiction rules about what communications are permitted</li>
+<li><strong>Pre-campaign vs. campaign behavior</strong> — some features may need to be disabled or restricted during official campaign periods</li>
+</ul>
+<p><strong>DECIDED: Configurable, hard enforcement as default.</strong> Tenants choose hard or soft enforcement per jurisdiction. Hard enforcement is the default — platform blocks restricted actions during configured campaign periods. Sophisticated tenants with their own legal counsel can switch to soft enforcement (warnings only) if they want to make their own judgment calls.</p>
+<h4 id="political-advertising-disclaimers" tabindex="-1"><a class="heading-anchor" href="#political-advertising-disclaimers" aria-hidden="true">#</a> Political Advertising Disclaimers</h4>
+<p>Every target jurisdiction requires some form of &quot;Paid for by&quot; disclaimer on political advertising. The platform must:</p>
+<ul>
+<li>Automatically append jurisdiction-appropriate disclaimers to qualifying communications</li>
+<li>Allow tenants to configure disclaimer text per jurisdiction</li>
+<li>Ensure disclaimers are present on all outbound public-facing content (emails, social media posts, SMS if applicable)</li>
+<li>Maintain records of all political communications for disclosure purposes</li>
+</ul>
+<h4 id="foreign-contribution-restrictions" tabindex="-1"><a class="heading-anchor" href="#foreign-contribution-restrictions" aria-hidden="true">#</a> Foreign Contribution Restrictions</h4>
+<p>Every target jurisdiction prohibits or restricts foreign contributions to political campaigns. The platform must:</p>
+<ul>
+<li>Collect nationality/residency information from donors</li>
+<li>Block or flag contributions from non-eligible donors based on jurisdiction rules</li>
+<li>Maintain records for regulatory reporting</li>
+<li>Handle the complexity of diaspora donors (US citizens in Puerto Rico, Brazilian nationals abroad, etc.)</li>
+</ul>
+<p><strong>DECIDED: Both — two-tier approach.</strong> Obviously ineligible donors (non-citizen, non-resident, no qualifying connection) are blocked at payment in real-time. Edge cases (diaspora, dual citizens, incomplete information) are accepted but held in escrow, flagged for compliance review, and require manual approval before funds are released to the campaign. The compliance dashboard surfaces held donations with context about why they were flagged.</p>
+<h3 id="campaign-finance-reporting" tabindex="-1"><a class="heading-anchor" href="#campaign-finance-reporting" aria-hidden="true">#</a> Campaign Finance Reporting</h3>
+<p>Each jurisdiction has different reporting requirements. The platform needs a reporting engine that can generate jurisdiction-specific reports.</p>
+<p><strong>Already decided (from <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>):</strong> Full audit trail, configurable donation tracking, compliance reporting per jurisdiction.</p>
+<p><strong>Required reporting capabilities:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Jurisdiction</th>
+<th>Reporting body</th>
+<th>Report type</th>
+<th>Frequency</th>
+<th>Key fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US (federal)</td>
+<td>FEC</td>
+<td>Form 3/3X</td>
+<td>Quarterly + pre-election</td>
+<td>Itemized contributions &gt;$200, expenditures, cash-on-hand</td>
+</tr>
+<tr>
+<td>PR (local)</td>
+<td>CEE</td>
+<td>TBD per race type</td>
+<td>Per election cycle</td>
+<td>TBD — requires local counsel</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>TSE</td>
+<td>DivulgaCandContas</td>
+<td>Real-time + final</td>
+<td>All donations (no threshold), all expenditures</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>ECT</td>
+<td>Annual party finance</td>
+<td>Annual + per election</td>
+<td>Party income, expenditures, asset declarations</td>
+</tr>
+<tr>
+<td>India</td>
+<td>ECI</td>
+<td>Contribution report</td>
+<td>Annual + per election</td>
+<td>Contributions &gt;₹20,000 (itemized), total expenditure</td>
+</tr>
+<tr>
+<td>Lebanon</td>
+<td>SCE</td>
+<td>Post-election disclosure</td>
+<td>Within 60 days of election</td>
+<td>All campaign expenditures, funding sources</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DECIDED: Hybrid.</strong> Built-in report generator for priority jurisdictions (US/FEC first for alpha), structured data export in clean formats available everywhere from day one as a fallback. Jurisdiction-specific reporting modules added as each pilot launches. This is pragmatic — we build what we need when we need it.</p>
+<h3 id="consent-communication-compliance" tabindex="-1"><a class="heading-anchor" href="#consent-communication-compliance" aria-hidden="true">#</a> Consent &amp; Communication Compliance</h3>
+<p><strong>Already decided (from <a href="http://workflows.md" target="_blank" rel="noopener noreferrer">workflows.md</a>):</strong></p>
+<ul>
+<li>Per-channel + per-purpose consent with smart defaults</li>
+<li>One-click unsubscribe with immediate effect</li>
+<li>Consent audit trail</li>
+<li>Consent checked at send time</li>
+</ul>
+<p><strong>Additional compliance requirements:</strong></p>
+<ul>
+<li><strong>TCPA compliance (US/PR):</strong> Prior express written consent required for automated calls/texts to mobile phones. Opt-in must be clear and conspicuous. Revocation must be honored immediately. Applies to SMS outreach and phone banking features.</li>
+<li><strong>CAN-SPAM compliance (US/PR):</strong> Commercial emails must include physical address, unsubscribe mechanism, honest subject lines. Unsubscribe requests honored within 10 business days.</li>
+<li><strong>LGPD consent (Brazil):</strong> Consent must be freely given, informed, and unambiguous. Pre-checked boxes are not valid consent. Consent can be withdrawn at any time with same ease as granting it.</li>
+<li><strong>TSE messaging rules (Brazil):</strong> Bulk WhatsApp messaging prohibited. SMS campaigns restricted during election period.</li>
+<li><strong>PDPA consent (Thailand):</strong> Explicit consent required for sensitive data (political opinion). Consent must be separate from other terms. Minors require parental consent.</li>
+<li><strong>DPDPA consent (India):</strong> Consent must be free, specific, informed, unconditional, and unambiguous. Notice must be in English or any language in the Eighth Schedule of the Constitution.</li>
+<li><strong>Lebanese requirements:</strong> Minimal formal consent requirements, but GreenGrass applies its own standard (see Lebanon data protection decision above).</li>
+</ul>
+<h3 id="audit-trail-retention" tabindex="-1"><a class="heading-anchor" href="#audit-trail-retention" aria-hidden="true">#</a> Audit Trail &amp; Retention</h3>
+<p><strong>Already decided (from <a href="http://users.md" target="_blank" rel="noopener noreferrer">users.md</a>):</strong> Full audit logging of all data mutations, permission changes, financial transactions, logins, exports, merges.</p>
+<p><strong>Retention requirements by jurisdiction:</strong></p>
+<p><strong>DECIDED: Uniform retention — 10 years globally.</strong> All audit logs retained for 10 years regardless of jurisdiction, matching Lebanon's commercial records requirement as the longest among target countries. One rule everywhere — simplest to implement, no risk of premature deletion, and structured event data is cheap to store relative to the compliance risk of getting jurisdiction-specific retention wrong.</p>
+<table>
+<thead>
+<tr>
+<th>Jurisdiction</th>
+<th>Financial records</th>
+<th>Election records</th>
+<th>General audit logs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US (FEC)</td>
+<td>3 years after filing</td>
+<td>Per election cycle + 3 years</td>
+<td>No federal mandate</td>
+</tr>
+<tr>
+<td>Brazil (TSE)</td>
+<td>5 years</td>
+<td>Per election cycle + TSE requirements</td>
+<td>LGPD: as long as purpose persists</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>5 years (tax)</td>
+<td>Per ECT requirements</td>
+<td>PDPA: as long as purpose persists</td>
+</tr>
+<tr>
+<td>India</td>
+<td>8 years (tax/financial)</td>
+<td>Per ECI requirements</td>
+<td>DPDPA: as long as purpose persists</td>
+</tr>
+<tr>
+<td>Lebanon</td>
+<td>10 years (commercial records)</td>
+<td>Per SCE requirements (60 days post-election for disclosure)</td>
+<td>No formal requirement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="encryption-lawful-access" tabindex="-1"><a class="heading-anchor" href="#encryption-lawful-access" aria-hidden="true">#</a> Encryption &amp; Lawful Access</h3>
+<p><strong>Already decided (from <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a>):</strong></p>
+<ul>
+<li>BYOK by default — GreenGrass cannot decrypt tenant data</li>
+<li>Architectural inability to comply with data demands for BYOK tenants</li>
+<li>Challenge overbroad/politically motivated demands for managed-key tenants</li>
+<li>No voluntary cooperation with foreign government demands absent valid legal process in incorporation jurisdiction</li>
+</ul>
+<p><strong>Per-jurisdiction encryption considerations:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Jurisdiction</th>
+<th>Encryption restrictions</th>
+<th>Lawful interception obligations</th>
+<th>Impact on GreenGrass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US/PR</td>
+<td>No general restrictions. CALEA applies to telecom carriers (GreenGrass is not one)</td>
+<td>Not applicable to software platforms</td>
+<td>Minimal — strongest legal protections for encryption</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>Marco Civil da Internet protects encryption. No backdoor mandate.</td>
+<td>Court orders can compel providers to turn over data they possess</td>
+<td>BYOK means we don't possess the keys. Managed-key: comply with valid court orders.</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>Computer Crime Act allows authorities to demand decryption keys</td>
+<td>Yes — authorities can compel disclosure of encryption keys</td>
+<td>Aggressive security tier is essential. BYOK is critical for Thai activists.</td>
+</tr>
+<tr>
+<td>India</td>
+<td>IT Act Section 69 allows government to demand decryption</td>
+<td>Yes — failure to assist with decryption can be penalized</td>
+<td>BYOK is critical. Indian government has pushed for backdoor access.</td>
+</tr>
+<tr>
+<td>Lebanon</td>
+<td>No formal encryption restrictions</td>
+<td>Multiple intelligence services operate extrajudicially</td>
+<td>No legal framework to compel, but physical seizure is a risk. Self-hosted option important.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DECIDED: Disclose inability + challenge.</strong> GreenGrass responds that it does not possess the decryption keys and cannot comply, directing the authority to the tenant. Additionally, GreenGrass actively challenges the demand's legal basis even though compliance is technically impossible — to establish precedent, signal commitment to users, and contribute to the broader legal ecosystem around encryption rights. The tenant is notified unless prohibited by a gag order. All demands and responses are included in the annual transparency report.</p>
+<h2 id="compliance-infrastructure" tabindex="-1"><a class="heading-anchor" href="#compliance-infrastructure" aria-hidden="true">#</a> Compliance Infrastructure</h2>
+<h3 id="compliance-configuration-per-tenant" tabindex="-1"><a class="heading-anchor" href="#compliance-configuration-per-tenant" aria-hidden="true">#</a> Compliance Configuration per Tenant</h3>
+<p>Each tenant must configure:</p>
+<ul>
+<li><strong>Jurisdiction</strong> — which country's laws apply to their operations</li>
+<li><strong>Race type</strong> — federal, state/provincial, local (affects reporting requirements)</li>
+<li><strong>Campaign period dates</strong> — official start/end of campaign period</li>
+<li><strong>Contribution rules</strong> — limits, prohibited sources, disclosure thresholds (pre-loaded from jurisdiction templates, customizable)</li>
+<li><strong>Communication rules</strong> — channel restrictions, disclaimer requirements (pre-loaded from jurisdiction templates)</li>
+<li><strong>Retention policy</strong> — how long to retain various record types (default from jurisdiction, tenant can extend but not shorten)</li>
+</ul>
+<h3 id="compliance-dashboard" tabindex="-1"><a class="heading-anchor" href="#compliance-dashboard" aria-hidden="true">#</a> Compliance Dashboard</h3>
+<p>Tenant admins need a compliance view that surfaces:</p>
+<ul>
+<li><strong>Contribution alerts</strong> — flagged donations (near limits, foreign status, missing required info)</li>
+<li><strong>Consent health</strong> — percentage of contacts with valid consent per channel, upcoming consent expirations</li>
+<li><strong>Reporting deadlines</strong> — upcoming filing dates with preparation status</li>
+<li><strong>Data subject requests</strong> — pending access/deletion/correction requests with SLA timers</li>
+<li><strong>Audit log access</strong> — searchable audit trail with export capability</li>
+</ul>
+<h3 id="automated-compliance-checks" tabindex="-1"><a class="heading-anchor" href="#automated-compliance-checks" aria-hidden="true">#</a> Automated Compliance Checks</h3>
+<p>The platform should run continuous compliance checks:</p>
+<ul>
+<li><strong>Real-time:</strong> Contribution limit checking, foreign donor screening, consent verification at send time, disclaimer presence on outbound communications</li>
+<li><strong>Batch:</strong> Approaching contribution limits (warnings), consent expiration alerts, missing required donor information, campaign period restriction enforcement</li>
+<li><strong>Pre-report:</strong> Data completeness checks before filing deadlines, reconciliation of donation records against payment processor data</li>
+</ul>
+<h3 id="compliance-reporting-engine" tabindex="-1"><a class="heading-anchor" href="#compliance-reporting-engine" aria-hidden="true">#</a> Compliance Reporting Engine</h3>
+<p><strong>Architecture note:</strong> The reporting engine follows the hybrid approach decided above — built-in generators added per jurisdiction as pilots launch, with structured data export as the universal fallback. Internally, jurisdiction-specific reporting is implemented as per-jurisdiction modules loaded based on tenant configuration, consistent with the adapter pattern used throughout the system (payments, SMS, social media).</p>
+<h2 id="corporate-structure-jurisdiction" tabindex="-1"><a class="heading-anchor" href="#corporate-structure-jurisdiction" aria-hidden="true">#</a> Corporate Structure &amp; Jurisdiction</h2>
+<p><strong>Already decided (from <a href="http://security.md" target="_blank" rel="noopener noreferrer">security.md</a>):</strong> Incorporate in a privacy-strong jurisdiction (Estonia or Switzerland candidate).</p>
+<p><strong>Structural considerations:</strong></p>
+<p><strong>DECIDED: Single entity with subsidiary option.</strong> Start with one company in the incorporation jurisdiction, operating globally through contracts with local service providers. If and when a specific jurisdiction demands local presence (India's FCRA scrutiny, Brazil's TSE requirements), establish wholly-owned local subsidiaries as needed. The architecture already supports this — per-country data residency and modular infrastructure mean spinning up a subsidiary doesn't require re-architecting, just adding a legal entity and local contracts.</p>
+<p>Factors to consider:</p>
+<ul>
+<li><strong>FCRA (India):</strong> Foreign entities providing services to political organizations face scrutiny. Local subsidiary likely necessary.</li>
+<li><strong>TSE (Brazil):</strong> Campaign technology providers may need registration. Local presence advisable.</li>
+<li><strong>Tax implications:</strong> Transfer pricing, digital services taxes, VAT/GST in each jurisdiction.</li>
+<li><strong>Banking:</strong> Each country needs local payment processing capability. Subsidiaries can hold local bank accounts.</li>
+<li><strong>Liability:</strong> Local subsidiaries can limit parent company exposure to local legal actions.</li>
+</ul>
+<h2 id="compliance-roadmap" tabindex="-1"><a class="heading-anchor" href="#compliance-roadmap" aria-hidden="true">#</a> Compliance Roadmap</h2>
+<h3 id="alpha-puerto-rico" tabindex="-1"><a class="heading-anchor" href="#alpha-puerto-rico" aria-hidden="true">#</a> Alpha (Puerto Rico)</h3>
+<p><strong>Pre-launch requirements:</strong></p>
+<ul>
+<li>US/FEC compliance module fully built and tested</li>
+<li>Puerto Rico CEE requirements validated with local counsel</li>
+<li>TCPA/CAN-SPAM consent mechanisms operational</li>
+<li>FEC reporting format validated</li>
+<li>Contribution limit checking operational</li>
+<li>Disclaimer generation for political communications</li>
+<li>Basic compliance dashboard</li>
+</ul>
+<h3 id="pilot-1-brazil" tabindex="-1"><a class="heading-anchor" href="#pilot-1-brazil" aria-hidden="true">#</a> Pilot 1 (Brazil)</h3>
+<p><strong>Pre-launch requirements:</strong></p>
+<ul>
+<li>LGPD compliance assessment completed</li>
+<li>TSE registration/notification (if required)</li>
+<li>TSE registration completed (if required — pending legal counsel determination)</li>
+<li>PIX payment integration with donation compliance checks</li>
+<li>TSE reporting format implemented</li>
+<li>WhatsApp channel restrictions implemented per TSE rules</li>
+<li>LGPD consent mechanisms (separate from general consent)</li>
+<li>Data Protection Impact Assessment completed</li>
+<li>Portuguese-language legal text reviewed by Brazilian counsel</li>
+</ul>
+<h3 id="pilot-2-thailand" tabindex="-1"><a class="heading-anchor" href="#pilot-2-thailand" aria-hidden="true">#</a> Pilot 2 (Thailand)</h3>
+<p><strong>Pre-launch requirements:</strong></p>
+<ul>
+<li>PDPA compliance assessment completed</li>
+<li>ECT registration/notification (if required)</li>
+<li>Content risk framework for lèse-majesté implemented</li>
+<li>Thai subsidiary or partnership established</li>
+<li>PromptPay integration with donation compliance checks</li>
+<li>ECT reporting format implemented</li>
+<li>PDPA consent mechanisms operational</li>
+<li>Aggressive security tier fully operational (critical for Thailand)</li>
+<li>Thai-language legal text reviewed by Thai counsel</li>
+</ul>
+<h3 id="pilot-3-india" tabindex="-1"><a class="heading-anchor" href="#pilot-3-india" aria-hidden="true">#</a> Pilot 3 (India)</h3>
+<p><strong>Pre-launch requirements:</strong></p>
+<ul>
+<li>DPDPA compliance assessment completed</li>
+<li>ECI registration/engagement</li>
+<li>FCRA legal opinion obtained validating technology-vendor positioning (subsidiary established if counsel advises it)</li>
+<li>UPI integration with donation compliance checks</li>
+<li>ECI reporting format implemented</li>
+<li>MCC enforcement rules implemented (campaign period)</li>
+<li>Multi-language consent notices (Hindi + English + regional languages)</li>
+<li>Data localization infrastructure operational in India</li>
+<li>Indian-language legal text reviewed by Indian counsel</li>
+</ul>
+<h3 id="pilot-4-lebanon" tabindex="-1"><a class="heading-anchor" href="#pilot-4-lebanon" aria-hidden="true">#</a> Pilot 4 (Lebanon)</h3>
+<p><strong>Pre-launch requirements:</strong></p>
+<ul>
+<li>Compliance baseline established (GDPR/incorporation-jurisdiction standard per decision above)</li>
+<li>SCE registration/notification (if required)</li>
+<li>Cash donation tracking fully operational</li>
+<li>OMT integration with donation compliance checks</li>
+<li>SCE reporting format implemented</li>
+<li>Confessional seat system awareness built into campaign features</li>
+<li>Arabic/French/English legal text reviewed by Lebanese counsel</li>
+<li>Aggressive security tier + self-hosted option available (critical for Lebanon)</li>
+<li>Infrastructure resilience plan for electricity/internet instability</li>
+</ul>
+<h2 id="open-questions-for-legal-counsel" tabindex="-1"><a class="heading-anchor" href="#open-questions-for-legal-counsel" aria-hidden="true">#</a> Open Questions for Legal Counsel</h2>
+<p>The following require engagement with legal professionals before implementation:</p>
+<ol>
+<li><strong>Incorporation jurisdiction final selection</strong> — Estonia vs. Switzerland vs. other candidates. MLAT analysis, tax implications, operational feasibility.</li>
+<li><strong>Corporate structure</strong> — per decision above, requires legal/tax advisor input.</li>
+<li><strong>FCRA (India) risk assessment</strong> — can GreenGrass operate as a technology vendor? Is a subsidiary sufficient?</li>
+<li><strong>TSE (Brazil) platform registration</strong> — does GreenGrass need to register as a campaign technology platform?</li>
+<li><strong>BYOK legal defensibility</strong> — has &quot;architectural inability to comply&quot; been tested in any target jurisdiction? Legal opinion needed.</li>
+<li><strong>Platform liability for user content</strong> — especially regarding lèse-majesté (Thailand), MCC violations (India), and sectarian content (Lebanon).</li>
+<li><strong>Data protection officer requirements</strong> — which jurisdictions require a DPO, and can a single person serve for multiple jurisdictions?</li>
+<li><strong>Warrant canary legality</strong> — are warrant canaries legally defensible in each target jurisdiction?</li>
+<li><strong>E2E encryption legality</strong> — is providing E2E encrypted messaging to political organizations permissible in all target jurisdictions?</li>
+<li><strong>Insurance</strong> — cyber liability insurance, political risk insurance, directors &amp; officers insurance across jurisdictions.</li>
+</ol>
+<!-- REVISIT: This document provides the framework. Each country launch requires a dedicated compliance workbook developed with local legal counsel. The workbook should validate every assumption made here and identify any requirements we've missed. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#compliance-philosophy"># Compliance Philosophy</a></li><li class="toc-2"><a href="#regulatory-landscape-by-country"># Regulatory Landscape by Country</a></li><li class="toc-3"><a href="#puerto-rico-alpha"># Puerto Rico (Alpha)</a></li><li class="toc-3"><a href="#brazil-pilot-1"># Brazil (Pilot 1)</a></li><li class="toc-3"><a href="#thailand-pilot-2"># Thailand (Pilot 2)</a></li><li class="toc-3"><a href="#india-pilot-3"># India (Pilot 3)</a></li><li class="toc-3"><a href="#lebanon-pilot-4"># Lebanon (Pilot 4)</a></li><li class="toc-2"><a href="#cross-cutting-compliance-requirements"># Cross-Cutting Compliance Requirements</a></li><li class="toc-3"><a href="#data-protection-framework"># Data Protection Framework</a></li><li class="toc-3"><a href="#election-law-compliance"># Election Law Compliance</a></li><li class="toc-3"><a href="#campaign-finance-reporting"># Campaign Finance Reporting</a></li><li class="toc-3"><a href="#consent-communication-compliance"># Consent &amp;amp; Communication Compliance</a></li><li class="toc-3"><a href="#audit-trail-retention"># Audit Trail &amp;amp; Retention</a></li><li class="toc-3"><a href="#encryption-lawful-access"># Encryption &amp;amp; Lawful Access</a></li><li class="toc-2"><a href="#compliance-infrastructure"># Compliance Infrastructure</a></li><li class="toc-3"><a href="#compliance-configuration-per-tenant"># Compliance Configuration per Tenant</a></li><li class="toc-3"><a href="#compliance-dashboard"># Compliance Dashboard</a></li><li class="toc-3"><a href="#automated-compliance-checks"># Automated Compliance Checks</a></li><li class="toc-3"><a href="#compliance-reporting-engine"># Compliance Reporting Engine</a></li><li class="toc-2"><a href="#corporate-structure-jurisdiction"># Corporate Structure &amp;amp; Jurisdiction</a></li><li class="toc-2"><a href="#compliance-roadmap"># Compliance Roadmap</a></li><li class="toc-3"><a href="#alpha-puerto-rico"># Alpha (Puerto Rico)</a></li><li class="toc-3"><a href="#pilot-1-brazil"># Pilot 1 (Brazil)</a></li><li class="toc-3"><a href="#pilot-2-thailand"># Pilot 2 (Thailand)</a></li><li class="toc-3"><a href="#pilot-3-india"># Pilot 3 (India)</a></li><li class="toc-3"><a href="#pilot-4-lebanon"># Pilot 4 (Lebanon)</a></li><li class="toc-2"><a href="#open-questions-for-legal-counsel"># Open Questions for Legal Counsel</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADR-007: Fundraising &amp; Payments · GreenGrass</title>
+<meta name="description" content="ADR-007: Fundraising &amp; Payments — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../spec/product.html">Project: GreenGrass</a></li><li><a href="../spec/users.html">Users &amp; Roles</a></li><li><a href="../spec/workflows.html">Core Workflows</a></li><li><a href="../spec/geography.html">Target Geography</a></li><li><a href="../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../spec/integrations.html">External Integrations</a></li><li><a href="../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="./002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="./003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="./004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="./005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="./006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="./007-fundraising-payments.html" aria-current="page" class="active">ADR-007: Fundraising &amp; Payments</a></li><li><a href="./008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="./009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="./010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="./011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="./012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="./013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="./014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="./015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="./016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="./ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Decisions</nav>
+    <article class="prose">
+<h1 id="adr-007-fundraising-payments" tabindex="-1"><a class="heading-anchor" href="#adr-007-fundraising-payments" aria-hidden="true">#</a> ADR-007: Fundraising &amp; Payments</h1>
+<p><strong>Status:</strong> Accepted
+<strong>Date:</strong> 2026-03-03
+<strong>Sources:</strong> <code>spec/fundraising.md</code>, <code>spec/workflows.md</code></p>
+<h2 id="context" tabindex="-1"><a class="heading-anchor" href="#context" aria-hidden="true">#</a> Context</h2>
+<p>Fundraising is a survival function for political campaigns. In the global south, payment infrastructure varies dramatically: PIX in Brazil is instant, free, and ubiquitous; UPI in India is government-subsidized and zero-cost; Lebanon's banking system has collapsed and most transactions are cash through money transfer services like OMT. The platform must handle all of this behind a consistent interface while ensuring every transaction is auditable, compliant, and attributable. Campaigns also range from small single-candidate operations to large alliances with complex donation split requirements.</p>
+<h2 id="decision" tabindex="-1"><a class="heading-anchor" href="#decision" aria-hidden="true">#</a> Decision</h2>
+<h3 id="hybrid-global-local-payment-processor-strategy" tabindex="-1"><a class="heading-anchor" href="#hybrid-global-local-payment-processor-strategy" aria-hidden="true">#</a> Hybrid global + local payment processor strategy</h3>
+<p>A global processor (e.g., Stripe) handles credit cards and provides baseline infrastructure. Local processors handle country-specific payment methods (PIX, UPI, PromptPay, ATH Movil, OMT) for best rates and native coverage. Each processor is an adapter behind a common interface — the payment adapter pattern allows swapping or adding processors without rearchitecting.</p>
+<p>Each tenant signs their own agreement with payment processors directly (direct merchant model). GreenGrass facilitates the connection through guided setup wizards and pre-configured processor options but is not party to the financial relationship. This provides the cleanest liability separation and avoids payfac regulatory burden across five countries.</p>
+<p><strong>Alternatives considered:</strong> Single global processor was rejected because no global processor covers all target country payment methods with competitive rates. GreenGrass as payment facilitator (payfac) was rejected because it would require financial regulation compliance in every target jurisdiction.</p>
+<h3 id="multi-currency-acceptance-single-currency-settlement" tabindex="-1"><a class="heading-anchor" href="#multi-currency-acceptance-single-currency-settlement" aria-hidden="true">#</a> Multi-currency acceptance, single-currency settlement</h3>
+<p>Tenants accept donations in multiple currencies but all donations settle into the tenant's primary currency. Every donation records: original currency, original amount, conversion rate at transaction time (stored immutably), settlement currency, settlement amount, processor fees, and net amount. Alliance splits are calculated on the settlement amount, not the original, to avoid conversion discrepancies.</p>
+<p><strong>Alternatives considered:</strong> Multi-currency settlement was rejected because it would require campaigns to maintain multi-currency bank accounts — impractical for most target organizations.</p>
+<h3 id="smart-retry-logic-for-recurring-donations" tabindex="-1"><a class="heading-anchor" href="#smart-retry-logic-for-recurring-donations" aria-hidden="true">#</a> Smart retry logic for recurring donations</h3>
+<p>When a recurring donation payment fails, the platform retries at processor-recommended optimal times when available (up to 4 attempts over 14 days), falling back to a simple schedule (day 1, 3, 7) for processors that don't provide smart retry data. After final failure, the donation is marked as failed with notifications to both donor (with link to update payment method) and campaign.</p>
+<h3 id="first-class-pledges" tabindex="-1"><a class="heading-anchor" href="#first-class-pledges" aria-hidden="true">#</a> First-class pledges</h3>
+<p>Pledges are a formal donation type with their own lifecycle: created during phone banking or canvassing, reminder sent on configurable schedule, fulfilled when the donor completes payment, lapsed after configurable expiry. This connects the field operation pipeline to the fundraising pipeline — a pledge taken at a door becomes a tracked commitment with follow-up.</p>
+<p><strong>Alternatives considered:</strong> Treating pledges as notes/tags on contact records was rejected because pledges have financial and compliance implications that require structured tracking.</p>
+<h3 id="built-in-ab-testing-for-donation-forms" tabindex="-1"><a class="heading-anchor" href="#built-in-ab-testing-for-donation-forms" aria-hidden="true">#</a> Built-in A/B testing for donation forms</h3>
+<p>Tenants can create form variants (different suggested amounts, copy, layouts), split traffic between them, and track conversion per variant. The platform declares a winner based on configurable success metrics (conversion rate, average donation, total revenue). This is a core fundraising optimization capability, not an add-on.</p>
+<h3 id="zero-platform-fee-on-donations" tabindex="-1"><a class="heading-anchor" href="#zero-platform-fee-on-donations" aria-hidden="true">#</a> Zero platform fee on donations</h3>
+<p>GreenGrass takes no cut of donations. Tenants pay only their payment processor's fees. Revenue comes entirely from platform subscriptions (flat tiers, not usage-based). This ensures the strongest alignment with mission — GreenGrass's financial incentives are tied to platform quality, not donation volume.</p>
+<p><strong>Alternatives considered:</strong> Percentage fee on donations was rejected because it misaligns incentives and penalizes successful fundraising campaigns. Per-transaction fee was rejected for the same reason.</p>
+<h3 id="configurable-donation-split-rules-for-alliance-campaigns" tabindex="-1"><a class="heading-anchor" href="#configurable-donation-split-rules-for-alliance-campaigns" aria-hidden="true">#</a> Configurable donation split rules for alliance campaigns</h3>
+<p>Alliance-level fundraising supports multiple split types: percentage-based, fixed amount first (one org gets a fixed amount, remainder split), and threshold-based (split percentages change once a goal is met). All member org admins must unanimously approve split changes — money splits are too sensitive for unilateral modification. Disbursement timing is configurable per campaign: immediate (each org has connected payment accounts) or batch (accumulated and disbursed on schedule).</p>
+<h2 id="consequences" tabindex="-1"><a class="heading-anchor" href="#consequences" aria-hidden="true">#</a> Consequences</h2>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Every country's dominant payment method gets native integration, not adapter shims</li>
+<li>Direct merchant model avoids financial intermediary regulation across five countries</li>
+<li>Zero platform fee maximizes donation value for campaigns and eliminates revenue model conflicts</li>
+<li>Pledge tracking connects field operations to fundraising with structured follow-through</li>
+<li>A/B testing gives resource-constrained campaigns access to professional fundraising optimization</li>
+</ul>
+<p><strong>Costs:</strong></p>
+<ul>
+<li>Maintaining adapters for 10+ payment processors across five countries is ongoing integration work</li>
+<li>Multi-currency handling adds complexity to financial reporting and compliance</li>
+<li>Cash donation handling (full chain of custody: collector → team lead → finance staff → bank deposit) requires careful workflow design</li>
+<li>Alliance split rules with unanimous consent can slow down operational changes</li>
+</ul>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>Cash donations must work offline and sync later (see <a href="./005-offline-first-sync.html">ADR-005</a>)</li>
+<li>Every donation must be auditable end-to-end for campaign finance compliance</li>
+<li>Refunds are only possible through the original payment method</li>
+<li>Foreign contribution screening (real-time blocking for obviously ineligible, escrow for edge cases) must integrate with compliance checks</li>
+</ul>
+<p><strong>Related ADRs:</strong> <a href="./004-data-model-integrity.html">ADR-004</a> (full audit trail for financial transactions), <a href="./009-compliance-legal.html">ADR-009</a> (campaign finance reporting, foreign contribution blocking), <a href="./003-identity-access-organization.html">ADR-003</a> (alliance governance for split rules), <a href="./005-offline-first-sync.html">ADR-005</a> (offline cash donation recording)</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#context"># Context</a></li><li class="toc-2"><a href="#decision"># Decision</a></li><li class="toc-3"><a href="#hybrid-global-local-payment-processor-strategy"># Hybrid global + local payment processor strategy</a></li><li class="toc-3"><a href="#multi-currency-acceptance-single-currency-settlement"># Multi-currency acceptance, single-currency settlement</a></li><li class="toc-3"><a href="#smart-retry-logic-for-recurring-donations"># Smart retry logic for recurring donations</a></li><li class="toc-3"><a href="#first-class-pledges"># First-class pledges</a></li><li class="toc-3"><a href="#built-in-ab-testing-for-donation-forms"># Built-in A/B testing for donation forms</a></li><li class="toc-3"><a href="#zero-platform-fee-on-donations"># Zero platform fee on donations</a></li><li class="toc-3"><a href="#configurable-donation-split-rules-for-alliance-campaigns"># Configurable donation split rules for alliance campaigns</a></li><li class="toc-2"><a href="#consequences"># Consequences</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

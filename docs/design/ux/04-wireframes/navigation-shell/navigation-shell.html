@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation Shell Wireframes · GreenGrass</title>
+<meta name="description" content="Navigation Shell Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="./navigation-shell.html" aria-current="page" class="active">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="navigation-shell-wireframes" tabindex="-1"><a class="heading-anchor" href="#navigation-shell-wireframes" aria-hidden="true">#</a> Navigation Shell Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>These wireframes define the persistent UI frame around all application content — the header bar, sidebar, bottom tabs, and field mode chrome. Every screen in the platform lives inside one of these shells. Getting the shell right is prerequisite to every other wireframe.</p>
+<h2 id="shell-variants" tabindex="-1"><a class="heading-anchor" href="#shell-variants" aria-hidden="true">#</a> Shell Variants</h2>
+<p>The navigation shell does not correspond to individual screens in the screen inventory — it is the persistent frame around all screens. This document defines the following shell variants:</p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Platform</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desktop — Sidebar Expanded</td>
+<td>Desktop</td>
+<td>All staff</td>
+<td>N/A (shell adapts)</td>
+<td>Desktop Shell</td>
+</tr>
+<tr>
+<td>Desktop — Sidebar Collapsed</td>
+<td>Desktop</td>
+<td>All staff</td>
+<td>N/A</td>
+<td>Desktop Shell</td>
+</tr>
+<tr>
+<td>Desktop — Detail Panel</td>
+<td>Desktop</td>
+<td>All staff</td>
+<td>N/A</td>
+<td>Desktop Shell</td>
+</tr>
+<tr>
+<td>Desktop — Notification Drawer</td>
+<td>Desktop</td>
+<td>All staff</td>
+<td>N/A</td>
+<td>Desktop Shell</td>
+</tr>
+<tr>
+<td>Desktop — RTL Layout</td>
+<td>Desktop</td>
+<td>All staff</td>
+<td>N/A</td>
+<td>Desktop Shell</td>
+</tr>
+<tr>
+<td>Mobile — Standard App</td>
+<td>Mobile</td>
+<td>All staff</td>
+<td>N/A</td>
+<td>Mobile Shell</td>
+</tr>
+<tr>
+<td>Field Mode Shell</td>
+<td>Mobile</td>
+<td>V, TL</td>
+<td>Yes (full offline)</td>
+<td>Field Mode Shell</td>
+</tr>
+<tr>
+<td>Wizard Shell</td>
+<td>Both</td>
+<td>OA, V</td>
+<td>No</td>
+<td>Wizard Shell</td>
+</tr>
+<tr>
+<td>Supporter Portal Shell</td>
+<td>Both</td>
+<td>S, Public</td>
+<td>No</td>
+<td>Supporter Portal Shell</td>
+</tr>
+</tbody>
+</table>
+<p>All shells degrade gracefully when offline: features requiring connectivity show greyed-out sidebar/tab items with an offline badge. The shell itself always renders — navigation stability is a core principle.</p>
+<hr>
+<h2 id="desktop-shell-sidebar-expanded" tabindex="-1"><a class="heading-anchor" href="#desktop-shell-sidebar-expanded" aria-hidden="true">#</a> Desktop Shell — Sidebar Expanded</h2>
+<p>The default desktop experience for all staff personas. Sidebar at 240px, collapsible.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde          🔍 Search...                    ● ↻  🔔3  [PD ▾]  │
+├──────────────┬──────────────────────────────────────────────────────────────────┤
+│              │                                                                  │
+│  OVERVIEW    │  Dashboard  ›  Field Operations                                  │
+│  ◉ Dashboard │  ─────────────────────────────────────────────────────────────   │
+│    Activity  │                                                                  │
+│              │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
+│  PEOPLE      │  │ Doors: 1,247│  │ Contacts: 891│  │ Rate: 71.4% │              │
+│    Contacts  │  │     ↑ 12%   │  │     ↑ 8%    │  │     ↑ 2.1%  │              │
+│    Segments  │  └─────────────┘  └─────────────┘  └─────────────┘              │
+│              │                                                                  │
+│  FIELD     ▾ │  ┌──────────────────────────────────────────────────┐            │
+│  ◦ Canvassing│  │                                                  │            │
+│    Phone Bank│  │            Doors Knocked (30 days)               │            │
+│    Voter Reg │  │            ~~~~~~~~~~~~~~~~~~~~~~~~~~~           │            │
+│    Turfs     │  │  400 ┤    /\                                     │            │
+│              │  │  300 ┤   /  \      /\                            │            │
+│  FUNDRAISING │  │  200 ┤  /    \    /  \    /\                     │            │
+│    Donations │  │  100 ┤ /      \  /    \  /  \___                 │            │
+│    Forms     │  │    0 ┤/        \/      \/                        │            │
+│    Campaigns │  │       ├──┬──┬──┬──┬──┬──┬──┬──┤                  │            │
+│    Compliance│  │       W1 W2 W3 W4 W5 W6 W7 W8                   │            │
+│              │  └──────────────────────────────────────────────────┘            │
+│  COMMS       │                                                                  │
+│    Email     │  ┌──────────────────────────────────────────────────┐            │
+│    SMS/WA    │  │  Active Campaigns                                │            │
+│    Social    │  ├──────────────────────────────────────────────────┤            │
+│    Templates │  │  Northside Canvass     142/200 doors   In Prog   │            │
+│              │  │  Westside Follow-up     87/150 doors   In Prog   │            │
+│  EVENTS      │  │  Phone Bank Wave 3     312/500 calls   In Prog   │            │
+│    Events    │  │  Eastside Registration   45/100 voters  Planned  │            │
+│    Check-in  │  └──────────────────────────────────────────────────┘            │
+│              │                                                                  │
+│  MESSAGING   │                                                                  │
+│    Messages  │                                                                  │
+│              │                                                                  │
+│──────────────│                                                                  │
+│  ? Help      │                                                                  │
+│  🌐 Español  │                                                                  │
+│  ⚙ Settings  │                                                                  │
+└──────────────┴──────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="header-bar-anatomy" tabindex="-1"><a class="heading-anchor" href="#header-bar-anatomy" aria-hidden="true">#</a> Header Bar Anatomy</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  [1]              [2]                                    [3] [4]  [5]    [6]    │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+[1] Tenant identity     Logo + name. Links to home screen.
+                        In alliance context: alliance name + tenant switcher dropdown.
+
+[2] Global search       Text input. Cmd+K shortcut opens command palette overlay.
+                        Type-ahead results grouped by type (people, events, campaigns).
+
+[3] Sync indicator      Green dot = connected. Amber = stale. Grey = offline.
+                        Tapping opens sync detail panel.
+
+[4] Sync action         Only visible when syncing (animated) or when there's an error.
+
+[5] Notifications       Bell icon + unread badge count. Tapping opens notification drawer.
+
+[6] User avatar         Initials or photo. Dropdown: profile, preferences, language,
+                        security, tenant switcher (if multi-tenant), log out.
+</code></pre>
+<h3 id="header-bar-states" tabindex="-1"><a class="heading-anchor" href="#header-bar-states" aria-hidden="true">#</a> Header Bar States</h3>
+<p><strong>Connected (normal):</strong></p>
+<pre><code>│  🌿 Partido Verde          🔍 Search...                       ●    🔔3  [PD ▾]  │
+</code></pre>
+<p><strong>Stale (&gt;5 min since sync):</strong></p>
+<pre><code>│  🌿 Partido Verde          🔍 Search...           ● Last sync: 8 min  🔔3  [PD ▾]  │
+</code></pre>
+<p><strong>Syncing:</strong></p>
+<pre><code>│  🌿 Partido Verde          🔍 Search...                      ↻    🔔3  [PD ▾]  │
+</code></pre>
+<p><strong>Offline:</strong></p>
+<pre><code>│  🌿 Partido Verde          🔍 Search...          ◌ Offline          🔔3  [PD ▾]  │
+</code></pre>
+<p><strong>Sync error:</strong></p>
+<pre><code>│  🌿 Partido Verde          🔍 Search...       ⚠ Sync failed · Retry  🔔3  [PD ▾]  │
+</code></pre>
+<h3 id="sidebar-anatomy" tabindex="-1"><a class="heading-anchor" href="#sidebar-anatomy" aria-hidden="true">#</a> Sidebar Anatomy</h3>
+<pre><code>┌──────────────┐
+│              │  240px wide (expanded)
+│  SECTION   ▾ │  ← Collapsible section header (uppercase, muted text, chevron)
+│  ◉ Active    │  ← Active item: filled dot, primary color text, subtle bg highlight
+│  ◦ Item      │  ← Inactive item: hollow dot, default text
+│  ◦ Item  🔴3 │  ← Item with badge (unread count, pending count)
+│  ◦ Item  ◌   │  ← Offline-unavailable item: greyed text, offline badge
+│              │
+│  SECTION   ▸ │  ← Collapsed section (right-pointing chevron)
+│              │
+│──────────────│  ← Divider before footer
+│  ? Help      │
+│  🌐 Language │
+│  ⚙ Settings  │
+└──────────────┘
+</code></pre>
+<hr>
+<h2 id="desktop-shell-sidebar-collapsed" tabindex="-1"><a class="heading-anchor" href="#desktop-shell-sidebar-collapsed" aria-hidden="true">#</a> Desktop Shell — Sidebar Collapsed</h2>
+<p>User preference (persisted). Icon-only sidebar at 64px. Hovering an icon shows a tooltip with the item name.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde          🔍 Search...                    ●    🔔3  [PD ▾]   │
+├────────┬────────────────────────────────────────────────────────────────────────┤
+│        │                                                                        │
+│  📊    │  Dashboard  ›  Field Operations                                        │
+│  👥    │  ─────────────────────────────────────────────────────────────────      │
+│  🏠    │                                                                        │
+│  💰    │                    (wider content area)                                 │
+│  📧    │                                                                        │
+│  📅    │                                                                        │
+│  💬    │                                                                        │
+│        │                                                                        │
+│        │                                                                        │
+│        │                                                                        │
+│        │                                                                        │
+│────────│                                                                        │
+│  ?     │                                                                        │
+│  🌐    │                                                                        │
+│  ⚙     │                                                                        │
+└────────┴────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="collapseexpand-behavior" tabindex="-1"><a class="heading-anchor" href="#collapseexpand-behavior" aria-hidden="true">#</a> Collapse/Expand Behavior</h3>
+<ul>
+<li>Toggle: Click the collapse button at the top of the sidebar (hamburger icon or «/» chevrons)</li>
+<li>Preference persisted to local storage</li>
+<li>Collapsed sidebar shows: section dividers (thin lines), icon per item, tooltip on hover</li>
+<li>Active item: icon highlighted with primary color background circle</li>
+<li>Hovering a collapsed section shows a flyout with the full section items</li>
+</ul>
+<hr>
+<h2 id="desktop-shell-with-detail-panel" tabindex="-1"><a class="heading-anchor" href="#desktop-shell-with-detail-panel" aria-hidden="true">#</a> Desktop Shell — With Detail Panel</h2>
+<p>When viewing a record in split-view mode (e.g., clicking a contact in a list):</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde          🔍 Search...                    ●    🔔3  [PD ▾]   │
+├──────────────┬────────────────────────────────────┬─────────────────────────────┤
+│              │                                    │                             │
+│  OVERVIEW    │  Contacts                          │  Ana Martínez           ✕  │
+│  ◉ Dashboard │  ────────────────────────          │  ────────────────────────  │
+│    Activity  │                                    │                             │
+│              │  🔍 Search   [Filter▾] [+New]      │  📷  Ana Martínez           │
+│  PEOPLE    ▾ │                                    │      ana@email.com          │
+│  ◉ Contacts  │  ☐  Ana Martínez     Supporter  → │      +1 787-555-0147        │
+│    Segments  │  ☐  Carlos Rivera    Volunteer     │      San Juan, PR           │
+│              │  ☐  Elena Torres     Donor         │                             │
+│  FIELD       │  ☐  José Delgado    Vol. Lead     │  [Overview] [Activity] [Notes]│
+│    Canvassing│  ☐  María Santos     Supporter     │  ──────────────────────     │
+│    Phone Bank│  ☐  Pedro Colón      Volunteer     │  Status: Active Supporter   │
+│    Voter Reg │  ☐  Rosa Figueroa    Donor         │  Support Score: 4 (Strong)  │
+│    Turfs     │  ...                               │  Last Contact: Jan 15       │
+│              │                                    │  Source: Door Canvass       │
+│  FUNDRAISING │  ◀ 1 of 12 ▶  Showing 1-25 of 287│  Tags: Northside, Vol-Int   │
+│    Donations │                                    │                             │
+│    ...       │                                    │  [Edit]  [Log Interaction]  │
+│              │                                    │                             │
+└──────────────┴────────────────────────────────────┴─────────────────────────────┘
+</code></pre>
+<h3 id="detail-panel-behavior" tabindex="-1"><a class="heading-anchor" href="#detail-panel-behavior" aria-hidden="true">#</a> Detail Panel Behavior</h3>
+<ul>
+<li><strong>Width:</strong> ~380px default, resizable by dragging the left edge</li>
+<li><strong>Dismiss:</strong> Click ✕ or press Escape</li>
+<li><strong>Pin:</strong> User can pin the detail panel open (persisted preference)</li>
+<li><strong>Content:</strong> Loads the detail view of the selected record</li>
+<li><strong>Navigation:</strong> Clicking a different list item updates the detail panel content</li>
+<li><strong>Small desktops (1024-1280px):</strong> Detail panel opens as a full-screen overlay instead of inline split</li>
+<li><strong>Transition:</strong> Slide in from right (or left in RTL), 200ms ease-out</li>
+</ul>
+<hr>
+<h2 id="desktop-shell-notification-drawer" tabindex="-1"><a class="heading-anchor" href="#desktop-shell-notification-drawer" aria-hidden="true">#</a> Desktop Shell — Notification Drawer</h2>
+<p>Triggered by clicking the notification bell:</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde          🔍 Search...                    ●    🔔3  [PD ▾]   │
+├──────────────┬──────────────────────────────────────┬───────────────────────────┤
+│              │                                      │                           │
+│  OVERVIEW    │         (main content dimmed)        │  Notifications        ✕  │
+│  ◉ Dashboard │                                      │  ─────────────────────   │
+│    Activity  │                                      │  [All] [Unread] [@ Me]   │
+│              │                                      │                           │
+│  PEOPLE      │                                      │  TODAY                    │
+│    Contacts  │                                      │  ┌───────────────────┐   │
+│    Segments  │                                      │  │ 🔔 New shift      │   │
+│              │                                      │  │ Northside Canvass │   │
+│  FIELD       │                                      │  │ assigned to you   │   │
+│    Canvassing│                                      │  │ 2 min ago         │   │
+│    Phone Bank│                                      │  └───────────────────┘   │
+│              │                                      │  ┌───────────────────┐   │
+│              │                                      │  │ 💬 María Santos   │   │
+│              │                                      │  │ sent you a message│   │
+│              │                                      │  │ 15 min ago        │   │
+│              │                                      │  └───────────────────┘   │
+│              │                                      │  ┌───────────────────┐   │
+│              │                                      │  │ 💰 $250 donation  │   │
+│              │                                      │  │ from Pedro Colón  │   │
+│              │                                      │  │ 1 hour ago        │   │
+│              │                                      │  └───────────────────┘   │
+│              │                                      │                           │
+│              │                                      │  YESTERDAY                │
+│              │                                      │  ...                      │
+│              │                                      │                           │
+│              │                                      │  [Mark all read]          │
+│              │                                      │  [Notification settings]  │
+└──────────────┴──────────────────────────────────────┴───────────────────────────┘
+</code></pre>
+<h3 id="notification-drawer-behavior" tabindex="-1"><a class="heading-anchor" href="#notification-drawer-behavior" aria-hidden="true">#</a> Notification Drawer Behavior</h3>
+<ul>
+<li><strong>Width:</strong> ~380px, slides from right (left in RTL)</li>
+<li><strong>Filter tabs:</strong> All, Unread, @ Me (mentions/direct assignments)</li>
+<li><strong>Grouping:</strong> By day (Today, Yesterday, This Week, Older)</li>
+<li><strong>Dismiss:</strong> Click ✕, click outside, or press Escape</li>
+<li><strong>Click notification:</strong> Navigates to relevant screen, closes drawer</li>
+<li><strong>Mark read:</strong> Individual (click) or bulk (&quot;Mark all read&quot;)</li>
+<li><strong>Badge clears:</strong> When drawer is opened, badge count resets after 2s viewing</li>
+</ul>
+<hr>
+<h2 id="desktop-shell-rtl-layout" tabindex="-1"><a class="heading-anchor" href="#desktop-shell-rtl-layout" aria-hidden="true">#</a> Desktop Shell — RTL Layout</h2>
+<p>Arabic or Hebrew UI language. Everything mirrors via CSS logical properties.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  [PD ▾]  3🔔  ↻ ●                    ...Search 🔍          حزب أخضر  🌿       │
+├──────────────────────────────────────────────────────────────┬──────────────────┤
+│                                                              │                  │
+│                              نظرة عامة على الحملة            │    نظرة عامة     │
+│  ───────────────────────────────────────────────────────     │  لوحة المعلومات ◉│
+│                                                              │    النشاط        │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐          │                  │
+│  │ 71.4% :معدل │  │ 891 :اتصالات│  │ 1,247 :أبواب│          │  ▾ الأشخاص      │
+│  │   ↑ 2.1%    │  │     ↑ 8%    │  │     ↑ 12%   │          │    جهات الاتصال  │
+│  └─────────────┘  └─────────────┘  └─────────────┘          │    الشرائح       │
+│                                                              │                  │
+│              (content mirrors — charts, tables, etc.)        │  الميدان         │
+│                                                              │    التجول        │
+│                                                              │    بنك الهاتف    │
+│                                                              │                  │
+│                                                              │  المراسلة        │
+│                                                              │    الرسائل       │
+│                                                              │                  │
+│                                                              │──────────────────│
+│                                                              │       مساعدة ?   │
+│                                                              │       العربية 🌐 │
+│                                                              │       إعدادات ⚙  │
+└──────────────────────────────────────────────────────────────┴──────────────────┘
+</code></pre>
+<h3 id="rtl-specifics" tabindex="-1"><a class="heading-anchor" href="#rtl-specifics" aria-hidden="true">#</a> RTL Specifics</h3>
+<ul>
+<li>Sidebar moves to the <strong>right</strong> side</li>
+<li>Detail panel moves to the <strong>left</strong> side</li>
+<li>Header bar items reverse order (avatar far left, logo far right)</li>
+<li>Search input: text entry is RTL, but search icons stay in place</li>
+<li>Chevrons point left for &quot;expand/forward&quot; (opposite of LTR)</li>
+<li>Breadcrumb direction reverses (right → left)</li>
+<li>Tab bar order reverses</li>
+<li>Numbers (currency, counts, dates) remain LTR within their containers</li>
+<li>All achieved with <code>dir=&quot;rtl&quot;</code> on <code>&lt;html&gt;</code> + CSS logical properties — zero RTL-specific CSS</li>
+</ul>
+<hr>
+<h2 id="mobile-shell-standard-app" tabindex="-1"><a class="heading-anchor" href="#mobile-shell-standard-app" aria-hidden="true">#</a> Mobile Shell — Standard App</h2>
+<p>The mobile experience for all personas. Bottom tab bar with 4-5 role-adaptive tabs.</p>
+<h3 id="org-admin-mobile" tabindex="-1"><a class="heading-anchor" href="#org-admin-mobile" aria-hidden="true">#</a> Org Admin Mobile</h3>
+<pre><code>┌──────────────────────────────┐
+│  ≡  Dashboard         🔍  ●  │  ← Top bar
+├──────────────────────────────┤
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Total Raised            ││
+│  │  $47,320     ↑ 12%       ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Doors Knocked           ││
+│  │  1,247        ↑ 8%       ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Active Volunteers       ││
+│  │  34           ↑ 15%      ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ⚠ Alerts (3)            ││
+│  │  Compliance flag: José D.││
+│  │  Sync issue: Turf 7      ││
+│  │  Form builder draft exp. ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│ 📊      👥      💰     💬   ⋯│
+│ Dash  Contacts Donate  Msgs More│
+└──────────────────────────────┘
+</code></pre>
+<h3 id="volunteer-mobile" tabindex="-1"><a class="heading-anchor" href="#volunteer-mobile" aria-hidden="true">#</a> Volunteer Mobile</h3>
+<pre><code>┌──────────────────────────────┐
+│  ≡  My Shifts         🔍  ●  │
+├──────────────────────────────┤
+│                              │
+│  ┌──────────────────────────┐│
+│  │  UPCOMING                ││
+│  ├──────────────────────────┤│
+│  │  📋 Northside Canvass    ││
+│  │  Tomorrow, 2:00 PM       ││
+│  │  47 doors assigned       ││
+│  │                 [Details] ││
+│  ├──────────────────────────┤│
+│  │  📞 Phone Bank Wave 3    ││
+│  │  Sat, March 8, 10:00 AM  ││
+│  │  25 calls assigned       ││
+│  │                 [Details] ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  RECENT                  ││
+│  ├──────────────────────────┤│
+│  │  ✓ Westside Canvass      ││
+│  │  Yesterday · 32/40 doors ││
+│  ├──────────────────────────┤│
+│  │  ✓ Voter Reg Drive       ││
+│  │  Feb 28 · 12 registered  ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  📋      📅      💬    [▶ GO]│
+│ Shifts  Events  Msgs  Start  │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="mobile-top-bar-anatomy" tabindex="-1"><a class="heading-anchor" href="#mobile-top-bar-anatomy" aria-hidden="true">#</a> Mobile Top Bar Anatomy</h3>
+<p><strong>Root level (top of navigation):</strong></p>
+<pre><code>┌──────────────────────────────┐
+│  ≡  [Screen Title]    [Actions]│
+└──────────────────────────────┘
+
+≡ = Hamburger menu → opens slide-out with full nav sections
+    (same content as desktop sidebar, presented as full-screen list)
+
+[Actions] = Contextual. Examples:
+  Search icon (🔍) — global search overlay
+  Sync indicator (● / ◌) — tappable for sync detail
+  Filter icon — opens filter bottom sheet
+  Compose icon — new message, new record
+  More icon (⋯) — additional actions bottom sheet
+</code></pre>
+<p><strong>Navigated deep (detail screens):</strong></p>
+<pre><code>┌──────────────────────────────┐
+│  ←  Ana Martínez      [Edit] ⋯│
+└──────────────────────────────┘
+
+← = Back arrow. Returns to previous screen.
+    In RTL: arrow points right (→)
+</code></pre>
+<h3 id="bottom-tab-bar-anatomy" tabindex="-1"><a class="heading-anchor" href="#bottom-tab-bar-anatomy" aria-hidden="true">#</a> Bottom Tab Bar Anatomy</h3>
+<pre><code>┌──────────────────────────────┐
+│  [icon]  [icon]  [icon]  [icon] [icon]│
+│  Label   Label   Label   Label  Label │
+└──────────────────────────────┘
+
+- 4-5 items max per role
+- Active tab: primary color fill on icon, primary color label
+- Inactive: muted color icon and label
+- Badge: red dot with count (top-right of icon)
+- &quot;Start Shift&quot; tab: visually distinct — filled/primary color background, contrasts with other tabs
+
+Touch targets: 48px minimum height. Tab bar height: 56px + safe area inset bottom.
+</code></pre>
+<h3 id="per-persona-mobile-tabs" tabindex="-1"><a class="heading-anchor" href="#per-persona-mobile-tabs" aria-hidden="true">#</a> Per-Persona Mobile Tabs</h3>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Tab 1</th>
+<th>Tab 2</th>
+<th>Tab 3</th>
+<th>Tab 4</th>
+<th>Tab 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Org Admin</strong></td>
+<td>Dashboard</td>
+<td>Contacts</td>
+<td>Donations</td>
+<td>Messages</td>
+<td>More</td>
+</tr>
+<tr>
+<td><strong>Comms Director</strong></td>
+<td>Dashboard</td>
+<td>Email</td>
+<td>Social</td>
+<td>Messages</td>
+<td>More</td>
+</tr>
+<tr>
+<td><strong>Finance Director</strong></td>
+<td>Dashboard</td>
+<td>Donations</td>
+<td>Compliance</td>
+<td>Messages</td>
+<td>More</td>
+</tr>
+<tr>
+<td><strong>Field Director</strong></td>
+<td>Dashboard</td>
+<td>Canvassing</td>
+<td>Turfs</td>
+<td>Messages</td>
+<td>More</td>
+</tr>
+<tr>
+<td><strong>Vol. Coordinator</strong></td>
+<td>Dashboard</td>
+<td>Roster</td>
+<td>Shifts</td>
+<td>Messages</td>
+<td>More</td>
+</tr>
+<tr>
+<td><strong>Data Manager</strong></td>
+<td>Contacts</td>
+<td>Import</td>
+<td>Dedup</td>
+<td>Messages</td>
+<td>More</td>
+</tr>
+<tr>
+<td><strong>Volunteer</strong></td>
+<td>Shifts</td>
+<td>Events</td>
+<td>Messages</td>
+<td><strong>Start Shift</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Team Lead</strong></td>
+<td>Shifts</td>
+<td>Events</td>
+<td>Messages</td>
+<td><strong>Start Shift</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Candidate</strong></td>
+<td>Dashboard</td>
+<td>Profile</td>
+<td>Approvals</td>
+<td>Messages</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Supporter</strong></td>
+<td>Profile</td>
+<td>Donations</td>
+<td>Events</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mobile-more-menu" tabindex="-1"><a class="heading-anchor" href="#mobile-more-menu" aria-hidden="true">#</a> Mobile &quot;More&quot; Menu</h3>
+<p>Tapping &quot;More&quot; opens a bottom sheet with all remaining nav items:</p>
+<pre><code>                              ┌──────────────────────────────┐
+                              │  ─── (drag handle)           │
+                              │                              │
+                              │  FIELD                       │
+                              │  ◦ Canvassing                │
+                              │  ◦ Phone Banking             │
+                              │  ◦ Voter Registration        │
+                              │  ◦ Turfs                     │
+                              │                              │
+                              │  COMMUNICATIONS              │
+                              │  ◦ Email                     │
+                              │  ◦ SMS/WhatsApp              │
+                              │  ◦ Social Media              │
+                              │                              │
+                              │  EVENTS                      │
+                              │  ◦ Events                    │
+                              │  ◦ Check-in                  │
+                              │                              │
+                              │  ───────────────             │
+                              │  ⚙ Settings                  │
+                              │  ? Help                      │
+                              │  🌐 Language                  │
+                              └──────────────────────────────┘
+</code></pre>
+<h3 id="mobile-hamburger-menu" tabindex="-1"><a class="heading-anchor" href="#mobile-hamburger-menu" aria-hidden="true">#</a> Mobile Hamburger Menu</h3>
+<p>Tapping ≡ at root level. Full-screen overlay with the same section structure as the desktop sidebar:</p>
+<pre><code>┌──────────────────────────────┐
+│  ✕                    [PD]   │
+│                              │
+│  Pablo Defendini             │
+│  Org Admin · Partido Verde   │
+│                              │
+│  ─────────────────────────── │
+│                              │
+│  OVERVIEW                    │
+│  ◉ Dashboard                 │
+│    Activity Feed             │
+│                              │
+│  PEOPLE                      │
+│    Contacts                  │
+│    Segments                  │
+│                              │
+│  FIELD                       │
+│    Canvassing                │
+│    Phone Banking             │
+│    Voter Registration        │
+│    Turfs                     │
+│                              │
+│  FUNDRAISING                 │
+│    Donations                 │
+│    Forms                     │
+│    ...                       │
+│                              │
+│  ─────────────────────────── │
+│  ⚙ Settings                  │
+│  ? Help                      │
+│  🌐 Language                  │
+│  🚪 Log Out                  │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="field-mode-shell-mobile-only" tabindex="-1"><a class="heading-anchor" href="#field-mode-shell-mobile-only" aria-hidden="true">#</a> Field Mode Shell — Mobile Only</h2>
+<p>Full-screen takeover. Replaces all normal navigation. This is the volunteer's world during a shift.</p>
+<h3 id="field-mode-walk-list-view" tabindex="-1"><a class="heading-anchor" href="#field-mode-walk-list-view" aria-hidden="true">#</a> Field Mode — Walk List View</h3>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 30s ago     ●REC  2:34│  ← Field header
+├──────────────────────────────┤
+│                              │
+│  Northside Canvass           │
+│  12 of 47 complete           │
+│  ▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░  │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  13. Ana Martínez        ││
+│  │  742 Calle Sol, Apt 3    ││
+│  │  ◦ Not yet visited       ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  14. Carlos Rivera       ││
+│  │  744 Calle Sol           ││
+│  │  ◦ Not yet visited       ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  15. Elena Torres        ││
+│  │  748 Calle Sol, Apt 1    ││
+│  │  ◦ Not yet visited       ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  16. José Delgado        ││
+│  │  750 Calle Sol           ││
+│  │  ◦ Not yet visited       ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  [📍 Map]         [End Shift]│
+│                        [🔒]  │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="field-mode-door-card-active-interaction" tabindex="-1"><a class="heading-anchor" href="#field-mode-door-card-active-interaction" aria-hidden="true">#</a> Field Mode — Door Card (Active Interaction)</h3>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 2m ago      ●REC  2:41│
+├──────────────────────────────┤
+│                              │
+│  Ana Martínez                │
+│  742 Calle Sol, Apt 3       │
+│  Age: 34 · F · Registered ✓ │
+│                              │
+│  Previous: Canvassed Jan 12  │
+│  Support: 3 (Lean Support)   │
+│                              │
+│  ─────────────────────────── │
+│                              │
+│  &quot;Do you plan to support     │
+│   Partido Verde in the       │
+│   upcoming election?&quot;        │
+│                              │
+│  ┌──────────────────────────┐│
+│  │    1 — Strong Support     ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    2 — Lean Support       ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    3 — Undecided          ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    4 — Lean Oppose        ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    5 — Strong Oppose      ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │    ✕ — Not Home           ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  [◀ Prev]   13 of 47  [Next ▶]│
+├──────────────────────────────┤
+│  [End Shift]            [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="field-mode-after-response-selected" tabindex="-1"><a class="heading-anchor" href="#field-mode-after-response-selected" aria-hidden="true">#</a> Field Mode — After Response Selected</h3>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 2m ago      ●REC  2:43│
+├──────────────────────────────┤
+│                              │
+│  Ana Martínez           ✓    │
+│  742 Calle Sol, Apt 3       │
+│                              │
+│  Response: 2 — Lean Support  │
+│                              │
+│  ─────────────────────────── │
+│                              │
+│  &quot;What issues are most       │
+│   important to you?&quot;         │
+│                              │
+│  ☑ Environment               │
+│  ☐ Economy                   │
+│  ☐ Education                 │
+│  ☑ Healthcare                │
+│  ☐ Housing                   │
+│  ☐ Public Safety             │
+│                              │
+│  ─────────────────────────── │
+│                              │
+│  Notes (optional):           │
+│  ┌──────────────────────────┐│
+│  │ Has a yard sign from     ││
+│  │ last election. Interested││
+│  │ in volunteering.          ││
+│  └──────────────────────────┘│
+│                              │
+│  [Save &amp; Next →]             │
+│                              │
+├──────────────────────────────┤
+│  [◀ Prev]   13 of 47  [Next ▶]│
+├──────────────────────────────┤
+│  [End Shift]            [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="field-mode-map-view" tabindex="-1"><a class="heading-anchor" href="#field-mode-map-view" aria-hidden="true">#</a> Field Mode — Map View</h3>
+<pre><code>┌──────────────────────────────┐
+│  ● Synced 30s ago     ●REC  2:50│
+├──────────────────────────────┤
+│                              │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  │    🟢 ── 🟢              ││
+│  │    |      |              ││
+│  │    🟢    🔵 ←(you)       ││
+│  │    |      |              ││
+│  │    ⚪ ── ⚪              ││
+│  │    |      |              ││
+│  │    ⚪ ── ⚪              ││
+│  │                          ││
+│  │  🟢 = Visited            ││
+│  │  🔵 = Current            ││
+│  │  ⚪ = Remaining          ││
+│  │                          ││
+│  └──────────────────────────┘│
+│                              │
+│  Next: 14. Carlos Rivera     │
+│  744 Calle Sol  ·  120m away │
+│                              │
+│  [← List View]   [Navigate]  │
+│                              │
+├──────────────────────────────┤
+│  [End Shift]            [🔒] │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="field-mode-header-states" tabindex="-1"><a class="heading-anchor" href="#field-mode-header-states" aria-hidden="true">#</a> Field Mode Header States</h3>
+<pre><code>Connected:     │  ● Synced 30s ago       ●REC  2:34 │
+Stale:         │  ● Synced 12 min ago    ●REC  2:34 │  (amber, larger)
+Syncing:       │  ↻ Syncing...           ●REC  2:34 │  (full-width bar)
+Offline:       │  ◌ Offline · 47 min     ●REC  2:34 │  (grey, elapsed time)
+Sync error:    │  ⚠ Sync failed · Retry  ●REC  2:34 │  (red, full-width)
+</code></pre>
+<h3 id="field-mode-end-shift-flow" tabindex="-1"><a class="heading-anchor" href="#field-mode-end-shift-flow" aria-hidden="true">#</a> Field Mode — End Shift Flow</h3>
+<pre><code>Screen 1: Confirmation
+
+┌──────────────────────────────┐
+│  End Shift?                  │
+├──────────────────────────────┤
+│                              │
+│  Northside Canvass           │
+│  Duration: 2h 50m            │
+│                              │
+│  Completed: 32 of 47 doors   │
+│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░  │
+│                              │
+│  Pending sync: 5 interactions│
+│                              │
+│  ⚠ 15 doors remaining.      │
+│  They will be released back  │
+│  to the assignment pool.     │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  End Shift &amp; Sync        ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  Continue Canvassing     ││
+│  └──────────────────────────┘│
+│                              │
+└──────────────────────────────┘
+
+Screen 2: Debrief (after sync)
+
+┌──────────────────────────────┐
+│  Shift Complete  ✓           │
+├──────────────────────────────┤
+│                              │
+│  Great work! Here's your     │
+│  shift summary:              │
+│                              │
+│  Duration:    2h 50m         │
+│  Doors:       32             │
+│  Contacts:    24             │
+│  Contact Rate: 75%           │
+│  Strong Support: 8           │
+│  Lean Support:  11           │
+│  Undecided:     3            │
+│  Not Home:      8            │
+│                              │
+│  How did it go? (optional)   │
+│  ┌──────────────────────────┐│
+│  │                          ││
+│  │                          ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Done                    ││
+│  └──────────────────────────┘│
+│                              │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="panic-button-behavior" tabindex="-1"><a class="heading-anchor" href="#panic-button-behavior" aria-hidden="true">#</a> Panic Button Behavior</h3>
+<p>The lock button (🔒) is always visible in field mode:</p>
+<ul>
+<li><strong>Position:</strong> Bottom-right corner, always accessible</li>
+<li><strong>Tap behavior:</strong> Immediate lock. No confirmation dialog. No animation. App locks instantly and shows the device lock screen.</li>
+<li><strong>Re-entry:</strong> Requires re-authentication. If duress passkey is used, app enters duress mode with sanitized data.</li>
+<li><strong>Size:</strong> 44px minimum touch target, slightly larger in field mode (48px)</li>
+</ul>
+<hr>
+<h2 id="wizard-shell" tabindex="-1"><a class="heading-anchor" href="#wizard-shell" aria-hidden="true">#</a> Wizard Shell</h2>
+<p>Replaces the sidebar with step indicators. Used for onboarding wizards and multi-step setup flows.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 GreenGrass                                             [Save &amp; Exit]       │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  ○ Organization  ●─── Payment  ○─── Branding  ○─── Team  ○─── Review          │
+│     Info            Processor       Setup         Setup       &amp; Launch          │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Connect Payment Processor                                                      │
+│  ─────────────────────────                                                      │
+│                                                                                 │
+│  Choose how your organization will accept donations.                            │
+│                                                                                 │
+│  ┌────────────────────────────────────────┐                                     │
+│  │  ☉ Stripe                              │                                     │
+│  │  Credit cards, ACH. Available in PR.   │                                     │
+│  │  [Connect Stripe Account →]            │                                     │
+│  └────────────────────────────────────────┘                                     │
+│                                                                                 │
+│  ┌────────────────────────────────────────┐                                     │
+│  │  ○ Local Processor                     │                                     │
+│  │  Country-specific payment methods.     │                                     │
+│  │  Configure after initial setup.        │                                     │
+│  └────────────────────────────────────────┘                                     │
+│                                                                                 │
+│  ┌────────────────────────────────────────┐                                     │
+│  │  ○ Skip for Now                        │                                     │
+│  │  Set up payments later in Settings.    │                                     │
+│  └────────────────────────────────────────┘                                     │
+│                                                                                 │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  [← Back]                                                          [Next →]    │
+└─────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="wizard-shell-mobile" tabindex="-1"><a class="heading-anchor" href="#wizard-shell-mobile" aria-hidden="true">#</a> Wizard Shell — Mobile</h3>
+<pre><code>┌──────────────────────────────┐
+│  🌿     Step 2 of 5  [Save] │
+├──────────────────────────────┤
+│  ●━━━━━●━━━━━○━━━━━○━━━━━○  │
+├──────────────────────────────┤
+│                              │
+│  Connect Payment Processor   │
+│  ────────────────────────    │
+│                              │
+│  Choose how your org will    │
+│  accept donations.           │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ☉ Stripe                ││
+│  │  Credit cards, ACH.      ││
+│  │  [Connect →]             ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ○ Local Processor       ││
+│  │  Country-specific.       ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ○ Skip for Now          ││
+│  └──────────────────────────┘│
+│                              │
+│                              │
+├──────────────────────────────┤
+│  [← Back]          [Next →]  │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="supporter-portal-shell" tabindex="-1"><a class="heading-anchor" href="#supporter-portal-shell" aria-hidden="true">#</a> Supporter Portal Shell</h2>
+<p>Minimal navigation. Tenant-branded. Public-facing.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde de Puerto Rico                      [Mi Perfil]  [Cerrar]    │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  [Mi Perfil]    [Donaciones]    [Eventos]    [Preferencias]                     │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  Historial de Donaciones                                                        │
+│  ─────────────────────────                                                      │
+│                                                                                 │
+│  Total donado: $1,250                                                           │
+│  Donaciones: 8  ·  Desde: Enero 2025                                           │
+│                                                                                 │
+│  ┌────────────────────────────────────────────────────────────────┐             │
+│  │  Mar 1, 2026    $100.00    Mensual    Recibo ↓               │             │
+│  │  Feb 1, 2026    $100.00    Mensual    Recibo ↓               │             │
+│  │  Jan 15, 2026   $250.00    Única      Recibo ↓               │             │
+│  │  Jan 1, 2026    $100.00    Mensual    Recibo ↓               │             │
+│  │  ...                                                          │             │
+│  └────────────────────────────────────────────────────────────────┘             │
+│                                                                                 │
+│  Donación Recurrente                                                            │
+│  ┌────────────────────────────────────────────────────────────────┐             │
+│  │  $100.00/mes  ·  Próxima: Apr 1, 2026  ·  Visa ****4242     │             │
+│  │  [Actualizar monto]  [Actualizar tarjeta]  [Cancelar]        │             │
+│  └────────────────────────────────────────────────────────────────┘             │
+│                                                                                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│  Partido Verde de Puerto Rico · Privacidad · Términos                          │
+└─────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="supporter-portal-mobile" tabindex="-1"><a class="heading-anchor" href="#supporter-portal-mobile" aria-hidden="true">#</a> Supporter Portal — Mobile</h3>
+<pre><code>┌──────────────────────────────┐
+│  🌿 Partido Verde    [👤] [✕]│
+├──────────────────────────────┤
+│                              │
+│  [Perfil] [Donaciones] [Eventos]│
+│                              │
+├──────────────────────────────┤
+│                              │
+│  Historial de Donaciones     │
+│  ─────────────────────       │
+│                              │
+│  Total: $1,250               │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Mar 1     $100   Mensual││
+│  │                   Recibo ↓││
+│  ├──────────────────────────┤│
+│  │  Feb 1     $100   Mensual││
+│  │                   Recibo ↓││
+│  ├──────────────────────────┤│
+│  │  Jan 15    $250   Única  ││
+│  │                   Recibo ↓││
+│  └──────────────────────────┘│
+│                              │
+│  Recurrente: $100/mes        │
+│  Próxima: Apr 1              │
+│  [Administrar]               │
+│                              │
+├──────────────────────────────┤
+│  Privacidad · Términos       │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="interaction-specifications" tabindex="-1"><a class="heading-anchor" href="#interaction-specifications" aria-hidden="true">#</a> Interaction Specifications</h2>
+<h3 id="sidebar-collapse-animation" tabindex="-1"><a class="heading-anchor" href="#sidebar-collapse-animation" aria-hidden="true">#</a> Sidebar Collapse Animation</h3>
+<ul>
+<li>Duration: 200ms</li>
+<li>Easing: ease-out</li>
+<li>Items fade out, then sidebar width animates</li>
+<li>Reduced motion: instant, no animation</li>
+</ul>
+<h3 id="detail-panel-slide" tabindex="-1"><a class="heading-anchor" href="#detail-panel-slide" aria-hidden="true">#</a> Detail Panel Slide</h3>
+<ul>
+<li>Duration: 200ms</li>
+<li>Easing: ease-out</li>
+<li>Direction: from right (from left in RTL)</li>
+<li>Main content area width animates to accommodate</li>
+<li>Reduced motion: instant appear/disappear</li>
+</ul>
+<h3 id="mobile-tab-switch" tabindex="-1"><a class="heading-anchor" href="#mobile-tab-switch" aria-hidden="true">#</a> Mobile Tab Switch</h3>
+<ul>
+<li>Active state: instant (no crossfade between content)</li>
+<li>Tab indicator: primary color underline slides to active tab, 150ms</li>
+<li>Reduced motion: instant highlight, no slide</li>
+</ul>
+<h3 id="bottom-sheet-mobile" tabindex="-1"><a class="heading-anchor" href="#bottom-sheet-mobile" aria-hidden="true">#</a> Bottom Sheet (Mobile)</h3>
+<ul>
+<li>Enters: slide up from bottom, 250ms ease-out</li>
+<li>Exits: slide down, 200ms ease-in</li>
+<li>Backdrop: 50% black overlay, fades in 150ms</li>
+<li>Drag-to-dismiss: if dragged &gt;40% of height, dismisses; otherwise snaps back</li>
+<li>Reduced motion: instant appear/disappear</li>
+</ul>
+<h3 id="notification-drawer" tabindex="-1"><a class="heading-anchor" href="#notification-drawer" aria-hidden="true">#</a> Notification Drawer</h3>
+<ul>
+<li>Enters: slide from right, 200ms ease-out (from left in RTL)</li>
+<li>Exits: slide to right, 200ms ease-in</li>
+<li>Backdrop: 30% black overlay on main content</li>
+<li>Reduced motion: instant appear/disappear</li>
+</ul>
+<hr>
+<h2 id="responsive-breakpoint-transitions" tabindex="-1"><a class="heading-anchor" href="#responsive-breakpoint-transitions" aria-hidden="true">#</a> Responsive Breakpoint Transitions</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th>What Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 640px</td>
+<td>640px</td>
+<td>No change (still mobile shell)</td>
+</tr>
+<tr>
+<td>767px → 768px</td>
+<td>Mobile → Tablet</td>
+<td>Bottom tabs → collapsed sidebar overlay. Top bar gains breadcrumbs.</td>
+</tr>
+<tr>
+<td>1023px → 1024px</td>
+<td>Tablet → Desktop</td>
+<td>Sidebar overlay → persistent sidebar. Split views available.</td>
+</tr>
+<tr>
+<td>1279px → 1280px</td>
+<td>Small desktop → Desktop</td>
+<td>Sidebar defaults to expanded (was collapsed).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li><strong>Focus management:</strong> When sidebar collapses/expands, focus stays on the toggle button. When detail panel opens, focus moves to the panel heading. When detail panel closes, focus returns to the trigger element.</li>
+<li><strong>Skip navigation:</strong> Hidden &quot;Skip to content&quot; link as first focusable element on the page.</li>
+<li><strong>Sidebar sections:</strong> <code>role=&quot;navigation&quot;</code> with <code>aria-label=&quot;Main navigation&quot;</code>. Sections use <code>aria-expanded</code> on collapse/expand.</li>
+<li><strong>Notifications:</strong> <code>aria-live=&quot;polite&quot;</code> region for new notification count. Drawer uses <code>role=&quot;dialog&quot;</code> with <code>aria-label=&quot;Notifications&quot;</code>.</li>
+<li><strong>Field mode panic button:</strong> <code>aria-label=&quot;Lock app&quot;</code>. No tooltip delay — immediate action on any activation.</li>
+<li><strong>Bottom tabs:</strong> <code>role=&quot;tablist&quot;</code> with <code>role=&quot;tab&quot;</code> per item. <code>aria-selected</code> on active tab.</li>
+<li><strong>High contrast mode:</strong> All borders 2px, focus rings 3px with 2px offset, link underlines always visible.</li>
+</ul>
+<hr>
+<h2 id="empty-states" tabindex="-1"><a class="heading-anchor" href="#empty-states" aria-hidden="true">#</a> Empty States</h2>
+<h3 id="notification-drawer-empty" tabindex="-1"><a class="heading-anchor" href="#notification-drawer-empty" aria-hidden="true">#</a> Notification Drawer — Empty</h3>
+<pre><code>┌────────────────────────────────────────┐
+│  Notifications                    Mark │
+│  ────────────────                 all  │
+│                                        │
+│              🔔                        │
+│                                        │
+│       No notifications yet             │
+│                                        │
+│  You'll see messages, approvals,       │
+│  and alerts here as they arrive.       │
+│                                        │
+└────────────────────────────────────────┘
+</code></pre>
+<h3 id="sidebar-offline" tabindex="-1"><a class="heading-anchor" href="#sidebar-offline" aria-hidden="true">#</a> Sidebar — Offline</h3>
+<p>When the device is offline, the sidebar reflects this:</p>
+<ul>
+<li>Online-only items: greyed text with <code>◌</code> offline badge</li>
+<li>Offline-capable items: normal styling, fully functional</li>
+<li>The sidebar structure never changes — items don't disappear, they grey out</li>
+</ul>
+<hr>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hybrid nav (top bar + sidebar)</td>
+<td>Context in top bar, features in sidebar</td>
+<td>Top bar for org/search/notifications; sidebar for feature navigation</td>
+</tr>
+<tr>
+<td>Stable nav on offline</td>
+<td>Grey out items, don't remove</td>
+<td>Users build muscle memory for where items are</td>
+</tr>
+<tr>
+<td>Sidebar 240px default</td>
+<td>Collapsible to 56px icon rail</td>
+<td>Wide enough for labels; collapsible for content-heavy views</td>
+</tr>
+<tr>
+<td>Field mode as full-screen takeover</td>
+<td>Replaces entire shell</td>
+<td>Volunteers need maximum screen space; no admin nav distraction</td>
+</tr>
+<tr>
+<td>Wizard shell as minimal frame</td>
+<td>Progress bar + content only</td>
+<td>Prevents wizard abandonment from sidebar distraction</td>
+</tr>
+<tr>
+<td>Per-persona mobile tab bars</td>
+<td>4–5 tabs customized per role</td>
+<td>Each persona gets their most-used features in bottom tabs</td>
+</tr>
+<tr>
+<td>&quot;More&quot; tab for overflow</td>
+<td>Bottom sheet with remaining items</td>
+<td>Mobile can't fit all nav items; &quot;More&quot; provides access without hamburger</td>
+</tr>
+<tr>
+<td>Detail panel slides from right</td>
+<td>Overlay on content, doesn't push sidebar</td>
+<td>Contextual info without losing navigation context</td>
+</tr>
+<tr>
+<td>RTL via logical properties</td>
+<td><code>inline-start</code>/<code>inline-end</code></td>
+<td>Structural RTL, not mirrored CSS — works for all layout complexities</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Sidebar pinned sections.</strong> Should users be able to pin specific sidebar sections open (so they don't collapse when another section expands)? Useful for users who work across multiple feature areas in a single session.</p>
+</li>
+<li>
+<p><strong>Detail panel resize persistence.</strong> Should the detail panel width be persisted per user, or reset to default each session? Persisting avoids repeated adjustment; resetting ensures consistent layout.</p>
+</li>
+<li>
+<p><strong>Mobile hamburger vs. bottom sheet.</strong> The hamburger menu opens a full-screen overlay. Should the &quot;More&quot; tab on mobile instead open a half-sheet (bottom sheet) for quicker access to secondary items? Full-screen feels heavier but is consistent.</p>
+</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#shell-variants"># Shell Variants</a></li><li class="toc-2"><a href="#desktop-shell-sidebar-expanded"># Desktop Shell — Sidebar Expanded</a></li><li class="toc-3"><a href="#header-bar-anatomy"># Header Bar Anatomy</a></li><li class="toc-3"><a href="#header-bar-states"># Header Bar States</a></li><li class="toc-3"><a href="#sidebar-anatomy"># Sidebar Anatomy</a></li><li class="toc-2"><a href="#desktop-shell-sidebar-collapsed"># Desktop Shell — Sidebar Collapsed</a></li><li class="toc-3"><a href="#collapseexpand-behavior"># Collapse/Expand Behavior</a></li><li class="toc-2"><a href="#desktop-shell-with-detail-panel"># Desktop Shell — With Detail Panel</a></li><li class="toc-3"><a href="#detail-panel-behavior"># Detail Panel Behavior</a></li><li class="toc-2"><a href="#desktop-shell-notification-drawer"># Desktop Shell — Notification Drawer</a></li><li class="toc-3"><a href="#notification-drawer-behavior"># Notification Drawer Behavior</a></li><li class="toc-2"><a href="#desktop-shell-rtl-layout"># Desktop Shell — RTL Layout</a></li><li class="toc-3"><a href="#rtl-specifics"># RTL Specifics</a></li><li class="toc-2"><a href="#mobile-shell-standard-app"># Mobile Shell — Standard App</a></li><li class="toc-3"><a href="#org-admin-mobile"># Org Admin Mobile</a></li><li class="toc-3"><a href="#volunteer-mobile"># Volunteer Mobile</a></li><li class="toc-3"><a href="#mobile-top-bar-anatomy"># Mobile Top Bar Anatomy</a></li><li class="toc-3"><a href="#bottom-tab-bar-anatomy"># Bottom Tab Bar Anatomy</a></li><li class="toc-3"><a href="#per-persona-mobile-tabs"># Per-Persona Mobile Tabs</a></li><li class="toc-3"><a href="#mobile-more-menu"># Mobile &amp;quot;More&amp;quot; Menu</a></li><li class="toc-3"><a href="#mobile-hamburger-menu"># Mobile Hamburger Menu</a></li><li class="toc-2"><a href="#field-mode-shell-mobile-only"># Field Mode Shell — Mobile Only</a></li><li class="toc-3"><a href="#field-mode-walk-list-view"># Field Mode — Walk List View</a></li><li class="toc-3"><a href="#field-mode-door-card-active-interaction"># Field Mode — Door Card (Active Interaction)</a></li><li class="toc-3"><a href="#field-mode-after-response-selected"># Field Mode — After Response Selected</a></li><li class="toc-3"><a href="#field-mode-map-view"># Field Mode — Map View</a></li><li class="toc-3"><a href="#field-mode-header-states"># Field Mode Header States</a></li><li class="toc-3"><a href="#field-mode-end-shift-flow"># Field Mode — End Shift Flow</a></li><li class="toc-3"><a href="#panic-button-behavior"># Panic Button Behavior</a></li><li class="toc-2"><a href="#wizard-shell"># Wizard Shell</a></li><li class="toc-3"><a href="#wizard-shell-mobile"># Wizard Shell — Mobile</a></li><li class="toc-2"><a href="#supporter-portal-shell"># Supporter Portal Shell</a></li><li class="toc-3"><a href="#supporter-portal-mobile"># Supporter Portal — Mobile</a></li><li class="toc-2"><a href="#interaction-specifications"># Interaction Specifications</a></li><li class="toc-3"><a href="#sidebar-collapse-animation"># Sidebar Collapse Animation</a></li><li class="toc-3"><a href="#detail-panel-slide"># Detail Panel Slide</a></li><li class="toc-3"><a href="#mobile-tab-switch"># Mobile Tab Switch</a></li><li class="toc-3"><a href="#bottom-sheet-mobile"># Bottom Sheet (Mobile)</a></li><li class="toc-3"><a href="#notification-drawer"># Notification Drawer</a></li><li class="toc-2"><a href="#responsive-breakpoint-transitions"># Responsive Breakpoint Transitions</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#empty-states"># Empty States</a></li><li class="toc-3"><a href="#notification-drawer-empty"># Notification Drawer — Empty</a></li><li class="toc-3"><a href="#sidebar-offline"># Sidebar — Offline</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

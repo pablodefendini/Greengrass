@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADR-012: External Integrations · GreenGrass</title>
+<meta name="description" content="ADR-012: External Integrations — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../spec/product.html">Project: GreenGrass</a></li><li><a href="../spec/users.html">Users &amp; Roles</a></li><li><a href="../spec/workflows.html">Core Workflows</a></li><li><a href="../spec/geography.html">Target Geography</a></li><li><a href="../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../spec/integrations.html">External Integrations</a></li><li><a href="../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="./002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="./003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="./004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="./005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="./006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="./007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="./008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="./009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="./010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="./011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="./012-external-integrations.html" aria-current="page" class="active">ADR-012: External Integrations</a></li><li><a href="./013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="./014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="./015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="./016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="./ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Decisions</nav>
+    <article class="prose">
+<h1 id="adr-012-external-integrations" tabindex="-1"><a class="heading-anchor" href="#adr-012-external-integrations" aria-hidden="true">#</a> ADR-012: External Integrations</h1>
+<p><strong>Status:</strong> Accepted
+<strong>Date:</strong> 2026-03-03
+<strong>Sources:</strong> <code>spec/workflows.md</code>, <code>spec/integrations.md</code></p>
+<h2 id="context" tabindex="-1"><a class="heading-anchor" href="#context" aria-hidden="true">#</a> Context</h2>
+<p>GreenGrass must integrate with a wide variety of external services — telephony providers, video platforms, mapping services, SMS gateways, monitoring tools — across five countries with different providers, APIs, and infrastructure quality. No single global provider covers all needs in all markets. The integration strategy must prevent vendor lock-in, support per-country provider selection, and degrade gracefully in low-infrastructure environments.</p>
+<h2 id="decision" tabindex="-1"><a class="heading-anchor" href="#decision" aria-hidden="true">#</a> Decision</h2>
+<h3 id="byop-telephony-for-mvp-hybrid-twiliolocal-for-pilot" tabindex="-1"><a class="heading-anchor" href="#byop-telephony-for-mvp-hybrid-twiliolocal-for-pilot" aria-hidden="true">#</a> BYOP telephony for MVP, hybrid Twilio/local for pilot</h3>
+<p>MVP phone banking uses volunteers' personal phones — the platform shows the contact, script, and records the result with no telephony infrastructure needed. Pilot phase integrates with telephony providers (Twilio Voice as global baseline, local VoIP providers where cost-effective) for click-to-call, call logging, number masking, preview dialer, and do-not-call enforcement.</p>
+<p><strong>Alternatives considered:</strong> Building telephony from launch was rejected because it's unnecessary for MVP (BYOP works) and would delay delivery. Global-only provider was rejected because local providers offer significantly better rates for high-volume calling in target markets.</p>
+<h3 id="external-integration-for-virtual-events" tabindex="-1"><a class="heading-anchor" href="#external-integration-for-virtual-events" aria-hidden="true">#</a> External integration for virtual events</h3>
+<p>GreenGrass manages the full event lifecycle (creation, promotion, RSVPs, reminders, follow-up, analytics) but integrates with external video providers for the actual video hosting. Two adapters cover the majority of use cases: Zoom (dominant market share) and Jitsi (open-source, self-hosted, aligns with sovereignty values). Unique per-registrant join links enable attendance tracking through the integration.</p>
+<p><strong>Alternatives considered:</strong> Building video hosting was rejected as a separate product problem. Single provider (Zoom only) was rejected because campaigns with sovereignty requirements need an open-source self-hosted option.</p>
+<h3 id="hybrid-osm-default-commercial-fallback-for-mapping" tabindex="-1"><a class="heading-anchor" href="#hybrid-osm-default-commercial-fallback-for-mapping" aria-hidden="true">#</a> Hybrid OSM default + commercial fallback for mapping</h3>
+<p>Self-hosted OpenStreetMap tiles (via OpenMapTiles or Protomaps) are the default for all map display. This is free, sovereign, and no third party sees canvassing patterns (where volunteers are knocking doors). Commercial mapping services are available as fallback where OSM coverage or quality is insufficient for a specific region. Tile infrastructure is self-hosted in each country's Kubernetes cluster.</p>
+<p>Self-hosted geocoding (Pelias or Nominatim) handles bulk operations (voter file processing, batch geocoding) where data sovereignty matters. Commercial geocoding is the fallback for real-time UX (address autocomplete) where self-hosted accuracy falls short. Walk list routing uses a self-hosted open-source routing engine (OSRM, Valhalla, or GraphHopper), pre-calculated at shift start and cached for offline use.</p>
+<p><strong>Alternatives considered:</strong> Commercial mapping only (Google Maps, Mapbox) was rejected because it exposes canvassing patterns to third parties — where volunteers are knocking doors reveals campaign strategy. OSM-only without commercial fallback was rejected because OSM coverage gaps in some target regions would degrade the user experience.</p>
+<h3 id="monitoring-prometheus-grafana-loki" tabindex="-1"><a class="heading-anchor" href="#monitoring-prometheus-grafana-loki" aria-hidden="true">#</a> Monitoring: Prometheus + Grafana + Loki</h3>
+<p>Infrastructure monitoring uses Prometheus (metrics collection and alerting) and Grafana (dashboards). Log aggregation uses Grafana Loki. All self-hosted, no vendor dependency, works identically for cloud-hosted and self-hosted deployments. Alerting starts simple (email + Slack/Matrix webhooks) and upgrades to PagerDuty/Opsgenie when the ops team grows. Status page is self-hosted (Upptime, Cachet, or Gatus).</p>
+<p><strong>Alternatives considered:</strong> Commercial monitoring (Datadog, New Relic) was rejected because it adds vendor dependency and doesn't work for self-hosted deployments. The observability stack must be the same everywhere.</p>
+<h2 id="consequences" tabindex="-1"><a class="heading-anchor" href="#consequences" aria-hidden="true">#</a> Consequences</h2>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>BYOP telephony eliminates infrastructure cost and complexity for MVP while the product validates phone banking workflows</li>
+<li>Self-hosted mapping ensures no third party can observe campaign canvassing patterns</li>
+<li>Prometheus/Grafana/Loki provides a unified observability stack that works identically across cloud and self-hosted deployments</li>
+<li>Adapter pattern across all integrations means providers can be swapped without rearchitecting</li>
+</ul>
+<p><strong>Costs:</strong></p>
+<ul>
+<li>Self-hosted mapping tiles, geocoding, and routing require GIS infrastructure expertise and ongoing maintenance</li>
+<li>Each telephony/SMS adapter is its own mini-integration project with provider-specific API contracts and webhook formats</li>
+<li>BYOP telephony means volunteers' personal numbers are visible to the people being called (hybrid integration fixes this with number masking)</li>
+<li>OSM tile quality varies by region — commercial fallback configuration adds per-country operational work</li>
+</ul>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>Offline maps require pre-downloaded tiles, bounded at ~200MB for low-end phone storage</li>
+<li>All integration credentials are tenant-owned and stored in secrets management (HashiCorp Vault)</li>
+<li>Integration data flows are logged in the audit trail</li>
+<li>Social media integrations must have OAuth + copy-paste fallback given increasing API restrictions for political content</li>
+</ul>
+<p><strong>Related ADRs:</strong> <a href="./001-platform-architecture.html">ADR-001</a> (per-country infrastructure), <a href="./005-offline-first-sync.html">ADR-005</a> (offline maps, pre-cached routing), <a href="./006-field-operations-gotv.html">ADR-006</a> (phone banking, turf management), <a href="./011-design-system-ux.html">ADR-011</a> (performance budgets for external resources)</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#context"># Context</a></li><li class="toc-2"><a href="#decision"># Decision</a></li><li class="toc-3"><a href="#byop-telephony-for-mvp-hybrid-twiliolocal-for-pilot"># BYOP telephony for MVP, hybrid Twilio/local for pilot</a></li><li class="toc-3"><a href="#external-integration-for-virtual-events"># External integration for virtual events</a></li><li class="toc-3"><a href="#hybrid-osm-default-commercial-fallback-for-mapping"># Hybrid OSM default + commercial fallback for mapping</a></li><li class="toc-3"><a href="#monitoring-prometheus-grafana-loki"># Monitoring: Prometheus + Grafana + Loki</a></li><li class="toc-2"><a href="#consequences"># Consequences</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

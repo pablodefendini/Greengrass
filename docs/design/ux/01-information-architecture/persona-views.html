@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Persona Views · GreenGrass</title>
+<meta name="description" content="Persona Views — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="./navigation-model.html">Navigation Model</a></li><li><a href="./screen-inventory.html">Screen Inventory</a></li><li><a href="./persona-views.html" aria-current="page" class="active">Persona Views</a></li><li><a href="./url-structure.html">URL Structure</a></li><li><a href="../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="persona-views" tabindex="-1"><a class="heading-anchor" href="#persona-views" aria-hidden="true">#</a> Persona Views</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document defines how the same platform renders differently for each persona. Each persona sees a role-adapted view — different home screen, different navigation items, different feature surface. Features outside their access are absent from their view entirely (not greyed out — invisible).</p>
+<p>This is the &quot;role-adaptive UX&quot; specification. It builds on the navigation model (<a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a>) and references specific screens from the screen inventory (<a href="http://screen-inventory.md" target="_blank" rel="noopener noreferrer">screen-inventory.md</a>).</p>
+<h2 id="persona-summary" tabindex="-1"><a class="heading-anchor" href="#persona-summary" aria-hidden="true">#</a> Persona Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Primary device</th>
+<th>Session length</th>
+<th>Offline needs</th>
+<th>Feature surface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Org Admin</td>
+<td>Desktop</td>
+<td>Short (hours)</td>
+<td>None</td>
+<td>Everything</td>
+</tr>
+<tr>
+<td>Communications Director</td>
+<td>Desktop</td>
+<td>Workday</td>
+<td>None</td>
+<td>Comms, press, social, people</td>
+</tr>
+<tr>
+<td>Finance Director</td>
+<td>Desktop</td>
+<td>Workday</td>
+<td>None</td>
+<td>Fundraising, compliance, people</td>
+</tr>
+<tr>
+<td>Field Director</td>
+<td>Desktop + mobile</td>
+<td>Workday</td>
+<td>None (staff); field mode if also canvassing</td>
+<td>Field ops, GOTV, people</td>
+</tr>
+<tr>
+<td>Volunteer Coordinator</td>
+<td>Desktop + mobile</td>
+<td>Workday</td>
+<td>Event check-in</td>
+<td>Volunteers, events, shifts</td>
+</tr>
+<tr>
+<td>Data Manager</td>
+<td>Desktop</td>
+<td>Workday</td>
+<td>None</td>
+<td>CRM, import/export, data quality</td>
+</tr>
+<tr>
+<td>Volunteer</td>
+<td>Mobile</td>
+<td>Shift-length (field) / workday (general)</td>
+<td>Full field mode</td>
+<td>Shifts, events, field mode, messages</td>
+</tr>
+<tr>
+<td>Team Lead</td>
+<td>Mobile</td>
+<td>Shift-length (field) / workday (general)</td>
+<td>Full field mode + team mgmt</td>
+<td>Everything volunteer sees + team</td>
+</tr>
+<tr>
+<td>Candidate</td>
+<td>Mobile + desktop</td>
+<td>Medium (workday)</td>
+<td>Reading messages</td>
+<td>Curated dashboard, approvals, messages</td>
+</tr>
+<tr>
+<td>Supporter</td>
+<td>Mobile</td>
+<td>Long (weeks)</td>
+<td>None</td>
+<td>Donation history, preferences, events</td>
+</tr>
+</tbody>
+</table>
+<h2 id="org-admin" tabindex="-1"><a class="heading-anchor" href="#org-admin" aria-hidden="true">#</a> Org Admin</h2>
+<h3 id="home-screen" tabindex="-1"><a class="heading-anchor" href="#home-screen" aria-hidden="true">#</a> Home Screen</h3>
+<p><strong>Campaign Overview Dashboard</strong> (DASH-001) — the hub of the operation. Shows:</p>
+<ul>
+<li>Fundraising: total raised, goal progress, donor count, average donation</li>
+<li>Field: doors knocked, voter contacts, contact rate, aggregate support scores</li>
+<li>Communications: emails sent, open rate, SMS delivered, social engagement</li>
+<li>Volunteers: active count, hours logged, shifts filled vs. available</li>
+<li>Events: upcoming events, recent attendance</li>
+<li>Alerts: compliance flags, sync issues, system notifications</li>
+</ul>
+<h3 id="sidebar-sections" tabindex="-1"><a class="heading-anchor" href="#sidebar-sections" aria-hidden="true">#</a> Sidebar Sections</h3>
+<p>All sections visible. The Org Admin's sidebar is the union of all feature areas, organized in collapsible groups:</p>
+<ul>
+<li>Overview, People, Field, Fundraising, Communications, Events, Activism, Press, GOTV, Messaging, Alliance, Settings</li>
+</ul>
+<h3 id="mobile-experience" tabindex="-1"><a class="heading-anchor" href="#mobile-experience" aria-hidden="true">#</a> Mobile Experience</h3>
+<p>The Org Admin primarily works on desktop. Mobile is for checking dashboards, reading messages, and handling urgent notifications on the go. Mobile tabs: Dashboard, Contacts, Donations, Messages, More.</p>
+<h3 id="special-behaviors" tabindex="-1"><a class="heading-anchor" href="#special-behaviors" aria-hidden="true">#</a> Special Behaviors</h3>
+<ul>
+<li>Sees the full audit trail</li>
+<li>Can impersonate other roles (for testing role template configuration) — clearly indicated in the UI</li>
+<li>Receives all system-level notifications (billing, security, integration status)</li>
+<li>Can activate election day mode</li>
+<li>Can toggle between their org view and the alliance view (if in an alliance)</li>
+</ul>
+<hr>
+<h2 id="communications-director" tabindex="-1"><a class="heading-anchor" href="#communications-director" aria-hidden="true">#</a> Communications Director</h2>
+<h3 id="home-screen-1" tabindex="-1"><a class="heading-anchor" href="#home-screen-1" aria-hidden="true">#</a> Home Screen</h3>
+<p><strong>Communications Dashboard</strong> (DASH-004) — focused on outreach performance:</p>
+<ul>
+<li>Email campaign performance (recent sends, open rates, click rates)</li>
+<li>SMS/WhatsApp delivery stats</li>
+<li>Social media engagement summary (across platforms)</li>
+<li>Upcoming scheduled sends</li>
+<li>Recent coverage (if also handling press)</li>
+</ul>
+<h3 id="sidebar-sections-1" tabindex="-1"><a class="heading-anchor" href="#sidebar-sections-1" aria-hidden="true">#</a> Sidebar Sections</h3>
+<ul>
+<li><strong>Overview:</strong> Comms Dashboard</li>
+<li><strong>Communications:</strong> Email Campaigns, SMS/WhatsApp, Templates</li>
+<li><strong>Social Media:</strong> Dashboard, Post Composer, Calendar, Analytics, Account Connections</li>
+<li><strong>Press:</strong> Media Contacts, Releases, Advisories, Statements, Coverage, Endorsements, Talking Points, Interviews</li>
+<li><strong>People:</strong> Contacts, Segments (for targeting communications)</li>
+<li><strong>Messaging:</strong> Messages</li>
+</ul>
+<h3 id="mobile-experience-1" tabindex="-1"><a class="heading-anchor" href="#mobile-experience-1" aria-hidden="true">#</a> Mobile Experience</h3>
+<p>Desktop-primary for content creation (email builder, press release drafting). Mobile for reviewing analytics, responding to messages, and approving urgent sends. Mobile tabs: Dashboard, Email, Social, Messages, More.</p>
+<h3 id="what-they-dont-see" tabindex="-1"><a class="heading-anchor" href="#what-they-dont-see" aria-hidden="true">#</a> What They Don't See</h3>
+<p>No access to: fundraising details (donations, forms, compliance), field operations (canvassing, turfs, phone banking), volunteer management (roster, shifts, training), settings (billing, roles, integrations), data management (import/export, dedup), GOTV operations (unless granted additional templates).</p>
+<hr>
+<h2 id="finance-director" tabindex="-1"><a class="heading-anchor" href="#finance-director" aria-hidden="true">#</a> Finance Director</h2>
+<h3 id="home-screen-2" tabindex="-1"><a class="heading-anchor" href="#home-screen-2" aria-hidden="true">#</a> Home Screen</h3>
+<p><strong>Fundraising Dashboard</strong> (DASH-003) — focused on money:</p>
+<ul>
+<li>Revenue: today, this week, this month, total (with trend lines)</li>
+<li>Goal progress thermometer</li>
+<li>Donor stats: new vs. returning, average donation, recurring health</li>
+<li>Payment processor status (last sync, success rate)</li>
+<li>Compliance alerts: approaching contribution limits, flagged donations needing review</li>
+<li>Upcoming reporting deadlines</li>
+</ul>
+<h3 id="sidebar-sections-2" tabindex="-1"><a class="heading-anchor" href="#sidebar-sections-2" aria-hidden="true">#</a> Sidebar Sections</h3>
+<ul>
+<li><strong>Overview:</strong> Fundraising Dashboard</li>
+<li><strong>Fundraising:</strong> Donations, Forms, Campaigns, Recurring, Pledges, Refunds, Cash, Compliance Flags, A/B Tests, Alliance Splits, Payment Processors, Statements</li>
+<li><strong>People:</strong> Donors, Segments</li>
+<li><strong>Messaging:</strong> Messages</li>
+</ul>
+<h3 id="mobile-experience-2" tabindex="-1"><a class="heading-anchor" href="#mobile-experience-2" aria-hidden="true">#</a> Mobile Experience</h3>
+<p>Desktop-primary for financial management, form building, and compliance review. Mobile for checking totals and handling urgent compliance flags. Mobile tabs: Dashboard, Donations, Compliance, Messages, More.</p>
+<h3 id="what-they-dont-see-1" tabindex="-1"><a class="heading-anchor" href="#what-they-dont-see-1" aria-hidden="true">#</a> What They Don't See</h3>
+<p>No access to: communications (email, SMS, social), field operations, volunteer management, press, GOTV, settings (except payment processor config, which they can access within Fundraising), data management.</p>
+<hr>
+<h2 id="field-director" tabindex="-1"><a class="heading-anchor" href="#field-director" aria-hidden="true">#</a> Field Director</h2>
+<h3 id="home-screen-3" tabindex="-1"><a class="heading-anchor" href="#home-screen-3" aria-hidden="true">#</a> Home Screen</h3>
+<p><strong>Field Operations Dashboard</strong> (DASH-002) — focused on ground game:</p>
+<ul>
+<li>Canvassing progress map (turfs complete vs. remaining)</li>
+<li>Contact rate by turf, team, volunteer</li>
+<li>Support score distribution</li>
+<li>Phone banking metrics (calls made, contact rate, outcomes)</li>
+<li>Voter registration drive stats</li>
+<li>Active shifts and volunteer deployment</li>
+<li>Upcoming canvassing campaigns</li>
+</ul>
+<h3 id="sidebar-sections-3" tabindex="-1"><a class="heading-anchor" href="#sidebar-sections-3" aria-hidden="true">#</a> Sidebar Sections</h3>
+<ul>
+<li><strong>Overview:</strong> Field Dashboard</li>
+<li><strong>Field:</strong> Canvassing Campaigns, Phone Banking, Voter Registration, Turfs, Walk Lists, Scripts</li>
+<li><strong>GOTV:</strong> Universe Builder, Staging, Turf Cutting, War Room, Rides, Poll Watchers, Results, Post-Election</li>
+<li><strong>People:</strong> Contacts, Segments</li>
+<li><strong>Messaging:</strong> Messages</li>
+</ul>
+<h3 id="mobile-experience-3" tabindex="-1"><a class="heading-anchor" href="#mobile-experience-3" aria-hidden="true">#</a> Mobile Experience</h3>
+<p>Desktop for planning (turf cutting, campaign setup, script building). Mobile for monitoring active operations in the field and checking dashboards. Mobile tabs: Dashboard, Canvassing, Turfs, Messages, More.</p>
+<h3 id="election-day" tabindex="-1"><a class="heading-anchor" href="#election-day" aria-hidden="true">#</a> Election Day</h3>
+<p>During election day mode, the Field Director's home screen switches to the War Room Dashboard (DASH-008). GOTV items are promoted to the top of their sidebar.</p>
+<h3 id="what-they-dont-see-2" tabindex="-1"><a class="heading-anchor" href="#what-they-dont-see-2" aria-hidden="true">#</a> What They Don't See</h3>
+<p>No access to: fundraising (donations, forms, compliance), communications (email, SMS, social), volunteer management (roster, onboarding, training — they see volunteers through the field lens, not the management lens), press, settings, data management.</p>
+<hr>
+<h2 id="volunteer-coordinator" tabindex="-1"><a class="heading-anchor" href="#volunteer-coordinator" aria-hidden="true">#</a> Volunteer Coordinator</h2>
+<h3 id="home-screen-4" tabindex="-1"><a class="heading-anchor" href="#home-screen-4" aria-hidden="true">#</a> Home Screen</h3>
+<p><strong>Volunteer Dashboard</strong> (DASH-005) — focused on people:</p>
+<ul>
+<li>Active volunteer count and recent signups</li>
+<li>Shift fill rates (today, this week)</li>
+<li>Volunteer hours (this week, total)</li>
+<li>Pending approvals (new volunteer signups awaiting review)</li>
+<li>Training completion rates</li>
+<li>Upcoming events with RSVP status</li>
+<li>Team status overview</li>
+</ul>
+<h3 id="sidebar-sections-4" tabindex="-1"><a class="heading-anchor" href="#sidebar-sections-4" aria-hidden="true">#</a> Sidebar Sections</h3>
+<ul>
+<li><strong>Overview:</strong> Volunteer Dashboard</li>
+<li><strong>Volunteers:</strong> Roster, Onboarding Setup, Training Modules, Training Content Editor, Shifts, Teams, Certifications</li>
+<li><strong>Events:</strong> Events, Check-in, Post-Event</li>
+<li><strong>Messaging:</strong> Messages</li>
+</ul>
+<h3 id="mobile-experience-4" tabindex="-1"><a class="heading-anchor" href="#mobile-experience-4" aria-hidden="true">#</a> Mobile Experience</h3>
+<p>Desktop for setup (training content, shift scheduling, team management). Mobile for checking in volunteers at events, monitoring shift coverage, and messaging. Mobile tabs: Dashboard, Roster, Shifts, Messages, More.</p>
+<h3 id="what-they-dont-see-3" tabindex="-1"><a class="heading-anchor" href="#what-they-dont-see-3" aria-hidden="true">#</a> What They Don't See</h3>
+<p>No access to: fundraising, communications, field operations (they manage volunteers but not field strategy — the Field Director handles canvassing campaigns and turfs), press, GOTV (unless granted), settings, data management.</p>
+<hr>
+<h2 id="data-manager" tabindex="-1"><a class="heading-anchor" href="#data-manager" aria-hidden="true">#</a> Data Manager</h2>
+<h3 id="home-screen-5" tabindex="-1"><a class="heading-anchor" href="#home-screen-5" aria-hidden="true">#</a> Home Screen</h3>
+<p><strong>Data Quality Dashboard</strong> (DASH-006) — focused on data health:</p>
+<ul>
+<li>Records by type and status</li>
+<li>Recent imports and their quality scores</li>
+<li>Dedup queue size (pending reviews)</li>
+<li>Data quality flags (incomplete records, potential duplicates, stale records)</li>
+<li>Export history</li>
+<li>Recent merge activity</li>
+</ul>
+<h3 id="sidebar-sections-5" tabindex="-1"><a class="heading-anchor" href="#sidebar-sections-5" aria-hidden="true">#</a> Sidebar Sections</h3>
+<ul>
+<li><strong>Overview:</strong> Data Dashboard</li>
+<li><strong>People:</strong> Contacts, Segments, Import, Export, Dedup Queue, Data Quality, Tags</li>
+<li><strong>Messaging:</strong> Messages</li>
+</ul>
+<h3 id="mobile-experience-5" tabindex="-1"><a class="heading-anchor" href="#mobile-experience-5" aria-hidden="true">#</a> Mobile Experience</h3>
+<p>Desktop-only for practically all work (data import, dedup review, export). Mobile for messages only. Mobile tabs: Contacts, Import, Dedup, Messages, More.</p>
+<h3 id="what-they-dont-see-4" tabindex="-1"><a class="heading-anchor" href="#what-they-dont-see-4" aria-hidden="true">#</a> What They Don't See</h3>
+<p>No access to: fundraising, communications, field operations, volunteer management, press, GOTV, settings (except data-related settings accessed through People). The Data Manager works with the data layer, not the operational layer.</p>
+<hr>
+<h2 id="volunteer" tabindex="-1"><a class="heading-anchor" href="#volunteer" aria-hidden="true">#</a> Volunteer</h2>
+<h3 id="home-screen-6" tabindex="-1"><a class="heading-anchor" href="#home-screen-6" aria-hidden="true">#</a> Home Screen</h3>
+<p><strong>My Shifts</strong> — a simple, action-oriented home:</p>
+<ul>
+<li>Today's shifts (with location, time, role)</li>
+<li>Upcoming shifts (next 7 days)</li>
+<li>&quot;Start Shift&quot; action button (prominent, if a shift is active)</li>
+<li>Unread message count</li>
+<li>Upcoming events they've RSVP'd to</li>
+<li>Training progress (if modules are assigned)</li>
+</ul>
+<h3 id="sidebar-sections-6" tabindex="-1"><a class="heading-anchor" href="#sidebar-sections-6" aria-hidden="true">#</a> Sidebar Sections</h3>
+<ul>
+<li><strong>My Stuff:</strong> My Shifts, My Tasks, My Team</li>
+<li><strong>Events:</strong> Events</li>
+<li><strong>Messaging:</strong> Messages</li>
+<li><strong>Training:</strong> Modules, Certifications</li>
+<li><strong>Field:</strong> Start Shift (action button)</li>
+</ul>
+<h3 id="mobile-experience-6" tabindex="-1"><a class="heading-anchor" href="#mobile-experience-6" aria-hidden="true">#</a> Mobile Experience</h3>
+<p><strong>Mobile is the primary device.</strong> The entire volunteer experience is designed for a phone. Desktop is a secondary option (for volunteers who want to check shifts from a computer).</p>
+<p>Mobile tabs: Shifts, Events, Messages, Start Shift</p>
+<p>The &quot;Start Shift&quot; tab is visually distinct — a filled/colored button rather than a standard tab icon. It's the primary action for the volunteer.</p>
+<h3 id="field-mode" tabindex="-1"><a class="heading-anchor" href="#field-mode" aria-hidden="true">#</a> Field Mode</h3>
+<p>When the volunteer taps &quot;Start Shift,&quot; the app transitions to field mode (see <a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a>). The normal navigation shell disappears entirely. The volunteer's world becomes:</p>
+<ol>
+<li>Walk list / call list / registration queue</li>
+<li>Door card / call card / registration form (one at a time)</li>
+<li>Response capture</li>
+<li>Next item</li>
+<li>End shift → debrief → return to normal shell</li>
+</ol>
+<h3 id="offline-surface" tabindex="-1"><a class="heading-anchor" href="#offline-surface" aria-hidden="true">#</a> Offline Surface</h3>
+<p>In field mode, everything works offline:</p>
+<ul>
+<li>Walk list with voter information</li>
+<li>Map tiles (pre-cached)</li>
+<li>Door card and interaction form</li>
+<li>All data saved locally, synced when connected</li>
+<li>Sync status indicator prominently displayed</li>
+</ul>
+<p>Outside field mode, limited offline:</p>
+<ul>
+<li>Read synced messages</li>
+<li>Compose messages (queued)</li>
+<li>View cached shift and event information</li>
+</ul>
+<h3 id="what-they-dont-see-5" tabindex="-1"><a class="heading-anchor" href="#what-they-dont-see-5" aria-hidden="true">#</a> What They Don't See</h3>
+<p>No access to: any staff features. No dashboards (beyond their personal shifts view), no CRM management, no settings, no financial data, no campaign configuration. The volunteer sees only their own shifts, events, messages, and training.</p>
+<hr>
+<h2 id="team-lead" tabindex="-1"><a class="heading-anchor" href="#team-lead" aria-hidden="true">#</a> Team Lead</h2>
+<h3 id="home-screen-7" tabindex="-1"><a class="heading-anchor" href="#home-screen-7" aria-hidden="true">#</a> Home Screen</h3>
+<p>Same as Volunteer, but with an additional <strong>Team</strong> section:</p>
+<ul>
+<li>Team roster (who's checked in, who's missing)</li>
+<li>Team progress (doors knocked, calls made — aggregate)</li>
+<li>Pending check-ins</li>
+<li>Team-level issues</li>
+</ul>
+<h3 id="sidebar-sections-7" tabindex="-1"><a class="heading-anchor" href="#sidebar-sections-7" aria-hidden="true">#</a> Sidebar Sections</h3>
+<p>Everything a Volunteer sees, plus:</p>
+<ul>
+<li><strong>My Team:</strong> Team Roster, Team Progress, Check-in</li>
+</ul>
+<h3 id="mobile-experience-7" tabindex="-1"><a class="heading-anchor" href="#mobile-experience-7" aria-hidden="true">#</a> Mobile Experience</h3>
+<p>Same as Volunteer — mobile-primary. The &quot;Shifts&quot; tab defaults to the team view (showing all team members' shifts) rather than just the personal view.</p>
+<h3 id="field-mode-1" tabindex="-1"><a class="heading-anchor" href="#field-mode-1" aria-hidden="true">#</a> Field Mode</h3>
+<p>Same field mode as Volunteer, but the Team Lead can also:</p>
+<ul>
+<li>View the team's overall progress</li>
+<li>Reassign doors/calls within their team</li>
+<li>Check in team members at staging locations</li>
+<li>Escalate issues to the war room (during GOTV)</li>
+</ul>
+<h3 id="what-they-dont-see-6" tabindex="-1"><a class="heading-anchor" href="#what-they-dont-see-6" aria-hidden="true">#</a> What They Don't See</h3>
+<p>Same restrictions as Volunteer. Team Leads are volunteers with scoped team leadership — they don't gain access to any staff features. They see their team, not the org.</p>
+<hr>
+<h2 id="candidate" tabindex="-1"><a class="heading-anchor" href="#candidate" aria-hidden="true">#</a> Candidate</h2>
+<h3 id="home-screen-8" tabindex="-1"><a class="heading-anchor" href="#home-screen-8" aria-hidden="true">#</a> Home Screen</h3>
+<p><strong>Candidate Dashboard</strong> (DASH-010) — deliberately curated and simplified:</p>
+<ul>
+<li>Fundraising thermometer (total raised vs. goal — no drill-down into individual donations)</li>
+<li>Volunteer count (active volunteers — no roster access)</li>
+<li>Event attendance (upcoming events, recent turnout — no event management)</li>
+<li>Field progress (high-level: &quot;X% of target voters contacted&quot; — no turf-level detail)</li>
+<li>Unread messages (prominent — messaging is a primary candidate activity)</li>
+<li>Pending approvals (press releases, social posts awaiting their review)</li>
+</ul>
+<h3 id="sidebar-sections-8" tabindex="-1"><a class="heading-anchor" href="#sidebar-sections-8" aria-hidden="true">#</a> Sidebar Sections</h3>
+<ul>
+<li><strong>Overview:</strong> Campaign Dashboard</li>
+<li><strong>Profile:</strong> My Public Profile</li>
+<li><strong>Approvals:</strong> Pending Approvals</li>
+<li><strong>Messaging:</strong> Messages</li>
+</ul>
+<h3 id="mobile-experience-8" tabindex="-1"><a class="heading-anchor" href="#mobile-experience-8" aria-hidden="true">#</a> Mobile Experience</h3>
+<p>Mobile and desktop are equally important for the Candidate. They check the dashboard and messages from their phone, review and approve content from wherever they are.</p>
+<p>Mobile tabs: Dashboard, Profile, Approvals, Messages</p>
+<h3 id="messaging-patterns" tabindex="-1"><a class="heading-anchor" href="#messaging-patterns" aria-hidden="true">#</a> Messaging Patterns</h3>
+<p>The Candidate's messaging experience emphasizes:</p>
+<ul>
+<li><strong>Briefing messages</strong> appear distinctly from casual conversation (formatted, structured)</li>
+<li><strong>Approval requests</strong> appear in both the Approvals section and in messages, with approve/reject/comment actions</li>
+<li>Conversations with key staff (Campaign Manager, Communications Director) are pinned to the top</li>
+<li>Group conversations they're part of (e.g., &quot;Leadership Team&quot;) are easily accessible</li>
+</ul>
+<h3 id="what-they-dont-see-7" tabindex="-1"><a class="heading-anchor" href="#what-they-dont-see-7" aria-hidden="true">#</a> What They Don't See</h3>
+<p>The Candidate's view is intentionally limited to high-level information. No access to: operational dashboards, CRM details, volunteer roster, financial details (individual donations, compliance), settings, data management, canvassing details, phone banking, GOTV operations. They see summaries, not source data.</p>
+<p><strong>Override:</strong> Since the Candidate role is a template, the Org Admin can grant additional permissions for hands-on candidates who want deeper access. But the default is curated.</p>
+<hr>
+<h2 id="supporter" tabindex="-1"><a class="heading-anchor" href="#supporter" aria-hidden="true">#</a> Supporter</h2>
+<h3 id="home-screen-9" tabindex="-1"><a class="heading-anchor" href="#home-screen-9" aria-hidden="true">#</a> Home Screen</h3>
+<p><strong>Supporter Home</strong> (SUP-001) — a minimal personal portal:</p>
+<ul>
+<li>Recent activity (last donation, last event attended)</li>
+<li>Quick actions: Donate, View Events, Update Preferences</li>
+<li>Communication preference status (what they're subscribed to)</li>
+</ul>
+<h3 id="sidebar-sections-9" tabindex="-1"><a class="heading-anchor" href="#sidebar-sections-9" aria-hidden="true">#</a> Sidebar Sections</h3>
+<ul>
+<li><strong>My Profile:</strong> Profile, Preferences, Communication Settings</li>
+<li><strong>Donations:</strong> Donation History, Recurring, Receipts</li>
+<li><strong>Events:</strong> My Events</li>
+</ul>
+<h3 id="mobile-experience-9" tabindex="-1"><a class="heading-anchor" href="#mobile-experience-9" aria-hidden="true">#</a> Mobile Experience</h3>
+<p><strong>Mobile-primary.</strong> Supporters interact with the platform primarily through their phone — donation forms, event RSVPs, and profile management are all mobile-first.</p>
+<p>Mobile tabs: Profile, Donations, Events</p>
+<h3 id="authentication" tabindex="-1"><a class="heading-anchor" href="#authentication" aria-hidden="true">#</a> Authentication</h3>
+<p>Supporters have tiered access:</p>
+<ul>
+<li><strong>Magic link</strong> (low friction): click a link in an email to access donation history and receipts</li>
+<li><strong>Full account</strong> (passkey or email login): required for management actions (modify recurring donations, update payment method, change personal info)</li>
+</ul>
+<h3 id="what-they-dont-see-8" tabindex="-1"><a class="heading-anchor" href="#what-they-dont-see-8" aria-hidden="true">#</a> What They Don't See</h3>
+<p>Supporters see only their own data and public content. No access to any internal platform features — no CRM, no campaigns, no staff tools, no volunteer features. Their view is a personal portal, not a campaign management tool.</p>
+<hr>
+<h2 id="cross-persona-patterns" tabindex="-1"><a class="heading-anchor" href="#cross-persona-patterns" aria-hidden="true">#</a> Cross-Persona Patterns</h2>
+<h3 id="notification-behavior-by-persona" tabindex="-1"><a class="heading-anchor" href="#notification-behavior-by-persona" aria-hidden="true">#</a> Notification Behavior by Persona</h3>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>High-priority notifications</th>
+<th>Delivery channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Org Admin</td>
+<td>Security alerts, compliance deadlines, system issues, billing</td>
+<td>In-app, push, email, SMS (critical only)</td>
+</tr>
+<tr>
+<td>Communications Director</td>
+<td>Campaign delivery failures, approval responses</td>
+<td>In-app, push, email</td>
+</tr>
+<tr>
+<td>Finance Director</td>
+<td>Compliance flags, payment failures, recurring donation issues</td>
+<td>In-app, push, email</td>
+</tr>
+<tr>
+<td>Field Director</td>
+<td>Active operation alerts, GOTV escalations</td>
+<td>In-app, push, email</td>
+</tr>
+<tr>
+<td>Volunteer Coordinator</td>
+<td>New volunteer signups, shift cancellations, no-shows</td>
+<td>In-app, push, email</td>
+</tr>
+<tr>
+<td>Data Manager</td>
+<td>Import completion, dedup queue updates, data quality alerts</td>
+<td>In-app, email</td>
+</tr>
+<tr>
+<td>Volunteer</td>
+<td>Shift reminders, assignment changes, messages from Team Lead</td>
+<td>In-app, push</td>
+</tr>
+<tr>
+<td>Team Lead</td>
+<td>Team member issues, shift reminders, war room escalations (GOTV)</td>
+<td>In-app, push</td>
+</tr>
+<tr>
+<td>Candidate</td>
+<td>Approval requests, briefings, key staff messages</td>
+<td>In-app, push</td>
+</tr>
+<tr>
+<td>Supporter</td>
+<td>Donation receipts, event reminders, recurring donation status</td>
+<td>Email, push (if opted in)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="session-management-by-persona" tabindex="-1"><a class="heading-anchor" href="#session-management-by-persona" aria-hidden="true">#</a> Session Management by Persona</h3>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Session length</th>
+<th>Re-auth requirement</th>
+<th>Field mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Org Admin</td>
+<td>Short (hours)</td>
+<td>Re-auth for sensitive actions</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Staff (all)</td>
+<td>Medium (workday)</td>
+<td>Re-auth for sensitive actions</td>
+<td>No (unless also a volunteer)</td>
+</tr>
+<tr>
+<td>Volunteer</td>
+<td>Medium (workday) / shift-length (field)</td>
+<td>Re-auth after shift end</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Team Lead</td>
+<td>Medium (workday) / shift-length (field)</td>
+<td>Re-auth after shift end</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Candidate</td>
+<td>Medium (workday)</td>
+<td>Standard</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Supporter</td>
+<td>Long (weeks)</td>
+<td>Re-auth for payment changes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="election-day-view-changes" tabindex="-1"><a class="heading-anchor" href="#election-day-view-changes" aria-hidden="true">#</a> Election Day View Changes</h3>
+<p>When election day mode is activated:</p>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>View change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Org Admin</td>
+<td>War Room Dashboard promoted to top of sidebar. &quot;Election Day Active&quot; banner.</td>
+</tr>
+<tr>
+<td>Field Director</td>
+<td>Home screen switches to War Room Dashboard. GOTV section promoted.</td>
+</tr>
+<tr>
+<td>Volunteer Coordinator</td>
+<td>Staging check-in tools promoted. Shift management emphasized.</td>
+</tr>
+<tr>
+<td>Communications Director</td>
+<td>Election day comms plan active. Send controls for each wave visible.</td>
+</tr>
+<tr>
+<td>Volunteer</td>
+<td>GOTV-specific field mode (GOTV door cards, simplified script).</td>
+</tr>
+<tr>
+<td>Team Lead</td>
+<td>Team GOTV progress visible. War room escalation button available.</td>
+</tr>
+<tr>
+<td>All others</td>
+<td>No change (Candidate, Supporter, Data Manager, Finance Director).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Role template preview.</strong> When an Org Admin is configuring a role template, can they preview what that role's view looks like? A &quot;preview as this role&quot; mode would help Org Admins understand the impact of their permission choices.</p>
+</li>
+<li>
+<p><strong>First-run experience per persona.</strong> Should each persona see a brief tour/onboarding specific to their role when they first log in? (&quot;Welcome, Field Director — here's where you set up canvassing campaigns...&quot;)</p>
+</li>
+<li>
+<p><strong>Persona-specific empty states.</strong> When a persona's home screen has no data yet (no shifts created, no campaigns running), the empty state should guide them toward their first action. These need to be persona-specific — a Finance Director's empty state says &quot;Set up your first donation form,&quot; while a Field Director's says &quot;Create your first canvassing campaign.&quot;</p>
+</li>
+</ol>
+<!-- REVISIT: The mobile tab selections per persona are estimates based on spec analysis. Actual usage data from alpha testing should inform adjustments. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#persona-summary"># Persona Summary</a></li><li class="toc-2"><a href="#org-admin"># Org Admin</a></li><li class="toc-3"><a href="#home-screen"># Home Screen</a></li><li class="toc-3"><a href="#sidebar-sections"># Sidebar Sections</a></li><li class="toc-3"><a href="#mobile-experience"># Mobile Experience</a></li><li class="toc-3"><a href="#special-behaviors"># Special Behaviors</a></li><li class="toc-2"><a href="#communications-director"># Communications Director</a></li><li class="toc-3"><a href="#home-screen-1"># Home Screen</a></li><li class="toc-3"><a href="#sidebar-sections-1"># Sidebar Sections</a></li><li class="toc-3"><a href="#mobile-experience-1"># Mobile Experience</a></li><li class="toc-3"><a href="#what-they-dont-see"># What They Don't See</a></li><li class="toc-2"><a href="#finance-director"># Finance Director</a></li><li class="toc-3"><a href="#home-screen-2"># Home Screen</a></li><li class="toc-3"><a href="#sidebar-sections-2"># Sidebar Sections</a></li><li class="toc-3"><a href="#mobile-experience-2"># Mobile Experience</a></li><li class="toc-3"><a href="#what-they-dont-see-1"># What They Don't See</a></li><li class="toc-2"><a href="#field-director"># Field Director</a></li><li class="toc-3"><a href="#home-screen-3"># Home Screen</a></li><li class="toc-3"><a href="#sidebar-sections-3"># Sidebar Sections</a></li><li class="toc-3"><a href="#mobile-experience-3"># Mobile Experience</a></li><li class="toc-3"><a href="#election-day"># Election Day</a></li><li class="toc-3"><a href="#what-they-dont-see-2"># What They Don't See</a></li><li class="toc-2"><a href="#volunteer-coordinator"># Volunteer Coordinator</a></li><li class="toc-3"><a href="#home-screen-4"># Home Screen</a></li><li class="toc-3"><a href="#sidebar-sections-4"># Sidebar Sections</a></li><li class="toc-3"><a href="#mobile-experience-4"># Mobile Experience</a></li><li class="toc-3"><a href="#what-they-dont-see-3"># What They Don't See</a></li><li class="toc-2"><a href="#data-manager"># Data Manager</a></li><li class="toc-3"><a href="#home-screen-5"># Home Screen</a></li><li class="toc-3"><a href="#sidebar-sections-5"># Sidebar Sections</a></li><li class="toc-3"><a href="#mobile-experience-5"># Mobile Experience</a></li><li class="toc-3"><a href="#what-they-dont-see-4"># What They Don't See</a></li><li class="toc-2"><a href="#volunteer"># Volunteer</a></li><li class="toc-3"><a href="#home-screen-6"># Home Screen</a></li><li class="toc-3"><a href="#sidebar-sections-6"># Sidebar Sections</a></li><li class="toc-3"><a href="#mobile-experience-6"># Mobile Experience</a></li><li class="toc-3"><a href="#field-mode"># Field Mode</a></li><li class="toc-3"><a href="#offline-surface"># Offline Surface</a></li><li class="toc-3"><a href="#what-they-dont-see-5"># What They Don't See</a></li><li class="toc-2"><a href="#team-lead"># Team Lead</a></li><li class="toc-3"><a href="#home-screen-7"># Home Screen</a></li><li class="toc-3"><a href="#sidebar-sections-7"># Sidebar Sections</a></li><li class="toc-3"><a href="#mobile-experience-7"># Mobile Experience</a></li><li class="toc-3"><a href="#field-mode-1"># Field Mode</a></li><li class="toc-3"><a href="#what-they-dont-see-6"># What They Don't See</a></li><li class="toc-2"><a href="#candidate"># Candidate</a></li><li class="toc-3"><a href="#home-screen-8"># Home Screen</a></li><li class="toc-3"><a href="#sidebar-sections-8"># Sidebar Sections</a></li><li class="toc-3"><a href="#mobile-experience-8"># Mobile Experience</a></li><li class="toc-3"><a href="#messaging-patterns"># Messaging Patterns</a></li><li class="toc-3"><a href="#what-they-dont-see-7"># What They Don't See</a></li><li class="toc-2"><a href="#supporter"># Supporter</a></li><li class="toc-3"><a href="#home-screen-9"># Home Screen</a></li><li class="toc-3"><a href="#sidebar-sections-9"># Sidebar Sections</a></li><li class="toc-3"><a href="#mobile-experience-9"># Mobile Experience</a></li><li class="toc-3"><a href="#authentication"># Authentication</a></li><li class="toc-3"><a href="#what-they-dont-see-8"># What They Don't See</a></li><li class="toc-2"><a href="#cross-persona-patterns"># Cross-Persona Patterns</a></li><li class="toc-3"><a href="#notification-behavior-by-persona"># Notification Behavior by Persona</a></li><li class="toc-3"><a href="#session-management-by-persona"># Session Management by Persona</a></li><li class="toc-3"><a href="#election-day-view-changes"># Election Day View Changes</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

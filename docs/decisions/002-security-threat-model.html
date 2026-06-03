@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADR-002: Security &amp; Threat Model · GreenGrass</title>
+<meta name="description" content="ADR-002: Security &amp; Threat Model — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../spec/product.html">Project: GreenGrass</a></li><li><a href="../spec/users.html">Users &amp; Roles</a></li><li><a href="../spec/workflows.html">Core Workflows</a></li><li><a href="../spec/geography.html">Target Geography</a></li><li><a href="../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../spec/integrations.html">External Integrations</a></li><li><a href="../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="./002-security-threat-model.html" aria-current="page" class="active">ADR-002: Security &amp; Threat Model</a></li><li><a href="./003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="./004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="./005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="./006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="./007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="./008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="./009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="./010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="./011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="./012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="./013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="./014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="./015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="./016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="./ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Decisions</nav>
+    <article class="prose">
+<h1 id="adr-002-security-threat-model" tabindex="-1"><a class="heading-anchor" href="#adr-002-security-threat-model" aria-hidden="true">#</a> ADR-002: Security &amp; Threat Model</h1>
+<p><strong>Status:</strong> Accepted
+<strong>Date:</strong> 2026-03-03
+<strong>Sources:</strong> <code>spec/security.md</code>, <code>design/architecture/system.md</code>, <code>design/ux/02-global-patterns/security-ux-patterns.md</code></p>
+<h2 id="context" tabindex="-1"><a class="heading-anchor" href="#context" aria-hidden="true">#</a> Context</h2>
+<p>GreenGrass operates in political environments where security failures have real-world consequences — surveillance, harassment, arrest, or violence. The threat model includes state actors with network interception capabilities, political opponents who might infiltrate as volunteers, and devices that may be physically seized at checkpoints or raids. Standard enterprise security measures are insufficient; the architecture must assume breach, minimize blast radius, and provide features specifically designed for hostile political environments.</p>
+<h2 id="decision" tabindex="-1"><a class="heading-anchor" href="#decision" aria-hidden="true">#</a> Decision</h2>
+<h3 id="byok-encryption-by-default" tabindex="-1"><a class="heading-anchor" href="#byok-encryption-by-default" aria-hidden="true">#</a> BYOK encryption by default</h3>
+<p>Tenants generate and hold their own encryption keys. GreenGrass cannot decrypt tenant data and therefore cannot be compelled to hand it over. This is the default, not an advanced option — BYOK is presented as the recommended choice during onboarding with guided key generation, secure backup flows (including Shamir's secret sharing across multiple org admins), and clear documentation that key loss means permanent data loss.</p>
+<p>Tenants who explicitly choose convenience over sovereignty can opt into GreenGrass-managed keys, which enables support-assisted data recovery and simplifies operations for less technical organizations.</p>
+<p><strong>Alternatives considered:</strong> Managed keys as default with BYOK as opt-in was rejected because it inverts the trust model — the platform would hold keys to sensitive political data by default, making it a target for compulsion. Platform-managed-only was never considered given the threat model.</p>
+<h3 id="tls-12-with-tls-13-preferred" tabindex="-1"><a class="heading-anchor" href="#tls-12-with-tls-13-preferred" aria-hidden="true">#</a> TLS 1.2+ with TLS 1.3 preferred</h3>
+<p>All network communication is encrypted. Clients supporting TLS 1.3 negotiate it automatically; older devices fall back to TLS 1.2 with weak cipher suites disabled. This balances security with device accessibility in the global south where older devices are common. HTTPS with HSTS and certificate pinning for mobile clients; mutual TLS for internal service communication.</p>
+<h3 id="assume-breach-architecture" tabindex="-1"><a class="heading-anchor" href="#assume-breach-architecture" aria-hidden="true">#</a> Assume-breach architecture</h3>
+<p>Every layer is designed assuming the layer above it has been compromised. Defense in depth, not perimeter security. Single-tenant architecture limits blast radius — compromising one tenant does not expose another. Application-level encryption protects high-sensitivity fields (political sentiment scores, canvassing notes, donor identity, candidate communications, national ID numbers) on top of storage-level encryption, so a database compromise alone does not expose the most sensitive data.</p>
+<h3 id="duress-mode-with-sanitized-interface" tabindex="-1"><a class="heading-anchor" href="#duress-mode-with-sanitized-interface" aria-hidden="true">#</a> Duress mode with sanitized interface</h3>
+<p>A secondary passkey logs into a sanitized view of the app that appears functional but contains no sensitive data. The duress login is indistinguishable from a normal login — no visual cues, no different loading behavior. It triggers a silent alert to the user's trusted contacts and Org Admin. Available on the aggressive security tier for tenants operating in hostile political environments.</p>
+<p>The sanitized view shows plausible but scrubbed content — a real account structure with minimal data, not a blank or obviously fake state. This withstands casual inspection by an adversary.</p>
+<p><strong>Alternatives considered:</strong> No duress mode (out of scope) was rejected because physical device seizure is a real threat in target countries. Obvious decoy apps were rejected because they don't withstand inspection.</p>
+<h3 id="operational-data-only-on-field-devices" tabindex="-1"><a class="heading-anchor" href="#operational-data-only-on-field-devices" aria-hidden="true">#</a> Operational data only on field devices</h3>
+<p>Walk list downloads contain only what's operationally necessary: name, address, age, previous contact result, and the canvassing script. Detailed canvassing notes from prior visits, internal tags and scores, donation history, national ID, and full communication history stay on the server. If a device is seized, exposure is limited. All on-device data is encrypted (SQLCipher) and wiped at session end.</p>
+<h2 id="consequences" tabindex="-1"><a class="heading-anchor" href="#consequences" aria-hidden="true">#</a> Consequences</h2>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>BYOK makes GreenGrass architecturally unable to comply with data demands for most tenants — the strongest possible trust model</li>
+<li>Assume-breach architecture means no single point of compromise can expose the entire platform</li>
+<li>Duress mode provides physical security protection for activists in hostile environments</li>
+<li>Minimal field device data limits exposure from the most likely physical attack vector (device seizure)</li>
+</ul>
+<p><strong>Costs:</strong></p>
+<ul>
+<li>BYOK key management creates a significant UX burden that must be solved through guided flows and Shamir's secret sharing</li>
+<li>Key loss is permanent data loss — the onboarding flow must make this consequence unmistakably clear</li>
+<li>Duress mode requires careful design to be indistinguishable from normal login, adding implementation complexity</li>
+<li>Application-level encryption on top of storage encryption adds query complexity for encrypted fields</li>
+</ul>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>All security features must work on low-end devices common in the global south</li>
+<li>Silent duress alerts must be robust against network monitoring — the alert itself cannot be what reveals the duress</li>
+<li>Security must be invisible during normal operation — intrusive security UX undermines adoption</li>
+</ul>
+<p><strong>Related ADRs:</strong> <a href="./001-platform-architecture.html">ADR-001</a> (single-tenant isolation is a security control), <a href="./003-identity-access-organization.html">ADR-003</a> (authentication and session management), <a href="./005-offline-first-sync.html">ADR-005</a> (offline data encryption), <a href="./008-communications-messaging.html">ADR-008</a> (E2E encryption for messaging)</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#context"># Context</a></li><li class="toc-2"><a href="#decision"># Decision</a></li><li class="toc-3"><a href="#byok-encryption-by-default"># BYOK encryption by default</a></li><li class="toc-3"><a href="#tls-12-with-tls-13-preferred"># TLS 1.2+ with TLS 1.3 preferred</a></li><li class="toc-3"><a href="#assume-breach-architecture"># Assume-breach architecture</a></li><li class="toc-3"><a href="#duress-mode-with-sanitized-interface"># Duress mode with sanitized interface</a></li><li class="toc-3"><a href="#operational-data-only-on-field-devices"># Operational data only on field devices</a></li><li class="toc-2"><a href="#consequences"># Consequences</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

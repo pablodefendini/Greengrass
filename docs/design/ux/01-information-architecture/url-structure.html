@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>URL Structure · GreenGrass</title>
+<meta name="description" content="URL Structure — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="./navigation-model.html">Navigation Model</a></li><li><a href="./screen-inventory.html">Screen Inventory</a></li><li><a href="./persona-views.html">Persona Views</a></li><li><a href="./url-structure.html" aria-current="page" class="active">URL Structure</a></li><li><a href="../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="url-structure" tabindex="-1"><a class="heading-anchor" href="#url-structure" aria-hidden="true">#</a> URL Structure</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document maps the screen inventory (<a href="http://screen-inventory.md" target="_blank" rel="noopener noreferrer">screen-inventory.md</a>) to SvelteKit routes. It defines the complete URL hierarchy for the platform, identifying which routes are public, authenticated, offline-capable, or mobile-only.</p>
+<p>SvelteKit uses file-based routing in <code>src/routes/</code>. Route groups <code>(group)</code> affect layout nesting but do not appear in the URL. Dynamic segments use <code>[param]</code>. This structure is the bridge between the information architecture and the implementation.</p>
+<h2 id="route-architecture" tabindex="-1"><a class="heading-anchor" href="#route-architecture" aria-hidden="true">#</a> Route Architecture</h2>
+<p>The app uses four SvelteKit layout groups, each with a distinct navigation shell:</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Shell</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(public)</code></td>
+<td>Minimal public chrome</td>
+<td>Public pages — no authentication required</td>
+</tr>
+<tr>
+<td><code>(auth)</code></td>
+<td>Auth-specific layout</td>
+<td>Login, recovery, registration flows</td>
+</tr>
+<tr>
+<td><code>(app)</code></td>
+<td>Full navigation shell (sidebar + header)</td>
+<td>All authenticated staff, volunteer, and candidate screens</td>
+</tr>
+<tr>
+<td><code>(field-mode)</code></td>
+<td>Field mode shell (stripped-down, full-screen)</td>
+<td>Active shift canvassing, phone banking, voter reg, GOTV</td>
+</tr>
+<tr>
+<td><code>(portal)</code></td>
+<td>Supporter portal shell</td>
+<td>Supporter self-service (minimal navigation)</td>
+</tr>
+<tr>
+<td><code>(wizard)</code></td>
+<td>Wizard shell (progress steps, no sidebar nav)</td>
+<td>Onboarding wizards</td>
+</tr>
+</tbody>
+</table>
+<p>Each group wraps a <code>+layout.svelte</code> that defines the navigation shell for all routes within it.</p>
+<h2 id="route-map" tabindex="-1"><a class="heading-anchor" href="#route-map" aria-hidden="true">#</a> Route Map</h2>
+<h3 id="public-pages-public" tabindex="-1"><a class="heading-anchor" href="#public-pages-public" aria-hidden="true">#</a> Public Pages — <code>(public)</code></h3>
+<p>No authentication required. Tenant-branded but publicly accessible.</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Mobile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/p/[slug]</code></td>
+<td>PUB-001</td>
+<td>Candidate Profile Page</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/o/[slug]</code></td>
+<td>PUB-002</td>
+<td>Organization Profile Page</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/donate/[formId]</code></td>
+<td>PUB-003, FUND-005</td>
+<td>Donation Form (Hosted)</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/events/[eventId]</code></td>
+<td>PUB-004, EVT-007</td>
+<td>Event Page</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/action/[actionId]</code></td>
+<td>PUB-005, ACT-005</td>
+<td>Action Page (Letter/Email)</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/petition/[petitionId]</code></td>
+<td>PUB-006, ACT-006</td>
+<td>Petition Page</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/volunteer</code></td>
+<td>PUB-007</td>
+<td>Volunteer Signup Page</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/media-kit</code></td>
+<td>PUB-008</td>
+<td>Media Kit Page</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/events/[eventId]/rsvp</code></td>
+<td>EVT-006</td>
+<td>Event RSVP Form</td>
+<td>Primary</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><code>/p/</code> and <code>/o/</code> are short prefixes for public profiles — keeps URLs clean for sharing on social media, print materials, and SMS.</li>
+<li><code>/donate/[formId]</code> is the most latency-sensitive public route — must load fast on low-end devices over slow connections. Pre-rendered where possible.</li>
+<li>Public event pages can be shared via URL without requiring login. The RSVP form at <code>/events/[eventId]/rsvp</code> collects information without requiring authentication.</li>
+</ul>
+<hr>
+<h3 id="authentication-auth" tabindex="-1"><a class="heading-anchor" href="#authentication-auth" aria-hidden="true">#</a> Authentication — <code>(auth)</code></h3>
+<p>Authentication flow screens. These use a minimal, focused layout — no sidebar, no app navigation.</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Mobile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/login</code></td>
+<td>AUTH-001</td>
+<td>Login (Passkey)</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/login/fallback</code></td>
+<td>AUTH-002</td>
+<td>Login Fallback (Magic Link / SMS OTP)</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/recover</code></td>
+<td>AUTH-003</td>
+<td>Account Recovery (Trusted Contact)</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/register</code></td>
+<td>AUTH-004</td>
+<td>Passkey Registration</td>
+<td>Primary</td>
+</tr>
+<tr>
+<td><code>/register/trusted-contacts</code></td>
+<td>AUTH-005</td>
+<td>Trusted Contact Setup</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/authorize-device</code></td>
+<td>AUTH-006</td>
+<td>Device Authorization</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/session-expired</code></td>
+<td>AUTH-007</td>
+<td>Session Expired / Re-authenticate</td>
+<td>Primary</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><code>/login</code> detects passkey availability and auto-selects the appropriate flow. <code>/login/fallback</code> is for devices without passkey support or when the user explicitly requests it.</li>
+<li>All auth routes work on mobile — authentication is the first experience for most users.</li>
+<li><code>/register</code> is the passkey enrollment flow after initial invitation acceptance.</li>
+</ul>
+<hr>
+<h3 id="authenticated-app-app" tabindex="-1"><a class="heading-anchor" href="#authenticated-app-app" aria-hidden="true">#</a> Authenticated App — <code>(app)</code></h3>
+<p>The main application. Uses the full navigation shell (header bar + sidebar on desktop, bottom tabs on mobile). All routes require authentication and are role-gated — the role template determines which routes a user can access. Accessing a route outside one's role returns a 404 (not 403 — restricted features are invisible, not forbidden).</p>
+<h4 id="dashboards" tabindex="-1"><a class="heading-anchor" href="#dashboards" aria-hidden="true">#</a> Dashboards</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/dashboard</code></td>
+<td>DASH-001</td>
+<td>Campaign Overview Dashboard</td>
+<td>OA, C</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/dashboard/field</code></td>
+<td>DASH-002</td>
+<td>Field Operations Dashboard</td>
+<td>OA, FiD</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/dashboard/fundraising</code></td>
+<td>DASH-003</td>
+<td>Fundraising Dashboard</td>
+<td>OA, FD</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/dashboard/communications</code></td>
+<td>DASH-004</td>
+<td>Communications Dashboard</td>
+<td>OA, CD</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/dashboard/volunteers</code></td>
+<td>DASH-005</td>
+<td>Volunteer Dashboard</td>
+<td>OA, VC</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/dashboard/data</code></td>
+<td>DASH-006</td>
+<td>Data Quality Dashboard</td>
+<td>OA, DM</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/dashboard/compliance</code></td>
+<td>DASH-007</td>
+<td>Compliance Dashboard</td>
+<td>OA, FD</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/dashboard/war-room</code></td>
+<td>DASH-008</td>
+<td>GOTV War Room Dashboard</td>
+<td>OA, FiD</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/dashboard/team</code></td>
+<td>DASH-009</td>
+<td>Team Lead Dashboard</td>
+<td>TL</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/dashboard/candidate</code></td>
+<td>DASH-010</td>
+<td>Candidate Dashboard</td>
+<td>C</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/dashboard/alliance</code></td>
+<td>DASH-011</td>
+<td>Alliance Dashboard</td>
+<td>OA</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Home screen routing:</strong> Each persona has a default dashboard. When a user navigates to <code>/dashboard</code> (or logs in), the server redirects to their role-appropriate dashboard:</p>
+<ul>
+<li>Org Admin → <code>/dashboard</code></li>
+<li>Communications Director → <code>/dashboard/communications</code></li>
+<li>Finance Director → <code>/dashboard/fundraising</code></li>
+<li>Field Director → <code>/dashboard/field</code></li>
+<li>Volunteer Coordinator → <code>/dashboard/volunteers</code></li>
+<li>Data Manager → <code>/dashboard/data</code></li>
+<li>Candidate → <code>/dashboard/candidate</code></li>
+<li>Team Lead → <code>/dashboard/team</code></li>
+<li>Volunteer → <code>/shifts</code> (not a dashboard — goes directly to shifts)</li>
+<li>Supporter → redirected to <code>(portal)</code> at <code>/portal</code></li>
+</ul>
+<h4 id="people-crm" tabindex="-1"><a class="heading-anchor" href="#people-crm" aria-hidden="true">#</a> People / CRM</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/people</code></td>
+<td>CRM-001</td>
+<td>Contact List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/[contactId]</code></td>
+<td>CRM-002</td>
+<td>Contact Detail</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/people/[contactId]/edit</code></td>
+<td>CRM-003</td>
+<td>Contact Create/Edit</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/new</code></td>
+<td>CRM-003</td>
+<td>Contact Create (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/segments</code></td>
+<td>CRM-005</td>
+<td>Segment List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/segments/new</code></td>
+<td>CRM-004</td>
+<td>Segment Builder (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/segments/[segmentId]</code></td>
+<td>CRM-004</td>
+<td>Segment Builder (edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/dedup</code></td>
+<td>CRM-006</td>
+<td>Dedup Review Queue</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/dedup/[pairId]</code></td>
+<td>CRM-007</td>
+<td>Dedup Side-by-Side Comparison</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/import</code></td>
+<td>CRM-008</td>
+<td>Data Import Wizard — File Upload</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/import/[importId]/map</code></td>
+<td>CRM-009</td>
+<td>Data Import Wizard — Column Mapping</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/import/[importId]/preview</code></td>
+<td>CRM-010</td>
+<td>Data Import Wizard — Dedup Preview</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/import/[importId]/confirm</code></td>
+<td>CRM-011</td>
+<td>Data Import Wizard — Confirmation</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/import/history</code></td>
+<td>CRM-012</td>
+<td>Data Import History</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/export</code></td>
+<td>CRM-013</td>
+<td>Data Export</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/data-quality</code></td>
+<td>CRM-014</td>
+<td>Data Quality Report</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/people/tags</code></td>
+<td>CRM-015</td>
+<td>Tag Management</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>The Data Import Wizard (CRM-008 through CRM-011) uses a multi-step URL progression. Each step is a distinct URL so the wizard state is bookmarkable and shareable.</li>
+<li><code>/people/[contactId]</code> loads partial data offline (cached contacts) but cannot save edits offline.</li>
+</ul>
+<h4 id="field-operations" tabindex="-1"><a class="heading-anchor" href="#field-operations" aria-hidden="true">#</a> Field Operations</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/field/canvassing</code></td>
+<td>CANV-001</td>
+<td>Canvassing Campaign List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/canvassing/new</code></td>
+<td>CANV-002</td>
+<td>Canvassing Campaign Create</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/canvassing/[campaignId]</code></td>
+<td>CANV-002</td>
+<td>Canvassing Campaign Edit</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/canvassing/[campaignId]/results</code></td>
+<td>CANV-013</td>
+<td>Canvassing Results Review</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/canvassing/[campaignId]/progress</code></td>
+<td>CANV-014</td>
+<td>Canvassing Progress Map</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/scripts/new</code></td>
+<td>CANV-003</td>
+<td>Script Builder (canvassing, new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/scripts/[scriptId]</code></td>
+<td>CANV-003</td>
+<td>Script Builder (canvassing, edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/turfs</code></td>
+<td>CANV-004</td>
+<td>Turf Management Map</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/turfs/auto-generate</code></td>
+<td>CANV-005</td>
+<td>Turf Auto-Generation</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/walk-lists</code></td>
+<td>CANV-006</td>
+<td>Walk List Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/phone-banking</code></td>
+<td>PHONE-001</td>
+<td>Phone Bank Campaign List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/phone-banking/new</code></td>
+<td>PHONE-002</td>
+<td>Phone Bank Campaign Create</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/phone-banking/[campaignId]</code></td>
+<td>PHONE-002</td>
+<td>Phone Bank Campaign Edit</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/phone-banking/[campaignId]/script</code></td>
+<td>PHONE-003</td>
+<td>Phone Bank Script Builder</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/phone-banking/[campaignId]/progress</code></td>
+<td>PHONE-007</td>
+<td>Phone Bank Progress Dashboard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/voter-registration</code></td>
+<td>VREG-001</td>
+<td>Voter Reg Drive List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/voter-registration/new</code></td>
+<td>VREG-002</td>
+<td>Voter Reg Drive Create</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/voter-registration/[driveId]</code></td>
+<td>VREG-002</td>
+<td>Voter Reg Drive Edit</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/voter-registration/[driveId]/templates</code></td>
+<td>VREG-003</td>
+<td>Jurisdiction Template Selector</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field/voter-registration/[driveId]/results</code></td>
+<td>VREG-006</td>
+<td>Voter Reg Results Review</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><code>/field/scripts</code> are shared between canvassing and phone banking. Scripts are created here and referenced from campaigns.</li>
+<li>All field management screens are desktop-preferred. The actual field work (canvassing, calling, registering) happens in field mode — a separate layout group.</li>
+</ul>
+<h4 id="fundraising" tabindex="-1"><a class="heading-anchor" href="#fundraising" aria-hidden="true">#</a> Fundraising</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/fundraising/donations</code></td>
+<td>FUND-001</td>
+<td>Donation List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/donations/[donationId]</code></td>
+<td>FUND-002</td>
+<td>Donation Detail</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/forms</code></td>
+<td>FUND-003</td>
+<td>Donation Form Builder (list)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/forms/new</code></td>
+<td>FUND-003</td>
+<td>Donation Form Builder (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/forms/[formId]</code></td>
+<td>FUND-003</td>
+<td>Donation Form Builder (edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/forms/[formId]/preview</code></td>
+<td>FUND-004</td>
+<td>Donation Form Preview</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/forms/[formId]/embed</code></td>
+<td>FUND-006</td>
+<td>Embed Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/campaigns</code></td>
+<td>FUND-018</td>
+<td>Fundraising Campaign List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/campaigns/new</code></td>
+<td>FUND-019</td>
+<td>Fundraising Campaign Create</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/campaigns/[campaignId]</code></td>
+<td>FUND-019</td>
+<td>Fundraising Campaign Edit</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/recurring</code></td>
+<td>FUND-007</td>
+<td>Recurring Donation Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/pledges</code></td>
+<td>FUND-008</td>
+<td>Pledge Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/refunds</code></td>
+<td>FUND-009</td>
+<td>Refund Processing</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/cash</code></td>
+<td>FUND-010</td>
+<td>Cash Donation Recording</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/fundraising/cash/reconciliation</code></td>
+<td>FUND-011</td>
+<td>Cash Reconciliation</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/compliance</code></td>
+<td>FUND-012</td>
+<td>Compliance Flag Review</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/ab-tests</code></td>
+<td>FUND-013</td>
+<td>A/B Test Setup (list)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/ab-tests/new</code></td>
+<td>FUND-013</td>
+<td>A/B Test Setup (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/ab-tests/[testId]</code></td>
+<td>FUND-014</td>
+<td>A/B Test Results</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/alliance-splits</code></td>
+<td>FUND-015</td>
+<td>Alliance Split Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/alliance-reports</code></td>
+<td>FUND-016</td>
+<td>Alliance Fundraising Report</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/processors</code></td>
+<td>FUND-017</td>
+<td>Payment Processor Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/fundraising/statements</code></td>
+<td>FUND-020</td>
+<td>Year-End Statement Generator</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="communications" tabindex="-1"><a class="heading-anchor" href="#communications" aria-hidden="true">#</a> Communications</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/communications/email</code></td>
+<td>COMM-001</td>
+<td>Email Campaign List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/communications/email/new</code></td>
+<td>COMM-002</td>
+<td>Email Campaign Builder (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/communications/email/[campaignId]</code></td>
+<td>COMM-002</td>
+<td>Email Campaign Builder (edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/communications/email/templates</code></td>
+<td>COMM-004</td>
+<td>Email Template Library</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/communications/email/templates/new</code></td>
+<td>COMM-003</td>
+<td>Email Template Builder (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/communications/email/templates/[templateId]</code></td>
+<td>COMM-003</td>
+<td>Email Template Builder (edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/communications/sms</code></td>
+<td>COMM-005</td>
+<td>SMS/WhatsApp Composer</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/communications/analytics</code></td>
+<td>COMM-006</td>
+<td>Communication Analytics</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/communications/consent</code></td>
+<td>COMM-007</td>
+<td>Consent Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/communications/preferences</code></td>
+<td>COMM-008</td>
+<td>Communication Preferences (Staff)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/communications/unsubscribes</code></td>
+<td>COMM-009</td>
+<td>Unsubscribe Management</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="social-media" tabindex="-1"><a class="heading-anchor" href="#social-media" aria-hidden="true">#</a> Social Media</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/social</code></td>
+<td>SOCIAL-001</td>
+<td>Social Media Dashboard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/social/compose</code></td>
+<td>SOCIAL-002</td>
+<td>Post Composer (Multi-platform)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/social/calendar</code></td>
+<td>SOCIAL-003</td>
+<td>Post Calendar / Schedule</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/social/analytics</code></td>
+<td>SOCIAL-004</td>
+<td>Post Analytics</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/social/accounts</code></td>
+<td>SOCIAL-005</td>
+<td>Social Account Connection</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Social media is a top-level route (<code>/social</code>) rather than nested under <code>/communications</code> because it's a distinct functional area in the sidebar (Press section for Comms Director).</li>
+<li>Platform-specific preview (SOCIAL-006) is a component within the Post Composer, not a separate route.</li>
+</ul>
+<h4 id="events" tabindex="-1"><a class="heading-anchor" href="#events" aria-hidden="true">#</a> Events</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/events</code></td>
+<td>EVT-001</td>
+<td>Event List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/events/new</code></td>
+<td>EVT-002</td>
+<td>Event Create</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/events/[eventId]/manage</code></td>
+<td>EVT-002</td>
+<td>Event Edit</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/events/[eventId]</code></td>
+<td>EVT-003</td>
+<td>Event Detail</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/events/[eventId]/rsvps</code></td>
+<td>EVT-004</td>
+<td>Event RSVP Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/events/[eventId]/check-in</code></td>
+<td>EVT-005</td>
+<td>Event Check-in Tool</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/events/[eventId]/metrics</code></td>
+<td>EVT-008</td>
+<td>Event Metrics</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/events/[eventId]/virtual</code></td>
+<td>EVT-009</td>
+<td>Virtual Event Setup</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/events/[eventId]/survey</code></td>
+<td>EVT-010</td>
+<td>Post-Event Survey Builder</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><code>/events/[eventId]</code> is the read-only detail view; <code>/events/[eventId]/manage</code> is the edit form. This avoids overloading the same URL with view/edit state.</li>
+<li><code>/events/[eventId]/check-in</code> is one of the few authenticated routes that works fully offline. It downloads attendee data on load and works disconnected.</li>
+</ul>
+<h4 id="activism" tabindex="-1"><a class="heading-anchor" href="#activism" aria-hidden="true">#</a> Activism</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/activism</code></td>
+<td>ACT-001</td>
+<td>Activism Campaign List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/activism/letter/new</code></td>
+<td>ACT-002</td>
+<td>Letter/Email Action Setup (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/activism/letter/[actionId]</code></td>
+<td>ACT-002</td>
+<td>Letter/Email Action Setup (edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/activism/petition/new</code></td>
+<td>ACT-003</td>
+<td>Petition Setup (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/activism/petition/[petitionId]</code></td>
+<td>ACT-003</td>
+<td>Petition Setup (edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/activism/public-comment/new</code></td>
+<td>ACT-004</td>
+<td>Public Comment Campaign Setup (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/activism/public-comment/[campaignId]</code></td>
+<td>ACT-004</td>
+<td>Public Comment Campaign Setup (edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/activism/[campaignId]/analytics</code></td>
+<td>ACT-008</td>
+<td>Activism Campaign Analytics</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/activism/[campaignId]/delivery</code></td>
+<td>ACT-009</td>
+<td>Delivery Event Documentation</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>The public-facing action pages (<code>/action/[actionId]</code>, <code>/petition/[petitionId]</code>) are in the <code>(public)</code> group. These staff routes are for creating and managing the campaigns.</li>
+<li>AI Message Generation Preview (ACT-007) is a component within the public action page, not a separate staff route.</li>
+</ul>
+<h4 id="press-media" tabindex="-1"><a class="heading-anchor" href="#press-media" aria-hidden="true">#</a> Press &amp; Media</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/press/contacts</code></td>
+<td>PRESS-001</td>
+<td>Media Contact List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/contacts/[contactId]</code></td>
+<td>PRESS-002</td>
+<td>Media Contact Detail</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/lists</code></td>
+<td>PRESS-003</td>
+<td>Media List Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/releases</code></td>
+<td>PRESS-004</td>
+<td>Press Release Builder (list)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/releases/new</code></td>
+<td>PRESS-004</td>
+<td>Press Release Builder (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/releases/[releaseId]</code></td>
+<td>PRESS-004</td>
+<td>Press Release Builder (edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/releases/[releaseId]/preview</code></td>
+<td>PRESS-005</td>
+<td>Press Release Preview</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/releases/[releaseId]/distribute</code></td>
+<td>PRESS-006</td>
+<td>Press Release Distribution</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/advisories/new</code></td>
+<td>PRESS-007</td>
+<td>Media Advisory Builder (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/advisories/[advisoryId]</code></td>
+<td>PRESS-007</td>
+<td>Media Advisory Builder (edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/statements/new</code></td>
+<td>PRESS-008</td>
+<td>Statement Builder (new)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/statements/[statementId]</code></td>
+<td>PRESS-008</td>
+<td>Statement Builder (edit)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/media-kit</code></td>
+<td>PRESS-009</td>
+<td>Media Kit Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/coverage</code></td>
+<td>PRESS-010</td>
+<td>Coverage Log</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/coverage/analytics</code></td>
+<td>PRESS-011</td>
+<td>Coverage Analytics</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/endorsements</code></td>
+<td>PRESS-012</td>
+<td>Endorsement Pipeline</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/endorsements/[endorsementId]</code></td>
+<td>PRESS-013</td>
+<td>Endorsement Detail</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/talking-points</code></td>
+<td>PRESS-014</td>
+<td>Talking Points Library</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/interviews</code></td>
+<td>PRESS-015</td>
+<td>Interview Schedule</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/press/spokespersons</code></td>
+<td>PRESS-016</td>
+<td>Spokesperson Configuration</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gotv-election-day" tabindex="-1"><a class="heading-anchor" href="#gotv-election-day" aria-hidden="true">#</a> GOTV &amp; Election Day</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/gotv/universe</code></td>
+<td>GOTV-001</td>
+<td>GOTV Universe Builder</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/early-voting</code></td>
+<td>GOTV-002</td>
+<td>Early Voting Data Upload</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/staging</code></td>
+<td>GOTV-003</td>
+<td>Volunteer Staging Setup</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/staging/check-in</code></td>
+<td>GOTV-023</td>
+<td>Staging Location Check-in</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/turfs</code></td>
+<td>GOTV-004</td>
+<td>GOTV Turf Cutting</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/comms-plan</code></td>
+<td>GOTV-005</td>
+<td>Election Day Comms Plan</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/poll-watchers</code></td>
+<td>GOTV-006</td>
+<td>Poll Watcher Registry</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/poll-watchers/credentials</code></td>
+<td>GOTV-007</td>
+<td>Poll Watcher Credential Tracking</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/poll-watchers/issues</code></td>
+<td>GOTV-016</td>
+<td>Poll Watcher Issue Queue</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/rides</code></td>
+<td>GOTV-012</td>
+<td>Ride Coordination — Dispatcher View</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/turnout</code></td>
+<td>GOTV-017</td>
+<td>Turnout Dashboard — Map View</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/turnout/segments</code></td>
+<td>GOTV-018</td>
+<td>Turnout Dashboard — Segment View</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/reallocation</code></td>
+<td>GOTV-019</td>
+<td>Reallocation Suggestions</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/results/entry</code></td>
+<td>GOTV-020</td>
+<td>Election Night Results Entry</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/results</code></td>
+<td>GOTV-021</td>
+<td>Election Night Results Dashboard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/analysis</code></td>
+<td>GOTV-022</td>
+<td>Post-Election Analysis</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Field mode GOTV screens:</strong> GOTV-008, GOTV-009, GOTV-010 (GOTV door card, walk list, chase calls) are in the <code>(field-mode)</code> group, not here.</p>
+<p><strong>Volunteer-facing GOTV screens:</strong> GOTV-011 (ride request), GOTV-014 (poll watcher check-in), GOTV-015 (issue report) are under <code>/shifts/...</code> — see Volunteer Screens below.</p>
+<h4 id="messaging" tabindex="-1"><a class="heading-anchor" href="#messaging" aria-hidden="true">#</a> Messaging</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/messages</code></td>
+<td>MSG-001</td>
+<td>Message List (Inbox)</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/messages/[conversationId]</code></td>
+<td>MSG-002, MSG-003</td>
+<td>Conversation View (DM or Group)</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/messages/[conversationId]/thread/[threadId]</code></td>
+<td>MSG-004</td>
+<td>Thread View</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/messages/new-group</code></td>
+<td>MSG-005</td>
+<td>Group Create</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/messages/[conversationId]/settings</code></td>
+<td>MSG-005</td>
+<td>Group Edit</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/messages/broadcast</code></td>
+<td>MSG-006</td>
+<td>Broadcast Composer</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/messages/war-room</code></td>
+<td>MSG-007</td>
+<td>War Room Channel</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/messages/alliance</code></td>
+<td>MSG-014</td>
+<td>Alliance Channel</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contextual threads:</strong> MSG-008 through MSG-011 (event, shift, issue, donation flag threads) are accessed from their parent context (e.g., an event detail page shows a &quot;Discussion&quot; tab that renders the contextual thread inline). They share the conversation view component but are navigated to from the parent entity, not from the messages inbox.</p>
+<p><strong>Candidate-specific views:</strong> MSG-012 (Briefing View) and MSG-013 (Approval Queue) reuse the messages layout but with filtered views:
+| <code>/messages?view=briefings</code> | MSG-012 | Candidate Briefing View | Partial |
+| <code>/approvals</code> | MSG-013 | Candidate Approval Queue | No |</p>
+<h4 id="volunteers-coordinator-screens" tabindex="-1"><a class="heading-anchor" href="#volunteers-coordinator-screens" aria-hidden="true">#</a> Volunteers (Coordinator Screens)</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/volunteers/roster</code></td>
+<td>—</td>
+<td>Volunteer Roster</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/volunteers/onboarding</code></td>
+<td>—</td>
+<td>Onboarding Setup</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/volunteers/training</code></td>
+<td>HELP-008</td>
+<td>Training Content Editor</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/volunteers/training/modules</code></td>
+<td>HELP-004</td>
+<td>Training Module List (management view)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/volunteers/shifts</code></td>
+<td>—</td>
+<td>Shift Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/volunteers/teams</code></td>
+<td>—</td>
+<td>Team Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/volunteers/certifications</code></td>
+<td>HELP-007</td>
+<td>Certification Status (management view)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="volunteer-self-service-screens" tabindex="-1"><a class="heading-anchor" href="#volunteer-self-service-screens" aria-hidden="true">#</a> Volunteer Self-Service Screens</h4>
+<p>These are the screens volunteers and team leads see for their own work.</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/shifts</code></td>
+<td>—</td>
+<td>My Shifts (Volunteer home screen)</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/shifts/[shiftId]</code></td>
+<td>—</td>
+<td>Shift Detail</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/tasks</code></td>
+<td>—</td>
+<td>My Tasks</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/team</code></td>
+<td>—</td>
+<td>My Team (Team Leads only)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/team/roster</code></td>
+<td>—</td>
+<td>Team Roster</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/team/progress</code></td>
+<td>—</td>
+<td>Team Progress</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/training</code></td>
+<td>HELP-004</td>
+<td>Training Module List</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/training/[moduleId]</code></td>
+<td>HELP-005</td>
+<td>Training Module Content</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/training/[moduleId]/quiz</code></td>
+<td>HELP-006</td>
+<td>Training Quiz</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/training/certifications</code></td>
+<td>HELP-007</td>
+<td>Certification Status</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><code>/shifts</code> is the volunteer's home. When a volunteer navigates to the root (<code>/</code>) they are redirected here.</li>
+<li>The &quot;Start Shift&quot; action from <code>/shifts/[shiftId]</code> transitions the user to the <code>(field-mode)</code> group.</li>
+</ul>
+<h4 id="gotv-volunteer-screens" tabindex="-1"><a class="heading-anchor" href="#gotv-volunteer-screens" aria-hidden="true">#</a> GOTV Volunteer Screens</h4>
+<p>Screens that volunteers and team leads use during GOTV operations, outside of field mode.</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/gotv/ride-request</code></td>
+<td>GOTV-011</td>
+<td>Ride Request Form</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/gotv/ride-request/drive</code></td>
+<td>GOTV-013</td>
+<td>Ride Coordination — Driver View</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/poll-watch/check-in</code></td>
+<td>GOTV-014</td>
+<td>Poll Watcher Check-in</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/gotv/poll-watch/report</code></td>
+<td>GOTV-015</td>
+<td>Poll Watcher Issue Report Form</td>
+<td>Partial</td>
+</tr>
+</tbody>
+</table>
+<h4 id="alliance" tabindex="-1"><a class="heading-anchor" href="#alliance" aria-hidden="true">#</a> Alliance</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/alliance</code></td>
+<td>ALLY-001</td>
+<td>Alliance Dashboard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/alliance/members</code></td>
+<td>ALLY-002</td>
+<td>Alliance Member List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/alliance/join</code></td>
+<td>ALLY-003</td>
+<td>Affiliation Request Form</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/alliance/requests</code></td>
+<td>ALLY-004</td>
+<td>Affiliation Request Queue</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/alliance/sharing</code></td>
+<td>ALLY-005</td>
+<td>Sharing Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/alliance/campaigns</code></td>
+<td>ALLY-006</td>
+<td>Joint Campaign Setup</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/alliance/analytics</code></td>
+<td>ALLY-007</td>
+<td>Shared Analytics</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/alliance/gotv</code></td>
+<td>ALLY-008</td>
+<td>GOTV Alliance Coordination</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="settings" tabindex="-1"><a class="heading-anchor" href="#settings" aria-hidden="true">#</a> Settings</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/settings</code></td>
+<td>—</td>
+<td>Settings Hub</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/org</code></td>
+<td>SET-001</td>
+<td>Org Profile &amp; Branding</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/roles</code></td>
+<td>SET-002</td>
+<td>Role Template Editor (list)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/roles/[roleId]</code></td>
+<td>SET-002</td>
+<td>Role Template Editor (detail)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/roles/[roleId]/permissions</code></td>
+<td>SET-003</td>
+<td>Permission Override Panel</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/staff</code></td>
+<td>SET-004</td>
+<td>Staff Management List</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/staff/invite</code></td>
+<td>SET-005</td>
+<td>Staff Invite Flow</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/geography</code></td>
+<td>SET-006</td>
+<td>Geographic Scope Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/campaign-period</code></td>
+<td>SET-007</td>
+<td>Campaign Period Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/compliance</code></td>
+<td>SET-008</td>
+<td>Compliance Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/contribution-limits</code></td>
+<td>SET-009</td>
+<td>Contribution Limits Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/disclaimers</code></td>
+<td>SET-010</td>
+<td>Disclaimer Text Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/data-retention</code></td>
+<td>SET-011</td>
+<td>Data Retention Policy</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/integrations</code></td>
+<td>SET-012</td>
+<td>Integration Settings Hub</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/integrations/whatsapp</code></td>
+<td>SET-013</td>
+<td>WhatsApp Business Setup</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/integrations/sms</code></td>
+<td>SET-014</td>
+<td>SMS Provider Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/integrations/email</code></td>
+<td>SET-015, COMM-010</td>
+<td>Email Domain Configuration</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/integrations/social</code></td>
+<td>SET-016</td>
+<td>Social Media Account Connections</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/billing</code></td>
+<td>SET-017</td>
+<td>Billing &amp; Subscription</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/audit-trail</code></td>
+<td>SET-018</td>
+<td>Audit Trail Viewer</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/security</code></td>
+<td>SET-019</td>
+<td>Security Settings</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/encryption</code></td>
+<td>SET-020</td>
+<td>Encryption Key Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/api-keys</code></td>
+<td>SET-021</td>
+<td>API Key Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/settings/webhooks</code></td>
+<td>SET-022</td>
+<td>Webhook Configuration</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="help-support" tabindex="-1"><a class="heading-anchor" href="#help-support" aria-hidden="true">#</a> Help &amp; Support</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/help</code></td>
+<td>HELP-001</td>
+<td>Knowledge Base Browser</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/help/[articleSlug]</code></td>
+<td>HELP-002</td>
+<td>Knowledge Base Article</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/help/chat</code></td>
+<td>HELP-003</td>
+<td>AI Concierge Chat</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="user-profile-preferences" tabindex="-1"><a class="heading-anchor" href="#user-profile-preferences" aria-hidden="true">#</a> User Profile &amp; Preferences</h4>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/profile</code></td>
+<td>PROF-001</td>
+<td>Personal Profile</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/profile/notifications</code></td>
+<td>PROF-002</td>
+<td>Notification Preferences</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/profile/security</code></td>
+<td>PROF-003</td>
+<td>Security Settings (Personal)</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/profile/language</code></td>
+<td>PROF-004</td>
+<td>Language Preference</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/profile/switch-tenant</code></td>
+<td>PROF-005</td>
+<td>Tenant Switcher</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="field-mode-field-mode" tabindex="-1"><a class="heading-anchor" href="#field-mode-field-mode" aria-hidden="true">#</a> Field Mode — <code>(field-mode)</code></h3>
+<p>Full-screen takeover shell. No sidebar, no bottom tabs, no standard navigation. Only the field header (sync status, shift timer) and task navigation (prev/next/end shift).</p>
+<p>All field mode routes require an active shift. Navigating to a field mode URL without an active shift redirects to <code>/shifts</code>.</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/field-mode/canvass/[shiftId]</code></td>
+<td>CANV-007</td>
+<td>Field Mode — Shift Start</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/field-mode/canvass/[shiftId]/list</code></td>
+<td>CANV-008</td>
+<td>Field Mode — Walk List View</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/field-mode/canvass/[shiftId]/map</code></td>
+<td>CANV-009</td>
+<td>Field Mode — Map View</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/field-mode/canvass/[shiftId]/door/[voterId]</code></td>
+<td>CANV-010</td>
+<td>Field Mode — Door Card</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/field-mode/canvass/[shiftId]/door/[voterId]/interact</code></td>
+<td>CANV-011</td>
+<td>Field Mode — Interaction Form</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/field-mode/canvass/[shiftId]/debrief</code></td>
+<td>CANV-012</td>
+<td>Field Mode — Shift End / Debrief</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td><code>/field-mode/phone-bank/[sessionId]</code></td>
+<td>PHONE-004, PHONE-005</td>
+<td>Phone Bank — Call Interface</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field-mode/phone-bank/[sessionId]/result</code></td>
+<td>PHONE-006</td>
+<td>Phone Bank — Call Result Form</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/field-mode/voter-reg/[sessionId]</code></td>
+<td>VREG-004</td>
+<td>Voter Registration Form</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/field-mode/voter-reg/[sessionId]/eligibility</code></td>
+<td>VREG-005</td>
+<td>Eligibility Check</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/field-mode/gotv/[shiftId]</code></td>
+<td>GOTV-009</td>
+<td>GOTV Walk List</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/field-mode/gotv/[shiftId]/door/[voterId]</code></td>
+<td>GOTV-008</td>
+<td>GOTV Door Card</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>/field-mode/gotv/[shiftId]/chase/[voterId]</code></td>
+<td>GOTV-010</td>
+<td>Chase Call Interface</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Field mode URLs contain the shift/session ID so that a crashed app can resume exactly where the user left off.</li>
+<li>The canvassing field mode is the most complex — it supports list view, map view, and individual door cards. The volunteer navigates linearly through the walk list but can switch between list and map views.</li>
+<li>Phone banking field mode does not work offline (requires call connectivity).</li>
+<li>GOTV field mode is a simplified variant of canvassing field mode with a GOTV-specific script and door card.</li>
+</ul>
+<hr>
+<h3 id="supporter-portal-portal" tabindex="-1"><a class="heading-anchor" href="#supporter-portal-portal" aria-hidden="true">#</a> Supporter Portal — <code>(portal)</code></h3>
+<p>Minimal navigation shell for supporters. Separate layout from the main app — no sidebar, no staff features. Simple personal portal.</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/portal</code></td>
+<td>SUP-001</td>
+<td>Supporter Home</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/portal/donations</code></td>
+<td>SUP-002</td>
+<td>Donation History</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/portal/donations/[donationId]</code></td>
+<td>SUP-003</td>
+<td>Donation Receipt View</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/portal/recurring</code></td>
+<td>SUP-004</td>
+<td>Recurring Donation Management</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/portal/payment-methods</code></td>
+<td>SUP-005</td>
+<td>Payment Method Update</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/portal/profile</code></td>
+<td>SUP-006</td>
+<td>Supporter Profile</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/portal/preferences</code></td>
+<td>SUP-007</td>
+<td>Communication Preferences</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/portal/events</code></td>
+<td>SUP-008</td>
+<td>My Events</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/portal/statements</code></td>
+<td>SUP-009</td>
+<td>Year-End Statement Download</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>The supporter portal uses magic link authentication by default (low friction). Full account features (modifying recurring donations, updating payment methods) require passkey or email login.</li>
+<li>Portal routes are under <code>/portal</code> prefix to separate them from the main app namespace.</li>
+</ul>
+<hr>
+<h3 id="onboarding-wizards-wizard" tabindex="-1"><a class="heading-anchor" href="#onboarding-wizards-wizard" aria-hidden="true">#</a> Onboarding Wizards — <code>(wizard)</code></h3>
+<p>Wizard shell replaces the sidebar with step indicators. Global chrome (header, sync, notifications) remains.</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Screen ID</th>
+<th>Screen</th>
+<th>Offline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/wizard/org-setup</code></td>
+<td>WIZ-001</td>
+<td>Org Setup Wizard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/wizard/payment-processor</code></td>
+<td>WIZ-002</td>
+<td>Payment Processor Wizard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/wizard/byok</code></td>
+<td>WIZ-003</td>
+<td>BYOK Key Generation Wizard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/wizard/compliance</code></td>
+<td>WIZ-004</td>
+<td>Compliance Configuration Wizard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/wizard/whatsapp</code></td>
+<td>WIZ-005</td>
+<td>WhatsApp Business Setup Wizard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/wizard/sms</code></td>
+<td>WIZ-006</td>
+<td>SMS Number Setup Wizard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/wizard/voter-import</code></td>
+<td>WIZ-007</td>
+<td>Voter File Import Wizard</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>/wizard/volunteer-onboarding</code></td>
+<td>WIZ-008</td>
+<td>Volunteer Onboarding Wizard</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Each wizard has internal step state managed by the component, not by URL segments. The URL stays at <code>/wizard/org-setup</code> throughout all steps — progress is tracked in the wizard component state and persisted server-side.</li>
+<li><code>/wizard/volunteer-onboarding</code> is the only mobile-primary wizard. All others are desktop-preferred.</li>
+<li>Wizards can be exited and resumed. Navigating back to the wizard URL resumes at the last completed step.</li>
+</ul>
+<hr>
+<h2 id="sveltekit-file-structure" tabindex="-1"><a class="heading-anchor" href="#sveltekit-file-structure" aria-hidden="true">#</a> SvelteKit File Structure</h2>
+<p>The route hierarchy maps to SvelteKit's file system:</p>
+<pre><code>src/routes/
+├── (public)/
+│   ├── +layout.svelte              # Public page shell (minimal branding)
+│   ├── p/[slug]/+page.svelte       # Candidate profile
+│   ├── o/[slug]/+page.svelte       # Organization profile
+│   ├── donate/[formId]/+page.svelte
+│   ├── events/[eventId]/
+│   │   ├── +page.svelte            # Public event page
+│   │   └── rsvp/+page.svelte       # RSVP form
+│   ├── action/[actionId]/+page.svelte
+│   ├── petition/[petitionId]/+page.svelte
+│   ├── volunteer/+page.svelte
+│   └── media-kit/+page.svelte
+│
+├── (auth)/
+│   ├── +layout.svelte              # Auth flow layout
+│   ├── login/
+│   │   ├── +page.svelte            # Passkey login
+│   │   └── fallback/+page.svelte   # Magic link / SMS OTP
+│   ├── recover/+page.svelte
+│   ├── register/
+│   │   ├── +page.svelte            # Passkey enrollment
+│   │   └── trusted-contacts/+page.svelte
+│   ├── authorize-device/+page.svelte
+│   └── session-expired/+page.svelte
+│
+├── (app)/
+│   ├── +layout.svelte              # Main app shell (header + sidebar + tabs)
+│   ├── +layout.server.ts           # Auth guard, role resolution
+│   ├── dashboard/
+│   │   ├── +page.svelte            # Campaign overview (+ redirect logic)
+│   │   ├── field/+page.svelte
+│   │   ├── fundraising/+page.svelte
+│   │   ├── communications/+page.svelte
+│   │   ├── volunteers/+page.svelte
+│   │   ├── data/+page.svelte
+│   │   ├── compliance/+page.svelte
+│   │   ├── war-room/+page.svelte
+│   │   ├── team/+page.svelte
+│   │   ├── candidate/+page.svelte
+│   │   └── alliance/+page.svelte
+│   ├── people/
+│   │   ├── +page.svelte            # Contact list
+│   │   ├── [contactId]/
+│   │   │   ├── +page.svelte        # Contact detail
+│   │   │   └── edit/+page.svelte
+│   │   ├── new/+page.svelte
+│   │   ├── segments/...
+│   │   ├── dedup/...
+│   │   ├── import/...
+│   │   ├── export/+page.svelte
+│   │   ├── data-quality/+page.svelte
+│   │   └── tags/+page.svelte
+│   ├── field/...                    # Field management
+│   ├── fundraising/...              # Fundraising management
+│   ├── communications/...           # Email, SMS
+│   ├── social/...                   # Social media
+│   ├── events/...                   # Event management
+│   ├── activism/...                 # Activism campaigns
+│   ├── press/...                    # Press &amp; media
+│   ├── gotv/...                     # GOTV operations
+│   ├── messages/...                 # Messaging
+│   ├── volunteers/...               # Volunteer management
+│   ├── shifts/...                   # Volunteer self-service
+│   ├── team/...                     # Team lead
+│   ├── training/...                 # Training modules
+│   ├── approvals/+page.svelte      # Candidate approvals
+│   ├── alliance/...                 # Alliance management
+│   ├── settings/...                 # Settings &amp; admin
+│   ├── help/...                     # Knowledge base &amp; support
+│   └── profile/...                  # User profile &amp; preferences
+│
+├── (field-mode)/
+│   ├── +layout.svelte              # Field mode shell (sync, timer, nav)
+│   ├── +layout.server.ts           # Active shift guard
+│   └── field-mode/
+│       ├── canvass/[shiftId]/...
+│       ├── phone-bank/[sessionId]/...
+│       ├── voter-reg/[sessionId]/...
+│       └── gotv/[shiftId]/...
+│
+├── (portal)/
+│   ├── +layout.svelte              # Supporter portal shell
+│   └── portal/...
+│
+└── (wizard)/
+    ├── +layout.svelte              # Wizard shell (step indicators)
+    └── wizard/...
+</code></pre>
+<h2 id="routing-patterns" tabindex="-1"><a class="heading-anchor" href="#routing-patterns" aria-hidden="true">#</a> Routing Patterns</h2>
+<h3 id="auth-guards" tabindex="-1"><a class="heading-anchor" href="#auth-guards" aria-hidden="true">#</a> Auth Guards</h3>
+<p>All routes in <code>(app)</code>, <code>(field-mode)</code>, and <code>(wizard)</code> require authentication, enforced by <code>+layout.server.ts</code> at the group level:</p>
+<ul>
+<li><strong>Unauthenticated request</strong> → redirect to <code>/login</code> with <code>?redirect=</code> parameter</li>
+<li><strong>Authenticated but wrong role</strong> → 404 (not 403 — restricted features are invisible)</li>
+<li><strong>Authenticated but no active shift (field mode)</strong> → redirect to <code>/shifts</code></li>
+</ul>
+<h3 id="home-screen-redirect" tabindex="-1"><a class="heading-anchor" href="#home-screen-redirect" aria-hidden="true">#</a> Home Screen Redirect</h3>
+<p><code>/</code> redirects based on user role:</p>
+<ul>
+<li>Staff roles → their role-specific dashboard</li>
+<li>Volunteer / Team Lead → <code>/shifts</code></li>
+<li>Candidate → <code>/dashboard/candidate</code></li>
+<li>Supporter → <code>/portal</code></li>
+</ul>
+<h3 id="deep-linking" tabindex="-1"><a class="heading-anchor" href="#deep-linking" aria-hidden="true">#</a> Deep Linking</h3>
+<p>All screens are deep-linkable by design. Field mode preserves the exact position in a walk list via URL (<code>/field-mode/canvass/[shiftId]/door/[voterId]</code>), enabling crash recovery and device handoff.</p>
+<h3 id="offline-capable-routes" tabindex="-1"><a class="heading-anchor" href="#offline-capable-routes" aria-hidden="true">#</a> Offline-Capable Routes</h3>
+<p>Routes marked as offline-capable use a service worker to cache the page shell and a local SQLite database (via Capacitor) for data. The SvelteKit <code>+page.ts</code> load function detects connectivity and switches between server fetch and local DB queries:</p>
+<ul>
+<li><strong>Online:</strong> Standard server-side data loading</li>
+<li><strong>Offline:</strong> Load from local SQLite, display &quot;Offline&quot; badge, queue writes for sync</li>
+</ul>
+<p>Offline-capable routes: all <code>(field-mode)</code> canvassing/voter-reg/gotv routes, <code>/events/[eventId]/check-in</code>, <code>/messages</code> (read-only), <code>/shifts</code> (cached), <code>/training</code> (cached modules).</p>
+<h3 id="rtl-url-behavior" tabindex="-1"><a class="heading-anchor" href="#rtl-url-behavior" aria-hidden="true">#</a> RTL URL Behavior</h3>
+<p>URLs are not affected by RTL mode — paths remain LTR regardless of UI language. The <code>lang</code> attribute on <code>&lt;html&gt;</code> and CSS logical properties handle the visual layout flip. No URL changes needed for RTL support.</p>
+<h3 id="public-vs-authenticated-event-pages" tabindex="-1"><a class="heading-anchor" href="#public-vs-authenticated-event-pages" aria-hidden="true">#</a> Public vs. Authenticated Event Pages</h3>
+<p>Events have two URL patterns:</p>
+<ul>
+<li><code>/events/[eventId]</code> (public, in <code>(public)</code> group) — the shareable public page</li>
+<li><code>/events/[eventId]/manage</code> (authenticated, in <code>(app)</code> group) — the management view</li>
+</ul>
+<p>SvelteKit resolves this via layout group precedence: the <code>(public)</code> group's <code>/events/[eventId]</code> route exists only as the public page. Authenticated event management routes include the <code>/manage</code>, <code>/rsvps</code>, <code>/check-in</code>, <code>/metrics</code> suffixes to avoid collision.</p>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Vanity URLs for public profiles.</strong> Should tenants be able to configure custom slugs for their candidate/org profile pages (e.g., <code>/maria-santos</code> instead of <code>/p/maria-santos</code>)? This would require a catch-all route that checks for vanity slugs before falling through to 404.</p>
+</li>
+<li>
+<p><strong>API route namespace.</strong> The SvelteKit API routes (server endpoints) should be prefixed to avoid collision with page routes. Likely <code>/api/v1/...</code> — but this overlaps with the public REST API mentioned in the architecture doc. Needs alignment between the SvelteKit server routes and the standalone API.</p>
+</li>
+<li>
+<p><strong>Localized URLs.</strong> Should URL paths be localized (e.g., <code>/personas</code> instead of <code>/people</code> in Spanish, <code>/contacts</code> in French)? Most internationalized apps keep English URLs with localized content — simpler implementation, consistent deep linking. But some jurisdictions may have requirements around language in official URLs.</p>
+</li>
+</ol>
+<!-- REVISIT: The public event page routing needs careful implementation to avoid conflicts between the (public) and (app) groups. SvelteKit's route resolution rules may require a different approach — potentially using a route matcher or a single events route with conditional layout selection based on auth state. -->
+<!-- REVISIT: Field mode URL structure assumes shift IDs are URL-safe. If using UUIDs, this is fine. If using sequential IDs, consider slug-based alternatives for readability. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#route-architecture"># Route Architecture</a></li><li class="toc-2"><a href="#route-map"># Route Map</a></li><li class="toc-3"><a href="#public-pages-public"># Public Pages — (public)</a></li><li class="toc-3"><a href="#authentication-auth"># Authentication — (auth)</a></li><li class="toc-3"><a href="#authenticated-app-app"># Authenticated App — (app)</a></li><li class="toc-3"><a href="#field-mode-field-mode"># Field Mode — (field-mode)</a></li><li class="toc-3"><a href="#supporter-portal-portal"># Supporter Portal — (portal)</a></li><li class="toc-3"><a href="#onboarding-wizards-wizard"># Onboarding Wizards — (wizard)</a></li><li class="toc-2"><a href="#sveltekit-file-structure"># SvelteKit File Structure</a></li><li class="toc-2"><a href="#routing-patterns"># Routing Patterns</a></li><li class="toc-3"><a href="#auth-guards"># Auth Guards</a></li><li class="toc-3"><a href="#home-screen-redirect"># Home Screen Redirect</a></li><li class="toc-3"><a href="#deep-linking"># Deep Linking</a></li><li class="toc-3"><a href="#offline-capable-routes"># Offline-Capable Routes</a></li><li class="toc-3"><a href="#rtl-url-behavior"># RTL URL Behavior</a></li><li class="toc-3"><a href="#public-vs-authenticated-event-pages"># Public vs. Authenticated Event Pages</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

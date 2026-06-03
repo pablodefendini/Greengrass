@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entry 3: Information Architecture · GreenGrass</title>
+<meta name="description" content="Entry 3: Information Architecture — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../spec/product.html">Project: GreenGrass</a></li><li><a href="../spec/users.html">Users &amp; Roles</a></li><li><a href="../spec/workflows.html">Core Workflows</a></li><li><a href="../spec/geography.html">Target Geography</a></li><li><a href="../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../spec/integrations.html">External Integrations</a></li><li><a href="../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./index.html">Project Diary</a></li><li><a href="./01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="./02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="./03-information-architecture.html" aria-current="page" class="active">Entry 3: Information Architecture</a></li><li><a href="./04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="./05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="./06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="./07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="./08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Diary</nav>
+    <article class="prose">
+<h1 id="entry-3-information-architecture" tabindex="-1"><a class="heading-anchor" href="#entry-3-information-architecture" aria-hidden="true">#</a> Entry 3: Information Architecture</h1>
+<p><em>Covering: UX Phase 1 — navigation model, screen inventory, persona views, URL structure</em></p>
+<h2 id="the-transition-to-ux" tabindex="-1"><a class="heading-anchor" href="#the-transition-to-ux" aria-hidden="true">#</a> The Transition to UX</h2>
+<p>Moving from specs to UX design felt like a gear shift. Spec work is about <em>what</em> — what the platform does, what the rules are, what the edge cases look like. UX work is about <em>how</em> — how people navigate, how information is organized, how 236 screens fit into a coherent experience for 10 different personas.</p>
+<p>The first question was format. Should the UX work be markdown specs? Visual wireframes? Both? We went with both — markdown for the structural decisions (information architecture, patterns, design system foundations) and visual wireframes for the key screens. The markdown comes first because you can't wireframe a screen if you don't know where it lives in the navigation, who can see it, and whether it needs to work offline.</p>
+<h2 id="the-core-ux-challenge" tabindex="-1"><a class="heading-anchor" href="#the-core-ux-challenge" aria-hidden="true">#</a> The Core UX Challenge</h2>
+<p>GreenGrass has a UX problem that most platforms don't face: 10 distinct personas sharing one application, across radically different contexts.</p>
+<p>Consider the extremes:</p>
+<ul>
+<li>
+<p><strong>Org Admin on desktop in Puerto Rico.</strong> Full-featured platform with compliance configuration, role management, encryption key ceremony, alliance coordination. Complex settings, data tables, drag-and-drop builders. Reliable internet. Large screen.</p>
+</li>
+<li>
+<p><strong>Volunteer on a low-end Android in rural India.</strong> Walking door-to-door, phone in one hand, knocking with the other. Needs to see voter info, record a conversation response, move to the next door. Intermittent connectivity. Small screen. Maybe poor lighting. Maybe rain.</p>
+</li>
+</ul>
+<p>These two users share one codebase. One SvelteKit + Capacitor app. The information architecture has to serve both without compromise — without the volunteer feeling the weight of the admin's complexity, and without the admin being limited by the volunteer's constraints.</p>
+<h2 id="five-decisions-that-define-the-navigation" tabindex="-1"><a class="heading-anchor" href="#five-decisions-that-define-the-navigation" aria-hidden="true">#</a> Five Decisions That Define the Navigation</h2>
+<p>The navigation model is the single most important IA document. We resolved five decision points:</p>
+<h3 id="1-desktop-navigation-hybrid-top-bar-sidebar" tabindex="-1"><a class="heading-anchor" href="#1-desktop-navigation-hybrid-top-bar-sidebar" aria-hidden="true">#</a> 1. Desktop Navigation: Hybrid Top Bar + Sidebar</h3>
+<p>The desktop shell splits responsibilities: the top bar handles <em>context</em> (where am I — tenant, sync status, notifications, user profile), and the sidebar handles <em>navigation</em> (what can I do — role-specific feature areas). This separation is clean and scalable — as features are added, the sidebar grows without crowding the context bar.</p>
+<p>The sidebar is collapsible (persists user preference) and role-adaptive — it shows different items based on the user's active role template.</p>
+<h3 id="2-role-stacking-grouped-sections-with-collapsible-headers" tabindex="-1"><a class="heading-anchor" href="#2-role-stacking-grouped-sections-with-collapsible-headers" aria-hidden="true">#</a> 2. Role Stacking: Grouped Sections with Collapsible Headers</h3>
+<p>When a user has multiple role templates (e.g., an Org Admin who's also a Volunteer Coordinator), their sidebar shows grouped sections with collapsible headers — &quot;Communications,&quot; &quot;Volunteers,&quot; &quot;Fundraising.&quot; Each section can be collapsed independently. This gives users a clear mental model (&quot;I'm doing comms work now, let me collapse the fundraising section&quot;) without forcing them to switch between role modes.</p>
+<h3 id="3-alliance-navigation-dedicated-sidebar-section" tabindex="-1"><a class="heading-anchor" href="#3-alliance-navigation-dedicated-sidebar-section" aria-hidden="true">#</a> 3. Alliance Navigation: Dedicated Sidebar Section</h3>
+<p>Rather than a context switch or a separate &quot;alliance mode,&quot; alliance features appear as another collapsible section in the sidebar — consistent with the role-based grouping pattern. The alliance is part of the user's workspace, not a separate world.</p>
+<h3 id="4-duress-mode-sanitized-real-structure" tabindex="-1"><a class="heading-anchor" href="#4-duress-mode-sanitized-real-structure" aria-hidden="true">#</a> 4. Duress Mode: Sanitized Real Structure</h3>
+<p>This was the most security-sensitive navigation decision. When a user logs in with a duress passkey (under coercion), what do they see?</p>
+<p>We chose &quot;sanitized real structure&quot; — the navigation looks identical to a normal session, but all content is scrubbed. Contact lists show a few innocuous contacts. Dashboards show plausibly low numbers. Voter ID scores and canvassing data are absent. An observer sees what looks like a low-activity but real campaign account.</p>
+<p>This is the hardest option to implement (you need sanitization rules for every feature area) but the most convincing. A decoy that looks different from the real app would immediately raise suspicion.</p>
+<h3 id="5-offline-degradation-grey-out-with-badge" tabindex="-1"><a class="heading-anchor" href="#5-offline-degradation-grey-out-with-badge" aria-hidden="true">#</a> 5. Offline Degradation: Grey Out with Badge</h3>
+<p>When the device is offline, features requiring connectivity stay in the navigation but appear greyed out with a small offline badge. Tapping a greyed-out item shows &quot;Requires connection.&quot; The navigation structure stays stable — no items appearing or disappearing as connectivity fluctuates.</p>
+<p>This was a deliberate choice against the alternative of hiding offline-unavailable features. Stability matters for muscle memory. If the &quot;Donations&quot; item disappears when you're offline and reappears when you're online, the sidebar is constantly shifting. Users build spatial memory for where things are — that memory has to be reliable.</p>
+<h2 id="field-mode-a-different-app" tabindex="-1"><a class="heading-anchor" href="#field-mode-a-different-app" aria-hidden="true">#</a> Field Mode: A Different App</h2>
+<p>The most unusual navigation pattern is field mode — the full-screen takeover that replaces the normal navigation shell when a volunteer starts a canvassing shift.</p>
+<p>In field mode, there's no sidebar, no bottom tabs, no notification bell. The volunteer's entire world is: the current door, the script, the response form, and &quot;Next.&quot; Plus sync status (is my data current?) and a panic button (lock the app immediately).</p>
+<p>This is intentionally radical. Field mode has a fundamentally different mental model from the rest of the app. The volunteer is walking, one-handed, possibly in poor lighting, on a low-end phone with limited battery. They need large touch targets, minimal navigation decisions, and zero distraction. The normal app shell (sidebar, tabs, notifications) would be noise.</p>
+<p>The transition in and out of field mode is deliberate:</p>
+<ul>
+<li><strong>Entry:</strong> Tap &quot;Start Shift&quot; → download walk list data → confirm readiness → full-screen takeover</li>
+<li><strong>Exit:</strong> Tap &quot;End Shift&quot; → sync remaining data → debrief prompt → log hours → return to normal shell</li>
+<li><strong>Crash recovery:</strong> If the app crashes or the device dies, the shift resumes exactly where it left off (position in walk list saved locally after each interaction)</li>
+</ul>
+<h2 id="236-screens" tabindex="-1"><a class="heading-anchor" href="#236-screens" aria-hidden="true">#</a> 236 Screens</h2>
+<p>The screen inventory cataloged every distinct screen in the platform across 21 feature areas. The final count: 236 screens.</p>
+<p>Some numbers that tell the story:</p>
+<ul>
+<li><strong>24 screens work offline.</strong> Mostly field mode (canvassing, voter registration, GOTV) plus event check-in and cached messages.</li>
+<li><strong>53 screens are mobile-primary.</strong> Designed for phone first — field mode screens, check-in tools, supporter portal, volunteer self-service.</li>
+<li><strong>The rest (~160 screens) are desktop-preferred.</strong> Builders, configuration panels, data management, analytics. They work on mobile but are designed for a large screen.</li>
+</ul>
+<p>Each screen has a stable ID (format: <code>AREA-NNN</code>) for cross-referencing as the project grows. When a wireframe references &quot;CANV-010&quot; (Field Mode — Door Card), everyone knows exactly which screen it means.</p>
+<h2 id="the-url-structure" tabindex="-1"><a class="heading-anchor" href="#the-url-structure" aria-hidden="true">#</a> The URL Structure</h2>
+<p>Mapping 236 screens to SvelteKit routes forced a clear organizational structure. The app uses six layout groups, each with a distinct navigation shell:</p>
+<ul>
+<li><strong><code>(public)</code></strong> — public pages, no auth (donation forms, event pages, candidate profiles)</li>
+<li><strong><code>(auth)</code></strong> — login, registration, recovery</li>
+<li><strong><code>(app)</code></strong> — the main authenticated application</li>
+<li><strong><code>(field-mode)</code></strong> — field mode full-screen takeover</li>
+<li><strong><code>(portal)</code></strong> — supporter self-service portal</li>
+<li><strong><code>(wizard)</code></strong> — onboarding wizard flows</li>
+</ul>
+<p>Each group wraps a different <code>+layout.svelte</code>, so the navigation shell changes completely based on the user's context. A volunteer in field mode sees a completely different chrome than an Org Admin in the settings panel.</p>
+<p>A few URL decisions worth noting:</p>
+<ul>
+<li><strong>Public profile prefixes are short:</strong> <code>/p/maria-santos</code> and <code>/o/partido-verde</code> — clean URLs for sharing on social media, print materials, and SMS in regions where every character counts.</li>
+<li><strong>Field mode URLs contain the shift ID:</strong> <code>/field-mode/canvass/abc123/door/voter456</code> — if the app crashes, the URL alone is enough to resume the exact position.</li>
+<li><strong>Unauthorized routes return 404, not 403:</strong> If a Volunteer navigates to <code>/settings/compliance</code> (which they can't access), they get a 404. The page doesn't exist for them. Restricted features are invisible, not forbidden.</li>
+</ul>
+<h2 id="ux-principles-that-emerged" tabindex="-1"><a class="heading-anchor" href="#ux-principles-that-emerged" aria-hidden="true">#</a> UX Principles That Emerged</h2>
+<p>Writing the IA documents crystallized eight UX principles that weren't explicitly stated before but were implicit in every decision:</p>
+<ol>
+<li><strong>The volunteer in the field comes first.</strong> Every design decision is pressure-tested against the hardest user.</li>
+<li><strong>Invisible complexity.</strong> 10 personas share one app, but no user should feel the weight of the others.</li>
+<li><strong>Offline is not an error state.</strong> It's a first-class operating condition.</li>
+<li><strong>Stability over dynamism in navigation.</strong> Items don't appear and disappear. Muscle memory is reliable.</li>
+<li><strong>Security is invisible until it matters.</strong> Login is one tap. Encryption is automatic. Until there's a threat.</li>
+<li><strong>Respect the device.</strong> Mobile is not a shrunken desktop.</li>
+<li><strong>RTL is structural, not decorative.</strong> Built into every layout decision from day one.</li>
+<li><strong>Election day is a different app.</strong> The platform transforms when GOTV activates.</li>
+</ol>
+<h2 id="reflections" tabindex="-1"><a class="heading-anchor" href="#reflections" aria-hidden="true">#</a> Reflections</h2>
+<p>Information architecture is the most underappreciated phase of product design. No one ever says &quot;wow, great URL structure.&quot; But every frustrating product experience — can't find the feature, navigation is confusing, the app feels different every time I use it — traces back to IA decisions.</p>
+<p>The IA phase also revealed the value of having complete specs <em>before</em> designing the UX. When we cataloged 236 screens, every single one traced back to a specific section in a specific spec document. Nothing was invented during IA — the screens are consequences of the specified workflows, features, and personas. The IA organized what already existed; it didn't invent.</p>
+<p>The hardest UX challenge ahead: wireframing field mode. The IA defines what field mode <em>is</em> (full-screen takeover, linear progression, large touch targets, offline-first). The wireframes need to show what it <em>looks like</em> — and it needs to look right on a 5-inch screen in direct sunlight with one hand.</p>
+<p>Next: global UX patterns — the recurring interaction models that make 236 screens feel like one coherent platform.</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#the-transition-to-ux"># The Transition to UX</a></li><li class="toc-2"><a href="#the-core-ux-challenge"># The Core UX Challenge</a></li><li class="toc-2"><a href="#five-decisions-that-define-the-navigation"># Five Decisions That Define the Navigation</a></li><li class="toc-3"><a href="#1-desktop-navigation-hybrid-top-bar-sidebar"># 1. Desktop Navigation: Hybrid Top Bar + Sidebar</a></li><li class="toc-3"><a href="#2-role-stacking-grouped-sections-with-collapsible-headers"># 2. Role Stacking: Grouped Sections with Collapsible Headers</a></li><li class="toc-3"><a href="#3-alliance-navigation-dedicated-sidebar-section"># 3. Alliance Navigation: Dedicated Sidebar Section</a></li><li class="toc-3"><a href="#4-duress-mode-sanitized-real-structure"># 4. Duress Mode: Sanitized Real Structure</a></li><li class="toc-3"><a href="#5-offline-degradation-grey-out-with-badge"># 5. Offline Degradation: Grey Out with Badge</a></li><li class="toc-2"><a href="#field-mode-a-different-app"># Field Mode: A Different App</a></li><li class="toc-2"><a href="#236-screens"># 236 Screens</a></li><li class="toc-2"><a href="#the-url-structure"># The URL Structure</a></li><li class="toc-2"><a href="#ux-principles-that-emerged"># UX Principles That Emerged</a></li><li class="toc-2"><a href="#reflections"># Reflections</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

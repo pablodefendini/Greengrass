@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design System Foundations · GreenGrass</title>
+<meta name="description" content="Design System Foundations — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="./foundations.html" aria-current="page" class="active">Design System Foundations</a></li><li><a href="./theming-strategy.html">Theming Strategy</a></li><li><a href="./component-inventory.html">Component Inventory</a></li><li><a href="./responsive-strategy.html">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="design-system-foundations" tabindex="-1"><a class="heading-anchor" href="#design-system-foundations" aria-hidden="true">#</a> Design System Foundations</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document defines the visual and spatial primitives of the GreenGrass design system — spacing, color, typography, grid, elevation, iconography, and motion. These foundations produce every component and screen in the platform.</p>
+<p>No brand exists yet. This design system is built to be themed — every tenant applies their own branding on top of these structural foundations. The foundations define the <em>rules</em>; the theme defines the <em>look</em>. See <code>theming-strategy.md</code> for how per-tenant branding works.</p>
+<h2 id="design-tokens" tabindex="-1"><a class="heading-anchor" href="#design-tokens" aria-hidden="true">#</a> Design Tokens</h2>
+<p>All foundational values are expressed as design tokens — named, reusable values that can be overridden per theme. Tokens are implemented as CSS custom properties (variables) and referenced by name, never as raw values.</p>
+<pre><code class="language-css">/* Never this: */
+padding: 16px;
+color: #2563eb;
+
+/* Always this: */
+padding: var(--space-4);
+color: var(--color-primary);
+</code></pre>
+<p>This indirection is what makes per-tenant theming possible without changing component code.</p>
+<hr>
+<h2 id="spacing" tabindex="-1"><a class="heading-anchor" href="#spacing" aria-hidden="true">#</a> Spacing</h2>
+<h3 id="scale" tabindex="-1"><a class="heading-anchor" href="#scale" aria-hidden="true">#</a> Scale</h3>
+<p>An 8px base unit with a geometric scale. Every spatial value in the system — padding, margin, gap, component sizing — uses this scale.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--space-0</code></td>
+<td>0px</td>
+<td>Reset, collapsed states</td>
+</tr>
+<tr>
+<td><code>--space-px</code></td>
+<td>1px</td>
+<td>Borders, dividers</td>
+</tr>
+<tr>
+<td><code>--space-0.5</code></td>
+<td>2px</td>
+<td>Tight inline spacing</td>
+</tr>
+<tr>
+<td><code>--space-1</code></td>
+<td>4px</td>
+<td>Icon padding, badge spacing</td>
+</tr>
+<tr>
+<td><code>--space-2</code></td>
+<td>8px</td>
+<td>Compact internal padding, small gaps</td>
+</tr>
+<tr>
+<td><code>--space-3</code></td>
+<td>12px</td>
+<td>Default inline gap, list item padding</td>
+</tr>
+<tr>
+<td><code>--space-4</code></td>
+<td>16px</td>
+<td>Standard component padding, card padding</td>
+</tr>
+<tr>
+<td><code>--space-5</code></td>
+<td>20px</td>
+<td>Comfortable section padding</td>
+</tr>
+<tr>
+<td><code>--space-6</code></td>
+<td>24px</td>
+<td>Section gaps, form field spacing</td>
+</tr>
+<tr>
+<td><code>--space-8</code></td>
+<td>32px</td>
+<td>Large section gaps</td>
+</tr>
+<tr>
+<td><code>--space-10</code></td>
+<td>40px</td>
+<td>Page section spacing</td>
+</tr>
+<tr>
+<td><code>--space-12</code></td>
+<td>48px</td>
+<td>Major layout gaps</td>
+</tr>
+<tr>
+<td><code>--space-16</code></td>
+<td>64px</td>
+<td>Page margins (desktop)</td>
+</tr>
+<tr>
+<td><code>--space-20</code></td>
+<td>80px</td>
+<td>Large layout spacing</td>
+</tr>
+<tr>
+<td><code>--space-24</code></td>
+<td>96px</td>
+<td>Maximum component height reference</td>
+</tr>
+</tbody>
+</table>
+<h3 id="usage-guidelines" tabindex="-1"><a class="heading-anchor" href="#usage-guidelines" aria-hidden="true">#</a> Usage Guidelines</h3>
+<ul>
+<li><strong>Component internal padding:</strong> <code>--space-3</code> (compact) or <code>--space-4</code> (standard)</li>
+<li><strong>Space between form fields:</strong> <code>--space-6</code></li>
+<li><strong>Space between sections:</strong> <code>--space-8</code> or <code>--space-10</code></li>
+<li><strong>Card padding:</strong> <code>--space-4</code> (mobile) or <code>--space-6</code> (desktop)</li>
+<li><strong>Page margin (mobile):</strong> <code>--space-4</code></li>
+<li><strong>Page margin (desktop):</strong> <code>--space-8</code> to <code>--space-16</code></li>
+</ul>
+<h3 id="touch-targets" tabindex="-1"><a class="heading-anchor" href="#touch-targets" aria-hidden="true">#</a> Touch Targets</h3>
+<p>Minimum touch target size on mobile: <strong>44x44px</strong> (WCAG 2.1 AA). This is a hard floor — no interactive element can be smaller.</p>
+<p>In field mode, touch targets increase to <strong>48x48px</strong> minimum. Field mode is designed for one-handed use in difficult conditions — larger targets reduce errors.</p>
+<hr>
+<h2 id="color" tabindex="-1"><a class="heading-anchor" href="#color" aria-hidden="true">#</a> Color</h2>
+<h3 id="color-architecture" tabindex="-1"><a class="heading-anchor" href="#color-architecture" aria-hidden="true">#</a> Color Architecture</h3>
+<p>The color system has three layers:</p>
+<ol>
+<li><strong>Primitive palette</strong> — raw color values (hex codes). Not used directly in components.</li>
+<li><strong>Semantic tokens</strong> — named colors that describe their <em>purpose</em>, not their <em>hue</em>. These are what components reference.</li>
+<li><strong>Theme overrides</strong> — per-tenant customizations that remap semantic tokens to different primitive values.</li>
+</ol>
+<h3 id="semantic-color-tokens" tabindex="-1"><a class="heading-anchor" href="#semantic-color-tokens" aria-hidden="true">#</a> Semantic Color Tokens</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Default Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Surface</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-surface</code></td>
+<td>Page/app background</td>
+<td><code>#ffffff</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-surface-raised</code></td>
+<td>Cards, panels, modals</td>
+<td><code>#ffffff</code></td>
+<td>Differentiated by elevation shadow</td>
+</tr>
+<tr>
+<td><code>--color-surface-sunken</code></td>
+<td>Inset areas, input backgrounds</td>
+<td><code>#f8fafc</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-surface-overlay</code></td>
+<td>Modal/drawer backdrops</td>
+<td><code>rgba(0,0,0,0.5)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Text</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-text</code></td>
+<td>Primary text</td>
+<td><code>#0f172a</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-text-secondary</code></td>
+<td>Secondary/helper text</td>
+<td><code>#475569</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-text-tertiary</code></td>
+<td>Placeholder, disabled text</td>
+<td><code>#94a3b8</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-text-inverse</code></td>
+<td>Text on dark backgrounds</td>
+<td><code>#ffffff</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-text-link</code></td>
+<td>Links</td>
+<td><code>--color-primary</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Primary</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-primary</code></td>
+<td>Primary actions, active states</td>
+<td><code>#2563eb</code></td>
+<td>Tenant-brandable</td>
+</tr>
+<tr>
+<td><code>--color-primary-hover</code></td>
+<td>Primary hover state</td>
+<td><code>#1d4ed8</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-primary-active</code></td>
+<td>Primary pressed state</td>
+<td><code>#1e40af</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-primary-subtle</code></td>
+<td>Primary backgrounds, badges</td>
+<td><code>#eff6ff</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-on-primary</code></td>
+<td>Text on primary</td>
+<td><code>#ffffff</code></td>
+<td>Auto-calculated for contrast</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-success</code></td>
+<td>Success states, confirmations</td>
+<td><code>#16a34a</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-success-subtle</code></td>
+<td>Success backgrounds</td>
+<td><code>#f0fdf4</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-warning</code></td>
+<td>Warnings, attention needed</td>
+<td><code>#d97706</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-warning-subtle</code></td>
+<td>Warning backgrounds</td>
+<td><code>#fffbeb</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-error</code></td>
+<td>Errors, destructive actions</td>
+<td><code>#dc2626</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-error-subtle</code></td>
+<td>Error backgrounds</td>
+<td><code>#fef2f2</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-info</code></td>
+<td>Informational</td>
+<td><code>#2563eb</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-info-subtle</code></td>
+<td>Info backgrounds</td>
+<td><code>#eff6ff</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Interactive</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-border</code></td>
+<td>Default borders</td>
+<td><code>#e2e8f0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-border-strong</code></td>
+<td>Emphasized borders</td>
+<td><code>#cbd5e1</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-border-focus</code></td>
+<td>Focus rings</td>
+<td><code>--color-primary</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-input-border</code></td>
+<td>Form input borders</td>
+<td><code>#cbd5e1</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-disabled</code></td>
+<td>Disabled backgrounds</td>
+<td><code>#f1f5f9</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-disabled-text</code></td>
+<td>Disabled text</td>
+<td><code>#94a3b8</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Sync/Connectivity</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-sync-connected</code></td>
+<td>Online/synced</td>
+<td><code>#16a34a</code></td>
+<td>Green dot</td>
+</tr>
+<tr>
+<td><code>--color-sync-stale</code></td>
+<td>Connected but stale</td>
+<td><code>#d97706</code></td>
+<td>Amber</td>
+</tr>
+<tr>
+<td><code>--color-sync-offline</code></td>
+<td>Offline</td>
+<td><code>#94a3b8</code></td>
+<td>Grey</td>
+</tr>
+<tr>
+<td><code>--color-sync-error</code></td>
+<td>Sync error</td>
+<td><code>#dc2626</code></td>
+<td>Red</td>
+</tr>
+<tr>
+<td><strong>Data Visualization</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--color-chart-1</code> through <code>--color-chart-8</code></td>
+<td>Chart series</td>
+<td>Sequential palette</td>
+<td>Distinguishable in colorblind simulations</td>
+</tr>
+</tbody>
+</table>
+<h3 id="color-accessibility" tabindex="-1"><a class="heading-anchor" href="#color-accessibility" aria-hidden="true">#</a> Color Accessibility</h3>
+<ul>
+<li><strong>Text contrast:</strong> All text meets WCAG 2.1 AA minimum — 4.5:1 for normal text, 3:1 for large text (18px+ or 14px+ bold).</li>
+<li><strong>UI component contrast:</strong> Interactive elements (buttons, inputs, icons) meet 3:1 against adjacent colors.</li>
+<li><strong>No color-only encoding:</strong> Every piece of information conveyed by color is also conveyed by text, icon, or pattern. A red badge also has &quot;Error&quot; text. A green dot also has &quot;Connected&quot; text (or tooltip).</li>
+<li><strong>Colorblind safety:</strong> The data visualization palette is tested against deuteranopia, protanopia, and tritanopia simulations. Status colors (success/warning/error) use hue + luminance differentiation, not hue alone.</li>
+<li><strong>Dark mode:</strong> All tokens have dark mode equivalents. See <code>theming-strategy.md</code>.</li>
+</ul>
+<h3 id="high-contrast-mode" tabindex="-1"><a class="heading-anchor" href="#high-contrast-mode" aria-hidden="true">#</a> High Contrast Mode</h3>
+<p>For users who need maximum contrast (setting in accessibility preferences):</p>
+<ul>
+<li>All borders become <code>2px solid</code> instead of <code>1px solid</code></li>
+<li>Text colors collapse to two values: primary text (<code>#000000</code>) and secondary text (<code>#333333</code>)</li>
+<li>Background colors collapse to <code>#ffffff</code> and <code>#f5f5f5</code></li>
+<li>Focus rings become <code>3px solid</code> with offset</li>
+<li>All subtle background colors become more pronounced</li>
+</ul>
+<hr>
+<h2 id="typography" tabindex="-1"><a class="heading-anchor" href="#typography" aria-hidden="true">#</a> Typography</h2>
+<h3 id="font-stack" tabindex="-1"><a class="heading-anchor" href="#font-stack" aria-hidden="true">#</a> Font Stack</h3>
+<pre><code class="language-css">--font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+             'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+             'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+--font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
+             'DejaVu Sans Mono', monospace;
+</code></pre>
+<p><strong>Why system fonts:</strong> Zero font loading. No network requests, no FOIT/FOUT, no layout shift. The text renders instantly with the font the device already has — critical for low-end phones on slow connections where a custom font download adds seconds to first contentful paint. System fonts also have the best native script support: San Francisco on Apple, Segoe UI on Windows, Roboto on Android, and Noto Sans as a broad Unicode fallback covering Latin, Thai, Hindi, Arabic, and Portuguese diacritics natively.</p>
+<p><strong>No custom fonts, no Google Fonts dependency.</strong> This is a deliberate constraint. Every device in our target markets ships with a high-quality system sans-serif that's optimized for that device's screen. Loading a web font to override it trades performance for brand control — and there's no brand yet. If a brand typeface is adopted later, it can be added to the front of the stack without changing any component code.</p>
+<p><strong>Script coverage:</strong> System font stacks handle multi-script rendering natively. <code>system-ui</code> on Android resolves to Roboto for Latin and Noto Sans Thai/Devanagari/Arabic for those scripts. On iOS, San Francisco delegates to platform-appropriate fonts per script. No language-specific font overrides are needed — the OS handles it.</p>
+<h3 id="type-scale" tabindex="-1"><a class="heading-anchor" href="#type-scale" aria-hidden="true">#</a> Type Scale</h3>
+<p>A modular scale based on a 1.25 ratio (major third), anchored at 16px body text.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Size</th>
+<th>Line Height</th>
+<th>Weight</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--text-xs</code></td>
+<td>12px</td>
+<td>16px</td>
+<td>400</td>
+<td>Badges, captions, timestamps</td>
+</tr>
+<tr>
+<td><code>--text-sm</code></td>
+<td>14px</td>
+<td>20px</td>
+<td>400</td>
+<td>Helper text, secondary labels, table cells</td>
+</tr>
+<tr>
+<td><code>--text-base</code></td>
+<td>16px</td>
+<td>24px</td>
+<td>400</td>
+<td>Body text, form inputs, list items</td>
+</tr>
+<tr>
+<td><code>--text-lg</code></td>
+<td>18px</td>
+<td>28px</td>
+<td>500</td>
+<td>Emphasized body, card titles</td>
+</tr>
+<tr>
+<td><code>--text-xl</code></td>
+<td>20px</td>
+<td>28px</td>
+<td>600</td>
+<td>Section headings, dialog titles</td>
+</tr>
+<tr>
+<td><code>--text-2xl</code></td>
+<td>24px</td>
+<td>32px</td>
+<td>600</td>
+<td>Page titles, dashboard widget headers</td>
+</tr>
+<tr>
+<td><code>--text-3xl</code></td>
+<td>30px</td>
+<td>36px</td>
+<td>700</td>
+<td>Major headings</td>
+</tr>
+<tr>
+<td><code>--text-4xl</code></td>
+<td>36px</td>
+<td>40px</td>
+<td>700</td>
+<td>Dashboard hero metrics</td>
+</tr>
+<tr>
+<td><code>--text-5xl</code></td>
+<td>48px</td>
+<td>48px</td>
+<td>700</td>
+<td>Fundraising thermometer total, election night results</td>
+</tr>
+</tbody>
+</table>
+<h3 id="font-weights" tabindex="-1"><a class="heading-anchor" href="#font-weights" aria-hidden="true">#</a> Font Weights</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Weight</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--font-normal</code></td>
+<td>400</td>
+<td>Body text, most content</td>
+</tr>
+<tr>
+<td><code>--font-medium</code></td>
+<td>500</td>
+<td>Emphasized text, navigation items, form labels</td>
+</tr>
+<tr>
+<td><code>--font-semibold</code></td>
+<td>600</td>
+<td>Headings, button text, card titles</td>
+</tr>
+<tr>
+<td><code>--font-bold</code></td>
+<td>700</td>
+<td>Major headings, hero metrics</td>
+</tr>
+</tbody>
+</table>
+<h3 id="typography-rules" tabindex="-1"><a class="heading-anchor" href="#typography-rules" aria-hidden="true">#</a> Typography Rules</h3>
+<ul>
+<li><strong>Line length:</strong> Maximum 75 characters per line for body text (readability). On desktop, content areas constrain width; on mobile, full-width is acceptable at mobile font sizes.</li>
+<li><strong>Paragraph spacing:</strong> <code>--space-4</code> between paragraphs.</li>
+<li><strong>Heading spacing:</strong> <code>--space-8</code> above headings, <code>--space-3</code> below (more space above to separate from previous content, less below to connect with following content).</li>
+<li><strong>No text smaller than 12px.</strong> Even for captions and timestamps, 12px is the floor. On low-resolution mobile screens, smaller text is unreadable.</li>
+<li><strong>Field mode type sizes:</strong> Body text in field mode is <code>--text-lg</code> (18px) minimum. Form labels are <code>--text-base</code> (16px). Response option buttons use <code>--text-lg</code>. Larger than standard because field volunteers may be reading in poor conditions.</li>
+</ul>
+<hr>
+<h2 id="grid" tabindex="-1"><a class="heading-anchor" href="#grid" aria-hidden="true">#</a> Grid</h2>
+<h3 id="desktop-layout-grid" tabindex="-1"><a class="heading-anchor" href="#desktop-layout-grid" aria-hidden="true">#</a> Desktop Layout Grid</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────┐
+│  Sidebar (240px / 64px)  │  Content (fluid)                  │
+│                          │                                    │
+│                          │  ┌──────────────────────────────┐ │
+│                          │  │  12-column grid               │ │
+│                          │  │  Column gap: --space-6 (24px) │ │
+│                          │  │  Max width: 1280px            │ │
+│                          │  │  Margin: auto (centered)      │ │
+│                          │  └──────────────────────────────┘ │
+└──────────────────────────────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>Sidebar width:</strong> 240px expanded, 64px collapsed (persisted preference)</li>
+<li><strong>Content area:</strong> Fluid, fills remaining space</li>
+<li><strong>Content grid:</strong> 12 columns within the content area</li>
+<li><strong>Column gap:</strong> <code>--space-6</code> (24px)</li>
+<li><strong>Content max-width:</strong> 1280px (centered in the content area when viewport exceeds this)</li>
+<li><strong>Content padding:</strong> <code>--space-8</code> on each side</li>
+</ul>
+<h3 id="mobile-layout-grid" tabindex="-1"><a class="heading-anchor" href="#mobile-layout-grid" aria-hidden="true">#</a> Mobile Layout Grid</h3>
+<pre><code>┌──────────────────────────────┐
+│  Full-width content           │
+│                               │
+│  4-column grid                │
+│  Column gap: --space-4 (16px) │
+│  Page margin: --space-4 (16px)│
+│                               │
+└──────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>No sidebar</strong> — full-width content</li>
+<li><strong>4 columns</strong> within the content area</li>
+<li><strong>Column gap:</strong> <code>--space-4</code> (16px)</li>
+<li><strong>Page margin:</strong> <code>--space-4</code> (16px) on each side</li>
+</ul>
+<h3 id="tablet-grid" tabindex="-1"><a class="heading-anchor" href="#tablet-grid" aria-hidden="true">#</a> Tablet Grid</h3>
+<ul>
+<li><strong>8 columns</strong></li>
+<li><strong>Column gap:</strong> <code>--space-4</code> (16px)</li>
+<li><strong>Sidebar:</strong> collapsed by default, expandable as overlay</li>
+</ul>
+<h3 id="common-layout-patterns" tabindex="-1"><a class="heading-anchor" href="#common-layout-patterns" aria-hidden="true">#</a> Common Layout Patterns</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Desktop Columns</th>
+<th>Tablet</th>
+<th>Mobile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full-width content</td>
+<td>12</td>
+<td>8</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Content + sidebar detail</td>
+<td>8 + 4</td>
+<td>5 + 3</td>
+<td>Stacked (full + full)</td>
+</tr>
+<tr>
+<td>Two-column form</td>
+<td>6 + 6</td>
+<td>4 + 4</td>
+<td>Stacked</td>
+</tr>
+<tr>
+<td>Three-column dashboard</td>
+<td>4 + 4 + 4</td>
+<td>4 + 4 (third wraps)</td>
+<td>Stacked</td>
+</tr>
+<tr>
+<td>Settings page</td>
+<td>3 (nav) + 9 (content)</td>
+<td>Full (tabs instead of nav)</td>
+<td>Full</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="elevation" tabindex="-1"><a class="heading-anchor" href="#elevation" aria-hidden="true">#</a> Elevation</h2>
+<p>Elevation (shadow depth) communicates layering — what's on top of what.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Shadow</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--elevation-0</code></td>
+<td>none</td>
+<td>Flat elements, table rows</td>
+</tr>
+<tr>
+<td><code>--elevation-1</code></td>
+<td><code>0 1px 2px rgba(0,0,0,0.05)</code></td>
+<td>Cards, raised surfaces</td>
+</tr>
+<tr>
+<td><code>--elevation-2</code></td>
+<td><code>0 2px 4px rgba(0,0,0,0.1)</code></td>
+<td>Dropdowns, popovers</td>
+</tr>
+<tr>
+<td><code>--elevation-3</code></td>
+<td><code>0 4px 8px rgba(0,0,0,0.1)</code></td>
+<td>Modals, drawers, floating panels</td>
+</tr>
+<tr>
+<td><code>--elevation-4</code></td>
+<td><code>0 8px 16px rgba(0,0,0,0.15)</code></td>
+<td>Toasts, snackbars</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rules" tabindex="-1"><a class="heading-anchor" href="#rules" aria-hidden="true">#</a> Rules</h3>
+<ul>
+<li><strong>Cards</strong> use <code>--elevation-1</code>. On hover (if interactive), they gain <code>--elevation-2</code>.</li>
+<li><strong>Dropdowns and popovers</strong> use <code>--elevation-2</code>.</li>
+<li><strong>Modals and drawers</strong> use <code>--elevation-3</code>.</li>
+<li><strong>Toasts</strong> use <code>--elevation-4</code> (highest — they float above everything).</li>
+<li><strong>Sidebar</strong> uses <code>--elevation-1</code> on desktop. On mobile (as overlay), <code>--elevation-3</code>.</li>
+<li><strong>No elevation stacking</strong> — if a modal contains a dropdown, the dropdown uses <code>--elevation-3</code> (same as modal, but rendered above via z-index), not <code>--elevation-5</code>.</li>
+</ul>
+<hr>
+<h2 id="borders-and-radius" tabindex="-1"><a class="heading-anchor" href="#borders-and-radius" aria-hidden="true">#</a> Borders and Radius</h2>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--radius-none</code></td>
+<td>0px</td>
+<td>No rounding (table cells, some inputs)</td>
+</tr>
+<tr>
+<td><code>--radius-sm</code></td>
+<td>4px</td>
+<td>Badges, tags, small elements</td>
+</tr>
+<tr>
+<td><code>--radius-md</code></td>
+<td>6px</td>
+<td>Buttons, inputs, cards</td>
+</tr>
+<tr>
+<td><code>--radius-lg</code></td>
+<td>8px</td>
+<td>Large cards, modals, drawers</td>
+</tr>
+<tr>
+<td><code>--radius-xl</code></td>
+<td>12px</td>
+<td>Dialog boxes, floating panels</td>
+</tr>
+<tr>
+<td><code>--radius-full</code></td>
+<td>9999px</td>
+<td>Avatars, pill badges, circular buttons</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rules-1" tabindex="-1"><a class="heading-anchor" href="#rules-1" aria-hidden="true">#</a> Rules</h3>
+<ul>
+<li><strong>Buttons:</strong> <code>--radius-md</code></li>
+<li><strong>Input fields:</strong> <code>--radius-md</code></li>
+<li><strong>Cards:</strong> <code>--radius-lg</code></li>
+<li><strong>Modals:</strong> <code>--radius-xl</code> (top corners only on mobile bottom sheets)</li>
+<li><strong>Avatars:</strong> <code>--radius-full</code></li>
+<li><strong>Tags/badges:</strong> <code>--radius-sm</code></li>
+</ul>
+<hr>
+<h2 id="iconography" tabindex="-1"><a class="heading-anchor" href="#iconography" aria-hidden="true">#</a> Iconography</h2>
+<h3 id="icon-system" tabindex="-1"><a class="heading-anchor" href="#icon-system" aria-hidden="true">#</a> Icon System</h3>
+<ul>
+<li><strong>Icon library:</strong> Lucide Icons (open-source, MIT license, consistent 24px grid, 1000+ icons). Self-hosted, no external dependency.</li>
+<li><strong>Default size:</strong> 20px (within a 24px bounding box for touch target padding)</li>
+<li><strong>Stroke width:</strong> 1.5px (matches the Inter font's visual weight at body sizes)</li>
+</ul>
+<h3 id="icon-sizes" tabindex="-1"><a class="heading-anchor" href="#icon-sizes" aria-hidden="true">#</a> Icon Sizes</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Size</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--icon-xs</code></td>
+<td>14px</td>
+<td>Inline with small text, badge icons</td>
+</tr>
+<tr>
+<td><code>--icon-sm</code></td>
+<td>16px</td>
+<td>Inline with body text, form field icons</td>
+</tr>
+<tr>
+<td><code>--icon-md</code></td>
+<td>20px</td>
+<td>Navigation items, button icons, list item icons</td>
+</tr>
+<tr>
+<td><code>--icon-lg</code></td>
+<td>24px</td>
+<td>Section headers, standalone icons</td>
+</tr>
+<tr>
+<td><code>--icon-xl</code></td>
+<td>32px</td>
+<td>Feature icons, empty state illustrations</td>
+</tr>
+<tr>
+<td><code>--icon-2xl</code></td>
+<td>48px</td>
+<td>Hero illustrations, onboarding</td>
+</tr>
+</tbody>
+</table>
+<h3 id="icon-rules" tabindex="-1"><a class="heading-anchor" href="#icon-rules" aria-hidden="true">#</a> Icon Rules</h3>
+<ul>
+<li><strong>Directional icons mirror in RTL.</strong> Arrows, chevrons, and directional indicators flip horizontally in RTL mode. Non-directional icons (checkmarks, stars, etc.) do not flip. The icon component handles this via CSS logical property awareness.</li>
+<li><strong>Color follows text.</strong> Icons inherit the color of adjacent text by default. Override only for status indicators (green checkmarks, red errors).</li>
+<li><strong>No decorative icons.</strong> Every icon conveys meaning or aids navigation. Icons are paired with text labels (except in icon-only buttons, which require a tooltip/aria-label).</li>
+<li><strong>Field mode icons:</strong> Minimum <code>--icon-lg</code> (24px). Most action icons use <code>--icon-xl</code> (32px) for easier tapping.</li>
+</ul>
+<hr>
+<h2 id="motion" tabindex="-1"><a class="heading-anchor" href="#motion" aria-hidden="true">#</a> Motion</h2>
+<h3 id="transition-defaults" tabindex="-1"><a class="heading-anchor" href="#transition-defaults" aria-hidden="true">#</a> Transition Defaults</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Duration</th>
+<th>Easing</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--duration-fast</code></td>
+<td>100ms</td>
+<td>ease-out</td>
+<td>Hover states, focus rings</td>
+</tr>
+<tr>
+<td><code>--duration-normal</code></td>
+<td>200ms</td>
+<td>ease-in-out</td>
+<td>Panel open/close, tab switches</td>
+</tr>
+<tr>
+<td><code>--duration-slow</code></td>
+<td>300ms</td>
+<td>ease-in-out</td>
+<td>Modal open/close, drawer slide</td>
+</tr>
+<tr>
+<td><code>--duration-slower</code></td>
+<td>500ms</td>
+<td>ease-in-out</td>
+<td>Page transitions, large element animations</td>
+</tr>
+</tbody>
+</table>
+<h3 id="motion-rules" tabindex="-1"><a class="heading-anchor" href="#motion-rules" aria-hidden="true">#</a> Motion Rules</h3>
+<ul>
+<li><strong>Respect <code>prefers-reduced-motion</code>.</strong> When the user's OS is set to reduce motion, all transitions are instant (duration: 0ms). This is not optional — it's an accessibility requirement.</li>
+<li><strong>No bouncing, no spring physics.</strong> Motion is functional, not playful. Elements move to communicate state changes (panel opening, item added/removed, loading), not to entertain.</li>
+<li><strong>Field mode: minimal motion.</strong> In field mode, transitions are reduced to <code>--duration-fast</code> or eliminated. Volunteers are moving quickly — the UI should keep up.</li>
+<li><strong>Loading indicators:</strong> Subtle pulse or rotation, not complex animations. The sync icon rotates; skeleton loaders pulse. That's the extent of animated loading states.</li>
+<li><strong>No entrance animations on page load.</strong> Content appears immediately. Staggered entrance animations waste time and slow perceived performance — the opposite of what low-end devices need.</li>
+</ul>
+<hr>
+<h2 id="z-index-scale" tabindex="-1"><a class="heading-anchor" href="#z-index-scale" aria-hidden="true">#</a> Z-Index Scale</h2>
+<p>A constrained z-index scale to prevent z-index wars:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--z-base</code></td>
+<td>0</td>
+<td>Default content</td>
+</tr>
+<tr>
+<td><code>--z-raised</code></td>
+<td>10</td>
+<td>Sticky headers, floating action buttons</td>
+</tr>
+<tr>
+<td><code>--z-dropdown</code></td>
+<td>20</td>
+<td>Dropdowns, popovers, tooltips</td>
+</tr>
+<tr>
+<td><code>--z-sidebar</code></td>
+<td>30</td>
+<td>Sidebar (when overlaying content on mobile)</td>
+</tr>
+<tr>
+<td><code>--z-modal</code></td>
+<td>40</td>
+<td>Modals, drawers</td>
+</tr>
+<tr>
+<td><code>--z-toast</code></td>
+<td>50</td>
+<td>Toast notifications</td>
+</tr>
+<tr>
+<td><code>--z-overlay</code></td>
+<td>60</td>
+<td>Modal backdrops</td>
+</tr>
+<tr>
+<td><code>--z-panic</code></td>
+<td>100</td>
+<td>Panic button lock screen (always on top)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="density" tabindex="-1"><a class="heading-anchor" href="#density" aria-hidden="true">#</a> Density</h2>
+<p>The design system supports two density modes to accommodate different contexts:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Use</th>
+<th>Differences</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>Mobile, field mode, volunteer-facing</td>
+<td>Larger touch targets (44px+), more spacing, larger text</td>
+</tr>
+<tr>
+<td><strong>Compact</strong></td>
+<td>Desktop admin, data-heavy screens</td>
+<td>Smaller row heights (36px), tighter spacing, data tables fit more on screen</td>
+</tr>
+</tbody>
+</table>
+<p>Density is not user-configurable — it's determined by the device and context:</p>
+<ul>
+<li><strong>Mobile:</strong> always default density</li>
+<li><strong>Field mode:</strong> always default density</li>
+<li><strong>Desktop:</strong> compact density for list views and data tables, default density for forms and content areas</li>
+</ul>
+<hr>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Icon customization.</strong> Should tenants be able to customize the icon set (e.g., replacing the default &quot;person&quot; icon with a culturally appropriate alternative)? Low priority but relevant for global south contexts.</p>
+</li>
+<li>
+<p><strong>Print styles.</strong> Should the design system include print-specific tokens? Some screens may be printed (compliance reports, year-end statements, event check-in sheets). Print tokens would strip color, adjust spacing for paper, and use serif fonts for readability.</p>
+</li>
+</ol>
+<!-- REVISIT: The color palette default values are intentionally generic (blue primary, slate neutrals). When GreenGrass establishes a brand identity, the default palette should be updated to reflect the brand. The token system ensures this change propagates without touching component code. -->
+<!-- REVISIT: The data visualization color palette (chart-1 through chart-8) needs finalization with a colorblind-safe sequential and categorical palette. Consider using established palettes like ColorBrewer or Tableau's. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#design-tokens"># Design Tokens</a></li><li class="toc-2"><a href="#spacing"># Spacing</a></li><li class="toc-3"><a href="#scale"># Scale</a></li><li class="toc-3"><a href="#usage-guidelines"># Usage Guidelines</a></li><li class="toc-3"><a href="#touch-targets"># Touch Targets</a></li><li class="toc-2"><a href="#color"># Color</a></li><li class="toc-3"><a href="#color-architecture"># Color Architecture</a></li><li class="toc-3"><a href="#semantic-color-tokens"># Semantic Color Tokens</a></li><li class="toc-3"><a href="#color-accessibility"># Color Accessibility</a></li><li class="toc-3"><a href="#high-contrast-mode"># High Contrast Mode</a></li><li class="toc-2"><a href="#typography"># Typography</a></li><li class="toc-3"><a href="#font-stack"># Font Stack</a></li><li class="toc-3"><a href="#type-scale"># Type Scale</a></li><li class="toc-3"><a href="#font-weights"># Font Weights</a></li><li class="toc-3"><a href="#typography-rules"># Typography Rules</a></li><li class="toc-2"><a href="#grid"># Grid</a></li><li class="toc-3"><a href="#desktop-layout-grid"># Desktop Layout Grid</a></li><li class="toc-3"><a href="#mobile-layout-grid"># Mobile Layout Grid</a></li><li class="toc-3"><a href="#tablet-grid"># Tablet Grid</a></li><li class="toc-3"><a href="#common-layout-patterns"># Common Layout Patterns</a></li><li class="toc-2"><a href="#elevation"># Elevation</a></li><li class="toc-3"><a href="#rules"># Rules</a></li><li class="toc-2"><a href="#borders-and-radius"># Borders and Radius</a></li><li class="toc-3"><a href="#rules-1"># Rules</a></li><li class="toc-2"><a href="#iconography"># Iconography</a></li><li class="toc-3"><a href="#icon-system"># Icon System</a></li><li class="toc-3"><a href="#icon-sizes"># Icon Sizes</a></li><li class="toc-3"><a href="#icon-rules"># Icon Rules</a></li><li class="toc-2"><a href="#motion"># Motion</a></li><li class="toc-3"><a href="#transition-defaults"># Transition Defaults</a></li><li class="toc-3"><a href="#motion-rules"># Motion Rules</a></li><li class="toc-2"><a href="#z-index-scale"># Z-Index Scale</a></li><li class="toc-2"><a href="#density"># Density</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

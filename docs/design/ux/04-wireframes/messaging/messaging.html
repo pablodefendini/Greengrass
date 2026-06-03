@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Messaging Wireframes · GreenGrass</title>
+<meta name="description" content="Messaging Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="./messaging.html" aria-current="page" class="active">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="messaging-wireframes" tabindex="-1"><a class="heading-anchor" href="#messaging-wireframes" aria-hidden="true">#</a> Messaging Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Internal messaging is how the campaign coordinates. DMs between staff, group conversations for teams, briefings for the Candidate, and the War Room coordination channel on election day. This document wireframes the messaging screens across desktop and mobile.</p>
+<p>Note: this document is organized by UI pattern (conversation list, thread anatomy, message types, special channels) rather than by individual screen, since messaging screens share significant structural overlap.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSG-001</td>
+<td>Message List (Inbox)</td>
+<td>All authenticated</td>
+<td>Partial</td>
+<td>Primary</td>
+<td>Conversation List</td>
+</tr>
+<tr>
+<td>MSG-002</td>
+<td>Conversation View (DM)</td>
+<td>All authenticated</td>
+<td>Partial</td>
+<td>Primary</td>
+<td>Thread Anatomy</td>
+</tr>
+<tr>
+<td>MSG-003</td>
+<td>Conversation View (Group)</td>
+<td>All authenticated</td>
+<td>Partial</td>
+<td>Primary</td>
+<td>Thread Anatomy</td>
+</tr>
+<tr>
+<td>MSG-004</td>
+<td>Thread View</td>
+<td>All authenticated</td>
+<td>Partial</td>
+<td>Primary</td>
+<td>Thread Anatomy</td>
+</tr>
+<tr>
+<td>MSG-005</td>
+<td>Group Create/Edit</td>
+<td>OA, CD, FD, FiD, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td>Group Conversation Info</td>
+</tr>
+<tr>
+<td>MSG-006</td>
+<td>Broadcast Composer</td>
+<td>OA, CD, FiD, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td>New Conversation</td>
+</tr>
+<tr>
+<td>MSG-007</td>
+<td>War Room Channel</td>
+<td>OA, FiD, CD, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td>War Room Channel</td>
+</tr>
+<tr>
+<td>MSG-008</td>
+<td>Contextual Thread (Event)</td>
+<td>OA, VC, TL</td>
+<td>Partial</td>
+<td>Yes</td>
+<td>Contextual Threads</td>
+</tr>
+<tr>
+<td>MSG-009</td>
+<td>Contextual Thread (Shift)</td>
+<td>OA, FiD, VC, TL</td>
+<td>Partial</td>
+<td>Yes</td>
+<td>Contextual Threads</td>
+</tr>
+<tr>
+<td>MSG-010</td>
+<td>Contextual Thread (Issue)</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Contextual Threads</td>
+</tr>
+<tr>
+<td>MSG-011</td>
+<td>Contextual Thread (Donation Flag)</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Contextual Threads</td>
+</tr>
+<tr>
+<td>MSG-012</td>
+<td>Candidate Briefing View</td>
+<td>C</td>
+<td>Partial</td>
+<td>Primary</td>
+<td>Candidate Briefing Message</td>
+</tr>
+<tr>
+<td>MSG-013</td>
+<td>Candidate Approval Queue</td>
+<td>C</td>
+<td>No</td>
+<td>Primary</td>
+<td>Approval Request in Messages</td>
+</tr>
+<tr>
+<td>MSG-014</td>
+<td>Alliance Channel</td>
+<td>OA</td>
+<td>No</td>
+<td>Yes</td>
+<td>Alliance Channel</td>
+</tr>
+</tbody>
+</table>
+<h2 id="messaging-navigation-context" tabindex="-1"><a class="heading-anchor" href="#messaging-navigation-context" aria-hidden="true">#</a> Messaging Navigation Context</h2>
+<pre><code>All personas see &quot;Messages&quot; in their sidebar. The messaging section is simple:
+
+MESSAGING
+  Inbox              → MSG-001
+  New Message         → compose
+
+War Room channel (MSG-007) appears in sidebar during GOTV activation only.
+Alliance Channel (MSG-014) appears in the Alliance sidebar section.
+Contextual threads (MSG-008 through MSG-011) are accessed from their parent context (event detail, shift view, issue queue, donation flag), not from the messaging sidebar.
+</code></pre>
+<hr>
+<!-- MSG-001 -->
+<h2 id="desktop-conversation-list-thread-split-view" tabindex="-1"><a class="heading-anchor" href="#desktop-conversation-list-thread-split-view" aria-hidden="true">#</a> Desktop — Conversation List + Thread (Split View)</h2>
+<p>The default messaging layout on desktop uses a split view: conversation list on the left, active thread on the right.</p>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  🌿 Partido Verde          🔍 Search...                    ●    🔔3  [PD ▾] │
+├──────────────┬─────────────────────────┬─────────────────────────────────────┤
+│              │  Messages        🔍  ✏  │  María Santos                   ⋯  │
+│  OVERVIEW    │  ─────────────────────  │  ──────────────────────────────     │
+│    Dashboard │                         │                                     │
+│              │  📌 Pinned               │  🔒 Encrypted                      │
+│  MESSAGING   │  ┌─────────────────────┐│                                     │
+│  ◉ Messages  │  │ 📌 Leadership Team  ││  María Santos           Feb 28     │
+│              │  │ María: Updated talk.││  Hi Pablo, here are the updated    │
+│  ...         │  │ 30 min ago      (3) ││  talking points for tomorrow's     │
+│              │  └─────────────────────┘│  rally. I've highlighted the       │
+│              │  ┌─────────────────────┐│  changes from last week:           │
+│              │  │ 📌 Campaign Manager ││                                     │
+│              │  │ Schedule change for ││  • Climate action plan (new)       │
+│              │  │ 2 hours ago         ││  • Education funding (updated)     │
+│              │  └─────────────────────┘│  • Healthcare access (unchanged)   │
+│              │                         │                                     │
+│              │  Recent                 │  ──────────────────────────────     │
+│              │  ┌─────────────────────┐│                                     │
+│              │  │ ◉ María Santos      ││  Pablo Defendini          Feb 28   │
+│              │  │ Hi Pablo, here are  ││  Thanks María. The climate section │
+│              │  │ the updated talk... ││  looks great. One question — are   │
+│              │  │ 30 min ago          ││  we using the 2024 or 2025 data   │
+│              │  └─────────────────────┘│  for the emissions targets?        │
+│              │  ┌─────────────────────┐│                                     │
+│              │  │  Elena Torres       ││  ──────────────────────────────     │
+│              │  │  Great turnout      ││                                     │
+│              │  │  yesterday!         ││  María Santos              now     │
+│              │  │  5 hours ago        ││  2025 data. I'll add a footnote   │
+│              │  └─────────────────────┘│  with the source.                  │
+│              │  ┌─────────────────────┐│                                     │
+│              │  │  Carlos Rivera      ││                                     │
+│              │  │  Turf 7 is ready    ││                                     │
+│              │  │  Yesterday          ││                                     │
+│              │  └─────────────────────┘│                                     │
+│              │  ┌─────────────────────┐│                                     │
+│              │  │  Field Team         ││                                     │
+│              │  │  Pedro: Can someone ││                                     │
+│              │  │  cover my shift?    ││                                     │
+│              │  │  Yesterday          ││  ┌────────────────────────────┐     │
+│              │  └─────────────────────┘│  │  Type a message...     📎  │     │
+│              │                         │  └────────────────────────────┘     │
+│              │                         │  [Send]                             │
+└──────────────┴─────────────────────────┴─────────────────────────────────────┘
+</code></pre>
+<h3 id="conversation-list-anatomy" tabindex="-1"><a class="heading-anchor" href="#conversation-list-anatomy" aria-hidden="true">#</a> Conversation List Anatomy</h3>
+<pre><code>┌─────────────────────────────┐
+│  [Avatar]  Conversation Name│
+│            Last message prev│
+│            Time ago    (N)  │  ← unread count badge
+└─────────────────────────────┘
+
+States:
+  ◉  = Unread (bold name, bold preview, badge count)
+  📌 = Pinned (appears in &quot;Pinned&quot; section at top)
+  🔇 = Muted (no badge count, greyed notification)
+  👤 = DM (single avatar)
+  👥 = Group (stacked avatars or group icon)
+</code></pre>
+<!-- MSG-002, MSG-003, MSG-004 -->
+<h3 id="thread-anatomy" tabindex="-1"><a class="heading-anchor" href="#thread-anatomy" aria-hidden="true">#</a> Thread Anatomy</h3>
+<pre><code>┌─────────────────────────────────────────┐
+│  [Name]                         [⋯]    │  ← Thread header
+│  ────────────────────────────────       │     ⋯ = mute, pin, search, info
+│                                         │
+│  🔒 Encrypted                           │  ← E2E indicator (if applicable)
+│                                         │
+│  [Message bubbles — sender on left,     │
+│   &quot;you&quot; on right, chronological]        │
+│                                         │
+│  [Date separator: &quot;Today&quot;]              │
+│                                         │
+│  ┌─────────────────────────────────┐    │
+│  │  [Type a message...]       📎   │    │  ← Composer
+│  └─────────────────────────────────┘    │     📎 = attachments
+│  [Send]                                 │
+└─────────────────────────────────────────┘
+</code></pre>
+<h3 id="message-bubble-types" tabindex="-1"><a class="heading-anchor" href="#message-bubble-types" aria-hidden="true">#</a> Message Bubble Types</h3>
+<pre><code>Received (left-aligned):
+┌─────────────────────────────┐
+│  [Avatar]  Sender Name  Time│
+│  Message text here that can │
+│  wrap across multiple lines │
+│  and includes formatting.   │
+└─────────────────────────────┘
+
+Sent (right-aligned):
+          ┌─────────────────────────────┐
+          │  Message text here.         │
+          │                 Time  ✓✓    │
+          └─────────────────────────────┘
+
+✓  = Sent (server received)
+✓✓ = Delivered (recipient's device received)
+No read receipts — by design (spec decision).
+
+System message (centered, muted):
+         ── María added Elena ──
+         ── Feb 28, 2026 ──
+</code></pre>
+<h3 id="thread-actions-menu-" tabindex="-1"><a class="heading-anchor" href="#thread-actions-menu-" aria-hidden="true">#</a> Thread Actions Menu (⋯)</h3>
+<pre><code>┌──────────────────┐
+│  🔍 Search thread │
+│  📌 Pin / Unpin   │
+│  🔇 Mute / Unmute │
+│  ℹ  Thread info   │
+│  🗑 Delete thread  │
+└──────────────────┘
+
+Thread info shows:
+- Participants (with avatars)
+- Encryption status
+- Created date
+- Shared files
+- For groups: member list, add/remove members
+</code></pre>
+<hr>
+<h2 id="mobile-conversation-list" tabindex="-1"><a class="heading-anchor" href="#mobile-conversation-list" aria-hidden="true">#</a> Mobile — Conversation List</h2>
+<pre><code>┌──────────────────────────────┐
+│  ≡  Messages        🔍   ✏  │
+├──────────────────────────────┤
+│                              │
+│  📌 Pinned                   │
+│  ┌──────────────────────────┐│
+│  │ 👥 Leadership Team    →  ││
+│  │ María: Updated talking   ││
+│  │ points for tomorrow...   ││
+│  │ 30 min ago           (3) ││
+│  ├──────────────────────────┤│
+│  │ 👤 Campaign Manager   →  ││
+│  │ Schedule change for Thu  ││
+│  │ 2 hours ago              ││
+│  └──────────────────────────┘│
+│                              │
+│  Recent                      │
+│  ┌──────────────────────────┐│
+│  │ 👤 María Santos      →  ││
+│  │ Hi Pablo, here are the   ││
+│  │ updated talking points...││
+│  │ 30 min ago               ││
+│  ├──────────────────────────┤│
+│  │ 👤 Elena Torres      →  ││
+│  │ Great turnout yesterday! ││
+│  │ 5 hours ago              ││
+│  ├──────────────────────────┤│
+│  │ 👤 Carlos Rivera     →  ││
+│  │ Turf 7 is ready for     ││
+│  │ assignment               ││
+│  │ Yesterday                ││
+│  ├──────────────────────────┤│
+│  │ 👥 Field Team        →  ││
+│  │ Pedro: Can someone cover ││
+│  │ my shift Saturday?       ││
+│  │ Yesterday                ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  📋      📅      💬     ⋯   │
+│ Shifts  Events  Msgs   More  │
+└──────────────────────────────┘
+</code></pre>
+<h3 id="mobile-thread-view-full-screen" tabindex="-1"><a class="heading-anchor" href="#mobile-thread-view-full-screen" aria-hidden="true">#</a> Mobile — Thread View (Full Screen)</h3>
+<pre><code>┌──────────────────────────────┐
+│  ←  María Santos       ⋯    │
+├──────────────────────────────┤
+│  🔒 Encrypted                │
+│                              │
+│  María Santos      Feb 28   │
+│  ┌──────────────────────────┐│
+│  │ Hi Pablo, here are the   ││
+│  │ updated talking points   ││
+│  │ for tomorrow's rally.    ││
+│  │ I've highlighted the     ││
+│  │ changes from last week:  ││
+│  │                          ││
+│  │ • Climate action (new)   ││
+│  │ • Education (updated)    ││
+│  │ • Healthcare (unchanged) ││
+│  └──────────────────────────┘│
+│                              │
+│        ┌────────────────────┐│
+│        │ Thanks María. The  ││
+│        │ climate section    ││
+│        │ looks great.       ││
+│        │         Feb 28  ✓✓ ││
+│        └────────────────────┘│
+│                              │
+│  María Santos          now   │
+│  ┌──────────────────────────┐│
+│  │ 2025 data. I'll add a   ││
+│  │ footnote with the source.││
+│  └──────────────────────────┘│
+│                              │
+│                              │
+├──────────────────────────────┤
+│  ┌──────────────────────────┐│
+│  │ Type a message...    📎  ││
+│  └──────────────────────────┘│
+│  [Send]                      │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<!-- MSG-006 -->
+<h2 id="new-conversation" tabindex="-1"><a class="heading-anchor" href="#new-conversation" aria-hidden="true">#</a> New Conversation</h2>
+<h3 id="desktop-compose" tabindex="-1"><a class="heading-anchor" href="#desktop-compose" aria-hidden="true">#</a> Desktop — Compose</h3>
+<pre><code>┌─────────────────────────────────────────┐
+│  New Message                        ✕   │
+│  ────────────────────────────────       │
+│                                         │
+│  To: ┌──────────────────────────┐       │
+│      │ Mar                      │       │
+│      ├──────────────────────────┤       │
+│      │ 👤 María Santos          │       │
+│      │ 👤 Marco Rivera          │       │
+│      │ 👥 Marketing Team        │       │
+│      └──────────────────────────┘       │
+│                                         │
+│  ┌─────────────────────────────────┐    │
+│  │  Type a message...          📎  │    │
+│  └─────────────────────────────────┘    │
+│  [Send]                                 │
+└─────────────────────────────────────────┘
+
+- Type-ahead search for contacts and groups
+- Multiple recipients creates a group conversation
+- Encryption badge appears after recipient selection
+</code></pre>
+<hr>
+<!-- MSG-012 -->
+<h2 id="candidate-briefing-message" tabindex="-1"><a class="heading-anchor" href="#candidate-briefing-message" aria-hidden="true">#</a> Candidate Briefing Message</h2>
+<p>Briefings are styled distinctly from casual messages — structured, formatted, actionable.</p>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  María Santos (Communications Director)                          Feb 28    │
+│  ┌────────────────────────────────────────────────────────────────────────┐ │
+│  │  📋 BRIEFING: Rally Talking Points — March 5                          │ │
+│  │  ──────────────────────────────────────────                           │ │
+│  │                                                                       │ │
+│  │  Event: Rally at Plaza del Mercado                                    │ │
+│  │  Date: March 5, 6:00 PM                                              │ │
+│  │  Expected attendance: 142 confirmed, ~200 expected                    │ │
+│  │                                                                       │ │
+│  │  Key topics:                                                          │ │
+│  │  1. Climate action plan (NEW — lead with this)                        │ │
+│  │  2. Education funding reform (updated numbers)                        │ │
+│  │  3. Healthcare access (unchanged from last week)                      │ │
+│  │                                                                       │ │
+│  │  Attachments:                                                         │ │
+│  │  📄 talking-points-march5.pdf                                         │ │
+│  │  📄 rally-schedule.pdf                                                │ │
+│  │                                                                       │ │
+│  │  ⚠ Note: Local media confirmed (Channel 4, El Nuevo Día).            │ │
+│  │  Avoid commenting on the Martínez lawsuit.                            │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  [Acknowledge]  [Reply]                                                      │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Briefings are:
+- Visually distinct: bordered card, different background color
+- Labeled: &quot;BRIEFING&quot; header
+- Structured: clear sections (event, topics, attachments, notes)
+- Acknowledgeable: &quot;Acknowledge&quot; button confirms the candidate read it
+</code></pre>
+<hr>
+<!-- MSG-013 -->
+<h2 id="approval-request-in-messages" tabindex="-1"><a class="heading-anchor" href="#approval-request-in-messages" aria-hidden="true">#</a> Approval Request in Messages</h2>
+<p>When content needs the Candidate's approval, it arrives as a special message type:</p>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  María Santos (Communications Director)                          Mar 1     │
+│  ┌────────────────────────────────────────────────────────────────────────┐ │
+│  │  📰 APPROVAL REQUEST: Press Release                                   │ │
+│  │  ──────────────────────────────────                                   │ │
+│  │                                                                       │ │
+│  │  &quot;Partido Verde Announces Park Restoration Plan&quot;                      │ │
+│  │                                                                       │ │
+│  │  Preview:                                                             │ │
+│  │  San Juan, PR — Partido Verde today announced a comprehensive         │ │
+│  │  plan to restore three public parks in the San Juan metropolitan...   │ │
+│  │  [Read full text →]                                                   │ │
+│  │                                                                       │ │
+│  │  Requested by: María Santos                                           │ │
+│  │  Deadline: Mar 3, 9:00 AM (press conference)                          │ │
+│  │                                                                       │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                       │
+│  │  ✓ Approve    │  │  ✕ Reject    │  │  💬 Comment   │                       │
+│  └──────────────┘  └──────────────┘  └──────────────┘                       │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<!-- MSG-007 -->
+<h2 id="war-room-channel-election-day" tabindex="-1"><a class="heading-anchor" href="#war-room-channel-election-day" aria-hidden="true">#</a> War Room Channel (Election Day)</h2>
+<p>During election day, a dedicated War Room conversation appears pinned at the top of everyone's messages with GOTV access.</p>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ←  🚨 War Room                                                   ⋯        │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  ████ ELECTION DAY ACTIVE ████                                               │
+│                                                                              │
+│  This is the live coordination channel. 28 participants.                     │
+│                                                                              │
+│  ─── 2:34 PM ───                                                             │
+│                                                                              │
+│  🤖 System                                               2:34 PM            │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │  ⚠ ALERT: Precinct 4 (Ponce) below 60% of target pace.               │  │
+│  │  Suggested: Reallocate 4 volunteers from Precinct 3.                  │  │
+│  │  [View in War Room Dashboard →]                                       │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  Carlos Rivera (Field Director)                            2:35 PM          │
+│  Agreed. Reassigning Team C from Precinct 3 to Precinct 4.                  │
+│  ETA 20 minutes.                                                             │
+│                                                                              │
+│  ─── 2:28 PM ───                                                             │
+│                                                                              │
+│  Rosa Figueroa (Poll Watcher)                              2:28 PM          │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │  🚨 ISSUE: Machine #3 at Precinct 2 showing error code E-401.        │  │
+│  │  Voters being redirected to Machine #1. Line growing.                 │  │
+│  │  [View Issue Report →]                                                │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  Pablo Defendini (Org Admin)                               2:30 PM          │
+│  Contacting election board about Machine #3. Reminder:                       │
+│  document everything — photos if possible.                                   │
+│                                                                              │
+│  ─── 2:15 PM ───                                                             │
+│                                                                              │
+│  🤖 System                                               2:15 PM            │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │  ✓ Wave 2 GOTV SMS sent successfully.                                 │  │
+│  │  3,400 recipients · 98.2% delivered.                                  │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  ┌──────────────────────────────────────────────────────────────┐            │
+│  │  Type a message...                                       📎  │            │
+│  └──────────────────────────────────────────────────────────────┘            │
+│  [🚨 Report Issue]  [Send]                                                   │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+War Room specifics:
+- System-generated alerts are styled distinctly (yellow/amber background)
+- Issue reports from poll watchers are styled as red alerts
+- &quot;Report Issue&quot; shortcut button in composer for quick issue filing
+- Auto-scrolls to latest (pausable by scrolling up)
+- High-priority — notifications always push, even in DND mode
+</code></pre>
+<hr>
+<!-- MSG-005 -->
+<h2 id="group-conversation-info" tabindex="-1"><a class="heading-anchor" href="#group-conversation-info" aria-hidden="true">#</a> Group Conversation Info</h2>
+<pre><code>┌─────────────────────────────────────────┐
+│  ←  Leadership Team               Edit  │
+├─────────────────────────────────────────┤
+│                                         │
+│  👥  Leadership Team                    │
+│  Created: Jan 15, 2026                  │
+│  🔒 End-to-end encrypted               │
+│                                         │
+│  ─────────────────────                  │
+│                                         │
+│  Members (5)                            │
+│  ┌─────────────────────────────────┐    │
+│  │  [PD] Pablo Defendini  (Admin)  │    │
+│  │  [MS] María Santos              │    │
+│  │  [CR] Carlos Rivera             │    │
+│  │  [ET] Elena Torres              │    │
+│  │  [PC] Pedro Colón               │    │
+│  └─────────────────────────────────┘    │
+│                                         │
+│  [+ Add member]                         │
+│                                         │
+│  ─────────────────────                  │
+│                                         │
+│  Shared Files (3)                       │
+│  📄 talking-points-march5.pdf           │
+│  📄 rally-schedule.pdf                  │
+│  📄 Q1-fundraising-summary.pdf          │
+│                                         │
+│  ─────────────────────                  │
+│                                         │
+│  [🔇 Mute conversation]                │
+│  [📌 Pin / Unpin]                       │
+│  [🚪 Leave conversation]               │
+│                                         │
+└─────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="offline-messaging" tabindex="-1"><a class="heading-anchor" href="#offline-messaging" aria-hidden="true">#</a> Offline Messaging</h2>
+<p>When offline, messaging degrades gracefully:</p>
+<pre><code>Composing while offline:
+
+├──────────────────────────────────────────────────────────────────────────────┤
+│  ◌ Offline                                                                   │
+│  ┌──────────────────────────────────────────────────────────────┐            │
+│  │  Type a message...                                       📎  │            │
+│  └──────────────────────────────────────────────────────────────┘            │
+│  [Send]  ← message queued locally, sent on reconnect                        │
+│                                                                              │
+│  Queued messages show with ◌ indicator:                                      │
+│                                                                              │
+│        ┌────────────────────────┐                                            │
+│        │ Sounds good, will do.  │                                            │
+│        │           now  ◌      │  ← pending (not yet sent)                  │
+│        └────────────────────────┘                                            │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+When reconnected, ◌ changes to ✓ (sent) then ✓✓ (delivered).
+</code></pre>
+<hr>
+<h2 id="encryption-indicators" tabindex="-1"><a class="heading-anchor" href="#encryption-indicators" aria-hidden="true">#</a> Encryption Indicators</h2>
+<pre><code>Standard (platform-encrypted):
+  No special indicator. Default behavior.
+
+E2E encrypted (org-level or BYOK):
+  🔒 badge in thread header: &quot;End-to-end encrypted&quot;
+  Small lock icon on each message bubble.
+  Tooltip: &quot;This message is end-to-end encrypted. Only participants can read it.&quot;
+
+Alliance messages (cross-org):
+  🔒🔗 badge: &quot;Encrypted · Cross-organization&quot;
+  Different key icon to indicate alliance-negotiated key.
+</code></pre>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSG-001 Inbox</td>
+<td>No messages yet. Start a conversation with a team member or group.</td>
+<td>New Message</td>
+</tr>
+<tr>
+<td>MSG-001 Search/Filter</td>
+<td>No conversations found matching your search. Try different keywords or clear filters.</td>
+<td>Clear Search</td>
+</tr>
+<tr>
+<td>MSG-007 War Room</td>
+<td>The War Room is not active. This channel becomes available during GOTV activation on election day.</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li><strong>Screen reader:</strong> Messages announced as: &quot;[Sender name], [timestamp]: [message content]&quot;</li>
+<li><strong>Keyboard:</strong> Arrow keys navigate between messages. Enter opens thread. Escape returns to list.</li>
+<li><strong>Focus:</strong> When opening a thread, focus moves to the most recent message. Composer is Tab-accessible.</li>
+<li><strong>Contrast:</strong> Message bubbles meet 4.5:1 contrast. Sent vs. received bubbles are distinguishable by position and subtle color difference (not color alone — also alignment).</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desktop split view for messaging</td>
+<td>Standard split view — conversation list on left, thread on right</td>
+<td>Standard messaging UX that users already know. No need to innovate on a well-understood pattern</td>
+</tr>
+<tr>
+<td>Candidate briefings as structured format</td>
+<td>Bordered card with labeled sections (event, topics, attachments, notes)</td>
+<td>Briefings need to be scannable — structured format lets the Candidate extract key info quickly, unlike a wall of chat text</td>
+</tr>
+<tr>
+<td>Encryption indicators</td>
+<td>Lock icon (🔒) in thread header for E2E encrypted messages</td>
+<td>Users need clear, unambiguous visibility into whether a conversation is protected. Lock icon is universally understood</td>
+</tr>
+<tr>
+<td>War Room as special channel</td>
+<td>Dedicated channel type with system alerts, issue reports, and priority notifications</td>
+<td>Election day coordination has unique needs — system alerts, priority override, structured issue reporting — that don't fit standard group chat</td>
+</tr>
+<tr>
+<td>Contextual threads accessed from parent context</td>
+<td>Event threads from event detail, shift threads from shift view, etc. — not from messaging sidebar</td>
+<td>Reduces messaging clutter. Contextual threads are about the context (the event, the shift), not about &quot;messaging&quot; as an activity</td>
+</tr>
+<tr>
+<td>Offline messaging with local queue</td>
+<td>Messages composed offline are queued locally and sent automatically on reconnect</td>
+<td>Field staff in low-connectivity areas need to communicate without waiting for signal. Queue-and-send is transparent and reliable</td>
+</tr>
+<tr>
+<td>Mobile as full-screen conversation view</td>
+<td>Conversation list and thread are separate full-screen views on mobile</td>
+<td>Phone screens are too small for a split view. Full-screen per view is the standard mobile messaging pattern</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Message reactions.</strong> Should messages support emoji reactions (like Slack/Teams)? Low-weight acknowledgment (&quot;thumbs up&quot;) without a full reply. Adds social dimension but increases complexity.</p>
+</li>
+<li>
+<p><strong>Message forwarding.</strong> Should messages be forwardable to other conversations? Useful for information sharing but raises concerns about context loss and privacy.</p>
+</li>
+<li>
+<p><strong>Voice messages in non-field contexts.</strong> The spec limits voice messages to field contexts. Should casual voice messages be allowed in group conversations? Lower friction for mobile-primary users but increases storage and bandwidth.</p>
+</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#messaging-navigation-context"># Messaging Navigation Context</a></li><li class="toc-2"><a href="#desktop-conversation-list-thread-split-view"># Desktop — Conversation List + Thread (Split View)</a></li><li class="toc-3"><a href="#conversation-list-anatomy"># Conversation List Anatomy</a></li><li class="toc-3"><a href="#thread-anatomy"># Thread Anatomy</a></li><li class="toc-3"><a href="#message-bubble-types"># Message Bubble Types</a></li><li class="toc-3"><a href="#thread-actions-menu-"># Thread Actions Menu (⋯)</a></li><li class="toc-2"><a href="#mobile-conversation-list"># Mobile — Conversation List</a></li><li class="toc-3"><a href="#mobile-thread-view-full-screen"># Mobile — Thread View (Full Screen)</a></li><li class="toc-2"><a href="#new-conversation"># New Conversation</a></li><li class="toc-3"><a href="#desktop-compose"># Desktop — Compose</a></li><li class="toc-2"><a href="#candidate-briefing-message"># Candidate Briefing Message</a></li><li class="toc-2"><a href="#approval-request-in-messages"># Approval Request in Messages</a></li><li class="toc-2"><a href="#war-room-channel-election-day"># War Room Channel (Election Day)</a></li><li class="toc-2"><a href="#group-conversation-info"># Group Conversation Info</a></li><li class="toc-2"><a href="#offline-messaging"># Offline Messaging</a></li><li class="toc-2"><a href="#encryption-indicators"># Encryption Indicators</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

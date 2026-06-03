@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project: GreenGrass · GreenGrass</title>
+<meta name="description" content="Project: GreenGrass — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./product.html" aria-current="page" class="active">Project: GreenGrass</a></li><li><a href="./users.html">Users &amp; Roles</a></li><li><a href="./workflows.html">Core Workflows</a></li><li><a href="./geography.html">Target Geography</a></li><li><a href="./security.html">Security &amp; Threat Model</a></li><li><a href="./compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="./fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="./integrations.html">External Integrations</a></li><li><a href="./support.html">Tenant Support &amp; Onboarding</a></li><li><a href="./gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="./messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="./press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Specifications</nav>
+    <article class="prose">
+<h1 id="project-greengrass" tabindex="-1"><a class="heading-anchor" href="#project-greengrass" aria-hidden="true">#</a> Project: GreenGrass</h1>
+<h2 id="an-integrated-technology-platform-for-grassroots-political-campaigns-in-the-global-south" tabindex="-1"><a class="heading-anchor" href="#an-integrated-technology-platform-for-grassroots-political-campaigns-in-the-global-south" aria-hidden="true">#</a> <em>An Integrated Technology Platform for Grassroots Political Campaigns in the Global South</em></h2>
+<h2 id="by-pablo-defendini-giovanni-collazo-22-november-2024" tabindex="-1"><a class="heading-anchor" href="#by-pablo-defendini-giovanni-collazo-22-november-2024" aria-hidden="true">#</a> <em>by Pablo Defendini &amp; Giovanni Collazo — 22 november 2024</em></h2>
+<h1 id="executive-summary" tabindex="-1"><a class="heading-anchor" href="#executive-summary" aria-hidden="true">#</a> Executive Summary</h1>
+<p>Progressive/left-wing movements often struggle with limited resources, outdated tools, and fragmented technology solutions, especially in the global south. <strong>GreenGrass</strong> is a comprehensive, integrated technology platform designed specifically to empower grassroots political campaigns in the Global South, providing the tools needed for effective organizing, digital engagement, and data-driven decision-making. Built with a focus on affordability, accessibility, and local needs, GreenGrass aims to revolutionize political campaigning by streamlining operations and enhancing community engagement.</p>
+<hr>
+<p>Progressive political campaigns in Global South countries face unique challenges, including:</p>
+<ul>
+<li><strong>Limited Access to Digital Tools:</strong> Most political technology platforms are designed for developed markets, with high costs and steep learning curves that make them inaccessible to grassroots campaigns.</li>
+<li><strong>Fragmented Communication Channels:</strong> Campaigns often rely on a mix of disparate tools for email, social media, and SMS, leading to inconsistent messaging, inefficient use of resources, and burgeoning costs.</li>
+<li><strong>Inefficient Voter Engagement:</strong> Many campaigns lack the ability to track and segment voter data effectively, resulting in generic outreach that fails to resonate with their constituencies.</li>
+<li><strong>Resource Constraints:</strong> Campaigns often operate on tight budgets, limiting their ability to invest in high-quality software solutions.</li>
+</ul>
+<p>While platforms like NationBuilder, Action Network, and Mobilize exist, they are designed for developed markets and often priced out of reach for progressive campaigns in the Global South.</p>
+<h1 id="project-greengrass-1" tabindex="-1"><a class="heading-anchor" href="#project-greengrass-1" aria-hidden="true">#</a> Project: GreenGrass</h1>
+<p><strong>Project: GreenGrass</strong> is an all-in-one campaign technology platform tailored specifically for the needs of grassroots campaigns in countries in the Global South. It’s intended to be a one-stop-shop—with one set fee—so that campaigns and organizations can use the service without having to depend on additional services or costs (with the exception of unavoidable variable costs such as SMS sends, which are usually billed by volume by the supplier).</p>
+<p>The product combines a Constituent Relationship Manager (CRM), a voter database, fundraising tools, communication tools, and data analytics into a single, affordable solution, designed to maximize impact and streamline operations.</p>
+<p>GreenGrass is web- and mobile-first. The application is progressively enhanced and optimized for low-bandwidth and mobile-first environments.</p>
+<h2 id="key-features" tabindex="-1"><a class="heading-anchor" href="#key-features" aria-hidden="true">#</a> Key Features</h2>
+<h3 id="integrated-crm-people-database" tabindex="-1"><a class="heading-anchor" href="#integrated-crm-people-database" aria-hidden="true">#</a> Integrated CRM &amp; People Database</h3>
+<ul>
+<li>A CRM that consolidates candidate, staff, volunteer, and supporter data, as well as voter information.</li>
+<li>Customizable voter profiles that allow campaigns to segment audiences based on demographics, voting history, and engagement levels.</li>
+<li>An omni-list that de-dupes people.</li>
+<li>Explicit login access for <em>everyone</em>, with easy-to manage account preferences.</li>
+</ul>
+<h3 id="fundraising-tools" tabindex="-1"><a class="heading-anchor" href="#fundraising-tools" aria-hidden="true">#</a> Fundraising Tools</h3>
+<ul>
+<li>Donation forms, with the ability to manage recurring and one-time donations, as well as the ability to have the donor take on credit card processing fees, and the ability to prompt for specific donation amounts</li>
+<li>Multiple payment processors (and local payment vendors—ATH Movil, Venmo, Zelle, etc), which will vary by region.</li>
+<li>A way to register/track cash donations (esp during in-person events)</li>
+<li>Support for both in-system donation forms, as well as custom embeddable forms, to place on third party services and sites.</li>
+</ul>
+<h3 id="multi-channel-communication-suite" tabindex="-1"><a class="heading-anchor" href="#multi-channel-communication-suite" aria-hidden="true">#</a> Multi-Channel Communication Suite</h3>
+<ul>
+<li>Email Campaigns: Simple tools to design, send, and track email outreach, including automated follow-ups and analytics.</li>
+<li>SMS &amp; WhatsApp Integration: Built-in support for SMS and WhatsApp messaging.</li>
+<li>Social Media Integration: Schedule and manage posts across multiple social media platforms from one central place, with analytics to track engagement and performance.</li>
+<li>Public-facing user, candidates, and organization profiles.</li>
+</ul>
+<h3 id="voter-outreach-tools" tabindex="-1"><a class="heading-anchor" href="#voter-outreach-tools" aria-hidden="true">#</a> Voter Outreach Tools</h3>
+<ul>
+<li>Voter Registration: A tool for field teams to conduct voter registration drives, with offline capabilities for areas with limited connectivity.</li>
+<li>Canvassing: A tool that allows volunteers to conduct door-to-door outreach, collect data, and sync information to the central CRM in real time.</li>
+<li>Phone Banking System: Integrated phone banking with call scripts and tracking, allowing staff to manage phone bank volunteers and shifts.</li>
+</ul>
+<h3 id="activism-and-engagement" tabindex="-1"><a class="heading-anchor" href="#activism-and-engagement" aria-hidden="true">#</a> Activism and engagement</h3>
+<ul>
+<li>Email writing campaigns</li>
+</ul>
+<h3 id="event-management-and-volunteer-coordination" tabindex="-1"><a class="heading-anchor" href="#event-management-and-volunteer-coordination" aria-hidden="true">#</a> Event Management and Volunteer Coordination</h3>
+<ul>
+<li>Events: Create and manage campaign events, with built-in RSVP tracking and reminders via email and SMS.</li>
+<li>Volunteer Portal: A centralized portal for volunteers to sign up for shifts, track their activities, and communicate with campaign staff. Shifts and other time-based work should have a calendar view so that volunteer managers can visualize and manage work allocation.</li>
+<li>Task Management: Simple task assignment and tracking system to coordinate activities across teams.</li>
+</ul>
+<h3 id="analytics-and-reporting" tabindex="-1"><a class="heading-anchor" href="#analytics-and-reporting" aria-hidden="true">#</a> Analytics and Reporting</h3>
+<ul>
+<li>Voter Intelligence Dashboards: Monitor key metrics like supporter behavior, volunteer activity, and fundraising performance.</li>
+<li>Voter Insights: Tools for analyzing voter data to identify trends, optimize messaging, and prioritize outreach efforts.</li>
+</ul>
+<h2 id="table-stakes-features" tabindex="-1"><a class="heading-anchor" href="#table-stakes-features" aria-hidden="true">#</a> Table-stakes features</h2>
+<ul>
+<li>Accessibility and Affordability: GreenGrass offers a tiered pricing model, including a freemium plan and a no-credit-card-necessary trial period for smaller campaigns, making it accessible even for campaigns with minimal budgets.</li>
+<li>Local Language Support: The platform supports multiple languages and local dialects, ensuring accessibility for diverse communities.</li>
+<li>Offline Functionality: Designed for areas with unreliable internet access, key features of GreenGrass can function offline and sync data when connectivity is restored.</li>
+<li>Mobile-First Design: Recognizing the worldwide prevalence of mobile internet usage, the platform is optimized for mobile devices.</li>
+</ul>
+<h2 id="high-level-architecture-notes" tabindex="-1"><a class="heading-anchor" href="#high-level-architecture-notes" aria-hidden="true">#</a> High-level Architecture notes</h2>
+<p>GreenGrass is built using an Open Source model, except where security or technical concerns make that approach unworkable. It also employs a single-tenant architecture. That is, a single instance of the application and its supporting infrastructure is dedicated to serving each customer (or tenant). Each tenant operates in isolation, with its own database, application, and resources, ensuring complete separation from other tenants. While this approach complicates deployment and version control at a high level, single-tenant systems prioritize security, performance, and customization for individual users or organizations.</p>
+<h2 id="implementation-plan" tabindex="-1"><a class="heading-anchor" href="#implementation-plan" aria-hidden="true">#</a> Implementation Plan</h2>
+<h3 id="phase-0-buy-in-3-6-months" tabindex="-1"><a class="heading-anchor" href="#phase-0-buy-in-3-6-months" aria-hidden="true">#</a> Phase 0: Buy-in (3-6 months)</h3>
+<ul>
+<li>Define and refine product proposal, feature set, initial road map, and proposed business models</li>
+<li>Identify and onboard three to five alpha clients, who are interested in the product, and will commit to paying for an MVP once it’s ready.</li>
+</ul>
+<h3 id="phase-1-product-development-10-months" tabindex="-1"><a class="heading-anchor" href="#phase-1-product-development-10-months" aria-hidden="true">#</a> Phase 1: Product Development (10 Months)</h3>
+<ul>
+<li>Finalize feature set and begin development of core components.</li>
+<li>Conduct user testing with alpha clients, select campaigns and/or stakeholders to gather feedback and refine the product.</li>
+</ul>
+<h3 id="phase-2-pilot-program-10-months" tabindex="-1"><a class="heading-anchor" href="#phase-2-pilot-program-10-months" aria-hidden="true">#</a> Phase 2: Pilot Program (10 Months)</h3>
+<ul>
+<li>Launch a pilot program with alpha clients and/or partner campaigns in three target countries, providing training and support.</li>
+<li>Collect data on usage, performance, and user feedback to further improve the platform.</li>
+</ul>
+<h3 id="phase-3-full-launch-and-scaling-6-months-and-beyond" tabindex="-1"><a class="heading-anchor" href="#phase-3-full-launch-and-scaling-6-months-and-beyond" aria-hidden="true">#</a> Phase 3: Full Launch and Scaling (6 Months and beyond)</h3>
+<ul>
+<li>Roll out the platform to a broader audience with a focus on countries in Africa, Latin America, and Southeast Asia.</li>
+<li>Implement a local support network with partnerships to provide training and customer service in key regions.</li>
+</ul>
+<h2 id="possible-revenue-models" tabindex="-1"><a class="heading-anchor" href="#possible-revenue-models" aria-hidden="true">#</a> Possible Revenue Models</h2>
+<ul>
+<li>Freemium Plan: Basic access to core features, allowing small campaigns to get started for free.</li>
+<li>Subscription Tiers: Paid plans with additional features designed for mid-sized and large campaigns. Explicitly not a per-user, or other scale-based pricing model, although we should still think about some kind of scale-based revenue structure in order to manage growing operating costs.</li>
+<li>Partnerships: Revenue from partnerships with NGOs, political training organizations, and advocacy groups who can license the platform for their networks.</li>
+<li>Bespoke services: development of integrations, data query creation and analysis, data enrichment, custom report generation.</li>
+</ul>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#an-integrated-technology-platform-for-grassroots-political-campaigns-in-the-global-south"># An Integrated Technology Platform for Grassroots Political Campaigns in the Global South</a></li><li class="toc-2"><a href="#by-pablo-defendini-giovanni-collazo-22-november-2024"># by Pablo Defendini &amp;amp; Giovanni Collazo — 22 november 2024</a></li><li class="toc-2"><a href="#key-features"># Key Features</a></li><li class="toc-3"><a href="#integrated-crm-people-database"># Integrated CRM &amp;amp; People Database</a></li><li class="toc-3"><a href="#fundraising-tools"># Fundraising Tools</a></li><li class="toc-3"><a href="#multi-channel-communication-suite"># Multi-Channel Communication Suite</a></li><li class="toc-3"><a href="#voter-outreach-tools"># Voter Outreach Tools</a></li><li class="toc-3"><a href="#activism-and-engagement"># Activism and engagement</a></li><li class="toc-3"><a href="#event-management-and-volunteer-coordination"># Event Management and Volunteer Coordination</a></li><li class="toc-3"><a href="#analytics-and-reporting"># Analytics and Reporting</a></li><li class="toc-2"><a href="#table-stakes-features"># Table-stakes features</a></li><li class="toc-2"><a href="#high-level-architecture-notes"># High-level Architecture notes</a></li><li class="toc-2"><a href="#implementation-plan"># Implementation Plan</a></li><li class="toc-3"><a href="#phase-0-buy-in-3-6-months"># Phase 0: Buy-in (3-6 months)</a></li><li class="toc-3"><a href="#phase-1-product-development-10-months"># Phase 1: Product Development (10 Months)</a></li><li class="toc-3"><a href="#phase-2-pilot-program-10-months"># Phase 2: Pilot Program (10 Months)</a></li><li class="toc-3"><a href="#phase-3-full-launch-and-scaling-6-months-and-beyond"># Phase 3: Full Launch and Scaling (6 Months and beyond)</a></li><li class="toc-2"><a href="#possible-revenue-models"># Possible Revenue Models</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alliance Wireframes · GreenGrass</title>
+<meta name="description" content="Alliance Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="./alliance.html" aria-current="page" class="active">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="alliance-wireframes" tabindex="-1"><a class="heading-anchor" href="#alliance-wireframes" aria-hidden="true">#</a> Alliance Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Alliance features enable federated coordination between sovereign organizations — sharing resources, running joint campaigns, and reporting aggregate metrics without any org losing control of its data. This document wireframes the 8 alliance screens (ALLY-001 through ALLY-008).</p>
+<p>The central UX challenge: alliance operations span organizational boundaries, but each org admin must always understand what they're sharing, with whom, and under what terms. The UI must make the cross-org nature visible without making it feel foreign.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALLY-001</td>
+<td>Alliance Dashboard</td>
+<td>OA</td>
+<td>No</td>
+<td>Yes</td>
+<td>Dashboard</td>
+</tr>
+<tr>
+<td>ALLY-002</td>
+<td>Alliance Member List</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Members</td>
+</tr>
+<tr>
+<td>ALLY-003</td>
+<td>Affiliation Request Form</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Affiliation</td>
+</tr>
+<tr>
+<td>ALLY-004</td>
+<td>Affiliation Request Queue</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Affiliation</td>
+</tr>
+<tr>
+<td>ALLY-005</td>
+<td>Sharing Configuration</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Sharing</td>
+</tr>
+<tr>
+<td>ALLY-006</td>
+<td>Joint Campaign Setup</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Campaigns</td>
+</tr>
+<tr>
+<td>ALLY-007</td>
+<td>Shared Analytics</td>
+<td>OA</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<td>ALLY-008</td>
+<td>GOTV Alliance Coordination</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>GOTV</td>
+</tr>
+</tbody>
+</table>
+<h2 id="alliance-visual-context" tabindex="-1"><a class="heading-anchor" href="#alliance-visual-context" aria-hidden="true">#</a> Alliance Visual Context</h2>
+<p>When the user is viewing alliance screens, the navigation shell shifts to signal the cross-org context:</p>
+<ul>
+<li><strong>Header bar:</strong> Shows the alliance name with an &quot;Alliance&quot; badge and a tenant switcher dropdown (replacing the standard org name)</li>
+<li><strong>Sidebar:</strong> The Alliance section uses a <strong>teal accent</strong> (<code>--color-alliance: #0f766e</code>) instead of the standard primary blue — active state background <code>#f0fdfa</code>, active text <code>#0f766e</code>. This color differentiation is subtle but consistent, reinforcing that the user is looking at cross-org data.</li>
+<li><strong>Metric attribution:</strong> All aggregate numbers include &quot;across N orgs&quot; attribution so the user never mistakes alliance-wide data for their own org's data.</li>
+</ul>
+<h3 id="alliance-navigation-shell-desktop" tabindex="-1"><a class="heading-anchor" href="#alliance-navigation-shell-desktop" aria-hidden="true">#</a> Alliance Navigation Shell — Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  [Alliance Logo]  Coalición Verde  [Alliance ▾]     🔍  ● Synced  🔔  [👤] │
+├─────────────┬────────────────────────────────────────────────────────────────┤
+│             │                                                                │
+│  OVERVIEW   │                                                                │
+│  ○ Dashboard│  (content area)                                                │
+│             │                                                                │
+│  PEOPLE     │                                                                │
+│  ○ Contacts │                                                                │
+│  ○ Teams    │                                                                │
+│             │                                                                │
+│  FIELD      │                                                                │
+│  ○ Campaigns│                                                                │
+│             │                                                                │
+│  ...        │                                                                │
+│             │                                                                │
+│  ALLIANCE   │  ← teal section header                                        │
+│  ● Overview │  ← teal active state (#f0fdfa bg, #0f766e text)               │
+│  ○ Members  │                                                                │
+│  ○ Shared   │                                                                │
+│    Campaigns│                                                                │
+│  ○ Analytics│                                                                │
+│             │                                                                │
+│  SETTINGS   │                                                                │
+│  ○ Settings │                                                                │
+│             │                                                                │
+│  ─────────  │                                                                │
+│  ○ Help     │                                                                │
+│  ○ Español  │                                                                │
+└─────────────┴────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="tenant-switcher-dropdown" tabindex="-1"><a class="heading-anchor" href="#tenant-switcher-dropdown" aria-hidden="true">#</a> Tenant Switcher Dropdown</h3>
+<p>Clicking the alliance name in the header opens a dropdown:</p>
+<pre><code>┌────────────────────────────────────────┐
+│  Switch context                        │
+│  ──────────────────────                │
+│                                        │
+│  🏛 Coalición Verde         Alliance   │  ← current, checked
+│                                        │
+│  Organizations                         │
+│  ──────────────────────                │
+│  🟢 Partido Verde          Your org    │
+│  ⚪ Movimiento Ecologista              │  ← visible only if
+│  ⚪ Candidatura Torres                 │    user has cross-org
+│                                        │    access
+│  ──────────────────────                │
+│  ⚙ Manage Alliance                    │
+└────────────────────────────────────────┘
+</code></pre>
+<p>The dropdown lets the user switch between the alliance view and individual org views. &quot;Your org&quot; is always listed first with a green indicator. Other orgs are visible only if the user has cross-org access rights.</p>
+<hr>
+<h2 id="ally-001-alliance-dashboard" tabindex="-1"><a class="heading-anchor" href="#ally-001-alliance-dashboard" aria-hidden="true">#</a> ALLY-001: Alliance Dashboard</h2>
+<p>The alliance admin's home within the alliance context. Answers &quot;how is the coalition doing overall?&quot; with aggregate metrics and per-org breakdowns.</p>
+<h3 id="personas" tabindex="-1"><a class="heading-anchor" href="#personas" aria-hidden="true">#</a> Personas</h3>
+<ul>
+<li>Org Admin (primary)</li>
+</ul>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Alliance Overview                              Last updated: 5 min ago  ↻  │
+│  ───────────────────────────────────────────── Date range: [Last 30 days ▾] │
+│                                                                              │
+│  Coalición Verde · 3 member organizations                                    │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  💰 Combined  │  │  🚪 Total    │  │  👥 Shared    │  │  📊 Voter    │    │
+│  │  Raised       │  │  Doors       │  │  Volunteers   │  │  Contact     │    │
+│  │  $142,800     │  │  3,891       │  │  87           │  │  68.2%       │    │
+│  │  across 3 orgs│  │  across 3 orgs│  │  in shared   │  │  of shared   │    │
+│  │  ↑ 18% vs prev│  │  ↑ 12%       │  │  pool         │  │  universe    │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Contribution by Organization                                        │   │
+│  │  ────────────────────────────                                        │   │
+│  │                                                                       │   │
+│  │  Partido Verde         $68,200   1,842 doors   42 volunteers         │   │
+│  │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  48% of raised          │   │
+│  │                                                                       │   │
+│  │  Movimiento Ecologista $45,300   1,204 doors   28 volunteers         │   │
+│  │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░  32% of raised          │   │
+│  │                                                                       │   │
+│  │  Candidatura Torres    $29,300     845 doors   17 volunteers         │   │
+│  │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░  21% of raised          │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Joint Campaigns (2 active)     │  │  Sharing Status                  │   │
+│  │  ─────────────────              │  │  ──────────────                  │   │
+│  │                                 │  │                                   │   │
+│  │  🟢 Voter Registration Drive   │  │  Volunteer sharing    🟢 Active  │   │
+│  │     3 orgs · Shared governance  │  │  3 orgs contributing             │   │
+│  │     Progress: 68% of goal       │  │                                   │   │
+│  │     [View campaign →]           │  │  Voter contact data   🟢 Active  │   │
+│  │                                 │  │  Dedup: 1,240 contacts merged    │   │
+│  │  🟡 Fundraising Coalition      │  │                                   │   │
+│  │     3 orgs · Org-controlled     │  │  Canvassing turfs     🟢 Active  │   │
+│  │     Split: 40/35/25             │  │  No overlap verified             │   │
+│  │     [View campaign →]           │  │                                   │   │
+│  │                                 │  │  Event coordination   🟡 Partial │   │
+│  │  [Create joint campaign →]      │  │  2 of 3 orgs opted in            │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  ⚠ Needs Attention (3)          │  │  Recent Alliance Activity        │   │
+│  │  ─────────────────              │  │  ─────────────────────           │   │
+│  │                                 │  │                                   │   │
+│  │  🟡 Sharing config change       │  │  2 hours ago                     │   │
+│  │     Candidatura Torres updated  │  │  Mov. Ecologista added 5         │   │
+│  │     volunteer sharing rules     │  │  volunteers to shared pool       │   │
+│  │     [Review →]                  │  │                                   │   │
+│  │                                 │  │  Yesterday                       │   │
+│  │  🟡 Split approval pending      │  │  Joint fundraising: $2,400       │   │
+│  │     Fundraising Coalition —     │  │  split processed                 │   │
+│  │     2 of 3 orgs approved        │  │                                   │   │
+│  │     [View →]                    │  │  2 days ago                      │   │
+│  │                                 │  │  Voter Reg Drive hit 50%         │   │
+│  │  🔵 New affiliation request     │  │  milestone                       │   │
+│  │     Partido Progresista         │  │                                   │   │
+│  │     wants to join               │  │  [View all activity →]           │   │
+│  │     [Review →]                  │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌──────────────────────────────┐
+│  ≡  Alliance        🔍  ↻   │
+├──────────────────────────────┤
+│  Coalición Verde · 3 orgs    │
+│  Last 30 days ▾              │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  💰 Combined Raised      ││
+│  │  $142,800    ↑ 18%       ││
+│  │  across 3 organizations  ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  🚪 Total Doors          ││
+│  │  3,891       ↑ 12%       ││
+│  │  across 3 organizations  ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  👥 Shared Volunteers    ││
+│  │  87 in shared pool       ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ⚠ Needs Attention (3)   ││
+│  │  🟡 Sharing config change││
+│  │  🟡 Split approval       ││
+│  │  🔵 Affiliation request  ││
+│  │  [View all →]            ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Joint Campaigns (2)     ││
+│  │  🟢 Voter Reg Drive 68% ││
+│  │  🟡 Fundraising 40/35/25││
+│  │  [View all →]            ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│ 📊      👥      💰     💬   ⋯│
+│ Dash  Contacts Donate  Msgs More│
+└──────────────────────────────┘
+</code></pre>
+<h3 id="mobile-differences" tabindex="-1"><a class="heading-anchor" href="#mobile-differences" aria-hidden="true">#</a> Mobile Differences</h3>
+<ul>
+<li>Metric cards stack vertically (single column)</li>
+<li>&quot;Contribution by Organization&quot; section omitted — accessible via drill-down on any metric</li>
+<li>Sharing status omitted — accessible from Members screen</li>
+<li>Alerts show top 3 with &quot;View all&quot; link</li>
+<li>Joint campaigns show as a compact list</li>
+<li>Pull-to-refresh triggers data reload</li>
+</ul>
+<h3 id="interaction-specs" tabindex="-1"><a class="heading-anchor" href="#interaction-specs" aria-hidden="true">#</a> Interaction Specs</h3>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Action</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metric card</td>
+<td>Tap</td>
+<td>Navigate to per-org breakdown for that metric</td>
+</tr>
+<tr>
+<td>Org contribution bar</td>
+<td>Tap org name</td>
+<td>Navigate to that org's individual dashboard (if user has access)</td>
+</tr>
+<tr>
+<td>Joint campaign</td>
+<td>Tap &quot;View campaign&quot;</td>
+<td>Navigate to ALLY-006 Joint Campaign detail</td>
+</tr>
+<tr>
+<td>Sharing status item</td>
+<td>Tap</td>
+<td>Navigate to ALLY-005 Sharing Configuration</td>
+</tr>
+<tr>
+<td>Alert item</td>
+<td>Tap action link</td>
+<td>Navigate to relevant screen</td>
+</tr>
+<tr>
+<td>&quot;Create joint campaign&quot;</td>
+<td>Tap</td>
+<td>Navigate to ALLY-006 setup wizard</td>
+</tr>
+<tr>
+<td>Refresh icon (↻)</td>
+<td>Tap</td>
+<td>Manual data refresh, update &quot;Last updated&quot; timestamp</td>
+</tr>
+<tr>
+<td>Date range filter</td>
+<td>Tap</td>
+<td>Dropdown: Last 7 days, Last 30 days, Last 90 days, Custom</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="ally-002-alliance-member-list" tabindex="-1"><a class="heading-anchor" href="#ally-002-alliance-member-list" aria-hidden="true">#</a> ALLY-002: Alliance Member List</h2>
+<p>Shows all organizations in the alliance with their membership status, contribution metrics, and sharing configuration summary.</p>
+<h3 id="personas-1" tabindex="-1"><a class="heading-anchor" href="#personas-1" aria-hidden="true">#</a> Personas</h3>
+<ul>
+<li>Org Admin</li>
+</ul>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Members                                                                     │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  Coalición Verde · 3 active members, 1 pending                               │
+│                                                                              │
+│  [+ Invite Organization]                                        🔍 Search   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                       │   │
+│  │  Name                    Status    Joined      Sharing     Actions    │   │
+│  │  ─────────────────────────────────────────────────────────────────    │   │
+│  │                                                                       │   │
+│  │  🟢 Partido Verde        Active    Jan 2024    Full          [⋯]     │   │
+│  │     Your organization                                                 │   │
+│  │     42 shared volunteers · 1,842 doors · $68,200 raised              │   │
+│  │                                                                       │   │
+│  │  🟢 Movimiento Ecologista Active   Mar 2024    Full          [⋯]     │   │
+│  │     28 shared volunteers · 1,204 doors · $45,300 raised              │   │
+│  │                                                                       │   │
+│  │  🟢 Candidatura Torres    Active    Jun 2024    Partial      [⋯]     │   │
+│  │     17 shared volunteers · 845 doors · $29,300 raised                │   │
+│  │     ⚠ Event sharing disabled                                         │   │
+│  │                                                                       │   │
+│  │  ⏳ Partido Progresista   Pending   —           —            [⋯]     │   │
+│  │     Requested Feb 28 · Awaiting approval                             │   │
+│  │     [Review Request →]                                                │   │
+│  │                                                                       │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Showing 4 organizations                                                     │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="detail-panel-right-side" tabindex="-1"><a class="heading-anchor" href="#detail-panel-right-side" aria-hidden="true">#</a> Detail Panel (Right Side)</h3>
+<p>Clicking an org name opens a detail panel on the right (desktop detail panel pattern):</p>
+<pre><code>┌────────────────────────────────────┐
+│  Movimiento Ecologista         ✕   │
+│  ────────────────────              │
+│                                    │
+│  Status: 🟢 Active                │
+│  Joined: March 15, 2024           │
+│  Primary contact: Ana Rodríguez   │
+│                                    │
+│  Sharing Configuration             │
+│  ────────────────────              │
+│  Volunteers     🟢 Sharing        │
+│  Voter data     🟢 Sharing        │
+│  Canvass turfs  🟢 Sharing        │
+│  Events         🟢 Sharing        │
+│  Analytics      🟢 Sharing        │
+│                                    │
+│  Contribution (Last 30 days)       │
+│  ────────────────────              │
+│  Raised:       $45,300             │
+│  Doors:         1,204              │
+│  Volunteers:       28              │
+│  Calls:            312             │
+│                                    │
+│  Joint Campaigns                   │
+│  ────────────────────              │
+│  ● Voter Reg Drive     Active      │
+│  ● Fundraising Coalition Active    │
+│                                    │
+│  [View Full Profile →]             │
+│  [Edit Sharing →]                  │
+└────────────────────────────────────┘
+</code></pre>
+<h3 id="actions-menu-" tabindex="-1"><a class="heading-anchor" href="#actions-menu-" aria-hidden="true">#</a> Actions Menu (⋯)</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>View profile</td>
+<td>Open detail panel</td>
+</tr>
+<tr>
+<td>Edit sharing</td>
+<td>Navigate to ALLY-005 scoped to this org</td>
+</tr>
+<tr>
+<td>View contributions</td>
+<td>Drill into org's metrics</td>
+</tr>
+<tr>
+<td>Remove from alliance</td>
+<td>Confirmation dialog with consequences listed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="design-notes" tabindex="-1"><a class="heading-anchor" href="#design-notes" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>&quot;Your organization&quot; label on the user's own org — always listed first</li>
+<li>Sharing column shows &quot;Full&quot; (all categories active) or &quot;Partial&quot; (some disabled, with inline warning)</li>
+<li>Pending orgs show request date and review action</li>
+<li>Metric summaries inline under each org give quick context without navigating away</li>
+<li>Desktop only — no mobile variant (per screen inventory)</li>
+</ul>
+<hr>
+<h2 id="ally-003-affiliation-request-form" tabindex="-1"><a class="heading-anchor" href="#ally-003-affiliation-request-form" aria-hidden="true">#</a> ALLY-003: Affiliation Request Form</h2>
+<p>The form an organization fills out to request joining the alliance.</p>
+<h3 id="personas-2" tabindex="-1"><a class="heading-anchor" href="#personas-2" aria-hidden="true">#</a> Personas</h3>
+<ul>
+<li>Org Admin (requesting org)</li>
+</ul>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Request Alliance Affiliation                                                │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  You are requesting to join:                                                 │
+│  ┌──────────────────────────────────────────┐                               │
+│  │  🏛 Coalición Verde                       │                               │
+│  │  3 member organizations                   │                               │
+│  │  Founded: January 2024                    │                               │
+│  └──────────────────────────────────────────┘                               │
+│                                                                              │
+│  About Your Organization                                                     │
+│  ────────────────────                                                        │
+│                                                                              │
+│  Organization name:   [Partido Progresista               ]                  │
+│  Primary contact:     [Elena Torres                      ]                  │
+│  Contact email:       [elena@partidoprogresista.org      ]                  │
+│  Contact phone:       [+1 (787) 555-0134                 ]                  │
+│                                                                              │
+│  Why do you want to join this alliance?                                      │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  We share environmental policy goals and want to coordinate         │   │
+│  │  voter outreach in the western municipalities...                     │   │
+│  │                                                                       │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Proposed Sharing                                                            │
+│  ────────────────                                                            │
+│  These are your initial preferences. Sharing details are finalized           │
+│  after approval.                                                             │
+│                                                                              │
+│  ☑ Volunteer pool — share volunteers for joint campaigns                    │
+│  ☑ Voter contact data — contribute to shared contact universe               │
+│  ☐ Canvassing turfs — coordinate turf assignment                            │
+│  ☑ Event coordination — share event logistics                               │
+│  ☑ Analytics — participate in aggregate reporting                           │
+│                                                                              │
+│                                                                              │
+│  [Cancel]                                           [Submit Request →]      │
+│                                                                              │
+│  By submitting, your request will be reviewed by the alliance                │
+│  administrators. You will be notified of the decision.                       │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="after-submission" tabindex="-1"><a class="heading-anchor" href="#after-submission" aria-hidden="true">#</a> After Submission</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Request Submitted                                                           │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│                            ✓                                                 │
+│                                                                              │
+│              Your affiliation request has been                               │
+│              submitted to Coalición Verde.                                   │
+│                                                                              │
+│              The alliance administrators will                                │
+│              review your request and you'll be                               │
+│              notified of their decision.                                      │
+│                                                                              │
+│              Typical review time: 2–5 business days                          │
+│                                                                              │
+│              [Return to Dashboard →]                                         │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="design-notes-1" tabindex="-1"><a class="heading-anchor" href="#design-notes-1" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>The alliance summary card at the top confirms what the user is joining</li>
+<li>Proposed sharing preferences are non-binding — they signal intent but are finalized during the onboarding process after approval</li>
+<li>Desktop only (per screen inventory)</li>
+<li>The form pre-fills organization name and contact details from the org's existing profile</li>
+</ul>
+<hr>
+<h2 id="ally-004-affiliation-request-queue" tabindex="-1"><a class="heading-anchor" href="#ally-004-affiliation-request-queue" aria-hidden="true">#</a> ALLY-004: Affiliation Request Queue</h2>
+<p>Where alliance admins review incoming affiliation requests.</p>
+<h3 id="personas-3" tabindex="-1"><a class="heading-anchor" href="#personas-3" aria-hidden="true">#</a> Personas</h3>
+<ul>
+<li>Org Admin (alliance admin role)</li>
+</ul>
+<h3 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Affiliation Requests                                                        │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  2 pending · 5 approved · 1 declined                                         │
+│                                                                              │
+│  [Pending]  [Approved]  [Declined]                                           │
+│  ─────────                                                                   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Partido Progresista                               Requested Feb 28  │   │
+│  │  ──────────────────────                                              │   │
+│  │  Contact: Elena Torres · elena@partidoprogresista.org                │   │
+│  │                                                                       │   │
+│  │  &quot;We share environmental policy goals and want to coordinate         │   │
+│  │  voter outreach in the western municipalities...&quot;                     │   │
+│  │                                                                       │   │
+│  │  Proposed sharing: Volunteers, Voter data, Events, Analytics          │   │
+│  │                                                                       │   │
+│  │  [Approve]  [Decline]  [Request More Info]                           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Coalición Urbana                                  Requested Feb 15  │   │
+│  │  ──────────────────────                                              │   │
+│  │  Contact: Marco Díaz · marco@coalicionurbana.org                     │   │
+│  │                                                                       │   │
+│  │  &quot;Looking to coordinate urban housing advocacy campaigns              │   │
+│  │  across metropolitan municipalities...&quot;                               │   │
+│  │                                                                       │   │
+│  │  Proposed sharing: Volunteers, Events                                 │   │
+│  │                                                                       │   │
+│  │  [Approve]  [Decline]  [Request More Info]                           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Showing 2 pending requests                                                  │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="approval-confirmation-dialog" tabindex="-1"><a class="heading-anchor" href="#approval-confirmation-dialog" aria-hidden="true">#</a> Approval Confirmation Dialog</h3>
+<pre><code>┌────────────────────────────────────────────┐
+│  Approve Partido Progresista?              │
+│  ──────────────────────────────            │
+│                                            │
+│  This will:                                │
+│  • Add them as a member of Coalición Verde │
+│  • Enable their proposed sharing settings  │
+│  • Give them access to alliance features   │
+│                                            │
+│  You can adjust sharing permissions        │
+│  after approval in Sharing Configuration.  │
+│                                            │
+│  [Cancel]                       [Approve]  │
+└────────────────────────────────────────────┘
+</code></pre>
+<h3 id="decline-dialog" tabindex="-1"><a class="heading-anchor" href="#decline-dialog" aria-hidden="true">#</a> Decline Dialog</h3>
+<pre><code>┌────────────────────────────────────────────┐
+│  Decline Partido Progresista?              │
+│  ──────────────────────────────            │
+│                                            │
+│  Reason (optional — will be sent to the    │
+│  requesting organization):                 │
+│  ┌────────────────────────────────────┐    │
+│  │                                    │    │
+│  └────────────────────────────────────┘    │
+│                                            │
+│  ☐ Allow them to reapply in the future    │
+│                                            │
+│  [Cancel]                      [Decline]   │
+└────────────────────────────────────────────┘
+</code></pre>
+<h3 id="tab-states" tabindex="-1"><a class="heading-anchor" href="#tab-states" aria-hidden="true">#</a> Tab States</h3>
+<ul>
+<li><strong>Pending:</strong> Requests awaiting decision (default view)</li>
+<li><strong>Approved:</strong> Historical approved requests with join date</li>
+<li><strong>Declined:</strong> Historical declined requests with reason and whether reapplication is allowed</li>
+</ul>
+<h3 id="design-notes-2" tabindex="-1"><a class="heading-anchor" href="#design-notes-2" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>Quoted motivation text from the request form is displayed inline — gives reviewers context without navigating away</li>
+<li>&quot;Request More Info&quot; sends a message to the requesting org's contact (opens compose in messaging)</li>
+<li>Desktop only (per screen inventory)</li>
+<li>Approval requires confirmation to prevent accidental clicks</li>
+<li>Each request card is a self-contained unit with all information needed for a decision</li>
+</ul>
+<hr>
+<h2 id="ally-005-sharing-configuration" tabindex="-1"><a class="heading-anchor" href="#ally-005-sharing-configuration" aria-hidden="true">#</a> ALLY-005: Sharing Configuration</h2>
+<p>Controls what each member organization shares with the alliance, at a granular level. The most critical alliance screen for data governance.</p>
+<h3 id="personas-4" tabindex="-1"><a class="heading-anchor" href="#personas-4" aria-hidden="true">#</a> Personas</h3>
+<ul>
+<li>Org Admin</li>
+</ul>
+<h3 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Sharing Configuration                                                       │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  Coalición Verde · Manage what is shared across the alliance                 │
+│                                                                              │
+│  ┌───────────────────────┐                                                   │
+│  │ All Members │ By Org  │  ← tab toggle                                    │
+│  └───────────────────────┘                                                   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Volunteer Sharing                                         🟢 Active │   │
+│  │  ──────────────────                                                   │   │
+│  │                                                                       │   │
+│  │  Shared pool: 87 volunteers across 3 organizations                    │   │
+│  │                                                                       │   │
+│  │  Rules:                                                               │   │
+│  │  • Volunteers must consent to cross-org assignment                    │   │
+│  │  • Home org retains scheduling priority                               │   │
+│  │  • Training requirements: home org's standards apply                  │   │
+│  │                                                                       │   │
+│  │  Per-org status:                                                      │   │
+│  │  Partido Verde          42 shared   🟢 Active    [Edit rules →]      │   │
+│  │  Mov. Ecologista        28 shared   🟢 Active    [Edit rules →]      │   │
+│  │  Candidatura Torres     17 shared   🟢 Active    [Edit rules →]      │   │
+│  │                                                                       │   │
+│  │  [Configure volunteer sharing →]                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Voter Contact Data                                        🟢 Active │   │
+│  │  ──────────────────                                                   │   │
+│  │                                                                       │   │
+│  │  Shared universe: 8,450 contacts (deduped from 9,690 across orgs)    │   │
+│  │  Dedup savings: 1,240 contacts (12.8%)                               │   │
+│  │                                                                       │   │
+│  │  Rules:                                                               │   │
+│  │  • &quot;Don't re-knock&quot; list enforced across all orgs                     │   │
+│  │  • Contact ownership retained by originating org                      │   │
+│  │  • Support scores visible across orgs (read-only)                     │   │
+│  │                                                                       │   │
+│  │  Per-org status:                                                      │   │
+│  │  Partido Verde          4,200 contacts  🟢 Active  [Edit rules →]    │   │
+│  │  Mov. Ecologista        3,100 contacts  🟢 Active  [Edit rules →]    │   │
+│  │  Candidatura Torres     2,390 contacts  🟢 Active  [Edit rules →]    │   │
+│  │                                                                       │   │
+│  │  [Configure data sharing →]                                           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Canvassing Turfs                                          🟢 Active │   │
+│  │  ──────────────────                                                   │   │
+│  │                                                                       │   │
+│  │  Coordinated turfs: 12 turfs across 3 municipalities                  │   │
+│  │  Overlap: None detected ✓                                             │   │
+│  │                                                                       │   │
+│  │  [Configure turf coordination →]                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Event Coordination                                       🟡 Partial │   │
+│  │  ──────────────────                                                   │   │
+│  │                                                                       │   │
+│  │  2 of 3 organizations participating                                   │   │
+│  │                                                                       │   │
+│  │  Partido Verde          🟢 Active                                    │   │
+│  │  Mov. Ecologista        🟢 Active                                    │   │
+│  │  Candidatura Torres     🔴 Disabled — [Request opt-in →]            │   │
+│  │                                                                       │   │
+│  │  [Configure event sharing →]                                          │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Analytics                                                 🟢 Active │   │
+│  │  ──────────────────                                                   │   │
+│  │                                                                       │   │
+│  │  All 3 organizations sharing aggregate analytics                      │   │
+│  │  Per-org breakdowns visible to: Alliance admins only                  │   │
+│  │                                                                       │   │
+│  │  [Configure analytics sharing →]                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="by-org-tab-view" tabindex="-1"><a class="heading-anchor" href="#by-org-tab-view" aria-hidden="true">#</a> &quot;By Org&quot; Tab View</h3>
+<p>When the user switches to the &quot;By Org&quot; tab, the same data is reorganized by organization instead of by sharing category:</p>
+<pre><code>  ┌──────────────────────────────────────────────────────────────────────┐
+  │  Candidatura Torres                                                   │
+  │  ──────────────────                                                   │
+  │                                                                       │
+  │  Volunteer sharing    🟢 Active    17 shared                         │
+  │  Voter contact data   🟢 Active    2,390 contacts                    │
+  │  Canvassing turfs     🟢 Active                                      │
+  │  Event coordination   🔴 Disabled                                    │
+  │  Analytics            🟢 Active                                      │
+  │                                                                       │
+  │  [Edit all sharing for this org →]                                    │
+  └──────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="design-notes-3" tabindex="-1"><a class="heading-anchor" href="#design-notes-3" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>Two views of the same data: &quot;All Members&quot; (by category) and &quot;By Org&quot; (by organization). Same underlying configuration, different lens.</li>
+<li>Status indicators: 🟢 Active, 🟡 Partial (some orgs opted out), 🔴 Disabled</li>
+<li>&quot;Request opt-in&quot; sends a notification to the org's admin asking them to enable that sharing category</li>
+<li>Every sharing category has inline rules — the user always sees what the sharing terms are without drilling down</li>
+<li>Dedup metrics on voter data make the value of sharing concrete</li>
+<li>Desktop only (per screen inventory)</li>
+<li>Changes to sharing configuration are audited (recorded in the alliance audit trail)</li>
+</ul>
+<hr>
+<h2 id="ally-006-joint-campaign-setup" tabindex="-1"><a class="heading-anchor" href="#ally-006-joint-campaign-setup" aria-hidden="true">#</a> ALLY-006: Joint Campaign Setup</h2>
+<p>Wizard for creating and managing joint campaigns that span multiple member organizations.</p>
+<h3 id="personas-5" tabindex="-1"><a class="heading-anchor" href="#personas-5" aria-hidden="true">#</a> Personas</h3>
+<ul>
+<li>Org Admin</li>
+</ul>
+<h3 id="desktop-step-1-campaign-type" tabindex="-1"><a class="heading-anchor" href="#desktop-step-1-campaign-type" aria-hidden="true">#</a> Desktop — Step 1: Campaign Type</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Create Joint Campaign                                      Step 1 of 4     │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  ● Campaign Type  ○ Participants  ○ Configuration  ○ Review                 │
+│                                                                              │
+│  What kind of joint campaign?                                                │
+│                                                                              │
+│  ┌────────────────────────────────┐  ┌────────────────────────────────┐     │
+│  │  🗳 GOTV / Voter Contact       │  │  💰 Joint Fundraising          │     │
+│  │                                │  │                                │     │
+│  │  Coordinate canvassing, phone  │  │  Shared donation forms with    │     │
+│  │  banking, and voter outreach   │  │  configurable splits between   │     │
+│  │  across organizations.         │  │  member organizations.         │     │
+│  │                                │  │                                │     │
+│  │  Includes: shared voter data,  │  │  Includes: split rules,       │     │
+│  │  turf coordination, don't-     │  │  shared forms, per-org        │     │
+│  │  re-knock lists, shared pools  │  │  attribution, compliance.     │     │
+│  │                                │  │                                │     │
+│  │  [Select →]                    │  │  [Select →]                    │     │
+│  └────────────────────────────────┘  └────────────────────────────────┘     │
+│                                                                              │
+│  ┌────────────────────────────────┐  ┌────────────────────────────────┐     │
+│  │  📋 Voter Registration         │  │  📅 Event Coordination         │     │
+│  │                                │  │                                │     │
+│  │  Joint voter registration      │  │  Coordinate events across      │     │
+│  │  drives with shared targets    │  │  orgs: shared logistics,       │     │
+│  │  and territory coordination.   │  │  volunteer scheduling, and     │     │
+│  │                                │  │  cross-promotion.              │     │
+│  │  [Select →]                    │  │  [Select →]                    │     │
+│  └────────────────────────────────┘  └────────────────────────────────┘     │
+│                                                                              │
+│  [Cancel]                                                                    │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="desktop-step-2-participants" tabindex="-1"><a class="heading-anchor" href="#desktop-step-2-participants" aria-hidden="true">#</a> Desktop — Step 2: Participants</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Create Joint Campaign                                      Step 2 of 4     │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  ✓ Campaign Type  ● Participants  ○ Configuration  ○ Review                 │
+│                                                                              │
+│  Voter Registration Drive                                                    │
+│                                                                              │
+│  Which organizations will participate?                                       │
+│                                                                              │
+│  ☑ Partido Verde          42 volunteers available                           │
+│  ☑ Movimiento Ecologista  28 volunteers available                           │
+│  ☑ Candidatura Torres     17 volunteers available                           │
+│                                                                              │
+│  All 3 member organizations selected.                                        │
+│                                                                              │
+│  Governance model                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  ◉ Shared governance                                                        │
+│    Multiple orgs collaborate as co-equals with shared permissions.            │
+│    Best for: campaigns where organizations are true partners.                │
+│                                                                              │
+│  ○ Alliance-controlled                                                       │
+│    Alliance admin directs operations. Orgs contribute resources.              │
+│    Best for: tightly coordinated efforts like a national GOTV push.          │
+│                                                                              │
+│  ○ Org-controlled                                                            │
+│    Each org runs their piece independently. Alliance coordinates.             │
+│    Best for: loose coalitions or issue-based alignments.                      │
+│                                                                              │
+│                                                                              │
+│  [← Back]                                              [Continue →]         │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="desktop-step-3-configuration-voter-registration-example" tabindex="-1"><a class="heading-anchor" href="#desktop-step-3-configuration-voter-registration-example" aria-hidden="true">#</a> Desktop — Step 3: Configuration (Voter Registration example)</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Create Joint Campaign                                      Step 3 of 4     │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  ✓ Campaign Type  ✓ Participants  ● Configuration  ○ Review                 │
+│                                                                              │
+│  Campaign Details                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  Campaign name:    [Voter Registration Drive — Spring 2024   ]              │
+│  Start date:       [March 15, 2024      ]                                   │
+│  End date:         [April 30, 2024      ]                                   │
+│  Goal:             [500 new registrations]                                   │
+│                                                                              │
+│  Territory                                                                   │
+│  ────────────────                                                            │
+│                                                                              │
+│  ◉ Assign territories by organization                                       │
+│    Each org is responsible for specific municipalities or turfs.              │
+│                                                                              │
+│  ○ Shared territory                                                          │
+│    All orgs work the same territory with dedup coordination.                 │
+│                                                                              │
+│  Resource Sharing                                                            │
+│  ────────────────                                                            │
+│                                                                              │
+│  ☑ Share volunteer pool across organizations                                │
+│  ☑ Enforce &quot;don't re-contact&quot; across organizations                          │
+│  ☑ Merge voter contact data into shared universe                            │
+│  ☐ Allow cross-org volunteer assignment (requires volunteer consent)         │
+│                                                                              │
+│                                                                              │
+│  [← Back]                                              [Continue →]         │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="desktop-step-3-configuration-joint-fundraising-variant" tabindex="-1"><a class="heading-anchor" href="#desktop-step-3-configuration-joint-fundraising-variant" aria-hidden="true">#</a> Desktop — Step 3: Configuration (Joint Fundraising variant)</h3>
+<p>For fundraising campaigns, Step 3 includes the split configuration:</p>
+<pre><code>│  Donation Split                                                              │
+│  ────────────────                                                            │
+│                                                                              │
+│  Split type: [Percentage-based ▾]                                           │
+│                                                                              │
+│  Partido Verde          [40] %                                              │
+│  Movimiento Ecologista  [35] %                                              │
+│  Candidatura Torres     [25] %                                              │
+│                                        Total: 100% ✓                        │
+│                                                                              │
+│  Calculated on: ◉ Net amount (after processor fees)                         │
+│                 ○ Gross amount                                               │
+│                                                                              │
+│  Disbursement:  [Immediate ▾]                                               │
+│  Each org must have a connected payment account.                             │
+│                                                                              │
+│  ⚠ All participating organizations must approve these                       │
+│  split terms before the campaign goes live.                                  │
+</code></pre>
+<h3 id="desktop-step-4-review-launch" tabindex="-1"><a class="heading-anchor" href="#desktop-step-4-review-launch" aria-hidden="true">#</a> Desktop — Step 4: Review &amp; Launch</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Create Joint Campaign                                      Step 4 of 4     │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  ✓ Campaign Type  ✓ Participants  ✓ Configuration  ● Review                 │
+│                                                                              │
+│  Review Your Joint Campaign                                                  │
+│  ─────────────────────────                                                   │
+│                                                                              │
+│  Type:           Voter Registration                                          │
+│  Name:           Voter Registration Drive — Spring 2024                      │
+│  Dates:          March 15 – April 30, 2024                                   │
+│  Goal:           500 new registrations                                        │
+│  Governance:     Shared governance                                            │
+│  Territory:      Assigned by organization                                    │
+│                                                                              │
+│  Participants                                                                │
+│  ────────────────                                                            │
+│  ✓ Partido Verde                                                             │
+│  ✓ Movimiento Ecologista                                                     │
+│  ✓ Candidatura Torres                                                        │
+│                                                                              │
+│  Resource Sharing                                                            │
+│  ────────────────                                                            │
+│  ✓ Shared volunteer pool                                                     │
+│  ✓ Don't re-contact enforcement                                             │
+│  ✓ Merged voter contact data                                                │
+│  ✗ Cross-org volunteer assignment                                            │
+│                                                                              │
+│  What happens next                                                           │
+│  ────────────────                                                            │
+│  1. Each participating org admin will receive an approval request            │
+│  2. Once all orgs approve, the campaign goes live                            │
+│  3. Shared resources are activated per the configuration above               │
+│                                                                              │
+│  [← Back]                                        [Send for Approval →]      │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="design-notes-4" tabindex="-1"><a class="heading-anchor" href="#design-notes-4" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>4-step wizard using the wizard shell layout (per <a href="http://navigation-shell.md" target="_blank" rel="noopener noreferrer">navigation-shell.md</a>)</li>
+<li>Step 1 is a selection card pattern, not a form — the user picks the campaign type visually</li>
+<li>The three governance models are a critical decision — descriptions explain when each is appropriate</li>
+<li>Joint fundraising requires unanimous consent from all participating orgs before going live</li>
+<li>&quot;Send for Approval&quot; (not &quot;Launch&quot;) — the campaign requires multi-org approval before activation</li>
+<li>Desktop only (per screen inventory)</li>
+<li>The wizard can be saved as a draft and resumed later</li>
+</ul>
+<hr>
+<h2 id="ally-007-shared-analytics" tabindex="-1"><a class="heading-anchor" href="#ally-007-shared-analytics" aria-hidden="true">#</a> ALLY-007: Shared Analytics</h2>
+<p>Cross-org analytics with aggregate metrics and per-org breakdowns. The &quot;how are we doing together?&quot; view.</p>
+<h3 id="personas-6" tabindex="-1"><a class="heading-anchor" href="#personas-6" aria-hidden="true">#</a> Personas</h3>
+<ul>
+<li>Org Admin</li>
+</ul>
+<h3 id="desktop-5" tabindex="-1"><a class="heading-anchor" href="#desktop-5" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Shared Analytics                                   Date range: [Last 30 ▾] │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  Coalición Verde · 3 organizations                                           │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  🚪 Doors     │  │  📞 Calls     │  │  📋 Registered│  │  👥 Active   │    │
+│  │  3,891        │  │  1,847        │  │  342          │  │  87          │    │
+│  │  combined     │  │  combined     │  │  combined     │  │  volunteers  │    │
+│  │  ↑ 12%       │  │  ↑ 8%        │  │  ↑ 24%       │  │  across orgs │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Voter Contact Trend (30 days)                                        │   │
+│  │  ─────────────────────────────                                        │   │
+│  │                                                                       │   │
+│  │  600 ┤                                                               │   │
+│  │  500 ┤              ___                  ___                          │   │
+│  │  400 ┤         ____/   \     ___        /   \____                    │   │
+│  │  300 ┤    ____/         \___/   \______/         \___                │   │
+│  │  200 ┤___/                                            \__            │   │
+│  │  100 ┤                                                               │   │
+│  │       W1       W2       W3       W4                                  │   │
+│  │                                                                       │   │
+│  │  ── Partido Verde  ── Mov. Ecologista  ── Candidatura Torres         │   │
+│  │  ━━ Alliance Total                                                    │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Per-Organization Breakdown                                           │   │
+│  │  ──────────────────────────                                           │   │
+│  │                                                                       │   │
+│  │               Doors    Calls    Registered   Volunteers   Contact %   │   │
+│  │  Partido V.   1,842      723         156           42      71.4%     │   │
+│  │  Mov. Ecol.   1,204      687         112           28      64.8%     │   │
+│  │  Cand. Torres   845      437          74           17      62.1%     │   │
+│  │  ─────────────────────────────────────────────────────────────────    │   │
+│  │  Alliance     3,891    1,847         342           87      68.2%     │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Support Score Distribution     │  │  Shared Universe Health          │   │
+│  │  ─────────────────────          │  │  ───────────────────             │   │
+│  │                                 │  │                                   │   │
+│  │  Strong Support  ▓▓▓▓▓▓▓ 28%   │  │  Total contacts:     8,450      │   │
+│  │  Lean Support    ▓▓▓▓▓▓▓▓ 32%  │  │  Deduped from:       9,690      │   │
+│  │  Undecided       ▓▓▓▓▓  19%    │  │  Overlap:            12.8%      │   │
+│  │  Lean Oppose     ▓▓     8%     │  │                                   │   │
+│  │  Strong Oppose   ▓      4%     │  │  Contacted:          68.2%      │   │
+│  │  Not Home        ▓▓     9%     │  │  Not yet contacted:  31.8%      │   │
+│  │                                 │  │                                   │   │
+│  │  ── Alliance total              │  │  Don't-re-knock list: 2,847     │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Joint Campaign Progress                                              │   │
+│  │  ───────────────────────                                              │   │
+│  │                                                                       │   │
+│  │  Voter Reg Drive        ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░  68%   342/500        │   │
+│  │    PV: 156  ME: 112  CT: 74                                          │   │
+│  │                                                                       │   │
+│  │  Fundraising Coalition  ▓▓▓▓▓▓▓▓▓░░░░░░░░░░░  47%   $142,800/$300K │   │
+│  │    PV: $68.2K  ME: $45.3K  CT: $29.3K                               │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="data-visibility-rules" tabindex="-1"><a class="heading-anchor" href="#data-visibility-rules" aria-hidden="true">#</a> Data Visibility Rules</h3>
+<ul>
+<li><strong>Alliance admins</strong> see all per-org breakdowns</li>
+<li><strong>Member org admins</strong> see their own org's data + alliance aggregate totals (not other orgs' individual numbers)</li>
+<li>This is enforced server-side, not just hidden in the UI</li>
+</ul>
+<h3 id="design-notes-5" tabindex="-1"><a class="heading-anchor" href="#design-notes-5" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>Multi-line chart with per-org series + bold alliance total line</li>
+<li>Breakdown table uses abbreviated org names to fit in columns</li>
+<li>&quot;Shared Universe Health&quot; card makes the dedup value proposition concrete</li>
+<li>Joint campaign progress shows per-org contribution inline</li>
+<li>Desktop only (per screen inventory)</li>
+<li>All charts are clickable — drill into the underlying data</li>
+</ul>
+<hr>
+<h2 id="ally-008-gotv-alliance-coordination" tabindex="-1"><a class="heading-anchor" href="#ally-008-gotv-alliance-coordination" aria-hidden="true">#</a> ALLY-008: GOTV Alliance Coordination</h2>
+<p>Election day coordination across alliance member organizations. Extends the War Room (DASH-008) with cross-org visibility.</p>
+<h3 id="personas-7" tabindex="-1"><a class="heading-anchor" href="#personas-7" aria-hidden="true">#</a> Personas</h3>
+<ul>
+<li>Org Admin</li>
+<li>Field Director</li>
+</ul>
+<h3 id="desktop-6" tabindex="-1"><a class="heading-anchor" href="#desktop-6" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ████████████████  ELECTION DAY ACTIVE  ████████████████  Polls close: 4h 23m│
+├──────────────────────────────────────────────────────────────────────────────┤
+│  Alliance GOTV Coordination                          Auto-refresh: 30s  ↻  ● │
+│  Coalición Verde · 3 organizations                                           │
+│  ─────────────────────────────────────────────────────────────────────────── │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  🗳 COMBINED  │  │  🚪 TOTAL    │  │  🚗 RIDES    │  │  ⚠ ISSUES    │    │
+│  │  TURNOUT      │  │  KNOCKED     │  │  ALL ORGS    │  │  ALL ORGS    │    │
+│  │  11,847       │  │  7,234/12,000│  │  34 pending  │  │  7 open      │    │
+│  │  of 34,200    │  │  60%         │  │  128 complete│  │  3 escalated │    │
+│  │  34.6%        │  │  across 3 orgs│  │              │  │              │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Turnout by Organization                                              │   │
+│  │  ───────────────────────                                              │   │
+│  │                                                                       │   │
+│  │  Partido Verde                                                        │   │
+│  │    Precinct 1 (San Juan)    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░  41%   🟢 On track │   │
+│  │    Precinct 3 (Carolina)    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░  44%   🟢 On track │   │
+│  │    Subtotal: 4,231 of 12,450 (34.0%)                                 │   │
+│  │                                                                       │   │
+│  │  Movimiento Ecologista                                                │   │
+│  │    Precinct 2 (Bayamón)     ▓▓▓▓▓▓▓▓▓▓░░░░░░░░  32%   🟡 Behind   │   │
+│  │    Precinct 5 (Caguas)      ▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░  37%   🟡 Behind   │   │
+│  │    Subtotal: 4,892 of 13,800 (35.4%)                                 │   │
+│  │                                                                       │   │
+│  │  Candidatura Torres                                                   │   │
+│  │    Precinct 4 (Ponce)       ▓▓▓▓▓░░░░░░░░░░░░░░  22%   🔴 Critical │   │
+│  │    Subtotal: 2,724 of 7,950 (34.3%)                                   │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Cross-Org Reallocation         │  │  Alliance Live Feed              │   │
+│  │  ──────────────────             │  │  ───────────────                 │   │
+│  │                                 │  │                                   │   │
+│  │  🟡 Move 6 volunteers from     │  │  ● 2:45 PM                      │   │
+│  │     Partido Verde (ahead)  →   │  │  Mov. Ecologista: 3 rides       │   │
+│  │     Candidatura Torres (behind) │  │  fulfilled by PV drivers        │   │
+│  │     Impact: +est. 180 contacts │  │                                   │   │
+│  │     Requires: PV + CT approval  │  │  ● 2:38 PM                      │   │
+│  │     [Approve]  [Modify]         │  │  Ponce precinct 4 below         │   │
+│  │                                 │  │  target. Alliance reallocation   │   │
+│  │  🟡 Share 3 drivers from       │  │  suggested.                      │   │
+│  │     Mov. Ecologista  →         │  │                                   │   │
+│  │     Candidatura Torres area    │  │  ● 2:30 PM                      │   │
+│  │     (18 pending ride requests) │  │  Don't-re-knock conflict:        │   │
+│  │     [Approve]  [Modify]         │  │  Resolved. PV defers to ME      │   │
+│  │                                 │  │  for Calle Esperanza.            │   │
+│  │                                 │  │                                   │   │
+│  │                                 │  │  ● 2:22 PM                      │   │
+│  │                                 │  │  CT volunteer checked in at      │   │
+│  │                                 │  │  PV staging area (cross-org).    │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Communication Waves                                                  │   │
+│  │  ───────────────────                                                  │   │
+│  │                                                                       │   │
+│  │  Alliance-level:   Wave 1 ✓ (8 AM)   Wave 2 ✓ (2 PM)   Wave 3 ○ (5 PM) │
+│  │  Partido Verde:    Wave 1 ✓          Wave 2 ✓           Wave 3 ○    │   │
+│  │  Mov. Ecologista:  Wave 1 ✓          Wave 2 ✓           Wave 3 ○    │   │
+│  │  Cand. Torres:     Wave 1 ✓          Wave 2 — skipped   Wave 3 ○    │   │
+│  │                                                                       │   │
+│  │  [Manage alliance waves →]                                            │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="key-differences-from-single-org-war-room-dash-008" tabindex="-1"><a class="heading-anchor" href="#key-differences-from-single-org-war-room-dash-008" aria-hidden="true">#</a> Key Differences from Single-Org War Room (DASH-008)</h3>
+<ul>
+<li><strong>Election Day banner:</strong> Same persistent banner, shared across alliance and org views</li>
+<li><strong>Metrics are alliance-wide aggregates</strong> with &quot;all orgs&quot; attribution</li>
+<li><strong>Turnout by Organization:</strong> Precinct data grouped under each org, not flat. Each org sees the full picture.</li>
+<li><strong>Cross-Org Reallocation:</strong> The alliance-specific feature — moving resources between organizations. Requires approval from both the sending and receiving org.</li>
+<li><strong>Alliance Live Feed:</strong> Shows cross-org events: ride sharing, turf conflicts resolved, cross-org volunteer check-ins</li>
+<li><strong>Communication Waves:</strong> Shows both alliance-level and per-org communication timing</li>
+<li><strong>Dark mode default</strong> (inherits from War Room)</li>
+<li><strong>Auto-refresh every 30s</strong> (inherits from War Room)</li>
+<li><strong>Sidebar collapsed to icons</strong> to maximize screen space (inherits from War Room)</li>
+</ul>
+<h3 id="cross-org-reallocation-rules" tabindex="-1"><a class="heading-anchor" href="#cross-org-reallocation-rules" aria-hidden="true">#</a> Cross-Org Reallocation Rules</h3>
+<ul>
+<li>Reallocation suggestions are generated when one org is significantly ahead and another is critically behind</li>
+<li>Requires approval from both the sending org and the receiving org</li>
+<li>Volunteers being reassigned cross-org must have previously consented to cross-org assignment</li>
+<li>Ride sharing is automatic if cross-org ride coordination was enabled in the joint campaign setup</li>
+</ul>
+<hr>
+<h2 id="alliance-empty-states" tabindex="-1"><a class="heading-anchor" href="#alliance-empty-states" aria-hidden="true">#</a> Alliance Empty States</h2>
+<h3 id="alliance-dashboard-no-alliance" tabindex="-1"><a class="heading-anchor" href="#alliance-dashboard-no-alliance" aria-hidden="true">#</a> Alliance Dashboard — No Alliance</h3>
+<p>When the user's org is not part of any alliance:</p>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Alliance                                                                    │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│                                                                              │
+│                         🏛                                                   │
+│                                                                              │
+│                  Your organization is not part                                │
+│                  of an alliance.                                              │
+│                                                                              │
+│         Alliances let multiple organizations coordinate                      │
+│         campaigns, share volunteers, and report aggregate                    │
+│         metrics — while each org keeps control of its data.                  │
+│                                                                              │
+│         ┌────────────────────────────────────┐                               │
+│         │  Options:                           │                               │
+│         │                                     │                               │
+│         │  1. Create a new alliance           │                               │
+│         │  2. Request to join an existing one  │                               │
+│         └────────────────────────────────────┘                               │
+│                                                                              │
+│         [Create Alliance →]                                                  │
+│                                                                              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="alliance-dashboard-pending-affiliation" tabindex="-1"><a class="heading-anchor" href="#alliance-dashboard-pending-affiliation" aria-hidden="true">#</a> Alliance Dashboard — Pending Affiliation</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Alliance                                                                    │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│                         ⏳                                                   │
+│                                                                              │
+│                  Your affiliation request to                                  │
+│                  Coalición Verde is pending.                                  │
+│                                                                              │
+│                  Submitted: February 28, 2024                                │
+│                  Status: Awaiting review                                     │
+│                                                                              │
+│                  You'll be notified when the                                 │
+│                  alliance administrators respond.                            │
+│                                                                              │
+│         [Cancel Request]                                                     │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="alliance-dashboard-new-alliance-no-members-yet" tabindex="-1"><a class="heading-anchor" href="#alliance-dashboard-new-alliance-no-members-yet" aria-hidden="true">#</a> Alliance Dashboard — New Alliance (No Members Yet)</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Alliance Overview                                                           │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  Coalición Verde · 1 member (you)                                            │
+│                                                                              │
+│                         👥                                                   │
+│                                                                              │
+│                  Your alliance is set up.                                     │
+│                  Now invite other organizations.                              │
+│                                                                              │
+│         ┌────────────────────────────────────┐                               │
+│         │  Next steps:                        │                               │
+│         │                                     │                               │
+│         │  1. Invite organizations to join     │                               │
+│         │  2. Configure sharing rules          │                               │
+│         │  3. Create your first joint campaign │                               │
+│         └────────────────────────────────────┘                               │
+│                                                                              │
+│         [Invite Organization →]                                              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>All alliance-specific colors (teal accent) maintain WCAG AA contrast ratios against their backgrounds</li>
+<li>Status indicators (🟢 🟡 🔴) always include text labels (&quot;Active&quot;, &quot;Partial&quot;, &quot;Disabled&quot;) — never color-only</li>
+<li>Org contribution bars include percentage text — not dependent on bar length for meaning</li>
+<li>Cross-org reallocation actions have explicit &quot;Approve&quot; / &quot;Modify&quot; buttons — no drag-and-drop for critical decisions</li>
+<li>Tenant switcher dropdown is keyboard-navigable with arrow keys and Enter</li>
+<li>Alliance Live Feed items are announced by screen reader as they arrive (polite <code>aria-live</code> region)</li>
+</ul>
+<h2 id="offline-behavior" tabindex="-1"><a class="heading-anchor" href="#offline-behavior" aria-hidden="true">#</a> Offline Behavior</h2>
+<p>All alliance screens require connectivity. When offline:</p>
+<ul>
+<li>Alliance sidebar items are greyed out with an offline badge (●)</li>
+<li>Tapping a greyed item shows: &quot;Alliance features require an internet connection. Your individual campaign tools are still available offline.&quot;</li>
+<li>The alliance section remains in the sidebar (stable navigation principle — items don't disappear)</li>
+</ul>
+<hr>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alliance nav color</td>
+<td>Teal accent (<code>--color-alliance</code>) instead of standard primary</td>
+<td>Subtle but consistent signal that user is viewing cross-org data</td>
+</tr>
+<tr>
+<td>Member list as desktop-only</td>
+<td>No mobile variant</td>
+<td>Alliance admin work is strategic, not field work</td>
+</tr>
+<tr>
+<td>Sharing as two views</td>
+<td>&quot;All Members&quot; (by category) + &quot;By Org&quot; (by organization)</td>
+<td>Same data, different lenses for different questions</td>
+</tr>
+<tr>
+<td>Joint campaign as wizard</td>
+<td>4-step wizard inside wizard shell</td>
+<td>Complex multi-org setup benefits from guided flow</td>
+</tr>
+<tr>
+<td>Three governance models</td>
+<td>Lead-org / committee / equal</td>
+<td>Different alliance structures need different decision-making models</td>
+</tr>
+<tr>
+<td>Cross-org reallocation</td>
+<td>Requires dual-org approval</td>
+<td>Neither org should have resources moved without consent</td>
+</tr>
+<tr>
+<td>Request form pre-fills</td>
+<td>Org name and contact from existing profile</td>
+<td>Reduces friction; data already exists</td>
+</tr>
+<tr>
+<td>Approval as inline cards</td>
+<td>Self-contained request cards with all info</td>
+<td>Reviewers can decide without navigating away</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Alliance admin role.</strong> Currently all alliance features are restricted to Org Admin. Should there be a dedicated Alliance Admin role that can be granted to non-OA staff? This would allow a coalition coordinator to manage alliance operations without full org admin access.</p>
+</li>
+<li>
+<p><strong>Cross-alliance analytics.</strong> Should an org that belongs to multiple alliances see a cross-alliance view? Currently each alliance is independent. If a regional party belongs to both a state coalition and a national alliance, they'd switch between them via the tenant switcher.</p>
+</li>
+<li>
+<p><strong>Alliance communication channel placement.</strong> The alliance coordination channel (from <a href="http://messaging.md" target="_blank" rel="noopener noreferrer">messaging.md</a>) is a shared group conversation. Should it appear in the Alliance sidebar section or in the Messaging section? Currently unspecified.</p>
+</li>
+<li>
+<p><strong>Sharing revocation UX.</strong> When an org disables sharing for a category, what happens to already-shared data? The spec says &quot;shared resources are revoked&quot; but the UX for this (confirmation dialog, grace period, impact summary) needs design.</p>
+</li>
+<li>
+<p><strong>Alliance audit trail.</strong> All sharing configuration changes are audited. Should the audit trail be a dedicated screen (ALLY-009?) or a tab within Sharing Configuration?</p>
+</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#alliance-visual-context"># Alliance Visual Context</a></li><li class="toc-3"><a href="#alliance-navigation-shell-desktop"># Alliance Navigation Shell — Desktop</a></li><li class="toc-3"><a href="#tenant-switcher-dropdown"># Tenant Switcher Dropdown</a></li><li class="toc-2"><a href="#ally-001-alliance-dashboard"># ALLY-001: Alliance Dashboard</a></li><li class="toc-3"><a href="#personas"># Personas</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#mobile-differences"># Mobile Differences</a></li><li class="toc-3"><a href="#interaction-specs"># Interaction Specs</a></li><li class="toc-2"><a href="#ally-002-alliance-member-list"># ALLY-002: Alliance Member List</a></li><li class="toc-3"><a href="#personas-1"># Personas</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-3"><a href="#detail-panel-right-side"># Detail Panel (Right Side)</a></li><li class="toc-3"><a href="#actions-menu-"># Actions Menu (⋯)</a></li><li class="toc-3"><a href="#design-notes"># Design Notes</a></li><li class="toc-2"><a href="#ally-003-affiliation-request-form"># ALLY-003: Affiliation Request Form</a></li><li class="toc-3"><a href="#personas-2"># Personas</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-3"><a href="#after-submission"># After Submission</a></li><li class="toc-3"><a href="#design-notes-1"># Design Notes</a></li><li class="toc-2"><a href="#ally-004-affiliation-request-queue"># ALLY-004: Affiliation Request Queue</a></li><li class="toc-3"><a href="#personas-3"># Personas</a></li><li class="toc-3"><a href="#desktop-3"># Desktop</a></li><li class="toc-3"><a href="#approval-confirmation-dialog"># Approval Confirmation Dialog</a></li><li class="toc-3"><a href="#decline-dialog"># Decline Dialog</a></li><li class="toc-3"><a href="#tab-states"># Tab States</a></li><li class="toc-3"><a href="#design-notes-2"># Design Notes</a></li><li class="toc-2"><a href="#ally-005-sharing-configuration"># ALLY-005: Sharing Configuration</a></li><li class="toc-3"><a href="#personas-4"># Personas</a></li><li class="toc-3"><a href="#desktop-4"># Desktop</a></li><li class="toc-3"><a href="#by-org-tab-view"># &amp;quot;By Org&amp;quot; Tab View</a></li><li class="toc-3"><a href="#design-notes-3"># Design Notes</a></li><li class="toc-2"><a href="#ally-006-joint-campaign-setup"># ALLY-006: Joint Campaign Setup</a></li><li class="toc-3"><a href="#personas-5"># Personas</a></li><li class="toc-3"><a href="#desktop-step-1-campaign-type"># Desktop — Step 1: Campaign Type</a></li><li class="toc-3"><a href="#desktop-step-2-participants"># Desktop — Step 2: Participants</a></li><li class="toc-3"><a href="#desktop-step-3-configuration-voter-registration-example"># Desktop — Step 3: Configuration (Voter Registration example)</a></li><li class="toc-3"><a href="#desktop-step-3-configuration-joint-fundraising-variant"># Desktop — Step 3: Configuration (Joint Fundraising variant)</a></li><li class="toc-3"><a href="#desktop-step-4-review-launch"># Desktop — Step 4: Review &amp;amp; Launch</a></li><li class="toc-3"><a href="#design-notes-4"># Design Notes</a></li><li class="toc-2"><a href="#ally-007-shared-analytics"># ALLY-007: Shared Analytics</a></li><li class="toc-3"><a href="#personas-6"># Personas</a></li><li class="toc-3"><a href="#desktop-5"># Desktop</a></li><li class="toc-3"><a href="#data-visibility-rules"># Data Visibility Rules</a></li><li class="toc-3"><a href="#design-notes-5"># Design Notes</a></li><li class="toc-2"><a href="#ally-008-gotv-alliance-coordination"># ALLY-008: GOTV Alliance Coordination</a></li><li class="toc-3"><a href="#personas-7"># Personas</a></li><li class="toc-3"><a href="#desktop-6"># Desktop</a></li><li class="toc-3"><a href="#key-differences-from-single-org-war-room-dash-008"># Key Differences from Single-Org War Room (DASH-008)</a></li><li class="toc-3"><a href="#cross-org-reallocation-rules"># Cross-Org Reallocation Rules</a></li><li class="toc-2"><a href="#alliance-empty-states"># Alliance Empty States</a></li><li class="toc-3"><a href="#alliance-dashboard-no-alliance"># Alliance Dashboard — No Alliance</a></li><li class="toc-3"><a href="#alliance-dashboard-pending-affiliation"># Alliance Dashboard — Pending Affiliation</a></li><li class="toc-3"><a href="#alliance-dashboard-new-alliance-no-members-yet"># Alliance Dashboard — New Alliance (No Members Yet)</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#offline-behavior"># Offline Behavior</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

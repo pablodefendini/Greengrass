@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframes · GreenGrass</title>
+<meta name="description" content="Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="./index.html" aria-current="page" class="active">Wireframes</a></li><li><a href="./navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="./dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="./field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="./onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="./messaging/messaging.html">Messaging Wireframes</a></li><li><a href="./supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="./alliance/alliance.html">Alliance Wireframes</a></li><li><a href="./crm/crm.html">CRM / People Wireframes</a></li><li><a href="./field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="./fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="./communications/communications.html">Communications Wireframes</a></li><li><a href="./social-media/social-media.html">Social Media Wireframes</a></li><li><a href="./events/events.html">Events Wireframes</a></li><li><a href="./press/press.html">Press &amp; Media Wireframes</a></li><li><a href="./activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="./gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="./settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="./auth/auth.html">Authentication Wireframes</a></li><li><a href="./profile/profile.html">User Profile Wireframes</a></li><li><a href="./help/help.html">Support &amp; Help Wireframes</a></li><li><a href="./public/public.html">Public Pages Wireframes</a></li><li><a href="./audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="wireframes" tabindex="-1"><a class="heading-anchor" href="#wireframes" aria-hidden="true">#</a> Wireframes</h1>
+<h2 id="contents" tabindex="-1"><a class="heading-anchor" href="#contents" aria-hidden="true">#</a> Contents</h2>
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Document</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>navigation-shell/</code></td>
+<td><code>navigation-shell.md</code></td>
+<td>Desktop shell (sidebar expanded/collapsed, detail panel, notification drawer), mobile shell (all persona tab bars, hamburger menu, &quot;More&quot; bottom sheet), field mode shell, wizard shell, supporter portal shell. RTL variants. Responsive transitions.</td>
+</tr>
+<tr>
+<td><code>dashboards/</code></td>
+<td><code>dashboards.md</code></td>
+<td>All 11 dashboards: Campaign Overview, Field Operations, Fundraising, Communications, Volunteer, Data Quality, Compliance, GOTV War Room, Team Lead, Candidate, Alliance (cross-ref). Empty and loading states.</td>
+</tr>
+<tr>
+<td><code>field-mode/</code></td>
+<td><code>field-mode.md</code></td>
+<td>Complete shift lifecycle: start flow, walk list, door card (canvassing + GOTV), phone bank variant, voter registration, map view, end shift + debrief, crash recovery. Touch target specs.</td>
+</tr>
+<tr>
+<td><code>onboarding/</code></td>
+<td><code>onboarding.md</code></td>
+<td>Org Setup wizard (5 steps), Volunteer Onboarding (4 steps), BYOK Key Generation wizard (critical security flow). Post-wizard checklist.</td>
+</tr>
+<tr>
+<td><code>messaging/</code></td>
+<td><code>messaging.md</code></td>
+<td>Desktop split view, mobile conversation list + thread, compose flow, candidate briefings, approval requests, War Room channel (election day), offline messaging, encryption indicators.</td>
+</tr>
+<tr>
+<td><code>supporter/</code></td>
+<td><code>supporter-portal.md</code></td>
+<td>Public donation page (pre-auth), donation confirmation, portal home, donation history + recurring management, events + RSVP, preferences, public event page.</td>
+</tr>
+<tr>
+<td><code>alliance/</code></td>
+<td><code>alliance.md</code></td>
+<td>Alliance Dashboard (aggregate + per-org), Member List, Affiliation Request Form + Queue, Sharing Configuration, Joint Campaign Setup wizard, Shared Analytics, GOTV Alliance Coordination. Empty states.</td>
+</tr>
+<tr>
+<td><code>crm/</code></td>
+<td><code>crm.md</code></td>
+<td>Contact List/Detail/Create-Edit, Segment Builder + List, Dedup Review Queue + Side-by-Side Comparison, Data Import Wizard (4 steps), Import History, Data Export, Data Quality Report, Tag Management. Empty states.</td>
+</tr>
+<tr>
+<td><code>field-ops/</code></td>
+<td><code>field-ops.md</code></td>
+<td>Canvassing: Campaign List/Create-Edit, Script Builder, Turf Management Map, Turf Auto-Generation, Walk List Management, Results Review, Progress Map. Phone Banking: Campaign List/Create-Edit, Script Builder, Progress Dashboard. Voter Registration: Drive List/Create-Edit, Jurisdiction Template Selector, Results Review. Empty states.</td>
+</tr>
+<tr>
+<td><code>fundraising/</code></td>
+<td><code>fundraising.md</code></td>
+<td>Donation List/Detail, Donation Form Builder + Preview + Embed Config, Fundraising Campaign List/Create-Edit, Recurring Donation Management, Pledge Management, Refund Processing, Cash Donation Recording + Reconciliation, Compliance Flag Review, A/B Test Setup + Results, Alliance Split Configuration + Report, Payment Processor Configuration, Year-End Statement Generator. Empty states.</td>
+</tr>
+<tr>
+<td><code>communications/</code></td>
+<td><code>communications.md</code></td>
+<td>Email Campaign List/Builder, Email Template Builder + Library, SMS/WhatsApp Composer (channel toggle, character counter, quick replies), Communication Analytics (cross-channel), Consent Management (channel × purpose matrix, expiry tracking), Communication Preferences (frequency caps, quiet hours, disclaimers, sender identities), Unsubscribe Management, Email Sending Domain Config (DNS verification). Empty states.</td>
+</tr>
+<tr>
+<td><code>social-media/</code></td>
+<td><code>social-media.md</code></td>
+<td>Social Media Dashboard (connected accounts, scheduled/recent posts), Post Composer (multi-platform with overrides, character counters, media, compliance), Post Calendar (month/week/list views, drag-to-reschedule), Post Analytics (per-post + aggregate, per-platform breakdown, best posting times), Social Account Connection (OAuth, token management), Platform-Specific Preview (side-by-side). Empty states.</td>
+</tr>
+<tr>
+<td><code>events/</code></td>
+<td><code>events.md</code></td>
+<td>Event List (persona-adaptive admin/volunteer views), Event Create/Edit (in-person/virtual/hybrid, RSVP settings, staff assignment, promotion), Event Detail (admin + volunteer variants, post-event outcome view), RSVP Management (approval queue variant), Check-in Tool (offline-capable, QR scan, walk-in registration, touch-optimized), Event Metrics (attendance breakdown, RSVP source, check-in timeline, fundraising, CRM impact, event comparison), Virtual Event Setup (platform integration, unique links, recording), Post-Event Survey Builder (question types, results visualization). Empty states.</td>
+</tr>
+<tr>
+<td><code>press/</code></td>
+<td><code>press.md</code></td>
+<td>Media Contact List/Detail (relationship tracking, interaction history, pitch success rate), Media List Management (dynamic + static lists), Press Release Builder (split-pane structured editor with embargo support, versioning), Press Release Preview + Distribution (media list selection, personalization, attachment), Media Advisory Builder (WHO/WHAT/WHEN/WHERE with event linking), Statement Builder (rapid-response with urgent flag, emergency bypass), Media Kit Management (public/gated assets, access tracking), Coverage Log + Analytics (sentiment, format, topic, pitch-to-coverage rate, journalist responsiveness), Endorsement Pipeline (Kanban stages, announcement trigger), Endorsement Detail (timeline, quote, photo), Talking Points Library (versioned, topic-organized, team sharing), Interview Schedule (requests, prep auto-assembly, outcome logging), Spokesperson Configuration (topic routing, press contact). Empty states.</td>
+</tr>
+<tr>
+<td><code>activism/</code></td>
+<td><code>activism.md</code></td>
+<td>Activism Campaign List (letter/email, petition, public comment), Letter/Email Action Setup (target, talking points, template, AI config), Petition Setup (petition text, signature goal, signer fields), Public Comment Campaign Setup (regulatory body, deadline, submission method), Action Page — Public (mobile-first supporter flow with form and AI generation), Petition Page — Public (mobile-first signing with progress bar, recent signatures), AI Message Generation Preview (unique personalized message, review, edit, approve), Activism Campaign Analytics (actions over time, geographic distribution, per-supporter feed), Delivery Event Documentation (photos, outcome, press coverage linking). Empty states.</td>
+</tr>
+<tr>
+<td><code>gotv/</code></td>
+<td><code>gotv.md</code></td>
+<td>GOTV Universe Builder (criteria builder, segment tiers, geographic preview), Early Voting Data Upload (file upload, column mapping, match preview), Volunteer Staging Setup (map + list, capacity tracking, supplies), GOTV Turf Cutting (map-based drawing, auto-generate, multi-pass scheduling), Election Day Comms Plan (wave timeline, auto/manual triggers, personalization, GOTV override), Poll Watcher Registry + Credential Tracking (registration status, jurisdiction requirements, credential documents), Ride Coordination Dispatcher (map + pending/driver split, smart matching, accessibility), Poll Watcher Issue Queue (severity-ordered, escalation routing, photo evidence), Turnout Dashboard Map + Segment views (heatmap, confidence-weighted data, target comparison), Reallocation Suggestions (human-in-the-loop approve/modify/reject), Election Night Results Entry + Dashboard (mobile-first entry, real-time aggregation, timeline, model comparison), Post-Election Analysis (turnout/operations/volunteers/model validation tabs), Staging Location Check-in (mobile-first, QR scan, 56px targets). Empty states. Cross-refs: DASH-008, GOTV field mode, ALLY-008.</td>
+</tr>
+<tr>
+<td><code>settings/</code></td>
+<td><code>settings.md</code></td>
+<td>Org Profile &amp; Branding (name, logo, colors, languages, preview), Role Template Editor (permission matrix by feature area, clone/reset), Permission Override Panel (per-user additive overrides with audit), Staff Management List (roles, status, bulk actions), Staff Invite Flow (email, role, geographic scope, permission preview), Geographic Scope Configuration (map + region list, jurisdiction level), Campaign Period Configuration (dates, election date, status), Compliance Configuration (jurisdiction, framework, enforced rules, enforcement behavior), Contribution Limits (per-type per-cycle limits, aggregation, over-limit behavior), Disclaimer Text (per-channel, translations), Data Retention Policy (per-type rules, post-campaign cleanup), Integration Settings Hub (card grid by category), WhatsApp/SMS/Email/Social integration detail screens, Billing &amp; Subscription (plan, payment, history), Audit Trail Viewer (searchable, filterable, non-deletable, exportable), Security Settings (three tiers, MFA, session timeout, IP allowlist, incident response), Encryption Key Management (BYOK, Shamir shares, rotation, history), API Key Management (scoped keys, usage tracking), Webhook Configuration (event selection, delivery logs, test). Empty states.</td>
+</tr>
+<tr>
+<td><code>auth/</code></td>
+<td><code>auth.md</code></td>
+<td>Login with Passkey (single CTA, &lt;3 second biometric login, tenant-branded), Login Fallback (magic link with 15 min expiry + SMS OTP with 6-digit auto-submit, rate limiting), Account Recovery (trusted contact 2-of-3 approval, 24-hour cooling-off, old passkeys invalidated), Passkey Registration (guided enrollment, duress passkey option for Maximum tier), Trusted Contact Setup (2-5 contacts from same org), Device Authorization (QR code + manual code, approval from existing device), Session Expired (data preserved in local storage, re-auth variant). Edge case states.</td>
+</tr>
+<tr>
+<td><code>profile/</code></td>
+<td><code>profile.md</code></td>
+<td>Personal Profile (name, avatar, phone, language, timezone, role info), Notification Preferences (channel × type matrix, quiet hours with GOTV override, email digest frequency), Security Settings — Personal (device list, trusted contacts, security checklist, duress passkey), Language Preference (instant-apply, RTL auto-flip, bilingual header), Tenant Switcher (org cards with role/last active, full context switch). Empty states.</td>
+</tr>
+<tr>
+<td><code>help/</code></td>
+<td><code>help.md</code></td>
+<td>Knowledge Base Browser (full-text search, role-filtered, categories), Knowledge Base Article (formatted content with TOC, related articles, thumbs up/down, partial offline), AI Concierge Chat (context-aware, article + action links, desktop side panel / mobile full screen, escalation), Training Module List (volunteer progress view / admin completion matrix), Training Module Content (sequential lessons, offline caching), Training Quiz (one-at-a-time, pass/fail, retake, offline-capable), Certification Status (volunteer cards / admin cross-tab matrix, expiration tracking), Training Content Editor (lesson list, quiz editor, assignment, versioning). Empty states.</td>
+</tr>
+<tr>
+<td><code>public/</code></td>
+<td><code>public.md</code></td>
+<td>Candidate Profile Page (short URL, photo/bio, endorsements, events, donate/volunteer CTAs, SEO), Organization Profile Page (mission, hero image, get involved CTAs, dynamic events + press), Volunteer Signup Page (minimal fields, interest checkboxes, CRM integration, consent opt-in), Media Kit Page (press contact, downloadable assets with optional gated access, download tracking). Cross-refs: PUB-003 Supporter Portal, PUB-004 Event Page, PUB-005 Action Page, PUB-006 Petition Page. Empty states.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format" tabindex="-1"><a class="heading-anchor" href="#format" aria-hidden="true">#</a> Format</h2>
+<p>These wireframes are written as detailed ASCII specifications — implementation-ready screen descriptions with box-drawing wireframes, state definitions, interaction specs, and responsive behavior notes.</p>
+<p>They serve as the bridge between the design system foundations (Phase 3) and visual design. Each document can be directly translated into high-fidelity mockups in Paper or Figma, or used as specs for component implementation.</p>
+<h2 id="reading-order" tabindex="-1"><a class="heading-anchor" href="#reading-order" aria-hidden="true">#</a> Reading Order</h2>
+<ol>
+<li><strong>Navigation shell first</strong> — the global frame everything lives inside</li>
+<li><strong>Dashboards</strong> — each persona's home screen</li>
+<li><strong>Field mode</strong> — the highest-risk UX, most detailed wireframes</li>
+<li><strong>Onboarding</strong> — first impressions for new users</li>
+<li><strong>Messaging</strong> — internal coordination</li>
+<li><strong>Supporter portal</strong> — public-facing donor experience</li>
+<li><strong>Alliance</strong> — cross-org coordination and shared operations</li>
+<li><strong>CRM / People</strong> — the data layer everything else builds on</li>
+<li><strong>Field operations (admin)</strong> — planning, configuration, and review for canvassing, phone banking, and voter registration</li>
+<li><strong>Fundraising (admin)</strong> — donation management, form building, compliance, cash handling, alliance splits, payment processors</li>
+<li><strong>Communications</strong> — email campaigns, SMS/WhatsApp, templates, analytics, consent management</li>
+<li><strong>Social media</strong> — post composition, scheduling, analytics, account management</li>
+<li><strong>Events</strong> — event lifecycle, check-in, metrics, virtual events, post-event surveys</li>
+<li><strong>Press &amp; media</strong> — media contacts, press content, coverage tracking, endorsements, talking points, interviews</li>
+<li><strong>Activism</strong> — letter/email actions with AI-generated messages, petitions, public comment campaigns, delivery documentation</li>
+<li><strong>GOTV (admin)</strong> — pre-election setup (universe, early voting, staging, turfs, comms plan, poll watchers), election day ops (turnout tracking, ride dispatch, issue queue, reallocation), election night (results entry + dashboard), post-election analysis</li>
+<li><strong>Settings &amp; admin</strong> — org branding, roles &amp; permissions, staff management, campaign config, compliance, integrations, billing, security, encryption keys, API keys, webhooks, audit trail</li>
+<li><strong>Authentication</strong> — passkey-first login, fallback (magic link, SMS OTP), account recovery via trusted contacts, passkey registration, device authorization, session management</li>
+<li><strong>User profile</strong> — personal settings, notification preferences, security (personal), language preference, tenant switching</li>
+<li><strong>Support &amp; help</strong> — knowledge base, AI concierge chat, volunteer training modules with quizzes and certification, training content editor</li>
+<li><strong>Public pages</strong> — candidate profile, org profile, volunteer signup, media kit (plus cross-references to supporter portal, events, activism)</li>
+</ol>
+<h2 id="cross-references" tabindex="-1"><a class="heading-anchor" href="#cross-references" aria-hidden="true">#</a> Cross-References</h2>
+<ul>
+<li>Navigation structure: <code>01-information-architecture/navigation-model.md</code></li>
+<li>Per-persona views: <code>01-information-architecture/persona-views.md</code></li>
+<li>UI patterns: <code>02-global-patterns/pattern-catalog.md</code></li>
+<li>Design tokens: <code>03-design-system/foundations.md</code></li>
+<li>Component names: <code>03-design-system/component-inventory.md</code></li>
+<li>Responsive behavior: <code>03-design-system/responsive-strategy.md</code></li>
+<li>Audit report: <code>audit.md</code></li>
+</ul>
+<hr>
+<h2 id="screen-index" tabindex="-1"><a class="heading-anchor" href="#screen-index" aria-hidden="true">#</a> Screen Index</h2>
+<p>Complete cross-reference of all 236 screen IDs from <code>screen-inventory.md</code> to their wireframe location.</p>
+<p><strong>Status key:</strong></p>
+<ul>
+<li><strong>Complete</strong> — Full wireframe under screen ID heading</li>
+<li><strong>Covered</strong> — Wireframe content exists but without a screen ID heading (pre-normalization)</li>
+<li><strong>Cross-ref</strong> — Wireframed in a different document than expected</li>
+<li><strong>Missing</strong> — No wireframe content exists</li>
+</ul>
+<h3 id="1-dashboards-11-screens" tabindex="-1"><a class="heading-anchor" href="#1-dashboards-11-screens" aria-hidden="true">#</a> 1. Dashboards (11 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DASH-001</td>
+<td>Campaign Overview Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>DASH-002</td>
+<td>Field Operations Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>DASH-003</td>
+<td>Fundraising Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>DASH-004</td>
+<td>Communications Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>DASH-005</td>
+<td>Volunteer Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>DASH-006</td>
+<td>Data Quality Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>DASH-007</td>
+<td>Compliance Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>DASH-008</td>
+<td>GOTV War Room Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>DASH-009</td>
+<td>Team Lead Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>DASH-010</td>
+<td>Candidate Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>DASH-011</td>
+<td>Alliance Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+<td>Cross-ref → <code>alliance/alliance.md</code> ALLY-001</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-crm-people-15-screens" tabindex="-1"><a class="heading-anchor" href="#2-crm-people-15-screens" aria-hidden="true">#</a> 2. CRM / People (15 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRM-001</td>
+<td>Contact List</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-002</td>
+<td>Contact Detail</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-003</td>
+<td>Contact Create/Edit</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-004</td>
+<td>Segment Builder</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-005</td>
+<td>Segment List</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-006</td>
+<td>Dedup Review Queue</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-007</td>
+<td>Dedup Side-by-Side Comparison</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-008</td>
+<td>Data Import Wizard — File Upload</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-009</td>
+<td>Data Import Wizard — Column Mapping</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-010</td>
+<td>Data Import Wizard — Dedup Preview</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-011</td>
+<td>Data Import Wizard — Confirmation</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-012</td>
+<td>Data Import History</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-013</td>
+<td>Data Export</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-014</td>
+<td>Data Quality Report</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CRM-015</td>
+<td>Tag Management</td>
+<td><code>crm/crm.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-canvassing-14-screens" tabindex="-1"><a class="heading-anchor" href="#3-canvassing-14-screens" aria-hidden="true">#</a> 3. Canvassing (14 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CANV-001</td>
+<td>Canvassing Campaign List</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CANV-002</td>
+<td>Canvassing Campaign Create/Edit</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CANV-003</td>
+<td>Script Builder</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CANV-004</td>
+<td>Turf Management Map</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CANV-005</td>
+<td>Turf Auto-Generation</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CANV-006</td>
+<td>Walk List Management</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CANV-007</td>
+<td>Field Mode — Shift Start</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>CANV-008</td>
+<td>Field Mode — Walk List View</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>CANV-009</td>
+<td>Field Mode — Map View</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>CANV-010</td>
+<td>Field Mode — Door Card</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>CANV-011</td>
+<td>Field Mode — Interaction Form</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>CANV-012</td>
+<td>Field Mode — Shift End / Debrief</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>CANV-013</td>
+<td>Canvassing Results Review</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>CANV-014</td>
+<td>Canvassing Progress Map</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-phone-banking-7-screens" tabindex="-1"><a class="heading-anchor" href="#4-phone-banking-7-screens" aria-hidden="true">#</a> 4. Phone Banking (7 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PHONE-001</td>
+<td>Phone Bank Campaign List</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PHONE-002</td>
+<td>Phone Bank Campaign Create/Edit</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PHONE-003</td>
+<td>Phone Bank Script Builder</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PHONE-004</td>
+<td>Phone Bank — Call Interface (BYOP)</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>PHONE-005</td>
+<td>Phone Bank — Call Interface (Integrated)</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>PHONE-006</td>
+<td>Phone Bank — Call Result Form</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>PHONE-007</td>
+<td>Phone Bank Progress Dashboard</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-voter-registration-6-screens" tabindex="-1"><a class="heading-anchor" href="#5-voter-registration-6-screens" aria-hidden="true">#</a> 5. Voter Registration (6 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VREG-001</td>
+<td>Voter Reg Drive List</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>VREG-002</td>
+<td>Voter Reg Drive Create/Edit</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>VREG-003</td>
+<td>Voter Reg Jurisdiction Template Selector</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>VREG-004</td>
+<td>Field Mode — Voter Registration Form</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>VREG-005</td>
+<td>Field Mode — Eligibility Check</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>VREG-006</td>
+<td>Voter Reg Results Review</td>
+<td><code>field-ops/field-ops.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-fundraising-20-screens" tabindex="-1"><a class="heading-anchor" href="#6-fundraising-20-screens" aria-hidden="true">#</a> 6. Fundraising (20 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FUND-001</td>
+<td>Donation List</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-002</td>
+<td>Donation Detail</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-003</td>
+<td>Donation Form Builder</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-004</td>
+<td>Donation Form Preview</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-005</td>
+<td>Donation Form — Public (Hosted)</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Cross-ref → <code>supporter/supporter-portal.md</code></td>
+</tr>
+<tr>
+<td>FUND-006</td>
+<td>Donation Form — Embed Config</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-007</td>
+<td>Recurring Donation Management</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-008</td>
+<td>Pledge Management</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-009</td>
+<td>Refund Processing</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-010</td>
+<td>Cash Donation Recording</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-011</td>
+<td>Cash Reconciliation</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-012</td>
+<td>Compliance Flag Review</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-013</td>
+<td>A/B Test Setup</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-014</td>
+<td>A/B Test Results</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-015</td>
+<td>Alliance Split Configuration</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-016</td>
+<td>Alliance Fundraising Report</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-017</td>
+<td>Payment Processor Configuration</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-018</td>
+<td>Fundraising Campaign List</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-019</td>
+<td>Fundraising Campaign Create/Edit</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>FUND-020</td>
+<td>Year-End Statement Generator</td>
+<td><code>fundraising/fundraising.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-communications-10-screens" tabindex="-1"><a class="heading-anchor" href="#7-communications-10-screens" aria-hidden="true">#</a> 7. Communications (10 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COMM-001</td>
+<td>Email Campaign List</td>
+<td><code>communications/communications.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>COMM-002</td>
+<td>Email Campaign Builder</td>
+<td><code>communications/communications.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>COMM-003</td>
+<td>Email Template Builder</td>
+<td><code>communications/communications.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>COMM-004</td>
+<td>Email Template Library</td>
+<td><code>communications/communications.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>COMM-005</td>
+<td>SMS/WhatsApp Composer</td>
+<td><code>communications/communications.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>COMM-006</td>
+<td>Communication Analytics</td>
+<td><code>communications/communications.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>COMM-007</td>
+<td>Consent Management</td>
+<td><code>communications/communications.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>COMM-008</td>
+<td>Communication Preferences (Staff)</td>
+<td><code>communications/communications.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>COMM-009</td>
+<td>Unsubscribe Management</td>
+<td><code>communications/communications.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>COMM-010</td>
+<td>Email Sending Domain Config</td>
+<td><code>communications/communications.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-social-media-6-screens" tabindex="-1"><a class="heading-anchor" href="#8-social-media-6-screens" aria-hidden="true">#</a> 8. Social Media (6 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SOCIAL-001</td>
+<td>Social Media Dashboard</td>
+<td><code>social-media/social-media.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SOCIAL-002</td>
+<td>Post Composer (Multi-platform)</td>
+<td><code>social-media/social-media.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SOCIAL-003</td>
+<td>Post Calendar / Schedule</td>
+<td><code>social-media/social-media.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SOCIAL-004</td>
+<td>Post Analytics</td>
+<td><code>social-media/social-media.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SOCIAL-005</td>
+<td>Social Account Connection</td>
+<td><code>social-media/social-media.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SOCIAL-006</td>
+<td>Platform-Specific Preview</td>
+<td><code>social-media/social-media.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="9-events-10-screens" tabindex="-1"><a class="heading-anchor" href="#9-events-10-screens" aria-hidden="true">#</a> 9. Events (10 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EVT-001</td>
+<td>Event List</td>
+<td><code>events/events.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>EVT-002</td>
+<td>Event Create/Edit</td>
+<td><code>events/events.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>EVT-003</td>
+<td>Event Detail</td>
+<td><code>events/events.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>EVT-004</td>
+<td>Event RSVP Management</td>
+<td><code>events/events.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>EVT-005</td>
+<td>Event Check-in Tool</td>
+<td><code>events/events.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>EVT-006</td>
+<td>Event RSVP Form (Public)</td>
+<td><code>events/events.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>EVT-007</td>
+<td>Event Page (Public)</td>
+<td><code>events/events.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>EVT-008</td>
+<td>Event Metrics</td>
+<td><code>events/events.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>EVT-009</td>
+<td>Virtual Event Setup</td>
+<td><code>events/events.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>EVT-010</td>
+<td>Post-Event Survey Builder</td>
+<td><code>events/events.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-activism-9-screens" tabindex="-1"><a class="heading-anchor" href="#10-activism-9-screens" aria-hidden="true">#</a> 10. Activism (9 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT-001</td>
+<td>Activism Campaign List</td>
+<td><code>activism/activism.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ACT-002</td>
+<td>Letter/Email Action Setup</td>
+<td><code>activism/activism.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ACT-003</td>
+<td>Petition Setup</td>
+<td><code>activism/activism.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ACT-004</td>
+<td>Public Comment Campaign Setup</td>
+<td><code>activism/activism.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ACT-005</td>
+<td>Action Page (Public)</td>
+<td><code>activism/activism.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ACT-006</td>
+<td>Petition Page (Public)</td>
+<td><code>activism/activism.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ACT-007</td>
+<td>AI Message Generation Preview</td>
+<td><code>activism/activism.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ACT-008</td>
+<td>Activism Campaign Analytics</td>
+<td><code>activism/activism.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ACT-009</td>
+<td>Delivery Event Documentation</td>
+<td><code>activism/activism.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="11-press-media-16-screens" tabindex="-1"><a class="heading-anchor" href="#11-press-media-16-screens" aria-hidden="true">#</a> 11. Press &amp; Media (16 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PRESS-001</td>
+<td>Media Contact List</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-002</td>
+<td>Media Contact Detail</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-003</td>
+<td>Media List Management</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-004</td>
+<td>Press Release Builder</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-005</td>
+<td>Press Release Preview</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-006</td>
+<td>Press Release Distribution</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-007</td>
+<td>Media Advisory Builder</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-008</td>
+<td>Statement Builder</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-009</td>
+<td>Media Kit Management</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-010</td>
+<td>Coverage Log</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-011</td>
+<td>Coverage Analytics</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-012</td>
+<td>Endorsement Pipeline</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-013</td>
+<td>Endorsement Detail</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-014</td>
+<td>Talking Points Library</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-015</td>
+<td>Interview Schedule</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PRESS-016</td>
+<td>Spokesperson Configuration</td>
+<td><code>press/press.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-gotv-election-day-23-screens" tabindex="-1"><a class="heading-anchor" href="#12-gotv-election-day-23-screens" aria-hidden="true">#</a> 12. GOTV &amp; Election Day (23 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GOTV-001</td>
+<td>GOTV Universe Builder</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-002</td>
+<td>Early Voting Data Upload</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-003</td>
+<td>Volunteer Staging Setup</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-004</td>
+<td>GOTV Turf Cutting</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-005</td>
+<td>Election Day Comms Plan</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-006</td>
+<td>Poll Watcher Registry</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-007</td>
+<td>Poll Watcher Credential Tracking</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-008</td>
+<td>Field Mode — GOTV Door Card</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>GOTV-009</td>
+<td>Field Mode — GOTV Walk List</td>
+<td><code>field-mode/field-mode.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>GOTV-010</td>
+<td>Chase Call Interface</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-011</td>
+<td>Ride Request Form</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-012</td>
+<td>Ride Coordination — Dispatcher View</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-013</td>
+<td>Ride Coordination — Driver View</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-014</td>
+<td>Poll Watcher Check-in</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-015</td>
+<td>Poll Watcher Issue Report Form</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-016</td>
+<td>Poll Watcher Issue Queue</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-017</td>
+<td>Turnout Dashboard — Map View</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-018</td>
+<td>Turnout Dashboard — Segment View</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-019</td>
+<td>Reallocation Suggestions</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-020</td>
+<td>Election Night Results Entry</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-021</td>
+<td>Election Night Results Dashboard</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-022</td>
+<td>Post-Election Analysis</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>GOTV-023</td>
+<td>Staging Location Check-in</td>
+<td><code>gotv/gotv.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-messaging-14-screens" tabindex="-1"><a class="heading-anchor" href="#13-messaging-14-screens" aria-hidden="true">#</a> 13. Messaging (14 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSG-001</td>
+<td>Message List (Inbox)</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-002</td>
+<td>Conversation View (DM)</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-003</td>
+<td>Conversation View (Group)</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-004</td>
+<td>Thread View</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-005</td>
+<td>Group Create/Edit</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-006</td>
+<td>Broadcast Composer</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-007</td>
+<td>War Room Channel</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-008</td>
+<td>Contextual Thread (Event)</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-009</td>
+<td>Contextual Thread (Shift)</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-010</td>
+<td>Contextual Thread (Issue)</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-011</td>
+<td>Contextual Thread (Donation Flag)</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-012</td>
+<td>Candidate Briefing View</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-013</td>
+<td>Candidate Approval Queue</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>MSG-014</td>
+<td>Alliance Channel</td>
+<td><code>messaging/messaging.md</code></td>
+<td>Covered</td>
+</tr>
+</tbody>
+</table>
+<h3 id="14-settings-administration-22-screens" tabindex="-1"><a class="heading-anchor" href="#14-settings-administration-22-screens" aria-hidden="true">#</a> 14. Settings &amp; Administration (22 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SET-001</td>
+<td>Org Profile &amp; Branding</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-002</td>
+<td>Role Template Editor</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-003</td>
+<td>Permission Override Panel</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-004</td>
+<td>Staff Management List</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-005</td>
+<td>Staff Invite Flow</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-006</td>
+<td>Geographic Scope Configuration</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-007</td>
+<td>Campaign Period Configuration</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-008</td>
+<td>Compliance Configuration</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-009</td>
+<td>Contribution Limits Configuration</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-010</td>
+<td>Disclaimer Text Configuration</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-011</td>
+<td>Data Retention Policy</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-012</td>
+<td>Integration Settings Hub</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-013</td>
+<td>WhatsApp Business Setup</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-014</td>
+<td>SMS Provider Configuration</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-015</td>
+<td>Email Domain Configuration</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-016</td>
+<td>Social Media Account Connections</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-017</td>
+<td>Billing &amp; Subscription</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-018</td>
+<td>Audit Trail Viewer</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-019</td>
+<td>Security Settings</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-020</td>
+<td>Encryption Key Management</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-021</td>
+<td>API Key Management</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SET-022</td>
+<td>Webhook Configuration</td>
+<td><code>settings/settings.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="15-onboarding-wizards-8-screens" tabindex="-1"><a class="heading-anchor" href="#15-onboarding-wizards-8-screens" aria-hidden="true">#</a> 15. Onboarding Wizards (8 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WIZ-001</td>
+<td>Org Setup Wizard</td>
+<td><code>onboarding/onboarding.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>WIZ-002</td>
+<td>Payment Processor Wizard</td>
+<td><code>onboarding/onboarding.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>WIZ-003</td>
+<td>BYOK Key Generation Wizard</td>
+<td><code>onboarding/onboarding.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>WIZ-004</td>
+<td>Compliance Configuration Wizard</td>
+<td><code>onboarding/onboarding.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>WIZ-005</td>
+<td>WhatsApp Business Setup Wizard</td>
+<td><code>onboarding/onboarding.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>WIZ-006</td>
+<td>SMS Number Setup Wizard</td>
+<td><code>onboarding/onboarding.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>WIZ-007</td>
+<td>Voter File Import Wizard</td>
+<td><code>onboarding/onboarding.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>WIZ-008</td>
+<td>Volunteer Onboarding Wizard</td>
+<td><code>onboarding/onboarding.md</code></td>
+<td>Covered</td>
+</tr>
+</tbody>
+</table>
+<h3 id="16-support-help-8-screens" tabindex="-1"><a class="heading-anchor" href="#16-support-help-8-screens" aria-hidden="true">#</a> 16. Support &amp; Help (8 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HELP-001</td>
+<td>Knowledge Base Browser</td>
+<td><code>help/help.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>HELP-002</td>
+<td>Knowledge Base Article</td>
+<td><code>help/help.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>HELP-003</td>
+<td>AI Concierge Chat</td>
+<td><code>help/help.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>HELP-004</td>
+<td>Training Module List</td>
+<td><code>help/help.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>HELP-005</td>
+<td>Training Module Content</td>
+<td><code>help/help.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>HELP-006</td>
+<td>Training Quiz</td>
+<td><code>help/help.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>HELP-007</td>
+<td>Certification Status</td>
+<td><code>help/help.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>HELP-008</td>
+<td>Training Content Editor</td>
+<td><code>help/help.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="17-supporter-portal-9-screens" tabindex="-1"><a class="heading-anchor" href="#17-supporter-portal-9-screens" aria-hidden="true">#</a> 17. Supporter Portal (9 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUP-001</td>
+<td>Supporter Home</td>
+<td><code>supporter/supporter-portal.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>SUP-002</td>
+<td>Donation History</td>
+<td><code>supporter/supporter-portal.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>SUP-003</td>
+<td>Donation Receipt View</td>
+<td><code>supporter/supporter-portal.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SUP-004</td>
+<td>Recurring Donation Management</td>
+<td><code>supporter/supporter-portal.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>SUP-005</td>
+<td>Payment Method Update</td>
+<td><code>supporter/supporter-portal.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SUP-006</td>
+<td>Supporter Profile</td>
+<td><code>supporter/supporter-portal.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SUP-007</td>
+<td>Communication Preferences</td>
+<td><code>supporter/supporter-portal.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>SUP-008</td>
+<td>My Events</td>
+<td><code>supporter/supporter-portal.md</code></td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>SUP-009</td>
+<td>Year-End Statement Download</td>
+<td><code>supporter/supporter-portal.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="18-alliance-8-screens" tabindex="-1"><a class="heading-anchor" href="#18-alliance-8-screens" aria-hidden="true">#</a> 18. Alliance (8 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALLY-001</td>
+<td>Alliance Dashboard</td>
+<td><code>alliance/alliance.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ALLY-002</td>
+<td>Alliance Member List</td>
+<td><code>alliance/alliance.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ALLY-003</td>
+<td>Affiliation Request Form</td>
+<td><code>alliance/alliance.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ALLY-004</td>
+<td>Affiliation Request Queue</td>
+<td><code>alliance/alliance.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ALLY-005</td>
+<td>Sharing Configuration</td>
+<td><code>alliance/alliance.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ALLY-006</td>
+<td>Joint Campaign Setup</td>
+<td><code>alliance/alliance.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ALLY-007</td>
+<td>Shared Analytics</td>
+<td><code>alliance/alliance.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>ALLY-008</td>
+<td>GOTV Alliance Coordination</td>
+<td><code>alliance/alliance.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="19-public-pages-8-screens" tabindex="-1"><a class="heading-anchor" href="#19-public-pages-8-screens" aria-hidden="true">#</a> 19. Public Pages (8 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUB-001</td>
+<td>Candidate Profile Page</td>
+<td><code>public/public.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PUB-002</td>
+<td>Organization Profile Page</td>
+<td><code>public/public.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PUB-003</td>
+<td>Donation Form (Hosted)</td>
+<td><code>supporter/supporter-portal.md</code></td>
+<td>Cross-ref → <code>fundraising/fundraising.md</code> FUND-005</td>
+</tr>
+<tr>
+<td>PUB-004</td>
+<td>Event Page</td>
+<td><code>events/events.md</code></td>
+<td>Cross-ref → EVT-006, EVT-007</td>
+</tr>
+<tr>
+<td>PUB-005</td>
+<td>Action Page (Letter/Email)</td>
+<td><code>activism/activism.md</code></td>
+<td>Cross-ref → ACT-005</td>
+</tr>
+<tr>
+<td>PUB-006</td>
+<td>Petition Page</td>
+<td><code>activism/activism.md</code></td>
+<td>Cross-ref → ACT-006</td>
+</tr>
+<tr>
+<td>PUB-007</td>
+<td>Volunteer Signup Page</td>
+<td><code>public/public.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PUB-008</td>
+<td>Media Kit Page</td>
+<td><code>public/public.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="20-authentication-7-screens" tabindex="-1"><a class="heading-anchor" href="#20-authentication-7-screens" aria-hidden="true">#</a> 20. Authentication (7 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AUTH-001</td>
+<td>Login (Passkey)</td>
+<td><code>auth/auth.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>AUTH-002</td>
+<td>Login Fallback (Magic Link / SMS OTP)</td>
+<td><code>auth/auth.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>AUTH-003</td>
+<td>Account Recovery (Trusted Contact)</td>
+<td><code>auth/auth.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>AUTH-004</td>
+<td>Passkey Registration</td>
+<td><code>auth/auth.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>AUTH-005</td>
+<td>Trusted Contact Setup</td>
+<td><code>auth/auth.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>AUTH-006</td>
+<td>Device Authorization</td>
+<td><code>auth/auth.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>AUTH-007</td>
+<td>Session Expired / Re-authenticate</td>
+<td><code>auth/auth.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="21-user-profile-preferences-5-screens" tabindex="-1"><a class="heading-anchor" href="#21-user-profile-preferences-5-screens" aria-hidden="true">#</a> 21. User Profile &amp; Preferences (5 screens)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Document</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PROF-001</td>
+<td>Personal Profile</td>
+<td><code>profile/profile.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PROF-002</td>
+<td>Notification Preferences</td>
+<td><code>profile/profile.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PROF-003</td>
+<td>Security Settings (Personal)</td>
+<td><code>profile/profile.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PROF-004</td>
+<td>Language Preference</td>
+<td><code>profile/profile.md</code></td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PROF-005</td>
+<td>Tenant Switcher</td>
+<td><code>profile/profile.md</code></td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="summary" tabindex="-1"><a class="heading-anchor" href="#summary" aria-hidden="true">#</a> Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Complete</td>
+<td>196</td>
+</tr>
+<tr>
+<td>Covered (no ID heading)</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Cross-ref</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Missing</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Navigation shell (no screen IDs)</td>
+<td>10 variants</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>236</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The 10 navigation shell variants (desktop expanded/collapsed, detail panel, notification drawer, RTL, mobile standard, field mode, wizard, supporter portal, mobile &quot;More&quot;) are not assigned screen IDs in the inventory — they are structural shells, not screens.</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#contents"># Contents</a></li><li class="toc-2"><a href="#format"># Format</a></li><li class="toc-2"><a href="#reading-order"># Reading Order</a></li><li class="toc-2"><a href="#cross-references"># Cross-References</a></li><li class="toc-2"><a href="#screen-index"># Screen Index</a></li><li class="toc-3"><a href="#1-dashboards-11-screens"># 1. Dashboards (11 screens)</a></li><li class="toc-3"><a href="#2-crm-people-15-screens"># 2. CRM / People (15 screens)</a></li><li class="toc-3"><a href="#3-canvassing-14-screens"># 3. Canvassing (14 screens)</a></li><li class="toc-3"><a href="#4-phone-banking-7-screens"># 4. Phone Banking (7 screens)</a></li><li class="toc-3"><a href="#5-voter-registration-6-screens"># 5. Voter Registration (6 screens)</a></li><li class="toc-3"><a href="#6-fundraising-20-screens"># 6. Fundraising (20 screens)</a></li><li class="toc-3"><a href="#7-communications-10-screens"># 7. Communications (10 screens)</a></li><li class="toc-3"><a href="#8-social-media-6-screens"># 8. Social Media (6 screens)</a></li><li class="toc-3"><a href="#9-events-10-screens"># 9. Events (10 screens)</a></li><li class="toc-3"><a href="#10-activism-9-screens"># 10. Activism (9 screens)</a></li><li class="toc-3"><a href="#11-press-media-16-screens"># 11. Press &amp;amp; Media (16 screens)</a></li><li class="toc-3"><a href="#12-gotv-election-day-23-screens"># 12. GOTV &amp;amp; Election Day (23 screens)</a></li><li class="toc-3"><a href="#13-messaging-14-screens"># 13. Messaging (14 screens)</a></li><li class="toc-3"><a href="#14-settings-administration-22-screens"># 14. Settings &amp;amp; Administration (22 screens)</a></li><li class="toc-3"><a href="#15-onboarding-wizards-8-screens"># 15. Onboarding Wizards (8 screens)</a></li><li class="toc-3"><a href="#16-support-help-8-screens"># 16. Support &amp;amp; Help (8 screens)</a></li><li class="toc-3"><a href="#17-supporter-portal-9-screens"># 17. Supporter Portal (9 screens)</a></li><li class="toc-3"><a href="#18-alliance-8-screens"># 18. Alliance (8 screens)</a></li><li class="toc-3"><a href="#19-public-pages-8-screens"># 19. Public Pages (8 screens)</a></li><li class="toc-3"><a href="#20-authentication-7-screens"># 20. Authentication (7 screens)</a></li><li class="toc-3"><a href="#21-user-profile-preferences-5-screens"># 21. User Profile &amp;amp; Preferences (5 screens)</a></li><li class="toc-3"><a href="#summary"># Summary</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

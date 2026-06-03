@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRM / People Wireframes · GreenGrass</title>
+<meta name="description" content="CRM / People Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="./crm.html" aria-current="page" class="active">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="crm-people-wireframes" tabindex="-1"><a class="heading-anchor" href="#crm-people-wireframes" aria-hidden="true">#</a> CRM / People Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>The CRM is the data backbone of the platform. Every canvassing interaction, donation, event RSVP, and communication links back to a contact record. This document wireframes the 15 CRM screens (CRM-001 through CRM-015): contact management, segmentation, deduplication, data import/export, data quality, and tag management.</p>
+<p>The core CRM challenge: a single person may be a voter, donor, volunteer, and event attendee simultaneously. The record must unify all facets without overwhelming the user who only cares about one. A Finance Director looking at a donor doesn't need canvassing history in their face. A Field Director looking at a voter doesn't need donation compliance fields. The detail view adapts by persona.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRM-001</td>
+<td>Contact List</td>
+<td>OA, CD, FD, FiD, VC, DM</td>
+<td>No</td>
+<td>Yes</td>
+<td>Contact Management</td>
+</tr>
+<tr>
+<td>CRM-002</td>
+<td>Contact Detail</td>
+<td>OA, CD, FD, FiD, VC, DM</td>
+<td>Partial</td>
+<td>Yes</td>
+<td>Contact Management</td>
+</tr>
+<tr>
+<td>CRM-003</td>
+<td>Contact Create/Edit</td>
+<td>OA, CD, FD, FiD, VC, DM</td>
+<td>No</td>
+<td>Yes</td>
+<td>Contact Management</td>
+</tr>
+<tr>
+<td>CRM-004</td>
+<td>Segment Builder</td>
+<td>OA, CD, FD, FiD, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Segmentation</td>
+</tr>
+<tr>
+<td>CRM-005</td>
+<td>Segment List</td>
+<td>OA, CD, FD, FiD, DM</td>
+<td>No</td>
+<td>Yes</td>
+<td>Segmentation</td>
+</tr>
+<tr>
+<td>CRM-006</td>
+<td>Dedup Review Queue</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Deduplication</td>
+</tr>
+<tr>
+<td>CRM-007</td>
+<td>Dedup Side-by-Side Comparison</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Deduplication</td>
+</tr>
+<tr>
+<td>CRM-008</td>
+<td>Data Import Wizard — File Upload</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Data Import</td>
+</tr>
+<tr>
+<td>CRM-009</td>
+<td>Data Import Wizard — Column Mapping</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Data Import</td>
+</tr>
+<tr>
+<td>CRM-010</td>
+<td>Data Import Wizard — Dedup Preview</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Data Import</td>
+</tr>
+<tr>
+<td>CRM-011</td>
+<td>Data Import Wizard — Confirmation</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Data Import</td>
+</tr>
+<tr>
+<td>CRM-012</td>
+<td>Data Import History</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Import &amp; Export</td>
+</tr>
+<tr>
+<td>CRM-013</td>
+<td>Data Export</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Import &amp; Export</td>
+</tr>
+<tr>
+<td>CRM-014</td>
+<td>Data Quality Report</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Data Quality</td>
+</tr>
+<tr>
+<td>CRM-015</td>
+<td>Tag Management</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Tags</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-manager-navigation-context" tabindex="-1"><a class="heading-anchor" href="#data-manager-navigation-context" aria-hidden="true">#</a> Data Manager Navigation Context</h2>
+<p>The Data Manager's sidebar organizes CRM into functional groups:</p>
+<pre><code>OVERVIEW
+  Dashboard           → DASH-006 (Data Quality)
+
+PEOPLE
+  All Contacts        → CRM-001
+  Segments            → CRM-005
+
+DATA
+  Import              → CRM-008
+  Import History      → CRM-012
+  Export              → CRM-013
+  Data Quality        → CRM-014
+  Dedup Queue         → CRM-006
+  Tags                → CRM-015
+
+MESSAGING
+  Messages            → messaging screens
+</code></pre>
+<p>The Org Admin and other personas (CD, FD, FiD, VC) see a simplified CRM section under &quot;People&quot; in their respective sidebars, with Contacts and Segments only. Data import/export, dedup, and tag management appear only for OA and DM.</p>
+<hr>
+<h2 id="contact-management" tabindex="-1"><a class="heading-anchor" href="#contact-management" aria-hidden="true">#</a> Contact Management</h2>
+<h3 id="crm-001-contact-list" tabindex="-1"><a class="heading-anchor" href="#crm-001-contact-list" aria-hidden="true">#</a> CRM-001: Contact List</h3>
+<p>The most-used screen in the platform. Filterable, sortable, searchable list of all people in the CRM.</p>
+<h4 id="personas" tabindex="-1"><a class="heading-anchor" href="#personas" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, CD, FD, FiD, VC, DM</li>
+</ul>
+<h4 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Contacts                                                         24,830    │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  [🔍 Search contacts...]       [Filter ▾]  [Sort ▾]  [+ New Contact]       │
+│                                                                              │
+│  Active filters: Type: Voter  ·  Precinct: San Juan  ·  [Clear all]        │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  ☐  Name              Type       Precinct     Phone        Score    │   │
+│  │  ─────────────────────────────────────────────────────────────────  │   │
+│  │  ☐  Ana Martínez      Voter/Donor  San Juan   +1 787-555-0101  4   │   │
+│  │  ☐  Carlos Rivera     Voter        San Juan   +1 787-555-0102  3   │   │
+│  │  ☐  Elena Torres      Voter/Vol    San Juan   +1 787-555-0103  5   │   │
+│  │  ☐  José Delgado      Donor        San Juan   +1 787-555-0104  —   │   │
+│  │  ☐  María Santos      Voter        San Juan   +1 787-555-0105  2   │   │
+│  │  ☐  Pedro Colón       Voter        San Juan   +1 787-555-0106  4   │   │
+│  │  ☐  Rosa Figueroa     Voter/Donor  San Juan   +1 787-555-0107  5   │   │
+│  │  ☐  Luis García       Voter        San Juan   +1 787-555-0108  1   │   │
+│  │  ☐  Carmen Díaz       Voter/Vol    San Juan   +1 787-555-0109  3   │   │
+│  │  ☐  Marco Rodríguez   Voter        San Juan   +1 787-555-0110  —   │   │
+│  │  ...                                                                │   │
+│  │  ─────────────────────────────────────────────────────────────────  │   │
+│  │  ☐ Select all on page                                               │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ◀  Page 1 of 248  ▶                           Showing 1–25 of 6,194       │
+│                                                                              │
+│  Bulk actions (when selected): [Tag ▾]  [Add to Segment]  [Export]  [⋯]    │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="filter-panel-expanded" tabindex="-1"><a class="heading-anchor" href="#filter-panel-expanded" aria-hidden="true">#</a> Filter Panel (expanded)</h4>
+<pre><code>┌────────────────────────────────┐
+│  Filters                    ✕  │
+│  ────────                      │
+│                                │
+│  Type                          │
+│  ☑ Voter  ☑ Donor  ☐ Vol     │
+│  ☐ Supporter  ☐ Contact      │
+│                                │
+│  Precinct / District           │
+│  [San Juan               ▾]   │
+│                                │
+│  Support Score                 │
+│  [Any ▾]  to  [Any ▾]        │
+│                                │
+│  Tags                          │
+│  [Search tags...          ]    │
+│  ☐ Canvassed  ☐ Phone banked │
+│  ☐ Event attendee  ☐ VIP     │
+│                                │
+│  Last Contact                  │
+│  [Any time ▾]                 │
+│                                │
+│  Segment                       │
+│  [Select segment...      ▾]   │
+│                                │
+│  Registration Status           │
+│  [Any ▾]                      │
+│                                │
+│  [Clear All]       [Apply]    │
+└────────────────────────────────┘
+</code></pre>
+<h4 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h4>
+<pre><code>┌──────────────────────────────┐
+│  ≡  Contacts  🔍  [Filter]  │
+├──────────────────────────────┤
+│  24,830 contacts             │
+│  Voter · San Juan            │  ← active filters as chips
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Ana Martínez            ││
+│  │  Voter/Donor · Score: 4  ││
+│  │  +1 787-555-0101         ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  Carlos Rivera           ││
+│  │  Voter · Score: 3        ││
+│  │  +1 787-555-0102         ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  Elena Torres            ││
+│  │  Voter/Volunteer · Score: 5││
+│  │  +1 787-555-0103         ││
+│  └──────────────────────────┘│
+│  ┌──────────────────────────┐│
+│  │  José Delgado            ││
+│  │  Donor                   ││
+│  │  +1 787-555-0104         ││
+│  └──────────────────────────┘│
+│  ...                         │
+│                              │
+│  ↓ Loading more...           │  ← infinite scroll
+│                              │
+├──────────────────────────────┤
+│ 📊      👥      💰     💬   ⋯│
+│ Dash  Contacts Donate  Msgs More│
+└──────────────────────────────┘
+</code></pre>
+<h4 id="mobile-differences" tabindex="-1"><a class="heading-anchor" href="#mobile-differences" aria-hidden="true">#</a> Mobile Differences</h4>
+<ul>
+<li>Table becomes a card list — each contact is a stacked card</li>
+<li>Filters accessible via filter icon in header — opens a bottom sheet</li>
+<li>Infinite scroll replaces pagination</li>
+<li>No bulk select — bulk actions via long-press + multi-select mode</li>
+<li>Tap a card to navigate to full-screen detail view</li>
+<li>Pull-to-refresh</li>
+</ul>
+<h4 id="interaction-specs" tabindex="-1"><a class="heading-anchor" href="#interaction-specs" aria-hidden="true">#</a> Interaction Specs</h4>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Action</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row / card</td>
+<td>Click / tap</td>
+<td>Open Contact Detail (CRM-002). Desktop: in detail panel (right). Mobile: full-screen.</td>
+</tr>
+<tr>
+<td>+ New Contact</td>
+<td>Click</td>
+<td>Navigate to Contact Create (CRM-003)</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>Apply</td>
+<td>Re-query list with filter criteria. Active filters shown as chips above list.</td>
+</tr>
+<tr>
+<td>Bulk checkbox</td>
+<td>Select multiple</td>
+<td>Bulk action bar appears: Tag, Add to Segment, Export, More (delete, merge)</td>
+</tr>
+<tr>
+<td>Column header</td>
+<td>Click</td>
+<td>Sort ascending/descending. Current sort indicated by arrow.</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>Type</td>
+<td>Debounced server-side search across name, email, phone. Results update inline.</td>
+</tr>
+<tr>
+<td>Row overflow (⋯)</td>
+<td>Click</td>
+<td>Menu: Edit, View Activity, Add Tag, Add to Segment, Delete</td>
+</tr>
+</tbody>
+</table>
+<h4 id="persona-specific-columns" tabindex="-1"><a class="heading-anchor" href="#persona-specific-columns" aria-hidden="true">#</a> Persona-Specific Columns</h4>
+<p>The visible columns adapt by persona:</p>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Columns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OA, DM</td>
+<td>Name, Type, Precinct, Phone, Score, Tags</td>
+</tr>
+<tr>
+<td>CD</td>
+<td>Name, Email, Subscribed, Last Email, Tags</td>
+</tr>
+<tr>
+<td>FD</td>
+<td>Name, Type, Precinct, Phone, Donation Total</td>
+</tr>
+<tr>
+<td>FiD</td>
+<td>Name, Precinct, Score, Last Contact, Tags</td>
+</tr>
+<tr>
+<td>VC</td>
+<td>Name, Phone, Volunteer Status, Hours, Last Shift</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="crm-002-contact-detail" tabindex="-1"><a class="heading-anchor" href="#crm-002-contact-detail" aria-hidden="true">#</a> CRM-002: Contact Detail</h3>
+<p>The unified view of a person — all their facets (voter, donor, volunteer, event attendee) in one record.</p>
+<h4 id="personas-1" tabindex="-1"><a class="heading-anchor" href="#personas-1" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, CD, FD, FiD, VC, DM</li>
+<li>Partial offline: cached contact data viewable, but activity and related records require connectivity</li>
+</ul>
+<h4 id="desktop-in-detail-panel" tabindex="-1"><a class="heading-anchor" href="#desktop-in-detail-panel" aria-hidden="true">#</a> Desktop (in Detail Panel)</h4>
+<pre><code>┌────────────────────────────────────────────────────────────────┐
+│  ← Contacts    Ana Martínez                    [Edit]  [⋯]    │
+├────────────────────────────────────────────────────────────────┤
+│                                                                │
+│  Voter · Donor                          Support Score: ████ 4  │
+│  Precinct: San Juan 1                                          │
+│  +1 787-555-0101 · ana.martinez@email.com                      │
+│  Calle Sol 42, San Juan, PR 00901                              │
+│                                                                │
+│  Tags: Canvassed · Event Attendee · Recurring Donor            │
+│                                                                │
+├────────────────────────────────────────────────────────────────┤
+│  [Overview]  [Activity]  [Donations]  [Communications]  [Notes]│
+├────────────────────────────────────────────────────────────────┤
+│                                                                │
+│  Registration                                                  │
+│  ────────────                                                  │
+│  Status: Active · Registered: Jan 15, 2020                     │
+│  Party: Partido Verde                                          │
+│  Voting history: 2020 General ✓ · 2022 Primary ✓ · 2024 Mun ✓│
+│                                                                │
+│  Household                                                     │
+│  ────────────                                                  │
+│  Carlos Martínez (spouse) · same address                       │
+│  Voter · Score: 3                                              │
+│                                                                │
+│  Canvassing                                                    │
+│  ────────────                                                  │
+│  Last contact: Feb 20, 2024 · by Carlos R.                     │
+│  Result: Strong Support                                        │
+│  Notes: &quot;Very enthusiastic about park restoration plan&quot;         │
+│  Attempts: 3 (2 contact, 1 not home)                           │
+│                                                                │
+│  Donation Summary                                              │
+│  ────────────                                                  │
+│  Total: $450 (3 donations)                                     │
+│  Recurring: $25/month (active)                                 │
+│  Last: $100 on Feb 15, 2024                                    │
+│                                                                │
+│  Events                                                        │
+│  ────────────                                                  │
+│  Rally at Plaza (Mar 5) — RSVP'd                               │
+│  Town Hall (Feb 12) — Attended                                 │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="activity-tab" tabindex="-1"><a class="heading-anchor" href="#activity-tab" aria-hidden="true">#</a> Activity Tab</h4>
+<pre><code>├────────────────────────────────────────────────────────────────┤
+│  [Overview]  [Activity]  [Donations]  [Communications]  [Notes]│
+├────────────────────────────────────────────────────────────────┤
+│                                                                │
+│  ● Feb 28 · Donation                                           │
+│    $100 online donation (Donor Thank You email triggered)      │
+│                                                                │
+│  ● Feb 20 · Canvass Contact                                   │
+│    Contacted by Carlos R. · Strong Support · Northside turf    │
+│                                                                │
+│  ● Feb 15 · Email Opened                                       │
+│    &quot;Rally Invite&quot; — opened 2x, clicked RSVP link              │
+│                                                                │
+│  ● Feb 12 · Event Attended                                     │
+│    Town Hall at Centro Comunal · checked in at 6:12 PM         │
+│                                                                │
+│  ● Feb 1 · Recurring Donation                                  │
+│    $25/month · auto-processed                                  │
+│                                                                │
+│  ● Jan 18 · Canvass Attempt                                   │
+│    Not home · left door hanger · by María S.                   │
+│                                                                │
+│  ● Jan 10 · SMS Sent                                           │
+│    &quot;Volunteer signup&quot; — no response                            │
+│                                                                │
+│  [Load more ↓]                                                 │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="mobile-full-screen" tabindex="-1"><a class="heading-anchor" href="#mobile-full-screen" aria-hidden="true">#</a> Mobile (Full Screen)</h4>
+<pre><code>┌──────────────────────────────┐
+│  ← Contacts   [Edit]  [⋯]   │
+├──────────────────────────────┤
+│                              │
+│  Ana Martínez                │
+│  Voter · Donor · Score: 4   │
+│  Precinct: San Juan 1       │
+│  📞 +1 787-555-0101         │
+│  ✉ ana.martinez@email.com   │
+│                              │
+│  Canvassed · Event Attendee │
+│  Recurring Donor             │
+│                              │
+├──────────────────────────────┤
+│ Overview Activity Donations ▸│  ← scrollable tabs
+├──────────────────────────────┤
+│                              │
+│  Registration                │
+│  Active · PV · Voted 3x     │
+│                              │
+│  Last Contact                │
+│  Feb 20 · Strong Support    │
+│  by Carlos R.               │
+│                              │
+│  Donations                   │
+│  $450 total · $25/mo recur  │
+│                              │
+│  Upcoming                    │
+│  Rally at Plaza · Mar 5     │
+│                              │
+├──────────────────────────────┤
+│ [📞 Call]  [✉ Email]  [💬]  │  ← quick actions
+└──────────────────────────────┘
+</code></pre>
+<h4 id="persona-specific-tab-visibility" tabindex="-1"><a class="heading-anchor" href="#persona-specific-tab-visibility" aria-hidden="true">#</a> Persona-Specific Tab Visibility</h4>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>Visible Tabs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OA</td>
+<td>All tabs</td>
+</tr>
+<tr>
+<td>CD</td>
+<td>Overview, Communications, Notes</td>
+</tr>
+<tr>
+<td>FD</td>
+<td>Overview, Donations, Notes</td>
+</tr>
+<tr>
+<td>FiD</td>
+<td>Overview, Activity (canvass focus), Notes</td>
+</tr>
+<tr>
+<td>VC</td>
+<td>Overview, Activity (volunteer focus), Notes</td>
+</tr>
+<tr>
+<td>DM</td>
+<td>All tabs (data maintenance)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="design-notes" tabindex="-1"><a class="heading-anchor" href="#design-notes" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Support score</strong> displayed as a 1–5 filled bar (not just a number) — visual weight communicates at a glance</li>
+<li><strong>Type badges</strong> (Voter, Donor, Volunteer) are additive — a person can be all three</li>
+<li><strong>Activity timeline</strong> is the unified view — every interaction across every feature area appears in chronological order. Each entry links to its source record.</li>
+<li><strong>Quick action buttons</strong> on mobile (Call, Email, Message) — the contact record is often a launching pad for outreach</li>
+<li><strong>Household grouping</strong> — related contacts at the same address are linked, useful for canvassing (don't knock twice)</li>
+<li><strong>Offline (partial):</strong> Cached contact data viewable. Activity timeline and related records require connectivity.</li>
+</ul>
+<hr>
+<h3 id="crm-003-contact-create-edit" tabindex="-1"><a class="heading-anchor" href="#crm-003-contact-create-edit" aria-hidden="true">#</a> CRM-003: Contact Create / Edit</h3>
+<h4 id="personas-2" tabindex="-1"><a class="heading-anchor" href="#personas-2" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, CD, FD, FiD, VC, DM</li>
+</ul>
+<h4 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Contacts    New Contact                              [Cancel]  [Save]    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Basic Information                                                           │
+│  ────────────────                                                            │
+│                                                                              │
+│  First name *        [                              ]                       │
+│  Last name *         [                              ]                       │
+│  Phone *             [+1 (   )    -                 ]                       │
+│  Email               [                              ]                       │
+│                                                                              │
+│  Type                                                                        │
+│  ☑ Voter  ☐ Donor  ☐ Volunteer  ☐ Supporter  ☐ Contact                   │
+│                                                                              │
+│  Address                                                          [▾]       │
+│  ────────────────                                                            │
+│                                                                              │
+│  Street              [                              ]                       │
+│  City                [                              ]                       │
+│  State / Province    [                         ▾]                           │
+│  Postal code         [          ]                                           │
+│                                                                              │
+│  Electoral Info                                                   [▾]       │
+│  ────────────────                                                            │
+│                                                                              │
+│  Precinct / District [                         ▾]                           │
+│  Registration status [Active                   ▾]                           │
+│  Party affiliation   [                         ▾]                           │
+│  Voter ID            [                              ]                       │
+│                                                                              │
+│  Tags                                                             [▾]       │
+│  ────────────────                                                            │
+│                                                                              │
+│  [Search or create tags...                    ]                             │
+│  Applied: (none)                                                             │
+│                                                                              │
+│  Notes                                                            [▾]       │
+│  ────────────────                                                            │
+│                                                                              │
+│  [                                                                 ]        │
+│  [                                                                 ]        │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  [Cancel]                                                          [Save]   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-1" tabindex="-1"><a class="heading-anchor" href="#design-notes-1" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Progressive disclosure</strong> — Address, Electoral Info, Tags, and Notes sections are collapsible. Basic Information always visible.</li>
+<li><strong>Phone is required</strong> — consistent with the dedup strategy (mobile phone as primary identifier)</li>
+<li><strong>Type checkboxes are additive</strong> — a person can be Voter + Donor + Volunteer simultaneously</li>
+<li><strong>Duplicate detection on save</strong> — if the phone or email matches an existing record, a warning appears before save: &quot;A contact with this phone number already exists: Ana Martínez. [View existing] [Save anyway] [Cancel]&quot;</li>
+<li><strong>Edit mode</strong> — same form, pre-populated. Title changes to &quot;Edit Contact&quot;. A &quot;View history&quot; link shows field change history.</li>
+<li><strong>Auto-save</strong> — drafts saved every 30 seconds for complex edits</li>
+<li><strong>Mobile</strong> — same form, full-screen, sections stacked. Sticky save button at bottom.</li>
+</ul>
+<hr>
+<h2 id="segmentation" tabindex="-1"><a class="heading-anchor" href="#segmentation" aria-hidden="true">#</a> Segmentation</h2>
+<h3 id="crm-004-segment-builder" tabindex="-1"><a class="heading-anchor" href="#crm-004-segment-builder" aria-hidden="true">#</a> CRM-004: Segment Builder</h3>
+<p>Visual query builder for creating audience segments. Used for targeting communications, field operations, and reporting.</p>
+<h4 id="personas-3" tabindex="-1"><a class="heading-anchor" href="#personas-3" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, CD, FD, FiD, DM</li>
+</ul>
+<h4 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Segments    New Segment                             [Cancel]  [Save]     │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Segment name *     [Likely Supporters — San Juan                  ]        │
+│  Description        [Voters with score 3+ in San Juan precinct     ]        │
+│                                                                              │
+│  Rules                                                                       │
+│  ─────                                                                       │
+│                                                                              │
+│  Match [all ▾] of the following:                                            │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  [Type          ▾]  [is            ▾]  [Voter              ▾]   ✕  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  AND                                                                         │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  [Support Score ▾]  [is at least   ▾]  [3                  ▾]   ✕  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  AND                                                                         │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  [Precinct      ▾]  [is            ▾]  [San Juan 1         ▾]   ✕  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  [+ Add rule]     [+ Add rule group (OR)]                                   │
+│                                                                              │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  Preview                                                    Matches: 1,247  │
+│  ────────                                                                    │
+│                                                                              │
+│  Ana Martínez         Voter/Donor    San Juan 1    Score: 4                 │
+│  Carlos Rivera        Voter          San Juan 1    Score: 3                 │
+│  Elena Torres         Voter/Vol      San Juan 1    Score: 5                 │
+│  Rosa Figueroa        Voter/Donor    San Juan 1    Score: 5                 │
+│  Pedro Colón          Voter          San Juan 1    Score: 4                 │
+│  ...                                                                         │
+│                                                                              │
+│  Showing 5 of 1,247 matching contacts      [View all matches →]            │
+│                                                                              │
+├──────────────────────────────────────────────────────────────────────────────┤
+│  [Cancel]                                                          [Save]   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="available-rule-fields" tabindex="-1"><a class="heading-anchor" href="#available-rule-fields" aria-hidden="true">#</a> Available Rule Fields</h4>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Demographics</td>
+<td>Type, Precinct, City, State, Language, Age range</td>
+</tr>
+<tr>
+<td>Engagement</td>
+<td>Support score, Last contact date, Contact count, Last donation, Donation total</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Registration status, Party, Volunteer status, Subscription status</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td>Has tag, Does not have tag</td>
+</tr>
+<tr>
+<td>Events</td>
+<td>Attended event, RSVP'd, Event type</td>
+</tr>
+<tr>
+<td>Communications</td>
+<td>Opened email, Clicked email, SMS responded, Unsubscribed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="design-notes-2" tabindex="-1"><a class="heading-anchor" href="#design-notes-2" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Live preview</strong> — the match count and sample records update as rules are added/modified (debounced)</li>
+<li><strong>AND/OR logic</strong> — rules within a group are AND. Rule groups are OR. This covers most segmentation needs without requiring a full Boolean expression builder.</li>
+<li><strong>Desktop only</strong> (per screen inventory) — segment building requires horizontal space for the rule builder</li>
+<li><strong>Saved segments are dynamic</strong> — they re-evaluate on use (the count may change between creation and send)</li>
+<li><strong>Encryption constraint</strong> — for BYOK tenants, some fields may not be searchable. The builder disables those fields with a tooltip: &quot;This field is encrypted and cannot be used for segmentation.&quot;</li>
+</ul>
+<hr>
+<h3 id="crm-005-segment-list" tabindex="-1"><a class="heading-anchor" href="#crm-005-segment-list" aria-hidden="true">#</a> CRM-005: Segment List</h3>
+<h4 id="personas-4" tabindex="-1"><a class="heading-anchor" href="#personas-4" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, CD, FD, FiD, DM</li>
+</ul>
+<h4 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Segments                                                              42    │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  [🔍 Search segments...]                     [Sort ▾]  [+ New Segment]     │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Name                    Contacts    Created      Last Used   ⋯     │   │
+│  │  ─────────────────────────────────────────────────────────────────  │   │
+│  │  Likely Supporters — SJ  1,247       Feb 15       Mar 1        ⋯    │   │
+│  │  All Donors              3,240       Jan 10       Mar 3        ⋯    │   │
+│  │  Lapsed Volunteers       23          Feb 20       Feb 28       ⋯    │   │
+│  │  Event Attendees 2024    342         Jan 5        Feb 15       ⋯    │   │
+│  │  Uncontacted Voters      4,830       Mar 1        —            ⋯    │   │
+│  │  Phone Bank Targets      1,500       Feb 25       Mar 2        ⋯    │   │
+│  │  Recurring Donors        112         Jan 12       Mar 3        ⋯    │   │
+│  │  ...                                                                │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ◀  Page 1 of 2  ▶                              Showing 1–25 of 42         │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="row-actions-" tabindex="-1"><a class="heading-anchor" href="#row-actions-" aria-hidden="true">#</a> Row Actions (⋯)</h4>
+<ul>
+<li><strong>Edit</strong> — open in Segment Builder (CRM-004)</li>
+<li><strong>Duplicate</strong> — create a copy for modification</li>
+<li><strong>View contacts</strong> — navigate to Contact List (CRM-001) filtered to this segment</li>
+<li><strong>Export</strong> — export segment contacts (navigates to CRM-013 pre-filtered)</li>
+<li><strong>Delete</strong> — confirmation dialog noting any campaigns using this segment</li>
+</ul>
+<h4 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h4>
+<ul>
+<li>Card list format (name + contact count per card)</li>
+<li>Tap to view contacts (CRM-001 filtered)</li>
+<li>Long-press for actions</li>
+<li>Infinite scroll</li>
+</ul>
+<hr>
+<h2 id="deduplication" tabindex="-1"><a class="heading-anchor" href="#deduplication" aria-hidden="true">#</a> Deduplication</h2>
+<h3 id="crm-006-dedup-review-queue" tabindex="-1"><a class="heading-anchor" href="#crm-006-dedup-review-queue" aria-hidden="true">#</a> CRM-006: Dedup Review Queue</h3>
+<p>Potential duplicate records surfaced by the dedup engine, awaiting human review.</p>
+<h4 id="personas-5" tabindex="-1"><a class="heading-anchor" href="#personas-5" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, DM</li>
+</ul>
+<h4 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Dedup Queue                                                           42    │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  42 potential duplicates awaiting review                                     │
+│  Auto-merged this month: 78 · Manual merges: 42                             │
+│                                                                              │
+│  [All]  [High Confidence]  [Medium]  [Low]                                  │
+│  ──────────────────────────                                                  │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  🟢 High Confidence (92%)                                           │   │
+│  │                                                                       │   │
+│  │  A: Ana Martínez · +1 787-555-0101 · ana@email.com                  │   │
+│  │  B: Ana M. Martinez · +1 787-555-0101 · anam@email.com              │   │
+│  │                                                                       │   │
+│  │  Matched on: Phone (exact) · Name (fuzzy, 94%)                      │   │
+│  │  Source: A = Voter file import · B = Donation form                   │   │
+│  │                                                                       │   │
+│  │  [Review &amp; Merge →]                              [Dismiss]           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  🟢 High Confidence (90%)                                           │   │
+│  │                                                                       │   │
+│  │  A: Pedro Colón · +1 787-555-0106 · pedro@colon.pr                  │   │
+│  │  B: Pedro R. Colón · +1 787-555-0106 · (no email)                   │   │
+│  │                                                                       │   │
+│  │  Matched on: Phone (exact) · Name (fuzzy, 91%)                      │   │
+│  │  Source: A = Manual entry · B = Voter file import                    │   │
+│  │                                                                       │   │
+│  │  [Review &amp; Merge →]                              [Dismiss]           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  🟡 Medium Confidence (78%)                                          │   │
+│  │                                                                       │   │
+│  │  A: Carlos Rivera · +1 787-555-0102 · carlos@rivera.pr              │   │
+│  │  B: Carlos A. Rivera · +1 787-555-0199 · carlos@rivera.pr           │   │
+│  │                                                                       │   │
+│  │  Matched on: Email (exact) · Name (fuzzy, 88%) · Phone (different)  │   │
+│  │  Source: A = Voter file · B = Event signup                           │   │
+│  │                                                                       │   │
+│  │  [Review &amp; Merge →]                              [Dismiss]           │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ...                                                                         │
+│                                                                              │
+│  ◀  Page 1 of 2  ▶                              Showing 1–25 of 42         │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-3" tabindex="-1"><a class="heading-anchor" href="#design-notes-3" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Confidence color coding:</strong> 🟢 High (&gt;90%) — likely true dupes. 🟡 Medium (70–90%) — review carefully. 🔴 Low (&lt;70%) — may be different people.</li>
+<li><strong>Matched-on fields</strong> shown inline — the reviewer can immediately see why the system flagged these as potential dupes</li>
+<li><strong>Source attribution</strong> — knowing where each record came from helps the reviewer judge quality</li>
+<li><strong>Dismiss</strong> removes the pair from the queue without merging (logged in audit trail)</li>
+<li><strong>Desktop only</strong> (per screen inventory)</li>
+<li><strong>Bulk merge</strong> for high-confidence pairs: &quot;Merge all High Confidence&quot; button (with confirmation showing count and preview of first 3)</li>
+</ul>
+<hr>
+<h3 id="crm-007-dedup-side-by-side-comparison" tabindex="-1"><a class="heading-anchor" href="#crm-007-dedup-side-by-side-comparison" aria-hidden="true">#</a> CRM-007: Dedup Side-by-Side Comparison</h3>
+<p>The merge resolution screen. Two records side by side, field by field.</p>
+<h4 id="personas-6" tabindex="-1"><a class="heading-anchor" href="#personas-6" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, DM</li>
+</ul>
+<h4 id="desktop-5" tabindex="-1"><a class="heading-anchor" href="#desktop-5" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Dedup Queue    Merge Records                Confidence: 🟢 92%          │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│               Record A (Voter file)          Record B (Donation form)        │
+│  ─────────────────────────────────────────────────────────────────────────── │
+│                                                                              │
+│  First name   ◉ Ana                          ○ Ana                          │
+│  Last name    ◉ Martínez                     ○ Martinez          ← differs  │
+│  Phone        ◉ +1 787-555-0101              ○ +1 787-555-0101              │
+│  Email        ○ ana@email.com                ◉ anam@email.com    ← differs  │
+│  Address      ◉ Calle Sol 42, San Juan       ○ (empty)                      │
+│  Precinct     ◉ San Juan 1                   ○ (empty)                      │
+│  Reg. status  ◉ Active                       ○ (empty)                      │
+│  Party        ◉ Partido Verde                ○ (empty)                      │
+│  Type         ◉ Voter                        ◉ Donor             ← both    │
+│  Tags         ◉ Canvassed                    ◉ Event Attendee    ← both    │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────── │
+│                                                                              │
+│  Related Data (will be combined)                                             │
+│  ────────────────────────────────                                            │
+│  Record A: 3 canvass interactions, 2 emails opened                          │
+│  Record B: 3 donations ($450 total), 1 event RSVP                           │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────── │
+│                                                                              │
+│  Merged Result Preview                                                       │
+│  ─────────────────────                                                       │
+│  Ana Martínez · +1 787-555-0101 · anam@email.com                            │
+│  Calle Sol 42, San Juan, PR · San Juan 1 · Active · PV                      │
+│  Voter / Donor · Tags: Canvassed, Event Attendee                            │
+│  3 canvass interactions · 3 donations · 2 emails · 1 event                  │
+│                                                                              │
+│  [Cancel]                                              [Confirm Merge →]    │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-4" tabindex="-1"><a class="heading-anchor" href="#design-notes-4" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Radio buttons per field</strong> — reviewer picks which value to keep for each differing field. Pre-selected based on data source reliability and recency.</li>
+<li><strong>Differences highlighted</strong> — rows where values differ have a visual highlight and a &quot;differs&quot; indicator</li>
+<li><strong>&quot;Both&quot; option for additive fields</strong> — Type and Tags merge additively (keep all). Checkbox instead of radio for these.</li>
+<li><strong>Related data section</strong> — shows what activity/history will be combined. This is the highest-risk area — merging wrong records combines donation history and canvass data irreversibly.</li>
+<li><strong>Merged result preview</strong> — the reviewer sees exactly what the merged record will look like before confirming</li>
+<li><strong>Desktop only</strong> — side-by-side comparison needs horizontal space</li>
+<li><strong>Audit trail</strong> — merge action is logged with: who merged, when, which fields were resolved how, original record snapshots preserved</li>
+</ul>
+<hr>
+<h2 id="data-import" tabindex="-1"><a class="heading-anchor" href="#data-import" aria-hidden="true">#</a> Data Import</h2>
+<p>The import flow is a 4-step wizard (CRM-008 through CRM-011).</p>
+<h3 id="crm-008-data-import-wizard-file-upload-step-1" tabindex="-1"><a class="heading-anchor" href="#crm-008-data-import-wizard-file-upload-step-1" aria-hidden="true">#</a> CRM-008: Data Import Wizard — File Upload (Step 1)</h3>
+<h4 id="personas-7" tabindex="-1"><a class="heading-anchor" href="#personas-7" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, DM</li>
+</ul>
+<h4 id="desktop-6" tabindex="-1"><a class="heading-anchor" href="#desktop-6" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Import Data                                                Step 1 of 4     │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  ● Upload  ○ Map Columns  ○ Review Duplicates  ○ Confirm                    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                       │   │
+│  │                          📁                                          │   │
+│  │                                                                       │   │
+│  │              Drag and drop your file here                             │   │
+│  │              or click to browse                                       │   │
+│  │                                                                       │   │
+│  │              Supported: CSV, Excel (.xlsx)                            │   │
+│  │              Max file size: 50 MB                                     │   │
+│  │                                                                       │   │
+│  │              [Browse Files]                                           │   │
+│  │                                                                       │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Import type                                                                 │
+│  ────────────                                                                │
+│                                                                              │
+│  ◉ Voter file — official voter registration records                         │
+│  ○ Donor list — donation records with amounts and dates                     │
+│  ○ Volunteer roster — volunteer contact information                          │
+│  ○ Event attendees — event participation records                            │
+│  ○ General contacts — any contact list                                      │
+│                                                                              │
+│  [Cancel]                                                                    │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="after-file-selected" tabindex="-1"><a class="heading-anchor" href="#after-file-selected" aria-hidden="true">#</a> After File Selected</h4>
+<pre><code>│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  ✓ voters_san_juan_2024.csv                                         │   │
+│  │    12,400 rows · 18 columns · 2.3 MB                                │   │
+│  │    Encoding: UTF-8 detected                                          │   │
+│  │    [Remove file]                                                     │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  [Cancel]                                              [Continue →]         │
+</code></pre>
+<hr>
+<h3 id="crm-009-data-import-wizard-column-mapping-step-2" tabindex="-1"><a class="heading-anchor" href="#crm-009-data-import-wizard-column-mapping-step-2" aria-hidden="true">#</a> CRM-009: Data Import Wizard — Column Mapping (Step 2)</h3>
+<h4 id="desktop-7" tabindex="-1"><a class="heading-anchor" href="#desktop-7" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Import Data                                                Step 2 of 4     │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  ✓ Upload  ● Map Columns  ○ Review Duplicates  ○ Confirm                    │
+│                                                                              │
+│  voters_san_juan_2024.csv · 12,400 rows · 18 columns                        │
+│  We've auto-detected mappings. Please review and adjust.                     │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Your Column         →  GreenGrass Field       Sample Data          │   │
+│  │  ─────────────────────────────────────────────────────────────────  │   │
+│  │  NOMBRE              →  [First Name        ▾]  Ana                  │   │
+│  │  APELLIDO            →  [Last Name         ▾]  Martínez             │   │
+│  │  TELEFONO            →  [Phone             ▾]  787-555-0101         │   │
+│  │  EMAIL               →  [Email             ▾]  ana@email.com        │   │
+│  │  DIRECCION           →  [Street Address    ▾]  Calle Sol 42         │   │
+│  │  CIUDAD              →  [City              ▾]  San Juan             │   │
+│  │  ESTADO              →  [State             ▾]  PR                   │   │
+│  │  CODIGO_POSTAL       →  [Postal Code       ▾]  00901                │   │
+│  │  PRECINTO            →  [Precinct          ▾]  San Juan 1           │   │
+│  │  ESTADO_REG          →  [Reg. Status       ▾]  Activo               │   │
+│  │  PARTIDO             →  [Party             ▾]  PV                   │   │
+│  │  FECHA_NAC           →  [Date of Birth     ▾]  1985-03-12           │   │
+│  │  NUM_VOTANTE         →  [Voter ID          ▾]  PR-2024-0001        │   │
+│  │  SEXO                →  [— Skip column —   ▾]  F                    │   │
+│  │  ...                                                                │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ⚠ 2 columns not mapped: SEXO, ZONA_ELECTORAL                              │
+│  Unmapped columns will be skipped during import.                             │
+│                                                                              │
+│  Phone format: [Auto-detect ▾]  (will normalize to +1 format)              │
+│  Date format:  [YYYY-MM-DD  ▾]                                             │
+│                                                                              │
+│  [← Back]                                              [Continue →]         │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-5" tabindex="-1"><a class="heading-anchor" href="#design-notes-5" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Auto-detection</strong> — the system guesses column mappings from headers (Spanish headers in this example). Correct guesses are pre-selected.</li>
+<li><strong>Sample data</strong> column shows one row so the user can verify the mapping makes sense</li>
+<li><strong>Skip column</strong> option for columns that don't map to any GreenGrass field</li>
+<li><strong>Format configuration</strong> — phone and date formats can be specified when auto-detect is uncertain</li>
+<li><strong>Unmapped column warning</strong> — clear but not blocking. Skipping columns is expected.</li>
+</ul>
+<hr>
+<h3 id="crm-010-data-import-wizard-dedup-preview-step-3" tabindex="-1"><a class="heading-anchor" href="#crm-010-data-import-wizard-dedup-preview-step-3" aria-hidden="true">#</a> CRM-010: Data Import Wizard — Dedup Preview (Step 3)</h3>
+<h4 id="desktop-8" tabindex="-1"><a class="heading-anchor" href="#desktop-8" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Import Data                                                Step 3 of 4     │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  ✓ Upload  ✓ Map Columns  ● Review Duplicates  ○ Confirm                    │
+│                                                                              │
+│  Scanning 12,400 rows against 24,830 existing contacts...                   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Import Preview                                                       │   │
+│  │  ──────────────                                                       │   │
+│  │                                                                       │   │
+│  │  New records:           10,840  (will be created)                     │   │
+│  │  Existing matches:       1,240  (will be updated)                     │   │
+│  │  Potential duplicates:     247  (need review)                         │   │
+│  │  Skipped (invalid):         73  (missing required fields)             │   │
+│  │                                                                       │   │
+│  │  Total:                 12,400                                        │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  Potential Duplicates (247)                              [Review all →]      │
+│  ─────────────────────────                                                   │
+│  Showing first 5:                                                            │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Import: Ana M. Martinez, 787-555-0101, anam@email.com              │   │
+│  │  Match:  Ana Martínez, 787-555-0101, ana@email.com                  │   │
+│  │  Confidence: 92% · Matched on: Phone (exact), Name (fuzzy)          │   │
+│  │  Action: [Update existing ▾]                                        │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Import: Pedro R. Colón, 787-555-0106, (no email)                   │   │
+│  │  Match:  Pedro Colón, 787-555-0106, pedro@colon.pr                  │   │
+│  │  Confidence: 90% · Matched on: Phone (exact), Name (fuzzy)          │   │
+│  │  Action: [Update existing ▾]                                        │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ...                                                                         │
+│                                                                              │
+│  Bulk action for remaining 242 duplicates:                                   │
+│  ◉ Update existing records (keep newer data)                                │
+│  ○ Create as new records (review later in dedup queue)                      │
+│  ○ Skip duplicates (don't import matched rows)                              │
+│                                                                              │
+│  Skipped Rows (73)                                       [View details →]   │
+│  ────────────────                                                            │
+│  Missing phone: 68 · Invalid email format: 5                                │
+│                                                                              │
+│  [← Back]                                              [Continue →]         │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-6" tabindex="-1"><a class="heading-anchor" href="#design-notes-6" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Summary first</strong> — the user immediately sees the breakdown: how many new, how many updates, how many need attention</li>
+<li><strong>Per-duplicate action dropdown</strong> — for the first few displayed dupes, the user can choose individually (Update existing / Create new / Skip)</li>
+<li><strong>Bulk action for remainder</strong> — reviewing 247 duplicates one by one isn't practical. The bulk option handles the rest.</li>
+<li><strong>Skipped rows</strong> — transparent about what won't be imported and why</li>
+<li><strong>&quot;Review all&quot; link</strong> — opens a full dedup review interface for users who want to check every match</li>
+</ul>
+<hr>
+<h3 id="crm-011-data-import-wizard-confirmation-step-4" tabindex="-1"><a class="heading-anchor" href="#crm-011-data-import-wizard-confirmation-step-4" aria-hidden="true">#</a> CRM-011: Data Import Wizard — Confirmation (Step 4)</h3>
+<h4 id="desktop-9" tabindex="-1"><a class="heading-anchor" href="#desktop-9" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Import Data                                                Step 4 of 4     │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  ✓ Upload  ✓ Map Columns  ✓ Review Duplicates  ● Confirm                    │
+│                                                                              │
+│  Ready to Import                                                             │
+│  ────────────────                                                            │
+│                                                                              │
+│  File:             voters_san_juan_2024.csv                                  │
+│  Type:             Voter file                                                │
+│  Mapped columns:   16 of 18                                                  │
+│                                                                              │
+│  Actions to be taken:                                                        │
+│  ─────────────────────                                                       │
+│  Create new records:       10,840                                            │
+│  Update existing records:   1,487  (1,240 matched + 247 dupes → update)     │
+│  Skipped:                      73  (invalid data)                            │
+│                                                                              │
+│  Total records processed:  12,327 of 12,400                                  │
+│                                                                              │
+│  ⚠ This import will be logged in the audit trail.                           │
+│  ⚠ This action cannot be undone. To reverse, you would need                 │
+│    to restore from a backup.                                                 │
+│                                                                              │
+│  [← Back]                                           [Import 12,327 →]      │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="import-progress-after-clicking-import" tabindex="-1"><a class="heading-anchor" href="#import-progress-after-clicking-import" aria-hidden="true">#</a> Import Progress (after clicking Import)</h4>
+<pre><code>│                                                                              │
+│  Importing...                                                                │
+│  ────────────                                                                │
+│                                                                              │
+│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░  68%                         │
+│  8,382 of 12,327 records processed                                           │
+│                                                                              │
+│  You can navigate away — the import will continue in the background.         │
+│  You'll be notified when it's complete.                                      │
+│                                                                              │
+</code></pre>
+<h4 id="import-complete" tabindex="-1"><a class="heading-anchor" href="#import-complete" aria-hidden="true">#</a> Import Complete</h4>
+<pre><code>│                                                                              │
+│  ✓ Import Complete                                                           │
+│  ─────────────────                                                           │
+│                                                                              │
+│  Created:     10,840 new records                                             │
+│  Updated:      1,482 existing records                                        │
+│  Skipped:         73 (invalid data)                                          │
+│  Errors:           5 (unexpected format in rows 4201, 4203, 4210, 4211, 4215)│
+│                                                                              │
+│  Quality score: 94%                                                          │
+│  New potential duplicates added to dedup queue: 12                            │
+│                                                                              │
+│  [View error details]  [View import in history]  [Return to Contacts →]     │
+│                                                                              │
+</code></pre>
+<hr>
+<h2 id="import-history-export" tabindex="-1"><a class="heading-anchor" href="#import-history-export" aria-hidden="true">#</a> Import History &amp; Export</h2>
+<h3 id="crm-012-data-import-history" tabindex="-1"><a class="heading-anchor" href="#crm-012-data-import-history" aria-hidden="true">#</a> CRM-012: Data Import History</h3>
+<h4 id="personas-8" tabindex="-1"><a class="heading-anchor" href="#personas-8" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, DM</li>
+</ul>
+<h4 id="desktop-10" tabindex="-1"><a class="heading-anchor" href="#desktop-10" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Import History                                                              │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  [🔍 Search imports...]                                   [+ New Import]    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Date        File                    Type      Records  Quality  By │   │
+│  │  ─────────────────────────────────────────────────────────────────  │   │
+│  │  Mar 3       voters_san_juan_2024    Voter     12,327   94%     CM  │   │
+│  │  Feb 28      phone_bank_wave3        Contacts     500   98%     CM  │   │
+│  │  Feb 25      event_attendees_th      Events        67   98%     ET  │   │
+│  │  Feb 20      donors_q4_2023          Donors       342   91%     AR  │   │
+│  │  Feb 15      voter_reg_western       Voter      3,200   89%     CM  │   │
+│  │  Feb 10      volunteers_new          Volunteers    45   100%    ET  │   │
+│  │  ...                                                                │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ◀  Page 1 of 3  ▶                              Showing 1–25 of 58         │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="row-click-import-detail" tabindex="-1"><a class="heading-anchor" href="#row-click-import-detail" aria-hidden="true">#</a> Row Click → Import Detail</h4>
+<pre><code>┌────────────────────────────────────────┐
+│  voters_san_juan_2024.csv          ✕   │
+│  ────────────────────                  │
+│                                        │
+│  Imported: Mar 3, 2024 at 2:15 PM     │
+│  By: Carlos M.                         │
+│  Type: Voter file                      │
+│                                        │
+│  Results                               │
+│  ────────                              │
+│  Created:  10,840                      │
+│  Updated:   1,482                      │
+│  Skipped:      73                      │
+│  Errors:        5                      │
+│  Quality:     94%                      │
+│                                        │
+│  Column Mapping                        │
+│  ────────                              │
+│  NOMBRE → First Name                  │
+│  APELLIDO → Last Name                 │
+│  TELEFONO → Phone                     │
+│  ...                                   │
+│                                        │
+│  [View errors]  [Download source file] │
+└────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h3 id="crm-013-data-export" tabindex="-1"><a class="heading-anchor" href="#crm-013-data-export" aria-hidden="true">#</a> CRM-013: Data Export</h3>
+<h4 id="personas-9" tabindex="-1"><a class="heading-anchor" href="#personas-9" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, DM</li>
+</ul>
+<h4 id="desktop-11" tabindex="-1"><a class="heading-anchor" href="#desktop-11" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Export Data                                                                 │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  What to export                                                              │
+│  ─────────────                                                               │
+│                                                                              │
+│  Record type:    [Contacts                 ▾]                               │
+│                                                                              │
+│  Filter by segment:  [All contacts         ▾]                               │
+│  Filter by type:     [All types            ▾]                               │
+│  Filter by tag:      [Any tag              ▾]                               │
+│  Date range:         [All time             ▾]                               │
+│                                                                              │
+│  Matching records: 24,830                                                    │
+│                                                                              │
+│  Which fields                                                                │
+│  ────────────                                                                │
+│                                                                              │
+│  ☑ Name (first, last)          ☑ Phone                                     │
+│  ☑ Email                       ☑ Address                                    │
+│  ☑ Type                        ☑ Precinct / District                       │
+│  ☑ Registration status         ☑ Party                                     │
+│  ☐ Voter ID                    ☐ Date of birth                             │
+│  ☑ Support score               ☑ Tags                                      │
+│  ☐ Donation history            ☐ Communication history                     │
+│  ☐ Canvass interactions        ☐ Event attendance                          │
+│                                                                              │
+│  [Select all]  [Clear all]                                                  │
+│                                                                              │
+│  Format                                                                      │
+│  ──────                                                                      │
+│  ◉ CSV          ○ Excel (.xlsx)          ○ JSON                             │
+│                                                                              │
+│  ☐ Include relationship data (donation → contact links, event → RSVP links) │
+│                                                                              │
+│  ⚠ This export will be logged in the audit trail.                           │
+│  ⚠ Sensitive fields (Voter ID, DOB) require Org Admin approval.            │
+│                                                                              │
+│  [Cancel]                                             [Export 24,830 →]     │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="export-progress" tabindex="-1"><a class="heading-anchor" href="#export-progress" aria-hidden="true">#</a> Export Progress</h4>
+<p>Exports run in the background. A notification appears when ready:</p>
+<pre><code>┌────────────────────────────────────────────────────┐
+│  ✓ Export ready                                     │
+│  contacts_all_2024-03-03.csv                        │
+│  24,830 records · 4.2 MB                            │
+│  [Download]    Link expires in 24 hours.            │
+└────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-7" tabindex="-1"><a class="heading-anchor" href="#design-notes-7" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Record count updates live</strong> as filters are applied — the user knows exactly what they're exporting</li>
+<li><strong>Field selection</strong> — checkboxes for granular control. Sensitive fields (Voter ID, DOB) require extra permission.</li>
+<li><strong>Relationship data opt-in</strong> — including cross-references produces a richer but larger export. Not checked by default.</li>
+<li><strong>Audit trail</strong> — every export is logged with who, what, when, and which fields were included</li>
+<li><strong>Desktop only</strong> (per screen inventory)</li>
+</ul>
+<hr>
+<h2 id="data-quality-tags" tabindex="-1"><a class="heading-anchor" href="#data-quality-tags" aria-hidden="true">#</a> Data Quality &amp; Tags</h2>
+<h3 id="crm-014-data-quality-report" tabindex="-1"><a class="heading-anchor" href="#crm-014-data-quality-report" aria-hidden="true">#</a> CRM-014: Data Quality Report</h3>
+<p>Detailed view of data health metrics. Complements the Data Quality Dashboard (DASH-006) with drill-down capability.</p>
+<h4 id="personas-10" tabindex="-1"><a class="heading-anchor" href="#personas-10" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, DM</li>
+</ul>
+<h4 id="desktop-12" tabindex="-1"><a class="heading-anchor" href="#desktop-12" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Data Quality Report                                                         │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  Overall score: 87%  ↑ from 82% last month                                  │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Score Breakdown                                                      │   │
+│  │  ──────────────                                                       │   │
+│  │                                                                       │   │
+│  │  Completeness (40% weight)                                            │   │
+│  │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░  89%   22,092 of 24,830 records complete     │   │
+│  │                                                                       │   │
+│  │  Freshness (30% weight)                                               │   │
+│  │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░  84%   20,857 updated within 90 days         │   │
+│  │                                                                       │   │
+│  │  Validity (30% weight)                                                │   │
+│  │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░  88%   21,850 with valid contact fields      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Completeness by Field                                                │   │
+│  │  ─────────────────────                                                │   │
+│  │                                                                       │   │
+│  │  Field             Filled      Missing     % Complete                 │   │
+│  │  ───────────────────────────────────────────────────────              │   │
+│  │  First name        24,830           0      100%         🟢           │   │
+│  │  Last name         24,830           0      100%         🟢           │   │
+│  │  Phone             24,412         418       98%         🟢           │   │
+│  │  Email             19,280       5,550       78%         🟡           │   │
+│  │  Address           21,450       3,380       86%         🟡           │   │
+│  │  Precinct          18,450       6,380       74%         🟡           │   │
+│  │  Reg. status       18,200       6,630       73%         🟡           │   │
+│  │  Party             15,400       9,430       62%         🔴           │   │
+│  │  Voter ID          12,300      12,530       50%         🔴           │   │
+│  │                                                                       │   │
+│  │  [Export incomplete records →]                                        │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Validity Issues (2,980)        │  │  Quality Trend (6 months)        │   │
+│  │  ─────────────────              │  │  ─────────────────               │   │
+│  │                                 │  │                                   │   │
+│  │  Invalid email format    1,200  │  │  90%┤              ___/          │   │
+│  │  Invalid phone format      800  │  │  85%┤         ____/              │   │
+│  │  Undeliverable email       580  │  │  80%┤    ____/                   │   │
+│  │  Invalid postal code       400  │  │  75%┤___/                        │   │
+│  │                                 │  │  70%┤                             │   │
+│  │                                 │  │      Oct  Nov  Dec  Jan  Feb  Mar │   │
+│  │  [View all issues →]           │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Stale Records (969)                                                  │   │
+│  │  ───────────────────                                                  │   │
+│  │                                                                       │   │
+│  │  91–180 days since update:     520   [View →]                        │   │
+│  │  181–365 days since update:    312   [View →]                        │   │
+│  │  Over 1 year since update:     137   [View →]                        │   │
+│  │                                                                       │   │
+│  │  Recommendation: Records over 1 year old should be reverified         │   │
+│  │  before use in active campaigns.                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="design-notes-8" tabindex="-1"><a class="heading-anchor" href="#design-notes-8" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Score breakdown</strong> makes the composite formula transparent — the Data Manager can see which dimension is dragging the score down</li>
+<li><strong>Completeness by field</strong> is the most actionable table — it tells the Data Manager exactly which fields to prioritize in data enrichment efforts</li>
+<li><strong>Color coding on percentages:</strong> 🟢 &gt;90%, 🟡 70–90%, 🔴 &lt;70%</li>
+<li><strong>Quality trend chart</strong> — shows improvement over time, validating the Data Manager's work</li>
+<li><strong>Stale records</strong> grouped by age — more aggressive action recommended for older records</li>
+<li><strong>Desktop only</strong> (per screen inventory)</li>
+</ul>
+<hr>
+<h3 id="crm-015-tag-management" tabindex="-1"><a class="heading-anchor" href="#crm-015-tag-management" aria-hidden="true">#</a> CRM-015: Tag Management</h3>
+<p>Manage the taxonomy of tags applied across all contact records.</p>
+<h4 id="personas-11" tabindex="-1"><a class="heading-anchor" href="#personas-11" aria-hidden="true">#</a> Personas</h4>
+<ul>
+<li>OA, DM</li>
+</ul>
+<h4 id="desktop-13" tabindex="-1"><a class="heading-anchor" href="#desktop-13" aria-hidden="true">#</a> Desktop</h4>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Tags                                                                  34    │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  [🔍 Search tags...]                                       [+ New Tag]      │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Tag                   Contacts    Created      Category    Actions  │   │
+│  │  ─────────────────────────────────────────────────────────────────  │   │
+│  │  Canvassed             4,830       Jan 10       Field         ⋯     │   │
+│  │  Phone Banked          1,847       Jan 15       Field         ⋯     │   │
+│  │  Event Attendee        2,340       Jan 5        Events        ⋯     │   │
+│  │  Recurring Donor         112       Jan 12       Fundraising   ⋯     │   │
+│  │  VIP                      28       Feb 1        General       ⋯     │   │
+│  │  Lapsed Volunteer         23       Feb 20       Volunteers    ⋯     │   │
+│  │  Do Not Contact           15       Jan 8        General       ⋯     │   │
+│  │  Needs Follow-up         342       Feb 25       Field         ⋯     │   │
+│  │  Spanish Preferred        890       Jan 10       General       ⋯     │   │
+│  │  ...                                                                │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ◀  Page 1 of 2  ▶                              Showing 1–25 of 34         │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h4 id="create-edit-tag-dialog" tabindex="-1"><a class="heading-anchor" href="#create-edit-tag-dialog" aria-hidden="true">#</a> Create / Edit Tag Dialog</h4>
+<pre><code>┌────────────────────────────────────────┐
+│  New Tag                               │
+│  ────────                              │
+│                                        │
+│  Tag name *     [                    ] │
+│  Category       [General           ▾] │
+│  Description    [                    ] │
+│                                        │
+│  Categories: General, Field,           │
+│  Fundraising, Events, Volunteers,      │
+│  Communications                        │
+│                                        │
+│  [Cancel]                     [Save]   │
+└────────────────────────────────────────┘
+</code></pre>
+<h4 id="row-actions--1" tabindex="-1"><a class="heading-anchor" href="#row-actions--1" aria-hidden="true">#</a> Row Actions (⋯)</h4>
+<ul>
+<li><strong>Edit</strong> — modify name, category, description</li>
+<li><strong>View contacts</strong> — navigate to Contact List (CRM-001) filtered to this tag</li>
+<li><strong>Merge with...</strong> — combine two tags (reassigns all contacts from one tag to another)</li>
+<li><strong>Delete</strong> — confirmation dialog showing how many contacts will be untagged</li>
+</ul>
+<h4 id="design-notes-9" tabindex="-1"><a class="heading-anchor" href="#design-notes-9" aria-hidden="true">#</a> Design Notes</h4>
+<ul>
+<li><strong>Contact count</strong> per tag provides immediate utility assessment — tags with 0 contacts can be cleaned up</li>
+<li><strong>Categories</strong> organize tags into functional groups. The category list is fixed (not user-configurable) to prevent taxonomy sprawl.</li>
+<li><strong>Merge</strong> is important for cleaning up near-duplicate tags created by different team members</li>
+<li><strong>Desktop only</strong> (per screen inventory)</li>
+<li><strong>System tags</strong> (auto-applied by the platform, like &quot;Canvassed&quot;) are shown with a lock icon and cannot be renamed or deleted</li>
+</ul>
+<hr>
+<h2 id="empty-states" tabindex="-1"><a class="heading-anchor" href="#empty-states" aria-hidden="true">#</a> Empty States</h2>
+<h3 id="contact-list-empty" tabindex="-1"><a class="heading-anchor" href="#contact-list-empty" aria-hidden="true">#</a> Contact List — Empty</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Contacts                                                                    │
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│                         👥                                                   │
+│                                                                              │
+│               No contacts yet                                                │
+│                                                                              │
+│     Your CRM is empty. Start by importing your voter                        │
+│     file or adding contacts manually.                                        │
+│                                                                              │
+│     [Import Voter File →]    [Add Contact]                                  │
+│                                                                              │
+│     Need help? Read the data import guide.                                  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="dedup-queue-empty" tabindex="-1"><a class="heading-anchor" href="#dedup-queue-empty" aria-hidden="true">#</a> Dedup Queue — Empty</h3>
+<pre><code>│                         ✓                                                    │
+│                                                                              │
+│               No duplicates to review                                        │
+│                                                                              │
+│     All potential duplicates have been resolved.                             │
+│     New duplicates will appear here after imports                            │
+│     or as new records are added.                                             │
+</code></pre>
+<h3 id="segment-list-empty" tabindex="-1"><a class="heading-anchor" href="#segment-list-empty" aria-hidden="true">#</a> Segment List — Empty</h3>
+<pre><code>│                         📊                                                   │
+│                                                                              │
+│               No segments yet                                                │
+│                                                                              │
+│     Segments let you group contacts for targeted                            │
+│     communications and field operations.                                     │
+│                                                                              │
+│     [Create Your First Segment →]                                           │
+</code></pre>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Contact List table has proper <code>&lt;th&gt;</code> scope attributes for screen readers</li>
+<li>Support score bar uses <code>aria-label=&quot;Support score: 4 out of 5&quot;</code> — not just visual</li>
+<li>Dedup comparison uses field-level labels and radio groups with descriptive names</li>
+<li>Import wizard progress indicator announces current step: &quot;Step 2 of 4: Map Columns&quot;</li>
+<li>Tag management merge action requires explicit confirmation — no drag-and-drop for destructive operations</li>
+<li>All filter dropdowns are keyboard-navigable</li>
+<li>Contact cards on mobile have tap targets meeting 44px minimum</li>
+</ul>
+<hr>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unified contact record</td>
+<td>Single record with persona-specific tabs</td>
+<td>One person = one record regardless of how they interact with the org</td>
+</tr>
+<tr>
+<td>Contact detail persona adaptation</td>
+<td>Tab visibility changes by viewer's role</td>
+<td>Finance Director sees donation tab first; Field Director sees canvassing first</td>
+</tr>
+<tr>
+<td>Dedup as confidence-grouped queue</td>
+<td>High/Medium/Low confidence groups</td>
+<td>Guides Data Manager to easiest wins first</td>
+</tr>
+<tr>
+<td>Dedup side-by-side comparison</td>
+<td>Field-by-field with radio buttons for each field</td>
+<td>Manual merge needs full visibility and per-field choice</td>
+</tr>
+<tr>
+<td>Import wizard 4 steps</td>
+<td>Upload → Map → Dedup Preview → Confirm</td>
+<td>Each step has a distinct purpose; can't be meaningfully combined</td>
+</tr>
+<tr>
+<td>Segment builder as visual query</td>
+<td>Drag-and-drop criteria with live count</td>
+<td>Technical users need power; live count provides confidence</td>
+</tr>
+<tr>
+<td>Data export as single page</td>
+<td>All options on one screen with live record count</td>
+<td>Export is a configure-and-go action, not a multi-step process</td>
+</tr>
+<tr>
+<td>Tag categories fixed</td>
+<td>Platform-defined categories, not user-configurable</td>
+<td>Prevents taxonomy sprawl across team members</td>
+</tr>
+<tr>
+<td>System tags locked</td>
+<td>Cannot be renamed or deleted</td>
+<td>Auto-applied tags must remain reliable for platform features</td>
+</tr>
+<tr>
+<td>Contact cards on mobile</td>
+<td>44px+ tap targets</td>
+<td>Mobile contact browsing must be comfortable</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Contact record merge undo.</strong> The current design says merges are irreversible (original records preserved in audit trail). Should there be a time-limited undo (e.g., 24-hour window to unmerge)? Adds complexity but reduces merge anxiety.</p>
+</li>
+<li>
+<p><strong>Segment sharing.</strong> Can segments be shared across personas? A segment created by the Communications Director for email targeting — can the Field Director also use it? Currently implied yes (segments are org-wide), but visibility rules may apply.</p>
+</li>
+<li>
+<p><strong>Smart segments.</strong> Should the platform offer pre-built &quot;smart segments&quot; (e.g., &quot;Lapsed donors — donated &gt;6 months ago, not since&quot;, &quot;Super volunteers — &gt;20 hours this month&quot;)? Reduces the learning curve for segment building.</p>
+</li>
+<li>
+<p><strong>Contact record ownership.</strong> In an alliance context, who &quot;owns&quot; a contact record that was merged from two orgs' imports? The dedup engine merges them, but the originating org retains ownership. What does &quot;ownership&quot; mean in the detail view — is it visible?</p>
+</li>
+<li>
+<p><strong>Import scheduling.</strong> Should recurring imports be supported (e.g., auto-import voter file updates weekly from an FTP)? Useful for orgs that receive regular voter file updates from election authorities.</p>
+</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#data-manager-navigation-context"># Data Manager Navigation Context</a></li><li class="toc-2"><a href="#contact-management"># Contact Management</a></li><li class="toc-3"><a href="#crm-001-contact-list"># CRM-001: Contact List</a></li><li class="toc-3"><a href="#crm-002-contact-detail"># CRM-002: Contact Detail</a></li><li class="toc-3"><a href="#crm-003-contact-create-edit"># CRM-003: Contact Create / Edit</a></li><li class="toc-2"><a href="#segmentation"># Segmentation</a></li><li class="toc-3"><a href="#crm-004-segment-builder"># CRM-004: Segment Builder</a></li><li class="toc-3"><a href="#crm-005-segment-list"># CRM-005: Segment List</a></li><li class="toc-2"><a href="#deduplication"># Deduplication</a></li><li class="toc-3"><a href="#crm-006-dedup-review-queue"># CRM-006: Dedup Review Queue</a></li><li class="toc-3"><a href="#crm-007-dedup-side-by-side-comparison"># CRM-007: Dedup Side-by-Side Comparison</a></li><li class="toc-2"><a href="#data-import"># Data Import</a></li><li class="toc-3"><a href="#crm-008-data-import-wizard-file-upload-step-1"># CRM-008: Data Import Wizard — File Upload (Step 1)</a></li><li class="toc-3"><a href="#crm-009-data-import-wizard-column-mapping-step-2"># CRM-009: Data Import Wizard — Column Mapping (Step 2)</a></li><li class="toc-3"><a href="#crm-010-data-import-wizard-dedup-preview-step-3"># CRM-010: Data Import Wizard — Dedup Preview (Step 3)</a></li><li class="toc-3"><a href="#crm-011-data-import-wizard-confirmation-step-4"># CRM-011: Data Import Wizard — Confirmation (Step 4)</a></li><li class="toc-2"><a href="#import-history-export"># Import History &amp;amp; Export</a></li><li class="toc-3"><a href="#crm-012-data-import-history"># CRM-012: Data Import History</a></li><li class="toc-3"><a href="#crm-013-data-export"># CRM-013: Data Export</a></li><li class="toc-2"><a href="#data-quality-tags"># Data Quality &amp;amp; Tags</a></li><li class="toc-3"><a href="#crm-014-data-quality-report"># CRM-014: Data Quality Report</a></li><li class="toc-3"><a href="#crm-015-tag-management"># CRM-015: Tag Management</a></li><li class="toc-2"><a href="#empty-states"># Empty States</a></li><li class="toc-3"><a href="#contact-list-empty"># Contact List — Empty</a></li><li class="toc-3"><a href="#dedup-queue-empty"># Dedup Queue — Empty</a></li><li class="toc-3"><a href="#segment-list-empty"># Segment List — Empty</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

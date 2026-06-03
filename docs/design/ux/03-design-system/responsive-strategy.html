@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Responsive Strategy · GreenGrass</title>
+<meta name="description" content="Responsive Strategy — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="./foundations.html">Design System Foundations</a></li><li><a href="./theming-strategy.html">Theming Strategy</a></li><li><a href="./component-inventory.html">Component Inventory</a></li><li><a href="./responsive-strategy.html" aria-current="page" class="active">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="responsive-strategy" tabindex="-1"><a class="heading-anchor" href="#responsive-strategy" aria-hidden="true">#</a> Responsive Strategy</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document defines how GreenGrass adapts to different screen sizes, devices, and platform capabilities. It covers breakpoints, device-specific behavior, the Capacitor native wrapper strategy, and how components transform across viewports.</p>
+<h2 id="breakpoints" tabindex="-1"><a class="heading-anchor" href="#breakpoints" aria-hidden="true">#</a> Breakpoints</h2>
+<h3 id="definition" tabindex="-1"><a class="heading-anchor" href="#definition" aria-hidden="true">#</a> Definition</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Width</th>
+<th>Name</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--bp-sm</code></td>
+<td>640px</td>
+<td>Small</td>
+<td>Large phones (landscape), small tablets</td>
+</tr>
+<tr>
+<td><code>--bp-md</code></td>
+<td>768px</td>
+<td>Medium</td>
+<td>Tablets (portrait)</td>
+</tr>
+<tr>
+<td><code>--bp-lg</code></td>
+<td>1024px</td>
+<td>Large</td>
+<td>Tablets (landscape), small laptops</td>
+</tr>
+<tr>
+<td><code>--bp-xl</code></td>
+<td>1280px</td>
+<td>Extra large</td>
+<td>Laptops, desktop monitors</td>
+</tr>
+<tr>
+<td><code>--bp-2xl</code></td>
+<td>1536px</td>
+<td>2x Extra large</td>
+<td>Large desktop monitors</td>
+</tr>
+</tbody>
+</table>
+<h3 id="viewport-ranges" tabindex="-1"><a class="heading-anchor" href="#viewport-ranges" aria-hidden="true">#</a> Viewport Ranges</h3>
+<table>
+<thead>
+<tr>
+<th>Range</th>
+<th>Grid</th>
+<th>Nav</th>
+<th>Shell</th>
+<th>Primary Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;640px</td>
+<td>4-col</td>
+<td>Bottom tabs</td>
+<td>Mobile shell</td>
+<td>Phones</td>
+</tr>
+<tr>
+<td>640-767px</td>
+<td>4-col</td>
+<td>Bottom tabs</td>
+<td>Mobile shell</td>
+<td>Large phones</td>
+</tr>
+<tr>
+<td>768-1023px</td>
+<td>8-col</td>
+<td>Collapsed sidebar (overlay)</td>
+<td>Tablet shell</td>
+<td>Tablets</td>
+</tr>
+<tr>
+<td>1024-1279px</td>
+<td>12-col</td>
+<td>Sidebar (collapsible)</td>
+<td>Desktop shell</td>
+<td>Small laptops</td>
+</tr>
+<tr>
+<td>1280px+</td>
+<td>12-col</td>
+<td>Sidebar (expanded default)</td>
+<td>Desktop shell</td>
+<td>Desktop</td>
+</tr>
+</tbody>
+</table>
+<h3 id="usage" tabindex="-1"><a class="heading-anchor" href="#usage" aria-hidden="true">#</a> Usage</h3>
+<p>Breakpoints are used via CSS media queries with a mobile-first approach:</p>
+<pre><code class="language-css">/* Base styles apply to smallest viewport */
+.component { /* mobile styles */ }
+
+@media (min-width: 768px) { /* tablet adjustments */ }
+@media (min-width: 1024px) { /* desktop adjustments */ }
+</code></pre>
+<p>Mobile-first means: the default (no media query) styles are for the smallest screen. Enhancements are added at wider breakpoints. This ensures that low-end phones with slow CSS processing get the simplest stylesheet.</p>
+<hr>
+<h2 id="device-categories" tabindex="-1"><a class="heading-anchor" href="#device-categories" aria-hidden="true">#</a> Device Categories</h2>
+<h3 id="phone-768px" tabindex="-1"><a class="heading-anchor" href="#phone-768px" aria-hidden="true">#</a> Phone (&lt; 768px)</h3>
+<p>The primary device for Volunteers, Team Leads, Supporters, and Candidates.</p>
+<p><strong>Layout:</strong></p>
+<ul>
+<li>Full-screen content, no sidebar</li>
+<li>Bottom tab bar (4-5 role-adaptive tabs)</li>
+<li>Top bar: back/menu, title, contextual actions</li>
+<li>Lists are card-based (not table-based)</li>
+<li>Detail views are full-screen (tap to enter, back to exit)</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Touch interactions only (no hover states)</li>
+<li>Pull-to-refresh on lists</li>
+<li>Infinite scroll instead of pagination</li>
+<li>Swipe gestures on cards (dismiss, archive)</li>
+<li>Bottom sheet for filters and options (not dropdowns)</li>
+<li>Form inputs use native mobile keyboards (numeric, email, phone)</li>
+</ul>
+<p><strong>Performance:</strong></p>
+<ul>
+<li>Smallest possible bundle (aggressive code splitting)</li>
+<li>Images lazy-loaded and size-optimized</li>
+<li>Skeleton loading states (no full-screen spinners)</li>
+<li>Service worker for offline shell caching</li>
+</ul>
+<h3 id="tablet-768px---1023px" tabindex="-1"><a class="heading-anchor" href="#tablet-768px---1023px" aria-hidden="true">#</a> Tablet (768px - 1023px)</h3>
+<p>Used by some staff members, occasionally by Field Directors monitoring operations from a staging area.</p>
+<p><strong>Layout:</strong></p>
+<ul>
+<li>8-column grid</li>
+<li>Sidebar collapsed by default, expandable as overlay</li>
+<li>Detail panels can appear as right-side overlay (not inline split)</li>
+<li>Tables switch between card view and table view based on column count</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Touch + limited pointer interactions</li>
+<li>Dropdowns are bottom sheets when triggered by touch</li>
+<li>Split view available for messaging (conversation list + thread)</li>
+<li>Drag-and-drop works but is not the primary interaction model</li>
+</ul>
+<h3 id="desktop-1024px" tabindex="-1"><a class="heading-anchor" href="#desktop-1024px" aria-hidden="true">#</a> Desktop (1024px+)</h3>
+<p>The primary device for Org Admins, Communications Directors, Finance Directors, Data Managers, and Volunteer Coordinators.</p>
+<p><strong>Layout:</strong></p>
+<ul>
+<li>12-column grid</li>
+<li>Sidebar always visible (collapsible to icon-only)</li>
+<li>Split views for list+detail patterns</li>
+<li>Detail panels slide out from the right</li>
+<li>Modals are centered dialogs (not full-screen)</li>
+<li>Tables are full data tables with column sorting and selection</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li>Mouse + keyboard interactions</li>
+<li>Hover states on interactive elements</li>
+<li>Keyboard shortcuts available</li>
+<li>Drag-and-drop for builders, kanban, calendar</li>
+<li>Right-click context menus where appropriate</li>
+<li>Tooltips on hover (information available without tapping)</li>
+</ul>
+<hr>
+<h2 id="component-adaptation" tabindex="-1"><a class="heading-anchor" href="#component-adaptation" aria-hidden="true">#</a> Component Adaptation</h2>
+<p>How components transform across breakpoints:</p>
+<h3 id="navigation" tabindex="-1"><a class="heading-anchor" href="#navigation" aria-hidden="true">#</a> Navigation</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Phone</th>
+<th>Tablet</th>
+<th>Desktop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary nav</td>
+<td>Bottom tab bar</td>
+<td>Collapsed sidebar (overlay)</td>
+<td>Sidebar (expanded/collapsed)</td>
+</tr>
+<tr>
+<td>Secondary nav</td>
+<td>&quot;More&quot; bottom sheet</td>
+<td>&quot;More&quot; bottom sheet</td>
+<td>Sidebar sections</td>
+</tr>
+<tr>
+<td>Breadcrumbs</td>
+<td>Hidden (back arrow instead)</td>
+<td>Visible (abbreviated)</td>
+<td>Visible (full path)</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>Full-screen overlay</td>
+<td>Full-screen overlay</td>
+<td>Inline header bar</td>
+</tr>
+<tr>
+<td>User menu</td>
+<td>Full-screen profile</td>
+<td>Bottom sheet</td>
+<td>Dropdown</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-display" tabindex="-1"><a class="heading-anchor" href="#data-display" aria-hidden="true">#</a> Data Display</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Phone</th>
+<th>Tablet</th>
+<th>Desktop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data table</td>
+<td>Card list</td>
+<td>Card list or compact table</td>
+<td>Full table with columns</td>
+</tr>
+<tr>
+<td>List + detail</td>
+<td>Stacked (full-screen each)</td>
+<td>Optional split view</td>
+<td>Split view (resizable)</td>
+</tr>
+<tr>
+<td>Dashboard widgets</td>
+<td>Single column, stacked</td>
+<td>Two columns</td>
+<td>Three or four columns</td>
+</tr>
+<tr>
+<td>Charts</td>
+<td>Simplified (fewer labels)</td>
+<td>Standard</td>
+<td>Full (legends, annotations)</td>
+</tr>
+<tr>
+<td>Calendar</td>
+<td>Agenda view (list)</td>
+<td>Week view</td>
+<td>Month/week/day views</td>
+</tr>
+<tr>
+<td>Kanban/pipeline</td>
+<td>Scrollable single column</td>
+<td>Two visible columns</td>
+<td>All columns visible</td>
+</tr>
+</tbody>
+</table>
+<h3 id="forms" tabindex="-1"><a class="heading-anchor" href="#forms" aria-hidden="true">#</a> Forms</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Phone</th>
+<th>Tablet</th>
+<th>Desktop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Form layout</td>
+<td>Single column, stacked</td>
+<td>Single column</td>
+<td>Two columns possible</td>
+</tr>
+<tr>
+<td>Select inputs</td>
+<td>Native mobile select</td>
+<td>Bottom sheet</td>
+<td>Dropdown</td>
+</tr>
+<tr>
+<td>Date picker</td>
+<td>Native mobile picker</td>
+<td>Calendar popup</td>
+<td>Calendar popup</td>
+</tr>
+<tr>
+<td>File upload</td>
+<td>Camera + file picker</td>
+<td>Drag-and-drop + file picker</td>
+<td>Drag-and-drop + file picker</td>
+</tr>
+<tr>
+<td>Color picker</td>
+<td>Full-screen</td>
+<td>Popover</td>
+<td>Popover</td>
+</tr>
+<tr>
+<td>Multi-step forms</td>
+<td>Full-screen per step</td>
+<td>Full-screen per step</td>
+<td>Inline with step indicator</td>
+</tr>
+</tbody>
+</table>
+<h3 id="overlays" tabindex="-1"><a class="heading-anchor" href="#overlays" aria-hidden="true">#</a> Overlays</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Phone</th>
+<th>Tablet</th>
+<th>Desktop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modals</td>
+<td>Full-screen</td>
+<td>Centered dialog (medium)</td>
+<td>Centered dialog</td>
+</tr>
+<tr>
+<td>Drawers</td>
+<td>Full-screen or bottom sheet</td>
+<td>Side drawer (full height)</td>
+<td>Side drawer (full height)</td>
+</tr>
+<tr>
+<td>Notifications</td>
+<td>Full-screen list</td>
+<td>Side drawer</td>
+<td>Side drawer</td>
+</tr>
+<tr>
+<td>Confirmation dialogs</td>
+<td>Bottom sheet</td>
+<td>Centered dialog</td>
+<td>Centered dialog</td>
+</tr>
+<tr>
+<td>Tooltips</td>
+<td>Bottom sheet (on tap)</td>
+<td>Popover (on tap or hover)</td>
+<td>Popover (on hover)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="field-mode" tabindex="-1"><a class="heading-anchor" href="#field-mode" aria-hidden="true">#</a> Field Mode</h3>
+<p>Field mode is phone-only by design. If accessed from a tablet or desktop viewport:</p>
+<ul>
+<li><strong>Tablet:</strong> Renders in phone-sized viewport (centered, with padding). Field mode is designed for one-handed mobile use — scaling it to tablet dimensions would make touch targets inappropriately large and waste screen space.</li>
+<li><strong>Desktop:</strong> Redirects to the management view (e.g., <code>/field/canvassing/[campaignId]</code> instead of <code>/field-mode/canvass/[shiftId]</code>). Staff don't canvass from a desktop.</li>
+</ul>
+<hr>
+<h2 id="capacitor-specific-considerations" tabindex="-1"><a class="heading-anchor" href="#capacitor-specific-considerations" aria-hidden="true">#</a> Capacitor-Specific Considerations</h2>
+<p>GreenGrass uses Capacitor to wrap the SvelteKit web app as a native mobile app. This introduces specific considerations:</p>
+<h3 id="native-api-access" tabindex="-1"><a class="heading-anchor" href="#native-api-access" aria-hidden="true">#</a> Native API Access</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Web-Only</th>
+<th>With Capacitor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Passkey auth</td>
+<td>WebAuthn API</td>
+<td>Native biometric prompt</td>
+</tr>
+<tr>
+<td>Camera (QR check-in)</td>
+<td><code>getUserMedia</code> API</td>
+<td>Native camera with QR scanner</td>
+</tr>
+<tr>
+<td>Offline storage</td>
+<td>IndexedDB (limited)</td>
+<td>SQLite via SQLCipher (encrypted, larger)</td>
+</tr>
+<tr>
+<td>Push notifications</td>
+<td>Web Push API</td>
+<td>Native push (APNs/FCM)</td>
+</tr>
+<tr>
+<td>Map tiles caching</td>
+<td>Service worker cache</td>
+<td>File system cache (larger, persistent)</td>
+</tr>
+<tr>
+<td>Background sync</td>
+<td>Service worker (limited)</td>
+<td>Native background tasks</td>
+</tr>
+<tr>
+<td>Haptic feedback</td>
+<td>Vibration API (limited)</td>
+<td>Full haptic engine access</td>
+</tr>
+<tr>
+<td>Deep links</td>
+<td>URL handling</td>
+<td>Universal links / App links</td>
+</tr>
+</tbody>
+</table>
+<h3 id="safe-areas" tabindex="-1"><a class="heading-anchor" href="#safe-areas" aria-hidden="true">#</a> Safe Areas</h3>
+<p>iOS and Android have safe areas (notch, status bar, home indicator, navigation bar) that must not overlap with interactive content:</p>
+<pre><code class="language-css">/* Respect device safe areas */
+.app-shell {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+</code></pre>
+<p>The bottom tab bar sits above the home indicator. The header bar sits below the status bar/notch. Field mode's panic button must be outside the safe area but still tappable.</p>
+<h3 id="status-bar" tabindex="-1"><a class="heading-anchor" href="#status-bar" aria-hidden="true">#</a> Status Bar</h3>
+<ul>
+<li><strong>Standard app:</strong> Light status bar (dark text on light background)</li>
+<li><strong>Dark mode:</strong> Dark status bar (light text on dark background)</li>
+<li><strong>Field mode:</strong> Status bar hidden (full-screen immersive mode) to maximize content space</li>
+<li><strong>Color matches header:</strong> Status bar background color matches the app header bar</li>
+</ul>
+<h3 id="app-icon-and-splash-screen" tabindex="-1"><a class="heading-anchor" href="#app-icon-and-splash-screen" aria-hidden="true">#</a> App Icon and Splash Screen</h3>
+<ul>
+<li><strong>App icon:</strong> Tenant-customizable. Default GreenGrass icon for platform. Tenant logo (if square-compatible) used for tenant-branded builds.</li>
+<li><strong>Splash screen:</strong> Brief (&lt; 2 seconds). Shows tenant logo on brand-colored background. Transitions to the app when initial data loads.</li>
+</ul>
+<h3 id="keyboard-handling" tabindex="-1"><a class="heading-anchor" href="#keyboard-handling" aria-hidden="true">#</a> Keyboard Handling</h3>
+<p>On mobile, the virtual keyboard overlapping form inputs is a common problem:</p>
+<ul>
+<li><strong>Scroll to active input:</strong> When a form input gains focus, the viewport scrolls to keep it visible above the keyboard.</li>
+<li><strong>Bottom-fixed elements reposition:</strong> The bottom tab bar and floating action buttons move above the keyboard when it's open.</li>
+<li><strong>Field mode:</strong> Input fields are in the upper portion of the screen, so the keyboard doesn't overlap them. Response option buttons are large enough to remain tappable above the keyboard.</li>
+</ul>
+<hr>
+<h2 id="performance-budgets" tabindex="-1"><a class="heading-anchor" href="#performance-budgets" aria-hidden="true">#</a> Performance Budgets</h2>
+<p>Performance is a core constraint — the target user is on a low-end Android phone with a slow connection.</p>
+<h3 id="bundle-size-targets" tabindex="-1"><a class="heading-anchor" href="#bundle-size-targets" aria-hidden="true">#</a> Bundle Size Targets</h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial JS bundle</td>
+<td>&lt; 150KB gzipped</td>
+<td>SvelteKit's compiled output helps here</td>
+</tr>
+<tr>
+<td>Initial CSS</td>
+<td>&lt; 30KB gzipped</td>
+<td>Design tokens + base styles</td>
+</tr>
+<tr>
+<td>First contentful paint</td>
+<td>&lt; 2s on 3G</td>
+<td>Server-side rendering critical</td>
+</tr>
+<tr>
+<td>Time to interactive</td>
+<td>&lt; 4s on 3G</td>
+<td>Hydration must be fast</td>
+</tr>
+<tr>
+<td>Per-route chunk</td>
+<td>&lt; 50KB gzipped</td>
+<td>Aggressive code splitting</td>
+</tr>
+<tr>
+<td>Fonts</td>
+<td>0KB</td>
+<td>System font stack — no network loading</td>
+</tr>
+</tbody>
+</table>
+<h3 id="image-strategy" tabindex="-1"><a class="heading-anchor" href="#image-strategy" aria-hidden="true">#</a> Image Strategy</h3>
+<ul>
+<li><strong>Logo/branding:</strong> SVG where possible, PNG fallback &lt; 20KB</li>
+<li><strong>Avatar images:</strong> 48x48px thumbnails, lazy-loaded</li>
+<li><strong>Map tiles:</strong> 256x256px PNG, cached aggressively</li>
+<li><strong>No decorative images.</strong> Every image serves a function.</li>
+<li><strong>Responsive images:</strong> <code>srcset</code> with size variants for different viewports</li>
+<li><strong>WebP with PNG fallback</strong> for raster images</li>
+</ul>
+<h3 id="code-splitting-strategy" tabindex="-1"><a class="heading-anchor" href="#code-splitting-strategy" aria-hidden="true">#</a> Code Splitting Strategy</h3>
+<p>SvelteKit's route-based code splitting handles most cases. Additional splits:</p>
+<table>
+<thead>
+<tr>
+<th>Split</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Map components</td>
+<td>Only loaded on screens with maps</td>
+</tr>
+<tr>
+<td>Chart library</td>
+<td>Only loaded on dashboard/analytics screens</td>
+</tr>
+<tr>
+<td>Builder components</td>
+<td>Only loaded on builder screens (email, form, script)</td>
+</tr>
+<tr>
+<td>Field mode</td>
+<td>Only loaded when entering field mode</td>
+</tr>
+<tr>
+<td>Admin/settings</td>
+<td>Only loaded for Org Admin role</td>
+</tr>
+</tbody>
+</table>
+<p>This means a Volunteer's app loads significantly less code than an Org Admin's — they never download the builder, settings, or analytics chunks.</p>
+<hr>
+<h2 id="progressive-enhancement" tabindex="-1"><a class="heading-anchor" href="#progressive-enhancement" aria-hidden="true">#</a> Progressive Enhancement</h2>
+<p>The SvelteKit app uses server-side rendering with progressive enhancement:</p>
+<h3 id="without-javascript" tabindex="-1"><a class="heading-anchor" href="#without-javascript" aria-hidden="true">#</a> Without JavaScript</h3>
+<p>The app is not fully functional without JavaScript (SvelteKit hydration is required for interactivity). However, SSR ensures:</p>
+<ul>
+<li>Content is visible before JS loads (readable dashboards, contact lists)</li>
+<li>Links work before hydration (navigation via full page loads)</li>
+<li>Form inputs are visible (though submission requires JS)</li>
+<li>Search engines can index public pages</li>
+</ul>
+<h3 id="without-service-worker" tabindex="-1"><a class="heading-anchor" href="#without-service-worker" aria-hidden="true">#</a> Without Service Worker</h3>
+<p>Without a service worker, the app works online-only. The service worker adds:</p>
+<ul>
+<li>Offline shell caching (navigation still works)</li>
+<li>Background sync for queued operations</li>
+<li>Push notification handling</li>
+<li>Map tile caching</li>
+</ul>
+<p>The Capacitor native app always has service worker capabilities. Web-only users (accessing via browser) may not, but the core experience degrades gracefully.</p>
+<h3 id="low-end-device-accommodations" tabindex="-1"><a class="heading-anchor" href="#low-end-device-accommodations" aria-hidden="true">#</a> Low-End Device Accommodations</h3>
+<p>For devices with limited RAM and CPU:</p>
+<ul>
+<li><strong>Virtualized lists:</strong> Long lists render only visible items (virtual scrolling)</li>
+<li><strong>Reduced animation:</strong> <code>prefers-reduced-motion</code> respected; additionally, devices with &lt;4GB RAM get reduced transitions</li>
+<li><strong>Image quality reduction:</strong> Lower-resolution images served to slow connections</li>
+<li><strong>Deferred loading:</strong> Non-critical UI (charts, secondary widgets) loads after initial render</li>
+<li><strong>Memory-conscious caching:</strong> Cache limits are lower on low-memory devices</li>
+</ul>
+<hr>
+<h2 id="testing-matrix" tabindex="-1"><a class="heading-anchor" href="#testing-matrix" aria-hidden="true">#</a> Testing Matrix</h2>
+<h3 id="required-testing-viewports" tabindex="-1"><a class="heading-anchor" href="#required-testing-viewports" aria-hidden="true">#</a> Required Testing Viewports</h3>
+<table>
+<thead>
+<tr>
+<th>Viewport</th>
+<th>Device Representative</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>360x640</td>
+<td>Budget Android phone (Samsung Galaxy A series)</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>375x812</td>
+<td>iPhone SE / iPhone 13 Mini</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>390x844</td>
+<td>iPhone 14 / 15</td>
+<td>High</td>
+</tr>
+<tr>
+<td>412x915</td>
+<td>Google Pixel / mid-range Android</td>
+<td>High</td>
+</tr>
+<tr>
+<td>768x1024</td>
+<td>iPad (portrait)</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>1024x768</td>
+<td>iPad (landscape) / small laptop</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>1280x800</td>
+<td>Standard laptop</td>
+<td>High</td>
+</tr>
+<tr>
+<td>1440x900</td>
+<td>Large laptop</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>1920x1080</td>
+<td>Desktop monitor</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<h3 id="priority-testing-scenarios" tabindex="-1"><a class="heading-anchor" href="#priority-testing-scenarios" aria-hidden="true">#</a> Priority Testing Scenarios</h3>
+<ol>
+<li><strong>Budget Android + slow 3G</strong> — the critical path. If it works here, it works everywhere.</li>
+<li><strong>iPhone + LTE</strong> — the other major mobile scenario.</li>
+<li><strong>Desktop + broadband</strong> — the staff experience.</li>
+<li><strong>Tablet + Wi-Fi</strong> — occasional use case.</li>
+<li><strong>RTL on all of the above</strong> — Arabic layout testing.</li>
+<li><strong>Dark mode on all of the above</strong> — color contrast and readability.</li>
+<li><strong>Field mode on budget Android</strong> — the highest-risk UX in the system.</li>
+</ol>
+<hr>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Foldable devices.</strong> Samsung Galaxy Z Fold and similar foldable devices have two viewports (folded and unfolded). Should the app explicitly handle the fold crease and viewport change? Low priority but growing market.</p>
+</li>
+<li>
+<p><strong>PWA vs. native-only distribution.</strong> Should the app be installable as a Progressive Web App (via browser) in addition to the Capacitor-wrapped native app? PWA reduces friction (no app store needed) but has less access to native APIs.</p>
+</li>
+<li>
+<p><strong>Offline map provider.</strong> For pre-caching map tiles, which provider offers the best offline tile support for the target countries? OSM tiles are free but large. Vector tiles (Mapbox/MapLibre) are smaller but require more rendering power on low-end devices.</p>
+</li>
+</ol>
+<!-- REVISIT: The performance budgets are targets, not guarantees. Real performance measurement against actual target devices (budget Android phones in target markets) is essential during development. Lab testing with throttled connections is a start but doesn't capture the full reality of network conditions in rural Brazil or India. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#breakpoints"># Breakpoints</a></li><li class="toc-3"><a href="#definition"># Definition</a></li><li class="toc-3"><a href="#viewport-ranges"># Viewport Ranges</a></li><li class="toc-3"><a href="#usage"># Usage</a></li><li class="toc-2"><a href="#device-categories"># Device Categories</a></li><li class="toc-3"><a href="#phone-768px"># Phone (&amp;lt; 768px)</a></li><li class="toc-3"><a href="#tablet-768px---1023px"># Tablet (768px - 1023px)</a></li><li class="toc-3"><a href="#desktop-1024px"># Desktop (1024px+)</a></li><li class="toc-2"><a href="#component-adaptation"># Component Adaptation</a></li><li class="toc-3"><a href="#navigation"># Navigation</a></li><li class="toc-3"><a href="#data-display"># Data Display</a></li><li class="toc-3"><a href="#forms"># Forms</a></li><li class="toc-3"><a href="#overlays"># Overlays</a></li><li class="toc-3"><a href="#field-mode"># Field Mode</a></li><li class="toc-2"><a href="#capacitor-specific-considerations"># Capacitor-Specific Considerations</a></li><li class="toc-3"><a href="#native-api-access"># Native API Access</a></li><li class="toc-3"><a href="#safe-areas"># Safe Areas</a></li><li class="toc-3"><a href="#status-bar"># Status Bar</a></li><li class="toc-3"><a href="#app-icon-and-splash-screen"># App Icon and Splash Screen</a></li><li class="toc-3"><a href="#keyboard-handling"># Keyboard Handling</a></li><li class="toc-2"><a href="#performance-budgets"># Performance Budgets</a></li><li class="toc-3"><a href="#bundle-size-targets"># Bundle Size Targets</a></li><li class="toc-3"><a href="#image-strategy"># Image Strategy</a></li><li class="toc-3"><a href="#code-splitting-strategy"># Code Splitting Strategy</a></li><li class="toc-2"><a href="#progressive-enhancement"># Progressive Enhancement</a></li><li class="toc-3"><a href="#without-javascript"># Without JavaScript</a></li><li class="toc-3"><a href="#without-service-worker"># Without Service Worker</a></li><li class="toc-3"><a href="#low-end-device-accommodations"># Low-End Device Accommodations</a></li><li class="toc-2"><a href="#testing-matrix"># Testing Matrix</a></li><li class="toc-3"><a href="#required-testing-viewports"># Required Testing Viewports</a></li><li class="toc-3"><a href="#priority-testing-scenarios"># Priority Testing Scenarios</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

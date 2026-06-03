@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings &amp; Help Patterns · GreenGrass</title>
+<meta name="description" content="Settings &amp; Help Patterns — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="./pattern-catalog.html">Pattern Catalog</a></li><li><a href="./offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="./notification-patterns.html">Notification Patterns</a></li><li><a href="./search-patterns.html">Search Patterns</a></li><li><a href="./settings-help-patterns.html" aria-current="page" class="active">Settings &amp; Help Patterns</a></li><li><a href="./security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="settings-help-patterns" tabindex="-1"><a class="heading-anchor" href="#settings-help-patterns" aria-hidden="true">#</a> Settings &amp; Help Patterns</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document defines the UX patterns for platform settings, contextual help, the knowledge base, language switching, and onboarding flows. These are the support structures that help users configure the platform and find answers when they're stuck.</p>
+<h2 id="settings-architecture" tabindex="-1"><a class="heading-anchor" href="#settings-architecture" aria-hidden="true">#</a> Settings Architecture</h2>
+<h3 id="settings-hierarchy" tabindex="-1"><a class="heading-anchor" href="#settings-hierarchy" aria-hidden="true">#</a> Settings Hierarchy</h3>
+<p>Settings are organized in three tiers:</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Scope</th>
+<th>Who Configures</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Organization</strong></td>
+<td>Applies to all users in the tenant</td>
+<td>Org Admin</td>
+<td><code>/settings/*</code></td>
+</tr>
+<tr>
+<td><strong>Feature</strong></td>
+<td>Applies to a specific feature area</td>
+<td>Feature-area owner</td>
+<td>Within the feature area</td>
+</tr>
+<tr>
+<td><strong>Personal</strong></td>
+<td>Applies to the individual user</td>
+<td>Each user</td>
+<td><code>/profile/*</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="organization-settings" tabindex="-1"><a class="heading-anchor" href="#organization-settings" aria-hidden="true">#</a> Organization Settings</h3>
+<p>Accessed via the Settings section in the sidebar (Org Admin only). Organized in collapsible groups:</p>
+<pre><code>Settings
+├── Org Profile &amp; Branding        # Name, logo, languages, branding
+├── Roles &amp; Permissions            # Role templates, permission overrides
+│   ├── Role Template Editor
+│   └── Staff Management
+├── Campaign                       # Campaign period, geographic scope
+│   ├── Campaign Period
+│   └── Geographic Scope
+├── Compliance                     # Contribution limits, disclaimers, retention
+│   ├── Contribution Limits
+│   ├── Disclaimers
+│   └── Data Retention
+├── Integrations                   # Third-party connections
+│   ├── WhatsApp Business
+│   ├── SMS Provider
+│   ├── Email Domain
+│   ├── Social Media Accounts
+│   └── Webhooks
+├── Payments                       # Payment processor configuration
+├── Security                       # Encryption, security tier, audit trail
+│   ├── Encryption Key Management
+│   ├── Security Settings
+│   └── Audit Trail
+├── Developer                      # API keys, webhooks
+│   ├── API Keys
+│   └── Webhook Configuration
+└── Billing                        # Subscription, payment method
+</code></pre>
+<h3 id="feature-settings" tabindex="-1"><a class="heading-anchor" href="#feature-settings" aria-hidden="true">#</a> Feature Settings</h3>
+<p>Settings scoped to a specific feature area are accessed within that feature, not in the global settings:</p>
+<ul>
+<li><strong>Communication preferences</strong> (consent management, unsubscribe rules) → within Communications</li>
+<li><strong>Fundraising form defaults</strong> (suggested amounts, recurring options) → within Fundraising</li>
+<li><strong>Field scripts</strong> (default scripts, response options) → within Field</li>
+<li><strong>Social media accounts</strong> → within Social Media (also accessible from Settings &gt; Integrations)</li>
+</ul>
+<p>This avoids a monolithic settings page. Feature settings live where the feature lives.</p>
+<h3 id="personal-settings" tabindex="-1"><a class="heading-anchor" href="#personal-settings" aria-hidden="true">#</a> Personal Settings</h3>
+<p>Accessed via the user profile menu (available to all users):</p>
+<pre><code>Profile
+├── Personal Profile              # Name, avatar, contact info
+├── Notification Preferences      # Per-source notification configuration
+├── Security                      # Passkey management, trusted contacts
+├── Language                      # UI language preference
+└── Tenant Switcher               # For multi-tenant users
+</code></pre>
+<h3 id="settings-ux-pattern" tabindex="-1"><a class="heading-anchor" href="#settings-ux-pattern" aria-hidden="true">#</a> Settings UX Pattern</h3>
+<p>All settings screens share a consistent layout:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Settings &gt; [Section Name]                            │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  ▾ [Group Name]                                       │
+│    ┌─────────────────────────────────────────────┐    │
+│    │ Setting Label             [value / control]  │    │
+│    │ Help text explaining what this setting does  │    │
+│    │                                              │    │
+│    │ Setting Label *           [value / control]  │    │
+│    │ Help text (required setting)                 │    │
+│    └─────────────────────────────────────────────┘    │
+│                                                       │
+│  ▸ [Another Group]                                    │
+│                                                       │
+├──────────────────────────────────────────────────────┤
+│  Last modified: Jan 15, 2026 by admin@org.org        │
+│  [Cancel]                                     [Save]  │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Behaviors:</strong></p>
+<ul>
+<li>Collapsible groups — one expanded at a time (accordion pattern)</li>
+<li>Help text on every setting — brief explanation of what it does and why</li>
+<li>Change tracking — &quot;Last modified by X on Y&quot; footer</li>
+<li>Unsaved changes warning — confirmation dialog if navigating away with changes</li>
+<li>Validation — inline, per-field, with clear error messages</li>
+<li>Smart defaults — pre-filled where possible, clearly labeled as defaults</li>
+</ul>
+<hr>
+<h2 id="help-support-system" tabindex="-1"><a class="heading-anchor" href="#help-support-system" aria-hidden="true">#</a> Help &amp; Support System</h2>
+<h3 id="help-access-points" tabindex="-1"><a class="heading-anchor" href="#help-access-points" aria-hidden="true">#</a> Help Access Points</h3>
+<p>Help is accessible from multiple entry points, consistent with the universal chrome pattern:</p>
+<ol>
+<li><strong>Sidebar footer</strong> (desktop) — &quot;Help&quot; link opens the help panel</li>
+<li><strong>User menu</strong> (mobile) — &quot;Help &amp; Support&quot; item</li>
+<li><strong>&quot;?&quot; icon</strong> — floating help icon on complex screens, opens contextual help</li>
+<li><strong>Empty states</strong> — &quot;Learn more&quot; links in empty state messages</li>
+<li><strong>Setting help text</strong> — &quot;Why is this required?&quot; expandable help on compliance settings</li>
+<li><strong>Wizard steps</strong> — inline help within each wizard step</li>
+</ol>
+<h3 id="contextual-help" tabindex="-1"><a class="heading-anchor" href="#contextual-help" aria-hidden="true">#</a> Contextual Help</h3>
+<p>When a user clicks &quot;?&quot; or the &quot;Help&quot; link on a specific screen, the system checks for contextual help content for that screen:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Help: Segment Builder                    [✗ Close]  │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  Segments let you define groups of contacts           │
+│  based on criteria. Use them to target                │
+│  communications, filter reports, and assign           │
+│  volunteers.                                          │
+│                                                       │
+│  Quick Start:                                         │
+│  1. Choose a criteria field (e.g., &quot;Support Score&quot;)   │
+│  2. Set the condition (e.g., &quot;greater than 3&quot;)        │
+│  3. Click &quot;Preview&quot; to see matching contacts          │
+│  4. Save your segment                                 │
+│                                                       │
+│  [📖 Full article: Building Segments →]               │
+│  [💬 Ask AI Concierge →]                              │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Desktop:</strong> Contextual help opens as a slide-out panel from the right (doesn't obscure the main content).
+<strong>Mobile:</strong> Contextual help opens as a bottom sheet (half-screen) or full-screen article.</p>
+<h3 id="knowledge-base" tabindex="-1"><a class="heading-anchor" href="#knowledge-base" aria-hidden="true">#</a> Knowledge Base</h3>
+<p>Accessed at <code>/help</code>. A searchable library of help articles organized by feature area.</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  Help Center                                          │
+├──────────────────────────────────────────────────────┤
+│  [Search help articles...]                            │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  Getting Started                                      │
+│  ├── Setting up your organization                     │
+│  ├── Inviting staff members                           │
+│  ├── Configuring compliance settings                  │
+│  └── Your first donation form                         │
+│                                                       │
+│  People &amp; CRM                                         │
+│  ├── Importing voter files                            │
+│  ├── Building segments                                │
+│  ├── Deduplication                                    │
+│  └── Data quality                                     │
+│                                                       │
+│  Field Operations                                     │
+│  ├── Creating canvassing campaigns                    │
+│  ├── Cutting turfs                                    │
+│  ├── Building scripts                                 │
+│  └── Volunteer field mode guide                       │
+│                                                       │
+│  ... (more categories)                                │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Behaviors:</strong></p>
+<ul>
+<li><strong>Search</strong> — full-text search across all help articles. Results ranked by relevance.</li>
+<li><strong>Categorized</strong> — organized by feature area, matching the sidebar structure.</li>
+<li><strong>Role-filtered</strong> — articles are tagged with relevant personas. A Volunteer sees volunteer-relevant articles first; an Org Admin sees admin-relevant articles.</li>
+<li><strong>Multilingual</strong> — articles are available in the tenant's configured languages. Falls back to English if a translation doesn't exist.</li>
+<li><strong>Partially offline</strong> — previously viewed articles are cached for offline reading.</li>
+</ul>
+<h3 id="ai-concierge" tabindex="-1"><a class="heading-anchor" href="#ai-concierge" aria-hidden="true">#</a> AI Concierge</h3>
+<p>Accessed at <code>/help/chat</code> or via the &quot;Ask AI Concierge&quot; link in help panels. A conversational AI assistant that can answer questions about the platform.</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│  AI Concierge                              [✗ Close] │
+├──────────────────────────────────────────────────────┤
+│                                                       │
+│  How can I help?                                      │
+│                                                       │
+│  ┌────────────────────────────────────────────────┐   │
+│  │  You: How do I set up contribution limits for  │   │
+│  │       Puerto Rico?                             │   │
+│  └────────────────────────────────────────────────┘   │
+│                                                       │
+│  ┌────────────────────────────────────────────────┐   │
+│  │  Concierge: Puerto Rico contribution limits    │   │
+│  │  are configured in Settings &gt; Compliance &gt;     │   │
+│  │  Contribution Limits. For Puerto Rico,         │   │
+│  │  individual limits are $2,900...               │   │
+│  │                                                │   │
+│  │  [Go to Contribution Limits →]                 │   │
+│  │  [Read full article: PR Compliance →]          │   │
+│  └────────────────────────────────────────────────┘   │
+│                                                       │
+│  [Type your question...]                    [Send]    │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Behaviors:</strong></p>
+<ul>
+<li><strong>Context-aware</strong> — the concierge knows which screen the user is currently on and can provide contextual guidance.</li>
+<li><strong>Links to actions</strong> — responses include direct links to relevant screens and knowledge base articles.</li>
+<li><strong>Escalation</strong> — if the concierge can't resolve the question, it offers to create a support ticket (for tenants with premium support).</li>
+<li><strong>Requires connectivity</strong> — not available offline (AI inference needs server).</li>
+<li><strong>Conversation history</strong> — previous conversations are saved and accessible in the chat interface.</li>
+</ul>
+<hr>
+<h2 id="language-switching" tabindex="-1"><a class="heading-anchor" href="#language-switching" aria-hidden="true">#</a> Language Switching</h2>
+<h3 id="language-preference" tabindex="-1"><a class="heading-anchor" href="#language-preference" aria-hidden="true">#</a> Language Preference</h3>
+<p>Each user sets their preferred UI language. This affects:</p>
+<ul>
+<li>All UI text (labels, buttons, navigation, help text)</li>
+<li>System-generated messages (notifications, error messages)</li>
+<li>Knowledge base article language selection</li>
+</ul>
+<p>It does <strong>not</strong> affect:</p>
+<ul>
+<li>User-generated content (notes, messages, canvassing responses stay in the language they were written in)</li>
+<li>Record data (a contact's name and address are stored as entered)</li>
+<li>Compliance disclaimers (these are configured per jurisdiction, not per user language)</li>
+</ul>
+<h3 id="language-switcher-location" tabindex="-1"><a class="heading-anchor" href="#language-switcher-location" aria-hidden="true">#</a> Language Switcher Location</h3>
+<ul>
+<li><strong>Desktop:</strong> Accessible from the sidebar footer and the user profile menu.</li>
+<li><strong>Mobile:</strong> Accessible from the user profile menu.</li>
+</ul>
+<h3 id="switching-behavior" tabindex="-1"><a class="heading-anchor" href="#switching-behavior" aria-hidden="true">#</a> Switching Behavior</h3>
+<pre><code>┌──────────────────────────────────────┐
+│  Language                            │
+│                                      │
+│  ● English                           │
+│  ○ Español                           │
+│  ○ Português                         │
+│  ○ ไทย                               │
+│  ○ हिन्दी                              │
+│  ○ العربية                           │
+│                                      │
+│  Available languages are configured  │
+│  by your organization.               │
+└──────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>Immediate switch</strong> — selecting a language updates the UI immediately (no page reload needed — SvelteKit reactivity handles this)</li>
+<li><strong>Persisted</strong> — language preference is saved to the user's profile (server-side), so it persists across devices</li>
+<li><strong>Available languages</strong> — determined by the tenant's configuration (not all languages are available for every tenant)</li>
+<li><strong>RTL handling</strong> — selecting Arabic (<code>العربية</code>) flips the entire layout to RTL (sidebar moves right, text alignment flips, directional icons mirror)</li>
+</ul>
+<hr>
+<h2 id="onboarding-flows" tabindex="-1"><a class="heading-anchor" href="#onboarding-flows" aria-hidden="true">#</a> Onboarding Flows</h2>
+<h3 id="first-run-experience" tabindex="-1"><a class="heading-anchor" href="#first-run-experience" aria-hidden="true">#</a> First-Run Experience</h3>
+<p>When a user logs in for the first time, they see a brief, role-specific welcome:</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│                                                       │
+│  Welcome to GreenGrass, Maria!                        │
+│                                                       │
+│  You're set up as a Field Director.                   │
+│  Here's where to start:                               │
+│                                                       │
+│  1. Set up your first canvassing campaign             │
+│  2. Cut turfs for your volunteers                     │
+│  3. Build a canvassing script                         │
+│                                                       │
+│  [Get Started]              [Explore on my own]       │
+│                                                       │
+└──────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Persona-specific first actions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Persona</th>
+<th>First Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Org Admin</td>
+<td>Complete org setup wizard → configure compliance → invite staff</td>
+</tr>
+<tr>
+<td>Communications Director</td>
+<td>Connect email domain → create first email template → build a segment</td>
+</tr>
+<tr>
+<td>Finance Director</td>
+<td>Set up payment processor → configure contribution limits → create first donation form</td>
+</tr>
+<tr>
+<td>Field Director</td>
+<td>Create first canvassing campaign → cut turfs → build a script</td>
+</tr>
+<tr>
+<td>Volunteer Coordinator</td>
+<td>Set up training modules → create volunteer onboarding → create first event</td>
+</tr>
+<tr>
+<td>Data Manager</td>
+<td>Import voter file → review dedup queue → check data quality</td>
+</tr>
+<tr>
+<td>Volunteer</td>
+<td>Complete onboarding wizard → view first shift → start training</td>
+</tr>
+<tr>
+<td>Team Lead</td>
+<td>Same as Volunteer, plus: view your team</td>
+</tr>
+<tr>
+<td>Candidate</td>
+<td>Review dashboard → set up public profile → check pending approvals</td>
+</tr>
+<tr>
+<td>Supporter</td>
+<td>Review profile → check donation history → update preferences</td>
+</tr>
+</tbody>
+</table>
+<h3 id="onboarding-wizard-flows" tabindex="-1"><a class="heading-anchor" href="#onboarding-wizard-flows" aria-hidden="true">#</a> Onboarding Wizard Flows</h3>
+<p>Detailed wizard flows are defined in the screen inventory (WIZ-001 through WIZ-008). Key UX patterns:</p>
+<ul>
+<li><strong>Wizard replaces sidebar</strong> — during a wizard, the sidebar shows wizard step names instead of normal navigation</li>
+<li><strong>Progress indicator</strong> — step N of M, with completed/current/remaining visual</li>
+<li><strong>Save &amp; exit</strong> — user can leave and resume later (progress saved server-side)</li>
+<li><strong>Step validation</strong> — each step validates before allowing progression</li>
+<li><strong>Completion celebration</strong> — final step shows a success message with clear next actions</li>
+<li><strong>Post-wizard checklist</strong> — after completing a wizard, the dashboard shows a &quot;Getting Started&quot; checklist with remaining setup tasks</li>
+</ul>
+<h3 id="progressive-disclosure-in-settings" tabindex="-1"><a class="heading-anchor" href="#progressive-disclosure-in-settings" aria-hidden="true">#</a> Progressive Disclosure in Settings</h3>
+<p>For first-time setup, the platform uses progressive disclosure:</p>
+<ol>
+<li><strong>Required settings first</strong> — compliance-required settings (contribution limits, disclaimers) are presented in the wizard</li>
+<li><strong>Recommended settings highlighted</strong> — optional but recommended settings are highlighted in the settings panel with a &quot;Recommended&quot; badge</li>
+<li><strong>Advanced settings hidden</strong> — rarely-used settings (API keys, webhooks, audit trail retention) are in collapsed sections</li>
+</ol>
+<hr>
+<h2 id="tooltips-and-inline-help" tabindex="-1"><a class="heading-anchor" href="#tooltips-and-inline-help" aria-hidden="true">#</a> Tooltips and Inline Help</h2>
+<h3 id="tooltip-pattern" tabindex="-1"><a class="heading-anchor" href="#tooltip-pattern" aria-hidden="true">#</a> Tooltip Pattern</h3>
+<p>Brief contextual help attached to specific UI elements:</p>
+<pre><code>┌─────────────────────────────────────┐
+│  Support Score [?]   [4 ▾]          │
+│                                     │
+│  ┌─────────────────────────────┐    │
+│  │ A score from 1-5 indicating │    │
+│  │ this contact's likelihood   │    │
+│  │ of supporting your          │    │
+│  │ candidate/cause.            │    │
+│  │                             │    │
+│  │ 5 = Strong supporter        │    │
+│  │ 1 = Strong opponent         │    │
+│  │                             │    │
+│  │ [Learn more →]              │    │
+│  └─────────────────────────────┘    │
+│                                     │
+└─────────────────────────────────────┘
+</code></pre>
+<p><strong>Behaviors:</strong></p>
+<ul>
+<li><strong>Trigger</strong> — hover (desktop) or tap (mobile) on the &quot;?&quot; icon</li>
+<li><strong>Dismiss</strong> — click/tap outside, or move to another element</li>
+<li><strong>Link</strong> — &quot;Learn more&quot; links to the relevant knowledge base article</li>
+<li><strong>Positioning</strong> — tooltip appears above or below the element, never obscuring the field it describes</li>
+<li><strong>No tooltips on mobile for essential info</strong> — if the information is essential, it should be visible inline on mobile (not hidden behind a tap target)</li>
+</ul>
+<h3 id="form-help-text" tabindex="-1"><a class="heading-anchor" href="#form-help-text" aria-hidden="true">#</a> Form Help Text</h3>
+<p>Static help text below complex form fields:</p>
+<pre><code>│  Contribution Limit *        [$2,900    ]  │
+│  Maximum individual contribution per       │
+│  election cycle for your jurisdiction.      │
+│  [Why is this required? →]                 │
+</code></pre>
+<ul>
+<li>Always visible (not on-hover)</li>
+<li>Brief — one line preferred, two maximum</li>
+<li>Links to detailed explanations where needed</li>
+</ul>
+<hr>
+<h2 id="keyboard-shortcuts" tabindex="-1"><a class="heading-anchor" href="#keyboard-shortcuts" aria-hidden="true">#</a> Keyboard Shortcuts</h2>
+<h3 id="available-shortcuts" tabindex="-1"><a class="heading-anchor" href="#available-shortcuts" aria-hidden="true">#</a> Available Shortcuts</h3>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+<th>Context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code> or <code>Cmd+K</code></td>
+<td>Focus global search</td>
+<td>Any screen</td>
+</tr>
+<tr>
+<td><code>Esc</code></td>
+<td>Close modal/panel/search</td>
+<td>Any screen</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>Open keyboard shortcut reference</td>
+<td>Any screen</td>
+</tr>
+<tr>
+<td><code>G then D</code></td>
+<td>Go to Dashboard</td>
+<td>App shell</td>
+</tr>
+<tr>
+<td><code>G then M</code></td>
+<td>Go to Messages</td>
+<td>App shell</td>
+</tr>
+<tr>
+<td><code>G then P</code></td>
+<td>Go to People</td>
+<td>App shell</td>
+</tr>
+<tr>
+<td><code>G then S</code></td>
+<td>Go to Settings</td>
+<td>App shell (Org Admin)</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>New (context-dependent: new contact, new event, etc.)</td>
+<td>List views</td>
+</tr>
+<tr>
+<td><code>J</code> / <code>K</code></td>
+<td>Navigate up/down in lists</td>
+<td>List views</td>
+</tr>
+<tr>
+<td><code>Enter</code></td>
+<td>Open selected item</td>
+<td>List views</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shortcut-discovery" tabindex="-1"><a class="heading-anchor" href="#shortcut-discovery" aria-hidden="true">#</a> Shortcut Discovery</h3>
+<ul>
+<li><strong>&quot;?&quot; key</strong> — opens a shortcut reference overlay</li>
+<li><strong>First-time hint</strong> — on first visit, a subtle hint appears: &quot;Press ? for keyboard shortcuts&quot;</li>
+<li><strong>Not critical</strong> — shortcuts are power-user features. The platform is fully functional without them.</li>
+</ul>
+<hr>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>In-app announcements.</strong> Should the platform have a mechanism for platform-level announcements (new features, maintenance windows, security advisories)? These would appear as a banner or notification, distinct from user-to-user notifications.</p>
+</li>
+<li>
+<p><strong>Guided tours.</strong> Beyond the first-run welcome, should the platform offer guided tours of specific features? (&quot;New: Social Media Post Scheduling — take a quick tour?&quot;) These can be helpful but also annoying. Consider opt-in only.</p>
+</li>
+<li>
+<p><strong>Help article feedback.</strong> Should knowledge base articles have a &quot;Was this helpful?&quot; mechanism? Useful for improving documentation but adds UI complexity.</p>
+</li>
+</ol>
+<!-- REVISIT: The knowledge base content itself needs to be written as features are built. This document defines the patterns for accessing and displaying help content, not the content itself. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#settings-architecture"># Settings Architecture</a></li><li class="toc-3"><a href="#settings-hierarchy"># Settings Hierarchy</a></li><li class="toc-3"><a href="#organization-settings"># Organization Settings</a></li><li class="toc-3"><a href="#feature-settings"># Feature Settings</a></li><li class="toc-3"><a href="#personal-settings"># Personal Settings</a></li><li class="toc-3"><a href="#settings-ux-pattern"># Settings UX Pattern</a></li><li class="toc-2"><a href="#help-support-system"># Help &amp;amp; Support System</a></li><li class="toc-3"><a href="#help-access-points"># Help Access Points</a></li><li class="toc-3"><a href="#contextual-help"># Contextual Help</a></li><li class="toc-3"><a href="#knowledge-base"># Knowledge Base</a></li><li class="toc-3"><a href="#ai-concierge"># AI Concierge</a></li><li class="toc-2"><a href="#language-switching"># Language Switching</a></li><li class="toc-3"><a href="#language-preference"># Language Preference</a></li><li class="toc-3"><a href="#language-switcher-location"># Language Switcher Location</a></li><li class="toc-3"><a href="#switching-behavior"># Switching Behavior</a></li><li class="toc-2"><a href="#onboarding-flows"># Onboarding Flows</a></li><li class="toc-3"><a href="#first-run-experience"># First-Run Experience</a></li><li class="toc-3"><a href="#onboarding-wizard-flows"># Onboarding Wizard Flows</a></li><li class="toc-3"><a href="#progressive-disclosure-in-settings"># Progressive Disclosure in Settings</a></li><li class="toc-2"><a href="#tooltips-and-inline-help"># Tooltips and Inline Help</a></li><li class="toc-3"><a href="#tooltip-pattern"># Tooltip Pattern</a></li><li class="toc-3"><a href="#form-help-text"># Form Help Text</a></li><li class="toc-2"><a href="#keyboard-shortcuts"># Keyboard Shortcuts</a></li><li class="toc-3"><a href="#available-shortcuts"># Available Shortcuts</a></li><li class="toc-3"><a href="#shortcut-discovery"># Shortcut Discovery</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

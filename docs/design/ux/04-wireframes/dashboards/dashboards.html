@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Wireframes · GreenGrass</title>
+<meta name="description" content="Dashboard Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="./dashboards.html" aria-current="page" class="active">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="dashboard-wireframes" tabindex="-1"><a class="heading-anchor" href="#dashboard-wireframes" aria-hidden="true">#</a> Dashboard Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Every persona has a dashboard as their home screen. Dashboards are read-heavy, action-light — they answer &quot;how is everything going?&quot; and surface items needing attention. This document wireframes the key dashboard variants.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DASH-001</td>
+<td>Campaign Overview Dashboard</td>
+<td>OA, C</td>
+<td>No</td>
+<td>Yes</td>
+<td>Campaign Overview</td>
+</tr>
+<tr>
+<td>DASH-002</td>
+<td>Field Operations Dashboard</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Field Operations</td>
+</tr>
+<tr>
+<td>DASH-003</td>
+<td>Fundraising Dashboard</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Fundraising</td>
+</tr>
+<tr>
+<td>DASH-004</td>
+<td>Communications Dashboard</td>
+<td>OA, CD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Communications</td>
+</tr>
+<tr>
+<td>DASH-005</td>
+<td>Volunteer Dashboard</td>
+<td>OA, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td>Volunteer</td>
+</tr>
+<tr>
+<td>DASH-006</td>
+<td>Data Quality Dashboard</td>
+<td>OA, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Data Quality</td>
+</tr>
+<tr>
+<td>DASH-007</td>
+<td>Compliance Dashboard</td>
+<td>OA, FD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Compliance</td>
+</tr>
+<tr>
+<td>DASH-008</td>
+<td>GOTV War Room Dashboard</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>GOTV War Room</td>
+</tr>
+<tr>
+<td>DASH-009</td>
+<td>Team Lead Dashboard</td>
+<td>TL</td>
+<td>No</td>
+<td>Primary</td>
+<td>Team Lead</td>
+</tr>
+<tr>
+<td>DASH-010</td>
+<td>Candidate Dashboard</td>
+<td>C</td>
+<td>No</td>
+<td>Yes</td>
+<td>Candidate</td>
+</tr>
+<tr>
+<td>DASH-011</td>
+<td>Alliance Dashboard</td>
+<td>OA</td>
+<td>No</td>
+<td>Yes</td>
+<td>Cross-ref → <a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a></td>
+</tr>
+</tbody>
+</table>
+<p>All dashboards are online-only. Dashboards require server data to render — when offline, the dashboard shows the last-cached version with a &quot;Last updated: [timestamp]&quot; indicator and a &quot;Data may be outdated&quot; banner.</p>
+<h2 id="dashboard-navigation-context" tabindex="-1"><a class="heading-anchor" href="#dashboard-navigation-context" aria-hidden="true">#</a> Dashboard Navigation Context</h2>
+<p>Each persona's dashboard is their home screen — the first screen after login. The sidebar shows &quot;Dashboard&quot; as the first item in the &quot;OVERVIEW&quot; section for every persona. Each persona sees only their own dashboard:</p>
+<ul>
+<li><strong>Org Admin</strong> → DASH-001 (Campaign Overview)</li>
+<li><strong>Field Director</strong> → DASH-002 (Field Operations)</li>
+<li><strong>Finance Director</strong> → DASH-003 (Fundraising)</li>
+<li><strong>Communications Director</strong> → DASH-004 (Communications)</li>
+<li><strong>Volunteer Coordinator</strong> → DASH-005 (Volunteer)</li>
+<li><strong>Data Manager</strong> → DASH-006 (Data Quality)</li>
+<li><strong>Team Lead</strong> → DASH-009 (Team Lead)</li>
+<li><strong>Candidate</strong> → DASH-010 (Candidate)</li>
+</ul>
+<p>The GOTV War Room Dashboard (DASH-008) replaces the Field Director's dashboard during GOTV activation and is also accessible to the Org Admin.</p>
+<hr>
+<h2 id="dashboard-layout-principles" tabindex="-1"><a class="heading-anchor" href="#dashboard-layout-principles" aria-hidden="true">#</a> Dashboard Layout Principles</h2>
+<ul>
+<li><strong>Widget grid:</strong> 3-4 columns on desktop, 2 on tablet, 1 on mobile</li>
+<li><strong>Metric cards first:</strong> Top row is always KPI summary cards (the at-a-glance numbers)</li>
+<li><strong>Charts second:</strong> Trend data below the metrics</li>
+<li><strong>Alerts/action items third:</strong> Things needing human attention</li>
+<li><strong>Activity feed last:</strong> Recent events (least urgent, most contextual)</li>
+<li><strong>Date range filter:</strong> Top-right, defaults vary per dashboard (7 days for field, 30 days for fundraising)</li>
+<li><strong>Drill-down:</strong> Every metric and chart is clickable — navigates to the underlying data list</li>
+<li><strong>Auto-refresh:</strong> War Room refreshes every 30s. All others manual refresh with &quot;Last updated&quot; timestamp.</li>
+</ul>
+<hr>
+<h2 id="dash-001-campaign-overview-dashboard-org-admin" tabindex="-1"><a class="heading-anchor" href="#dash-001-campaign-overview-dashboard-org-admin" aria-hidden="true">#</a> DASH-001: Campaign Overview Dashboard (Org Admin)</h2>
+<p>The Org Admin's home. The single view of everything.</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Campaign Overview                              Last updated: 2 min ago  ↻  │
+│  ───────────────────────────────────────────── Date range: [Last 30 days ▾] │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  💰 Raised    │  │  🚪 Doors     │  │  👥 Volunteers│  │  📧 Emails   │    │
+│  │  $47,320      │  │  1,247        │  │  34 active    │  │  12,450 sent │    │
+│  │  ↑ 12% vs prev│  │  ↑ 8%        │  │  ↑ 15%       │  │  42% open    │    │
+│  │  Goal: $100K  │  │  Goal: 5,000  │  │  Goal: 50    │  │  ↑ 3.2%     │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Fundraising Trend (30 days)    │  │  Field Progress                  │   │
+│  │  ────────────────────────       │  │  ────────────────────────        │   │
+│  │                                 │  │                                   │   │
+│  │  $3K ┤         /\  /\          │  │  Northside    ▓▓▓▓▓▓▓░░░  71%   │   │
+│  │  $2K ┤    /\  /  \/  \        │  │  Westside     ▓▓▓▓░░░░░░  42%   │   │
+│  │  $1K ┤   /  \/        \___    │  │  Eastside     ▓▓░░░░░░░░  22%   │   │
+│  │   $0 ┤──/                      │  │  Phone Bank 3 ▓▓▓▓▓▓░░░░  58%   │   │
+│  │       W1 W2 W3 W4              │  │  Voter Reg    ▓▓▓▓▓▓▓▓░░  83%   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  ⚠ Needs Attention (4)          │  │  Recent Activity                 │   │
+│  │  ────────────────────────       │  │  ────────────────────────        │   │
+│  │                                 │  │                                   │   │
+│  │  🔴 Compliance: José Delgado   │  │  2 min ago                       │   │
+│  │     contribution over limit     │  │  Ana M. donated $100             │   │
+│  │     [Review →]                  │  │                                   │   │
+│  │                                 │  │  15 min ago                      │   │
+│  │  🟡 Sync: Turf 7 hasn't       │  │  Carlos R. completed 8 doors     │   │
+│  │     synced in 2 hours           │  │                                   │   │
+│  │     [Investigate →]             │  │  1 hour ago                      │   │
+│  │                                 │  │  Email &quot;Rally Invite&quot; sent       │   │
+│  │  🟡 Form builder: draft        │  │  (12,450 recipients)             │   │
+│  │     expires in 3 days           │  │                                   │   │
+│  │     [Edit →]                    │  │  2 hours ago                     │   │
+│  │                                 │  │  3 new volunteers signed up      │   │
+│  │  🔵 Training: 8 volunteers     │  │                                   │   │
+│  │     have incomplete modules     │  │  [View all activity →]           │   │
+│  │     [View →]                    │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Upcoming Events                                                      │   │
+│  │  ────────────────────────                                             │   │
+│  │  Mar 5   Rally at Plaza    142 RSVPs / 200 cap    [Manage →]         │   │
+│  │  Mar 8   Phone Bank Wave   18/25 slots filled     [Manage →]         │   │
+│  │  Mar 12  Town Hall         67 RSVPs               [Manage →]         │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌──────────────────────────────┐
+│  ≡  Dashboard        🔍  ↻  │
+├──────────────────────────────┤
+│  Last 30 days ▾              │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  💰 Raised               ││
+│  │  $47,320     ↑ 12%       ││
+│  │  ▓▓▓▓▓▓▓░░░  47% of goal││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  🚪 Doors Knocked        ││
+│  │  1,247       ↑ 8%        ││
+│  │  ▓▓▓░░░░░░░  25% of goal││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  👥 Active Volunteers    ││
+│  │  34          ↑ 15%       ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ⚠ Needs Attention (4)   ││
+│  │  🔴 Compliance flag      ││
+│  │  🟡 Sync issue           ││
+│  │  🟡 Draft expiring       ││
+│  │  [View all →]            ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Recent Activity          ││
+│  │  Ana M. donated $100     ││
+│  │  Carlos R. 8 doors       ││
+│  │  [View all →]            ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│ 📊      👥      💰     💬   ⋯│
+│ Dash  Contacts Donate  Msgs More│
+└──────────────────────────────┘
+</code></pre>
+<h3 id="mobile-differences" tabindex="-1"><a class="heading-anchor" href="#mobile-differences" aria-hidden="true">#</a> Mobile Differences</h3>
+<ul>
+<li>Metric cards stack vertically (single column)</li>
+<li>Charts omitted on mobile — replaced by progress bars and simplified numbers</li>
+<li>Alerts show top 3 with &quot;View all&quot; link</li>
+<li>Activity feed shows last 3 items</li>
+<li>Pull-to-refresh triggers data reload</li>
+<li>No date range selector on mobile (defaults to 30 days; accessible via filter icon)</li>
+</ul>
+<hr>
+<h2 id="dash-002-field-operations-dashboard-field-director" tabindex="-1"><a class="heading-anchor" href="#dash-002-field-operations-dashboard-field-director" aria-hidden="true">#</a> DASH-002: Field Operations Dashboard (Field Director)</h2>
+<p>Focused on the ground game. Where are we, what's working, who's in the field.</p>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Field Operations                               Last updated: 1 min ago  ↻  │
+│  ───────────────────────────────────────────── Date range: [Last 7 days  ▾] │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  🚪 Doors     │  │  📞 Calls     │  │  📋 Contact % │  │  👥 In Field  │    │
+│  │  1,247/5,000  │  │  312/500      │  │  71.4%        │  │  12 active   │    │
+│  │  ↑ 8% vs prev │  │  ↑ 22%       │  │  ↑ 2.1%      │  │  3 shifts    │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Campaign Progress                                                    │   │
+│  │  ──────────────                                                       │   │
+│  │  Northside Canvass     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░  71%    142/200 doors  │   │
+│  │    Teams: A (34/50) B (28/50) C (42/50) D (38/50)                    │   │
+│  │                                                                       │   │
+│  │  Westside Follow-up    ▓▓▓▓▓▓▓▓░░░░░░░░░░░░  42%     87/200 doors  │   │
+│  │    Teams: E (45/100) F (42/100)                                       │   │
+│  │                                                                       │   │
+│  │  Phone Bank Wave 3     ▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░  58%    312/500 calls  │   │
+│  │    Sessions: 3 active, 2 scheduled                                    │   │
+│  │                                                                       │   │
+│  │  Voter Reg Drive       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░  83%     45/54 voters  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Support Score Distribution     │  │  Active Shifts                   │   │
+│  │  ─────────────────────          │  │  ────────────────                │   │
+│  │                                 │  │                                   │   │
+│  │  Strong Support  ▓▓▓▓▓▓  24%   │  │  ● Carlos R.  Northside  2:15   │   │
+│  │  Lean Support    ▓▓▓▓▓▓▓ 31%   │  │  ● María S.   Northside  1:42   │   │
+│  │  Undecided       ▓▓▓▓    18%   │  │  ● Pedro C.   Westside   0:58   │   │
+│  │  Lean Oppose     ▓▓      9%    │  │  ● Elena T.   Phone Bank 1:30   │   │
+│  │  Strong Oppose   ▓       5%    │  │  ...                             │   │
+│  │  Not Home        ▓▓▓    13%    │  │                                   │   │
+│  │                                 │  │  [View all shifts →]             │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Performance by Volunteer       │  │  Turf Map                        │   │
+│  │  ───────────────────────        │  │  ────────────                    │   │
+│  │                                 │  │                                   │   │
+│  │  Name         Doors  Rate  Avg  │  │  ┌───────────────────────┐       │   │
+│  │  Carlos R.    42     78%   4.2m │  │  │                       │       │   │
+│  │  María S.     38     82%   3.8m │  │  │  [Map showing turfs   │       │   │
+│  │  Pedro C.     31     68%   5.1m │  │  │   with color coding   │       │   │
+│  │  Elena T.     28     74%   4.5m │  │  │   by completion %]    │       │   │
+│  │  ...                            │  │  │                       │       │   │
+│  │                                 │  │  └───────────────────────┘       │   │
+│  │  [View full report →]           │  │  🟢 &gt;70%  🟡 30-70%  🔴 &lt;30%   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="dash-003-fundraising-dashboard-finance-director" tabindex="-1"><a class="heading-anchor" href="#dash-003-fundraising-dashboard-finance-director" aria-hidden="true">#</a> DASH-003: Fundraising Dashboard (Finance Director)</h2>
+<p>All about the money. Revenue, trends, compliance, recurring health.</p>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Fundraising                                    Last updated: 5 min ago  ↻  │
+│  ───────────────────────────────────────────── Date range: [Last 30 days ▾] │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  💰 Total     │  │  👤 Donors    │  │  🔄 Recurring │  │  📊 Average  │    │
+│  │  $47,320      │  │  342          │  │  $8,400/mo    │  │  $138.36    │    │
+│  │  ↑ 12%       │  │  89 new       │  │  112 active   │  │  ↑ 7%      │    │
+│  │  Goal: $100K  │  │  253 returning│  │  94% healthy  │  │            │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────┐                                │
+│  │  Goal Progress                            │                                │
+│  │  ────────────                             │                                │
+│  │  ▓▓▓▓▓▓▓▓▓░░░░░░░░░░░  $47,320 / $100,000  (47%)                       │
+│  │  At current pace, goal reached by: ~May 15                                │
+│  └──────────────────────────────────────────┘                                │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Revenue Trend                  │  │  Donation Sources                │   │
+│  │  ────────────────               │  │  ─────────────────              │   │
+│  │                                 │  │                                   │   │
+│  │  $5K ┤            /\           │  │  Online Forms   ▓▓▓▓▓▓▓▓  62%   │   │
+│  │  $4K ┤         __/  \         │  │  Email Appeals  ▓▓▓▓      22%   │   │
+│  │  $3K ┤    /\  /      \        │  │  Events         ▓▓         11%   │   │
+│  │  $2K ┤   /  \/        \_      │  │  Direct/Other   ▓           5%   │   │
+│  │  $1K ┤──/                      │  │                                   │   │
+│  │       W1 W2 W3 W4              │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  ⚠ Compliance Alerts (2)        │  │  Recent Donations                │   │
+│  │  ───────────────────             │  │  ─────────────────              │   │
+│  │                                 │  │                                   │   │
+│  │  🔴 José Delgado               │  │  $100   Ana Martínez    2m ago   │   │
+│  │     $5,200 total — exceeds      │  │  $50    Pedro Colón   15m ago   │   │
+│  │     $5,000 individual limit     │  │  $250   María Santos   1h ago   │   │
+│  │     [Review donation →]         │  │  $75    Carlos Rivera  2h ago   │   │
+│  │                                 │  │  $500   Elena Torres   3h ago   │   │
+│  │  🟡 Foreign address flag        │  │                                   │   │
+│  │     Kim Park — needs residency  │  │  [View all donations →]          │   │
+│  │     verification                │  │                                   │   │
+│  │     [Review →]                  │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Recurring Health               │  │  Upcoming Deadlines              │   │
+│  │  ──────────────                 │  │  ───────────────                 │   │
+│  │                                 │  │                                   │   │
+│  │  Active:    112  (94%)          │  │  Mar 15  Quarterly FEC filing    │   │
+│  │  Failing:     5  (4%)           │  │  Mar 31  Q1 close               │   │
+│  │  Cancelled:   3  (2%)           │  │  Apr 15  Annual compliance rpt  │   │
+│  │                                 │  │                                   │   │
+│  │  MRR:     $8,400               │  │                                   │   │
+│  │  Churn:   2.7% (improving)      │  │                                   │   │
+│  │                                 │  │                                   │   │
+│  │  [View recurring details →]     │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="dash-008-gotv-war-room-dashboard" tabindex="-1"><a class="heading-anchor" href="#dash-008-gotv-war-room-dashboard" aria-hidden="true">#</a> DASH-008: GOTV War Room Dashboard</h2>
+<p>The election day command center. Auto-refreshes every 30s. Dark mode default. Full-width (no sidebar on desktop — it collapses to icon-only to maximize screen space).</p>
+<h3 id="desktop-dark-mode" tabindex="-1"><a class="heading-anchor" href="#desktop-dark-mode" aria-hidden="true">#</a> Desktop (Dark Mode)</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ████████████████  ELECTION DAY ACTIVE  ████████████████  Polls close: 4h 23m│
+├──────────────────────────────────────────────────────────────────────────────┤
+│  GOTV War Room                                    Auto-refresh: 30s  ↻  ●   │
+│  ─────────────────────────────────────────────────────────────────────────── │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  🗳 TURNOUT   │  │  🚪 KNOCKED  │  │  🚗 RIDES    │  │  ⚠ ISSUES    │    │
+│  │  4,231        │  │  2,847/5,000 │  │  12 pending  │  │  3 open      │    │
+│  │  of 12,450    │  │  57%         │  │  47 complete │  │  2 escalated │    │
+│  │  34.0%        │  │  ↑ since 2pm │  │  ETA: 15 min │  │              │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Turnout by Precinct                                                  │   │
+│  │  ──────────────────                                                   │   │
+│  │  Precinct 1 (San Juan)   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░  41%  🟢 On track   │   │
+│  │  Precinct 2 (Bayamón)    ▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░  32%  🟡 Behind     │   │
+│  │  Precinct 3 (Carolina)   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░  44%  🟢 On track   │   │
+│  │  Precinct 4 (Ponce)      ▓▓▓▓▓▓░░░░░░░░░░░░░░  22%  🔴 Critical   │   │
+│  │  Precinct 5 (Caguas)     ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░  37%  🟡 Behind     │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Live Feed                      │  │  Resource Status                 │   │
+│  │  ────────────                   │  │  ─────────────                   │   │
+│  │                                 │  │                                   │   │
+│  │  ● 2:34 PM                      │  │  Volunteers                      │   │
+│  │  Precinct 4 below target.       │  │  In field: 28 of 42             │   │
+│  │  Suggest reallocation.          │  │  At staging: 8                   │   │
+│  │  [Approve reallocation →]       │  │  Unaccounted: 6                 │   │
+│  │                                 │  │                                   │   │
+│  │  ● 2:31 PM                      │  │  Rides                          │   │
+│  │  Rosa Figueroa confirmed        │  │  Drivers active: 5              │   │
+│  │  voted (Precinct 1).            │  │  Requests pending: 12           │   │
+│  │                                 │  │  Avg wait: 15 min               │   │
+│  │  ● 2:28 PM                      │  │                                   │   │
+│  │  ⚠ Poll watcher issue:          │  │  Poll Watchers                  │   │
+│  │  Machine 3 at Precinct 2        │  │  Deployed: 8 of 10             │   │
+│  │  showing error.                 │  │  Issues reported: 3             │   │
+│  │  [View issue →]                 │  │  [Manage watchers →]            │   │
+│  │                                 │  │                                   │   │
+│  │  ● 2:25 PM                      │  │  Communications                 │   │
+│  │  Wave 2 GOTV SMS sent           │  │  Wave 1: ✓ Sent (8:00 AM)      │   │
+│  │  (3,400 recipients)             │  │  Wave 2: ✓ Sent (2:00 PM)      │   │
+│  │                                 │  │  Wave 3: ○ Scheduled (5:00 PM) │   │
+│  │  ...                            │  │  [Manage waves →]               │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Reallocation Suggestions                                             │   │
+│  │  ─────────────────────                                                │   │
+│  │                                                                       │   │
+│  │  🟡 Move 4 volunteers from Precinct 3 (ahead) → Precinct 4 (behind)  │   │
+│  │     Impact: +estimated 120 contacts in Precinct 4                     │   │
+│  │     [Approve]  [Modify]  [Dismiss]                                    │   │
+│  │                                                                       │   │
+│  │  🟡 Reassign 2 drivers to Precinct 2 area (12 pending ride requests) │   │
+│  │     [Approve]  [Modify]  [Dismiss]                                    │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="war-room-key-differences-from-other-dashboards" tabindex="-1"><a class="heading-anchor" href="#war-room-key-differences-from-other-dashboards" aria-hidden="true">#</a> War Room — Key Differences from Other Dashboards</h3>
+<ul>
+<li><strong>Election Day banner:</strong> Persistent at top, shows countdown to polls close</li>
+<li><strong>Auto-refresh:</strong> Every 30s with visual refresh indicator</li>
+<li><strong>Dark mode default:</strong> Easier on eyes during long monitoring sessions</li>
+<li><strong>Sidebar collapsed:</strong> Icon-only to maximize screen real estate</li>
+<li><strong>Live feed:</strong> Scrolling event stream (newest at top), auto-scrolls (pausable)</li>
+<li><strong>Reallocation suggestions:</strong> AI-generated, require human approval</li>
+<li><strong>Color urgency:</strong> 🟢 on track, 🟡 behind target, 🔴 critical (below 60% of target pace)</li>
+</ul>
+<hr>
+<h2 id="dash-010-candidate-dashboard" tabindex="-1"><a class="heading-anchor" href="#dash-010-candidate-dashboard" aria-hidden="true">#</a> DASH-010: Candidate Dashboard</h2>
+<p>Curated, simplified. High-level metrics without operational detail. The Candidate shouldn't feel overwhelmed.</p>
+<h3 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Your Campaign                                                               │
+│  ─────────────────────────────────────────────────────────────────────────── │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                       │   │
+│  │  Fundraising                                                          │   │
+│  │  ▓▓▓▓▓▓▓▓▓░░░░░░░░░░░  $47,320 of $100,000                         │   │
+│  │                                         47% — on pace for goal       │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                       │
+│  │  👥 Volunteers│  │  🚪 Voters    │  │  📅 Events   │                       │
+│  │  34 active    │  │  64% contacted│  │  3 upcoming  │                       │
+│  │  847 total    │  │  of target    │  │  next: Mar 5 │                       │
+│  └──────────────┘  └──────────────┘  └──────────────┘                       │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  📋 Pending Approvals (3)       │  │  💬 Recent Messages              │   │
+│  │  ────────────────────           │  │  ─────────────────              │   │
+│  │                                 │  │                                   │   │
+│  │  📰 Press Release               │  │  📌 Leadership Team              │   │
+│  │  &quot;Park Restoration Plan&quot;        │  │  María: Updated talking points   │   │
+│  │  From: Comms Dir · 2h ago       │  │  for tomorrow's rally            │   │
+│  │  [Review →]                     │  │  30 min ago                      │   │
+│  │                                 │  │                                   │   │
+│  │  📱 Social Media Post           │  │  📌 Campaign Manager             │   │
+│  │  Instagram campaign photo       │  │  Schedule change for Thursday    │   │
+│  │  From: Comms Dir · 4h ago       │  │  2 hours ago                     │   │
+│  │  [Review →]                     │  │                                   │   │
+│  │                                 │  │  Elena Torres                    │   │
+│  │  📧 Email Draft                  │  │  Great turnout yesterday!        │   │
+│  │  &quot;Thank you to our donors&quot;      │  │  5 hours ago                     │   │
+│  │  From: Comms Dir · Yesterday    │  │                                   │   │
+│  │  [Review →]                     │  │  [Open messages →]               │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Upcoming Schedule                                                    │   │
+│  │  ────────────────                                                     │   │
+│  │  Mar 5, 6:00 PM   Rally at Plaza del Mercado    142 RSVPs            │   │
+│  │  Mar 7, 10:00 AM  Press Conference (Park Plan)                       │   │
+│  │  Mar 8, 2:00 PM   Town Hall at Centro Comunal   67 RSVPs            │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="candidate-dashboard-design-notes" tabindex="-1"><a class="heading-anchor" href="#candidate-dashboard-design-notes" aria-hidden="true">#</a> Candidate Dashboard — Design Notes</h3>
+<ul>
+<li><strong>No drill-down</strong> on fundraising (Candidate sees the thermometer, not individual donations)</li>
+<li><strong>No operational detail</strong> on field (percentage contacted, not turf-by-turf breakdown)</li>
+<li><strong>Approvals prominent</strong> — this is a primary action for the Candidate</li>
+<li><strong>Messages prominent</strong> — pinned conversations from key staff at the top</li>
+<li><strong>Upcoming schedule</strong> — the Candidate's personal calendar of campaign events</li>
+<li><strong>No date range filter</strong> — the dashboard shows current state, not historical analysis</li>
+<li><strong>Tone:</strong> Encouraging, not overwhelming. &quot;On pace for goal&quot; rather than raw numbers.</li>
+</ul>
+<hr>
+<h2 id="dash-005-volunteer-dashboard-volunteer-coordinator" tabindex="-1"><a class="heading-anchor" href="#dash-005-volunteer-dashboard-volunteer-coordinator" aria-hidden="true">#</a> DASH-005: Volunteer Dashboard (Volunteer Coordinator)</h2>
+<h3 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Volunteer Operations                           Last updated: 3 min ago  ↻  │
+│  ───────────────────────────────────────────── Date range: [This week   ▾] │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  👥 Active    │  │  ⏰ Hours     │  │  📋 Shifts    │  │  🆕 New       │    │
+│  │  34           │  │  187 this wk  │  │  78% filled   │  │  8 signups   │    │
+│  │  of 847 total │  │  ↑ 22%       │  │  ↓ from 85%   │  │  5 pending   │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Shift Coverage (Next 7 Days)   │  │  ⚠ Needs Attention (6)          │   │
+│  │  ────────────────────────       │  │  ────────────────────           │   │
+│  │                                 │  │                                   │   │
+│  │  Mon  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  100%  │  │  🟡 5 pending volunteer reviews │   │
+│  │  Tue  ▓▓▓▓▓▓▓▓▓▓▓░░░░░   68%  │  │     [Review signups →]          │   │
+│  │  Wed  ▓▓▓▓▓▓▓▓▓▓▓▓▓░░░   82%  │  │                                   │   │
+│  │  Thu  ▓▓▓▓▓▓░░░░░░░░░░   38%  │  │  🟡 Thu shifts need 8 more vols │   │
+│  │  Fri  ▓▓▓▓▓▓▓▓▓▓▓▓░░░░   75%  │  │     [Manage shifts →]           │   │
+│  │  Sat  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  100%  │  │                                   │   │
+│  │  Sun  ▓▓▓▓▓▓▓▓▓▓░░░░░░   56%  │  │  🔵 3 vols haven't completed    │   │
+│  │                                 │  │     required training             │   │
+│  │  ⚠ Thu and Sun under 60%       │  │     [View training status →]     │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Training Completion            │  │  Upcoming Events                 │   │
+│  │  ────────────────               │  │  ──────────────                  │   │
+│  │                                 │  │                                   │   │
+│  │  Canvassing 101  ▓▓▓▓▓▓▓░  87% │  │  Mar 5  Rally       142 RSVPs  │   │
+│  │  Phone Banking   ▓▓▓▓▓▓░░  72% │  │         12 vol slots filled     │   │
+│  │  Safety Protocol ▓▓▓▓▓▓▓▓  95% │  │                                   │   │
+│  │  Data Privacy    ▓▓▓▓░░░░  52% │  │  Mar 8  Phone Bank   18/25 vol  │   │
+│  │                                 │  │  Mar 12 Town Hall    8 vol slots│   │
+│  │  [View all modules →]          │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="dash-009-team-lead-dashboard" tabindex="-1"><a class="heading-anchor" href="#dash-009-team-lead-dashboard" aria-hidden="true">#</a> DASH-009: Team Lead Dashboard</h2>
+<p>The Team Lead's view — focused on their specific team, not the whole operation.</p>
+<h3 id="mobile-primary-device" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-device" aria-hidden="true">#</a> Mobile (Primary Device)</h3>
+<pre><code>┌──────────────────────────────┐
+│  ≡  My Team          🔍  ●   │
+├──────────────────────────────┤
+│                              │
+│  Team Alpha · Northside      │
+│  ─────────────────────       │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Today's Progress        ││
+│  │  34/50 doors  ▓▓▓▓▓▓▓░░ ││
+│  │  68% · 16 remaining      ││
+│  └──────────────────────────┘│
+│                              │
+│  Team Members                │
+│  ┌──────────────────────────┐│
+│  │  ● Carlos R.   In field  ││
+│  │    18 doors · 2h 15m     ││
+│  ├──────────────────────────┤│
+│  │  ● María S.    In field  ││
+│  │    12 doors · 1h 42m     ││
+│  ├──────────────────────────┤│
+│  │  ◌ Pedro C.    Not started││
+│  │    Shift starts 3:00 PM  ││
+│  ├──────────────────────────┤│
+│  │  ✓ Elena T.    Complete  ││
+│  │    4 doors · ended 1:30  ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  ⚠ Pedro hasn't checked ││
+│  │  in. Shift starts in 30m.││
+│  │  [Send reminder]         ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│  📋      📅      💬    [▶ GO]│
+│ Shifts  Events  Msgs  Start  │
+└──────────────────────────────┘
+</code></pre>
+<hr>
+<h2 id="dashboard-empty-states" tabindex="-1"><a class="heading-anchor" href="#dashboard-empty-states" aria-hidden="true">#</a> Dashboard Empty States</h2>
+<p>When a dashboard has no data (fresh tenant, new feature area):</p>
+<h3 id="campaign-overview-empty" tabindex="-1"><a class="heading-anchor" href="#campaign-overview-empty" aria-hidden="true">#</a> Campaign Overview — Empty</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Campaign Overview                                                           │
+│  ─────────────────────────────────────────────────────────────────────────── │
+│                                                                              │
+│                                                                              │
+│                         📊                                                   │
+│                                                                              │
+│                  Welcome to GreenGrass                                        │
+│                                                                              │
+│         Your campaign dashboard will show fundraising,                       │
+│         field operations, communications, and volunteer                      │
+│         metrics once you start setting things up.                            │
+│                                                                              │
+│         ┌────────────────────────────────────┐                               │
+│         │  Get started:                       │                               │
+│         │                                     │                               │
+│         │  1. Set up a donation form          │                               │
+│         │  2. Create a canvassing campaign    │                               │
+│         │  3. Import your contacts            │                               │
+│         │  4. Invite your team                │                               │
+│         └────────────────────────────────────┘                               │
+│                                                                              │
+│         [Set Up Donation Form →]                                             │
+│                                                                              │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="empty-state-principles" tabindex="-1"><a class="heading-anchor" href="#empty-state-principles" aria-hidden="true">#</a> Empty State Principles</h3>
+<ul>
+<li><strong>Persona-specific:</strong> Each persona's empty state guides them toward their first relevant action</li>
+<li><strong>Numbered steps:</strong> Give a sense of progression (&quot;do this first, then this&quot;)</li>
+<li><strong>Single primary CTA:</strong> One prominent action button for the most important first step</li>
+<li><strong>No dummy data:</strong> Empty means empty — no sample metrics, no fake charts</li>
+<li><strong>Contextual help link:</strong> &quot;Need help getting started?&quot; links to the persona-specific onboarding guide</li>
+</ul>
+<hr>
+<h2 id="dashboard-loading-states" tabindex="-1"><a class="heading-anchor" href="#dashboard-loading-states" aria-hidden="true">#</a> Dashboard Loading States</h2>
+<h3 id="skeleton-loading-first-load" tabindex="-1"><a class="heading-anchor" href="#skeleton-loading-first-load" aria-hidden="true">#</a> Skeleton Loading (First Load)</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Campaign Overview                                                           │
+│  ─────────────────────────────────────────────────────────────────────────── │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  ░░░░░░░░░░░ │  │  ░░░░░░░░░░░ │  │  ░░░░░░░░░░░ │  │  ░░░░░░░░░░░ │    │
+│  │  ░░░░░░░     │  │  ░░░░░░░     │  │  ░░░░░░░     │  │  ░░░░░░░     │    │
+│  │  ░░░░░░░░░   │  │  ░░░░░░░░░   │  │  ░░░░░░░░░   │  │  ░░░░░░░░░   │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  ░░░░░░░░░░░                    │  │  ░░░░░░░░░░░░░░░░░             │   │
+│  │                                 │  │  ░░░░░░░░░░░░░░               │   │
+│  │  ░░░░░░░░░░░░░░░░░░░░░        │  │  ░░░░░░░░░░░░░░░░░             │   │
+│  │  ░░░░░░░░░░░░░░░░░░░          │  │  ░░░░░░░░░░░                   │   │
+│  │  ░░░░░░░░░░░░░░░░░            │  │  ░░░░░░░░░░░░░░                │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Skeleton blocks pulse subtly (reduced motion: static grey blocks).
+Layout matches real widget positions so there's no layout shift on load.
+</code></pre>
+<h3 id="partial-load-some-widgets-ready" tabindex="-1"><a class="heading-anchor" href="#partial-load-some-widgets-ready" aria-hidden="true">#</a> Partial Load (Some Widgets Ready)</h3>
+<pre><code>Widgets render independently as data arrives.
+First to render: metric cards (smallest data payload).
+Last to render: charts and maps (largest data payload).
+Each widget shows its own skeleton until its data arrives.
+</code></pre>
+<hr>
+<h2 id="dash-004-communications-dashboard-communications-director" tabindex="-1"><a class="heading-anchor" href="#dash-004-communications-dashboard-communications-director" aria-hidden="true">#</a> DASH-004: Communications Dashboard (Communications Director)</h2>
+<p>All outreach channels in one view. Email, SMS/WhatsApp, social media, and press coverage.</p>
+<h3 id="desktop-5" tabindex="-1"><a class="heading-anchor" href="#desktop-5" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Communications                                    Last updated: 3 min ago  ↻│
+│  ───────────────────────────────────────────── Date range: [Last 30 days ▾] │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  📧 Emails    │  │  💬 SMS/WA    │  │  📱 Social    │  │  📰 Coverage │    │
+│  │  12,450 sent  │  │  3,200 sent   │  │  42 posts     │  │  7 mentions  │    │
+│  │  42% open     │  │  94% delivrd  │  │  18.4K reach  │  │  5 positive  │    │
+│  │  8.3% click   │  │  12% response │  │  ↑ 22%       │  │  2 neutral   │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Email Performance (30 days)    │  │  Audience Growth                 │   │
+│  │  ───────────────────────        │  │  ──────────────                  │   │
+│  │                                 │  │                                   │   │
+│  │  50%┤     __                    │  │  14K┤              ___/          │   │
+│  │  40%┤ ___/  \___     ___       │  │  12K┤         ____/              │   │
+│  │  30%┤/          \___/   \      │  │  10K┤    ____/                   │   │
+│  │  20%┤                    \_    │  │   8K┤___/                        │   │
+│  │  10%┤                          │  │   6K┤                             │   │
+│  │      W1  W2  W3  W4            │  │      W1  W2  W3  W4              │   │
+│  │                                 │  │                                   │   │
+│  │  ── Open rate  ── Click rate    │  │  ── Email  ── SMS  ── Social    │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Recent Sends                   │  │  Social Media by Platform        │   │
+│  │  ────────────                   │  │  ─────────────────────           │   │
+│  │                                 │  │                                   │   │
+│  │  📧 &quot;Rally Invite&quot;      2h ago │  │  Facebook   ▓▓▓▓▓▓▓▓▓▓  8.2K   │   │
+│  │     12,450 sent · 42% open     │  │  Instagram  ▓▓▓▓▓▓▓▓    6.1K   │   │
+│  │     8.3% click                  │  │  Twitter/X  ▓▓▓▓▓       3.4K   │   │
+│  │                                 │  │  TikTok     ▓▓          0.7K   │   │
+│  │  💬 &quot;Event Reminder&quot;    1d ago │  │                                   │   │
+│  │     1,800 sent · 94% delivered  │  │  Total reach: 18.4K             │   │
+│  │     12% response                │  │  ↑ 22% vs previous 30 days     │   │
+│  │                                 │  │                                   │   │
+│  │  📧 &quot;Donor Thank You&quot;   3d ago │  │                                   │   │
+│  │     342 sent · 68% open         │  │                                   │   │
+│  │     15.2% click                 │  │                                   │   │
+│  │                                 │  │                                   │   │
+│  │  [View all sends →]            │  │  [View social analytics →]       │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Scheduled Sends (3)            │  │  Channel Effectiveness           │   │
+│  │  ─────────────────              │  │  ─────────────────────           │   │
+│  │                                 │  │                                   │   │
+│  │  Mar 5, 2:00 PM                │  │  Metric        Email  SMS   Social│   │
+│  │  📧 &quot;Rally Final Reminder&quot;     │  │  ─────────────────────────────── │   │
+│  │     Audience: 12,450            │  │  Reach         12.4K  3.2K  18.4K│   │
+│  │     [Edit] [Pause]             │  │  Engagement     8.3%  12%   4.2% │   │
+│  │                                 │  │  Conversions    312    48    27  │   │
+│  │  Mar 8, 10:00 AM               │  │  Cost/contact  $0.02  $0.04  $0 │   │
+│  │  💬 &quot;Phone Bank Signup&quot;        │  │                                   │   │
+│  │     Audience: 847 volunteers    │  │  Best channel for donations:     │   │
+│  │     [Edit] [Pause]             │  │  📧 Email (78% of online gifts)  │   │
+│  │                                 │  │                                   │   │
+│  │  Mar 10, 6:00 PM               │  │  Best channel for volunteer      │   │
+│  │  📧 &quot;Weekly Update&quot;            │  │  signup: 💬 SMS (62% of signups) │   │
+│  │     Audience: 14,200            │  │                                   │   │
+│  │     [Edit] [Pause]             │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌──────────────────────────────┐
+│  ≡  Communications    🔍  ↻  │
+├──────────────────────────────┤
+│  Last 30 days ▾              │
+│                              │
+│  ┌──────────────────────────┐│
+│  │  📧 Emails Sent          ││
+│  │  12,450      42% open    ││
+│  │              8.3% click  ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  💬 SMS/WhatsApp         ││
+│  │  3,200 sent  94% delivrd ││
+│  │              12% response││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  📱 Social Reach         ││
+│  │  18.4K       ↑ 22%      ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Scheduled (3)           ││
+│  │  📧 Rally Reminder  Mar 5││
+│  │  💬 Phone Bank     Mar 8 ││
+│  │  📧 Weekly Update  Mar 10││
+│  │  [View all →]            ││
+│  └──────────────────────────┘│
+│                              │
+│  ┌──────────────────────────┐│
+│  │  Recent Sends            ││
+│  │  📧 Rally Invite   42%  ││
+│  │  💬 Event Remind   94%  ││
+│  │  📧 Donor Thanks   68%  ││
+│  │  [View all →]            ││
+│  └──────────────────────────┘│
+│                              │
+├──────────────────────────────┤
+│ 📊      📧      📱     💬   ⋯│
+│ Dash   Email  Social  Msgs More│
+└──────────────────────────────┘
+</code></pre>
+<h3 id="mobile-differences-1" tabindex="-1"><a class="heading-anchor" href="#mobile-differences-1" aria-hidden="true">#</a> Mobile Differences</h3>
+<ul>
+<li>Charts omitted — replaced by headline metrics per channel</li>
+<li>Scheduled sends show compact list (name + date)</li>
+<li>Channel effectiveness table omitted — accessible via &quot;Social Analytics&quot;</li>
+<li>Press coverage metric card omitted — accessible from More &gt; Press</li>
+<li>Pull-to-refresh triggers data reload</li>
+</ul>
+<h3 id="communications-dashboard-design-notes" tabindex="-1"><a class="heading-anchor" href="#communications-dashboard-design-notes" aria-hidden="true">#</a> Communications Dashboard — Design Notes</h3>
+<ul>
+<li><strong>Four-channel view:</strong> Email, SMS/WhatsApp, Social, and Press coverage all in one place — the Comms Director shouldn't need to switch views to understand their outreach posture</li>
+<li><strong>Scheduled sends are actionable:</strong> Edit and Pause buttons directly on the dashboard — urgent changes shouldn't require navigating to the campaign detail</li>
+<li><strong>Channel effectiveness table</strong> answers the strategic question: &quot;where should I invest my next hour of work?&quot;</li>
+<li><strong>Press coverage is lightweight here</strong> — just a count and sentiment. Detailed coverage analysis lives in the Press section</li>
+<li><strong>Audience growth chart</strong> tracks list health over time — a declining line is an early warning</li>
+</ul>
+<hr>
+<h2 id="dash-006-data-quality-dashboard-data-manager" tabindex="-1"><a class="heading-anchor" href="#dash-006-data-quality-dashboard-data-manager" aria-hidden="true">#</a> DASH-006: Data Quality Dashboard (Data Manager)</h2>
+<p>The Data Manager's command center. Data health, import quality, dedup queue, and record hygiene.</p>
+<h3 id="desktop-6" tabindex="-1"><a class="heading-anchor" href="#desktop-6" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Data Quality                                      Last updated: 1 min ago  ↻│
+│  ───────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  📋 Records   │  │  ⚠ Quality   │  │  🔄 Dedup     │  │  📥 Imports  │    │
+│  │  24,830       │  │  Score: 87%   │  │  Queue: 42    │  │  3 this week │    │
+│  │  total        │  │  ↑ from 82%   │  │  pending      │  │  1 in prog.  │    │
+│  │  +342 this wk │  │  review       │  │  ~120 merged  │  │  12,400 rows │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Records by Type                                                      │   │
+│  │  ──────────────                                                       │   │
+│  │                                                                       │   │
+│  │  Type          Total     Complete    Incomplete   Stale (&gt;90d)        │   │
+│  │  ─────────────────────────────────────────────────────────────────    │   │
+│  │  Voters        18,450    16,200 88%   1,450 8%      800 4%           │   │
+│  │  Donors         3,240     3,100 96%      84 3%       56 2%           │   │
+│  │  Volunteers       847       812 96%      22 3%       13 2%           │   │
+│  │  Supporters     2,293     1,980 86%     213 9%      100 4%           │   │
+│  │  ─────────────────────────────────────────────────────────────────    │   │
+│  │  All           24,830    22,092 89%   1,769 7%      969 4%           │   │
+│  │                                                                       │   │
+│  │  [View incomplete records →]  [View stale records →]                  │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Data Quality Flags (38)        │  │  Dedup Queue                     │   │
+│  │  ─────────────────              │  │  ──────────                      │   │
+│  │                                 │  │                                   │   │
+│  │  By category:                   │  │  42 potential duplicates          │   │
+│  │  Missing email     14  [Fix →]  │  │  awaiting review                 │   │
+│  │  Missing phone     11  [Fix →]  │  │                                   │   │
+│  │  Invalid address    8  [Fix →]  │  │  Confidence:                     │   │
+│  │  Missing name       3  [Fix →]  │  │  High (&gt;90%)    12  [Review →]  │   │
+│  │  Bad phone format   2  [Fix →]  │  │  Medium (70-90%) 18  [Review →]  │   │
+│  │                                 │  │  Low (&lt;70%)      12  [Review →]  │   │
+│  │  Trend: ↓ 15% fewer flags      │  │                                   │   │
+│  │  vs. last month                 │  │  Auto-merged this month: 78      │   │
+│  │                                 │  │  Manual merges this month: 42    │   │
+│  │                                 │  │                                   │   │
+│  │  [View all flags →]            │  │  [Open dedup queue →]            │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Recent Imports                 │  │  Recent Exports                  │   │
+│  │  ──────────────                 │  │  ──────────────                  │   │
+│  │                                 │  │                                   │   │
+│  │  ● In Progress                  │  │  Mar 1 · 10:42 AM               │   │
+│  │  Voter file — Western district  │  │  Donor export (CSV)              │   │
+│  │  12,400 rows · Mapping step     │  │  3,240 records · by Ana R.      │   │
+│  │  Started by: Carlos M. · 15m ago│  │                                   │   │
+│  │  [View progress →]             │  │  Feb 28 · 4:15 PM               │   │
+│  │                                 │  │  Volunteer roster (CSV)          │   │
+│  │  ✓ Completed                    │  │  847 records · by Carlos M.     │   │
+│  │  Phone bank list — Call Wave 3  │  │                                   │   │
+│  │  500 rows · 12 dupes merged     │  │  Feb 25 · 9:00 AM               │   │
+│  │  Quality score: 94%             │  │  Segment: &quot;Likely Supporters&quot;   │   │
+│  │  Completed: Yesterday           │  │  4,200 records · by Elena T.    │   │
+│  │                                 │  │                                   │   │
+│  │  ✓ Completed                    │  │                                   │   │
+│  │  Event attendees — Town Hall    │  │                                   │   │
+│  │  67 rows · 3 dupes merged       │  │                                   │   │
+│  │  Quality score: 98%             │  │                                   │   │
+│  │  Completed: 3 days ago          │  │                                   │   │
+│  │                                 │  │                                   │   │
+│  │  [View import history →]       │  │  [View export history →]         │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="data-quality-dashboard-design-notes" tabindex="-1"><a class="heading-anchor" href="#data-quality-dashboard-design-notes" aria-hidden="true">#</a> Data Quality Dashboard — Design Notes</h3>
+<ul>
+<li><strong>Desktop only</strong> (per screen inventory) — data operations are desktop work</li>
+<li><strong>Quality score</strong> (87%) is a composite: weighted average of completeness (required fields filled), freshness (records updated within 90 days), and validity (well-formed emails, phones, addresses). The Data Manager can click through to see the breakdown.</li>
+<li><strong>Records by Type table</strong> is the most information-dense widget — answers &quot;where are my data problems?&quot; at a glance. Percentages are colored: green (&gt;90%), amber (70-90%), red (&lt;70%).</li>
+<li><strong>Data quality flags</strong> are categorized and actionable — each &quot;Fix&quot; link opens a filtered list of affected records</li>
+<li><strong>Dedup queue</strong> groups by confidence level — high-confidence dupes can be bulk-merged with less review friction</li>
+<li><strong>Import in progress</strong> is shown prominently — the Data Manager needs to know when a colleague started a large import</li>
+<li><strong>No charts</strong> — this dashboard is table-heavy by design. The Data Manager cares about specific numbers and lists, not trends. The one trend indicator (&quot;15% fewer flags vs last month&quot;) is inline text, not a chart.</li>
+</ul>
+<hr>
+<h2 id="dash-007-compliance-dashboard-finance-director-org-admin" tabindex="-1"><a class="heading-anchor" href="#dash-007-compliance-dashboard-finance-director-org-admin" aria-hidden="true">#</a> DASH-007: Compliance Dashboard (Finance Director / Org Admin)</h2>
+<p>Compliance health across campaign finance, data protection, and reporting obligations. Surfaces problems early so they can be fixed before they become violations.</p>
+<h3 id="desktop-7" tabindex="-1"><a class="heading-anchor" href="#desktop-7" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Compliance                                        Last updated: 5 min ago  ↻│
+│  ───────────────────────────────────────────────────────────────────────────  │
+│  Jurisdiction: Puerto Rico (CEE) · Race: Municipal                           │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │  ⚠ Alerts     │  │  📋 Consent   │  │  📅 Deadlines │  │  📨 Requests │    │
+│  │  3 active     │  │  Health: 91%  │  │  Next: 12d   │  │  2 pending   │    │
+│  │  1 critical   │  │  ↓ from 94%   │  │  Q1 filing   │  │  SLA: OK     │    │
+│  │  2 warnings   │  │  47 expiring  │  │              │  │              │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Contribution Alerts                                                  │   │
+│  │  ──────────────────                                                   │   │
+│  │                                                                       │   │
+│  │  🔴 CRITICAL                                                         │   │
+│  │  José Delgado — $5,200 total contributions                            │   │
+│  │  Exceeds $5,000 individual limit (PR municipal race)                  │   │
+│  │  Last donation: $200 on Feb 28 · pushed over limit                    │   │
+│  │  [Review &amp; Resolve →]                                                 │   │
+│  │                                                                       │   │
+│  │  🟡 WARNING                                                           │   │
+│  │  María Santos — $4,750 total contributions                            │   │
+│  │  95% of $5,000 limit · will trigger with any donation &gt;$250           │   │
+│  │  [View donor profile →]                                               │   │
+│  │                                                                       │   │
+│  │  🟡 WARNING                                                           │   │
+│  │  Kim Park — Foreign address flagged                                   │   │
+│  │  Donated $100 on Feb 25 · needs residency verification                │   │
+│  │  [Review &amp; Verify →]                                                  │   │
+│  │                                                                       │   │
+│  │  No alerts resolved in the last 7 days.                               │   │
+│  │  [View resolved alerts →]                                             │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Consent Health                 │  │  Reporting Deadlines             │   │
+│  │  ──────────────                 │  │  ───────────────                 │   │
+│  │                                 │  │                                   │   │
+│  │  By channel:                    │  │  ┌──────────────────────────┐    │   │
+│  │  Email      ▓▓▓▓▓▓▓▓▓░  94%   │  │  │  🟡 Mar 15               │    │   │
+│  │  SMS        ▓▓▓▓▓▓▓▓░░  87%   │  │  │  Quarterly filing (CEE)  │    │   │
+│  │  WhatsApp   ▓▓▓▓▓▓▓▓▓░  91%   │  │  │  Status: Data 78% ready │    │   │
+│  │  Push       ▓▓▓▓▓▓▓▓▓▓  96%   │  │  │  [Prepare report →]     │    │   │
+│  │                                 │  │  └──────────────────────────┘    │   │
+│  │  Overall: 91% valid consent     │  │                                   │   │
+│  │                                 │  │  ┌──────────────────────────┐    │   │
+│  │  ⚠ 47 consents expiring in     │  │  │  ○ Mar 31                │    │   │
+│  │    the next 30 days             │  │  │  Q1 close (books)       │    │   │
+│  │    [Send renewal requests →]    │  │  │  Status: On track       │    │   │
+│  │                                 │  │  └──────────────────────────┘    │   │
+│  │  Unsubscribes (30d): 23        │  │                                   │   │
+│  │  Bounced (30d): 8              │  │  ┌──────────────────────────┐    │   │
+│  │                                 │  │  │  ○ Apr 15                │    │   │
+│  │                                 │  │  │  Annual compliance rpt   │    │   │
+│  │                                 │  │  │  Status: Not started     │    │   │
+│  │                                 │  │  └──────────────────────────┘    │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌─────────────────────────────────┐  ┌─────────────────────────────────┐   │
+│  │  Data Subject Requests          │  │  Automated Checks (Last Run)     │   │
+│  │  ──────────────────             │  │  ─────────────────────           │   │
+│  │                                 │  │                                   │   │
+│  │  2 pending requests             │  │  Last run: Today, 6:00 AM        │   │
+│  │                                 │  │                                   │   │
+│  │  📨 Access Request              │  │  ✓ Contribution limits    0 new  │   │
+│  │     From: Pedro Colón           │  │  ✓ Foreign donor screen   0 new  │   │
+│  │     Received: Feb 27            │  │  ✓ Consent validation     3 new  │   │
+│  │     SLA: 12 days remaining      │  │  ✓ Disclaimer check      0 new  │   │
+│  │     [Process →]                 │  │  ✓ Data completeness      5 new  │   │
+│  │                                 │  │  ✓ Retention policy       0 new  │   │
+│  │  📨 Deletion Request            │  │                                   │   │
+│  │     From: Ana Figueroa          │  │  Next scheduled run:             │   │
+│  │     Received: Mar 1             │  │  Tomorrow, 6:00 AM               │   │
+│  │     SLA: 27 days remaining      │  │                                   │   │
+│  │     [Process →]                 │  │  [View check details →]          │   │
+│  │                                 │  │  [Run checks now →]              │   │
+│  │  Resolved (last 30d): 5        │  │                                   │   │
+│  │  Avg resolution: 8 days        │  │                                   │   │
+│  │                                 │  │                                   │   │
+│  │  [View all requests →]         │  │                                   │   │
+│  └─────────────────────────────────┘  └─────────────────────────────────┘   │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │  Audit Trail (Recent)                                                 │   │
+│  │  ────────────────────                                                 │   │
+│  │                                                                       │   │
+│  │  Mar 3, 9:15 AM   Elena T. exported donor data (3,240 records)       │   │
+│  │  Mar 2, 4:30 PM   System: Auto-flagged José Delgado over limit      │   │
+│  │  Mar 1, 11:00 AM  Ana F. submitted data deletion request             │   │
+│  │  Feb 28, 7:00 PM  System: Consent renewal batch sent (47 contacts)  │   │
+│  │  Feb 28, 2:15 PM  Carlos M. resolved foreign address flag (Kim Park)│   │
+│  │                                                                       │   │
+│  │  [View full audit trail →]  [Export audit log →]                     │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="compliance-dashboard-design-notes" tabindex="-1"><a class="heading-anchor" href="#compliance-dashboard-design-notes" aria-hidden="true">#</a> Compliance Dashboard — Design Notes</h3>
+<ul>
+<li><strong>Desktop only</strong> (per screen inventory) — compliance review is desktop work. Mobile access via the Finance Director's mobile tabs (Dashboard, Donations, Compliance, Messages, More) shows only the metric cards and alerts, not the full dashboard.</li>
+<li><strong>Jurisdiction context line</strong> under the title — the compliance rules are jurisdiction-specific, so the user always knows which rules are being applied</li>
+<li><strong>Contribution alerts are the highest-priority widget</strong> — displayed full-width, ordered by severity (critical first). An over-limit donation is a potential legal violation and demands immediate attention.</li>
+<li><strong>Consent health</strong> tracks per-channel opt-in validity. The &quot;Send renewal requests&quot; action lets the Comms Director (via delegation) send re-consent emails to contacts whose consent is expiring.</li>
+<li><strong>Reporting deadlines</strong> use a timeline format with preparation status — &quot;78% ready&quot; tells the user they have work to do before the filing date, not just that the date is approaching.</li>
+<li><strong>Data subject requests</strong> show SLA timers prominently — GDPR and similar regulations have hard deadlines for responding to access/deletion requests.</li>
+<li><strong>Automated checks</strong> show the last batch run results — the compliance engine runs overnight and surfaces new issues. &quot;Run checks now&quot; allows on-demand re-evaluation.</li>
+<li><strong>Audit trail</strong> is a compliance necessity — every data access, export, and configuration change is logged. The dashboard shows recent entries with a link to the full searchable trail.</li>
+</ul>
+<hr>
+<h2 id="dash-011-alliance-dashboard" tabindex="-1"><a class="heading-anchor" href="#dash-011-alliance-dashboard" aria-hidden="true">#</a> DASH-011: Alliance Dashboard</h2>
+<p>The Alliance Dashboard is documented in the Alliance wireframes: <strong><a href="../alliance/alliance.html">alliance/alliance.md</a></strong> as ALLY-001.</p>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>Dashboard metric cards use <code>aria-label</code> with full descriptions (e.g., &quot;Contacts reached: 1,847 this week, up 12%&quot;)</li>
+<li>Charts include text summaries for screen readers (e.g., &quot;Trend: increasing over 4 weeks from 30% to 42%&quot;)</li>
+<li>War Room dark mode maintains WCAG AA contrast ratios</li>
+<li>Auto-refresh announces updates via <code>aria-live=&quot;polite&quot;</code> region — not disruptive to screen reader flow</li>
+<li>All &quot;View →&quot; drill-down links have descriptive labels (not just &quot;View&quot;)</li>
+<li>Color-coded status indicators (🟢🟡🔴) always include text labels</li>
+<li>Skeleton loading states use <code>aria-busy=&quot;true&quot;</code> on the widget container</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One dashboard per persona</td>
+<td>Each persona gets a dedicated home screen</td>
+<td>Prevents information overload; focuses on role-relevant metrics</td>
+</tr>
+<tr>
+<td>Metric cards first, charts second</td>
+<td>KPI summary always visible without scrolling</td>
+<td>At-a-glance answer to &quot;how are things going?&quot;</td>
+</tr>
+<tr>
+<td>Every metric clickable</td>
+<td>Drill-down to underlying data list</td>
+<td>Dashboards surface signals; details live in feature screens</td>
+</tr>
+<tr>
+<td>War Room dark mode</td>
+<td>Dark background, high-contrast data</td>
+<td>Reduce eye strain during long election day sessions</td>
+</tr>
+<tr>
+<td>War Room 30s auto-refresh</td>
+<td>Only the War Room auto-refreshes</td>
+<td>Election day needs real-time; normal dashboards don't</td>
+</tr>
+<tr>
+<td>Candidate dashboard curated</td>
+<td>Simplified view with high-impact metrics only</td>
+<td>Candidates aren't operators — headlines, not data</td>
+</tr>
+<tr>
+<td>Data Quality dashboard table-heavy</td>
+<td>No charts, all tables</td>
+<td>Data Manager cares about specific numbers, not trends</td>
+</tr>
+<tr>
+<td>Compliance alerts severity-ordered</td>
+<td>Critical first, then warnings</td>
+<td>Potential legal violations demand immediate attention</td>
+</tr>
+<tr>
+<td>Alliance dashboard as cross-ref</td>
+<td>Documented in <a href="http://alliance.md" target="_blank" rel="noopener noreferrer">alliance.md</a>, not duplicated here</td>
+<td>Single source of truth for alliance screens</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Dashboard customization.</strong> Should staff be able to rearrange dashboard widgets or pin/hide specific ones? Adds flexibility but increases complexity. Consider for v2.</p>
+</li>
+<li>
+<p><strong>War Room large-screen mode.</strong> For projection on large screens in a physical war room, should there be a dedicated &quot;TV mode&quot; that optimizes for large displays at viewing distance (larger text, fewer widgets, darker theme)?</p>
+</li>
+<li>
+<p><strong>Goal setting.</strong> Where are fundraising and field goals configured? Currently shown on dashboards but the setting UX isn't defined. Likely in the relevant feature settings (Fundraising &gt; Goals, Field &gt; Campaign Goals).</p>
+</li>
+<li>
+<p><strong>Data Quality score formula.</strong> The composite quality score (87%) needs a defined formula. Proposed: 40% completeness (required fields), 30% freshness (updated within 90 days), 30% validity (well-formed contact fields). Should this be configurable per tenant?</p>
+</li>
+<li>
+<p><strong>Compliance dashboard for multi-jurisdiction tenants.</strong> Some alliances operate across jurisdictions. Should the compliance dashboard support a jurisdiction selector, or should it show a combined view with per-jurisdiction sections?</p>
+</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-2"><a href="#dashboard-navigation-context"># Dashboard Navigation Context</a></li><li class="toc-2"><a href="#dashboard-layout-principles"># Dashboard Layout Principles</a></li><li class="toc-2"><a href="#dash-001-campaign-overview-dashboard-org-admin"># DASH-001: Campaign Overview Dashboard (Org Admin)</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#mobile-differences"># Mobile Differences</a></li><li class="toc-2"><a href="#dash-002-field-operations-dashboard-field-director"># DASH-002: Field Operations Dashboard (Field Director)</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-2"><a href="#dash-003-fundraising-dashboard-finance-director"># DASH-003: Fundraising Dashboard (Finance Director)</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-2"><a href="#dash-008-gotv-war-room-dashboard"># DASH-008: GOTV War Room Dashboard</a></li><li class="toc-3"><a href="#desktop-dark-mode"># Desktop (Dark Mode)</a></li><li class="toc-3"><a href="#war-room-key-differences-from-other-dashboards"># War Room — Key Differences from Other Dashboards</a></li><li class="toc-2"><a href="#dash-010-candidate-dashboard"># DASH-010: Candidate Dashboard</a></li><li class="toc-3"><a href="#desktop-3"># Desktop</a></li><li class="toc-3"><a href="#candidate-dashboard-design-notes"># Candidate Dashboard — Design Notes</a></li><li class="toc-2"><a href="#dash-005-volunteer-dashboard-volunteer-coordinator"># DASH-005: Volunteer Dashboard (Volunteer Coordinator)</a></li><li class="toc-3"><a href="#desktop-4"># Desktop</a></li><li class="toc-2"><a href="#dash-009-team-lead-dashboard"># DASH-009: Team Lead Dashboard</a></li><li class="toc-3"><a href="#mobile-primary-device"># Mobile (Primary Device)</a></li><li class="toc-2"><a href="#dashboard-empty-states"># Dashboard Empty States</a></li><li class="toc-3"><a href="#campaign-overview-empty"># Campaign Overview — Empty</a></li><li class="toc-3"><a href="#empty-state-principles"># Empty State Principles</a></li><li class="toc-2"><a href="#dashboard-loading-states"># Dashboard Loading States</a></li><li class="toc-3"><a href="#skeleton-loading-first-load"># Skeleton Loading (First Load)</a></li><li class="toc-3"><a href="#partial-load-some-widgets-ready"># Partial Load (Some Widgets Ready)</a></li><li class="toc-2"><a href="#dash-004-communications-dashboard-communications-director"># DASH-004: Communications Dashboard (Communications Director)</a></li><li class="toc-3"><a href="#desktop-5"># Desktop</a></li><li class="toc-3"><a href="#mobile-1"># Mobile</a></li><li class="toc-3"><a href="#mobile-differences-1"># Mobile Differences</a></li><li class="toc-3"><a href="#communications-dashboard-design-notes"># Communications Dashboard — Design Notes</a></li><li class="toc-2"><a href="#dash-006-data-quality-dashboard-data-manager"># DASH-006: Data Quality Dashboard (Data Manager)</a></li><li class="toc-3"><a href="#desktop-6"># Desktop</a></li><li class="toc-3"><a href="#data-quality-dashboard-design-notes"># Data Quality Dashboard — Design Notes</a></li><li class="toc-2"><a href="#dash-007-compliance-dashboard-finance-director-org-admin"># DASH-007: Compliance Dashboard (Finance Director / Org Admin)</a></li><li class="toc-3"><a href="#desktop-7"># Desktop</a></li><li class="toc-3"><a href="#compliance-dashboard-design-notes"># Compliance Dashboard — Design Notes</a></li><li class="toc-2"><a href="#dash-011-alliance-dashboard"># DASH-011: Alliance Dashboard</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

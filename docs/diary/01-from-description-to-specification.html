@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entry 1: From Description to Specification · GreenGrass</title>
+<meta name="description" content="Entry 1: From Description to Specification — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../spec/product.html">Project: GreenGrass</a></li><li><a href="../spec/users.html">Users &amp; Roles</a></li><li><a href="../spec/workflows.html">Core Workflows</a></li><li><a href="../spec/geography.html">Target Geography</a></li><li><a href="../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../spec/integrations.html">External Integrations</a></li><li><a href="../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./index.html">Project Diary</a></li><li><a href="./01-from-description-to-specification.html" aria-current="page" class="active">Entry 1: From Description to Specification</a></li><li><a href="./02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="./03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="./04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="./05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="./06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="./07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="./08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Diary</nav>
+    <article class="prose">
+<h1 id="entry-1-from-description-to-specification" tabindex="-1"><a class="heading-anchor" href="#entry-1-from-description-to-specification" aria-hidden="true">#</a> Entry 1: From Description to Specification</h1>
+<p><em>Covering: project inception through completion of all 12 spec documents</em></p>
+<h2 id="the-starting-point" tabindex="-1"><a class="heading-anchor" href="#the-starting-point" aria-hidden="true">#</a> The Starting Point</h2>
+<p>GreenGrass started as a product description — a single document describing a platform for managing grassroots political elections in the global south. Not a brief. Not a PRD. A description, written by two people (Pablo Defendini and Giovanni Collazo) who understand what campaign technology lacks in places like Puerto Rico, Brazil, Thailand, India, and Lebanon.</p>
+<p>The document was substantial — it described a CRM, voter database, fundraising suite, communication tools, field operations system, and analytics platform, all designed for contexts where connectivity is intermittent, devices are low-end, languages are many, and the political stakes are high. But it was a description, not a specification. The gap between &quot;what this product does&quot; and &quot;how it works in enough detail to build it&quot; is enormous.</p>
+<p>The entire specification phase — 12 interconnected documents covering users, workflows, security, compliance, fundraising, integrations, support, GOTV, messaging, and press/media — was done through conversation with Claude Code. No design tools, no Figma, no Miro boards. Markdown files, written collaboratively in a terminal.</p>
+<h2 id="how-it-worked" tabindex="-1"><a class="heading-anchor" href="#how-it-worked" aria-hidden="true">#</a> How It Worked</h2>
+<p>The process was consistent across all 12 specs:</p>
+<ol>
+<li>
+<p><strong>Claude reads all existing context.</strong> Before drafting anything, Claude reads every spec document that exists so far, plus the original product description. Cross-references accumulate. By spec #8, there's a rich web of decisions that constrain and inform the next document.</p>
+</li>
+<li>
+<p><strong>Claude drafts the spec.</strong> Based on the product description, existing specs, and domain knowledge, Claude produces a comprehensive first draft. The drafts are not timid — they make concrete recommendations, identify gaps in the source material, and surface decisions that need to be made.</p>
+</li>
+<li>
+<p><strong>Decision points.</strong> Every spec surfaces decision points — places where the product description is ambiguous, where multiple valid approaches exist, or where there's a tension between competing concerns. These are presented as numbered decisions with options, trade-offs, and a recommendation.</p>
+</li>
+<li>
+<p><strong>We decide together.</strong> Some decisions are fast (&quot;configurable&quot; is almost always the right answer for a multi-country platform). Some require deep exploration. The alliance message encryption decision — where I asked Claude to explain per-org key negotiation in detail, including what happens when the alliance membership changes — took several back-and-forth exchanges before I chose the approach that makes alliance membership &quot;an event we can build user experience around.&quot;</p>
+</li>
+<li>
+<p><strong>The spec is updated.</strong> Decisions are written directly into the document. Each decision point is marked as DECIDED with the rationale. No separate decision log to maintain.</p>
+</li>
+</ol>
+<h2 id="what-surprised-me" tabindex="-1"><a class="heading-anchor" href="#what-surprised-me" aria-hidden="true">#</a> What Surprised Me</h2>
+<p><strong>The cross-referencing is real.</strong> By the time we wrote the GOTV spec (document #10), Claude was pulling in constraints from security (duress mode affects war room access), compliance (poll watcher credentials vary by jurisdiction), fundraising (election day donation surges need fraud detection), messaging (war room communication channels), and integrations (telephony for chase calls). These weren't prompted — they emerged naturally from having read all the existing specs.</p>
+<p><strong>Decisions compound.</strong> Early decisions about data sovereignty (BYOK encryption by default, per-country data residency) rippled through every subsequent spec. The messaging spec had to grapple with how E2E encryption works in alliance channels when each org holds its own keys. The press spec had to handle how public profiles work when the platform can't read tenant data. These weren't planned connections — they're consequences of principled early decisions.</p>
+<p><strong>The format forces clarity.</strong> Writing specs as markdown documents with explicit decision points creates a forcing function. You can't hand-wave. &quot;We'll figure out the encryption later&quot; doesn't survive a decision point that asks &quot;How does alliance message encryption work?&quot; with three concrete options and their trade-offs laid out.</p>
+<p><strong>Claude flags strategic opportunities.</strong> During the press spec, when I deferred media monitoring, Claude noted it but I was the one who flagged it as &quot;a big, big market gap&quot; for the global south. That kind of strategic observation — spotting where a deferred feature might actually be a market differentiator — is exactly the kind of thing that gets lost in traditional spec processes.</p>
+<h2 id="the-decision-log" tabindex="-1"><a class="heading-anchor" href="#the-decision-log" aria-hidden="true">#</a> The Decision Log</h2>
+<p>Across 12 spec documents, we resolved roughly 80 decision points. Some highlights:</p>
+<ul>
+<li>
+<p><strong>Federation, not multi-tenancy.</strong> Each organization is a sovereign entity with its own isolated infrastructure. They connect through explicit sharing rules, not shared databases. This is the foundational architectural decision — everything else follows from it.</p>
+</li>
+<li>
+<p><strong>Passkeys primary, no social login.</strong> In contexts where political activity can be dangerous, tying campaign platform identity to Google or Facebook accounts is a security liability. Passkeys are phishing-resistant and don't require trusting a third party.</p>
+</li>
+<li>
+<p><strong>BYOK by default.</strong> The platform cannot read tenant data unless the tenant explicitly opts into managed keys. This means the platform literally <em>cannot</em> be compelled to hand over data it can't decrypt. Cory Doctorow's &quot;minimum viable trust&quot; principle made architectural.</p>
+</li>
+<li>
+<p><strong>Per-org key negotiation for alliance messages.</strong> Each alliance group gets its own encryption key, distributed via member orgs' public keys. When membership changes, the key rotates. This makes alliance formation and dissolution a visible, intentional event — not a background setting change.</p>
+</li>
+<li>
+<p><strong>No read receipts.</strong> In political organizing, the pressure to respond immediately to every message creates a toxic dynamic. Delivery receipts (so you know the system is working) without read receipts (so you're not under surveillance by your own team).</p>
+</li>
+<li>
+<p><strong>Voice messages scoped to field staff only.</strong> Voice messages are useful in field contexts (volunteer reports from the field, team lead instructions). But in general messaging, they tend to replace thoughtful written communication. So they're available where they add value and absent where they'd degrade the conversation.</p>
+</li>
+</ul>
+<h2 id="what-12-specs-look-like" tabindex="-1"><a class="heading-anchor" href="#what-12-specs-look-like" aria-hidden="true">#</a> What 12 Specs Look Like</h2>
+<p>The final spec corpus is roughly 80,000 words across 12 documents plus a system architecture document. Every document:</p>
+<ul>
+<li>Is self-contained (you can read it independently)</li>
+<li>Cross-references related documents</li>
+<li>Has all decision points resolved and marked as DECIDED</li>
+<li>Covers the global south context explicitly (not just US campaign assumptions)</li>
+<li>Addresses offline, multilingual, low-bandwidth, and high-security scenarios</li>
+</ul>
+<p>The reading order matters — <code>product.md</code> → <code>users.md</code> → <code>workflows.md</code> → <code>geography.md</code> → <code>security.md</code> → and so on. Each document builds on the previous ones.</p>
+<h2 id="reflections" tabindex="-1"><a class="heading-anchor" href="#reflections" aria-hidden="true">#</a> Reflections</h2>
+<p>Building specs through conversation with an AI is different from both writing them alone and writing them in a team. When writing alone, you skip over the hard parts. When writing in a team, you negotiate. With Claude, you <em>discover</em> — the AI surfaces implications and connections you haven't thought of, and you bring the vision, values, and strategic judgment the AI can't.</p>
+<p>The result isn't an AI-written spec or a human-written spec. It's a collaboratively authored document where neither party could have produced the output alone. I couldn't have written the encryption key rotation implications for alliance messaging without Claude's technical depth. Claude couldn't have decided that alliance formation should be &quot;an event we can build user experience around&quot; without my product vision.</p>
+<p>Next: taking these specs and designing the UX.</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#the-starting-point"># The Starting Point</a></li><li class="toc-2"><a href="#how-it-worked"># How It Worked</a></li><li class="toc-2"><a href="#what-surprised-me"># What Surprised Me</a></li><li class="toc-2"><a href="#the-decision-log"># The Decision Log</a></li><li class="toc-2"><a href="#what-12-specs-look-like"># What 12 Specs Look Like</a></li><li class="toc-2"><a href="#reflections"># Reflections</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

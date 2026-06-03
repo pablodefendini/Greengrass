@@ -1,0 +1,15 @@
+{
+  "name": "greengrass-docs-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static documentation website generator for the GreenGrass spec & design suite.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "python3 -m http.server -d docs 8000"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0"
+  }
+}

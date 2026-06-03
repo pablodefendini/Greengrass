@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Component Inventory · GreenGrass</title>
+<meta name="description" content="Component Inventory — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../spec/geography.html">Target Geography</a></li><li><a href="../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../00-overview.html">UX Design Overview</a></li><li><a href="../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="./foundations.html">Design System Foundations</a></li><li><a href="./theming-strategy.html">Theming Strategy</a></li><li><a href="./component-inventory.html" aria-current="page" class="active">Component Inventory</a></li><li><a href="./responsive-strategy.html">Responsive Strategy</a></li><li><a href="../04-wireframes/index.html">Wireframes</a></li><li><a href="../04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../diary/index.html">Project Diary</a></li><li><a href="../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="component-inventory" tabindex="-1"><a class="heading-anchor" href="#component-inventory" aria-hidden="true">#</a> Component Inventory</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document catalogs the component categories, naming conventions, and state definitions for the GreenGrass design system. It bridges the gap between the design foundations (tokens, spacing, color) and the actual UI elements built from them.</p>
+<p>This is not a component library — it's an inventory of what needs to be built. Implementation details (Svelte component APIs, prop definitions) come during development. This document ensures the design system covers every pattern identified in the pattern catalog (<a href="http://pattern-catalog.md" target="_blank" rel="noopener noreferrer">pattern-catalog.md</a>) with a consistent component vocabulary.</p>
+<h2 id="naming-conventions" tabindex="-1"><a class="heading-anchor" href="#naming-conventions" aria-hidden="true">#</a> Naming Conventions</h2>
+<h3 id="component-names" tabindex="-1"><a class="heading-anchor" href="#component-names" aria-hidden="true">#</a> Component Names</h3>
+<p>Components use PascalCase, prefixed by category:</p>
+<pre><code>Category/ComponentName
+</code></pre>
+<p>Examples: <code>Button/Primary</code>, <code>Form/TextInput</code>, <code>Layout/Sidebar</code>, <code>Data/Table</code>.</p>
+<h3 id="variant-naming" tabindex="-1"><a class="heading-anchor" href="#variant-naming" aria-hidden="true">#</a> Variant Naming</h3>
+<p>Variants use descriptive suffixes:</p>
+<pre><code>Button/Primary
+Button/Secondary
+Button/Ghost
+Button/Danger
+</code></pre>
+<h3 id="state-naming" tabindex="-1"><a class="heading-anchor" href="#state-naming" aria-hidden="true">#</a> State Naming</h3>
+<p>States follow a standard vocabulary:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default</code></td>
+<td>Normal resting state</td>
+</tr>
+<tr>
+<td><code>hover</code></td>
+<td>Mouse over (desktop only)</td>
+</tr>
+<tr>
+<td><code>focus</code></td>
+<td>Keyboard focus (visible focus ring)</td>
+</tr>
+<tr>
+<td><code>active</code></td>
+<td>Being pressed/clicked</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td>Non-interactive, greyed out</td>
+</tr>
+<tr>
+<td><code>loading</code></td>
+<td>Waiting for async operation</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>Validation failure or error state</td>
+</tr>
+<tr>
+<td><code>selected</code></td>
+<td>Currently selected (in a list, toggle, etc.)</td>
+</tr>
+<tr>
+<td><code>expanded</code></td>
+<td>Collapsible element is open</td>
+</tr>
+<tr>
+<td><code>collapsed</code></td>
+<td>Collapsible element is closed</td>
+</tr>
+<tr>
+<td><code>offline</code></td>
+<td>Feature unavailable due to connectivity</td>
+</tr>
+<tr>
+<td><code>empty</code></td>
+<td>No data to display</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="component-categories" tabindex="-1"><a class="heading-anchor" href="#component-categories" aria-hidden="true">#</a> Component Categories</h2>
+<h3 id="1-primitives" tabindex="-1"><a class="heading-anchor" href="#1-primitives" aria-hidden="true">#</a> 1. Primitives</h3>
+<p>The lowest-level building blocks. Used inside other components, rarely used directly in page layouts.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>States</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Icon</code></td>
+<td>Renders Lucide icons at standard sizes. Handles RTL mirroring for directional icons.</td>
+<td>default</td>
+</tr>
+<tr>
+<td><code>Badge</code></td>
+<td>Small label for counts, statuses, tags.</td>
+<td>default, variants: status (success/warning/error/info), count, tag</td>
+</tr>
+<tr>
+<td><code>Avatar</code></td>
+<td>User/org photo or initials. Circular.</td>
+<td>default, sizes: sm/md/lg/xl</td>
+</tr>
+<tr>
+<td><code>Divider</code></td>
+<td>Horizontal or vertical separator line.</td>
+<td>default, with-label</td>
+</tr>
+<tr>
+<td><code>Spinner</code></td>
+<td>Loading indicator. Respects reduced-motion.</td>
+<td>default</td>
+</tr>
+<tr>
+<td><code>Skeleton</code></td>
+<td>Placeholder for loading content.</td>
+<td>text, circle, rectangle</td>
+</tr>
+<tr>
+<td><code>Tooltip</code></td>
+<td>Contextual text on hover/tap.</td>
+<td>default</td>
+</tr>
+<tr>
+<td><code>VisuallyHidden</code></td>
+<td>Screen-reader-only text.</td>
+<td>default</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-typography" tabindex="-1"><a class="heading-anchor" href="#2-typography" aria-hidden="true">#</a> 2. Typography</h3>
+<p>Text rendering components with built-in semantic HTML and token application.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Variants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Heading</code></td>
+<td>h1-h6 with appropriate token sizing.</td>
+<td>level: 1-6</td>
+</tr>
+<tr>
+<td><code>Text</code></td>
+<td>Body text with size/weight/color variants.</td>
+<td>size: xs/sm/base/lg, weight: normal/medium/semibold</td>
+</tr>
+<tr>
+<td><code>Label</code></td>
+<td>Form field labels. Associates with input via <code>for</code>.</td>
+<td>default, required</td>
+</tr>
+<tr>
+<td><code>HelpText</code></td>
+<td>Below-field explanatory text.</td>
+<td>default, error</td>
+</tr>
+<tr>
+<td><code>Link</code></td>
+<td>Anchor text with appropriate color and underline behavior.</td>
+<td>default, external</td>
+</tr>
+<tr>
+<td><code>Code</code></td>
+<td>Inline or block code with monospace font.</td>
+<td>inline, block</td>
+</tr>
+<tr>
+<td><code>Timestamp</code></td>
+<td>Relative time display (&quot;2 min ago&quot;). Auto-updates.</td>
+<td>default</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-buttons" tabindex="-1"><a class="heading-anchor" href="#3-buttons" aria-hidden="true">#</a> 3. Buttons</h3>
+<p>Interactive elements that trigger actions.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>States</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Button/Primary</code></td>
+<td>Main CTA. Filled background with primary color.</td>
+<td>default, hover, focus, active, disabled, loading</td>
+</tr>
+<tr>
+<td><code>Button/Secondary</code></td>
+<td>Secondary action. Outlined style.</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>Button/Ghost</code></td>
+<td>Tertiary action. Text-only, no background.</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>Button/Danger</code></td>
+<td>Destructive action. Red styling. Requires confirmation for critical actions.</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>Button/Icon</code></td>
+<td>Icon-only button. Requires aria-label.</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>Button/Group</code></td>
+<td>Horizontal group of related buttons.</td>
+<td>default</td>
+</tr>
+<tr>
+<td><code>Button/FloatingAction</code></td>
+<td>Mobile FAB for primary actions.</td>
+<td>default, expanded (with sub-actions)</td>
+</tr>
+<tr>
+<td><code>Button/FieldAction</code></td>
+<td>Large touch target button for field mode. Minimum 48px height.</td>
+<td>default, active, disabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-forms" tabindex="-1"><a class="heading-anchor" href="#4-forms" aria-hidden="true">#</a> 4. Forms</h3>
+<p>Data input components.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>States</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Form/TextInput</code></td>
+<td>Single-line text input.</td>
+<td>default, focus, error, disabled, with-icon, with-clear</td>
+</tr>
+<tr>
+<td><code>Form/TextArea</code></td>
+<td>Multi-line text input. Auto-grows.</td>
+<td>default, focus, error, disabled</td>
+</tr>
+<tr>
+<td><code>Form/Select</code></td>
+<td>Single-selection dropdown.</td>
+<td>default, focus, error, disabled, open</td>
+</tr>
+<tr>
+<td><code>Form/MultiSelect</code></td>
+<td>Multi-selection with chips.</td>
+<td>same</td>
+</tr>
+<tr>
+<td><code>Form/Checkbox</code></td>
+<td>Boolean toggle (checked/unchecked).</td>
+<td>default, checked, indeterminate, disabled</td>
+</tr>
+<tr>
+<td><code>Form/Radio</code></td>
+<td>Single selection from options.</td>
+<td>default, selected, disabled</td>
+</tr>
+<tr>
+<td><code>Form/Toggle</code></td>
+<td>On/off switch.</td>
+<td>default, on, disabled</td>
+</tr>
+<tr>
+<td><code>Form/DatePicker</code></td>
+<td>Date selection (calendar popup).</td>
+<td>default, focus, error, range</td>
+</tr>
+<tr>
+<td><code>Form/TimePicker</code></td>
+<td>Time selection.</td>
+<td>default, focus, error</td>
+</tr>
+<tr>
+<td><code>Form/NumberInput</code></td>
+<td>Numeric input with increment/decrement.</td>
+<td>default, focus, error, disabled</td>
+</tr>
+<tr>
+<td><code>Form/CurrencyInput</code></td>
+<td>Currency-formatted input with symbol.</td>
+<td>default, focus, error</td>
+</tr>
+<tr>
+<td><code>Form/PhoneInput</code></td>
+<td>Phone number with country code selector.</td>
+<td>default, focus, error</td>
+</tr>
+<tr>
+<td><code>Form/FileUpload</code></td>
+<td>File selection with drag-and-drop.</td>
+<td>default, dragging, uploading, complete, error</td>
+</tr>
+<tr>
+<td><code>Form/ColorPicker</code></td>
+<td>Color selection (for brand customization).</td>
+<td>default, open</td>
+</tr>
+<tr>
+<td><code>Form/SearchInput</code></td>
+<td>Text input with search icon and clear button.</td>
+<td>default, focus, loading, with-results</td>
+</tr>
+<tr>
+<td><code>Form/FieldGroup</code></td>
+<td>Groups related form fields with a label. Collapsible.</td>
+<td>default, expanded, collapsed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-layout" tabindex="-1"><a class="heading-anchor" href="#5-layout" aria-hidden="true">#</a> 5. Layout</h3>
+<p>Structural components that organize page content.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Layout/Shell</code></td>
+<td>The top-level app shell (header + sidebar + content).</td>
+<td>Role-adaptive sidebar. See <a href="http://navigation-model.md" target="_blank" rel="noopener noreferrer">navigation-model.md</a>.</td>
+</tr>
+<tr>
+<td><code>Layout/FieldShell</code></td>
+<td>Field mode shell (field header + task content + actions).</td>
+<td>Full-screen takeover.</td>
+</tr>
+<tr>
+<td><code>Layout/PortalShell</code></td>
+<td>Supporter portal shell (minimal header + content).</td>
+<td>Simplified navigation.</td>
+</tr>
+<tr>
+<td><code>Layout/WizardShell</code></td>
+<td>Wizard shell (progress header + step content + nav).</td>
+<td>Replaces sidebar with steps.</td>
+</tr>
+<tr>
+<td><code>Layout/Page</code></td>
+<td>Page wrapper with title, breadcrumbs, and action area.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Layout/Section</code></td>
+<td>Content section with optional heading and divider.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Layout/Card</code></td>
+<td>Raised content container.</td>
+<td>elevation-1, hover: elevation-2</td>
+</tr>
+<tr>
+<td><code>Layout/Grid</code></td>
+<td>CSS grid wrapper with responsive column count.</td>
+<td>4/8/12 columns</td>
+</tr>
+<tr>
+<td><code>Layout/Stack</code></td>
+<td>Vertical stack with consistent gap.</td>
+<td>gap: space-2 through space-8</td>
+</tr>
+<tr>
+<td><code>Layout/Cluster</code></td>
+<td>Horizontal flex with wrapping and consistent gap.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Layout/SplitView</code></td>
+<td>Two-pane resizable layout (list + detail).</td>
+<td>Desktop only.</td>
+</tr>
+<tr>
+<td><code>Layout/DetailPanel</code></td>
+<td>Slide-out right panel for contextual detail.</td>
+<td>Dismissable, resizable.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-navigation" tabindex="-1"><a class="heading-anchor" href="#6-navigation" aria-hidden="true">#</a> 6. Navigation</h3>
+<p>Components that help users move through the application.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Nav/Sidebar</code></td>
+<td>Desktop sidebar with role-adaptive sections.</td>
+<td>Collapsible, grouped items.</td>
+</tr>
+<tr>
+<td><code>Nav/SidebarItem</code></td>
+<td>Individual navigation item in sidebar.</td>
+<td>default, active, with-badge, disabled (offline)</td>
+</tr>
+<tr>
+<td><code>Nav/SidebarSection</code></td>
+<td>Collapsible group header in sidebar.</td>
+<td>expanded, collapsed</td>
+</tr>
+<tr>
+<td><code>Nav/BottomTabBar</code></td>
+<td>Mobile bottom navigation. Role-adaptive tabs.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Nav/BottomTab</code></td>
+<td>Individual tab in the bottom bar.</td>
+<td>default, active, with-badge</td>
+</tr>
+<tr>
+<td><code>Nav/Breadcrumb</code></td>
+<td>Breadcrumb trail for deep navigation.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Nav/Pagination</code></td>
+<td>Page navigation for lists.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Nav/StepIndicator</code></td>
+<td>Wizard/process step indicator.</td>
+<td>pending, active, complete, error</td>
+</tr>
+<tr>
+<td><code>Nav/Tabs</code></td>
+<td>Horizontal tab bar for content sections.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Nav/Tab</code></td>
+<td>Individual tab.</td>
+<td>default, active, disabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-data-display" tabindex="-1"><a class="heading-anchor" href="#7-data-display" aria-hidden="true">#</a> 7. Data Display</h3>
+<p>Components for presenting data.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>States</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Data/Table</code></td>
+<td>Full-featured data table with sorting, selection, and actions.</td>
+<td>default, loading, empty, error</td>
+</tr>
+<tr>
+<td><code>Data/TableRow</code></td>
+<td>Table row.</td>
+<td>default, selected, hover, expanded (detail row)</td>
+</tr>
+<tr>
+<td><code>Data/List</code></td>
+<td>Vertical list of items (mobile-friendly alternative to table).</td>
+<td>default, loading, empty</td>
+</tr>
+<tr>
+<td><code>Data/ListItem</code></td>
+<td>Individual list item. Tappable.</td>
+<td>default, selected, with-actions</td>
+</tr>
+<tr>
+<td><code>Data/CardGrid</code></td>
+<td>Grid of cards (dashboard widgets, search results).</td>
+<td>default, loading, empty</td>
+</tr>
+<tr>
+<td><code>Data/MetricCard</code></td>
+<td>Single KPI display (value + label + trend).</td>
+<td>default, loading, positive-trend, negative-trend</td>
+</tr>
+<tr>
+<td><code>Data/Thermometer</code></td>
+<td>Goal progress bar.</td>
+<td>default, with-label, complete</td>
+</tr>
+<tr>
+<td><code>Data/Chart</code></td>
+<td>Wrapper for chart components (line, bar, pie).</td>
+<td>default, loading, empty, error</td>
+</tr>
+<tr>
+<td><code>Data/Timeline</code></td>
+<td>Chronological event list (activity feeds).</td>
+<td>default, loading</td>
+</tr>
+<tr>
+<td><code>Data/TimelineItem</code></td>
+<td>Individual timeline entry.</td>
+<td>default</td>
+</tr>
+<tr>
+<td><code>Data/EmptyState</code></td>
+<td>No-data placeholder with message and CTA.</td>
+<td>per-context content</td>
+</tr>
+<tr>
+<td><code>Data/KeyValue</code></td>
+<td>Label-value pair for detail views.</td>
+<td>default, inline, stacked</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-feedback" tabindex="-1"><a class="heading-anchor" href="#8-feedback" aria-hidden="true">#</a> 8. Feedback</h3>
+<p>Components that communicate system status and user feedback.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Feedback/Toast</code></td>
+<td>Transient notification at bottom (desktop) or top (mobile).</td>
+<td>success, error, warning, info</td>
+</tr>
+<tr>
+<td><code>Feedback/Alert</code></td>
+<td>Persistent inline alert banner.</td>
+<td>success, error, warning, info, dismissable</td>
+</tr>
+<tr>
+<td><code>Feedback/ProgressBar</code></td>
+<td>Determinate or indeterminate progress.</td>
+<td>default, indeterminate</td>
+</tr>
+<tr>
+<td><code>Feedback/SyncIndicator</code></td>
+<td>Connectivity/sync status display.</td>
+<td>connected, stale, syncing, offline, error</td>
+</tr>
+<tr>
+<td><code>Feedback/FieldSyncIndicator</code></td>
+<td>Enlarged sync display for field mode.</td>
+<td>same states, larger</td>
+</tr>
+<tr>
+<td><code>Feedback/OfflineBadge</code></td>
+<td>Small badge indicating a feature is offline-unavailable.</td>
+<td>default</td>
+</tr>
+<tr>
+<td><code>Feedback/FreshnessIndicator</code></td>
+<td>Data age display (&quot;Last updated: 2 hours ago&quot;).</td>
+<td>current, stale, warning</td>
+</tr>
+</tbody>
+</table>
+<h3 id="9-overlays" tabindex="-1"><a class="heading-anchor" href="#9-overlays" aria-hidden="true">#</a> 9. Overlays</h3>
+<p>Components that appear above the main content layer.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Overlay/Modal</code></td>
+<td>Centered dialog. Focus-trapped.</td>
+<td>sizes: sm/md/lg</td>
+</tr>
+<tr>
+<td><code>Overlay/Drawer</code></td>
+<td>Slide-out panel from edge.</td>
+<td>direction: left/right, sizes: sm/md/lg</td>
+</tr>
+<tr>
+<td><code>Overlay/BottomSheet</code></td>
+<td>Mobile bottom sheet (slides up).</td>
+<td>sizes: half/full</td>
+</tr>
+<tr>
+<td><code>Overlay/Dropdown</code></td>
+<td>Positioned below trigger element.</td>
+<td>with-search option</td>
+</tr>
+<tr>
+<td><code>Overlay/Popover</code></td>
+<td>Positioned near trigger with arrow.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Overlay/ConfirmDialog</code></td>
+<td>Modal with confirm/cancel for destructive actions.</td>
+<td>default, danger</td>
+</tr>
+<tr>
+<td><code>Overlay/NotificationDrawer</code></td>
+<td>Notification center slide-out.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Overlay/CommandPalette</code></td>
+<td>Search-everything overlay (Cmd+K).</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-messaging" tabindex="-1"><a class="heading-anchor" href="#10-messaging" aria-hidden="true">#</a> 10. Messaging</h3>
+<p>Components specific to the messaging system.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Messaging/ConversationList</code></td>
+<td>List of conversations with preview.</td>
+<td>default, filtered</td>
+</tr>
+<tr>
+<td><code>Messaging/ConversationItem</code></td>
+<td>Single conversation in the list.</td>
+<td>default, unread, selected, muted</td>
+</tr>
+<tr>
+<td><code>Messaging/MessageBubble</code></td>
+<td>Individual message in a thread.</td>
+<td>sent, received, system</td>
+</tr>
+<tr>
+<td><code>Messaging/MessageComposer</code></td>
+<td>Text input with send button and attachments.</td>
+<td>default, with-attachments</td>
+</tr>
+<tr>
+<td><code>Messaging/ThreadIndicator</code></td>
+<td>Inline indicator that a message has a thread.</td>
+<td>default, with-count</td>
+</tr>
+<tr>
+<td><code>Messaging/EncryptionBadge</code></td>
+<td>E2E encryption status indicator.</td>
+<td>encrypted, unencrypted</td>
+</tr>
+<tr>
+<td><code>Messaging/VoiceMessage</code></td>
+<td>Voice message player (field contexts only).</td>
+<td>default, playing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="11-field-mode" tabindex="-1"><a class="heading-anchor" href="#11-field-mode" aria-hidden="true">#</a> 11. Field Mode</h3>
+<p>Components specific to the field mode interface.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Field/ShiftHeader</code></td>
+<td>Field mode header bar (sync, timer, recording indicator).</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Field/TaskNav</code></td>
+<td>Previous/Next navigation with position counter.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Field/DoorCard</code></td>
+<td>Voter information card for canvassing.</td>
+<td>default, visited, skipped</td>
+</tr>
+<tr>
+<td><code>Field/ResponseForm</code></td>
+<td>Script-driven response capture.</td>
+<td>single-select, multi-select, text</td>
+</tr>
+<tr>
+<td><code>Field/ResponseOption</code></td>
+<td>Large tappable button for response options.</td>
+<td>default, selected</td>
+</tr>
+<tr>
+<td><code>Field/MapView</code></td>
+<td>Offline-capable map for walk list visualization.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Field/WalkListItem</code></td>
+<td>Item in the walk list.</td>
+<td>pending, complete, skipped, not-home</td>
+</tr>
+<tr>
+<td><code>Field/PanicButton</code></td>
+<td>Lock/panic button. Always accessible.</td>
+<td>default</td>
+</tr>
+<tr>
+<td><code>Field/ShiftTimer</code></td>
+<td>Elapsed shift time display.</td>
+<td>running, paused</td>
+</tr>
+<tr>
+<td><code>Field/EndShiftButton</code></td>
+<td>End shift action with confirmation.</td>
+<td>default</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-dashboard" tabindex="-1"><a class="heading-anchor" href="#12-dashboard" aria-hidden="true">#</a> 12. Dashboard</h3>
+<p>Components for dashboard widgets and metrics.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Dashboard/WidgetGrid</code></td>
+<td>Responsive grid container for dashboard widgets.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Dashboard/Widget</code></td>
+<td>Base widget wrapper (title, content, action area).</td>
+<td>default, loading, error, empty</td>
+</tr>
+<tr>
+<td><code>Dashboard/AlertWidget</code></td>
+<td>Widget showing items needing attention.</td>
+<td>with-count, priority-sorted</td>
+</tr>
+<tr>
+<td><code>Dashboard/ActivityFeed</code></td>
+<td>Recent activity stream widget.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Dashboard/GoalProgress</code></td>
+<td>Fundraising/field goal thermometer widget.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Dashboard/MapWidget</code></td>
+<td>Embedded map visualization widget.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Dashboard/ElectionDayBanner</code></td>
+<td>&quot;Election Day Active&quot; persistent banner.</td>
+<td>active, countdown</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-specialized" tabindex="-1"><a class="heading-anchor" href="#13-specialized" aria-hidden="true">#</a> 13. Specialized</h3>
+<p>Components for specific features with unique interaction patterns.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Special/CheckInTool</code></td>
+<td>Fast check-in interface with search and QR.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Special/CheckInItem</code></td>
+<td>Individual check-in list item.</td>
+<td>pending, checked-in, absent</td>
+</tr>
+<tr>
+<td><code>Special/ApprovalCard</code></td>
+<td>Approval queue item with preview and actions.</td>
+<td>pending, approved, rejected</td>
+</tr>
+<tr>
+<td><code>Special/ComparisonView</code></td>
+<td>Side-by-side record comparison (dedup).</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Special/MergeControl</code></td>
+<td>Per-field merge decision (keep left/right/both).</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Special/PipelineColumn</code></td>
+<td>Kanban column in pipeline views.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Special/PipelineCard</code></td>
+<td>Draggable card in pipeline views.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Special/ImportMapper</code></td>
+<td>Column mapping interface for data import.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Special/FilterBar</code></td>
+<td>Active filter display with chips and clear action.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Special/FilterPanel</code></td>
+<td>Full-screen filter configuration (mobile).</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Special/SavedFilterSelector</code></td>
+<td>Dropdown for selecting saved filters.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Special/RideRequestCard</code></td>
+<td>GOTV ride request display.</td>
+<td>pending, assigned, complete</td>
+</tr>
+<tr>
+<td><code>Special/IssueReportForm</code></td>
+<td>Poll watcher issue reporting (offline-capable).</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="component-composition-patterns" tabindex="-1"><a class="heading-anchor" href="#component-composition-patterns" aria-hidden="true">#</a> Component Composition Patterns</h2>
+<h3 id="compound-components" tabindex="-1"><a class="heading-anchor" href="#compound-components" aria-hidden="true">#</a> Compound Components</h3>
+<p>Some UI patterns are composed of multiple components working together:</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>List View</strong></td>
+<td><code>Layout/Page</code> + <code>Special/FilterBar</code> + <code>Data/Table</code> (desktop) or <code>Data/List</code> (mobile) + <code>Nav/Pagination</code> + <code>Data/EmptyState</code></td>
+</tr>
+<tr>
+<td><strong>Detail View</strong></td>
+<td><code>Layout/Page</code> + <code>Layout/Card</code> + <code>Data/KeyValue</code> + <code>Nav/Tabs</code> + <code>Data/Timeline</code></td>
+</tr>
+<tr>
+<td><strong>Form Page</strong></td>
+<td><code>Layout/Page</code> + <code>Form/FieldGroup</code> (multiple) + <code>Button/Primary</code> + <code>Button/Secondary</code></td>
+</tr>
+<tr>
+<td><strong>Dashboard</strong></td>
+<td><code>Layout/Page</code> + <code>Dashboard/WidgetGrid</code> + <code>Dashboard/Widget</code> (multiple)</td>
+</tr>
+<tr>
+<td><strong>Split View</strong></td>
+<td><code>Layout/SplitView</code> + <code>Data/List</code> (left) + <code>Layout/DetailPanel</code> (right)</td>
+</tr>
+<tr>
+<td><strong>Wizard</strong></td>
+<td><code>Layout/WizardShell</code> + <code>Nav/StepIndicator</code> + step-specific content + <code>Button/Primary</code> + <code>Button/Secondary</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="slot-pattern" tabindex="-1"><a class="heading-anchor" href="#slot-pattern" aria-hidden="true">#</a> Slot Pattern</h3>
+<p>Components that accept child content use a slot pattern:</p>
+<pre><code>Layout/Card
+  └── [slot: default] → any content
+  └── [slot: header] → title + actions
+  └── [slot: footer] → footer content
+</code></pre>
+<p>This composability means fewer specialized components and more flexible reuse.</p>
+<hr>
+<h2 id="component-count-summary" tabindex="-1"><a class="heading-anchor" href="#component-count-summary" aria-hidden="true">#</a> Component Count Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Count</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primitives</td>
+<td>8</td>
+<td>Foundation elements</td>
+</tr>
+<tr>
+<td>Typography</td>
+<td>7</td>
+<td>Text rendering</td>
+</tr>
+<tr>
+<td>Buttons</td>
+<td>8</td>
+<td>Interactive triggers</td>
+</tr>
+<tr>
+<td>Forms</td>
+<td>16</td>
+<td>Data input</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>12</td>
+<td>Structure</td>
+</tr>
+<tr>
+<td>Navigation</td>
+<td>10</td>
+<td>Movement</td>
+</tr>
+<tr>
+<td>Data Display</td>
+<td>12</td>
+<td>Data presentation</td>
+</tr>
+<tr>
+<td>Feedback</td>
+<td>7</td>
+<td>Status communication</td>
+</tr>
+<tr>
+<td>Overlays</td>
+<td>8</td>
+<td>Layered elements</td>
+</tr>
+<tr>
+<td>Messaging</td>
+<td>7</td>
+<td>Chat-specific</td>
+</tr>
+<tr>
+<td>Field Mode</td>
+<td>10</td>
+<td>Field-specific</td>
+</tr>
+<tr>
+<td>Dashboard</td>
+<td>7</td>
+<td>Dashboard-specific</td>
+</tr>
+<tr>
+<td>Specialized</td>
+<td>13</td>
+<td>Feature-specific</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>~125</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Approximately <strong>125 components</strong> compose the entire design system. This is a moderately large system — comparable to mature design systems like Carbon (IBM) or Polaris (Shopify), reflecting the platform's breadth.</p>
+<hr>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li>
+<p><strong>Component documentation.</strong> Should each component have a dedicated documentation page (like Storybook stories) from day one, or document as components are built? Storybook-first ensures components are well-tested in isolation but adds development overhead.</p>
+</li>
+<li>
+<p><strong>Animation components.</strong> Should the design system include transition wrapper components (FadeIn, SlideUp) or handle all motion through CSS classes? Component-based transitions are more explicit but add to the component count.</p>
+</li>
+<li>
+<p><strong>Chart library.</strong> Which chart library should the <code>Data/Chart</code> component wrap? Options include Chart.js (lightweight, canvas-based), D3 (powerful, SVG-based, heavier), or a Svelte-native option like LayerCake. The choice affects bundle size and customization depth.</p>
+</li>
+</ol>
+<!-- REVISIT: Component APIs (prop definitions, event signatures, slot contracts) are deferred to implementation. This inventory defines *what* exists; the implementation defines *how* each component works. -->
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#naming-conventions"># Naming Conventions</a></li><li class="toc-3"><a href="#component-names"># Component Names</a></li><li class="toc-3"><a href="#variant-naming"># Variant Naming</a></li><li class="toc-3"><a href="#state-naming"># State Naming</a></li><li class="toc-2"><a href="#component-categories"># Component Categories</a></li><li class="toc-3"><a href="#1-primitives"># 1. Primitives</a></li><li class="toc-3"><a href="#2-typography"># 2. Typography</a></li><li class="toc-3"><a href="#3-buttons"># 3. Buttons</a></li><li class="toc-3"><a href="#4-forms"># 4. Forms</a></li><li class="toc-3"><a href="#5-layout"># 5. Layout</a></li><li class="toc-3"><a href="#6-navigation"># 6. Navigation</a></li><li class="toc-3"><a href="#7-data-display"># 7. Data Display</a></li><li class="toc-3"><a href="#8-feedback"># 8. Feedback</a></li><li class="toc-3"><a href="#9-overlays"># 9. Overlays</a></li><li class="toc-3"><a href="#10-messaging"># 10. Messaging</a></li><li class="toc-3"><a href="#11-field-mode"># 11. Field Mode</a></li><li class="toc-3"><a href="#12-dashboard"># 12. Dashboard</a></li><li class="toc-3"><a href="#13-specialized"># 13. Specialized</a></li><li class="toc-2"><a href="#component-composition-patterns"># Component Composition Patterns</a></li><li class="toc-3"><a href="#compound-components"># Compound Components</a></li><li class="toc-3"><a href="#slot-pattern"># Slot Pattern</a></li><li class="toc-2"><a href="#component-count-summary"># Component Count Summary</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../assets/search.js" defer></script>
+<script src="../../../assets/app.js" defer></script>
+</body>
+</html>

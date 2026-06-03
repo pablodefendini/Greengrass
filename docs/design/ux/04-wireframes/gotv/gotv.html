@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GOTV Admin Wireframes · GreenGrass</title>
+<meta name="description" content="GOTV Admin Wireframes — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../spec/product.html">Project: GreenGrass</a></li><li><a href="../../../../spec/users.html">Users &amp; Roles</a></li><li><a href="../../../../spec/workflows.html">Core Workflows</a></li><li><a href="../../../../spec/geography.html">Target Geography</a></li><li><a href="../../../../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../../../../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../../../../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../../../../spec/integrations.html">External Integrations</a></li><li><a href="../../../../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../../../../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../../../../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../../../../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../00-overview.html">UX Design Overview</a></li><li><a href="../../01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../../01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../../01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../../01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../../02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../../02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../../02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../../02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../../02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../../02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../../03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../../03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../../03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../../03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../index.html">Wireframes</a></li><li><a href="../navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../crm/crm.html">CRM / People Wireframes</a></li><li><a href="../field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../communications/communications.html">Communications Wireframes</a></li><li><a href="../social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../events/events.html">Events Wireframes</a></li><li><a href="../press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="./gotv.html" aria-current="page" class="active">GOTV Admin Wireframes</a></li><li><a href="../settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../auth/auth.html">Authentication Wireframes</a></li><li><a href="../profile/profile.html">User Profile Wireframes</a></li><li><a href="../help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../public/public.html">Public Pages Wireframes</a></li><li><a href="../audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../decisions/001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="../../../../decisions/002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="../../../../decisions/003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="../../../../decisions/004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="../../../../decisions/005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="../../../../decisions/006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="../../../../decisions/007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="../../../../decisions/008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="../../../../decisions/009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="../../../../decisions/010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="../../../../decisions/011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="../../../../decisions/012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="../../../../decisions/013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="../../../../decisions/014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="../../../../decisions/015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="../../../../decisions/016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="../../../../decisions/ux-decisions.html">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../diary/index.html">Project Diary</a></li><li><a href="../../../../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../../../../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../../../../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../../../../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../../../../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../../../../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../../../../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../../../../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../../../../claude/MEMORY.html">Memory</a></li><li><a href="../../../../claude/SKILLS.html">Skills</a></li><li><a href="../../../../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">UX Design</nav>
+    <article class="prose">
+<h1 id="gotv-admin-wireframes" tabindex="-1"><a class="heading-anchor" href="#gotv-admin-wireframes" aria-hidden="true">#</a> GOTV Admin Wireframes</h1>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>Get Out The Vote is the highest-stakes operation in the platform — election day itself. Everything the campaign has built (contact data, support scores, volunteer relationships, turf knowledge) converges into a single-day sprint to get identified supporters to the polls.</p>
+<p>The core UX challenge: GOTV admin screens serve two timelines. Before election day, staff methodically plan — building the voter universe, cutting turfs, registering poll watchers, staging volunteers. On election day, the same staff shift into real-time operations — monitoring turnout, dispatching rides, triaging issues, reallocating resources. The admin UX must support both the deliberate planning phase and the high-pressure, time-critical operational phase.</p>
+<p>Scope boundary: this document covers GOTV <strong>admin, coordination, and field volunteer</strong> screens. Field-mode screens (GOTV Door Card, Walk List) are in <code>field-mode/field-mode.md</code>. The War Room Dashboard (DASH-008) is in <code>dashboards/dashboards.md</code>. Alliance GOTV coordination (ALLY-008) is in <code>alliance/alliance.md</code>.</p>
+<h2 id="scope" tabindex="-1"><a class="heading-anchor" href="#scope" aria-hidden="true">#</a> Scope</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Personas</th>
+<th>Offline</th>
+<th>Mobile</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GOTV-001</td>
+<td>GOTV Universe Builder</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Pre-Election</td>
+</tr>
+<tr>
+<td>GOTV-002</td>
+<td>Early Voting Data Upload</td>
+<td>OA, FiD, DM</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Pre-Election</td>
+</tr>
+<tr>
+<td>GOTV-003</td>
+<td>Volunteer Staging Setup</td>
+<td>OA, FiD, VC</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Pre-Election</td>
+</tr>
+<tr>
+<td>GOTV-004</td>
+<td>GOTV Turf Cutting</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Pre-Election</td>
+</tr>
+<tr>
+<td>GOTV-005</td>
+<td>Election Day Comms Plan</td>
+<td>OA, FiD, CD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Pre-Election</td>
+</tr>
+<tr>
+<td>GOTV-006</td>
+<td>Poll Watcher Registry</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Pre-Election</td>
+</tr>
+<tr>
+<td>GOTV-007</td>
+<td>Poll Watcher Credential Tracking</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Pre-Election</td>
+</tr>
+<tr>
+<td>GOTV-010</td>
+<td>Chase Call Interface</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td>Election Day</td>
+</tr>
+<tr>
+<td>GOTV-011</td>
+<td>Ride Request Form</td>
+<td>V, TL, S</td>
+<td>Partial</td>
+<td>Primary</td>
+<td>Election Day</td>
+</tr>
+<tr>
+<td>GOTV-012</td>
+<td>Ride Coordination — Dispatcher View</td>
+<td>OA, FiD, VC</td>
+<td>No</td>
+<td>Yes</td>
+<td>Election Day</td>
+</tr>
+<tr>
+<td>GOTV-013</td>
+<td>Ride Driver View</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td>Election Day</td>
+</tr>
+<tr>
+<td>GOTV-014</td>
+<td>Poll Watcher Check-in</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td>Election Day</td>
+</tr>
+<tr>
+<td>GOTV-015</td>
+<td>Poll Watcher Issue Report Form</td>
+<td>V</td>
+<td>Partial</td>
+<td>Primary</td>
+<td>Election Day</td>
+</tr>
+<tr>
+<td>GOTV-016</td>
+<td>Poll Watcher Issue Queue</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Election Day</td>
+</tr>
+<tr>
+<td>GOTV-017</td>
+<td>Turnout Dashboard — Map View</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Election Day</td>
+</tr>
+<tr>
+<td>GOTV-018</td>
+<td>Turnout Dashboard — Segment View</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Election Day</td>
+</tr>
+<tr>
+<td>GOTV-019</td>
+<td>Reallocation Suggestions</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Election Day</td>
+</tr>
+<tr>
+<td>GOTV-020</td>
+<td>Election Night Results Entry</td>
+<td>V</td>
+<td>No</td>
+<td>Primary</td>
+<td>Election Night</td>
+</tr>
+<tr>
+<td>GOTV-021</td>
+<td>Election Night Results Dashboard</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Yes</td>
+<td>Election Night</td>
+</tr>
+<tr>
+<td>GOTV-022</td>
+<td>Post-Election Analysis</td>
+<td>OA, FiD</td>
+<td>No</td>
+<td>Desktop</td>
+<td>Post-Election</td>
+</tr>
+<tr>
+<td>GOTV-023</td>
+<td>Staging Location Check-in</td>
+<td>TL</td>
+<td>No</td>
+<td>Primary</td>
+<td>Election Day</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cross-references-wireframed-elsewhere" tabindex="-1"><a class="heading-anchor" href="#cross-references-wireframed-elsewhere" aria-hidden="true">#</a> Cross-References (wireframed elsewhere)</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Screen</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DASH-008</td>
+<td>GOTV War Room Dashboard</td>
+<td><code>dashboards/dashboards.md</code></td>
+</tr>
+<tr>
+<td>GOTV-008</td>
+<td>GOTV Door Card</td>
+<td><code>field-mode/field-mode.md</code></td>
+</tr>
+<tr>
+<td>GOTV-009</td>
+<td>GOTV Walk List</td>
+<td><code>field-mode/field-mode.md</code></td>
+</tr>
+<tr>
+<td>ALLY-008</td>
+<td>GOTV Alliance Coordination</td>
+<td><code>alliance/alliance.md</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="gotv-navigation-context" tabindex="-1"><a class="heading-anchor" href="#gotv-navigation-context" aria-hidden="true">#</a> GOTV Navigation Context</h2>
+<pre><code>GOTV (sidebar section — appears when GOTV is activated)
+
+  Pre-Election Setup
+    Universe Builder    → GOTV-001
+    Early Voting Upload → GOTV-002
+    Staging Locations   → GOTV-003
+    Turf Cutting        → GOTV-004
+    Comms Plan          → GOTV-005
+    Poll Watchers       → GOTV-006, GOTV-007
+
+  Election Day Ops
+    War Room            → DASH-008 (cross-ref)
+    Turnout Map         → GOTV-017
+    Turnout Segments    → GOTV-018
+    Chase Calls         → GOTV-010
+    Ride Request        → GOTV-011
+    Ride Dispatch       → GOTV-012
+    Ride Driver         → GOTV-013
+    Poll Watcher Check  → GOTV-014
+    Issue Report        → GOTV-015
+    Issue Queue         → GOTV-016
+    Reallocation        → GOTV-019
+    Staging Check-in    → GOTV-023
+
+  Results
+    Results Entry       → GOTV-020
+    Results Dashboard   → GOTV-021
+
+  Post-Election
+    Analysis            → GOTV-022
+</code></pre>
+<hr>
+<h2 id="gotv-001-gotv-universe-builder" tabindex="-1"><a class="heading-anchor" href="#gotv-001-gotv-universe-builder" aria-hidden="true">#</a> GOTV-001: GOTV Universe Builder</h2>
+<p>Defines which voters the campaign will target on election day. The GOTV universe is the subset of all contacts who should be contacted — typically supporters identified through canvassing, phone banking, and other outreach. This is the foundational step; everything else (turfs, comms, staffing) flows from the universe.</p>
+<h3 id="desktop" tabindex="-1"><a class="heading-anchor" href="#desktop" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← GOTV Setup                 GOTV Universe Builder                          │
+│                                           [Save Draft]  [Finalize Universe]  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Universe Criteria ─────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Include contacts matching ALL of:                                     │ │
+│  │                                                                        │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Support Score     [is at least ▾]    [3 ▾]                      │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Voting History    [has voted in ▾]   [1 of last 3 elections ▾]  │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Registration      [is ▾]             [Active ▾]                 │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  [+ Add Criterion]                                                     │ │
+│  │                                                                        │ │
+│  │  ─ Exclude contacts matching ANY of: ────────────────                  │ │
+│  │                                                                        │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Tag               [is ▾]             [Do Not Contact ▾]         │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Early Voted       [is ▾]             [Yes ▾]                    │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  [+ Add Exclusion]                                                     │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Universe Preview ──────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Matching Contacts: 14,832                   [↻ Refresh Count]        │ │
+│  │                                                                        │ │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                │ │
+│  │  │ Score 5      │  │ Score 4      │  │ Score 3      │                │ │
+│  │  │ (Strong)     │  │ (Lean)       │  │ (Soft)       │                │ │
+│  │  │ 4,210        │  │ 6,118        │  │ 4,504        │                │ │
+│  │  └──────────────┘  └──────────────┘  └──────────────┘                │ │
+│  │                                                                        │ │
+│  │  Geographic Breakdown                                                  │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ District/Region      Score 5   Score 4   Score 3   Total        │  │ │
+│  │  │ ────────────────     ───────   ───────   ───────   ─────        │  │ │
+│  │  │ San Juan North       1,240     1,890     1,320     4,450        │  │ │
+│  │  │ Bayamón              980       1,450     1,010     3,440        │  │ │
+│  │  │ Caguas               720       1,100     890       2,710        │  │ │
+│  │  │ Carolina             650       840       680       2,170        │  │ │
+│  │  │ Ponce                620       838       604       2,062        │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Segments ──────────────────────────────────────────────────────── [+] ┐ │
+│  │                                                                        │ │
+│  │  Segment GOTV contacts into priority tiers for targeting.              │ │
+│  │                                                                        │ │
+│  │  Tier 1 — Must Contact (first pass)          4,210 contacts            │ │
+│  │  Score 5 (Strong supporters)                  [Edit Criteria] [×]      │ │
+│  │                                                                        │ │
+│  │  Tier 2 — Should Contact (second pass)        6,118 contacts           │ │
+│  │  Score 4 (Lean supporters)                    [Edit Criteria] [×]      │ │
+│  │                                                                        │ │
+│  │  Tier 3 — If Time Allows (third pass)         4,504 contacts           │ │
+│  │  Score 3 (Soft supporters)                    [Edit Criteria] [×]      │ │
+│  │                                                                        │ │
+│  │  [+ Add Segment]                                                       │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  ⓘ Finalizing the universe locks the criteria and generates turf-ready     │
+│    contact lists. You can still add exclusions (e.g., early voters)        │
+│    after finalization.                                                      │
+│                                                                              │
+│  [Save Draft]                                          [Finalize Universe]  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction" tabindex="-1"><a class="heading-anchor" href="#interaction" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Criteria builder</strong>: similar to CRM Segment Builder (CRM-004) but with GOTV-specific fields: Support Score, Voting History, Registration Status, Geography, Tags</li>
+<li><strong>Live preview</strong>: count updates on [↻ Refresh Count] click (not auto-refresh to avoid expensive queries during editing)</li>
+<li><strong>Segments</strong>: priority tiers that determine contact order. Tier 1 gets contacted first in every turf pass</li>
+<li><strong>Finalize Universe</strong>: locks inclusion criteria, generates per-turf contact lists. Confirmation dialog: &quot;This will generate GOTV contact lists for 14,832 voters across 5 regions. Proceed?&quot; Once finalized, status changes to &quot;Finalized&quot; and criteria become read-only (exclusions can still be added)</li>
+<li><strong>Early Voter exclusion</strong>: auto-applied from GOTV-002 uploads. Shows as a permanent exclusion rule</li>
+<li><strong>Save Draft</strong>: saves criteria without finalizing. Universe can be refined over days/weeks</li>
+</ul>
+<hr>
+<h2 id="gotv-002-early-voting-data-upload" tabindex="-1"><a class="heading-anchor" href="#gotv-002-early-voting-data-upload" aria-hidden="true">#</a> GOTV-002: Early Voting Data Upload</h2>
+<p>Upload lists of voters who have already voted (early/absentee) to remove them from the GOTV universe. Prevents wasting volunteer time contacting voters who've already cast ballots.</p>
+<h3 id="desktop-1" tabindex="-1"><a class="heading-anchor" href="#desktop-1" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← GOTV Setup                    Early Voting Data Upload                    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Upload Early Voting List ──────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │                                                                  │  │ │
+│  │  │              Drag a file here or click to browse                 │  │ │
+│  │  │              CSV or Excel  ·  Max 50MB                          │  │ │
+│  │  │                                                                  │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Data Source *                                                         │ │
+│  │  ○ Official electoral authority file                                   │ │
+│  │  ○ Poll watcher reports                                                │ │
+│  │  ○ Voter self-report (lower confidence)                                │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Column Mapping ────────────────────────────────────── (after upload) ──┐ │
+│  │                                                                        │ │
+│  │  File: early_voters_mar2.csv  ·  2,847 rows  ·  6 columns             │ │
+│  │                                                                        │ │
+│  │  Match file columns to voter fields:                                   │ │
+│  │                                                                        │ │
+│  │  File Column          →   GreenGrass Field                             │ │
+│  │  ─────────────────        ────────────────                             │ │
+│  │  voter_id             →   [Voter ID ▾]         ✓ Primary match key     │ │
+│  │  full_name            →   [Full Name ▾]        ↳ Used if no Voter ID   │ │
+│  │  date_of_birth        →   [Date of Birth ▾]    ↳ Secondary match       │ │
+│  │  vote_date            →   [Vote Date ▾]                                │ │
+│  │  vote_method          →   [Vote Method ▾]                              │ │
+│  │  precinct             →   [Precinct ▾]                                 │ │
+│  │                                                                        │ │
+│  │  [Preview Matches]                                                     │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Match Preview ─────────────────────────────────── (after matching) ────┐ │
+│  │                                                                        │ │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                │ │
+│  │  │ Total Rows   │  │ Matched      │  │ Unmatched    │                │ │
+│  │  │ 2,847        │  │ 2,614 (92%)  │  │ 233 (8%)     │                │ │
+│  │  └──────────────┘  └──────────────┘  └──────────────┘                │ │
+│  │                                                                        │ │
+│  │  ┌──────────────┐  ┌──────────────┐                                  │ │
+│  │  │ In Universe  │  │ Not in Univ. │                                  │ │
+│  │  │ 1,204        │  │ 1,410        │                                  │ │
+│  │  │ Will remove  │  │ No action    │                                  │ │
+│  │  └──────────────┘  └──────────────┘                                  │ │
+│  │                                                                        │ │
+│  │  ⓘ 1,204 voters will be marked as &quot;Early Voted&quot; and excluded from    │ │
+│  │    GOTV contact lists. 1,410 matched voters are not in the GOTV       │ │
+│  │    universe (no action needed).                                        │ │
+│  │                                                                        │ │
+│  │  [Import &amp; Exclude from Universe]                                      │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Upload History                                                              │
+│  ──────────────                                                              │
+│  Mar 2 · Official file · 2,847 rows · 1,204 excluded · by Jorge Rivera     │
+│  Mar 1 · Official file · 1,923 rows · 812 excluded · by Ana López           │
+│  Feb 28 · Poll watcher · 342 rows · 198 excluded · by Jorge Rivera          │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-1" tabindex="-1"><a class="heading-anchor" href="#interaction-1" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Three-step flow</strong>: Upload → Map columns → Preview &amp; confirm. Similar to CRM Data Import (CRM-008) but simpler</li>
+<li><strong>Match keys</strong>: Voter ID is primary. Falls back to name + DOB combo for fuzzy matching</li>
+<li><strong>Data source confidence</strong>: Official files get highest confidence. Self-reports flagged as lower confidence in analytics</li>
+<li><strong>Cumulative</strong>: multiple uploads are additive. Each adds more early voters to the exclusion list</li>
+<li><strong>Upload history</strong>: shows all previous uploads with row counts, exclusion counts, and who performed them</li>
+<li><strong>Undo</strong>: individual uploads can be reverted from history (re-includes those voters in the universe)</li>
+</ul>
+<hr>
+<h2 id="gotv-003-volunteer-staging-setup" tabindex="-1"><a class="heading-anchor" href="#gotv-003-volunteer-staging-setup" aria-hidden="true">#</a> GOTV-003: Volunteer Staging Setup</h2>
+<p>Create and manage physical staging locations where volunteers gather on election day before deploying to their turf assignments.</p>
+<h3 id="desktop-2" tabindex="-1"><a class="heading-anchor" href="#desktop-2" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← GOTV Setup                    Staging Locations           [+ Add Location]│
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────────────────────────┐  ┌────────────────────────────────────┐│
+│  │                                  │  │                                    ││
+│  │       [Map with pins]            │  │  Community Center — San Juan North ││
+│  │                                  │  │  ──────────────────────────────── ││
+│  │       📍 3 staging locations     │  │                                    ││
+│  │          shown on map            │  │  Address                           ││
+│  │                                  │  │  Calle Luna 45, San Juan 00901    ││
+│  │                                  │  │                                    ││
+│  │                                  │  │  Contact: María Del Valle          ││
+│  │                                  │  │  📱 +1 (787) 555-0198             ││
+│  │                                  │  │                                    ││
+│  │                                  │  │  Hours: 5:30 AM – 8:00 PM         ││
+│  │                                  │  │  Capacity: 40 volunteers           ││
+│  │                                  │  │                                    ││
+│  │                                  │  │  Assigned: 34 / 40                 ││
+│  │                                  │  │  ████████████████░░░░ 85%         ││
+│  │                                  │  │                                    ││
+│  │                                  │  │  Supplies                          ││
+│  │                                  │  │  ☑ Walk sheets (200)              ││
+│  │                                  │  │  ☑ Door hangers (500)             ││
+│  │                                  │  │  ☑ Water/snacks                   ││
+│  │                                  │  │  □ Phones/chargers                ││
+│  │                                  │  │                                    ││
+│  │                                  │  │  [Edit] [View Roster] [Delete]     ││
+│  │                                  │  │                                    ││
+│  └──────────────────────────────────┘  └────────────────────────────────────┘│
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │  All Staging Locations                                                │  │
+│  │  ─────────────────────                                                │  │
+│  │                                                                       │  │
+│  │  Location                     Contact          Capacity   Assigned    │  │
+│  │  ──────────────────────       ──────────       ────────   ────────    │  │
+│  │  📍 Community Ctr — SJ North  María Del Valle  40         34 (85%)   │  │
+│  │  📍 Church Hall — Bayamón     Carlos Ruiz      30         28 (93%)   │  │
+│  │  📍 School Gym — Caguas       Luisa Fernández  25         18 (72%)   │  │
+│  │                                                                       │  │
+│  │  Totals                                         95         80 (84%)   │  │
+│  │                                                                       │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="createedit-location-modal" tabindex="-1"><a class="heading-anchor" href="#createedit-location-modal" aria-hidden="true">#</a> Create/Edit Location (modal)</h3>
+<pre><code>┌─ Add Staging Location ─────────────────────────┐
+│                                                 │
+│  Location Name *                                │
+│  ┌─────────────────────────────────────────┐   │
+│  │ Community Center — San Juan North       │   │
+│  └─────────────────────────────────────────┘   │
+│                                                 │
+│  Address *                                      │
+│  ┌─────────────────────────────────────────┐   │
+│  │ Calle Luna 45, San Juan, PR 00901      │   │
+│  └─────────────────────────────────────────┘   │
+│                                                 │
+│  Contact Person *        Contact Phone *        │
+│  ┌──────────────────┐   ┌──────────────────┐   │
+│  │ María Del Valle  │   │ +1 787-555-0198  │   │
+│  └──────────────────┘   └──────────────────┘   │
+│                                                 │
+│  Hours *                                        │
+│  Open: [5:30 AM ▾]    Close: [8:00 PM ▾]      │
+│                                                 │
+│  Capacity *                                     │
+│  ┌──────────────────┐                          │
+│  │ 40               │  volunteers              │
+│  └──────────────────┘                          │
+│                                                 │
+│  Supplies Checklist                             │
+│  □ Walk sheets      Qty: [____]                │
+│  □ Door hangers     Qty: [____]                │
+│  □ Water/snacks                                │
+│  □ Phones/chargers                             │
+│  □ [+ Add item...]                             │
+│                                                 │
+│  Notes                                          │
+│  ┌─────────────────────────────────────────┐   │
+│  │ Parking available in rear lot...        │   │
+│  └─────────────────────────────────────────┘   │
+│                                                 │
+│  [Cancel]                        [Save Location]│
+│                                                 │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-2" tabindex="-1"><a class="heading-anchor" href="#interaction-2" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Map + list</strong>: map shows pins for all locations, clicking a pin selects the detail panel. List below for quick scanning</li>
+<li><strong>Capacity tracking</strong>: visual bar showing assigned vs. capacity. Over-capacity highlighted in amber</li>
+<li><strong>[View Roster]</strong>: shows the list of volunteers assigned to this location — names, phone numbers, assigned turfs, check-in status (on election day)</li>
+<li><strong>Supplies checklist</strong>: customizable per location. Items can be checked off as delivered</li>
+<li><strong>Volunteer assignment</strong>: volunteers are assigned to staging locations when turfs are assigned (GOTV-004). This screen shows the resulting assignments</li>
+</ul>
+<hr>
+<h2 id="gotv-004-gotv-turf-cutting" tabindex="-1"><a class="heading-anchor" href="#gotv-004-gotv-turf-cutting" aria-hidden="true">#</a> GOTV-004: GOTV Turf Cutting</h2>
+<p>Create election-day-specific turfs optimized for speed and supporter density. GOTV turfs are smaller than canvassing turfs — designed for 1-2 hour completion in a time-critical context. Supports multiple passes (morning, afternoon, evening) over the same geography.</p>
+<h3 id="desktop-3" tabindex="-1"><a class="heading-anchor" href="#desktop-3" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← GOTV Setup                    GOTV Turf Cutting                           │
+│                                                [Auto-Generate]  [Save All]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────────────────────────────────┐  ┌────────────────────────────┐│
+│  │                                          │  │ Turf Details               ││
+│  │         [Map — full interactive]         │  │ ────────────               ││
+│  │                                          │  │                            ││
+│  │   Colored polygons showing turf          │  │ Selected: Turf SJ-N-03    ││
+│  │   boundaries. Color by:                  │  │                            ││
+│  │   ○ Completion status                    │  │ Contacts: 42              ││
+│  │   ○ Priority tier                        │  │  Tier 1: 18              ││
+│  │   ○ Assignment status                    │  │  Tier 2: 16              ││
+│  │                                          │  │  Tier 3: 8               ││
+│  │   Draw tools:                            │  │                            ││
+│  │   [✎ Draw] [□ Select] [✂ Split]         │  │ Est. Time: 1h 15m         ││
+│  │                                          │  │ Walking Dist: 2.1 km      ││
+│  │   Supporter density heatmap              │  │                            ││
+│  │   overlay (toggle on/off)                │  │ Staging: Community Ctr     ││
+│  │                                          │  │          SJ North          ││
+│  │                                          │  │                            ││
+│  │                                          │  │ Assigned: (unassigned)     ││
+│  │                                          │  │ [Assign Volunteer ▾]      ││
+│  │                                          │  │                            ││
+│  │                                          │  │ Pass Schedule              ││
+│  │                                          │  │ ☑ Morning  (6-10 AM)      ││
+│  │                                          │  │ ☑ Afternoon (12-3 PM)     ││
+│  │                                          │  │ □ Evening  (4-7 PM)       ││
+│  │                                          │  │                            ││
+│  │                                          │  │ [Edit Boundary] [Delete]   ││
+│  │                                          │  │                            ││
+│  └──────────────────────────────────────────┘  └────────────────────────────┘│
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │  Turf Summary                                                         │  │
+│  │  ─────────────                                                        │  │
+│  │  Total Turfs: 38    Contacts Covered: 14,832 / 14,832 (100%)         │  │
+│  │  Assigned: 31 / 38  Avg Contacts/Turf: 390                           │  │
+│  │  Avg Est. Time: 1h 20m                                                │  │
+│  │                                                                       │  │
+│  │  ⚠ 7 turfs unassigned. Assign volunteers before election day.        │  │
+│  │                                                                       │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="auto-generate-modal" tabindex="-1"><a class="heading-anchor" href="#auto-generate-modal" aria-hidden="true">#</a> Auto-Generate Modal</h3>
+<pre><code>┌─ Auto-Generate GOTV Turfs ─────────────────────┐
+│                                                 │
+│  Target Contacts per Turf                       │
+│  ┌──────────────┐                              │
+│  │ 40           │  (recommended: 30-50)        │
+│  └──────────────┘                              │
+│                                                 │
+│  Max Completion Time                            │
+│  ┌──────────────┐                              │
+│  │ 90 minutes   │                              │
+│  └──────────────┘                              │
+│                                                 │
+│  Priority                                       │
+│  ○ Minimize walking distance                    │
+│  ○ Maximize supporter density                   │
+│  ○ Balance both                                 │
+│                                                 │
+│  Staging Location Assignment                    │
+│  ☑ Auto-assign to nearest staging location      │
+│                                                 │
+│  [Cancel]         [Generate 38 Turfs (preview)] │
+│                                                 │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-3" tabindex="-1"><a class="heading-anchor" href="#interaction-3" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Map-centric</strong>: most time spent drawing or adjusting turf boundaries on the map. Same drawing tools as canvassing turf management (CANV-004) but with GOTV-specific parameters</li>
+<li><strong>Auto-generate</strong>: creates turfs algorithmically based on target contacts per turf, time constraints, and optimization priority. Preview before applying</li>
+<li><strong>Multi-pass scheduling</strong>: same geography can be contacted multiple times (morning for catch, afternoon for follow-up). Each pass is a checkbox on the turf</li>
+<li><strong>Supporter density heatmap</strong>: overlay shows where supporters are concentrated. Helps manual turf cutting focus on high-value areas</li>
+<li><strong>Assignment</strong>: turfs assigned to individual volunteers or team lead + team. Dropdown searches the volunteer roster</li>
+<li><strong>Dynamic re-cutting</strong> (election day): on election day, staff can access this screen from the War Room to split or merge turfs based on real-time turnout data. Banner shows &quot;Election Day — changes apply immediately to field workers&quot;</li>
+<li><strong>Coverage check</strong>: bottom summary shows total coverage. Warning if any universe contacts fall outside all turfs</li>
+</ul>
+<hr>
+<h2 id="gotv-005-election-day-comms-plan" tabindex="-1"><a class="heading-anchor" href="#gotv-005-election-day-comms-plan" aria-hidden="true">#</a> GOTV-005: Election Day Comms Plan</h2>
+<p>Pre-configure the sequence of communications that go out on election day. Each &quot;wave&quot; is a scheduled blast (SMS, WhatsApp, email) targeting voters who haven't yet voted.</p>
+<h3 id="desktop-4" tabindex="-1"><a class="heading-anchor" href="#desktop-4" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← GOTV Setup                    Election Day Communications Plan            │
+│                                                                [Save Plan]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Communication Timeline ────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  6 AM    8 AM    10 AM   12 PM   2 PM    4 PM    6 PM    8 PM         │ │
+│  │  ├───────┼───────┼───────┼───────┼───────┼───────┼───────┤            │ │
+│  │  ▲               ▲               ▲               ▲                    │ │
+│  │  Wave 1          Wave 2          Wave 3          Wave 4               │ │
+│  │  Morning         Midday          Afternoon       Final                │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Wave 1: Morning Reminder ──────────────────────────────────────── [×] ┐ │
+│  │                                                                        │ │
+│  │  Scheduled Time *     Trigger                                          │ │
+│  │  [6:30 AM ▾]          ○ Auto-send at time  ○ Manual trigger           │ │
+│  │                                                                        │ │
+│  │  Channel *            Audience                                         │ │
+│  │  [SMS ▾]              ○ Full GOTV universe (who haven't voted)         │ │
+│  │                       ○ Tier 1 only                                    │ │
+│  │                       ○ Custom segment                                 │ │
+│  │                                                                        │ │
+│  │  Message                                                               │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ Buenos días {{first_name}}! Today is Election Day. Polls are    │  │ │
+│  │  │ open 8 AM - 5 PM. Your polling place: {{polling_location}}.    │  │ │
+│  │  │ Every vote counts! 🗳️                                          │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │  SMS: 148 / 160 chars (1 segment)   Recipients: ~12,450              │ │
+│  │                                                                        │ │
+│  │  Status: ● Ready                                                       │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Wave 2: Midday Follow-up ─────────────────────────────────────── [×] ┐ │
+│  │                                                                        │ │
+│  │  Scheduled Time *     Trigger                                          │ │
+│  │  [11:30 AM ▾]         ○ Auto-send at time  ● Manual trigger           │ │
+│  │                                                                        │ │
+│  │  Channel *            Audience                                         │ │
+│  │  [WhatsApp ▾]         ● Full GOTV universe (who haven't voted)        │ │
+│  │                       ○ Tier 1 only                                    │ │
+│  │                                                                        │ │
+│  │  Message                                                               │ │
+│  │  ┌──────────────────────────────────────────────────────────────────┐  │ │
+│  │  │ {{first_name}}, polls close at 5 PM today. Have you voted yet? │  │ │
+│  │  │ Your polling place: {{polling_location}}. Need a ride?          │  │ │
+│  │  │ Reply RIDE and we'll help! 🚗                                   │  │ │
+│  │  └──────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                        │ │
+│  │  Quick Reply Buttons (WhatsApp)                                        │ │
+│  │  [Already Voted]  [Need a Ride]  [Where's My Poll?]                   │ │
+│  │                                                                        │ │
+│  │  Status: ● Ready                                                       │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Wave 3: Afternoon Push ────────────────────────────────────────── [×] ┐ │
+│  │  [Collapsed — click to expand]                                         │ │
+│  │  2:00 PM · SMS · Manual trigger · Tier 1 + Tier 2 not voted           │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Wave 4: Final Push ───────────────────────────────────────────── [×] ┐ │
+│  │  [Collapsed — click to expand]                                         │ │
+│  │  4:00 PM · SMS + WhatsApp · Manual trigger · All not voted             │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  [+ Add Wave]                                                                │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│  ⓘ &quot;Who haven't voted&quot; excludes contacts marked as early voted and         │
+│    any voters confirmed voted during election day via poll watcher           │
+│    reports or self-report.                                                   │
+│                                                                              │
+│  [Save Plan]                                                                 │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="election-day-state" tabindex="-1"><a class="heading-anchor" href="#election-day-state" aria-hidden="true">#</a> Election Day State</h3>
+<p>On election day, each wave shows additional controls:</p>
+<pre><code>│  Status: ● Ready   →   [Send Now]  or  (Auto-sends at 6:30 AM)          │
+│  Status: ● Sending →   Sent: 8,234 / 12,450  (66%)                      │
+│  Status: ● Sent    →   Delivered: 11,890 / 12,450 (95%)  ·  2 min ago   │
+</code></pre>
+<h3 id="interaction-4" tabindex="-1"><a class="heading-anchor" href="#interaction-4" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Visual timeline</strong>: top bar shows wave timing at a glance. Drag wave markers to adjust timing</li>
+<li><strong>Auto vs manual trigger</strong>: auto-send fires at the scheduled time with no intervention. Manual trigger requires a staff member to click [Send Now] in the War Room — useful for waves that depend on turnout data</li>
+<li><strong>Dynamic audience</strong>: &quot;who haven't voted&quot; recalculates at send time using the latest early voting data and election day confirmations</li>
+<li><strong>Personalization tokens</strong>: <code>{{first_name}}</code>, <code>{{polling_location}}</code>, <code>{{polling_hours}}</code> — auto-filled per recipient</li>
+<li><strong>WhatsApp quick replies</strong>: up to 3 buttons. &quot;Already Voted&quot; auto-marks the contact as voted. &quot;Need a Ride&quot; creates a ride request (GOTV-012)</li>
+<li><strong>GOTV override</strong>: election day comms bypass normal quiet hours and frequency caps (as configured in Communications Preferences)</li>
+</ul>
+<hr>
+<h2 id="gotv-006-poll-watcher-registry" tabindex="-1"><a class="heading-anchor" href="#gotv-006-poll-watcher-registry" aria-hidden="true">#</a> GOTV-006: Poll Watcher Registry</h2>
+<p>Register and manage poll watchers. Track their registration status with electoral authorities and assign them to polling locations.</p>
+<h3 id="desktop-5" tabindex="-1"><a class="heading-anchor" href="#desktop-5" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← GOTV Setup                    Poll Watchers             [+ Add Watcher]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Search watchers...]   Status: [All ▾]   Location: [All ▾]                 │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Name              Status       Polling Location     Backup     Creds  │  │
+│  │ ────────────────  ──────────   ──────────────────   ────────   ─────  │  │
+│  │ Jorge Rivera      ● Registered Esc. Lincoln, SJ     Esc. Muñoz  ✓    │  │
+│  │ Ana López         ● Registered Centro Com. Bayamón  —           ✓    │  │
+│  │ Carlos Méndez     ◐ Pending    Esc. Barbosa, Caguas —           —    │  │
+│  │ María Santos      ○ Not filed  (unassigned)          —           —    │  │
+│  │ Luis Ortiz        ● Registered Iglesia San José     Esc. Lincoln ✓   │  │
+│  │ Carmen Vega       ◐ Pending    Esc. Muñoz, SJ       —           —    │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                      │
+│  │ Total        │  │ Registered   │  │ Locations    │                      │
+│  │ 6 watchers   │  │ 3 (50%)      │  │ 4 covered    │                      │
+│  └──────────────┘  └──────────────┘  └──────────────┘                      │
+│                                                                              │
+│  Jurisdiction Requirements                                                   │
+│  ─────────────────────────                                                   │
+│  Registration deadline: Mar 15, 2026 (12 days away)                          │
+│  Required documents: Government ID, party affiliation proof                  │
+│  Filing authority: Comisión Estatal de Elecciones                            │
+│  [Export Roster for Filing]                                                   │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="addedit-watcher-modal" tabindex="-1"><a class="heading-anchor" href="#addedit-watcher-modal" aria-hidden="true">#</a> Add/Edit Watcher (modal)</h3>
+<p>Fields: Name, Phone, Email, Government ID #, Party affiliation, Assigned polling location (dropdown of known locations), Backup location, Registration status (Not filed / Pending / Registered / Denied), Notes.</p>
+<h3 id="interaction-5" tabindex="-1"><a class="heading-anchor" href="#interaction-5" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Status badges</strong>: ○ Not filed, ◐ Pending, ● Registered, ✕ Denied</li>
+<li><strong>Credential tracking</strong>: ✓ indicates credentials received (tracked in detail in GOTV-007)</li>
+<li><strong>[Export Roster for Filing]</strong>: generates a formatted document matching jurisdiction requirements for submission to electoral authorities</li>
+<li><strong>Deadline warning</strong>: amber at 14 days, red at 7 days before registration deadline</li>
+<li><strong>Backup assignments</strong>: if a primary watcher can't attend, backup is automatically promoted</li>
+<li><strong>Row click</strong>: opens watcher detail with full history, assigned location details, and credential documents</li>
+</ul>
+<hr>
+<h2 id="gotv-007-poll-watcher-credential-tracking" tabindex="-1"><a class="heading-anchor" href="#gotv-007-poll-watcher-credential-tracking" aria-hidden="true">#</a> GOTV-007: Poll Watcher Credential Tracking</h2>
+<p>Track credentials/certificates issued by electoral authorities for registered poll watchers.</p>
+<h3 id="desktop-6" tabindex="-1"><a class="heading-anchor" href="#desktop-6" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← Poll Watchers                 Credential Tracking                         │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Watcher           Credential        Issued       Expires    Status    │  │
+│  │ ────────────────  ──────────────    ──────────   ────────   ──────    │  │
+│  │ Jorge Rivera      CEE-2026-4521    Feb 28       Mar 15     ✓ Valid   │  │
+│  │                   📎 credential.pdf                                   │  │
+│  │                                                                       │  │
+│  │ Ana López         CEE-2026-4522    Feb 28       Mar 15     ✓ Valid   │  │
+│  │                   📎 credential.pdf                                   │  │
+│  │                                                                       │  │
+│  │ Luis Ortiz        CEE-2026-4598    Mar 2        Mar 15     ✓ Valid   │  │
+│  │                   📎 credential.pdf                                   │  │
+│  │                                                                       │  │
+│  │ Carlos Méndez     —                —            —          ⏳ Pending│  │
+│  │                   Registration pending                                │  │
+│  │                                                                       │  │
+│  │ Carmen Vega       —                —            —          ⏳ Pending│  │
+│  │                   Registration pending                                │  │
+│  │                                                                       │  │
+│  │ María Santos      —                —            —          — Not filed│  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                      │
+│  │ Credentials  │  │ Pending      │  │ Missing      │                      │
+│  │ 3 received   │  │ 2            │  │ 1            │                      │
+│  └──────────────┘  └──────────────┘  └──────────────┘                      │
+│                                                                              │
+│  [Print Credential Summary]                                                  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-6" tabindex="-1"><a class="heading-anchor" href="#interaction-6" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Upload credential</strong>: click a row to upload credential PDF or photo. Record credential number, issue date, expiration</li>
+<li><strong>Status</strong>: Valid (credential received and not expired), Pending (registration pending), Not filed (registration not started), Expired (past expiration date)</li>
+<li><strong>[Print Credential Summary]</strong>: generates a printable sheet with all watcher names, locations, and credential numbers — for field day distribution</li>
+<li><strong>Expiration warnings</strong>: credentials expiring within 7 days highlighted in amber</li>
+<li><strong>Compact view</strong>: this is a simpler extension of GOTV-006, often accessed from the same flow</li>
+</ul>
+<hr>
+<h2 id="gotv-010-chase-call-interface" tabindex="-1"><a class="heading-anchor" href="#gotv-010-chase-call-interface" aria-hidden="true">#</a> GOTV-010: Chase Call Interface</h2>
+<p>Mobile-first phone banking interface for GOTV chase calls — contacting voters who haven't yet voted on election day. This is the highest-urgency phone bank: every call is a direct attempt to get a supporter to the polls before they close. The interface is stripped down for speed and single-purpose focus.</p>
+<h3 id="mobile-primary" tabindex="-1"><a class="heading-anchor" href="#mobile-primary" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<p>The screen is organized as a single-card, single-task flow optimized for one-handed use. Top to bottom:</p>
+<p><strong>Election Day Header Bar</strong> — persistent bar at the top of the screen showing the election day clock: &quot;Polls close in 3h 12m&quot; with a countdown timer. Background color shifts from green (&gt;4 hours) to amber (2-4 hours) to red (&lt;2 hours) as time runs out. This creates urgency without requiring the caller to check the time.</p>
+<p><strong>Progress Counter</strong> — immediately below the header: &quot;23 of 145 calls made&quot; with a thin progress bar. Shows the caller how far through their list they are and how much remains.</p>
+<p><strong>Contact Card</strong> — the main content area. A full-width card displaying:</p>
+<ul>
+<li>Voter name (large, bold — the first thing the caller sees)</li>
+<li>Support tier badge (e.g., &quot;Tier 1 — Strong Supporter&quot;) with color coding</li>
+<li>Phone number (tappable, large font)</li>
+<li>Address (street address, municipality)</li>
+<li>Voting status: &quot;Not Voted&quot; (default for chase list) or &quot;Early Voted — Skip&quot; if the voter was marked after the list was generated</li>
+<li>Polling location name and hours</li>
+</ul>
+<p><strong>Call Button</strong> — a large, full-width primary button: &quot;Call [First Name]&quot;. Tapping opens the device phone dialer via <code>tel:</code> link (BYOP model — the volunteer uses their own phone and carrier). The button is 56px tall with high contrast.</p>
+<p><strong>Result Buttons</strong> — appear below the call button in a 2x3 grid of quick-result options. Each button is a large touch target (minimum 48px tall):</p>
+<ul>
+<li><strong>Voted</strong> (green) — voter confirms they already voted or will go now</li>
+<li><strong>Will Vote</strong> (blue) — voter says they plan to vote but hasn't yet</li>
+<li><strong>Not Voting</strong> (gray) — voter declines or says they won't vote</li>
+<li><strong>No Answer</strong> (gray) — call wasn't picked up</li>
+<li><strong>Wrong Number</strong> (amber) — number is incorrect</li>
+<li><strong>Do Not Call</strong> (red) — voter requests removal from call list</li>
+</ul>
+<p><strong>Needs a Ride</strong> — below the result grid, a secondary toggle: &quot;Needs a ride to polls?&quot; When enabled, tapping a positive result (Voted/Will Vote) also creates a ride request routed to the GOTV-011 form (pre-filled with voter name, address, and polling location) and then into the GOTV-012 dispatcher queue.</p>
+<p><strong>Auto-Advance</strong> — after a result is logged, the screen auto-advances to the next contact after a 1-second delay. A brief toast confirms the result: &quot;Logged: No Answer. Next call...&quot; The caller can tap &quot;Undo&quot; on the toast to go back and change the result.</p>
+<p><strong>Skip Button</strong> — small text link at the bottom: &quot;Skip this contact →&quot; for cases where the caller needs to move on without logging a result (e.g., they recognize the person and know they've voted).</p>
+<h3 id="interaction-7" tabindex="-1"><a class="heading-anchor" href="#interaction-7" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>List source</strong>: the chase call list is generated from the GOTV universe (GOTV-001) filtered to voters not yet marked as voted. Ordered by priority tier (Tier 1 first, then Tier 2, then Tier 3)</li>
+<li><strong>BYOP model</strong>: the platform does not place calls — it provides the number and the caller uses their own phone. The <code>tel:</code> link opens the native dialer. This avoids telephony infrastructure and works on any device</li>
+<li><strong>Result logging is the primary action</strong>: the screen is designed so that after each call, the caller taps one button and moves on. No forms, no text entry, no navigation</li>
+<li><strong>Ride request shortcut</strong>: the &quot;Needs a Ride&quot; flag creates a ride request (GOTV-011) with voter name, address, and polling location pre-filled. The caller doesn't leave the chase call flow — the request is submitted in the background</li>
+<li><strong>Offline</strong>: not supported. Chase calls require real-time list updates to avoid duplicate calls across volunteers. If connectivity is lost, the screen shows a banner: &quot;Offline — results will sync when reconnected&quot; but the caller can continue working from the cached list</li>
+<li><strong>Mirrors PHONE-004</strong>: the layout closely follows the standard phone bank call interface but removes survey questions, scripts, and multi-issue tracking. The only question is binary: did they vote / will they vote?</li>
+</ul>
+<h3 id="design-notes" tabindex="-1"><a class="heading-anchor" href="#design-notes" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>The election day clock is the most important ambient element — it keeps the caller aware of urgency without being distracting. The color shift is subtle but effective</li>
+<li>Result buttons are deliberately large and few. On a high-stress, high-volume day, reducing the number of taps per call is critical. Six options cover every outcome without requiring &quot;Other&quot; or free text</li>
+<li>Auto-advance eliminates the need to manually navigate to the next contact. The 1-second delay gives the caller a beat to mentally prepare for the next call</li>
+<li>The &quot;Do Not Call&quot; button is red and positioned last in the grid to prevent accidental taps. Logging DNC is irreversible and removes the contact from all future lists</li>
+<li>No desktop wireframe: this screen is designed for volunteers making calls from their personal phones while standing, walking, or sitting in a staging location. Desktop use is possible but not the target</li>
+</ul>
+<hr>
+<h2 id="gotv-011-ride-request-form" tabindex="-1"><a class="heading-anchor" href="#gotv-011-ride-request-form" aria-hidden="true">#</a> GOTV-011: Ride Request Form</h2>
+<p>Simple form for requesting a ride to the polls. Used by volunteers during chase calls (GOTV-010), team leads at staging locations, and staff processing voter requests from SMS/WhatsApp replies. The form is intentionally minimal — requesting a ride should take less than 30 seconds.</p>
+<h3 id="mobile-primary-1" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-1" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  Request a Ride to Polls    │
+├────────────────────────────┤
+│                            │
+│  Voter Name *              │
+│  ┌────────────────────────┐│
+│  │ María Colón            ││
+│  └────────────────────────┘│
+│  (pre-filled from contact) │
+│                            │
+│  Pickup Address *          │
+│  ┌────────────────────────┐│
+│  │ Calle Sol 12, San Juan ││
+│  └────────────────────────┘│
+│                            │
+│  Phone Number *            │
+│  ┌────────────────────────┐│
+│  │ +1 787-555-0142        ││
+│  └────────────────────────┘│
+│                            │
+│  Passengers     [1 ▾]      │
+│                            │
+│  Accessibility Needs        │
+│  □ Wheelchair accessible   │
+│  □ Walker / mobility aid   │
+│  □ Visual assistance       │
+│  □ Other: [____________]   │
+│                            │
+│  Preferred Pickup Time     │
+│  [As soon as possible ▾]   │
+│                            │
+│  Polling Location          │
+│  ┌────────────────────────┐│
+│  │ Esc. Lincoln, San Juan ││
+│  └────────────────────────┘│
+│  (auto-populated from      │
+│   voter record, editable)  │
+│                            │
+│  Notes                     │
+│  ┌────────────────────────┐│
+│  │ Gate code: 4521        ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │   Submit Ride Request  ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="confirmation" tabindex="-1"><a class="heading-anchor" href="#confirmation" aria-hidden="true">#</a> Confirmation</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│           ✓                │
+│                            │
+│  Ride requested!           │
+│                            │
+│  A volunteer driver will   │
+│  contact María Colón at    │
+│  +1 787-555-0142.          │
+│                            │
+│  Pickup: Calle Sol 12, SJ  │
+│  To: Esc. Lincoln, SJ      │
+│  Passengers: 1             │
+│  Time: As soon as possible │
+│                            │
+│  Request #RD-2026-0089     │
+│                            │
+│  [Submit Another Request]  │
+│  [Back to Chase Calls]     │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-8" tabindex="-1"><a class="heading-anchor" href="#interaction-8" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Pre-fill</strong>: when opened from a chase call (GOTV-010), voter name, phone number, address, and polling location are pre-filled from the contact record. The volunteer only needs to confirm and tap Submit</li>
+<li><strong>Passengers</strong>: defaults to 1, dropdown goes up to 6. Useful when the voter is bringing family members</li>
+<li><strong>Accessibility checkboxes</strong>: selecting any option flags the ride as requiring an accessible vehicle in the dispatcher queue (GOTV-012). The &quot;Other&quot; field allows free text for needs not covered by the standard options</li>
+<li><strong>Pickup time</strong>: dropdown with options: &quot;As soon as possible&quot;, &quot;Within 30 minutes&quot;, &quot;Within 1 hour&quot;, or a specific time picker. Defaults to &quot;As soon as possible&quot; for chase call requests</li>
+<li><strong>Polling location</strong>: auto-populated from the voter's record. Editable in case the voter prefers a different location (where permitted by jurisdiction rules)</li>
+<li><strong>Offline support</strong>: the form can be filled out and queued locally. When connectivity is restored, the request is submitted automatically. A banner shows: &quot;You're offline — this request will be submitted when you reconnect.&quot; The confirmation screen shows &quot;Queued&quot; instead of a reference number</li>
+<li><strong>Submission</strong>: creates an entry in the GOTV-012 dispatcher queue with status &quot;Pending&quot;. Dispatcher is notified of new requests via the auto-refresh mechanism</li>
+<li><strong>[Back to Chase Calls]</strong>: returns to GOTV-010 at the next contact in the list — the caller doesn't lose their place</li>
+</ul>
+<h3 id="design-notes-1" tabindex="-1"><a class="heading-anchor" href="#design-notes-1" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>The form is kept to a single scroll with no tabs or multi-step flow. On election day, every second counts — the fewer taps, the better</li>
+<li>Accessibility needs are checkboxes rather than a dropdown so multiple options can be selected simultaneously (e.g., wheelchair + visual assistance)</li>
+<li>The confirmation screen includes the reference number for tracking and the voter's phone number so the volunteer can tell the voter &quot;someone will call you at this number&quot;</li>
+<li>Pre-fill is critical: when coming from GOTV-010, the form should require zero typing in the common case. Just review and submit</li>
+<li>Notes field is optional but valuable for practical details like gate codes, apartment numbers, or &quot;call when arriving, voter is hard of hearing&quot;</li>
+</ul>
+<hr>
+<h2 id="gotv-012-ride-coordination-dispatcher-view" tabindex="-1"><a class="heading-anchor" href="#gotv-012-ride-coordination-dispatcher-view" aria-hidden="true">#</a> GOTV-012: Ride Coordination — Dispatcher View</h2>
+<p>Real-time dispatcher interface for matching ride requests with available drivers on election day. Requests come from voter WhatsApp replies, volunteer reports, and phone bank calls.</p>
+<h3 id="desktop-7" tabindex="-1"><a class="heading-anchor" href="#desktop-7" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  GOTV Rides                                            [Map View] [List View]│
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │ Pending      │  │ Assigned     │  │ In Transit   │  │ Completed    │    │
+│  │ 8            │  │ 5            │  │ 3            │  │ 34           │    │
+│  │ ● 2 urgent   │  │              │  │              │  │ today        │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────┐  ┌────────────────────────────────────┐│
+│  │                                  │  │ Pending Requests                   ││
+│  │       [Map]                      │  │ ──────────────────                 ││
+│  │                                  │  │                                    ││
+│  │  🔴 = pending (urgent)           │  │ 🔴 María Colón · 1:45 PM          ││
+│  │  🟡 = pending                    │  │    Calle Sol 12, SJ → Esc. Lincoln││
+│  │  🔵 = assigned/in transit        │  │    Wheelchair accessible           ││
+│  │  🟢 = driver available           │  │    ⏱ Waiting 22 min               ││
+│  │                                  │  │    [Assign Driver ▾]               ││
+│  │  Rider pins + driver pins        │  │                                    ││
+│  │  with routing lines              │  │ 🔴 Pedro Ríos · 2:00 PM           ││
+│  │                                  │  │    Calle Luna 8 → Centro Comunal  ││
+│  │                                  │  │    Needs 2 seats (bringing spouse) ││
+│  │                                  │  │    ⏱ Waiting 7 min                ││
+│  │                                  │  │    [Assign Driver ▾]               ││
+│  │                                  │  │                                    ││
+│  │                                  │  │ 🟡 Ana Vega · 2:15 PM             ││
+│  │                                  │  │    Bayamón → Esc. Barbosa          ││
+│  │                                  │  │    ⏱ Waiting 2 min                ││
+│  │                                  │  │    [Assign Driver ▾]               ││
+│  │                                  │  │                                    ││
+│  │                                  │  │ [Show 5 more...]                   ││
+│  │                                  │  │                                    ││
+│  └──────────────────────────────────┘  │ ─────────────────────────────────  ││
+│                                         │                                    ││
+│                                         │ Available Drivers                  ││
+│                                         │ ──────────────────                 ││
+│                                         │                                    ││
+│                                         │ 🟢 Carlos R. · Sedan · 3 seats    ││
+│                                         │    Near: San Juan North            ││
+│                                         │    Trips today: 4                  ││
+│                                         │                                    ││
+│                                         │ 🟢 Luisa F. · Van · 6 seats       ││
+│                                         │    Near: Caguas                    ││
+│                                         │    Trips today: 2                  ││
+│                                         │    ☑ Wheelchair accessible         ││
+│                                         │                                    ││
+│                                         │ 🟢 Miguel T. · Sedan · 3 seats    ││
+│                                         │    Near: Bayamón                   ││
+│                                         │    Trips today: 5                  ││
+│                                         │                                    ││
+│                                         └────────────────────────────────────┘│
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="assign-driver-flow" tabindex="-1"><a class="heading-anchor" href="#assign-driver-flow" aria-hidden="true">#</a> Assign Driver Flow</h3>
+<pre><code>[Assign Driver ▾] → dropdown with recommended drivers:
+┌─────────────────────────────────────────┐
+│ Recommended                             │
+│ ✓ Luisa F. · Van · ♿ · 8 min away     │
+│   Carlos R. · Sedan · 12 min away      │
+│                                         │
+│ All Available                           │
+│   Miguel T. · Sedan · 22 min away      │
+│   [Show more...]                        │
+└─────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile" tabindex="-1"><a class="heading-anchor" href="#mobile" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  GOTV Rides            [☰] │
+├────────────────────────────┤
+│                            │
+│  Pending: 8 · Assigned: 5  │
+│  Transit: 3 · Done: 34     │
+│                            │
+│  [Pending] [Active] [Done] │
+│                            │
+│  🔴 María Colón · 1:45 PM  │
+│  Calle Sol 12 → Esc Lincol │
+│  ♿ Wheelchair · ⏱ 22 min  │
+│  [Assign ▾]                │
+│                            │
+│  🔴 Pedro Ríos · 2:00 PM   │
+│  Calle Luna 8 → Centro Com │
+│  2 seats · ⏱ 7 min        │
+│  [Assign ▾]                │
+│                            │
+│  🟡 Ana Vega · 2:15 PM     │
+│  Bayamón → Esc. Barbosa    │
+│  ⏱ 2 min                  │
+│  [Assign ▾]                │
+│                            │
+│  [Show 5 more...]          │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-9" tabindex="-1"><a class="heading-anchor" href="#interaction-9" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Priority ordering</strong>: urgent requests (waiting &gt;15 min, accessibility needs) at top with 🔴</li>
+<li><strong>Smart matching</strong>: [Assign Driver ▾] shows recommended drivers sorted by proximity, vehicle compatibility (wheelchair accessible, seat count), and workload</li>
+<li><strong>Map + list split</strong>: map shows spatial relationships, list shows details. Either can be used independently</li>
+<li><strong>Multi-passenger optimization</strong>: platform can suggest grouping nearby requests for a single driver run</li>
+<li><strong>Status tracking</strong>: Pending → Assigned (driver notified) → En Route (driver confirmed) → Transporting → Completed</li>
+<li><strong>Auto-refresh</strong>: 30-second refresh on pending list. New requests appear at top with brief highlight</li>
+<li><strong>Ride source</strong>: requests come from WhatsApp quick reply (&quot;Need a Ride&quot;), volunteer canvasser reports (field mode), phone bank referrals, or manual entry by dispatcher</li>
+</ul>
+<hr>
+<h2 id="gotv-013-ride-driver-view" tabindex="-1"><a class="heading-anchor" href="#gotv-013-ride-driver-view" aria-hidden="true">#</a> GOTV-013: Ride Driver View</h2>
+<p>Mobile interface for volunteer drivers on election day. A task-by-task workflow: the driver sees their current assignment, completes it, and moves to the next one. No complex data views, no dispatch decisions — just clear instructions for the current ride.</p>
+<h3 id="mobile-primary-2" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-2" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  GOTV Driver        [!]    │
+│  4 completed · 1 active    │
+├────────────────────────────┤
+│                            │
+│  ── Current Assignment ──  │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │  PICKUP                ││
+│  │  María Colón           ││
+│  │  📱 +1 787-555-0142    ││
+│  │  Calle Sol 12, SJ      ││
+│  │                        ││
+│  │  Passengers: 1          ││
+│  │  ♿ Wheelchair access   ││
+│  │                        ││
+│  │  TO POLLS              ││
+│  │  Esc. Lincoln, SJ      ││
+│  │                        ││
+│  │  ┌────────────────────┐││
+│  │  │   📍 Navigate      │││
+│  │  └────────────────────┘││
+│  │  (opens native maps)   ││
+│  │                        ││
+│  │  ┌────────────────────┐││
+│  │  │   📱 Call Voter    │││
+│  │  └────────────────────┘││
+│  │                        ││
+│  │  Status:                ││
+│  │  [En Route] [Picked Up]││
+│  │  [At Polls] [Completed]││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  ── Next Up ──             │
+│                            │
+│  ┌────────────────────────┐│
+│  │ Pedro Ríos             ││
+│  │ Calle Luna 8 → Centro  ││
+│  │ 2 passengers           ││
+│  └────────────────────────┘│
+│                            │
+│  [Report Issue]            │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="report-issue-modal" tabindex="-1"><a class="heading-anchor" href="#report-issue-modal" aria-hidden="true">#</a> Report Issue (modal)</h3>
+<pre><code>┌─ Report Issue ────────────────────┐
+│                                    │
+│  Issue Type                        │
+│  ○ Voter no-show at pickup         │
+│  ○ Delay (traffic, road closure)   │
+│  ○ Accessibility problem           │
+│  ○ Vehicle issue                   │
+│  ○ Other                           │
+│                                    │
+│  Details                           │
+│  ┌────────────────────────────┐   │
+│  │ Voter not answering phone, │   │
+│  │ waited 10 minutes...       │   │
+│  └────────────────────────────┘   │
+│                                    │
+│  [Cancel]          [Submit Report] │
+│                                    │
+└────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-10" tabindex="-1"><a class="heading-anchor" href="#interaction-10" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Task-by-task flow</strong>: the driver only sees their current assignment prominently. No list of all assignments, no queue management — that complexity lives in the dispatcher view (GOTV-012)</li>
+<li><strong>Status progression</strong>: En Route → Picked Up → At Polls → Completed. Each tap advances the status. Status updates are visible to the dispatcher in real time</li>
+<li><strong>[Navigate]</strong>: opens the device's native maps app (Google Maps, Apple Maps, Waze) with directions to the pickup address. After pickup, the button changes to navigate to the polling location</li>
+<li><strong>[Call Voter]</strong>: opens phone dialer via <code>tel:</code> link. Used when the driver arrives and needs to coordinate (&quot;I'm outside in the blue sedan&quot;)</li>
+<li><strong>Next assignment preview</strong>: shows a compact card for the next ride so the driver knows what's coming. The preview becomes the current assignment when the current ride is marked Completed</li>
+<li><strong>[Report Issue]</strong>: modal for problems — voter no-show, delays, accessibility mismatches, vehicle breakdowns. Reports go to the dispatcher who can reassign the ride</li>
+<li><strong>Ride count</strong>: &quot;4 completed, 1 in progress&quot; in the header gives the driver a sense of their contribution for the day</li>
+<li><strong>Assignment push</strong>: new assignments arrive via push notification. The driver doesn't need to refresh or check for assignments — they appear automatically</li>
+<li><strong>No offline mode</strong>: drivers need real-time assignment updates and status synchronization with dispatch. Offline driving is not supported</li>
+</ul>
+<h3 id="design-notes-2" tabindex="-1"><a class="heading-anchor" href="#design-notes-2" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>The screen is designed for use while standing next to a car or sitting in a parked vehicle. Large text, large buttons, minimal scrolling. The driver should be able to glance at their phone and know exactly what to do next</li>
+<li>Navigate and Call buttons are the two most-used actions and get prominent placement. They use native OS capabilities (<code>tel:</code> and maps deep links) rather than in-app implementations</li>
+<li>The status buttons are a horizontal row rather than a stepper — the driver taps the relevant status rather than advancing through each one sequentially. This handles cases where a status is skipped (e.g., voter meets the driver at the curb, so &quot;Picked Up&quot; and &quot;At Polls&quot; happen almost simultaneously)</li>
+<li>Accessibility needs are shown prominently on the assignment card so the driver can confirm their vehicle is suitable before departing. If there's a mismatch, [Report Issue] routes the ride back to dispatch</li>
+<li>The &quot;Next Up&quot; preview reduces anxiety — the driver knows whether they can take a break after the current ride or should head straight to the next pickup</li>
+</ul>
+<hr>
+<h2 id="gotv-014-poll-watcher-check-in" tabindex="-1"><a class="heading-anchor" href="#gotv-014-poll-watcher-check-in" aria-hidden="true">#</a> GOTV-014: Poll Watcher Check-in</h2>
+<p>Simple check-in screen for poll watchers arriving at their assigned polling location on election day. The screen serves a single purpose: confirm arrival so that the field team knows which locations are covered. Minimal interface — this is used once per shift, not repeatedly.</p>
+<h3 id="mobile-primary-3" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-3" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  Poll Watcher Check-in      │
+├────────────────────────────┤
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │  Your Assignment       ││
+│  │                        ││
+│  │  Esc. Lincoln          ││
+│  │  Calle Fortaleza 22    ││
+│  │  San Juan, PR 00901    ││
+│  │                        ││
+│  │  Shift: 8:00 AM – 2 PM││
+│  │  Credential: CEE-4521  ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Status: ○ Not Checked In  │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │     ✓ Check In Now     ││
+│  │                        ││
+│  └────────────────────────┘│
+│    56px tall, full-width   │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Quick Links               │
+│  ──────────                │
+│                            │
+│  [Report Issue →]          │
+│    → GOTV-015              │
+│                            │
+│  [View Talking Points →]   │
+│    Opens reference doc     │
+│                            │
+│  [Contact Field Director]  │
+│    📱 +1 787-555-0101      │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  ⓘ Check in when you       │
+│  arrive at your assigned   │
+│  location. This confirms   │
+│  coverage for the field    │
+│  team.                     │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="checked-in-state" tabindex="-1"><a class="heading-anchor" href="#checked-in-state" aria-hidden="true">#</a> Checked-In State</h3>
+<pre><code>┌────────────────────────────┐
+│  Poll Watcher Check-in      │
+├────────────────────────────┤
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │  Esc. Lincoln          ││
+│  │  Calle Fortaleza 22    ││
+│  │  San Juan, PR 00901    ││
+│  │                        ││
+│  │  Shift: 8:00 AM – 2 PM││
+│  │  Credential: CEE-4521  ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Status: ● Checked In      │
+│  Since: 7:52 AM            │
+│                            │
+│  ┌────────────────────────┐│
+│  │   Complete Shift       ││
+│  └────────────────────────┘│
+│                            │
+│  Quick Links               │
+│  ──────────                │
+│                            │
+│  [Report Issue →]          │
+│  [View Talking Points →]   │
+│  [Contact Field Director]  │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-11" tabindex="-1"><a class="heading-anchor" href="#interaction-11" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Check-in flow</strong>: single tap on &quot;Check In Now&quot; → confirmation vibration (haptic) → status changes to &quot;Checked In&quot; with timestamp. The check-in updates the poll watcher's status in the GOTV-006 registry, visible to field staff</li>
+<li><strong>Status progression</strong>: Not Checked In → Checked In → Shift Complete. Three states, no complexity</li>
+<li><strong>GPS validation</strong> (optional, configurable): if enabled, the platform compares the watcher's GPS coordinates against the assigned polling location. If the location doesn't match (&gt;500m), a warning appears: &quot;Your location doesn't match your assigned polling place. Are you at the right location?&quot; The watcher can override and check in anyway — GPS is advisory, not blocking</li>
+<li><strong>Shift information</strong>: start time, end time, and credential number displayed prominently. The credential number is useful if challenged by election officials at the location</li>
+<li><strong>Quick links</strong>: three essential actions available throughout the shift:
+<ul>
+<li><strong>Report Issue</strong> → opens GOTV-015 (issue report form)</li>
+<li><strong>View Talking Points</strong> → opens a reference document with poll watcher rights, what to observe, and how to handle common situations</li>
+<li><strong>Contact Field Director</strong> → direct phone call to the assigned field director for the watcher's area</li>
+</ul>
+</li>
+<li><strong>[Complete Shift]</strong>: marks the shift as done when the watcher leaves. Timestamp recorded. If a backup watcher is assigned (GOTV-006), they receive a notification to take over</li>
+</ul>
+<h3 id="design-notes-3" tabindex="-1"><a class="heading-anchor" href="#design-notes-3" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>This is deliberately one of the simplest screens in the platform. Poll watchers are volunteers, often first-timers, arriving at an unfamiliar location early in the morning. The screen should feel reassuring, not overwhelming</li>
+<li>The assignment card is the anchor — it confirms the watcher is at the right place. Address is displayed prominently so they can verify against the physical location</li>
+<li>The credential number is shown on this screen specifically because poll watchers are sometimes asked to produce their credentials by election officials. Having it visible on their phone is a backup if they misplace the physical document</li>
+<li>GPS validation is optional because GPS can be unreliable indoors or in dense urban areas. It's a helpful check, not a gate</li>
+<li>The &quot;Talking Points&quot; link is important for watcher confidence — having a quick reference for their rights and responsibilities reduces anxiety and improves observation quality</li>
+</ul>
+<hr>
+<h2 id="gotv-015-poll-watcher-issue-report-form" tabindex="-1"><a class="heading-anchor" href="#gotv-015-poll-watcher-issue-report-form" aria-hidden="true">#</a> GOTV-015: Poll Watcher Issue Report Form</h2>
+<p>Form for poll watchers to report issues observed at polling locations. Designed for speed and clarity under pressure — a poll watcher witnessing a problem needs to document it quickly before details fade. Reports feed into the GOTV-016 issue queue for staff triage.</p>
+<h3 id="mobile-primary-4" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-4" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  ← Report Issue             │
+│  Esc. Lincoln, San Juan     │
+├────────────────────────────┤
+│                            │
+│  Issue Category *          │
+│  ┌────────────────────────┐│
+│  │ Voter Access          ▾││
+│  └────────────────────────┘│
+│  Voter Access / Equipment  │
+│  Failure / Campaign        │
+│  Violation / Long Wait     │
+│  Times / Accessibility     │
+│  Issue / Voter Intimidation│
+│  / Other                   │
+│                            │
+│  Severity *                │
+│  ┌────────────────────────┐│
+│  │ High                  ▾││
+│  └────────────────────────┘│
+│  Critical / High / Medium  │
+│                            │
+│  Description *             │
+│  ┌────────────────────────┐│
+│  │ Poll worker asked voter││
+│  │ for photo ID. This     ││
+│  │ jurisdiction does not  ││
+│  │ require photo ID...    ││
+│  │                        ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Evidence (optional)       │
+│  [📷 Take Photo]           │
+│  [🖼 Choose from Gallery]  │
+│  photo_001.jpg ✓           │
+│                            │
+│  Time Observed             │
+│  [2:34 PM ▾] (now)         │
+│  (defaults to now,         │
+│   editable)                │
+│                            │
+│  People Involved (optional)│
+│  ┌────────────────────────┐│
+│  │ Male poll worker at    ││
+│  │ check-in table 2       ││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ ⚠ This requires        ││
+│  │ immediate attention    ││
+│  │                 [OFF]  ││
+│  └────────────────────────┘│
+│  Sends push notification   │
+│  to Field Director         │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │    Submit Report       ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="confirmation-1" tabindex="-1"><a class="heading-anchor" href="#confirmation-1" aria-hidden="true">#</a> Confirmation</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│           ✓                │
+│                            │
+│  Issue reported.           │
+│                            │
+│  Reference #ISS-2026-0047  │
+│                            │
+│  Category: Voter Access    │
+│  Severity: High            │
+│  Location: Esc. Lincoln    │
+│                            │
+│  The field team has been   │
+│  notified.                 │
+│                            │
+│  [Report Another Issue]    │
+│  [Back to Check-in]        │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-12" tabindex="-1"><a class="heading-anchor" href="#interaction-12" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Pre-filled location</strong>: the polling location is pre-filled from the watcher's assignment (GOTV-014). Not editable — reports are tied to the assigned location</li>
+<li><strong>Issue categories</strong>: seven options covering the most common polling location issues. &quot;Other&quot; includes a required text field for the category description</li>
+<li><strong>Severity levels</strong>: Critical (voter being denied right to vote, intimidation, systemic failure), High (significant problems affecting multiple voters), Medium (minor issues or potential problems). No &quot;Low&quot; option — if it's not worth a Medium, it's not worth a report</li>
+<li><strong>Description</strong>: required free-text field. Minimum 20 characters to encourage meaningful detail. Placeholder text: &quot;Describe what you observed. Be specific about what happened, who was involved, and how it affects voters.&quot;</li>
+<li><strong>Photo/video evidence</strong>: camera button opens the device camera directly. Gallery button allows selecting existing photos. Multiple files can be attached. Files are uploaded immediately on selection (progress indicator shown). Maximum 5 attachments, 20MB each</li>
+<li><strong>Time observed</strong>: defaults to current time. Editable via time picker for cases where the watcher is reporting an issue that happened earlier in the day</li>
+<li><strong>&quot;Immediate attention&quot; toggle</strong>: when enabled, the report triggers a push notification to the Field Director and the issue appears with a 🔴 badge in the GOTV-016 queue. Used for Critical severity issues that need real-time response</li>
+<li><strong>Offline support</strong>: the form can be filled out offline, including photos. The report is queued locally and submitted when connectivity is restored. A banner shows: &quot;You're offline — this report will be submitted when you reconnect.&quot; Photos are stored locally until upload completes</li>
+<li><strong>Submission</strong>: creates an entry in the GOTV-016 issue queue. Reference number is generated server-side (or &quot;Queued&quot; if offline). The watcher can reference this number in follow-up communications</li>
+</ul>
+<h3 id="design-notes-4" tabindex="-1"><a class="heading-anchor" href="#design-notes-4" aria-hidden="true">#</a> Design Notes</h3>
+<ul>
+<li>The form is ordered by importance: category and severity first (for triage), then description (for understanding), then evidence (for documentation), then metadata (time, people). This matches how a dispatcher would read the report</li>
+<li>The &quot;immediate attention&quot; toggle is deliberately not a checkbox — it's a prominent, labeled toggle that makes the watcher consciously choose to escalate. This prevents accidental escalations while making real ones easy</li>
+<li>Photo evidence is optional because requiring it would slow down reporting. Some issues (long wait times, verbal incidents) may not have visual evidence. But the camera button is prominent because photo evidence is extremely valuable when available</li>
+<li>The severity picker has only three levels (no &quot;Low&quot;) to prevent poll watchers from under-classifying issues. If someone takes the time to fill out a report, it's at least Medium</li>
+<li>The confirmation screen includes the reference number prominently — the watcher may need to reference it when speaking with election officials or the legal team later in the day</li>
+<li>The &quot;People Involved&quot; field is intentionally vague (&quot;optional text field&quot;) rather than structured (name, role, ID) because poll watchers may not know who the person is. Descriptive identification (&quot;male poll worker at check-in table 2&quot;) is more practical than trying to get a name</li>
+</ul>
+<hr>
+<h2 id="gotv-016-poll-watcher-issue-queue" tabindex="-1"><a class="heading-anchor" href="#gotv-016-poll-watcher-issue-queue" aria-hidden="true">#</a> GOTV-016: Poll Watcher Issue Queue</h2>
+<p>Staff view for incoming issue reports from poll watchers at polling locations. Issues range from procedural irregularities to voter intimidation to equipment problems.</p>
+<h3 id="desktop-8" tabindex="-1"><a class="heading-anchor" href="#desktop-8" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  GOTV Issue Queue                           [Filter ▾]   Auto-refresh: [ON] │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │ 🔴 Critical  │  │ 🟠 High      │  │ 🟡 Medium    │  │ ✓ Resolved   │    │
+│  │ 2            │  │ 3            │  │ 5            │  │ 12           │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌─ Open Issues ───────────────────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  🔴 Voter turned away — no ID required for this jurisdiction           │ │
+│  │     Esc. Lincoln, San Juan · Jorge Rivera · 2:34 PM (12 min ago)       │ │
+│  │     Category: Voter Access · Severity: Critical                        │ │
+│  │     📷 1 photo attached                                                │ │
+│  │     [View Details]  [Escalate]  [Resolve]                              │ │
+│  │                                                                        │ │
+│  │  🔴 Machine malfunction — voters waiting 45+ min                       │ │
+│  │     Centro Comunal, Bayamón · Ana López · 2:20 PM (26 min ago)         │ │
+│  │     Category: Equipment · Severity: Critical                           │ │
+│  │     [View Details]  [Escalate]  [Resolve]                              │ │
+│  │                                                                        │ │
+│  │  🟠 Campaigning inside 100m zone                                       │ │
+│  │     Esc. Barbosa, Caguas · Carlos Méndez · 1:45 PM (1h 1m ago)        │ │
+│  │     Category: Campaign Violation · Severity: High                      │ │
+│  │     📷 2 photos attached                                               │ │
+│  │     [View Details]  [Escalate]  [Resolve]                              │ │
+│  │                                                                        │ │
+│  │  🟠 Long lines — estimated 2 hour wait                                 │ │
+│  │     Iglesia San José, SJ · Luis Ortiz · 1:30 PM (1h 16m ago)          │ │
+│  │     Category: Wait Times · Severity: High                              │ │
+│  │     [View Details]  [Escalate]  [Resolve]                              │ │
+│  │                                                                        │ │
+│  │  🟡 Accessibility ramp blocked by delivery truck                       │ │
+│  │     Esc. Muñoz, SJ · Carmen Vega · 12:45 PM (2h 1m ago)               │ │
+│  │     Category: Accessibility · Severity: Medium                         │ │
+│  │     Internal note: Called building manager, ETA 30 min                 │ │
+│  │     [View Details]  [Escalate]  [Resolve]                              │ │
+│  │                                                                        │ │
+│  │  [Show 5 more medium issues...]                                        │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="issue-detail-modal-or-side-panel" tabindex="-1"><a class="heading-anchor" href="#issue-detail-modal-or-side-panel" aria-hidden="true">#</a> Issue Detail (modal or side panel)</h3>
+<pre><code>┌─ Issue Detail ──────────────────────────────────────────┐
+│                                                         │
+│  🔴 Voter turned away — no ID required                  │
+│                                                         │
+│  Location: Esc. Lincoln, San Juan                       │
+│  Reported by: Jorge Rivera (Poll Watcher)               │
+│  Time: 2:34 PM, March 15, 2026                          │
+│  Category: Voter Access                                 │
+│  Severity: Critical                                     │
+│                                                         │
+│  Description                                            │
+│  Poll worker asked voter for government-issued photo    │
+│  ID. This jurisdiction does not require photo ID. Voter │
+│  left without voting. I informed the poll worker of     │
+│  the correct rule but they said &quot;it's our policy.&quot;      │
+│                                                         │
+│  📷 Photo: [poll worker sign reading &quot;ID Required&quot;]     │
+│                                                         │
+│  ─ Actions ──────────────────────────────               │
+│                                                         │
+│  Escalate to:                                           │
+│  [Election Protection Hotline]                          │
+│  [Legal Team]                                           │
+│  [Electoral Commission]                                 │
+│                                                         │
+│  Internal Notes                                         │
+│  ┌──────────────────────────────────────────────┐      │
+│  │ Called election protection hotline at 2:40 PM.│      │
+│  │ Case #EP-2026-4521. They are sending a...    │      │
+│  └──────────────────────────────────────────────┘      │
+│  [Add Note]                                             │
+│                                                         │
+│  [Mark Resolved]                                        │
+│                                                         │
+│  Resolution                                             │
+│  ┌──────────────────────────────────────────────┐      │
+│  │ (Fill in when resolving)                     │      │
+│  └──────────────────────────────────────────────┘      │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-13" tabindex="-1"><a class="heading-anchor" href="#interaction-13" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Severity ordering</strong>: Critical issues always at top, then High, then Medium. Within severity, sorted by age (oldest first — longest unresolved)</li>
+<li><strong>Category filter</strong>: Voter Access, Equipment, Campaign Violation, Wait Times, Accessibility, Intimidation, Other</li>
+<li><strong>Auto-refresh</strong>: new issues appear automatically (30-second poll). Sound notification for Critical issues</li>
+<li><strong>Escalation routing</strong>: configurable per severity. Critical can auto-notify legal team. Escalation buttons send to external election protection organizations with pre-formatted report</li>
+<li><strong>Photo/video</strong>: attached evidence from poll watcher's phone (uploaded via their field mode interface)</li>
+<li><strong>Internal notes</strong>: timestamped log of actions taken, visible only to staff</li>
+<li><strong>Resolution</strong>: required description when marking as resolved — creates audit trail</li>
+<li><strong>Mobile</strong>: full queue with swipe-to-act (swipe right to escalate, swipe left to resolve)</li>
+</ul>
+<hr>
+<h2 id="gotv-017-turnout-dashboard-map-view" tabindex="-1"><a class="heading-anchor" href="#gotv-017-turnout-dashboard-map-view" aria-hidden="true">#</a> GOTV-017: Turnout Dashboard — Map View</h2>
+<p>The war room's primary spatial view of election day turnout. Real-time heatmap showing which areas are hitting targets and which need attention.</p>
+<h3 id="desktop-9" tabindex="-1"><a class="heading-anchor" href="#desktop-9" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  GOTV Turnout — Map View                      [Segment View]  [War Room →]   │
+│                                                 Last updated: 2:46 PM        │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │ Universe     │  │ Voted        │  │ Turnout      │  │ Target       │    │
+│  │ 14,832       │  │ 5,891        │  │ 39.7%        │  │ 65%          │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────────┐│
+│  │                                                                          ││
+│  │                    [Full-width map]                                       ││
+│  │                                                                          ││
+│  │   Color by turnout %:                                                    ││
+│  │   🟥 &lt; 25%   🟧 25-40%   🟨 40-55%   🟩 55-65%   🟦 &gt; 65%              ││
+│  │                                                                          ││
+│  │   Each turf/precinct is a colored polygon.                               ││
+│  │   Click to see detail.                                                   ││
+│  │                                                                          ││
+│  │   Overlay toggles:                                                       ││
+│  │   ☑ Turf boundaries                                                     ││
+│  │   □ Active canvassers (pins)                                             ││
+│  │   □ Staging locations                                                    ││
+│  │   □ Polling locations                                                    ││
+│  │                                                                          ││
+│  └──────────────────────────────────────────────────────────────────────────┘│
+│                                                                              │
+│  ┌─ Selected: Turf SJ-N-03 ───────────────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Universe: 42 · Voted: 14 (33%) · Target: 65%                         │ │
+│  │  Tier 1: 8/18 voted · Tier 2: 4/16 voted · Tier 3: 2/8 voted         │ │
+│  │                                                                        │ │
+│  │  Canvasser: Ana López · Pass 2 in progress                             │ │
+│  │  Contacts remaining: 28                                                │ │
+│  │                                                                        │ │
+│  │  Data source: ● Official (12) · ◐ Volunteer report (2)                │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="mobile-1" tabindex="-1"><a class="heading-anchor" href="#mobile-1" aria-hidden="true">#</a> Mobile</h3>
+<pre><code>┌────────────────────────────┐
+│  Turnout Map      [Segs ▾] │
+├────────────────────────────┤
+│                            │
+│  39.7% of 14,832 voted     │
+│  Target: 65%               │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │    [Map — full width]  ││
+│  │                        ││
+│  │    Color-coded turfs   ││
+│  │                        ││
+│  │                        ││
+│  │                        ││
+│  └────────────────────────┘│
+│                            │
+│  Tap turf for details      │
+│                            │
+│  ── Lowest Turnout ──      │
+│  SJ-N-03  33%  42 voters   │
+│  BAY-02   35%  38 voters   │
+│  CAG-05   36%  45 voters   │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-14" tabindex="-1"><a class="heading-anchor" href="#interaction-14" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Auto-refresh</strong>: map updates every 60 seconds. Turnout numbers update on each refresh</li>
+<li><strong>Color coding</strong>: red (behind target) → green (at/above target). Color scale relative to the 65% target, not absolute</li>
+<li><strong>Data confidence</strong>: each turnout data point has a source — official electoral authority data is highest confidence, volunteer reports are medium, voter self-reports are lowest. The detail panel shows the breakdown</li>
+<li><strong>Overlay toggles</strong>: layer active canvassers, staging locations, and polling locations onto the turnout map for spatial awareness</li>
+<li><strong>Click turf for detail</strong>: shows universe/voted/target for that turf, current canvasser, remaining contacts, and data source breakdown</li>
+<li><strong>&quot;Lowest Turnout&quot; list</strong>: mobile shows the turfs most needing attention — feeds into reallocation decisions (GOTV-019)</li>
+</ul>
+<hr>
+<h2 id="gotv-018-turnout-dashboard-segment-view" tabindex="-1"><a class="heading-anchor" href="#gotv-018-turnout-dashboard-segment-view" aria-hidden="true">#</a> GOTV-018: Turnout Dashboard — Segment View</h2>
+<p>Tabular breakdown of turnout by voter segment. Complements the map view with analytical depth.</p>
+<h3 id="desktop-10" tabindex="-1"><a class="heading-anchor" href="#desktop-10" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  GOTV Turnout — Segment View                  [Map View]    [War Room →]     │
+│                                                 Last updated: 2:46 PM        │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  View by: [Support Tier ▾]    Compare: [Target vs Actual ▾]                 │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Segment          Universe   Voted    Turnout   Target   Gap           │  │
+│  │ ───────────────  ────────   ─────    ───────   ──────   ───           │  │
+│  │ Tier 1 (Strong)  4,210      2,104    50.0%     75%      -25% ⚠       │  │
+│  │                  ████████████████████░░░░░░░░░░                       │  │
+│  │                                                                       │  │
+│  │ Tier 2 (Lean)    6,118      2,387    39.0%     60%      -21% ⚠       │  │
+│  │                  ██████████████░░░░░░░░░░░░░░░░                       │  │
+│  │                                                                       │  │
+│  │ Tier 3 (Soft)    4,504      1,400    31.1%     50%      -19%          │  │
+│  │                  ████████████░░░░░░░░░░░░░░░░░░                       │  │
+│  │                                                                       │  │
+│  │ Total            14,832     5,891    39.7%     65%      -25%          │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Turnout Over Time                                                           │
+│  ─────────────────                                                           │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  70% ┤                                              ·····Target      │   │
+│  │  60% ┤                                         ·····                 │   │
+│  │  50% ┤                                    ·····        ___Tier 1     │   │
+│  │  40% ┤                     ___─────────── ─────       ___Tier 2      │   │
+│  │  30% ┤          __────────                            ___Tier 3      │   │
+│  │  20% ┤    __────                                                     │   │
+│  │  10% ┤ ──                                                            │   │
+│  │   0% ┼──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──                           │   │
+│  │       8AM 9  10  11  12  1PM 2  3  4  5PM                            │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  By Geography                                                                │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Region           Universe   Voted    Turnout   Target   Gap           │  │
+│  │ ──────────────   ────────   ─────    ───────   ──────   ───           │  │
+│  │ San Juan North   4,450      1,868    42.0%     65%      -23%          │  │
+│  │ Bayamón          3,440      1,204    35.0%     65%      -30% ⚠       │  │
+│  │ Caguas           2,710      1,138    42.0%     65%      -23%          │  │
+│  │ Carolina         2,170      911      42.0%     65%      -23%          │  │
+│  │ Ponce            2,062      770      37.3%     65%      -28% ⚠       │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-15" tabindex="-1"><a class="heading-anchor" href="#interaction-15" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>View by</strong>: toggle between Support Tier, Geography, Demographics, Custom segment — different table groupings</li>
+<li><strong>Target vs Actual</strong>: visual comparison with gap column. ⚠ flags segments &gt;20% below target</li>
+<li><strong>Turnout over time chart</strong>: shows the hourly trajectory. Dotted line is the target pace. If the actual line is below the target pace at any point, the gap is widening and action is needed</li>
+<li><strong>Drill-down</strong>: click a segment row to see individual contacts in that segment and their vote status</li>
+<li><strong>Export</strong>: CSV export for post-election analysis</li>
+</ul>
+<hr>
+<h2 id="gotv-019-reallocation-suggestions" tabindex="-1"><a class="heading-anchor" href="#gotv-019-reallocation-suggestions" aria-hidden="true">#</a> GOTV-019: Reallocation Suggestions</h2>
+<p>Platform analyzes live turnout data and suggests resource reallocation. War room staff review and approve suggestions — the platform recommends, humans decide.</p>
+<h3 id="desktop-11" tabindex="-1"><a class="heading-anchor" href="#desktop-11" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  GOTV Reallocation Suggestions                              [War Room →]     │
+│                                          Generated: 2:50 PM  [↻ Regenerate] │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─ Suggestion 1 ── Priority: High ───────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Shift 2 canvassers from San Juan North → Bayamón                      │ │
+│  │                                                                        │ │
+│  │  Rationale:                                                            │ │
+│  │  · SJ North is at 42% turnout with strong Tier 1 performance (58%)    │ │
+│  │  · Bayamón is at 35% — lowest performing region, 30% gap to target    │ │
+│  │  · 3 canvassers in SJ North have completed their turfs                │ │
+│  │  · 4 Bayamón turfs are unworked in Pass 2                             │ │
+│  │                                                                        │ │
+│  │  Available canvassers:                                                 │ │
+│  │  · Ana López (completed SJ-N-03, SJ-N-04)                             │ │
+│  │  · Miguel Torres (completed SJ-N-07)                                   │ │
+│  │                                                                        │ │
+│  │  [✓ Approve]  [✎ Modify]  [✕ Reject]                                 │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Suggestion 2 ── Priority: High ───────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Add phone banking surge for Ponce Tier 1 non-voters                   │ │
+│  │                                                                        │ │
+│  │  Rationale:                                                            │ │
+│  │  · 620 Tier 1 contacts in Ponce, only 37% have voted                  │ │
+│  │  · 390 remaining — too many for door-to-door in remaining time        │ │
+│  │  · 4 phone bank volunteers available                                   │ │
+│  │                                                                        │ │
+│  │  [✓ Approve]  [✎ Modify]  [✕ Reject]                                 │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ┌─ Suggestion 3 ── Priority: Medium ─────────────────────────────────────┐ │
+│  │                                                                        │ │
+│  │  Send SMS reminder to 1,240 Tier 1 non-voters in Bayamón + Ponce      │ │
+│  │                                                                        │ │
+│  │  Rationale:                                                            │ │
+│  │  · These regions have the widest gap to target                        │ │
+│  │  · Tier 1 contacts are highest-value — each additional vote matters   │ │
+│  │  · Sending now (3 PM) gives 2 hours before polls close                │ │
+│  │                                                                        │ │
+│  │  [✓ Approve]  [✎ Modify]  [✕ Reject]                                 │ │
+│  │                                                                        │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Previously Actioned                                                         │
+│  ──────────────────                                                          │
+│  ✓ 1:30 PM — Shifted 1 canvasser from Carolina to Caguas (approved)         │
+│  ✕ 12:45 PM — Suggested Wave 3 comms early (rejected — too soon)            │
+│  ✓ 11:00 AM — Redirected 2 phone bankers to Tier 1 focus (approved)         │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-16" tabindex="-1"><a class="heading-anchor" href="#interaction-16" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Human-in-the-loop</strong>: platform suggests, staff decides. No auto-execution of resource changes</li>
+<li><strong>[✓ Approve]</strong>: executes the suggestion — reassigns canvassers, triggers phone bank, sends comms. Shows confirmation with details</li>
+<li><strong>[✎ Modify]</strong>: opens the suggestion for adjustment — change which canvassers, modify the target area, edit the message. Then approve the modified version</li>
+<li><strong>[✕ Reject]</strong>: dismisses with optional reason. Platform learns (or rather, the team learns what works)</li>
+<li><strong>[↻ Regenerate]</strong>: re-analyzes current data and generates fresh suggestions based on latest turnout numbers</li>
+<li><strong>Priority</strong>: High (significant impact, time-sensitive), Medium (helpful but not urgent), Low (optimization)</li>
+<li><strong>Previously Actioned</strong>: audit trail of all approved and rejected suggestions</li>
+</ul>
+<hr>
+<h2 id="gotv-020-election-night-results-entry" tabindex="-1"><a class="heading-anchor" href="#gotv-020-election-night-results-entry" aria-hidden="true">#</a> GOTV-020: Election Night Results Entry</h2>
+<p>Fast, mobile-first data entry for poll watchers and staff to enter results as they're posted at polling locations.</p>
+<h3 id="mobile-primary-5" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-5" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  Results Entry              │
+├────────────────────────────┤
+│                            │
+│  Polling Location          │
+│  [Esc. Lincoln, SJ ▾]     │
+│  (your assigned location)  │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Race: Governor             │
+│  ──────────────            │
+│                            │
+│  María Torres (PV)         │
+│  ┌────────────────────────┐│
+│  │ 1,247                  ││
+│  └────────────────────────┘│
+│                            │
+│  Rafael Ortiz (PNP)        │
+│  ┌────────────────────────┐│
+│  │ 1,102                  ││
+│  └────────────────────────┘│
+│                            │
+│  Carmen Soto (PPD)         │
+│  ┌────────────────────────┐│
+│  │ 438                    ││
+│  └────────────────────────┘│
+│                            │
+│  Write-in / Other          │
+│  ┌────────────────────────┐│
+│  │ 23                     ││
+│  └────────────────────────┘│
+│                            │
+│  Total: 2,810              │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Results Status            │
+│  ○ Partial (still counting)│
+│  ● Final (all counted)     │
+│                            │
+│  ┌────────────────────────┐│
+│  │                        ││
+│  │    Submit Results      ││
+│  │                        ││
+│  └────────────────────────┘│
+│    48px tall, full-width   │
+│                            │
+│  [+ Add Another Race]     │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="confirmation-2" tabindex="-1"><a class="heading-anchor" href="#confirmation-2" aria-hidden="true">#</a> Confirmation</h3>
+<pre><code>┌────────────────────────────┐
+│                            │
+│         ✓                  │
+│                            │
+│  Results submitted for     │
+│  Esc. Lincoln, San Juan    │
+│                            │
+│  Governor                  │
+│  Torres (PV): 1,247       │
+│  Ortiz (PNP): 1,102       │
+│  Soto (PPD): 438          │
+│  Other: 23                 │
+│  Status: Final             │
+│                            │
+│  Submitted at 8:42 PM      │
+│                            │
+│  [Edit Submission]         │
+│  [Enter Next Location]     │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-17" tabindex="-1"><a class="heading-anchor" href="#interaction-17" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Pre-filled location</strong>: defaults to the watcher's assigned location. Can switch if covering multiple</li>
+<li><strong>Pre-filled candidates</strong>: race and candidate names pre-configured by staff. Watcher just enters numbers</li>
+<li><strong>Number input</strong>: large numeric keyboard, numeric input type. Fast data entry</li>
+<li><strong>Partial vs Final</strong>: partial results submitted as counting progresses, final when complete. Partial updates are additive — previous entries for the same location are replaced</li>
+<li><strong>Validation</strong>: total vote count checked against registered voters for reasonableness. Warning (not block) if total seems unusually high or low</li>
+<li><strong>Timestamp</strong>: auto-recorded on submission. Used for results timeline in GOTV-021</li>
+</ul>
+<hr>
+<h2 id="gotv-021-election-night-results-dashboard" tabindex="-1"><a class="heading-anchor" href="#gotv-021-election-night-results-dashboard" aria-hidden="true">#</a> GOTV-021: Election Night Results Dashboard</h2>
+<p>Real-time aggregation of entered results. The war room's view of how the election is going.</p>
+<h3 id="desktop-12" tabindex="-1"><a class="heading-anchor" href="#desktop-12" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  Election Night Results                                 Last update: 8:45 PM │
+│                                                [Map] [Table]  [War Room →]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Governor                                            42 / 68 locations (62%)│
+│  ────────                                            reporting              │
+│                                                                              │
+│  ┌──────────────────────────────────────────────────────────────────────────┐│
+│  │                                                                          ││
+│  │  María Torres (PV)      ████████████████████████████████  52.1%          ││
+│  │                          38,420 votes                                    ││
+│  │                                                                          ││
+│  │  Rafael Ortiz (PNP)     ██████████████████████████        41.3%          ││
+│  │                          30,480 votes                                    ││
+│  │                                                                          ││
+│  │  Carmen Soto (PPD)      ███                                5.8%          ││
+│  │                          4,270 votes                                     ││
+│  │                                                                          ││
+│  │  Other                  ▏                                  0.8%          ││
+│  │                          610 votes                                       ││
+│  │                                                                          ││
+│  └──────────────────────────────────────────────────────────────────────────┘│
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Results Timeline                                                            │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
+│  │                                                                      │   │
+│  │  55% ┤                                           ___Torres           │   │
+│  │  50% ┤                              ____─────────                    │   │
+│  │  45% ┤              ─────────────── ─────────────Ortiz               │   │
+│  │  40% ┤   ─────────── ──────────────                                  │   │
+│  │  35% ┤ ──                                                            │   │
+│  │      ┼───┬───┬───┬───┬───┬───┬───┬───                               │   │
+│  │       7PM  7:15  7:30  7:45  8:00  8:15  8:30  8:45                  │   │
+│  │                                                                      │   │
+│  └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  By Location                                                                 │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Location              Status    Torres    Ortiz     Soto     Total    │  │
+│  │ ────────────────────  ────────  ────────  ────────  ──────   ─────    │  │
+│  │ Esc. Lincoln, SJ      Final    1,247     1,102     438      2,810    │  │
+│  │ Centro Com. Bayamón    Final    987       1,234     312      2,556    │  │
+│  │ Esc. Barbosa, Caguas   Partial  845       790       198      1,833    │  │
+│  │ Iglesia San José       Final    1,102     856       267      2,240    │  │
+│  │ [Show all 42 locations...]                                            │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ─────────────────────────────────────────────────────────────────────────   │
+│                                                                              │
+│  Internal Comparison                                                         │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Region         Our Turnout    Torres Vote %    Expected (from data)   │  │
+│  │ ──────────     ───────────    ──────────────   ────────────────────    │  │
+│  │ SJ North       47%           54%               52% (support score)    │  │
+│  │ Bayamón        38%           43%               49%   ⚠ below exp.    │  │
+│  │ Caguas         44%           55%               51%                    │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-18" tabindex="-1"><a class="heading-anchor" href="#interaction-18" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Auto-refresh</strong>: 30-second refresh. New results highlight briefly when they come in</li>
+<li><strong>Reporting progress</strong>: &quot;42 / 68 locations reporting&quot; — shows completeness of the picture</li>
+<li><strong>Results timeline</strong>: how the race has moved as more results come in. Useful for understanding whether the trend is favorable</li>
+<li><strong>Internal comparison</strong>: compares actual vote percentage against the campaign's internal support score data. Validates the accuracy of the campaign's voter data</li>
+<li><strong>Map view</strong>: toggle to see results geographically — each location colored by leading candidate</li>
+<li><strong>Multiple races</strong>: tab selector at top if multiple races are being tracked (Governor, Senate, etc.)</li>
+</ul>
+<hr>
+<h2 id="gotv-022-post-election-analysis" tabindex="-1"><a class="heading-anchor" href="#gotv-022-post-election-analysis" aria-hidden="true">#</a> GOTV-022: Post-Election Analysis</h2>
+<p>Comprehensive retrospective on GOTV operation effectiveness. Used days/weeks after election day for organizational learning.</p>
+<h3 id="desktop-13" tabindex="-1"><a class="heading-anchor" href="#desktop-13" aria-hidden="true">#</a> Desktop</h3>
+<pre><code>┌──────────────────────────────────────────────────────────────────────────────┐
+│  ← GOTV                    Post-Election Analysis              [Export PDF]   │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  [Turnout] [Operations] [Volunteers] [Model Validation] [Resources]          │
+│                                                                              │
+│  ── Turnout Analysis ──────────────────────────────────────────────────────  │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │ Universe     │  │ Final Turnout│  │ Target       │  │ Gap          │    │
+│  │ 14,832       │  │ 9,641 (65.0%)│  │ 65%          │  │ 0% ✓        │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  Turnout by Segment                                                          │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Segment          Universe   Voted    Turnout   Target   Result        │  │
+│  │ ───────────────  ────────   ─────    ───────   ──────   ──────        │  │
+│  │ Tier 1 (Strong)  4,210      3,368    80.0%     75%      +5% ✓        │  │
+│  │ Tier 2 (Lean)    6,118      3,916    64.0%     60%      +4% ✓        │  │
+│  │ Tier 3 (Soft)    4,504      2,357    52.3%     50%      +2% ✓        │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  Turnout by Region                                                           │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Region           Universe   Voted    Turnout   Target   Result        │  │
+│  │ ──────────────   ────────   ─────    ───────   ──────   ──────        │  │
+│  │ San Juan North   4,450      3,115    70.0%     65%      +5% ✓        │  │
+│  │ Bayamón          3,440      2,097    61.0%     65%      -4% ⚠        │  │
+│  │ Caguas           2,710      1,843    68.0%     65%      +3% ✓        │  │
+│  │ Carolina         2,170      1,432    66.0%     65%      +1% ✓        │  │
+│  │ Ponce            2,062      1,154    56.0%     65%      -9% ⚠        │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ── Operations ────────────────────────────────────────── [Operations tab]   │
+│                                                                              │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
+│  │ Door Knocks  │  │ Contact Rate │  │ Phone Calls  │  │ Rides Given  │    │
+│  │ 8,234        │  │ 62%          │  │ 3,890        │  │ 87           │    │
+│  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘    │
+│                                                                              │
+│  Contact Rate by Region                                                      │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Region           Doors    Contacts  Rate     Avg. per Vol   Passes    │  │
+│  │ ──────────────   ──────   ────────  ──────   ────────────   ──────    │  │
+│  │ San Juan North   2,890    1,835     63%      28.4           2.1       │  │
+│  │ Bayamón          2,120    1,230     58%      22.1           1.8       │  │
+│  │ Caguas           1,540    1,012     66%      31.0           2.3       │  │
+│  │ Carolina         980      612       62%      25.5           2.0       │  │
+│  │ Ponce            704      398       57%      19.9           1.5       │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ── Model Validation ───────────────────── [Model Validation tab]           │
+│                                                                              │
+│  How well did our support scores predict actual voting behavior?              │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐  │
+│  │ Score    Universe   Voted    Turnout   Expected    Accuracy           │  │
+│  │ ──────   ────────   ─────    ───────   ────────    ────────           │  │
+│  │ 5        4,210      3,368    80.0%     80%         High ✓            │  │
+│  │ 4        6,118      3,916    64.0%     65%         High ✓            │  │
+│  │ 3        4,504      2,357    52.3%     45%         Moderate ◐        │  │
+│  │ 2        —          —        —         —           (excluded)        │  │
+│  │ 1        —          —        —         —           (excluded)        │  │
+│  └────────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  Key Insight: Score 3 voters turned out at higher rates than predicted.       │
+│  Consider expanding the GOTV universe to include more Score 3 contacts       │
+│  in future elections.                                                        │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="interaction-19" tabindex="-1"><a class="heading-anchor" href="#interaction-19" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Tab navigation</strong>: Turnout, Operations, Volunteers, Model Validation, Resources — each tab is a section of the analysis</li>
+<li><strong>[Export PDF]</strong>: generates a formatted report with all tabs, suitable for organizational review, board reports, or funder updates</li>
+<li><strong>Model Validation tab</strong>: the most strategically valuable section — compares support score predictions against actual turnout to improve future targeting</li>
+<li><strong>Volunteers tab</strong> (not shown): per-volunteer metrics — shifts completed, contacts made, contact rate, issues reported. Helps identify top performers and training needs</li>
+<li><strong>Resources tab</strong> (not shown): staging location utilization, ride completion rate, supply consumption — operational efficiency metrics</li>
+</ul>
+<hr>
+<h2 id="gotv-023-staging-location-check-in" tabindex="-1"><a class="heading-anchor" href="#gotv-023-staging-location-check-in" aria-hidden="true">#</a> GOTV-023: Staging Location Check-in</h2>
+<p>Team Lead checks in volunteers at their staging location on election day morning. Fast, mobile-first interface similar to Event Check-in (EVT-005).</p>
+<h3 id="mobile-primary-6" tabindex="-1"><a class="heading-anchor" href="#mobile-primary-6" aria-hidden="true">#</a> Mobile (Primary)</h3>
+<pre><code>┌────────────────────────────┐
+│  Staging Check-in          │
+│  Community Ctr — SJ North  │
+├────────────────────────────┤
+│                            │
+│  Checked in: 28 / 34       │
+│  ████████████████████░░░░  │
+│  82%                       │
+│                            │
+│  [Search volunteers...]    │
+│  [📷 Scan QR]              │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Not Yet Checked In (6)    │
+│  ──────────────────────    │
+│                            │
+│  ┌────────────────────────┐│
+│  │ Carlos Méndez          ││
+│  │ Turf: BAY-02           ││
+│  │ 📱 787-555-0134        ││
+│  │            [Check In ✓]││
+│  └────────────────────────┘│
+│                            │
+│  ┌────────────────────────┐│
+│  │ María Santos           ││
+│  │ Turf: SJ-N-05          ││
+│  │ 📱 787-555-0167        ││
+│  │            [Check In ✓]││
+│  └────────────────────────┘│
+│                            │
+│  [Show 4 more...]          │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  Checked In (28)           │
+│  ────────────────          │
+│                            │
+│  Ana López · 5:45 AM       │
+│  Jorge Rivera · 5:42 AM    │
+│  Luisa Fernández · 5:40 AM │
+│  [Show all 28...]          │
+│                            │
+│  ─────────────────────     │
+│                            │
+│  [Report Issue]            │
+│  [Contact Field Director]  │
+│                            │
+└────────────────────────────┘
+</code></pre>
+<h3 id="interaction-20" tabindex="-1"><a class="heading-anchor" href="#interaction-20" aria-hidden="true">#</a> Interaction</h3>
+<ul>
+<li><strong>Tap to check in</strong>: [Check In ✓] — single tap with confirmation vibration (haptic). 10-second undo</li>
+<li><strong>QR scan</strong>: volunteer shows their app's QR code. Faster than searching</li>
+<li><strong>Not-checked-in priority</strong>: volunteers who haven't arrived are shown first. Team Lead can call them directly via phone number</li>
+<li><strong>Turf assignment visible</strong>: confirms each volunteer knows their assignment</li>
+<li><strong>Progress counter</strong>: always visible at top. Helps Team Lead know how many are still missing</li>
+<li><strong>[Report Issue]</strong>: if a volunteer doesn't show, or supplies are missing — sends an issue to the Field Director</li>
+<li><strong>56px row height</strong>: large touch targets for election morning (cold hands, stress, speed)</li>
+</ul>
+<hr>
+<h2 id="empty-states-summary" tabindex="-1"><a class="heading-anchor" href="#empty-states-summary" aria-hidden="true">#</a> Empty States Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Empty Message</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GOTV-001 (no criteria)</td>
+<td>Define your GOTV universe to identify which voters to contact on election day. Start by setting support score and voting history criteria.</td>
+<td>(form is ready to fill)</td>
+</tr>
+<tr>
+<td>GOTV-002 (no uploads)</td>
+<td>Upload early voting data to remove voters who've already cast ballots from your GOTV contact lists.</td>
+<td>Upload File</td>
+</tr>
+<tr>
+<td>GOTV-003 (no locations)</td>
+<td>Set up staging locations where volunteers will gather on election day before deploying to their turfs.</td>
+<td>+ Add Location</td>
+</tr>
+<tr>
+<td>GOTV-004 (no turfs)</td>
+<td>Cut GOTV turfs to divide your universe into manageable assignments. Finalize the universe first.</td>
+<td>(Finalize Universe link if not done)</td>
+</tr>
+<tr>
+<td>GOTV-005 (no waves)</td>
+<td>Plan your election day communication waves. Schedule reminders for voters who haven't yet voted.</td>
+<td>+ Add Wave</td>
+</tr>
+<tr>
+<td>GOTV-006 (no watchers)</td>
+<td>Register poll watchers to monitor polling locations on election day.</td>
+<td>+ Add Watcher</td>
+</tr>
+<tr>
+<td>GOTV-010 (no contacts)</td>
+<td>No chase call contacts available. Finalize the GOTV universe and ensure voters are loaded into the call list.</td>
+<td>(waiting state — depends on GOTV-001)</td>
+</tr>
+<tr>
+<td>GOTV-011 (standalone)</td>
+<td>Request a ride to the polls for a voter. Fill in the voter's details and a volunteer driver will be dispatched.</td>
+<td>(form is ready to fill)</td>
+</tr>
+<tr>
+<td>GOTV-012 (no requests)</td>
+<td>No ride requests yet. Requests come from voter replies, volunteer reports, and phone bank referrals.</td>
+<td>(waiting state)</td>
+</tr>
+<tr>
+<td>GOTV-013 (no assignment)</td>
+<td>No ride assignments yet. The dispatcher will assign rides to you as requests come in.</td>
+<td>(waiting state)</td>
+</tr>
+<tr>
+<td>GOTV-014 (not checked in)</td>
+<td>You're assigned to [location name]. Check in when you arrive to confirm coverage for the field team.</td>
+<td>Check In Now</td>
+</tr>
+<tr>
+<td>GOTV-015 (standalone)</td>
+<td>Report an issue observed at your polling location. Select a category and describe what you saw.</td>
+<td>(form is ready to fill)</td>
+</tr>
+<tr>
+<td>GOTV-016 (no issues)</td>
+<td>No issues reported. Poll watchers report issues through their field interface.</td>
+<td>(waiting state)</td>
+</tr>
+<tr>
+<td>GOTV-020 (no results)</td>
+<td>Results entry opens when polls close. Select your assigned location and enter results as they're posted.</td>
+<td>(waiting state)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="accessibility-notes" tabindex="-1"><a class="heading-anchor" href="#accessibility-notes" aria-hidden="true">#</a> Accessibility Notes</h2>
+<ul>
+<li>All status indicators use both color and text/shape (●/◐/○ + &quot;Registered&quot;/&quot;Pending&quot;/&quot;Not filed&quot;)</li>
+<li>Map views always have a companion table view for screen reader users</li>
+<li>Turnout percentages announced via aria-live on refresh</li>
+<li>Issue queue severity uses icons + text labels, never color alone</li>
+<li>Results entry uses large numeric inputs with clear labels</li>
+<li>Check-in uses 56px touch targets with haptic confirmation</li>
+<li>Auto-refresh can be paused for users who find it disorienting</li>
+<li>Chase call result buttons (GOTV-010) use color + text labels and are minimum 48px tall for reliable touch targets</li>
+<li>Election day countdown clock (GOTV-010) uses color shift + text for urgency — not color alone</li>
+<li>Ride request form (GOTV-011) uses standard form controls with visible labels; offline status announced via aria-live banner</li>
+<li>Ride driver view (GOTV-013) uses large text and buttons designed for glanceable use; status buttons include text labels</li>
+<li>Poll watcher check-in (GOTV-014) uses 56px CTA button with haptic confirmation; status uses symbol + text (○/●)</li>
+<li>Issue report form (GOTV-015) severity levels use text labels, not color alone; immediate attention toggle includes descriptive text</li>
+</ul>
+<h2 id="design-decisions" tabindex="-1"><a class="heading-anchor" href="#design-decisions" aria-hidden="true">#</a> Design Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Human-in-the-loop reallocation</td>
+<td>Platform suggests, staff approves</td>
+<td>Election day decisions are too high-stakes for full automation. Staff have context the platform doesn't (volunteer morale, weather, local knowledge)</td>
+</tr>
+<tr>
+<td>Multi-pass turf design</td>
+<td>Same turf gets morning/afternoon/evening passes</td>
+<td>Voters who aren't home in the morning may be reachable later. Multiple passes maximize contact rate</td>
+</tr>
+<tr>
+<td>Confidence-weighted turnout data</td>
+<td>Different icons for official vs. volunteer-reported vs. self-reported</td>
+<td>Prevents overconfidence in turnout numbers. Staff can see how much of the data is confirmed vs. estimated</td>
+</tr>
+<tr>
+<td>Separate map and segment turnout views</td>
+<td>Two dedicated screens (GOTV-017, GOTV-018) rather than one combined</td>
+<td>Map answers &quot;where&quot; — spatial awareness for resource deployment. Segment view answers &quot;who&quot; — analytical depth for targeting. Different mental models, different screens</td>
+</tr>
+<tr>
+<td>Poll watcher separation (registry + credentials)</td>
+<td>GOTV-006 for people, GOTV-007 for documents</td>
+<td>Registration workflow is people-focused (assign, track status). Credential tracking is document-focused (upload, verify, print). Combining them makes both harder</td>
+</tr>
+<tr>
+<td>Results entry as mobile-first</td>
+<td>Dedicated simple form, not a spreadsheet</td>
+<td>Poll watchers are standing in a room watching results post. They need a fast, one-handed interface — not a data entry tool</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions" tabindex="-1"><a class="heading-anchor" href="#open-questions" aria-hidden="true">#</a> Open Questions</h2>
+<ol>
+<li><strong>Official election data feeds</strong> — can the platform integrate with official electoral authority APIs for real-time turnout data, or is manual upload the only option? Official feeds would dramatically improve turnout tracking accuracy</li>
+<li><strong>Alliance ride sharing</strong> — should ride coordination support cross-org driver pools? A multi-org ride dispatch is operationally complex but could serve voters in areas where one org has drivers and another has requests</li>
+<li><strong>Reallocation suggestion algorithm</strong> — what model generates reallocation suggestions? Simple rule-based (gap-to-target) vs. predictive (based on historical turnout patterns by time of day)? Rule-based is more transparent and trustworthy</li>
+<li><strong>Results entry security</strong> — how do we prevent fraudulent results entries? Options: restrict to registered poll watchers, require photo of posted results, dual-entry verification. Balance speed vs. integrity</li>
+<li><strong>Post-election data retention</strong> — how long is GOTV operational data retained? Valuable for future elections but contains sensitive voter contact information. Retention policy should balance utility against data minimization</li>
+</ol>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#scope"># Scope</a></li><li class="toc-3"><a href="#cross-references-wireframed-elsewhere"># Cross-References (wireframed elsewhere)</a></li><li class="toc-2"><a href="#gotv-navigation-context"># GOTV Navigation Context</a></li><li class="toc-2"><a href="#gotv-001-gotv-universe-builder"># GOTV-001: GOTV Universe Builder</a></li><li class="toc-3"><a href="#desktop"># Desktop</a></li><li class="toc-3"><a href="#interaction"># Interaction</a></li><li class="toc-2"><a href="#gotv-002-early-voting-data-upload"># GOTV-002: Early Voting Data Upload</a></li><li class="toc-3"><a href="#desktop-1"># Desktop</a></li><li class="toc-3"><a href="#interaction-1"># Interaction</a></li><li class="toc-2"><a href="#gotv-003-volunteer-staging-setup"># GOTV-003: Volunteer Staging Setup</a></li><li class="toc-3"><a href="#desktop-2"># Desktop</a></li><li class="toc-3"><a href="#createedit-location-modal"># Create/Edit Location (modal)</a></li><li class="toc-3"><a href="#interaction-2"># Interaction</a></li><li class="toc-2"><a href="#gotv-004-gotv-turf-cutting"># GOTV-004: GOTV Turf Cutting</a></li><li class="toc-3"><a href="#desktop-3"># Desktop</a></li><li class="toc-3"><a href="#auto-generate-modal"># Auto-Generate Modal</a></li><li class="toc-3"><a href="#interaction-3"># Interaction</a></li><li class="toc-2"><a href="#gotv-005-election-day-comms-plan"># GOTV-005: Election Day Comms Plan</a></li><li class="toc-3"><a href="#desktop-4"># Desktop</a></li><li class="toc-3"><a href="#election-day-state"># Election Day State</a></li><li class="toc-3"><a href="#interaction-4"># Interaction</a></li><li class="toc-2"><a href="#gotv-006-poll-watcher-registry"># GOTV-006: Poll Watcher Registry</a></li><li class="toc-3"><a href="#desktop-5"># Desktop</a></li><li class="toc-3"><a href="#addedit-watcher-modal"># Add/Edit Watcher (modal)</a></li><li class="toc-3"><a href="#interaction-5"># Interaction</a></li><li class="toc-2"><a href="#gotv-007-poll-watcher-credential-tracking"># GOTV-007: Poll Watcher Credential Tracking</a></li><li class="toc-3"><a href="#desktop-6"># Desktop</a></li><li class="toc-3"><a href="#interaction-6"># Interaction</a></li><li class="toc-2"><a href="#gotv-010-chase-call-interface"># GOTV-010: Chase Call Interface</a></li><li class="toc-3"><a href="#mobile-primary"># Mobile (Primary)</a></li><li class="toc-3"><a href="#interaction-7"># Interaction</a></li><li class="toc-3"><a href="#design-notes"># Design Notes</a></li><li class="toc-2"><a href="#gotv-011-ride-request-form"># GOTV-011: Ride Request Form</a></li><li class="toc-3"><a href="#mobile-primary-1"># Mobile (Primary)</a></li><li class="toc-3"><a href="#confirmation"># Confirmation</a></li><li class="toc-3"><a href="#interaction-8"># Interaction</a></li><li class="toc-3"><a href="#design-notes-1"># Design Notes</a></li><li class="toc-2"><a href="#gotv-012-ride-coordination-dispatcher-view"># GOTV-012: Ride Coordination — Dispatcher View</a></li><li class="toc-3"><a href="#desktop-7"># Desktop</a></li><li class="toc-3"><a href="#assign-driver-flow"># Assign Driver Flow</a></li><li class="toc-3"><a href="#mobile"># Mobile</a></li><li class="toc-3"><a href="#interaction-9"># Interaction</a></li><li class="toc-2"><a href="#gotv-013-ride-driver-view"># GOTV-013: Ride Driver View</a></li><li class="toc-3"><a href="#mobile-primary-2"># Mobile (Primary)</a></li><li class="toc-3"><a href="#report-issue-modal"># Report Issue (modal)</a></li><li class="toc-3"><a href="#interaction-10"># Interaction</a></li><li class="toc-3"><a href="#design-notes-2"># Design Notes</a></li><li class="toc-2"><a href="#gotv-014-poll-watcher-check-in"># GOTV-014: Poll Watcher Check-in</a></li><li class="toc-3"><a href="#mobile-primary-3"># Mobile (Primary)</a></li><li class="toc-3"><a href="#checked-in-state"># Checked-In State</a></li><li class="toc-3"><a href="#interaction-11"># Interaction</a></li><li class="toc-3"><a href="#design-notes-3"># Design Notes</a></li><li class="toc-2"><a href="#gotv-015-poll-watcher-issue-report-form"># GOTV-015: Poll Watcher Issue Report Form</a></li><li class="toc-3"><a href="#mobile-primary-4"># Mobile (Primary)</a></li><li class="toc-3"><a href="#confirmation-1"># Confirmation</a></li><li class="toc-3"><a href="#interaction-12"># Interaction</a></li><li class="toc-3"><a href="#design-notes-4"># Design Notes</a></li><li class="toc-2"><a href="#gotv-016-poll-watcher-issue-queue"># GOTV-016: Poll Watcher Issue Queue</a></li><li class="toc-3"><a href="#desktop-8"># Desktop</a></li><li class="toc-3"><a href="#issue-detail-modal-or-side-panel"># Issue Detail (modal or side panel)</a></li><li class="toc-3"><a href="#interaction-13"># Interaction</a></li><li class="toc-2"><a href="#gotv-017-turnout-dashboard-map-view"># GOTV-017: Turnout Dashboard — Map View</a></li><li class="toc-3"><a href="#desktop-9"># Desktop</a></li><li class="toc-3"><a href="#mobile-1"># Mobile</a></li><li class="toc-3"><a href="#interaction-14"># Interaction</a></li><li class="toc-2"><a href="#gotv-018-turnout-dashboard-segment-view"># GOTV-018: Turnout Dashboard — Segment View</a></li><li class="toc-3"><a href="#desktop-10"># Desktop</a></li><li class="toc-3"><a href="#interaction-15"># Interaction</a></li><li class="toc-2"><a href="#gotv-019-reallocation-suggestions"># GOTV-019: Reallocation Suggestions</a></li><li class="toc-3"><a href="#desktop-11"># Desktop</a></li><li class="toc-3"><a href="#interaction-16"># Interaction</a></li><li class="toc-2"><a href="#gotv-020-election-night-results-entry"># GOTV-020: Election Night Results Entry</a></li><li class="toc-3"><a href="#mobile-primary-5"># Mobile (Primary)</a></li><li class="toc-3"><a href="#confirmation-2"># Confirmation</a></li><li class="toc-3"><a href="#interaction-17"># Interaction</a></li><li class="toc-2"><a href="#gotv-021-election-night-results-dashboard"># GOTV-021: Election Night Results Dashboard</a></li><li class="toc-3"><a href="#desktop-12"># Desktop</a></li><li class="toc-3"><a href="#interaction-18"># Interaction</a></li><li class="toc-2"><a href="#gotv-022-post-election-analysis"># GOTV-022: Post-Election Analysis</a></li><li class="toc-3"><a href="#desktop-13"># Desktop</a></li><li class="toc-3"><a href="#interaction-19"># Interaction</a></li><li class="toc-2"><a href="#gotv-023-staging-location-check-in"># GOTV-023: Staging Location Check-in</a></li><li class="toc-3"><a href="#mobile-primary-6"># Mobile (Primary)</a></li><li class="toc-3"><a href="#interaction-20"># Interaction</a></li><li class="toc-2"><a href="#empty-states-summary"># Empty States Summary</a></li><li class="toc-2"><a href="#accessibility-notes"># Accessibility Notes</a></li><li class="toc-2"><a href="#design-decisions"># Design Decisions</a></li><li class="toc-2"><a href="#open-questions"># Open Questions</a></li></ul></nav></div>
+</div>
+<script src="../../../../assets/search.js" defer></script>
+<script src="../../../../assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UX Decisions — Wireframe Phase · GreenGrass</title>
+<meta name="description" content="UX Decisions — Wireframe Phase — GreenGrass spec &amp; design documentation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2316a34a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <button type="button" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="brand" href="../index.html">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>GreenGrass</strong><small>Spec & Design</small></span>
+  </a>
+  <div class="search">
+    <input type="search" id="search-input" placeholder="Search docs…" autocomplete="off" aria-label="Search documentation">
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <span class="theme-icon" aria-hidden="true"></span>
+  </button>
+</header>
+<div class="layout">
+  <div class="sidebar-backdrop" hidden></div>
+  <aside class="sidebar" aria-label="Documentation navigation">
+    <nav class="nav">
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Home<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../index.html">GreenGrass</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Specifications<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../spec/product.html">Project: GreenGrass</a></li><li><a href="../spec/users.html">Users &amp; Roles</a></li><li><a href="../spec/workflows.html">Core Workflows</a></li><li><a href="../spec/geography.html">Target Geography</a></li><li><a href="../spec/security.html">Security &amp; Threat Model</a></li><li><a href="../spec/compliance.html">Compliance &amp; Legal Framework</a></li><li><a href="../spec/fundraising.html">Fundraising &amp; Payment Infrastructure</a></li><li><a href="../spec/integrations.html">External Integrations</a></li><li><a href="../spec/support.html">Tenant Support &amp; Onboarding</a></li><li><a href="../spec/gotv.html">Get Out The Vote &amp; Election Day Operations</a></li><li><a href="../spec/messaging.html">Internal Communications &amp; Notifications</a></li><li><a href="../spec/press.html">Press, Media &amp; Public Communications</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Architecture<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/architecture/system.html">System Architecture</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">UX Design<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../design/ux/00-overview.html">UX Design Overview</a></li><li><a href="../design/ux/01-information-architecture/navigation-model.html">Navigation Model</a></li><li><a href="../design/ux/01-information-architecture/screen-inventory.html">Screen Inventory</a></li><li><a href="../design/ux/01-information-architecture/persona-views.html">Persona Views</a></li><li><a href="../design/ux/01-information-architecture/url-structure.html">URL Structure</a></li><li><a href="../design/ux/02-global-patterns/pattern-catalog.html">Pattern Catalog</a></li><li><a href="../design/ux/02-global-patterns/offline-sync-patterns.html">Offline &amp; Sync Patterns</a></li><li><a href="../design/ux/02-global-patterns/notification-patterns.html">Notification Patterns</a></li><li><a href="../design/ux/02-global-patterns/search-patterns.html">Search Patterns</a></li><li><a href="../design/ux/02-global-patterns/settings-help-patterns.html">Settings &amp; Help Patterns</a></li><li><a href="../design/ux/02-global-patterns/security-ux-patterns.html">Security UX Patterns</a></li><li><a href="../design/ux/03-design-system/foundations.html">Design System Foundations</a></li><li><a href="../design/ux/03-design-system/theming-strategy.html">Theming Strategy</a></li><li><a href="../design/ux/03-design-system/component-inventory.html">Component Inventory</a></li><li><a href="../design/ux/03-design-system/responsive-strategy.html">Responsive Strategy</a></li><li><a href="../design/ux/04-wireframes/index.html">Wireframes</a></li><li><a href="../design/ux/04-wireframes/navigation-shell/navigation-shell.html">Navigation Shell Wireframes</a></li><li><a href="../design/ux/04-wireframes/dashboards/dashboards.html">Dashboard Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-mode/field-mode.html">Field Mode Wireframes</a></li><li><a href="../design/ux/04-wireframes/onboarding/onboarding.html">Onboarding Wireframes</a></li><li><a href="../design/ux/04-wireframes/messaging/messaging.html">Messaging Wireframes</a></li><li><a href="../design/ux/04-wireframes/supporter/supporter-portal.html">Supporter Portal Wireframes</a></li><li><a href="../design/ux/04-wireframes/alliance/alliance.html">Alliance Wireframes</a></li><li><a href="../design/ux/04-wireframes/crm/crm.html">CRM / People Wireframes</a></li><li><a href="../design/ux/04-wireframes/field-ops/field-ops.html">Field Operations (Admin) Wireframes</a></li><li><a href="../design/ux/04-wireframes/fundraising/fundraising.html">Fundraising Wireframes</a></li><li><a href="../design/ux/04-wireframes/communications/communications.html">Communications Wireframes</a></li><li><a href="../design/ux/04-wireframes/social-media/social-media.html">Social Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/events/events.html">Events Wireframes</a></li><li><a href="../design/ux/04-wireframes/press/press.html">Press &amp; Media Wireframes</a></li><li><a href="../design/ux/04-wireframes/activism/activism.html">Activism &amp; Engagement Campaign Wireframes</a></li><li><a href="../design/ux/04-wireframes/gotv/gotv.html">GOTV Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/settings/settings.html">Settings &amp; Admin Wireframes</a></li><li><a href="../design/ux/04-wireframes/auth/auth.html">Authentication Wireframes</a></li><li><a href="../design/ux/04-wireframes/profile/profile.html">User Profile Wireframes</a></li><li><a href="../design/ux/04-wireframes/help/help.html">Support &amp; Help Wireframes</a></li><li><a href="../design/ux/04-wireframes/public/public.html">Public Pages Wireframes</a></li><li><a href="../design/ux/04-wireframes/audit.html">Wireframe Audit Report</a></li></ul></div>
+<div class="nav-section open"><button type="button" class="nav-section-title" aria-expanded="true">Decisions<span class="chev" aria-hidden="true"></span></button><ul><li><a href="./001-platform-architecture.html">ADR-001: Platform Architecture &amp; Deployment</a></li><li><a href="./002-security-threat-model.html">ADR-002: Security &amp; Threat Model</a></li><li><a href="./003-identity-access-organization.html">ADR-003: Identity, Access &amp; Organization</a></li><li><a href="./004-data-model-integrity.html">ADR-004: Data Model &amp; Integrity</a></li><li><a href="./005-offline-first-sync.html">ADR-005: Offline-First &amp; Sync</a></li><li><a href="./006-field-operations-gotv.html">ADR-006: Field Operations &amp; GOTV</a></li><li><a href="./007-fundraising-payments.html">ADR-007: Fundraising &amp; Payments</a></li><li><a href="./008-communications-messaging.html">ADR-008: Communications &amp; Messaging</a></li><li><a href="./009-compliance-legal.html">ADR-009: Compliance &amp; Legal Framework</a></li><li><a href="./010-internationalization-localization.html">ADR-010: Internationalization &amp; Localization</a></li><li><a href="./011-design-system-ux.html">ADR-011: Design System &amp; UX Foundations</a></li><li><a href="./012-external-integrations.html">ADR-012: External Integrations</a></li><li><a href="./013-analytics-ai.html">ADR-013: Analytics &amp; AI</a></li><li><a href="./014-volunteer-onboarding.html">ADR-014: Volunteer &amp; Onboarding</a></li><li><a href="./015-product-scope.html">ADR-015: Product Scope Boundaries</a></li><li><a href="./016-cross-cutting-resolutions.html">ADR-016: Cross-Cutting Resolutions</a></li><li><a href="./ux-decisions.html" aria-current="page" class="active">UX Decisions — Wireframe Phase</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Diary<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../diary/index.html">Project Diary</a></li><li><a href="../diary/01-from-description-to-specification.html">Entry 1: From Description to Specification</a></li><li><a href="../diary/02-the-architecture-session.html">Entry 2: The Architecture Session</a></li><li><a href="../diary/03-information-architecture.html">Entry 3: Information Architecture</a></li><li><a href="../diary/04-design-system-and-wireframes.html">Entry 4: The Design System and Wireframes</a></li><li><a href="../diary/05-the-wireframe-audit.html">Entry 5: The Wireframe Audit</a></li><li><a href="../diary/06-resolving-the-open-questions.html">Entry 6: Resolving the Open Questions</a></li><li><a href="../diary/07-reconciling-the-architecture.html">Entry 7: Reconciling the Architecture</a></li><li><a href="../diary/08-housekeeping.html">Diary Entry 8: Housekeeping</a></li></ul></div>
+<div class="nav-section"><button type="button" class="nav-section-title" aria-expanded="false">Project &amp; Internal<span class="chev" aria-hidden="true"></span></button><ul><li><a href="../claude/MEMORY.html">Memory</a></li><li><a href="../claude/SKILLS.html">Skills</a></li><li><a href="../CLAUDE.html">GreenGrass</a></li></ul></div>
+    </nav>
+  </aside>
+  <main id="content" class="content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">Decisions</nav>
+    <article class="prose">
+<h1 id="ux-decisions-wireframe-phase" tabindex="-1"><a class="heading-anchor" href="#ux-decisions-wireframe-phase" aria-hidden="true">#</a> UX Decisions — Wireframe Phase</h1>
+<p><strong>Status:</strong> Accepted
+<strong>Date:</strong> 2026-03-03
+<strong>Sources:</strong> <code>design/ux/04-wireframes/audit.md</code>, all 21 wireframe documents</p>
+<h2 id="purpose" tabindex="-1"><a class="heading-anchor" href="#purpose" aria-hidden="true">#</a> Purpose</h2>
+<p>This document records UX decisions made during the wireframing phase (Phase 4) and the subsequent audit. These decisions establish conventions for wireframe structure, design token usage, offline specification, and terminology. They complement the architectural decisions in <code>decisions/011-design-system-ux.md</code>.</p>
+<hr>
+<h2 id="decision-1-wireframe-document-structure" tabindex="-1"><a class="heading-anchor" href="#decision-1-wireframe-document-structure" aria-hidden="true">#</a> Decision 1: Wireframe Document Structure</h2>
+<h3 id="standard-8-section-template" tabindex="-1"><a class="heading-anchor" href="#standard-8-section-template" aria-hidden="true">#</a> Standard 8-Section Template</h3>
+<p>All wireframe documents must follow this structure:</p>
+<ol>
+<li><strong>Purpose</strong> — What the feature area does, who it serves</li>
+<li><strong>Scope</strong> — Table mapping all screen IDs to screen names, personas, offline status, mobile context, and in-document section</li>
+<li><strong>Navigation Context</strong> — How the feature appears in the sidebar/tabs for its primary persona</li>
+<li><strong>Screen Wireframes</strong> — One <code>## ID: Screen Name</code> section per screen, each with Desktop/Mobile wireframes, Interaction Specs, and Design Notes</li>
+<li><strong>Empty States Summary</strong> — Consolidated empty/zero-data states for all screens</li>
+<li><strong>Accessibility Notes</strong> — Feature-specific accessibility considerations</li>
+<li><strong>Design Decisions</strong> — Table of key decisions with choice and rationale</li>
+<li><strong>Open Questions</strong> — Unresolved questions for future phases</li>
+</ol>
+<h3 id="exceptions" tabindex="-1"><a class="heading-anchor" href="#exceptions" aria-hidden="true">#</a> Exceptions</h3>
+<ul>
+<li><strong>Navigation shell</strong> uses &quot;Shell Variants&quot; instead of &quot;Scope&quot; (it has no screen IDs — it is the frame around all screens)</li>
+<li><strong>Field mode</strong> preserves its flow-based organization (Shift Start → Walk List → Door Card → ...) with screen IDs added as HTML comment annotations rather than section headings</li>
+<li><strong>Messaging</strong> organizes by UI pattern (split view, compose, briefings) with screen IDs as HTML comment annotations</li>
+<li>Documents where &quot;Navigation Context&quot; is not applicable (navigation-shell, field-mode, alliance) may omit or adapt this section</li>
+</ul>
+<h3 id="rationale" tabindex="-1"><a class="heading-anchor" href="#rationale" aria-hidden="true">#</a> Rationale</h3>
+<p>The 12 later-batch documents naturally converged on this structure. Normalizing the 9 early-batch documents to match ensures any document can be read with the same expectations. The structure also maps directly to implementation needs: Scope tables drive route planning, Navigation Context drives sidebar configuration, Design Decisions drive component specs.</p>
+<hr>
+<h2 id="decision-2-design-token-integration-approach" tabindex="-1"><a class="heading-anchor" href="#decision-2-design-token-integration-approach" aria-hidden="true">#</a> Decision 2: Design Token Integration Approach</h2>
+<h3 id="annotate-only-where-load-bearing-not-globally" tabindex="-1"><a class="heading-anchor" href="#annotate-only-where-load-bearing-not-globally" aria-hidden="true">#</a> Annotate only where load-bearing — not globally</h3>
+<p>Wireframe documents should reference design token names only where the specific value is critical to the design's correctness:</p>
+<ol>
+<li><strong>Touch targets in field mode</strong> — <code>--touch-target-min: 48px</code> and <code>--touch-target-field: 56px</code> are safety-critical values. Reference by name.</li>
+<li><strong>Spacing that deviates from defaults</strong> — When a wireframe intentionally uses non-standard spacing, reference the token to signal intent.</li>
+<li><strong>Color semantics</strong> — Where the meaning (success/error/warning) matters more than the appearance, reference <code>--color-success</code>, <code>--color-error</code>, <code>--color-warning</code>.</li>
+</ol>
+<p>Do <strong>not</strong> globally annotate all 21 wireframe documents with token names for every pixel value and color reference. This would add noise without improving wireframe clarity.</p>
+<h3 id="rationale-1" tabindex="-1"><a class="heading-anchor" href="#rationale-1" aria-hidden="true">#</a> Rationale</h3>
+<p>Wireframes serve as implementation-ready screen descriptions — they are read by designers and developers. Raw values (<code>16px</code>, <code>24px</code>) are more immediately understandable in a wireframe context than token names (<code>--space-4</code>, <code>--space-6</code>). Comprehensive token annotation belongs in the visual design phase (high-fidelity mockups) and the component implementation phase. The wireframes already follow the design system's spacing scale and color semantics implicitly.</p>
+<hr>
+<h2 id="decision-3-offline-behavior-specification" tabindex="-1"><a class="heading-anchor" href="#decision-3-offline-behavior-specification" aria-hidden="true">#</a> Decision 3: Offline Behavior Specification</h2>
+<h3 id="every-screen-must-declare-its-offline-status" tabindex="-1"><a class="heading-anchor" href="#every-screen-must-declare-its-offline-status" aria-hidden="true">#</a> Every screen must declare its offline status</h3>
+<p>The Scope table in each wireframe document must include an &quot;Offline&quot; column declaring one of:</p>
+<ul>
+<li><strong>Yes</strong> — Fully functional offline</li>
+<li><strong>Partial</strong> — Some functionality available offline (specific behavior described in wireframe)</li>
+<li><strong>No</strong> — Requires connectivity; shows cached data or offline indicator</li>
+</ul>
+<h3 id="even-no-is-a-decision" tabindex="-1"><a class="heading-anchor" href="#even-no-is-a-decision" aria-hidden="true">#</a> Even &quot;No&quot; is a decision</h3>
+<p>Most admin screens are genuinely online-only — they display server-aggregated data (dashboards), perform server-side operations (imports, exports), or configure shared state (settings). Declaring <code>Offline: No</code> is not a gap — it's a correct and intentional specification. Implementers should not have to guess.</p>
+<h3 id="offline-capable-screens-require-explicit-detail" tabindex="-1"><a class="heading-anchor" href="#offline-capable-screens-require-explicit-detail" aria-hidden="true">#</a> Offline-capable screens require explicit detail</h3>
+<p>Any screen marked <code>Yes</code> or <code>Partial</code> must describe:</p>
+<ul>
+<li>What data is pre-cached</li>
+<li>What actions are available offline</li>
+<li>How offline changes sync when connectivity returns</li>
+<li>What the UI looks like during sync</li>
+</ul>
+<p>Field mode (<code>field-mode.md</code>) is the exemplar for offline specification. The offline sync patterns in <code>02-global-patterns/offline-sync-patterns.md</code> define the framework.</p>
+<h3 id="rationale-2" tabindex="-1"><a class="heading-anchor" href="#rationale-2" aria-hidden="true">#</a> Rationale</h3>
+<p>The wireframe audit found that early-batch documents did not declare offline status at all, creating ambiguity for implementers. Since offline-first is a core platform principle, every screen needs an explicit declaration — even if the answer is &quot;this screen doesn't work offline.&quot;</p>
+<hr>
+<h2 id="decision-4-terminology-conventions" tabindex="-1"><a class="heading-anchor" href="#decision-4-terminology-conventions" aria-hidden="true">#</a> Decision 4: Terminology Conventions</h2>
+<h3 id="canonical-terms" tabindex="-1"><a class="heading-anchor" href="#canonical-terms" aria-hidden="true">#</a> Canonical Terms</h3>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+<th>Use Context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contact</strong></td>
+<td>Any person in the CRM database</td>
+<td>CRM, data import, segments, any context referring to the data record</td>
+</tr>
+<tr>
+<td><strong>Supporter</strong></td>
+<td>A person who has taken a public action (donated, signed a petition, RSVPed, volunteered)</td>
+<td>Supporter portal, public pages, activism, any user-facing context</td>
+</tr>
+<tr>
+<td><strong>Donor</strong></td>
+<td>A supporter who has made a financial contribution</td>
+<td>Fundraising reports, compliance, receipts, tax statements</td>
+</tr>
+<tr>
+<td><strong>Staff</strong></td>
+<td>An authenticated user with an organizational role template</td>
+<td>Settings, permissions, onboarding, audit trail</td>
+</tr>
+<tr>
+<td><strong>Volunteer</strong></td>
+<td>A staff member with the Volunteer role template</td>
+<td>Field mode, shift management, training</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hierarchy" tabindex="-1"><a class="heading-anchor" href="#hierarchy" aria-hidden="true">#</a> Hierarchy</h3>
+<p>&quot;Donor&quot; ⊂ &quot;Supporter&quot; ⊂ &quot;Contact&quot;</p>
+<p>Use the most specific applicable term. A person who donated is a &quot;donor&quot; in fundraising context, a &quot;supporter&quot; in the portal, and a &quot;contact&quot; in the CRM.</p>
+<h3 id="application" tabindex="-1"><a class="heading-anchor" href="#application" aria-hidden="true">#</a> Application</h3>
+<ul>
+<li>Fix terminology only in sections actively being modified during structural normalization or when adding new wireframes</li>
+<li>No global search-and-replace across all 21 documents</li>
+<li>Record these canonical terms here as the reference; enforce during visual design and implementation</li>
+</ul>
+<h3 id="rationale-3" tabindex="-1"><a class="heading-anchor" href="#rationale-3" aria-hidden="true">#</a> Rationale</h3>
+<p>The audit found &quot;supporter,&quot; &quot;donor,&quot; and &quot;contact&quot; used interchangeably in some wireframe documents. While context usually disambiguates, the terms have distinct meanings in the data model (a Contact may have zero interactions; a Supporter has at least one; a Donor has at least one financial interaction). Establishing canonical definitions now prevents confusion during implementation.</p>
+<hr>
+<h2 id="decision-5-screen-id-assignment" tabindex="-1"><a class="heading-anchor" href="#decision-5-screen-id-assignment" aria-hidden="true">#</a> Decision 5: Screen ID Assignment</h2>
+<h3 id="every-wireframed-screen-must-have-a-screen-id-from-screen-inventorymd" tabindex="-1"><a class="heading-anchor" href="#every-wireframed-screen-must-have-a-screen-id-from-screen-inventorymd" aria-hidden="true">#</a> Every wireframed screen must have a screen ID from <code>screen-inventory.md</code></h3>
+<p>Screen IDs follow the format <code>AREA-NNN</code> (e.g., <code>CANV-007</code>, <code>FUND-001</code>, <code>AUTH-003</code>). They are:</p>
+<ul>
+<li>The primary cross-reference between wireframes, screen inventory, URL structure, and implementation</li>
+<li>Stable across document edits — once assigned, a screen ID does not change</li>
+<li>Used as <code>## ID: Screen Name</code> section headings in wireframe documents</li>
+</ul>
+<h3 id="exceptions-1" tabindex="-1"><a class="heading-anchor" href="#exceptions-1" aria-hidden="true">#</a> Exceptions</h3>
+<ul>
+<li><strong>Navigation shell variants</strong> (desktop expanded, collapsed, mobile, field mode, etc.) are structural frames, not individual screens. They do not receive screen IDs.</li>
+<li><strong>Documents organized by flow</strong> (field-mode, messaging) may use HTML comment annotations (<code>&lt;!-- CANV-007 --&gt;</code>) instead of screen ID headings when the flow-based organization is more natural.</li>
+</ul>
+<h3 id="rationale-4" tabindex="-1"><a class="heading-anchor" href="#rationale-4" aria-hidden="true">#</a> Rationale</h3>
+<p>The audit found 25 screens with wireframe content but no screen ID headings. Screen IDs are the glue between documents — the cross-reference index in <code>README.md</code> depends on them. Adding IDs to all wireframed screens enables reliable traceability from spec to implementation.</p>
+
+    </article>
+  </main>
+  <div class="toc-rail"><nav class="toc" aria-label="On this page"><div class="toc-label">On this page</div><ul><li class="toc-2"><a href="#purpose"># Purpose</a></li><li class="toc-2"><a href="#decision-1-wireframe-document-structure"># Decision 1: Wireframe Document Structure</a></li><li class="toc-3"><a href="#standard-8-section-template"># Standard 8-Section Template</a></li><li class="toc-3"><a href="#exceptions"># Exceptions</a></li><li class="toc-3"><a href="#rationale"># Rationale</a></li><li class="toc-2"><a href="#decision-2-design-token-integration-approach"># Decision 2: Design Token Integration Approach</a></li><li class="toc-3"><a href="#annotate-only-where-load-bearing-not-globally"># Annotate only where load-bearing — not globally</a></li><li class="toc-3"><a href="#rationale-1"># Rationale</a></li><li class="toc-2"><a href="#decision-3-offline-behavior-specification"># Decision 3: Offline Behavior Specification</a></li><li class="toc-3"><a href="#every-screen-must-declare-its-offline-status"># Every screen must declare its offline status</a></li><li class="toc-3"><a href="#even-no-is-a-decision"># Even &amp;quot;No&amp;quot; is a decision</a></li><li class="toc-3"><a href="#offline-capable-screens-require-explicit-detail"># Offline-capable screens require explicit detail</a></li><li class="toc-3"><a href="#rationale-2"># Rationale</a></li><li class="toc-2"><a href="#decision-4-terminology-conventions"># Decision 4: Terminology Conventions</a></li><li class="toc-3"><a href="#canonical-terms"># Canonical Terms</a></li><li class="toc-3"><a href="#hierarchy"># Hierarchy</a></li><li class="toc-3"><a href="#application"># Application</a></li><li class="toc-3"><a href="#rationale-3"># Rationale</a></li><li class="toc-2"><a href="#decision-5-screen-id-assignment"># Decision 5: Screen ID Assignment</a></li><li class="toc-3"><a href="#every-wireframed-screen-must-have-a-screen-id-from-screen-inventorymd"># Every wireframed screen must have a screen ID from screen-inventory.md</a></li><li class="toc-3"><a href="#exceptions-1"># Exceptions</a></li><li class="toc-3"><a href="#rationale-4"># Rationale</a></li></ul></nav></div>
+</div>
+<script src="../assets/search.js" defer></script>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
