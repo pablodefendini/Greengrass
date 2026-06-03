@@ -14,6 +14,18 @@ Puerto Rico (alpha), Brazil, Thailand, India, and Lebanon — each with distinct
 
 All product specifications, UX design artifacts, and architecture documents are complete. The project is ready to move into implementation.
 
+## Documentation Website
+
+All of this documentation is also published as a browsable website — a left-hand sidebar table of contents linking every document, full-text search, an on-page outline, and dark mode. The site is generated from the Markdown sources by a small custom static generator (Node + `markdown-it`) and styled with GreenGrass's own design tokens, so it loads no external frameworks, fonts, or CDNs.
+
+```bash
+npm install      # one-time: install the build tooling
+npm run build    # generate the site into docs/
+npm run serve    # preview at http://localhost:8000
+```
+
+The Markdown files remain the canonical source; `docs/` is the generated rendering. On push to `main`, a GitHub Actions workflow rebuilds the site and deploys it to GitHub Pages (enable once under **Settings → Pages → Source: GitHub Actions**).
+
 ## Working with This Project
 
 This project is developed using [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Claude Code reads `CLAUDE.md` at the project root for context and conventions.
@@ -87,7 +99,12 @@ GreenGrass/
 │   ├── 001-platform-architecture.md
 │   ├── ...                        # 002-015: security, identity, data, offline, etc.
 │   └── 016-cross-cutting-resolutions.md  # Resolution of 89 open questions
-└── diary/                         # Project diary (8 entries)
+├── diary/                         # Project diary (9 entries)
+├── scripts/
+│   └── build.mjs                  # Documentation site generator
+├── site-assets/                   # Site styles + client-side scripts (search, nav)
+├── docs/                          # Generated documentation website (GitHub Pages)
+└── package.json                   # Build tooling (Node + markdown-it)
 ```
 
 ## Key Design Principles

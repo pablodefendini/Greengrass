@@ -45,8 +45,14 @@ GreenGrass/
 │   └── architecture/
 │       └── system.md              # System architecture and data model
 ├── decisions/                     # Architecture Decision Records (16 ADRs)
-└── diary/                         # Project diary (8 entries)
+├── diary/                         # Project diary (9 entries)
+├── scripts/build.mjs              # Documentation site generator (Node + markdown-it)
+├── site-assets/                   # Site styles + client-side scripts (search, nav)
+└── docs/                          # Generated documentation website (GitHub Pages)
 ```
+
+The Markdown sources are canonical. `docs/` is generated from them by `npm run build`
+(see the README's "Documentation Website" section) and published to GitHub Pages.
 
 ## Conventions
 
@@ -55,6 +61,7 @@ GreenGrass/
 - Design for offline-first, low-bandwidth, multilingual contexts
 - Decisions are recorded as ADRs in `decisions/`
 - Each spec document should be self-contained but cross-reference related docs
+- The `docs/` website is generated — edit the Markdown sources, then run `npm run build` to regenerate it; never hand-edit files in `docs/`
 
 ## Notes
 
